@@ -1,0 +1,110 @@
+[
+  {
+    "session_id": "2025-09-03_18-07-29",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起",
+    "materials": [
+      "9.4-一念春风起-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 0.04239177703857422,
+    "processing_time": 14.851911067962646
+  },
+  {
+    "session_id": "2025-09-03_18-09-33",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起",
+    "materials": [
+      "9.4-一念春风起-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 0.06804656982421875,
+    "processing_time": 6.077624797821045
+  },
+  {
+    "session_id": "2025-09-03_18-10-28",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起",
+    "materials": [
+      "9.4-一念春风起-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 0.05712699890136719,
+    "processing_time": 6.70064902305603
+  },
+  {
+    "session_id": "2025-09-03_18-11-00",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起",
+    "materials": [
+      "9.4-一念春风起-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 0.0741281509399414,
+    "processing_time": 13.23797607421875
+  },
+  {
+    "session_id": "2025-09-03_18-11-52",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起",
+    "materials": [
+      "9.4-一念春风起-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 0.06836128234863281,
+    "processing_time": 10.446095705032349
+  },
+  {
+    "session_id": "2025-09-03_18-12-47",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起",
+    "materials": [
+      "9.4-一念春风起-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 82.68524932861328,
+    "processing_time": 19.919219970703125
+  },
+  {
+    "session_id": "2025-09-03_18-20-34",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起-001",
+    "materials": [
+      "9.4-一念春风起-xh-01-001.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 83.63479423522949,
+    "processing_time": 18.581369876861572
+  },
+  {
+    "session_id": "2025-09-03_18-35-52",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起-002",
+    "materials": [
+      "9.4-一念春风起-xh-01-002.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 34.42080593109131,
+    "processing_time": 9.853134155273438
+  },
+  {
+    "session_id": "2025-09-03_18-43-08",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起-003",
+    "materials": [
+      "9.4-一念春风起-xh-01-003.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 59.02186298370361,
+    "processing_time": 13.844422340393066
+  }
+]

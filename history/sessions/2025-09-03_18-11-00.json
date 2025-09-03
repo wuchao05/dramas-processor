@@ -1,0 +1,105 @@
+{
+  "session_id": "2025-09-03_18-11-00",
+  "start_time": "2025-09-03T18:11:00.486882",
+  "end_time": "2025-09-03T18:11:13.786238",
+  "dramas": [
+    {
+      "name": "一念春风起",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/一念春风起",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/一念春风起",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 1,
+      "completed_count": 1,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-一念春风起-xh-01.mp4",
+          "duration": 45.0,
+          "size_mb": 0.0741281509399414,
+          "start_time": 0.0,
+          "end_time": 45.0,
+          "created_at": "2025-09-03T18:11:13.784257"
+        }
+      ],
+      "total_duration": 2108.884987,
+      "processing_time": 13.23797607421875,
+      "start_time": "2025-09-03T18:11:00.545304",
+      "end_time": "2025-09-03T18:11:13.783280",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 30.0,
+        "max_duration": 60.0,
+        "count": 1,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": true,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_process/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "一念春风起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        }
+      }
+    }
+  ],
+  "total_dramas": 1,
+  "successful_dramas": 1,
+  "total_materials": 1,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor process --date 9.4 --include 一念春风起 --min-sec 30 --max-sec 60 --keep-temp",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 13.23797607421875,
+  "total_size_mb": 0.0741281509399414
+}

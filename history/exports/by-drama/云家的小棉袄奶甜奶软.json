@@ -1,0 +1,38 @@
+[
+  {
+    "session_id": "2025-09-03_17-59-24",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/云家的小棉袄奶甜奶软",
+    "materials": [
+      "9.4-云家的小棉袄奶甜奶软-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 0.1089334487915039,
+    "processing_time": 93.0965666770935
+  },
+  {
+    "session_id": "2025-09-03_18-02-33",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/云家的小棉袄奶甜奶软",
+    "materials": [
+      "9.4-云家的小棉袄奶甜奶软-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 0.07536888122558594,
+    "processing_time": 92.03506398200989
+  },
+  {
+    "session_id": "2025-09-03_18-44-57",
+    "date": "2025-09-03",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/云家的小棉袄奶甜奶软",
+    "materials": [
+      "9.4-云家的小棉袄奶甜奶软-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 411.1454200744629,
+    "processing_time": 87.79039406776428
+  }
+]
