@@ -10,7 +10,7 @@ import click
 from ..config import ConfigManager, get_default_config
 from ..core.processor import DramaProcessor
 from ..utils.logging import setup_logging
-from .commands import process_command, analyze_command, config_command, legacy_run_command, history_command
+from .commands import process_command, analyze_command, config_command, legacy_run_command, history_command, feishu_command
 
 
 @click.group()
@@ -50,6 +50,22 @@ def cli(ctx, config: Optional[Path], log_level: str, log_file: Optional[Path], n
     )
     
     # Load configuration
+    # If no config specified, try to find default config file
+    if config is None:
+        # Try to find default config file
+        default_config_paths = [
+            Path("configs/default.yaml"),
+            Path("config/default.yaml"), 
+            Path("default.yaml"),
+            Path.cwd() / "configs" / "default.yaml",
+            Path.cwd() / "config" / "default.yaml",
+        ]
+        
+        for config_path in default_config_paths:
+            if config_path.exists():
+                config = config_path
+                break
+    
     config_manager = ConfigManager(config)
     try:
         processing_config = config_manager.load()
@@ -71,6 +87,7 @@ cli.add_command(analyze_command)
 cli.add_command(config_command)
 cli.add_command(legacy_run_command)
 cli.add_command(history_command)
+cli.add_command(feishu_command)
 
 
 def main():

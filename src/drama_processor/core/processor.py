@@ -6,7 +6,7 @@ import random
 import sys
 import time
 from pathlib import Path
-from typing import List, Optional, Tuple, Set
+from typing import List, Optional, Tuple, Set, Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import Counter
 
@@ -33,13 +33,16 @@ logger = logging.getLogger(__name__)
 class DramaProcessor:
     """Main drama processing orchestrator with complete dramas_process.py compatibility."""
     
-    def __init__(self, config: ProcessingConfig):
+    def __init__(self, config: ProcessingConfig, status_callback: Optional[Callable[[str, str], None]] = None):
         """Initialize drama processor.
         
         Args:
             config: Processing configuration
+            status_callback: Optional callback function to update drama status.
+                           Called with (drama_name, new_status) parameters.
         """
         self.config = config
+        self.status_callback = status_callback
         
         # Initialize components
         self.analyzer = VideoAnalyzer()
@@ -435,6 +438,14 @@ class DramaProcessor:
                 out_dir, run_suffix, start_index, total_to_make = result
                 total_materials_planned += total_to_make
                 
+                # Update status to "剪辑中" when starting processing
+                if self.status_callback:
+                    try:
+                        self.status_callback(project.name, "剪辑中")
+                        logger.info(f"📝 已更新 '{project.name}' 状态为'剪辑中'")
+                    except Exception as e:
+                        logger.warning(f"⚠️ 更新 '{project.name}' 状态为'剪辑中'失败: {e}")
+                
                 # Log project info
                 ref_w, ref_h = project.reference_resolution or (1920, 1080)
                 logger.info(
@@ -454,6 +465,14 @@ class DramaProcessor:
                 
                 # Record successful processing details
                 if completed > 0:
+                    # Update status to "待上传" when processing is completed successfully
+                    if self.status_callback:
+                        try:
+                            self.status_callback(project.name, "待上传")
+                            logger.info(f"📝 已更新 '{project.name}' 状态为'待上传'")
+                        except Exception as e:
+                            logger.warning(f"⚠️ 更新 '{project.name}' 状态为'待上传'失败: {e}")
+                    
                     # 构建素材文件路径列表
                     materials_list = []
                     if os.path.exists(out_dir):

@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from typing import List, Optional, Union, Tuple
 from pydantic import BaseModel, Field, validator
+from .feishu import FeishuConfig
 
 
 class VideoConfig(BaseModel):
@@ -99,6 +100,9 @@ class ProcessingConfig(BaseModel):
     # Encoding configs
     video: VideoConfig = Field(default_factory=VideoConfig)
     audio: AudioConfig = Field(default_factory=AudioConfig)
+    
+    # 飞书API配置
+    feishu: Optional[FeishuConfig] = Field(default=None, description="飞书API配置")
     
     def get_date_str(self) -> str:
         """Get date string for filename generation."""

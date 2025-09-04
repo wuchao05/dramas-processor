@@ -631,3 +631,617 @@ def history_stats():
         
     except Exception as e:
         click.echo(f"❌ 获取统计信息失败: {e}", err=True)
+
+
+# Feishu integration commands
+@click.group("feishu")
+def feishu_command():
+    """飞书多维表格集成命令。"""
+    pass
+
+
+@feishu_command.command("list")
+@click.option("--status", type=str, default="待剪辑", help="筛选状态（默认：待剪辑）")
+@click.pass_context
+def feishu_list(ctx, status: str):
+    """查看飞书表格中的待处理剧目列表。"""
+    config = ctx.obj.get("config") or ProcessingConfig()
+    
+    if not config.feishu:
+        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
+        sys.exit(1)
+    
+    try:
+        from ..integrations.feishu_client import FeishuClient
+        
+        client = FeishuClient(config.feishu)
+        dramas = client.get_pending_dramas(status_filter=status)
+        
+        if not dramas:
+            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            return
+        
+        click.echo("=" * 60)
+        click.echo(f"📋 飞书表格中状态为 '{status}' 的剧目")
+        click.echo("=" * 60)
+        
+        for i, drama in enumerate(dramas, 1):
+            click.echo(f"{i:2d}. {drama}")
+        
+        click.echo(f"\n📊 总计: {len(dramas)} 部剧")
+        click.echo("=" * 60)
+        
+    except Exception as e:
+        click.echo(f"❌ 查询飞书数据失败: {e}", err=True)
+        if ctx.obj.get("debug"):
+            import traceback
+            traceback.print_exc()
+        sys.exit(1)
+
+
+@feishu_command.command("run")
+@click.option("--status", type=str, default="待剪辑", help="筛选状态（默认：待剪辑）")
+@click.argument("root_dir", type=click.Path(exists=True, file_okay=False, path_type=Path), required=False)
+# Material generation settings
+@click.option("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+@click.option("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
+@click.option("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
+@click.option("--date", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
+# Random start settings
+@click.option("--random-start/--no-random-start", default=True, help="随机起点，提升多样性（默认开启）")
+@click.option("--seed", type=int, default=None, help="随机起点种子；不传则每次运行都会不同")
+# Video settings
+@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认硬编(h264_videotoolbox)")
+@click.option("--fps", type=int, default=60, help="输出帧率（默认60）")
+@click.option("--smart-fps/--no-smart-fps", default=True, help="自适应帧率：源<40fps 用源帧率，否则封顶45fps（默认开启）")
+@click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")
+# Text settings
+@click.option("--font-file", type=str, default=None, help="中文字体文件路径")
+@click.option("--footer-text", type=str, default="热门短剧 休闲必看", help="底部居中文案")
+@click.option("--side-text", type=str, default="剧情纯属虚构 请勿模仿", help="右上竖排文案（可横排传入，脚本会自动竖排化）")
+# Tail settings
+@click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
+# Performance settings
+@click.option("--jobs", type=int, default=1, help="每部剧内的并发生成数（默认1；建议2~4）")
+# Directory settings
+@click.option("--temp-dir", type=str, default=None, help="临时工作目录根（默认 /tmp）")
+@click.option("--keep-temp", is_flag=True, help="保留临时目录，便于调试（默认不保留）")
+@click.option("--out-dir", type=str, default="../导出素材", help="自定义导出目录（默认 ../导出素材）")
+# Tail cache settings
+@click.option("--tail-cache-dir", type=str, default="/tmp/tails_cache", help="尾部规范化缓存目录（默认 /tmp/tails_cache）")
+@click.option("--refresh-tail-cache", is_flag=True, help="强制刷新尾部缓存")
+# Processing optimizations
+@click.option("--fast-mode", is_flag=True, help="更快：关闭 eq/hue 随机色彩扰动，仅保留缩放/裁切/填充与文字")
+@click.option("--filter-threads", type=int, default=max(2, (os.cpu_count() or 4)//2), help="滤镜并行线程数（默认=CPU核数一半，至少2）")
+@click.option("--verbose", is_flag=True, help="详细日志：显示完整的FFmpeg命令和更多调试信息")
+@click.pass_context  
+def feishu_run(ctx, status: str, root_dir: Optional[Path],
+    # Material generation
+    count: int, min_sec: float, max_sec: float, date: Optional[str],
+    # Random start
+    random_start: bool, seed: Optional[int],
+    # Video settings
+    sw: bool, fps: int, smart_fps: bool, canvas: Optional[str],
+    # Text settings
+    font_file: Optional[str], footer_text: str, side_text: str,
+    # Tail settings
+    tail_file: Optional[str],
+    # Performance
+    jobs: int,
+    # Directories
+    temp_dir: Optional[str], keep_temp: bool, out_dir: str,
+    # Tail cache
+    tail_cache_dir: str, refresh_tail_cache: bool,
+    # Optimizations
+    fast_mode: bool, filter_threads: int, verbose: bool):
+    """一键查询飞书表格中的剧目并自动剪辑，自动更新状态。"""
+    config = ctx.obj.get("config") or ProcessingConfig()
+    
+    if not config.feishu:
+        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
+        sys.exit(1)
+    
+    try:
+        from ..integrations.feishu_client import FeishuClient
+        
+        client = FeishuClient(config.feishu)
+        
+        # 获取剧名和对应的记录ID
+        drama_records = client.get_pending_dramas_with_records(status_filter=status)
+        dramas = list(drama_records.keys())
+        
+        if not dramas:
+            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            return
+        
+        click.echo("=" * 60)
+        click.echo(f"📋 从飞书获取到 {len(dramas)} 部待处理剧目")
+        click.echo("=" * 60)
+        
+        for i, drama in enumerate(dramas, 1):
+            click.echo(f"{i:2d}. {drama}")
+        
+        # 确认处理
+        if not click.confirm(f"\n确认要自动剪辑这 {len(dramas)} 部剧吗？（状态将自动更新）"):
+            click.echo("取消处理")
+            return
+        
+        # 更新配置以包含传入的参数
+        config.include = dramas
+        config.full = False
+        config.no_interactive = True  # 禁用交互式选择
+        
+        # Handle default source directory
+        if root_dir is None:
+            actual_dir = Path(config.get_actual_source_dir())
+            
+            if not actual_dir.exists():
+                click.echo(f"错误：主目录和备份目录都不存在：", err=True)
+                click.echo(f"  主目录：{config.default_source_dir}", err=True)
+                click.echo(f"  备份目录：{config.backup_source_dir}", err=True)
+                sys.exit(1)
+            
+            root_dir = actual_dir
+        
+        # Adjust output directory based on actual source directory if using default out_dir
+        adjusted_out_dir = out_dir
+        if out_dir == "../导出素材" and root_dir:  # Using default out_dir and have resolved source directory
+            # Always adjust export base directory based on actual source directory used
+            export_base = config.get_export_base_dir()
+            adjusted_out_dir = os.path.join(export_base, "导出素材")
+        
+        # 应用传入的视频处理参数
+        config.count = count
+        config.min_duration = min_sec
+        config.max_duration = max_sec
+        config.date_str = date
+        config.random_start = random_start
+        config.seed = seed
+        config.use_hardware = not sw
+        config.target_fps = fps
+        config.smart_fps = smart_fps
+        config.canvas = canvas
+        config.font_file = font_file
+        config.footer_text = footer_text
+        config.side_text = side_text
+        config.tail_file = tail_file
+        config.jobs = jobs
+        config.temp_dir = temp_dir
+        config.keep_temp = keep_temp
+        config.output_dir = adjusted_out_dir
+        config.tail_cache_dir = tail_cache_dir
+        config.refresh_tail_cache = refresh_tail_cache
+        config.fast_mode = fast_mode
+        config.filter_threads = filter_threads
+        config.verbose = verbose
+        
+        # 创建状态更新回调函数（自动更新开启）
+        def status_update_callback(drama_name: str, new_status: str):
+            """更新飞书表格中剧目的状态"""
+            if drama_name in drama_records:
+                record_id = drama_records[drama_name]
+                try:
+                    success = client.update_record_status(record_id, new_status)
+                    if success:
+                        click.echo(f"✅ 已更新 '{drama_name}' 状态为 '{new_status}'")
+                    else:
+                        click.echo(f"⚠️ 更新 '{drama_name}' 状态失败，但不影响处理流程", err=True)
+                except Exception as e:
+                    click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
+        
+        # 初始化处理器（自动开启状态更新回调）
+        processor = DramaProcessor(config, status_callback=status_update_callback)
+        
+        # 开始处理
+        click.echo(f"\n🎬 开始自动剪辑从飞书获取的剧目...")
+        total_done, total_planned = processor.process_all_dramas(str(root_dir))
+        
+        click.echo(f"\n🎯 自动剪辑完成：{total_done}/{total_planned} 条素材生成成功")
+        
+        if total_done < total_planned:
+            sys.exit(1)  # Partial failure
+    
+    except Exception as e:
+        click.echo(f"❌ 自动剪辑失败: {e}", err=True)
+        if ctx.obj.get("debug"):
+            import traceback
+            traceback.print_exc()
+        sys.exit(1)
+
+
+@feishu_command.command("select")
+@click.option("--status", type=str, default="待剪辑", help="筛选状态（默认：待剪辑）")
+@click.argument("root_dir", type=click.Path(exists=True, file_okay=False, path_type=Path), required=False)
+# Material generation settings
+@click.option("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+@click.option("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
+@click.option("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
+@click.option("--date", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
+# Random start settings
+@click.option("--random-start/--no-random-start", default=True, help="随机起点，提升多样性（默认开启）")
+@click.option("--seed", type=int, default=None, help="随机起点种子；不传则每次运行都会不同")
+# Video settings
+@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认硬编(h264_videotoolbox)")
+@click.option("--fps", type=int, default=60, help="输出帧率（默认60）")
+@click.option("--smart-fps/--no-smart-fps", default=True, help="自适应帧率：源<40fps 用源帧率，否则封顶45fps（默认开启）")
+@click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")
+# Text settings
+@click.option("--font-file", type=str, default=None, help="中文字体文件路径")
+@click.option("--footer-text", type=str, default="热门短剧 休闲必看", help="底部居中文案")
+@click.option("--side-text", type=str, default="剧情纯属虚构 请勿模仿", help="右上竖排文案（可横排传入，脚本会自动竖排化）")
+# Tail settings
+@click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
+# Performance settings
+@click.option("--jobs", type=int, default=1, help="每部剧内的并发生成数（默认1；建议2~4）")
+# Directory settings
+@click.option("--temp-dir", type=str, default=None, help="临时工作目录根（默认 /tmp）")
+@click.option("--keep-temp", is_flag=True, help="保留临时目录，便于调试（默认不保留）")
+@click.option("--out-dir", type=str, default="../导出素材", help="自定义导出目录（默认 ../导出素材）")
+# Tail cache settings
+@click.option("--tail-cache-dir", type=str, default="/tmp/tails_cache", help="尾部规范化缓存目录（默认 /tmp/tails_cache）")
+@click.option("--refresh-tail-cache", is_flag=True, help="强制刷新尾部缓存")
+# Processing optimizations
+@click.option("--fast-mode", is_flag=True, help="更快：关闭 eq/hue 随机色彩扰动，仅保留缩放/裁切/填充与文字")
+@click.option("--filter-threads", type=int, default=max(2, (os.cpu_count() or 4)//2), help="滤镜并行线程数（默认=CPU核数一半，至少2）")
+@click.option("--verbose", is_flag=True, help="详细日志：显示完整的FFmpeg命令和更多调试信息")
+@click.pass_context  
+def feishu_select(ctx, status: str, root_dir: Optional[Path],
+    # Material generation
+    count: int, min_sec: float, max_sec: float, date: Optional[str],
+    # Random start
+    random_start: bool, seed: Optional[int],
+    # Video settings
+    sw: bool, fps: int, smart_fps: bool, canvas: Optional[str],
+    # Text settings
+    font_file: Optional[str], footer_text: str, side_text: str,
+    # Tail settings
+    tail_file: Optional[str],
+    # Performance
+    jobs: int,
+    # Directories
+    temp_dir: Optional[str], keep_temp: bool, out_dir: str,
+    # Tail cache
+    tail_cache_dir: str, refresh_tail_cache: bool,
+    # Optimizations
+    fast_mode: bool, filter_threads: int, verbose: bool):
+    """从飞书表格选择特定剧目进行剪辑，自动更新状态。"""
+    config = ctx.obj.get("config") or ProcessingConfig()
+    
+    if not config.feishu:
+        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
+        sys.exit(1)
+    
+    try:
+        from ..integrations.feishu_client import FeishuClient
+        
+        client = FeishuClient(config.feishu)
+        
+        # 获取剧名和对应的记录ID
+        drama_records = client.get_pending_dramas_with_records(status_filter=status)
+        dramas = list(drama_records.keys())
+        
+        if not dramas:
+            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            return
+        
+        click.echo("=" * 60)
+        click.echo(f"📋 飞书表格中状态为 '{status}' 的剧目")
+        click.echo("=" * 60)
+        
+        for i, drama in enumerate(dramas, 1):
+            click.echo(f"{i:2d}. {drama}")
+        
+        click.echo("=" * 60)
+        
+        # 用户选择剧目
+        while True:
+            try:
+                choice = click.prompt("\n请选择要剪辑的剧目编号（多个编号用逗号分隔，如: 1,3,5）", type=str)
+                
+                # 解析用户输入
+                selected_indices = []
+                for part in choice.split(','):
+                    part = part.strip()
+                    if '-' in part:
+                        # 支持范围选择，如 1-3
+                        start, end = map(int, part.split('-'))
+                        selected_indices.extend(range(start, end + 1))
+                    else:
+                        selected_indices.append(int(part))
+                
+                # 验证选择
+                valid_indices = []
+                selected_dramas = []
+                for idx in selected_indices:
+                    if 1 <= idx <= len(dramas):
+                        if idx not in valid_indices:  # 去重
+                            valid_indices.append(idx)
+                            selected_dramas.append(dramas[idx - 1])
+                    else:
+                        click.echo(f"⚠️ 编号 {idx} 超出范围，已忽略")
+                
+                if not selected_dramas:
+                    click.echo("❌ 没有选择有效的剧目，请重新选择")
+                    continue
+                
+                break
+                
+            except ValueError:
+                click.echo("❌ 输入格式错误，请输入数字编号")
+            except KeyboardInterrupt:
+                click.echo("\n取消选择")
+                return
+        
+        # 显示选择的剧目
+        click.echo(f"\n📌 已选择 {len(selected_dramas)} 部剧目：")
+        for i, drama in enumerate(selected_dramas, 1):
+            click.echo(f"  {i}. {drama}")
+        
+        # 确认处理
+        if not click.confirm(f"\n确认要剪辑这 {len(selected_dramas)} 部剧吗？（状态将自动更新）"):
+            click.echo("取消处理")
+            return
+        
+        # 更新配置以包含传入的参数
+        config.include = selected_dramas
+        config.full = False
+        config.no_interactive = True  # 禁用交互式选择
+        
+        # Handle default source directory
+        if root_dir is None:
+            actual_dir = Path(config.get_actual_source_dir())
+            
+            if not actual_dir.exists():
+                click.echo(f"错误：主目录和备份目录都不存在：", err=True)
+                click.echo(f"  主目录：{config.default_source_dir}", err=True)
+                click.echo(f"  备份目录：{config.backup_source_dir}", err=True)
+                sys.exit(1)
+            
+            root_dir = actual_dir
+        
+        # Adjust output directory based on actual source directory if using default out_dir
+        adjusted_out_dir = out_dir
+        if out_dir == "../导出素材" and root_dir:  # Using default out_dir and have resolved source directory
+            # Always adjust export base directory based on actual source directory used
+            export_base = config.get_export_base_dir()
+            adjusted_out_dir = os.path.join(export_base, "导出素材")
+        
+        # 应用传入的视频处理参数
+        config.count = count
+        config.min_duration = min_sec
+        config.max_duration = max_sec
+        config.date_str = date
+        config.random_start = random_start
+        config.seed = seed
+        config.use_hardware = not sw
+        config.target_fps = fps
+        config.smart_fps = smart_fps
+        config.canvas = canvas
+        config.font_file = font_file
+        config.footer_text = footer_text
+        config.side_text = side_text
+        config.tail_file = tail_file
+        config.jobs = jobs
+        config.temp_dir = temp_dir
+        config.keep_temp = keep_temp
+        config.output_dir = adjusted_out_dir
+        config.tail_cache_dir = tail_cache_dir
+        config.refresh_tail_cache = refresh_tail_cache
+        config.fast_mode = fast_mode
+        config.filter_threads = filter_threads
+        config.verbose = verbose
+        
+        # 创建状态更新回调函数（自动更新开启）
+        def status_update_callback(drama_name: str, new_status: str):
+            """更新飞书表格中剧目的状态"""
+            if drama_name in drama_records:
+                record_id = drama_records[drama_name]
+                try:
+                    success = client.update_record_status(record_id, new_status)
+                    if success:
+                        click.echo(f"✅ 已更新 '{drama_name}' 状态为 '{new_status}'")
+                    else:
+                        click.echo(f"⚠️ 更新 '{drama_name}' 状态失败，但不影响处理流程", err=True)
+                except Exception as e:
+                    click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
+        
+        # 初始化处理器（自动开启状态更新回调）
+        processor = DramaProcessor(config, status_callback=status_update_callback)
+        
+        # 开始处理
+        click.echo(f"\n🎬 开始剪辑选择的剧目...")
+        total_done, total_planned = processor.process_all_dramas(str(root_dir))
+        
+        click.echo(f"\n🎯 选择性剪辑完成：{total_done}/{total_planned} 条素材生成成功")
+        
+        if total_done < total_planned:
+            sys.exit(1)  # Partial failure
+    
+    except Exception as e:
+        click.echo(f"❌ 选择性剪辑失败: {e}", err=True)
+        if ctx.obj.get("debug"):
+            import traceback
+            traceback.print_exc()
+        sys.exit(1)
+
+
+@feishu_command.command("sync")
+@click.option("--status", type=str, default="待剪辑", help="筛选状态（默认：待剪辑）")
+@click.option("--dry-run", is_flag=True, help="预览模式，不实际处理")
+@click.option("--auto-update", is_flag=True, help="自动更新剧目状态：开始处理时更新为'剪辑中'，完成后更新为'待上传'")
+@click.argument("root_dir", type=click.Path(exists=True, file_okay=False, path_type=Path), required=False)
+# Material generation settings
+@click.option("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+@click.option("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
+@click.option("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
+@click.option("--date", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
+# Random start settings
+@click.option("--random-start/--no-random-start", default=True, help="随机起点，提升多样性（默认开启）")
+@click.option("--seed", type=int, default=None, help="随机起点种子；不传则每次运行都会不同")
+# Video settings
+@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认硬编(h264_videotoolbox)")
+@click.option("--fps", type=int, default=60, help="输出帧率（默认60）")
+@click.option("--smart-fps/--no-smart-fps", default=True, help="自适应帧率：源<40fps 用源帧率，否则封顶45fps（默认开启）")
+@click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")
+# Text settings
+@click.option("--font-file", type=str, default=None, help="中文字体文件路径")
+@click.option("--footer-text", type=str, default="热门短剧 休闲必看", help="底部居中文案")
+@click.option("--side-text", type=str, default="剧情纯属虚构 请勿模仿", help="右上竖排文案（可横排传入，脚本会自动竖排化）")
+# Tail settings
+@click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
+# Performance settings
+@click.option("--jobs", type=int, default=1, help="每部剧内的并发生成数（默认1；建议2~4）")
+# Directory settings
+@click.option("--temp-dir", type=str, default=None, help="临时工作目录根（默认 /tmp）")
+@click.option("--keep-temp", is_flag=True, help="保留临时目录，便于调试（默认不保留）")
+@click.option("--out-dir", type=str, default="../导出素材", help="自定义导出目录（默认 ../导出素材）")
+# Tail cache settings
+@click.option("--tail-cache-dir", type=str, default="/tmp/tails_cache", help="尾部规范化缓存目录（默认 /tmp/tails_cache）")
+@click.option("--refresh-tail-cache", is_flag=True, help="强制刷新尾部缓存")
+# Processing optimizations
+@click.option("--fast-mode", is_flag=True, help="更快：关闭 eq/hue 随机色彩扰动，仅保留缩放/裁切/填充与文字")
+@click.option("--filter-threads", type=int, default=max(2, (os.cpu_count() or 4)//2), help="滤镜并行线程数（默认=CPU核数一半，至少2）")
+@click.option("--verbose", is_flag=True, help="详细日志：显示完整的FFmpeg命令和更多调试信息")
+@click.pass_context  
+def feishu_sync(ctx, status: str, dry_run: bool, auto_update: bool, root_dir: Optional[Path],
+    # Material generation
+    count: int, min_sec: float, max_sec: float, date: Optional[str],
+    # Random start
+    random_start: bool, seed: Optional[int],
+    # Video settings
+    sw: bool, fps: int, smart_fps: bool, canvas: Optional[str],
+    # Text settings
+    font_file: Optional[str], footer_text: str, side_text: str,
+    # Tail settings
+    tail_file: Optional[str],
+    # Performance
+    jobs: int,
+    # Directories
+    temp_dir: Optional[str], keep_temp: bool, out_dir: str,
+    # Tail cache
+    tail_cache_dir: str, refresh_tail_cache: bool,
+    # Optimizations
+    fast_mode: bool, filter_threads: int, verbose: bool):
+    """从飞书表格获取待处理剧目列表并自动处理。"""
+    config = ctx.obj.get("config") or ProcessingConfig()
+    
+    if not config.feishu:
+        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
+        sys.exit(1)
+    
+    try:
+        from ..integrations.feishu_client import FeishuClient
+        
+        client = FeishuClient(config.feishu)
+        
+        if auto_update:
+            # 获取剧名和对应的记录ID
+            drama_records = client.get_pending_dramas_with_records(status_filter=status)
+            dramas = list(drama_records.keys())
+        else:
+            # 只获取剧名列表
+            dramas = client.get_pending_dramas(status_filter=status)
+            drama_records = {}
+        
+        if not dramas:
+            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            return
+        
+        click.echo("=" * 60)
+        click.echo(f"📋 从飞书获取到 {len(dramas)} 部待处理剧目")
+        click.echo("=" * 60)
+        
+        for i, drama in enumerate(dramas, 1):
+            click.echo(f"{i:2d}. {drama}")
+        
+        if dry_run:
+            click.echo(f"\n🔍 预览模式：将处理上述 {len(dramas)} 部剧")
+            return
+        
+        # 确认处理
+        if not click.confirm(f"\n确认要处理这 {len(dramas)} 部剧吗？"):
+            click.echo("取消处理")
+            return
+        
+        # 更新配置以包含传入的参数
+        config.include = dramas
+        config.full = False
+        config.no_interactive = True  # 禁用交互式选择
+        
+        # Handle default source directory
+        if root_dir is None:
+            actual_dir = Path(config.get_actual_source_dir())
+            
+            if not actual_dir.exists():
+                click.echo(f"错误：主目录和备份目录都不存在：", err=True)
+                click.echo(f"  主目录：{config.default_source_dir}", err=True)
+                click.echo(f"  备份目录：{config.backup_source_dir}", err=True)
+                sys.exit(1)
+            
+            root_dir = actual_dir
+        
+        # Adjust output directory based on actual source directory if using default out_dir
+        adjusted_out_dir = out_dir
+        if out_dir == "../导出素材" and root_dir:  # Using default out_dir and have resolved source directory
+            # Always adjust export base directory based on actual source directory used
+            export_base = config.get_export_base_dir()
+            adjusted_out_dir = os.path.join(export_base, "导出素材")
+        
+        # 应用传入的视频处理参数
+        config.count = count
+        config.min_duration = min_sec
+        config.max_duration = max_sec
+        config.date_str = date
+        config.random_start = random_start
+        config.seed = seed
+        config.use_hardware = not sw
+        config.target_fps = fps
+        config.smart_fps = smart_fps
+        config.canvas = canvas
+        config.font_file = font_file
+        config.footer_text = footer_text
+        config.side_text = side_text
+        config.tail_file = tail_file
+        config.jobs = jobs
+        config.temp_dir = temp_dir
+        config.keep_temp = keep_temp
+        config.output_dir = adjusted_out_dir
+        config.tail_cache_dir = tail_cache_dir
+        config.refresh_tail_cache = refresh_tail_cache
+        config.fast_mode = fast_mode
+        config.filter_threads = filter_threads
+        config.verbose = verbose
+        
+        # 创建状态更新回调函数
+        def status_update_callback(drama_name: str, new_status: str):
+            """更新飞书表格中剧目的状态"""
+            if auto_update and drama_name in drama_records:
+                record_id = drama_records[drama_name]
+                try:
+                    success = client.update_record_status(record_id, new_status)
+                    if success:
+                        click.echo(f"✅ 已更新 '{drama_name}' 状态为 '{new_status}'")
+                    else:
+                        click.echo(f"⚠️ 更新 '{drama_name}' 状态失败，但不影响处理流程", err=True)
+                except Exception as e:
+                    click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
+        
+        # 初始化处理器（如果启用自动更新，传入回调函数）
+        callback = status_update_callback if auto_update else None
+        processor = DramaProcessor(config, status_callback=callback)
+        
+        # 开始处理
+        click.echo(f"\n🎬 开始处理从飞书获取的剧目...")
+        total_done, total_planned = processor.process_all_dramas(str(root_dir))
+        
+        click.echo(f"\n🎯 飞书同步处理完成：{total_done}/{total_planned} 条素材生成成功")
+        
+        if total_done < total_planned:
+            sys.exit(1)  # Partial failure
+    
+    except Exception as e:
+        click.echo(f"❌ 飞书同步处理失败: {e}", err=True)
+        if ctx.obj.get("debug"):
+            import traceback
+            traceback.print_exc()
+        sys.exit(1)

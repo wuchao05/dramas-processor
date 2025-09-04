@@ -1,0 +1,123 @@
+{
+  "session_id": "2025-09-03_21-09-32",
+  "start_time": "2025-09-03T21:09:32.101276",
+  "end_time": "2025-09-03T21:11:50.617994",
+  "dramas": [
+    {
+      "name": "开局废材女配，我带全家逆风翻盘",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/开局废材女配，我带全家逆风翻盘",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频/exports/开局废材女配，我带全家逆风翻盘",
+      "date_str": "9.3",
+      "run_suffix": null,
+      "planned_count": 1,
+      "completed_count": 1,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.3-开局废材女配，我带全家逆风翻盘-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 541.3048477172852,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-03T21:11:50.611988"
+        }
+      ],
+      "total_duration": 6022.651040000001,
+      "processing_time": 135.91557693481445,
+      "start_time": "2025-09-03T21:09:33.221591",
+      "end_time": "2025-09-03T21:11:49.137168",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 1,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "../导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "开局废材女配，我带全家逆风翻盘"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    }
+  ],
+  "total_dramas": 1,
+  "successful_dramas": 1,
+  "total_materials": 1,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu select",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "../导出素材",
+  "total_processing_time": 135.91557693481445,
+  "total_size_mb": 541.3048477172852
+}

@@ -86,3 +86,16 @@ audio:
   codec: "aac" # Audio codec
   bitrate: "128k" # Audio bitrate
   sample_rate: 48000 # Audio sample rate
+
+# 飞书API配置
+feishu:
+  app_id: "cli_a839f03393785013"
+  app_secret: "63orqvu6Wyyb9iEelFqvndl2AKiAFN38"
+  app_token: "Ff6xbY43BawXsCsdkfccRNhbn3f"
+  table_id: "tblzO48FFil82fas"
+  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
+  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
+  status_field_name: "当前状态"
+  completed_status_value: "已完成"
+  page_size: 200
+  token_refresh_interval: 7200000

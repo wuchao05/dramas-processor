@@ -1,0 +1,1504 @@
+{
+  "session_id": "2025-09-04_10-11-18",
+  "start_time": "2025-09-04T10:11:18.731533",
+  "end_time": "2025-09-04T12:06:14.491092",
+  "dramas": [
+    {
+      "name": "云家的小棉袄奶甜奶软",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/云家的小棉袄奶甜奶软",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/云家的小棉袄奶甜奶软",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 517.4406366348267,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.940420"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 71.05211925506592,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.943548"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 537.5649785995483,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.943748"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 521.6747627258301,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.943933"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 224.76837635040283,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.944121"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 530.2986831665039,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.944301"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 500.4940538406372,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.944530"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 540.0261878967285,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.944737"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 534.6031103134155,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.945026"
+        },
+        {
+          "filename": "9.4-云家的小棉袄奶甜奶软-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 514.5269775390625,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:24:34.945085"
+        }
+      ],
+      "total_duration": 6673.919999999999,
+      "processing_time": 793.4598400592804,
+      "start_time": "2025-09-04T10:11:18.882513",
+      "end_time": "2025-09-04T10:24:32.342353",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    },
+    {
+      "name": "小乖宝能听兽语，捡个帅爸做团宠",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/小乖宝能听兽语，捡个帅爸做团宠",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/小乖宝能听兽语，捡个帅爸做团宠",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 538.4608030319214,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.470920"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 87.6405839920044,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.473557"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 509.361439704895,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.473734"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 499.89556312561035,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.473885"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 557.4730558395386,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.474057"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 521.1385316848755,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.474220"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 526.2408647537231,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.474355"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 520.830153465271,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.474584"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 518.6049060821533,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.474816"
+        },
+        {
+          "filename": "9.4-小乖宝能听兽语，捡个帅爸做团宠-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 534.4854202270508,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:38:41.474869"
+        }
+      ],
+      "total_duration": 3574.1199999999994,
+      "processing_time": 843.3133859634399,
+      "start_time": "2025-09-04T10:24:34.950138",
+      "end_time": "2025-09-04T10:38:38.263524",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    },
+    {
+      "name": "年代1983：渔猎十万大山",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/年代1983：渔猎十万大山",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/年代1983：渔猎十万大山",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 547.0300092697144,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.424488"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 511.7592372894287,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.428194"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 525.9067306518555,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.428396"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 306.9476556777954,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.428602"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 540.3312005996704,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.428766"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 512.6166467666626,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.428914"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 503.6631908416748,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.429068"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 530.7848434448242,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.429276"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 378.4984197616577,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.429567"
+        },
+        {
+          "filename": "9.4-年代1983：渔猎十万大山-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 523.4366121292114,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T10:53:12.429643"
+        }
+      ],
+      "total_duration": 4025.109162000001,
+      "processing_time": 868.3960728645325,
+      "start_time": "2025-09-04T10:38:41.477742",
+      "end_time": "2025-09-04T10:53:09.873815",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    },
+    {
+      "name": "开局废材女配，我带全家逆风翻盘",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/开局废材女配，我带全家逆风翻盘",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/开局废材女配，我带全家逆风翻盘",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 494.4580612182617,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.643608"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 515.4098033905029,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.646859"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 542.7137298583984,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.647172"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 537.3141832351685,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.647409"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 507.38934326171875,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.647620"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 516.0445518493652,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.647810"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 534.1404123306274,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.647962"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 501.4516849517822,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.648155"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 540.8203582763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.648361"
+        },
+        {
+          "filename": "9.4-开局废材女配，我带全家逆风翻盘-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 526.0595464706421,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:08:38.648402"
+        }
+      ],
+      "total_duration": 6022.651040000001,
+      "processing_time": 923.6901428699493,
+      "start_time": "2025-09-04T10:53:12.432442",
+      "end_time": "2025-09-04T11:08:36.122585",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    },
+    {
+      "name": "念念有词",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/念念有词",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/念念有词",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-念念有词-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 495.0390348434448,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.310705"
+        },
+        {
+          "filename": "9.4-念念有词-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 525.0722761154175,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.314399"
+        },
+        {
+          "filename": "9.4-念念有词-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 478.8843240737915,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.315360"
+        },
+        {
+          "filename": "9.4-念念有词-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 466.18964672088623,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.315533"
+        },
+        {
+          "filename": "9.4-念念有词-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 474.4403266906738,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.315724"
+        },
+        {
+          "filename": "9.4-念念有词-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 489.03466987609863,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.315900"
+        },
+        {
+          "filename": "9.4-念念有词-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 465.3244438171387,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.316046"
+        },
+        {
+          "filename": "9.4-念念有词-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 519.7728080749512,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.316173"
+        },
+        {
+          "filename": "9.4-念念有词-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 238.63761615753174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.316281"
+        },
+        {
+          "filename": "9.4-念念有词-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 454.3911714553833,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:23:21.316321"
+        }
+      ],
+      "total_duration": 5768.8040790000005,
+      "processing_time": 878.0950100421906,
+      "start_time": "2025-09-04T11:08:38.652648",
+      "end_time": "2025-09-04T11:23:16.747658",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    },
+    {
+      "name": "我成了后悔文男主",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/我成了后悔文男主",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/我成了后悔文男主",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-我成了后悔文男主-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 458.40931510925293,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.290066"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 445.4665422439575,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.295639"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 506.0788621902466,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.295899"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 487.1798791885376,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.296102"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 88.64935684204102,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.296306"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 465.15024852752686,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.296568"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 507.3104467391968,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.296769"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 446.4978914260864,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.296974"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 499.93044662475586,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.297163"
+        },
+        {
+          "filename": "9.4-我成了后悔文男主-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 244.83985042572021,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:36:56.297203"
+        }
+      ],
+      "total_duration": 4381.189792,
+      "processing_time": 812.4931919574738,
+      "start_time": "2025-09-04T11:23:21.319938",
+      "end_time": "2025-09-04T11:36:53.813130",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    },
+    {
+      "name": "重生八零，满级福宝旺全家",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生八零，满级福宝旺全家",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/重生八零，满级福宝旺全家",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 342.1005506515503,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.494865"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 495.71002769470215,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.499408"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 487.55150604248047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.499638"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 485.25200939178467,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.499768"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 509.8855447769165,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.500078"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 508.0939407348633,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.500257"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 536.2242603302002,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.500695"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 564.9224252700806,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.501009"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 494.9154634475708,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.501335"
+        },
+        {
+          "filename": "9.4-重生八零，满级福宝旺全家-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 518.2515573501587,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T11:51:17.501387"
+        }
+      ],
+      "total_duration": 4279.573015999999,
+      "processing_time": 858.7266211509705,
+      "start_time": "2025-09-04T11:36:56.304808",
+      "end_time": "2025-09-04T11:51:15.031429",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    },
+    {
+      "name": "长姐归来！尔等皆是臣",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/长姐归来！尔等皆是臣",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.4导出/长姐归来！尔等皆是臣",
+      "date_str": "9.4",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 526.1277656555176,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.476007"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 488.6876029968262,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.481348"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 526.9047317504883,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.481766"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 488.3653392791748,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.482078"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 495.06164836883545,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.483175"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 482.90840244293213,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.483910"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 497.43474674224854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.484532"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 494.0183382034302,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.484864"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 487.90686321258545,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.485076"
+        },
+        {
+          "filename": "9.4-长姐归来！尔等皆是臣-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 498.13328742980957,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-04T12:06:14.485116"
+        }
+      ],
+      "total_duration": 4977.801951000001,
+      "processing_time": 893.8941869735718,
+      "start_time": "2025-09-04T11:51:17.505479",
+      "end_time": "2025-09-04T12:06:11.399666",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": "9.4",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": null,
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "重生八零，满级福宝旺全家",
+          "开局废材女配，我带全家逆风翻盘",
+          "云家的小棉袄奶甜奶软",
+          "我成了后悔文男主",
+          "念念有词",
+          "小乖宝能听兽语，捡个帅爸做团宠",
+          "年代1983：渔猎十万大山",
+          "长姐归来！尔等皆是臣"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        }
+      }
+    }
+  ],
+  "total_dramas": 8,
+  "successful_dramas": 8,
+  "total_materials": 80,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.4 --count 10",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 6872.068451881409,
+  "total_size_mb": 38088.11259841919
+}
