@@ -804,7 +804,28 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
         config.font_file = font_file
         config.footer_text = footer_text
         config.side_text = side_text
-        config.tail_file = tail_file
+        
+        # Handle tail file similar to process command
+        if tail_file:
+            # Explicit tail file
+            if os.path.isfile(tail_file):
+                config.tail_file = tail_file
+            else:
+                click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
+                config.tail_file = None
+        else:
+            # Check for tail.mp4 in assets directory (new structure)
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+            default_tail = os.path.join(project_root, "assets", "tail.mp4")
+            if os.path.isfile(default_tail):
+                config.tail_file = default_tail
+            elif config.tail_file:
+                # Check if the config file tail_file path exists relative to project root
+                config_tail_path = os.path.join(project_root, config.tail_file) if not os.path.isabs(config.tail_file) else config.tail_file
+                if not os.path.isfile(config_tail_path):
+                    click.echo(f"⚠️ 配置中的尾部文件不存在：{config_tail_path}")
+                    config.tail_file = None
+        
         config.jobs = jobs
         config.temp_dir = temp_dir
         config.keep_temp = keep_temp
@@ -1020,7 +1041,28 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
         config.font_file = font_file
         config.footer_text = footer_text
         config.side_text = side_text
-        config.tail_file = tail_file
+        
+        # Handle tail file similar to process command
+        if tail_file:
+            # Explicit tail file
+            if os.path.isfile(tail_file):
+                config.tail_file = tail_file
+            else:
+                click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
+                config.tail_file = None
+        else:
+            # Check for tail.mp4 in assets directory (new structure)
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+            default_tail = os.path.join(project_root, "assets", "tail.mp4")
+            if os.path.isfile(default_tail):
+                config.tail_file = default_tail
+            elif config.tail_file:
+                # Check if the config file tail_file path exists relative to project root
+                config_tail_path = os.path.join(project_root, config.tail_file) if not os.path.isabs(config.tail_file) else config.tail_file
+                if not os.path.isfile(config_tail_path):
+                    click.echo(f"⚠️ 配置中的尾部文件不存在：{config_tail_path}")
+                    config.tail_file = None
+        
         config.jobs = jobs
         config.temp_dir = temp_dir
         config.keep_temp = keep_temp
@@ -1201,7 +1243,28 @@ def feishu_sync(ctx, status: str, dry_run: bool, auto_update: bool, root_dir: Op
         config.font_file = font_file
         config.footer_text = footer_text
         config.side_text = side_text
-        config.tail_file = tail_file
+        
+        # Handle tail file similar to process command
+        if tail_file:
+            # Explicit tail file
+            if os.path.isfile(tail_file):
+                config.tail_file = tail_file
+            else:
+                click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
+                config.tail_file = None
+        else:
+            # Check for tail.mp4 in assets directory (new structure)
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+            default_tail = os.path.join(project_root, "assets", "tail.mp4")
+            if os.path.isfile(default_tail):
+                config.tail_file = default_tail
+            elif config.tail_file:
+                # Check if the config file tail_file path exists relative to project root
+                config_tail_path = os.path.join(project_root, config.tail_file) if not os.path.isabs(config.tail_file) else config.tail_file
+                if not os.path.isfile(config_tail_path):
+                    click.echo(f"⚠️ 配置中的尾部文件不存在：{config_tail_path}")
+                    config.tail_file = None
+        
         config.jobs = jobs
         config.temp_dir = temp_dir
         config.keep_temp = keep_temp

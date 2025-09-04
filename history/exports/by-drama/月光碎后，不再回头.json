@@ -19,5 +19,17 @@
     "completed": true,
     "size_mb": 5305.162634849548,
     "processing_time": 938.1284048557281
+  },
+  {
+    "session_id": "2025-09-04_15-44-12",
+    "date": "2025-09-04",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/月光碎后，不再回头",
+    "materials": [
+      "9.4-月光碎后，不再回头-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 399.5573511123657,
+    "processing_time": 138.01927781105042
   }
 ]
