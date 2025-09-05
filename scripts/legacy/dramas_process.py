@@ -678,7 +678,7 @@ def main():
 
     p = argparse.ArgumentParser(description="批量遍历根目录短剧并产出素材（集尾对齐/尾部缓存/交互多选/临时目录可控/计时日志增强/提速选项）")
     p.add_argument("root_dir", help="短剧根目录（其下每个子文件夹为一个短剧，内含 1.mp4,2.mp4,...）")
-    p.add_argument("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+    p.add_argument("--count", type=int, default=10, help="每部短剧生成素材条数量（默认10）")
     p.add_argument("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
     p.add_argument("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
     p.add_argument("--date-str", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")

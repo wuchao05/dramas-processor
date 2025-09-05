@@ -4,6 +4,7 @@
 import time
 import logging
 from typing import Optional, List, Dict, Any
+from datetime import datetime
 import requests
 from drama_processor.models.feishu import (
     FeishuConfig, 
@@ -12,6 +13,44 @@ from drama_processor.models.feishu import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+def _convert_date_format(date_str: str) -> str:
+    """
+    将简化日期格式转换为飞书标准日期格式
+    
+    Args:
+        date_str: 简化日期格式，如 "9.5"
+        
+    Returns:
+        飞书标准日期格式，如 "2025-09-05"
+    """
+    try:
+        # 当前年份
+        current_year = datetime.now().year
+        
+        # 分割月份和日期
+        if '.' in date_str:
+            month_str, day_str = date_str.split('.', 1)
+        else:
+            raise ValueError(f"日期格式不正确，期望格式如 '9.5'，实际: {date_str}")
+        
+        # 转换为整数并格式化
+        month = int(month_str)
+        day = int(day_str)
+        
+        if month < 1 or month > 12:
+            raise ValueError(f"月份超出范围 1-12: {month}")
+        if day < 1 or day > 31:
+            raise ValueError(f"日期超出范围 1-31: {day}")
+        
+        # 格式化为标准日期格式
+        return f"{current_year}-{month:02d}-{day:02d}"
+        
+    except ValueError as e:
+        raise ValueError(f"日期格式转换失败: {e}")
+    except Exception as e:
+        raise ValueError(f"日期格式转换失败: {e}")
 
 
 class FeishuAPIError(Exception):
@@ -75,6 +114,7 @@ class FeishuClient:
     def search_records(
         self, 
         status_filter: str = "待搭建",
+        date_filter: Optional[str] = None,
         field_names: Optional[List[str]] = None,
         page_size: Optional[int] = None,
         sort_field: str = "日期",
@@ -85,6 +125,7 @@ class FeishuClient:
         
         Args:
             status_filter: 状态过滤条件
+            date_filter: 日期过滤条件，格式如 "2025-09-05"
             field_names: 需要获取的字段名列表
             page_size: 分页大小
             sort_field: 排序字段
@@ -104,19 +145,45 @@ class FeishuClient:
             "Content-Type": "application/json"
         }
         
+        # 构建过滤条件
+        conditions = [
+            {
+                "field_name": self.config.status_field_name,
+                "operator": "is",
+                "value": [status_filter]
+            }
+        ]
+        
+        # 如果有日期过滤条件，添加日期过滤
+        if date_filter:
+            # 将日期转换为时间戳（毫秒）
+            try:
+                # 解析日期字符串 (格式: 2025-09-05)
+                date_obj = datetime.strptime(date_filter, "%Y-%m-%d")
+                # 转换为毫秒时间戳
+                timestamp = int(date_obj.timestamp() * 1000)
+                
+                conditions.append({
+                    "field_name": "日期",
+                    "operator": "is",
+                    "value": ["ExactDate", str(timestamp)]
+                })
+            except ValueError as e:
+                logger.warning(f"日期格式解析失败: {date_filter}, 错误: {e}")
+                # 如果解析失败，仍然尝试原格式
+                conditions.append({
+                    "field_name": "日期",
+                    "operator": "is",
+                    "value": [date_filter]
+                })
+        
         # 构建请求体
         payload = {
             "field_names": field_names or self.config.field_names or ["剧名", "日期"],
             "page_size": page_size or self.config.page_size,
             "filter": {
                 "conjunction": "and",
-                "conditions": [
-                    {
-                        "field_name": self.config.status_field_name,
-                        "operator": "is",
-                        "value": [status_filter]
-                    }
-                ]
+                "conditions": conditions
             },
             "sort": [
                 {
@@ -127,14 +194,24 @@ class FeishuClient:
         }
         
         try:
-            logger.info(f"正在搜索飞书记录，状态过滤: {status_filter}")
+            if date_filter:
+                logger.info(f"正在搜索飞书记录，状态过滤: {status_filter}，日期过滤: {date_filter}")
+            else:
+                logger.info(f"正在搜索飞书记录，状态过滤: {status_filter}")
             response = requests.post(url, json=payload, headers=headers, timeout=30)
             response.raise_for_status()
             
             search_response = FeishuSearchResponse(**response.json())
             
             if search_response.code != 0:
-                raise FeishuAPIError(f"搜索记录失败: {search_response.msg}")
+                # 特殊处理：如果是因为没有找到记录，返回空结果而不是抛出异常
+                if search_response.code == 1254018:
+                    logger.info("未找到符合条件的记录")
+                    # 创建一个空的响应
+                    empty_response = FeishuSearchResponse(code=0, msg="success", data={"items": []})
+                    return empty_response
+                else:
+                    raise FeishuAPIError(f"搜索记录失败: {search_response.msg} (错误码: {search_response.code})")
             
             logger.info(f"成功获取 {len(search_response.items)} 条记录")
             return search_response
@@ -144,35 +221,37 @@ class FeishuClient:
         except Exception as e:
             raise FeishuAPIError(f"搜索记录失败: {str(e)}")
     
-    def get_pending_dramas(self, status_filter: str = "待剪辑") -> List[str]:
+    def get_pending_dramas(self, status_filter: str = "待剪辑", date_filter: Optional[str] = None) -> List[str]:
         """
         获取指定状态的剧名列表
         
         Args:
             status_filter: 状态过滤条件（默认：待剪辑）
+            date_filter: 日期过滤条件，格式如 "2025-09-05"
         
         Returns:
             剧名列表
         """
         try:
-            response = self.search_records(status_filter=status_filter)
+            response = self.search_records(status_filter=status_filter, date_filter=date_filter)
             return response.drama_names
         except Exception as e:
             logger.error(f"获取{status_filter}剧名失败: {str(e)}")
             raise
     
-    def get_pending_dramas_with_records(self, status_filter: str = "待剪辑") -> Dict[str, str]:
+    def get_pending_dramas_with_records(self, status_filter: str = "待剪辑", date_filter: Optional[str] = None) -> Dict[str, str]:
         """
         获取指定状态的剧名和对应的记录ID
         
         Args:
             status_filter: 状态过滤条件（默认：待剪辑）
+            date_filter: 日期过滤条件，格式如 "2025-09-05"
         
         Returns:
             剧名到记录ID的映射字典
         """
         try:
-            response = self.search_records(status_filter=status_filter)
+            response = self.search_records(status_filter=status_filter, date_filter=date_filter)
             drama_records = {}
             for record in response.items:
                 if "剧名" in record.fields and record.fields["剧名"]:

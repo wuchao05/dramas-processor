@@ -13,7 +13,7 @@ min_duration: 300.0 # 5 minutes (--min-sec)
 max_duration: 900.0 # 15 minutes (--max-sec)
 
 # Material generation settings
-count: 1 # Number of materials per drama (--count)
+count: 10 # Number of materials per drama (--count)
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
   # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录

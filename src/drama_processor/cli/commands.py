@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 @click.command("process")
 @click.argument("root_dir", type=click.Path(exists=True, file_okay=False, path_type=Path), required=False)
 # Material generation settings
-@click.option("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+@click.option("--count", type=int, default=10, help="每部短剧生成素材条数量（默认10）")
 @click.option("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
 @click.option("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
 @click.option("--date", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
@@ -434,7 +434,7 @@ def validate_config(config_file: Path):
 # Legacy compatibility command that matches the original script exactly
 @click.command("run", hidden=True)
 @click.argument("root_dir", required=False)
-@click.option("--count", type=int, default=1)
+@click.option("--count", type=int, default=10)
 @click.option("--min-sec", type=float, default=480)
 @click.option("--max-sec", type=float, default=900)
 @click.option("--date", type=str, default=None)
@@ -683,7 +683,7 @@ def feishu_list(ctx, status: str):
 @click.option("--status", type=str, default="待剪辑", help="筛选状态（默认：待剪辑）")
 @click.argument("root_dir", type=click.Path(exists=True, file_okay=False, path_type=Path), required=False)
 # Material generation settings
-@click.option("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+@click.option("--count", type=int, default=10, help="每部短剧生成素材条数量（默认10）")
 @click.option("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
 @click.option("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
 @click.option("--date", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
@@ -742,16 +742,31 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
         sys.exit(1)
     
     try:
-        from ..integrations.feishu_client import FeishuClient
+        from ..integrations.feishu_client import FeishuClient, _convert_date_format
         
         client = FeishuClient(config.feishu)
         
+        # 转换日期格式（如果指定了date参数）
+        feishu_date_filter = None
+        if date:
+            try:
+                feishu_date_filter = _convert_date_format(date)
+                click.echo(f"📅 日期过滤: {date} -> {feishu_date_filter}")
+            except ValueError as e:
+                click.echo(f"⚠️ 日期格式转换失败: {e}", err=True)
+                click.echo("将忽略日期过滤条件，继续处理...")
+        
         # 获取剧名和对应的记录ID
-        drama_records = client.get_pending_dramas_with_records(status_filter=status)
+        drama_records = client.get_pending_dramas_with_records(status_filter=status, date_filter=feishu_date_filter)
         dramas = list(drama_records.keys())
         
+        # 更新显示的过滤条件描述
+        filter_desc = f"状态为 '{status}'"
+        if feishu_date_filter:
+            filter_desc += f" 且日期为 '{feishu_date_filter}'"
+        
         if not dramas:
-            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            click.echo(f"📋 未找到{filter_desc}的剧目")
             return
         
         click.echo("=" * 60)
@@ -874,7 +889,7 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
 @click.option("--status", type=str, default="待剪辑", help="筛选状态（默认：待剪辑）")
 @click.argument("root_dir", type=click.Path(exists=True, file_okay=False, path_type=Path), required=False)
 # Material generation settings
-@click.option("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+@click.option("--count", type=int, default=10, help="每部短剧生成素材条数量（默认10）")
 @click.option("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
 @click.option("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
 @click.option("--date", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
@@ -933,20 +948,35 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
         sys.exit(1)
     
     try:
-        from ..integrations.feishu_client import FeishuClient
+        from ..integrations.feishu_client import FeishuClient, _convert_date_format
         
         client = FeishuClient(config.feishu)
         
+        # 转换日期格式（如果指定了date参数）
+        feishu_date_filter = None
+        if date:
+            try:
+                feishu_date_filter = _convert_date_format(date)
+                click.echo(f"📅 日期过滤: {date} -> {feishu_date_filter}")
+            except ValueError as e:
+                click.echo(f"⚠️ 日期格式转换失败: {e}", err=True)
+                click.echo("将忽略日期过滤条件，继续处理...")
+        
         # 获取剧名和对应的记录ID
-        drama_records = client.get_pending_dramas_with_records(status_filter=status)
+        drama_records = client.get_pending_dramas_with_records(status_filter=status, date_filter=feishu_date_filter)
         dramas = list(drama_records.keys())
         
+        # 更新显示的过滤条件描述
+        filter_desc = f"状态为 '{status}'"
+        if feishu_date_filter:
+            filter_desc += f" 且日期为 '{feishu_date_filter}'"
+        
         if not dramas:
-            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            click.echo(f"📋 未找到{filter_desc}的剧目")
             return
         
         click.echo("=" * 60)
-        click.echo(f"📋 飞书表格中状态为 '{status}' 的剧目")
+        click.echo(f"📋 飞书表格中{filter_desc}的剧目")
         click.echo("=" * 60)
         
         for i, drama in enumerate(dramas, 1):
@@ -1113,7 +1143,7 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
 @click.option("--auto-update", is_flag=True, help="自动更新剧目状态：开始处理时更新为'剪辑中'，完成后更新为'待上传'")
 @click.argument("root_dir", type=click.Path(exists=True, file_okay=False, path_type=Path), required=False)
 # Material generation settings
-@click.option("--count", type=int, default=1, help="每部短剧生成素材条数量（默认1）")
+@click.option("--count", type=int, default=10, help="每部短剧生成素材条数量（默认10）")
 @click.option("--min-sec", type=float, default=480, help="每条素材最小时长（默认480s=8分钟）")
 @click.option("--max-sec", type=float, default=900, help="每条素材最大时长（默认900s=15分钟）")
 @click.option("--date", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
@@ -1172,21 +1202,36 @@ def feishu_sync(ctx, status: str, dry_run: bool, auto_update: bool, root_dir: Op
         sys.exit(1)
     
     try:
-        from ..integrations.feishu_client import FeishuClient
+        from ..integrations.feishu_client import FeishuClient, _convert_date_format
         
         client = FeishuClient(config.feishu)
         
+        # 转换日期格式（如果指定了date参数）
+        feishu_date_filter = None
+        if date:
+            try:
+                feishu_date_filter = _convert_date_format(date)
+                click.echo(f"📅 日期过滤: {date} -> {feishu_date_filter}")
+            except ValueError as e:
+                click.echo(f"⚠️ 日期格式转换失败: {e}", err=True)
+                click.echo("将忽略日期过滤条件，继续处理...")
+        
         if auto_update:
             # 获取剧名和对应的记录ID
-            drama_records = client.get_pending_dramas_with_records(status_filter=status)
+            drama_records = client.get_pending_dramas_with_records(status_filter=status, date_filter=feishu_date_filter)
             dramas = list(drama_records.keys())
         else:
             # 只获取剧名列表
-            dramas = client.get_pending_dramas(status_filter=status)
+            dramas = client.get_pending_dramas(status_filter=status, date_filter=feishu_date_filter)
             drama_records = {}
         
+        # 更新显示的过滤条件描述
+        filter_desc = f"状态为 '{status}'"
+        if feishu_date_filter:
+            filter_desc += f" 且日期为 '{feishu_date_filter}'"
+        
         if not dramas:
-            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            click.echo(f"📋 未找到{filter_desc}的剧目")
             return
         
         click.echo("=" * 60)

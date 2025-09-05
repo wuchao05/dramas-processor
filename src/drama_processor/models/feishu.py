@@ -35,12 +35,12 @@ class FeishuSearchResponse(BaseModel):
     """飞书搜索响应"""
     code: int
     msg: str
-    data: Dict[str, Any]
+    data: Optional[Dict[str, Any]] = None
     
     @property
     def items(self) -> List[FeishuRecord]:
         """获取记录列表"""
-        if self.code != 0 or "data" not in self.__dict__ or "items" not in self.data:
+        if self.code != 0 or self.data is None or "items" not in self.data:
             return []
         
         records = []
