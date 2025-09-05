@@ -104,6 +104,13 @@ class ProcessingConfig(BaseModel):
     # 飞书API配置
     feishu: Optional[FeishuConfig] = Field(default=None, description="飞书API配置")
     
+    # 飞书通知配置
+    feishu_webhook_url: Optional[str] = Field(
+        default="https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        description="飞书群通知webhook地址"
+    )
+    enable_feishu_notification: bool = Field(default=True, description="启用飞书群通知")
+    
     def get_date_str(self) -> str:
         """Get date string for filename generation."""
         if self.date_str:

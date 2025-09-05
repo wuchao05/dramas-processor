@@ -70,6 +70,10 @@ logger = logging.getLogger(__name__)
 @click.option("--filter-threads", type=int, default=max(2, (os.cpu_count() or 4)//2), help="滤镜并行线程数（默认=CPU核数一半，至少2）")
 @click.option("--verbose", is_flag=True, help="详细日志：显示完整的FFmpeg命令和更多调试信息")
 
+# Feishu notification settings
+@click.option("--feishu-webhook", type=str, default=None, help="飞书群通知webhook地址")
+@click.option("--no-feishu-notification", is_flag=True, help="禁用飞书群通知")
+
 @click.pass_context
 def process_command(
     ctx,
@@ -112,6 +116,9 @@ def process_command(
     fast_mode: bool,
     filter_threads: int,
     verbose: bool,
+    # Feishu notification
+    feishu_webhook: Optional[str],
+    no_feishu_notification: bool,
 ):
     """批量遍历根目录短剧并产出素材（集尾对齐/尾部缓存/交互多选/临时目录可控/计时日志增强/提速选项）"""
     
@@ -245,6 +252,9 @@ def process_command(
         full=full,
         no_interactive=no_interactive,
         
+        # Feishu notification settings
+        feishu_webhook_url=feishu_webhook,
+        enable_feishu_notification=not no_feishu_notification,
 
     )
     
@@ -642,8 +652,9 @@ def feishu_command():
 
 @feishu_command.command("list")
 @click.option("--status", type=str, default="待剪辑", help="筛选状态（默认：待剪辑）")
+@click.option("--date", type=str, default=None, help="筛选日期，如 9.6；默认不筛选")
 @click.pass_context
-def feishu_list(ctx, status: str):
+def feishu_list(ctx, status: str, date: Optional[str]):
     """查看飞书表格中的待处理剧目列表。"""
     config = ctx.obj.get("config") or ProcessingConfig()
     
@@ -652,17 +663,33 @@ def feishu_list(ctx, status: str):
         sys.exit(1)
     
     try:
-        from ..integrations.feishu_client import FeishuClient
+        from ..integrations.feishu_client import FeishuClient, _convert_date_format
         
         client = FeishuClient(config.feishu)
-        dramas = client.get_pending_dramas(status_filter=status)
+        
+        # 转换日期格式（如果指定了date参数）
+        feishu_date_filter = None
+        if date:
+            try:
+                feishu_date_filter = _convert_date_format(date)
+                click.echo(f"📅 日期过滤: {date} -> {feishu_date_filter}")
+            except ValueError as e:
+                click.echo(f"⚠️ 日期格式转换失败: {e}", err=True)
+                click.echo("将忽略日期过滤条件，继续查询...")
+        
+        dramas = client.get_pending_dramas(status_filter=status, date_filter=feishu_date_filter)
+        
+        # 更新显示的过滤条件描述
+        filter_desc = f"状态为 '{status}'"
+        if feishu_date_filter:
+            filter_desc += f" 且日期为 '{feishu_date_filter}'"
         
         if not dramas:
-            click.echo(f"📋 未找到状态为 '{status}' 的剧目")
+            click.echo(f"📋 未找到{filter_desc}的剧目")
             return
         
         click.echo("=" * 60)
-        click.echo(f"📋 飞书表格中状态为 '{status}' 的剧目")
+        click.echo(f"📋 飞书表格中{filter_desc}的剧目")
         click.echo("=" * 60)
         
         for i, drama in enumerate(dramas, 1):

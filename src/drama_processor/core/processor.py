@@ -22,6 +22,7 @@ from ..utils.video import probe_video_stream, probe_duration
 from ..utils.interactive import interactive_pick_dramas
 from ..utils.time import human_duration
 from ..utils.history import HistoryManager
+from ..integrations.feishu_notification import create_feishu_notifier, FeishuNotifier
 
 from .analyzer import VideoAnalyzer
 from .segments import SegmentBuilder
@@ -49,6 +50,15 @@ class DramaProcessor:
         self.segment_builder = SegmentBuilder()
         self.encoder = VideoEncoder(config)
         self.history_manager = HistoryManager()
+        
+        # Initialize Feishu notifier if enabled
+        self.feishu_notifier: Optional[FeishuNotifier] = None
+        if config.enable_feishu_notification:
+            self.feishu_notifier = create_feishu_notifier(config)
+            if self.feishu_notifier:
+                logger.info("飞书通知功能已启用")
+            else:
+                logger.warning("飞书通知功能启用失败，将跳过通知")
         
         # Set up random seed if specified
         if config.seed is not None:
@@ -414,6 +424,23 @@ class DramaProcessor:
             logger.warning("No dramas selected for processing")
             return 0, 0
         
+        # Send start notification
+        if self.feishu_notifier:
+            try:
+                dramas_info = []
+                for drama_dir in drama_dirs:
+                    drama_name = os.path.basename(drama_dir.rstrip("/"))
+                    dramas_info.append({
+                        'name': drama_name,
+                        'date': self.config.get_date_str(),
+                        'status': '待剪辑'
+                    })
+                
+                self.feishu_notifier.send_start_notification(dramas_info, self.config)
+                logger.info("已发送开始剪辑通知到飞书群")
+            except Exception as e:
+                logger.warning(f"发送开始通知失败: {e}")
+        
         # Process each drama
         total_materials_planned = 0
         total_materials_done = 0
@@ -529,6 +556,42 @@ class DramaProcessor:
         # Final summary
         overall_time = time.time() - overall_start_time
         logger.info(f"🎯 全部完成。输出根目录：{actual_exports_root} | 总计 {total_materials_done}/{total_materials_planned} 条 | 总用时 {human_duration(overall_time)}")
+        
+        # Send completion notification
+        if self.feishu_notifier:
+            try:
+                # 构建剧目结果信息
+                dramas_results = []
+                for drama_info in successful_dramas:
+                    dramas_results.append({
+                        'name': drama_info['name'],
+                        'date': drama_info['date'],
+                        'status': '待上传',
+                        'completed': drama_info['completed'],
+                        'planned': drama_info['planned'],
+                        'output_dir': drama_info['output_dir']
+                    })
+                
+                # 添加失败的剧目信息（如果有的话）
+                processed_names = {d['name'] for d in successful_dramas}
+                for drama_dir in drama_dirs:
+                    drama_name = os.path.basename(drama_dir.rstrip("/"))
+                    if drama_name not in processed_names:
+                        dramas_results.append({
+                            'name': drama_name,
+                            'date': self.config.get_date_str(),
+                            'status': '失败',
+                            'completed': 0,
+                            'planned': self.config.count,
+                            'output_dir': ''
+                        })
+                
+                self.feishu_notifier.send_completion_notification(
+                    dramas_results, total_materials_done, total_materials_planned, overall_time
+                )
+                logger.info("已发送完成剪辑通知到飞书群")
+            except Exception as e:
+                logger.warning(f"发送完成通知失败: {e}")
         
         # 完成历史记录会话
         self.history_manager.finish_session(session)

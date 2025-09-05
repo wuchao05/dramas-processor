@@ -1,12 +1,12 @@
 {
   "first_session": "2025-09-03T00:45:37.604337",
-  "last_session": "2025-09-04T22:32:34.769510",
-  "total_sessions": 24,
-  "total_dramas": 79,
-  "successful_dramas": 79,
-  "total_materials": 628,
-  "total_size_mb": 290587.57839775085,
-  "total_processing_time": 62303.458048820496,
+  "last_session": "2025-09-05T13:57:13.993026",
+  "total_sessions": 25,
+  "total_dramas": 88,
+  "successful_dramas": 88,
+  "total_materials": 718,
+  "total_size_mb": 330159.46796798706,
+  "total_processing_time": 75215.30617976189,
   "unique_dramas": [
     "丹道无敌，宗门仙子都来求丹",
     "从游戏中提取技能，我发达了",
@@ -61,7 +61,15 @@
     "福星奶团来旺家，帅府全家宠不停",
     "转职老板：全国天才替我打工",
     "都修仙了，谁还谈恋爱",
-    "靠着祖传改符我在乡村爆火了"
+    "靠着祖传改符我在乡村爆火了",
+    "天上的星星会说话",
+    "好一个穿越女",
+    "妙眼小村医",
+    "我的男闺蜜保镖",
+    "摊牌了，妈，你儿子是商业巨头",
+    "离婚后，结拜弟弟要娶我",
+    "草根逆袭记",
+    "这个保镖太无敌了"
   ],
-  "active_days": 2
+  "active_days": 3
 }
