@@ -113,12 +113,12 @@ class FeishuClient:
     
     def search_records(
         self, 
-        status_filter: str = "待搭建",
+        status_filter: str = "待剪辑",
         date_filter: Optional[str] = None,
         field_names: Optional[List[str]] = None,
         page_size: Optional[int] = None,
         sort_field: str = "日期",
-        sort_desc: bool = True
+        sort_desc: bool = False
     ) -> FeishuSearchResponse:
         """
         搜索记录
@@ -260,6 +260,58 @@ class FeishuClient:
             return drama_records
         except Exception as e:
             logger.error(f"获取{status_filter}剧名和记录ID失败: {str(e)}")
+            raise
+    
+    def get_pending_dramas_with_dates(self, status_filter: str = "待剪辑", date_filter: Optional[str] = None) -> Dict[str, Dict[str, str]]:
+        """
+        获取指定状态的剧名和对应的记录信息（包括日期）
+        
+        Args:
+            status_filter: 状态过滤条件（默认：待剪辑）
+            date_filter: 日期过滤条件，格式如 "2025-09-05"
+        
+        Returns:
+            剧名到记录信息的映射字典，每个记录包含 {"record_id": str, "date": str}
+        """
+        try:
+            response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
+                                         field_names=["剧名", "日期"])
+            drama_info = {}
+            for record in response.items:
+                if "剧名" in record.fields and record.fields["剧名"]:
+                    drama_name = record.fields["剧名"][0].text
+                    
+                    # 获取日期信息
+                    drama_date = None
+                    if "日期" in record.fields and record.fields["日期"]:
+                        # 飞书日期字段可能是时间戳格式，需要转换
+                        date_value = record.fields["日期"][0].text
+                        try:
+                            # 尝试解析时间戳（毫秒）
+                            if date_value.isdigit():
+                                timestamp = int(date_value) / 1000  # 转换为秒
+                                date_obj = datetime.fromtimestamp(timestamp)
+                                drama_date = f"{date_obj.month}.{date_obj.day}"
+                            else:
+                                # 如果是日期字符串格式，尝试解析
+                                if "-" in date_value:
+                                    # 格式: 2025-09-06
+                                    date_obj = datetime.strptime(date_value, "%Y-%m-%d")
+                                    drama_date = f"{date_obj.month}.{date_obj.day}"
+                                else:
+                                    # 可能已经是简化格式
+                                    drama_date = date_value
+                        except (ValueError, TypeError) as e:
+                            logger.warning(f"无法解析剧目 '{drama_name}' 的日期 '{date_value}': {e}")
+                            drama_date = date_value  # 使用原始值
+                    
+                    drama_info[drama_name] = {
+                        "record_id": record.record_id,
+                        "date": drama_date or "未知"
+                    }
+            return drama_info
+        except Exception as e:
+            logger.error(f"获取{status_filter}剧名和日期信息失败: {str(e)}")
             raise
     
     def update_record_status(

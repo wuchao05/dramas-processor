@@ -783,9 +783,11 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
                 click.echo(f"⚠️ 日期格式转换失败: {e}", err=True)
                 click.echo("将忽略日期过滤条件，继续处理...")
         
-        # 获取剧名和对应的记录ID
-        drama_records = client.get_pending_dramas_with_records(status_filter=status, date_filter=feishu_date_filter)
-        dramas = list(drama_records.keys())
+        # 获取剧名和对应的记录信息（包括日期）
+        drama_info = client.get_pending_dramas_with_dates(status_filter=status, date_filter=feishu_date_filter)
+        dramas = list(drama_info.keys())
+        # 从新数据结构中提取记录ID映射（保持向后兼容）
+        drama_records = {name: info["record_id"] for name, info in drama_info.items()}
         
         # 更新显示的过滤条件描述
         filter_desc = f"状态为 '{status}'"
@@ -895,9 +897,12 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
         # 初始化处理器（自动开启状态更新回调）
         processor = DramaProcessor(config, status_callback=status_update_callback)
         
+        # 构建剧目日期映射用于传递给处理器
+        drama_dates = {name: info["date"] for name, info in drama_info.items()}
+        
         # 开始处理
         click.echo(f"\n🎬 开始自动剪辑从飞书获取的剧目...")
-        total_done, total_planned = processor.process_all_dramas(str(root_dir))
+        total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
         
         click.echo(f"\n🎯 自动剪辑完成：{total_done}/{total_planned} 条素材生成成功")
         
@@ -1244,12 +1249,15 @@ def feishu_sync(ctx, status: str, dry_run: bool, auto_update: bool, root_dir: Op
                 click.echo("将忽略日期过滤条件，继续处理...")
         
         if auto_update:
-            # 获取剧名和对应的记录ID
-            drama_records = client.get_pending_dramas_with_records(status_filter=status, date_filter=feishu_date_filter)
-            dramas = list(drama_records.keys())
+            # 获取剧名和对应的记录信息（包括日期）
+            drama_info = client.get_pending_dramas_with_dates(status_filter=status, date_filter=feishu_date_filter)
+            dramas = list(drama_info.keys())
+            # 从新数据结构中提取记录ID映射（保持向后兼容）
+            drama_records = {name: info["record_id"] for name, info in drama_info.items()}
         else:
-            # 只获取剧名列表
-            dramas = client.get_pending_dramas(status_filter=status, date_filter=feishu_date_filter)
+            # 即使不自动更新，也需要获取日期信息用于通知
+            drama_info = client.get_pending_dramas_with_dates(status_filter=status, date_filter=feishu_date_filter)
+            dramas = list(drama_info.keys())
             drama_records = {}
         
         # 更新显示的过滤条件描述
@@ -1365,9 +1373,12 @@ def feishu_sync(ctx, status: str, dry_run: bool, auto_update: bool, root_dir: Op
         callback = status_update_callback if auto_update else None
         processor = DramaProcessor(config, status_callback=callback)
         
+        # 构建剧目日期映射用于传递给处理器
+        drama_dates = {name: info["date"] for name, info in drama_info.items()}
+        
         # 开始处理
         click.echo(f"\n🎬 开始处理从飞书获取的剧目...")
-        total_done, total_planned = processor.process_all_dramas(str(root_dir))
+        total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
         
         click.echo(f"\n🎯 飞书同步处理完成：{total_done}/{total_planned} 条素材生成成功")
         

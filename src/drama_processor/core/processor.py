@@ -6,7 +6,7 @@ import random
 import sys
 import time
 from pathlib import Path
-from typing import List, Optional, Tuple, Set, Callable
+from typing import List, Optional, Tuple, Set, Callable, Dict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import Counter
 
@@ -196,19 +196,28 @@ class DramaProcessor:
         
         return project
     
-    def prepare_project_output_dir(self, project: DramaProject, exports_root: str) -> Tuple[str, Optional[str], int, int]:
-        """Prepare output directory and determine how many materials to generate."""
+    def prepare_project_output_dir(self, project: DramaProject, exports_root: str, drama_date: Optional[str] = None) -> Tuple[str, Optional[str], int, int]:
+        """Prepare output directory and determine how many materials to generate.
+        
+        Args:
+            project: Drama project
+            exports_root: Base export directory  
+            drama_date: Optional specific date for this drama (format: "9.6")
+        """
         drama_name = project.name
+        
+        # Use drama-specific date if provided, otherwise fall back to config date
+        date_str = drama_date or self.config.date_str
         
         # Check if this is an explicit include (fresh run) or continuation
         if self.config.include and drama_name in self.config.include:
             # Fresh run - create new directory
-            out_dir, run_suffix = prepare_export_dir(exports_root, drama_name, self.config.date_str)
+            out_dir, run_suffix = prepare_export_dir(exports_root, drama_name, date_str)
             start_index = 1
             total_to_make = self.config.count
         else:
             # Check for existing materials and potentially continue
-            latest_dir, run_suffix = get_latest_export_dir(exports_root, drama_name, self.config.date_str)
+            latest_dir, run_suffix = get_latest_export_dir(exports_root, drama_name, date_str)
             if latest_dir:
                 existing_count = count_existing_materials(latest_dir)
                 if existing_count >= self.config.count:
@@ -305,8 +314,18 @@ class DramaProcessor:
     
     def process_project_materials(self, project: DramaProject, out_dir: str, 
                                 run_suffix: Optional[str], start_index: int, 
-                                total_to_make: int, temp_root: str) -> Tuple[int, float]:
-        """Process all materials for a project."""
+                                total_to_make: int, temp_root: str, drama_date: Optional[str] = None) -> Tuple[int, float]:
+        """Process all materials for a project.
+        
+        Args:
+            project: Drama project
+            out_dir: Output directory
+            run_suffix: Optional run suffix
+            start_index: Starting material index
+            total_to_make: Number of materials to make
+            temp_root: Temporary directory root
+            drama_date: Optional specific date for this drama (format: "9.6")
+        """
         if total_to_make <= 0:
             return 0, 0.0
         
@@ -314,7 +333,9 @@ class DramaProcessor:
         
         # Generate start points
         start_points = self.generate_start_points(project, total_to_make)
-        date_str = self.config.get_date_str()
+        
+        # Use drama-specific date if provided, otherwise fall back to config date
+        date_str = drama_date or self.config.get_date_str()
         
         # Prepare tasks
         tasks = []
@@ -388,8 +409,14 @@ class DramaProcessor:
         
         return completed_count, project_time
     
-    def process_all_dramas(self, root_dir: str) -> Tuple[int, int]:
-        """Process all dramas - main entry point equivalent to main() in dramas_process.py."""
+    def process_all_dramas(self, root_dir: str, drama_dates: Optional[Dict[str, str]] = None) -> Tuple[int, int]:
+        """
+        Process all dramas - main entry point equivalent to main() in dramas_process.py.
+        
+        Args:
+            root_dir: 根目录路径
+            drama_dates: 可选的剧目日期映射，格式为 {剧名: 日期字符串}
+        """
         overall_start_time = time.time()
         
         # 创建历史记录会话
@@ -402,10 +429,17 @@ class DramaProcessor:
             exports_root = os.path.join(root_dir, "exports")
         
         # Handle date-based directory structure
-        actual_exports_root = exports_root
-        if self.config.date_str:
-            parent_dir = os.path.dirname(os.path.abspath(exports_root))
-            actual_exports_root = os.path.join(parent_dir, f"{self.config.date_str}导出")
+        # If we have drama_dates mapping, we'll create date-specific directories later
+        # Otherwise use the config date as before
+        if drama_dates:
+            # When using drama-specific dates, use the base exports_root
+            actual_exports_root = exports_root
+        else:
+            # Use the original logic for backward compatibility
+            actual_exports_root = exports_root
+            if self.config.date_str:
+                parent_dir = os.path.dirname(os.path.abspath(exports_root))
+                actual_exports_root = os.path.join(parent_dir, f"{self.config.date_str}导出")
         
         os.makedirs(actual_exports_root, exist_ok=True)
         
@@ -424,15 +458,48 @@ class DramaProcessor:
             logger.warning("No dramas selected for processing")
             return 0, 0
         
+        # Sort dramas by date if drama_dates is provided
+        if drama_dates:
+            def get_drama_sort_key(drama_dir: str) -> tuple:
+                """获取剧目排序键值，用于按日期排序"""
+                drama_name = os.path.basename(drama_dir.rstrip("/"))
+                drama_date = drama_dates.get(drama_name, "9999.12.31")  # 默认值确保无日期的排在最后
+                
+                # 解析日期字符串为可排序的格式
+                try:
+                    # 处理 "M.D" 格式，如 "9.6" -> (9, 6)
+                    if "." in drama_date:
+                        month, day = drama_date.split(".", 1)
+                        return (int(month), int(day), drama_name)
+                    # 处理其他格式，暂时按字符串排序
+                    else:
+                        return (999, 999, drama_date, drama_name)
+                except (ValueError, AttributeError):
+                    # 解析失败，排在最后
+                    return (999, 999, drama_date, drama_name)
+            
+            # 按日期排序剧目
+            drama_dirs.sort(key=get_drama_sort_key)
+            
+            # 记录排序结果
+            if logger.isEnabledFor(logging.INFO):
+                logger.info("📅 按日期排序处理剧目:")
+                for drama_dir in drama_dirs:
+                    drama_name = os.path.basename(drama_dir.rstrip("/"))
+                    drama_date = drama_dates.get(drama_name, "未知日期")
+                    logger.info(f"  - {drama_name} (日期: {drama_date})")
+        
         # Send start notification
         if self.feishu_notifier:
             try:
                 dramas_info = []
                 for drama_dir in drama_dirs:
                     drama_name = os.path.basename(drama_dir.rstrip("/"))
+                    # 使用传入的日期信息，如果没有则使用配置中的日期
+                    start_drama_date = drama_dates.get(drama_name) if drama_dates else self.config.get_date_str()
                     dramas_info.append({
                         'name': drama_name,
-                        'date': self.config.get_date_str(),
+                        'date': start_drama_date,
                         'status': '待剪辑'
                     })
                 
@@ -457,8 +524,22 @@ class DramaProcessor:
                     logger.warning(f"Skipping {project.name}: no episodes found")
                     continue
                 
+                # Get drama-specific date if available
+                drama_date = drama_dates.get(project.name) if drama_dates else None
+                
+                # Determine the export directory for this drama
+                if drama_date and drama_dates:
+                    # Create date-specific export directory
+                    parent_dir = os.path.dirname(os.path.abspath(actual_exports_root))
+                    date_export_dir = os.path.join(parent_dir, f"{drama_date}导出")
+                    os.makedirs(date_export_dir, exist_ok=True)
+                    drama_export_root = date_export_dir
+                else:
+                    # Use the common export directory
+                    drama_export_root = actual_exports_root
+                
                 # Prepare output directory
-                result = self.prepare_project_output_dir(project, actual_exports_root)
+                result = self.prepare_project_output_dir(project, drama_export_root, drama_date)
                 if result[0] is None:  # Skip this drama
                     continue
                 
@@ -483,7 +564,7 @@ class DramaProcessor:
                 
                 # Process materials
                 completed, project_time = self.process_project_materials(
-                    project, out_dir, run_suffix, start_index, total_to_make, temp_root
+                    project, out_dir, run_suffix, start_index, total_to_make, temp_root, drama_date
                 )
                 total_materials_done += completed
                 
@@ -512,7 +593,7 @@ class DramaProcessor:
                         'completed': completed,
                         'planned': total_to_make,
                         'output_dir': out_dir,
-                        'date': self.config.get_date_str(),
+                        'date': drama_date or self.config.get_date_str(),
                         'run_suffix': run_suffix,
                         'source_path': drama_dir,
                         'materials': materials_list,
@@ -536,7 +617,7 @@ class DramaProcessor:
                         'completed': 0,
                         'planned': total_to_make,
                         'output_dir': out_dir,
-                        'date': self.config.get_date_str(),
+                        'date': drama_date or self.config.get_date_str(),
                         'run_suffix': run_suffix,
                         'source_path': drama_dir,
                         'materials': [],
@@ -577,9 +658,11 @@ class DramaProcessor:
                 for drama_dir in drama_dirs:
                     drama_name = os.path.basename(drama_dir.rstrip("/"))
                     if drama_name not in processed_names:
+                        # Get drama-specific date if available
+                        failed_drama_date = drama_dates.get(drama_name) if drama_dates else None
                         dramas_results.append({
                             'name': drama_name,
-                            'date': self.config.get_date_str(),
+                            'date': failed_drama_date or self.config.get_date_str(),
                             'status': '失败',
                             'completed': 0,
                             'planned': self.config.count,

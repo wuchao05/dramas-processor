@@ -1,0 +1,1325 @@
+{
+  "session_id": "2025-09-06_13-27-52",
+  "start_time": "2025-09-06T13:27:52.866793",
+  "end_time": "2025-09-06T15:06:58.531625",
+  "dramas": [
+    {
+      "name": "在我不当后悔文男主后",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/在我不当后悔文男主后",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/在我不当后悔文男主后",
+      "date_str": "9.6",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 504.9621915817261,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.284239"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 470.45813369750977,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.288646"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 148.04760074615479,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.288893"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 464.44260692596436,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.289034"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 547.9291801452637,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.289247"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 507.15781021118164,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.289466"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 506.1789360046387,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.289647"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 485.6128959655762,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.290142"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 505.91665840148926,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.290602"
+        },
+        {
+          "filename": "9.6-在我不当后悔文男主后-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 498.01080417633057,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:41:31.290673"
+        }
+      ],
+      "total_duration": 7732.690336000002,
+      "processing_time": 816.349151134491,
+      "start_time": "2025-09-06T13:27:53.591474",
+      "end_time": "2025-09-06T13:41:29.940625",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "山村开局娶村花",
+          "烟花易冷心易逝",
+          "在我不当后悔文男主后",
+          "重生后，嫡兄们都后悔了",
+          "天雷滚滚！我是千面雀后",
+          "我，非你不可",
+          "穿书自救日记：危险夫君惹不起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "天雷滚滚！我是千面雀后",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/天雷滚滚！我是千面雀后",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/天雷滚滚！我是千面雀后",
+      "date_str": "9.6",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 519.0670108795166,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.347344"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 513.5495481491089,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.352190"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 555.4995002746582,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.352485"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 505.3449773788452,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.352736"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 324.34019947052,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.352973"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 506.16633224487305,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.353246"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 534.4494848251343,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.353521"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 531.0020570755005,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.353766"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 550.8471851348877,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.354013"
+        },
+        {
+          "filename": "9.6-天雷滚滚！我是千面雀后-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 454.5917739868164,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T13:56:02.354074"
+        }
+      ],
+      "total_duration": 5025.92,
+      "processing_time": 868.9384880065918,
+      "start_time": "2025-09-06T13:41:31.299991",
+      "end_time": "2025-09-06T13:56:00.238479",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "山村开局娶村花",
+          "烟花易冷心易逝",
+          "在我不当后悔文男主后",
+          "重生后，嫡兄们都后悔了",
+          "天雷滚滚！我是千面雀后",
+          "我，非你不可",
+          "穿书自救日记：危险夫君惹不起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "山村开局娶村花",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/山村开局娶村花",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/山村开局娶村花",
+      "date_str": "9.6",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.6-山村开局娶村花-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 543.9662628173828,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.102710"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 483.41548252105713,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.107813"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 507.64758586883545,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.108317"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 486.8443088531494,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.108984"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 520.2755041122437,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.109628"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 465.07310962677,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.109820"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 479.18058490753174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.110016"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 514.0306406021118,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.110208"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 68.86367416381836,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.110367"
+        },
+        {
+          "filename": "9.6-山村开局娶村花-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 471.9054899215698,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:09:42.110404"
+        }
+      ],
+      "total_duration": 5991.3490440000005,
+      "processing_time": 817.5398547649384,
+      "start_time": "2025-09-06T13:56:02.358426",
+      "end_time": "2025-09-06T14:09:39.898281",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "山村开局娶村花",
+          "烟花易冷心易逝",
+          "在我不当后悔文男主后",
+          "重生后，嫡兄们都后悔了",
+          "天雷滚滚！我是千面雀后",
+          "我，非你不可",
+          "穿书自救日记：危险夫君惹不起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "我，非你不可",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/我，非你不可",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/我，非你不可",
+      "date_str": "9.6",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.6-我，非你不可-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 520.2928295135498,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.906819"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 312.85210037231445,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.910217"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 546.144923210144,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.910394"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 519.5576238632202,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.910552"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 490.09356117248535,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.910668"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 512.9291906356812,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.910790"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 473.8484411239624,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.910909"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 528.1394777297974,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.911020"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 505.52225971221924,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.911139"
+        },
+        {
+          "filename": "9.6-我，非你不可-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 524.9248895645142,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:24:11.911192"
+        }
+      ],
+      "total_duration": 5361.340431,
+      "processing_time": 868.5186343193054,
+      "start_time": "2025-09-06T14:09:42.114011",
+      "end_time": "2025-09-06T14:24:10.632645",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "山村开局娶村花",
+          "烟花易冷心易逝",
+          "在我不当后悔文男主后",
+          "重生后，嫡兄们都后悔了",
+          "天雷滚滚！我是千面雀后",
+          "我，非你不可",
+          "穿书自救日记：危险夫君惹不起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "烟花易冷心易逝",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/烟花易冷心易逝",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/烟花易冷心易逝",
+      "date_str": "9.6",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 107.43334293365479,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.401628"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 500.74199771881104,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.406331"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 498.71534538269043,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.406679"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 526.0583353042603,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.407048"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 526.7691068649292,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.407438"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 481.21427822113037,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.407675"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 497.0901851654053,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.407918"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 494.45258712768555,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.408158"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 524.8868436813354,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.408388"
+        },
+        {
+          "filename": "9.6-烟花易冷心易逝-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 494.63615226745605,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:37:48.408458"
+        }
+      ],
+      "total_duration": 4680.530815000001,
+      "processing_time": 815.2792179584503,
+      "start_time": "2025-09-06T14:24:11.913983",
+      "end_time": "2025-09-06T14:37:47.193201",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "山村开局娶村花",
+          "烟花易冷心易逝",
+          "在我不当后悔文男主后",
+          "重生后，嫡兄们都后悔了",
+          "天雷滚滚！我是千面雀后",
+          "我，非你不可",
+          "穿书自救日记：危险夫君惹不起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "穿书自救日记：危险夫君惹不起",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/穿书自救日记：危险夫君惹不起",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/穿书自救日记：危险夫君惹不起",
+      "date_str": "9.6",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 531.3402252197266,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.515496"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 530.1664886474609,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.520979"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 545.2186231613159,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.521226"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 497.7577819824219,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.521402"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 517.6841430664062,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.521608"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 579.1396932601929,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.521802"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 529.5213890075684,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.522110"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 534.3521881103516,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.522314"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 519.8254642486572,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.522474"
+        },
+        {
+          "filename": "9.6-穿书自救日记：危险夫君惹不起-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 510.15916538238525,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T14:53:11.522507"
+        }
+      ],
+      "total_duration": 6647.320000000001,
+      "processing_time": 921.8110427856445,
+      "start_time": "2025-09-06T14:37:48.412485",
+      "end_time": "2025-09-06T14:53:10.223528",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "山村开局娶村花",
+          "烟花易冷心易逝",
+          "在我不当后悔文男主后",
+          "重生后，嫡兄们都后悔了",
+          "天雷滚滚！我是千面雀后",
+          "我，非你不可",
+          "穿书自救日记：危险夫君惹不起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生后，嫡兄们都后悔了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生后，嫡兄们都后悔了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/重生后，嫡兄们都后悔了",
+      "date_str": "9.6",
+      "run_suffix": null,
+      "planned_count": 10,
+      "completed_count": 10,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 518.6270751953125,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.089240"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 102.59759712219238,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.090734"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 548.8107967376709,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.091198"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 513.5251369476318,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.091477"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 508.7296314239502,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.091746"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 544.205135345459,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.091943"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 482.81127643585205,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.092180"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 534.7887620925903,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.092465"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 471.7437162399292,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.092738"
+        },
+        {
+          "filename": "9.6-重生后，嫡兄们都后悔了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 497.459584236145,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-06T15:06:58.092797"
+        }
+      ],
+      "total_duration": 5217.683920999999,
+      "processing_time": 824.4293749332428,
+      "start_time": "2025-09-06T14:53:11.525754",
+      "end_time": "2025-09-06T15:06:55.955129",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 5,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 10,
+        "date_str": null,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "include": [
+          "山村开局娶村花",
+          "烟花易冷心易逝",
+          "在我不当后悔文男主后",
+          "重生后，嫡兄们都后悔了",
+          "天雷滚滚！我是千面雀后",
+          "我，非你不可",
+          "穿书自救日记：危险夫君惹不起"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 7,
+  "successful_dramas": 7,
+  "total_materials": 70,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 5932.865763902664,
+  "total_size_mb": 33779.54487609863
+}

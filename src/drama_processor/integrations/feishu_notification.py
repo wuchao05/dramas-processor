@@ -30,6 +30,27 @@ class FeishuNotifier:
         self._last_request_time = 0
         self._min_request_interval = 1.0  # 最小请求间隔1秒，防抖
     
+    def _parse_date_for_sort(self, date_str: str) -> tuple:
+        """
+        解析日期字符串为可排序的元组
+        
+        Args:
+            date_str: 日期字符串，如 "9.6", "10.1" 等
+            
+        Returns:
+            可排序的元组 (月, 日)
+        """
+        try:
+            if "." in date_str:
+                month, day = date_str.split(".", 1)
+                return (int(month), int(day))
+            else:
+                # 其他格式，按字符串排序
+                return (999, 999)
+        except (ValueError, AttributeError):
+            # 解析失败，排在最后
+            return (999, 999)
+    
     def _debounced_request(self, data: Dict[str, Any]) -> bool:
         """
         防抖请求函数
@@ -98,13 +119,28 @@ class FeishuNotifier:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             date_str = config.get_date_str() or datetime.now().strftime("%m.%d")
             
-            # 构建剧目列表文本
-            drama_list_text = ""
-            for i, drama in enumerate(dramas_info, 1):
-                drama_name = drama.get('name', '未知')
+            # 按日期分组剧目
+            dramas_by_date = {}
+            for drama in dramas_info:
                 drama_date = drama.get('date', date_str)
-                drama_status = drama.get('status', '待剪辑')
-                drama_list_text += f"{i}. {drama_name} (日期: {drama_date}, 状态: {drama_status})\n"
+                if drama_date not in dramas_by_date:
+                    dramas_by_date[drama_date] = []
+                dramas_by_date[drama_date].append(drama)
+            
+            # 按日期排序
+            sorted_dates = sorted(dramas_by_date.keys(), key=lambda x: self._parse_date_for_sort(x))
+            
+            # 构建按日期分组的剧目列表文本
+            drama_list_text = ""
+            overall_index = 1
+            for date_key in sorted_dates:
+                dramas_for_date = dramas_by_date[date_key]
+                drama_list_text += f"\n📅 {date_key} ({len(dramas_for_date)}部):\n"
+                for drama in dramas_for_date:
+                    drama_name = drama.get('name', '未知')
+                    drama_status = drama.get('status', '待剪辑')
+                    drama_list_text += f"  {overall_index}. {drama_name} (状态: {drama_status})\n"
+                    overall_index += 1
             
             # 构建通知内容
             content_text = f"""🎬 开始批量剪辑通知
@@ -155,23 +191,49 @@ class FeishuNotifier:
             successful_dramas = [d for d in dramas_results if d.get('completed', 0) > 0]
             failed_dramas = [d for d in dramas_results if d.get('completed', 0) == 0]
             
-            # 构建成功剧目列表
-            success_list_text = ""
-            for i, drama in enumerate(successful_dramas, 1):
-                drama_name = drama.get('name', '未知')
+            # 按日期分组成功剧目
+            success_by_date = {}
+            for drama in successful_dramas:
                 drama_date = drama.get('date', '未知')
-                completed = drama.get('completed', 0)
-                planned = drama.get('planned', 0)
-                status_emoji = "✅" if completed == planned else "⚠️"
-                success_list_text += f"{i}. {status_emoji} {drama_name} ({completed}/{planned}条, 日期: {drama_date})\n"
+                if drama_date not in success_by_date:
+                    success_by_date[drama_date] = []
+                success_by_date[drama_date].append(drama)
             
-            # 构建失败剧目列表
+            # 按日期排序并构建成功剧目列表
+            success_list_text = ""
+            overall_success_index = 1
+            sorted_success_dates = sorted(success_by_date.keys(), key=lambda x: self._parse_date_for_sort(x))
+            for date_key in sorted_success_dates:
+                dramas_for_date = success_by_date[date_key]
+                success_list_text += f"\n📅 {date_key} ({len(dramas_for_date)}部):\n"
+                for drama in dramas_for_date:
+                    drama_name = drama.get('name', '未知')
+                    completed = drama.get('completed', 0)
+                    planned = drama.get('planned', 0)
+                    status_emoji = "✅" if completed == planned else "⚠️"
+                    success_list_text += f"  {overall_success_index}. {status_emoji} {drama_name} ({completed}/{planned}条)\n"
+                    overall_success_index += 1
+            
+            # 按日期分组失败剧目
             failed_list_text = ""
             if failed_dramas:
-                for i, drama in enumerate(failed_dramas, 1):
-                    drama_name = drama.get('name', '未知')
+                failed_by_date = {}
+                for drama in failed_dramas:
                     drama_date = drama.get('date', '未知')
-                    failed_list_text += f"{i}. ❌ {drama_name} (日期: {drama_date})\n"
+                    if drama_date not in failed_by_date:
+                        failed_by_date[drama_date] = []
+                    failed_by_date[drama_date].append(drama)
+                
+                # 按日期排序并构建失败剧目列表
+                overall_failed_index = 1
+                sorted_failed_dates = sorted(failed_by_date.keys(), key=lambda x: self._parse_date_for_sort(x))
+                for date_key in sorted_failed_dates:
+                    dramas_for_date = failed_by_date[date_key]
+                    failed_list_text += f"\n📅 {date_key} ({len(dramas_for_date)}部):\n"
+                    for drama in dramas_for_date:
+                        drama_name = drama.get('name', '未知')
+                        failed_list_text += f"  {overall_failed_index}. ❌ {drama_name}\n"
+                        overall_failed_index += 1
             
             # 构建时间显示
             if processing_hours >= 1:
