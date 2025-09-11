@@ -1,10 +1,78 @@
 """Configuration models."""
 
 import os
+import re
 from datetime import datetime
 from typing import List, Optional, Union, Tuple
 from pydantic import BaseModel, Field, validator
 from .feishu import FeishuConfig
+
+
+class BrandTextRange(BaseModel):
+    """Brand text range configuration."""
+    
+    range: str = Field(description="Material number range (e.g., '01-03', '01,02,03', '01')")
+    text: str = Field(description="Brand text for this range")
+
+
+class BrandTextMapping(BaseModel):
+    """Advanced brand text mapping configuration."""
+    
+    mode: str = Field(default="range", description="Mapping mode: 'range' or 'cycle'")
+    ranges: Optional[List[BrandTextRange]] = Field(default=None, description="Range mappings for 'range' mode")
+    cycle_texts: Optional[List[str]] = Field(default=None, description="Texts for 'cycle' mode")
+    default_text: str = Field(default="小红看剧", description="Default text when no range matches")
+    
+    def parse_range(self, range_str: str) -> List[int]:
+        """Parse range string to list of material numbers."""
+        numbers = []
+        
+        # Handle comma-separated numbers: "01,02,03"
+        if ',' in range_str:
+            parts = [part.strip() for part in range_str.split(',')]
+            for part in parts:
+                try:
+                    numbers.append(int(part))
+                except ValueError:
+                    continue
+        
+        # Handle range: "01-03" 
+        elif '-' in range_str:
+            try:
+                start, end = range_str.split('-', 1)
+                start_num = int(start.strip())
+                end_num = int(end.strip())
+                numbers.extend(range(start_num, end_num + 1))
+            except ValueError:
+                pass
+        
+        # Handle single number: "01"
+        else:
+            try:
+                numbers.append(int(range_str.strip()))
+            except ValueError:
+                pass
+        
+        return numbers
+    
+    def get_text_for_material(self, material_idx: int) -> str:
+        """Get brand text for specific material index."""
+        if self.mode == "range" and self.ranges:
+            # Range mapping mode
+            for range_config in self.ranges:
+                valid_numbers = self.parse_range(range_config.range)
+                if material_idx in valid_numbers:
+                    return range_config.text
+            # No range matched, use default
+            return self.default_text
+            
+        elif self.mode == "cycle" and self.cycle_texts:
+            # Cycle mode
+            text_index = (material_idx - 1) % len(self.cycle_texts)
+            return self.cycle_texts[text_index]
+        
+        # Fallback to default
+        return self.default_text
 
 
 class VideoConfig(BaseModel):
@@ -41,7 +109,7 @@ class ProcessingConfig(BaseModel):
     target_fps: int = Field(default=60, description="Target FPS")
     smart_fps: bool = Field(default=True, description="Enable smart FPS adaptation")
     fast_mode: bool = Field(default=False, description="Enable fast mode")
-    filter_threads: int = Field(default=max(2, (os.cpu_count() or 4)//2), description="Filter processing threads")
+    filter_threads: int = Field(default=max(4, min(8, (os.cpu_count() or 4) * 3 // 4)), description="Filter processing threads")
     verbose: bool = Field(default=False, description="Enable verbose logging with detailed FFmpeg commands")
     
     # Duration settings
@@ -89,11 +157,21 @@ class ProcessingConfig(BaseModel):
     # Font settings
     font_file: Optional[str] = Field(default=None, description="Font file path")
     
+    # Watermark settings
+    watermark_path: Optional[str] = Field(default="assets/watermark-xiaohong.png", description="Watermark image path")
+    enable_watermark: bool = Field(default=False, description="Enable watermark overlay")
+    enable_brand_text: bool = Field(default=True, description="Enable brand text overlay")
+    brand_text: str = Field(default="小红看剧", description="Brand text content (default text, backward compatible)")
+    brand_text_mapping: Optional['BrandTextMapping'] = Field(default=None, description="Advanced brand text mapping configuration")
+    
     # Selection settings
     include: Optional[List[str]] = Field(default=None, description="Include specific dramas")
     exclude: Optional[List[str]] = Field(default=None, description="Exclude specific dramas")
     full: bool = Field(default=False, description="Process all dramas")
     no_interactive: bool = Field(default=False, description="Disable interactive selection")
+    
+    # Deduplication settings
+    enable_deduplication: bool = Field(default=False, description="Enable cut point deduplication")
     
     # Cover settings - REMOVED
     
@@ -148,6 +226,15 @@ class ProcessingConfig(BaseModel):
         actual_source = self.get_actual_source_dir()
         # Go up one level from the source directory to get the base directory
         return os.path.dirname(actual_source)
+    
+    def get_brand_text_for_material(self, material_idx: int) -> str:
+        """Get brand text for specific material index."""
+        # Use advanced mapping if available
+        if self.brand_text_mapping:
+            return self.brand_text_mapping.get_text_for_material(material_idx)
+        
+        # Fallback to single brand_text (backward compatibility)
+        return self.brand_text
     
     @validator("min_duration", "max_duration")
     def validate_duration(cls, v: float) -> float:

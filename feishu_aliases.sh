@@ -17,12 +17,11 @@ fscut() {
 # 保留单独的子命令别名（向后兼容）
 fscutselect() { ./feishu_quick.sh select "$@"; } # 交互选择剧目（支持参数）
 fscutlist() { ./feishu_quick.sh list "$@"; }     # 查看待处理列表（支持参数）
-fscutsync() { ./feishu_quick.sh sync "$@"; }     # 批量同步处理（支持参数）
 
 # 常用组合别名
 alias fscutfast='./feishu_quick.sh run --fast --jobs 4'           # 快速处理（4并发）
 alias fscutquick='./feishu_quick.sh select --fast --jobs 2'       # 快速选择（2并发）
-alias fscutpreview='./feishu_quick.sh sync --dry-run'             # 预览同步
+alias fscutpreview='./feishu_quick.sh select --status "待剪辑"'     # 预览待处理剧目
 alias fscuthigh='./feishu_quick.sh run --jobs 4 --count 15'       # 高产出（15条/剧，4并发）
 
 # 状态查看别名
@@ -37,17 +36,15 @@ alias fscuthelp='echo "
   fscut run    - 剪辑处理所有待剪辑
   fscut select - 交互选择剧目
   fscut list   - 查看待处理列表
-  fscut sync   - 批量同步处理
   
 向后兼容别名:
   fscutselect  - 等同于 fscut select
   fscutlist    - 等同于 fscut list
-  fscutsync    - 等同于 fscut sync
   
 常用组合:
   fscutfast    - 快速处理（4并发）
   fscutquick   - 快速选择（2并发）  
-  fscutpreview - 预览同步
+  fscutpreview - 预览待处理剧目
   fscuthigh    - 高产出（15条/剧）
   
 状态查看:

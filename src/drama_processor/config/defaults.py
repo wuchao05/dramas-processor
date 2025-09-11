@@ -38,9 +38,9 @@ def get_default_config() -> ProcessingConfig:
     if default_font:
         config.font_file = default_font
     
-    # Set filter threads based on CPU count
+    # Set filter threads based on CPU count (75% of cores, min 4, max 8)
     cpu_count = os.cpu_count() or 4
-    config.filter_threads = max(2, cpu_count // 2)
+    config.filter_threads = max(4, min(8, cpu_count * 3 // 4))
     
     return config
 

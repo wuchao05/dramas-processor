@@ -5,7 +5,6 @@
 #   ./feishu_quick.sh              # 自动处理所有"待剪辑"状态的剧目
 #   ./feishu_quick.sh select       # 交互式选择特定剧目
 #   ./feishu_quick.sh list         # 仅查看待处理列表
-#   ./feishu_quick.sh sync         # 批量同步处理（需要--auto-update）
 
 set -e  # 遇到错误立即退出
 
@@ -31,21 +30,19 @@ show_help() {
     echo "  run     (默认) 自动处理所有'待剪辑'状态的剧目"
     echo "  select  交互式选择特定剧目进行处理"
     echo "  list    仅查看飞书表格中的待处理列表"
-    echo "  sync    批量同步处理（支持预览模式）"
     echo ""
     echo "常用选项:"
     echo "  --fast        快速模式（关闭色彩扰动）"
     echo "  --jobs N      并发数（默认1，建议2-4）"
     echo "  --count N     每剧生成素材数（默认10）"
     echo "  --status S    筛选状态（默认'待剪辑'）"
-    echo "  --dry-run     预览模式（仅sync命令）"
     echo "  --help        显示帮助信息"
     echo ""
     echo "示例:"
     echo "  $0                           # 自动处理所有待剪辑剧目"
     echo "  $0 select --fast --jobs 4    # 快速模式选择剧目，4并发"
     echo "  $0 list --status 剪辑中      # 查看'剪辑中'状态的剧目"
-    echo "  $0 sync --dry-run            # 预览同步处理"
+    echo "  $0 select --status 待剪辑     # 预览待处理剧目"
 }
 
 # 检查是否安装了drama-processor
@@ -63,7 +60,7 @@ EXTRA_ARGS=()
 
 while [[ $# -gt 0 ]]; do
     case $1 in
-        run|select|list|sync)
+        run|select|list)
             COMMAND="$1"
             shift
             ;;
@@ -87,14 +84,6 @@ while [[ $# -gt 0 ]]; do
             EXTRA_ARGS+=("--status" "$2")
             shift 2
             ;;
-        --dry-run)
-            if [[ "$COMMAND" == "sync" ]]; then
-                EXTRA_ARGS+=("--dry-run")
-            else
-                echo -e "${YELLOW}⚠️ --dry-run 选项仅适用于 sync 命令${NC}"
-            fi
-            shift
-            ;;
         *)
             # 其他参数直接传递
             EXTRA_ARGS+=("$1")
@@ -114,11 +103,6 @@ if [[ ${#EXTRA_ARGS[@]} -gt 0 ]]; then
 fi
 echo ""
 
-# 特殊处理：为sync命令自动添加--auto-update（除非是dry-run）
-if [[ "$COMMAND" == "sync" ]] && [[ ! " ${EXTRA_ARGS[*]} " =~ " --dry-run " ]]; then
-    EXTRA_ARGS+=("--auto-update")
-    echo -e "${YELLOW}💡 自动添加 --auto-update 参数（sync命令推荐）${NC}"
-fi
 
 # 执行命令
 echo -e "${GREEN}执行命令...${NC}"

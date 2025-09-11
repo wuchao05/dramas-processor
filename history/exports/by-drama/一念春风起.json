@@ -106,5 +106,17 @@
     "completed": true,
     "size_mb": 59.02186298370361,
     "processing_time": 13.844422340393066
+  },
+  {
+    "session_id": "2025-09-06_17-15-29",
+    "date": "2025-09-06",
+    "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材/一念春风起",
+    "materials": [
+      "9.6-一念春风起-xh-01.mp4"
+    ],
+    "materials_count": 1,
+    "completed": true,
+    "size_mb": 261.4615478515625,
+    "processing_time": 55.83983397483826
   }
 ]

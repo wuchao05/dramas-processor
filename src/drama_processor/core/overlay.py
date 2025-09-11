@@ -2,7 +2,8 @@
 
 import os
 import random
-from typing import List
+from pathlib import Path
+from typing import List, Optional
 
 from ..utils.files import write_text_file
 
@@ -10,10 +11,11 @@ from ..utils.files import write_text_file
 class TextOverlay:
     """Handles text overlay generation for videos."""
     
-    def __init__(self):
+    def __init__(self, watermark_path: Optional[str] = None):
         self.title_colors = [
             "#FFA500", "#FFB347", "#FF8C00", "#FFD580", "#E69500", "#FFAE42",
         ]
+        self.watermark_path = watermark_path
     
     def to_vertical(self, text: str) -> str:
         """Convert horizontal text to vertical layout."""
@@ -69,6 +71,24 @@ class TextOverlay:
         
         return overlays
     
+    def build_watermark_overlay(self, ref_w: int, ref_h: int) -> Optional[str]:
+        """Build watermark overlay filter string for use in filter chain."""
+        if not self.watermark_path or not os.path.exists(self.watermark_path):
+            return None
+            
+        # Calculate watermark size (8% of video width, maintain aspect ratio)
+        watermark_width = int(ref_w * 0.08)
+        margin = 15  # 15px margin from edges
+        
+        # Create overlay filter that scales and positions watermark in top-left corner
+        # This will be added to the main filter chain
+        watermark_filter = (
+            f"overlay='{self.watermark_path}':x={margin}:y={margin}:"
+            f"eval=init:format=auto:shortest=1"
+        )
+        
+        return watermark_filter
+    
     def build_overlay_filter_chain(self, fontfile: str, ref_w: int, ref_h: int, fps: int,
                                   drama_name: str, footer_text: str, side_text: str,
                                   workdir: str, fast_mode: bool = False) -> str:
@@ -102,3 +122,20 @@ class TextOverlay:
         # Combine all filters
         all_filters = base_filters + text_overlays
         return ",".join(all_filters)
+    
+    def get_watermark_command_args(self, ref_w: int, ref_h: int) -> List[str]:
+        """Get additional FFmpeg command arguments for watermark overlay using filter_complex."""
+        if not self.watermark_path or not os.path.exists(self.watermark_path):
+            return []
+            
+        # Calculate watermark size and position
+        watermark_width = int(ref_w * 0.08)  # 8% of video width
+        margin = 15  # 15px margin from edges
+        
+        # Return filter_complex arguments for watermark
+        filter_complex = (
+            f"[0:v]scale={watermark_width}:-1[scaled_wm];"
+            f"[1:v][scaled_wm]overlay={margin}:{margin}:format=auto[out]"
+        )
+        
+        return ["-i", self.watermark_path, "-filter_complex", filter_complex, "-map", "[out]", "-map", "0:a"]

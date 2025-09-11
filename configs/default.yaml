@@ -5,7 +5,7 @@
 target_fps: 60
 smart_fps: true
 fast_mode: false
-filter_threads: 2 # Will be set to max(2, CPU_cores/2) if not specified
+filter_threads: 8 # Will be set to max(4, min(8, CPU_cores*75%)) if not specified
 verbose: false # Show detailed FFmpeg commands and debug information
 
 # Duration settings (in seconds)
@@ -57,6 +57,38 @@ refresh_tail_cache: false # Force refresh tail cache (--refresh-tail-cache)
 # Font settings
 font_file: null # Font file path (--font-file), auto-detected if null
 
+# Watermark settings
+watermark_path: "assets/watermark-xiaohong.png" # 水印图片路径
+enable_watermark: false # 启用水印功能，将logo放置在左上角
+enable_brand_text: true # 启用品牌文字功能，默认文字为"小红看剧"
+brand_text: "小红看剧" # 品牌文字内容（默认文案，向后兼容）
+
+# 多素材文案配置 - 支持范围映射和循环模式
+brand_text_mapping:
+  # 模式选择: "range" 为范围映射模式, "cycle" 为循环模式
+  mode: "range" # "range" | "cycle"
+
+  # 范围映射模式配置 (mode: "range")
+  ranges:
+    - range: "01-03" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
+      text: "小红看剧"
+    - range: "04-06"
+      text: "斯娜看剧"
+    - range: "07-08"
+      text: "清妍短剧"
+    - range: "09-10"
+      text: "看家本领"
+
+  # 循环模式配置 (mode: "cycle")
+  cycle_texts:
+    - "小红看剧"
+    - "斯娜看剧"
+    - "清妍短剧"
+    - "看家本领"
+
+  # 默认文案（当素材编号不匹配任何范围时使用）
+  default_text: "热门短剧"
+
 # Selection settings
 include: null # Include specific dramas (--include)
 exclude: null # Exclude specific dramas (--exclude)
@@ -92,7 +124,8 @@ feishu:
   app_id: "cli_a839f03393785013"
   app_secret: "63orqvu6Wyyb9iEelFqvndl2AKiAFN38"
   app_token: "Ff6xbY43BawXsCsdkfccRNhbn3f"
-  table_id: "tblzO48FFil82fas"
+  # table_id: "tblzO48FFil82fas" # 牵龙
+  table_id: "tblVC9djdl4PSqIG" # 散柔
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"

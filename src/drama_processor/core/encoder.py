@@ -22,7 +22,7 @@ from ..utils.time import human_duration
 class VideoEncoder:
     """Video encoder for drama processing."""
     
-    def __init__(self, config: ProcessingConfig):
+    def __init__(self, config: ProcessingConfig, watermark_path: Optional[str] = None):
         self.config = config
         
         # Video encoding settings
@@ -41,6 +41,13 @@ class VideoEncoder:
         self.title_colors = [
             "#FFA500", "#FFB347", "#FF8C00", "#FFD580", "#E69500", "#FFAE42",
         ]
+        
+        # Watermark settings
+        self.watermark_path = watermark_path
+        
+        # Brand text settings (from config)
+        self.config = config  # Keep reference to config for dynamic text selection
+        self.use_brand_text = config.enable_brand_text
     
     def run_ffmpeg(self, cmd: List[str], label: Optional[str] = None) -> subprocess.CompletedProcess:
         """Run ffmpeg command with configurable logging verbosity."""
@@ -106,7 +113,7 @@ class VideoEncoder:
     
     def build_overlay_filters(self, ref_w: int, ref_h: int, fps: int, fontfile: str,
                             drama_name: str, footer_text: str, side_text: str,
-                            workdir: str, fast_mode: bool) -> str:
+                            workdir: str, fast_mode: bool, material_idx: Optional[int] = None) -> str:
         """Build video filter string with text overlays."""
         # Base video processing filters
         base_filters = [f"scale={ref_w}:{ref_h}:force_original_aspect_ratio=decrease"]
@@ -157,8 +164,28 @@ class VideoEncoder:
             f"fontcolor=white@0.85:box=0:"
             f"x=w-text_w-{margin}:y={margin + 200}"
         )
+        
+        filters = [base, dt_top, dt_bottom, dt_side]
+        
+        # Add brand text overlay (same position and style as watermark would be)
+        if self.use_brand_text:
+            # Get brand text for current material
+            if material_idx is not None:
+                brand_text = self.config.get_brand_text_for_material(material_idx)
+            else:
+                brand_text = self.config.brand_text
+            
+            brand_txt = os.path.join(workdir, "brand.txt")
+            write_text_file(brand_txt, self.to_vertical(brand_text))
+            
+            dt_brand = (
+                f"drawtext=fontfile='{fontfile}':textfile='{brand_txt}':fontsize={side_fs}:"
+                f"fontcolor=white@0.85:box=0:"
+                f"x={margin}:y={margin + 200}"
+            )
+            filters.append(dt_brand)
 
-        return ",".join([base, dt_top, dt_bottom, dt_side])
+        return ",".join(filters)
     
     def build_base_vf(self, ref_w: int, ref_h: int, fps: int) -> str:
         """Build basic video filter for tail normalization."""
@@ -170,25 +197,72 @@ class VideoEncoder:
     def norm_and_trim(self, src: str, start_s: float, end_s: float, out_path: str,
                      ref_w: int, ref_h: int, fps: int, fontfile: str, drama_name: str,
                      footer_text: str, side_text: str, workdir: str, use_hw: bool,
-                     seg_idx: int, seg_total: int, fast_mode: bool, filter_threads: int):
+                     seg_idx: int, seg_total: int, fast_mode: bool, filter_threads: int,
+                     material_idx: Optional[int] = None):
         """Normalize and trim video segment with text overlay."""
         dur = max(0.01, end_s - start_s)
-        vf = self.build_overlay_filters(ref_w, ref_h, fps, fontfile, drama_name, 
-                                      footer_text, side_text, workdir, fast_mode=fast_mode)
         
         def build_cmd(vcodec: str, hw: bool):
-            cmd = [
-                "ffmpeg", "-y",
-                "-ss", str(max(0, start_s)), "-t", str(dur),
-                "-i", src,
-                "-vf", vf,
-                "-analyzeduration", "20M", "-probesize", "20M",
-                "-sws_flags", "fast_bilinear",
-                "-filter_threads", str(filter_threads),
-                "-filter_complex_threads", str(filter_threads),
-                "-c:v", vcodec,
-                "-profile:v", "high",
-            ]
+            # Check if we should use watermark (only if brand text is disabled and watermark exists)
+            use_watermark = (not self.use_brand_text and 
+                           self.watermark_path and 
+                           os.path.exists(self.watermark_path))
+            
+            if use_watermark:
+                # Use filter_complex for watermark + text overlays
+                vf = self.build_overlay_filters(ref_w, ref_h, fps, fontfile, drama_name, 
+                                              footer_text, side_text, workdir, fast_mode=fast_mode, 
+                                              material_idx=material_idx)
+                
+                # Calculate watermark size and position
+                watermark_width = int(ref_w * 0.08)  # 8% of video width
+                text_margin = max(12, int(ref_h * 0.037))  # Same margin as text overlays
+                
+                # Position watermark to match text positioning:
+                # - Left margin same as right text's right margin
+                # - Top margin same as title's top margin
+                watermark_x = text_margin  # Same as right text distance from right edge
+                watermark_y = text_margin + 20  # Same as title distance from top
+                
+                # Build filter_complex that combines video processing with watermark overlay
+                filter_complex = (
+                    f"[0:v]{vf}[main];"
+                    f"[1:v]scale={watermark_width}:-1[wm];"
+                    f"[main][wm]overlay={watermark_x}:{watermark_y}:format=auto[out]"
+                )
+                
+                cmd = [
+                    "ffmpeg", "-y",
+                    "-ss", str(max(0, start_s)), "-t", str(dur),
+                    "-i", src,
+                    "-i", self.watermark_path,
+                    "-filter_complex", filter_complex,
+                    "-map", "[out]", "-map", "0:a",
+                    "-analyzeduration", "20M", "-probesize", "20M",
+                    "-sws_flags", "fast_bilinear",
+                    "-filter_threads", str(filter_threads),
+                    "-filter_complex_threads", str(filter_threads),
+                    "-c:v", vcodec,
+                    "-profile:v", "high",
+                ]
+            else:
+                # Use text overlays (including brand text if enabled)
+                vf = self.build_overlay_filters(ref_w, ref_h, fps, fontfile, drama_name, 
+                                              footer_text, side_text, workdir, fast_mode=fast_mode, 
+                                              material_idx=material_idx)
+                cmd = [
+                    "ffmpeg", "-y",
+                    "-ss", str(max(0, start_s)), "-t", str(dur),
+                    "-i", src,
+                    "-vf", vf,
+                    "-analyzeduration", "20M", "-probesize", "20M",
+                    "-sws_flags", "fast_bilinear",
+                    "-filter_threads", str(filter_threads),
+                    "-filter_complex_threads", str(filter_threads),
+                    "-c:v", vcodec,
+                    "-profile:v", "high",
+                ]
+            
             if hw:
                 cmd += ["-level", "4.2", "-tag:v", "avc1", "-b:v", self.bitrate, 
                        "-maxrate", "9000k", "-bufsize", "14000k"]
@@ -421,7 +495,7 @@ class VideoEncoder:
                 self.norm_and_trim(ep_path, s, e, tmp_out, ref_w, ref_h, target_fps, fontfile, 
                                  drama_name, footer_text, side_text, workdir, use_hw=use_hw, 
                                  seg_idx=idx, seg_total=seg_total, fast_mode=fast_mode, 
-                                 filter_threads=filter_threads)
+                                 filter_threads=filter_threads, material_idx=material_idx)
                 tmp_parts.append(tmp_out)
 
             # Concatenate main segments
