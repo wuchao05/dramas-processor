@@ -138,3 +138,9 @@ feishu:
   completed_status_value: "已完成"
   page_size: 200
   token_refresh_interval: 7200000
+
+# 日期去重设置
+date_deduplication:
+  enabled: true # 启用日期去重功能
+  storage_dir: "history/date_dedup" # 存储目录（相对于项目根目录）
+  skip_processed_by_default: false # 默认是否跳过已处理剧集（用户可通过 --skip-processed 覆盖）

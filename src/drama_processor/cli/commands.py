@@ -768,6 +768,9 @@ def feishu_list(ctx, status: str, date: Optional[str]):
 # AI enhancement settings
 @click.option("--ai-scene-detection", is_flag=True, help="启用AI智能场景检测，自动选择最佳剪辑点")
 @click.option("--enable-deduplication", is_flag=True, help="启用剪辑点去重功能，避免生成重复素材")
+# Date deduplication settings
+@click.option("--skip-processed", is_flag=True, help="跳过已经处理过的剧集（基于日期去重）")
+@click.option("--force-reprocess", is_flag=True, help="强制重新处理所有剧集，忽略历史记录")
 @click.pass_context  
 def feishu_run(ctx, status: str, root_dir: Optional[Path],
     # Material generation
@@ -789,7 +792,9 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
     # Optimizations
     fast_mode: bool, filter_threads: int, verbose: bool,
     # AI enhancement
-    ai_scene_detection: bool, enable_deduplication: bool):
+    ai_scene_detection: bool, enable_deduplication: bool,
+    # Date deduplication
+    skip_processed: bool, force_reprocess: bool):
     """一键查询飞书表格中的剧目并自动剪辑，自动更新状态。"""
     config = ctx.obj.get("config") or ProcessingConfig()
     
@@ -814,6 +819,23 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
         
         # 获取剧名和对应的记录信息（包括日期）
         drama_info = client.get_pending_dramas_with_dates(status_filter=status, date_filter=feishu_date_filter)
+        
+        # 应用日期去重功能
+        if skip_processed and not force_reprocess:
+            from ..utils.date_deduplication import get_date_dedup_manager
+            
+            dedup_manager = get_date_dedup_manager()
+            drama_info, skipped_dramas = dedup_manager.filter_new_dramas(drama_info, force_reprocess)
+            
+            if skipped_dramas:
+                click.echo("\n📝 日期去重结果:")
+                click.echo(f"  - 跳过已处理剧集: {len(skipped_dramas)} 部")
+                for drama_name in skipped_dramas:
+                    click.echo(f"    ⏭️  {drama_name}")
+                click.echo(f"  - 待处理剧集: {len(drama_info)} 部")
+        elif force_reprocess:
+            click.echo("🔄 强制重新处理模式已启用，将忽略历史记录")
+        
         dramas = list(drama_info.keys())
         # 从新数据结构中提取记录ID映射（保持向后兼容）
         drama_records = {name: info["record_id"] for name, info in drama_info.items()}
@@ -947,6 +969,26 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
         click.echo(f"\n🎬 开始自动剪辑从飞书获取的剧目...")
         total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
         
+        # 处理完成后，保存已处理的剧集记录（仅在启用日期去重时）
+        if skip_processed and not force_reprocess and drama_info:
+            from ..utils.date_deduplication import get_date_dedup_manager
+            
+            dedup_manager = get_date_dedup_manager()
+            
+            # 构建处理结果列表
+            drama_results = []
+            for drama_name, info in drama_info.items():
+                drama_results.append({
+                    'name': drama_name,
+                    'date': info.get('date', '未知'),
+                    'status': '已完成',  # 简化处理，实际应该根据处理结果
+                    'completed': 1 if total_done > 0 else 0,  # 简化处理
+                    'planned': 1
+                })
+            
+            dedup_manager.mark_dramas_as_processed(drama_results)
+            click.echo("💾 已更新剧集处理记录")
+        
         click.echo(f"\n🎯 自动剪辑完成：{total_done}/{total_planned} 条素材生成成功")
         
         if total_done < total_planned:
@@ -998,6 +1040,9 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
 # AI enhancement settings
 @click.option("--ai-scene-detection", is_flag=True, help="启用AI智能场景检测，自动选择最佳剪辑点")
 @click.option("--enable-deduplication", is_flag=True, help="启用剪辑点去重功能，避免生成重复素材")
+# Date deduplication settings
+@click.option("--skip-processed", is_flag=True, help="跳过已经处理过的剧集（基于日期去重）")
+@click.option("--force-reprocess", is_flag=True, help="强制重新处理所有剧集，忽略历史记录")
 @click.pass_context  
 def feishu_select(ctx, status: str, root_dir: Optional[Path],
     # Material generation
@@ -1019,7 +1064,9 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
     # Optimizations
     fast_mode: bool, filter_threads: int, verbose: bool,
     # AI enhancement
-    ai_scene_detection: bool, enable_deduplication: bool):
+    ai_scene_detection: bool, enable_deduplication: bool,
+    # Date deduplication
+    skip_processed: bool, force_reprocess: bool):
     """从飞书表格选择特定剧目进行剪辑，自动更新状态。"""
     config = ctx.obj.get("config") or ProcessingConfig()
     
@@ -1044,6 +1091,23 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
         
         # 获取剧名和对应的记录信息（包括日期）
         drama_info = client.get_pending_dramas_with_dates(status_filter=status, date_filter=feishu_date_filter)
+        
+        # 应用日期去重功能
+        if skip_processed and not force_reprocess:
+            from ..utils.date_deduplication import get_date_dedup_manager
+            
+            dedup_manager = get_date_dedup_manager()
+            drama_info, skipped_dramas = dedup_manager.filter_new_dramas(drama_info, force_reprocess)
+            
+            if skipped_dramas:
+                click.echo("\n📝 日期去重结果:")
+                click.echo(f"  - 跳过已处理剧集: {len(skipped_dramas)} 部")
+                for drama_name in skipped_dramas:
+                    click.echo(f"    ⏭️  {drama_name}")
+                click.echo(f"  - 待处理剧集: {len(drama_info)} 部")
+        elif force_reprocess:
+            click.echo("🔄 强制重新处理模式已启用，将忽略历史记录")
+        
         dramas = list(drama_info.keys())
         # 从新数据结构中提取记录ID映射（保持向后兼容）
         drama_records = {name: info["record_id"] for name, info in drama_info.items()}
@@ -1223,6 +1287,26 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
         click.echo(f"\n🎬 开始剪辑选择的剧目...")
         total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
         
+        # 处理完成后，保存已处理的剧集记录（仅在启用日期去重时）
+        if skip_processed and not force_reprocess and drama_info:
+            from ..utils.date_deduplication import get_date_dedup_manager
+            
+            dedup_manager = get_date_dedup_manager()
+            
+            # 构建处理结果列表
+            drama_results = []
+            for drama_name, info in drama_info.items():
+                drama_results.append({
+                    'name': drama_name,
+                    'date': info.get('date', '未知'),
+                    'status': '已完成',  # 简化处理，实际应该根据处理结果
+                    'completed': 1 if total_done > 0 else 0,  # 简化处理
+                    'planned': 1
+                })
+            
+            dedup_manager.mark_dramas_as_processed(drama_results)
+            click.echo("💾 已更新剧集处理记录")
+        
         click.echo(f"\n🎯 选择性剪辑完成：{total_done}/{total_planned} 条素材生成成功")
         
         if total_done < total_planned:
@@ -1234,4 +1318,84 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
             import traceback
             traceback.print_exc()
         sys.exit(1)
+
+
+@feishu_command.command("dedup")
+@click.option("--action", type=click.Choice(['list', 'clear', 'summary']), default='list', help="操作类型：list(列出记录)、clear(清除记录)、summary(查看摘要)")
+@click.option("--date", type=str, default=None, help="指定日期，如 9.12 (仅用于 clear 和 summary 操作)")
+@click.pass_context
+def feishu_dedup(ctx, action: str, date: Optional[str]):
+    """管理飞书日期去重记录。"""
+    try:
+        from ..utils.date_deduplication import get_date_dedup_manager
+        
+        dedup_manager = get_date_dedup_manager()
+        
+        if action == 'list':
+            # 列出所有处理记录
+            summaries = dedup_manager.list_all_processed_dates()
+            
+            if not summaries:
+                click.echo("📋 没有找到任何处理记录")
+                return
+            
+            click.echo("=" * 80)
+            click.echo("📅 日期去重记录列表")
+            click.echo("=" * 80)
+            
+            for summary in summaries:
+                click.echo(f"📅 日期: {summary['date']}")
+                click.echo(f"   已处理剧集: {summary['processed_count']} 部")
+                click.echo(f"   最后更新: {summary['last_updated']}")
+                click.echo("   " + "-" * 50)
+            
+            click.echo(f"\n📊 总计: {len(summaries)} 个日期有处理记录")
+        
+        elif action == 'summary':
+            if not date:
+                click.echo("❌ summary 操作需要指定日期，如 --date 9.12", err=True)
+                return
+            
+            summary = dedup_manager.get_date_summary(date)
+            
+            if not summary:
+                click.echo(f"📋 日期 {date} 没有处理记录")
+                return
+            
+            click.echo("=" * 60)
+            click.echo(f"📅 日期 {date} 的处理摘要")
+            click.echo("=" * 60)
+            click.echo(f"已处理剧集数量: {summary['processed_count']}")
+            click.echo(f"最后更新时间: {summary['last_updated']}")
+            click.echo("\n📋 已处理剧集列表:")
+            
+            for i, drama_name in enumerate(summary['processed_dramas'], 1):
+                click.echo(f"  {i:2d}. {drama_name}")
+        
+        elif action == 'clear':
+            if not date:
+                click.echo("❌ clear 操作需要指定日期，如 --date 9.12", err=True)
+                return
+            
+            summary = dedup_manager.get_date_summary(date)
+            if not summary:
+                click.echo(f"📋 日期 {date} 没有处理记录，无需清除")
+                return
+            
+            click.echo(f"⚠️ 将要清除日期 {date} 的处理记录，包含 {summary['processed_count']} 个剧集")
+            
+            if click.confirm("确认要清除这些记录吗？"):
+                success = dedup_manager.clear_date_record(date)
+                if success:
+                    click.echo(f"✅ 已成功清除日期 {date} 的处理记录")
+                else:
+                    click.echo(f"❌ 清除日期 {date} 的记录失败", err=True)
+            else:
+                click.echo("取消清除操作")
+    
+    except Exception as e:
+        click.echo(f"❌ 操作失败: {e}", err=True)
+        if ctx.obj.get("debug"):
+            import traceback
+            traceback.print_exc()
 

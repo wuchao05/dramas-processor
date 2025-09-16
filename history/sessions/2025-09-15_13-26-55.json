@@ -1,0 +1,2680 @@
+{
+  "session_id": "2025-09-15_13-26-55",
+  "start_time": "2025-09-15T13:26:55.126911",
+  "end_time": "2025-09-15T19:11:41.531047",
+  "dramas": [
+    {
+      "name": "专业和亲，副业谐星",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/专业和亲，副业谐星",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/专业和亲，副业谐星",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 554.4496040344238,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.367089"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 547.4812774658203,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.372293"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 541.4198760986328,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.372634"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 567.3697471618652,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.374762"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 478.5578327178955,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.375238"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 485.68046474456787,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.376118"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 478.4211311340332,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.376327"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 547.2670450210571,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.376510"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 524.2865257263184,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.376746"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 540.0590124130249,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.376929"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 442.54612827301025,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.377102"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 504.1183748245239,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.377262"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 547.3600025177002,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.377441"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 504.65385150909424,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.377604"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 539.7064218521118,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.377767"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 534.5137939453125,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.378213"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 556.0402059555054,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.378393"
+        },
+        {
+          "filename": "9.16-专业和亲，副业谐星-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 497.6475257873535,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:05:56.378436"
+        }
+      ],
+      "total_duration": 5355.048091999999,
+      "processing_time": 2338.259401321411,
+      "start_time": "2025-09-15T13:26:56.600902",
+      "end_time": "2025-09-15T14:05:54.860303",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "原来我也是白月光",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/原来我也是白月光",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/原来我也是白月光",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.16-原来我也是白月光-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 458.57212257385254,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.121862"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 505.16835021972656,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.125734"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 410.2575578689575,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.125915"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 495.61176586151123,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.126151"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 511.3444290161133,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.126317"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 416.29478454589844,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.126447"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 105.53063488006592,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.126586"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 480.5054407119751,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.126734"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 487.2769412994385,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.126897"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 95.67966270446777,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.127026"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 251.47899723052979,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.127157"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 290.74160385131836,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.127294"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 462.99445056915283,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.127444"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 515.2689161300659,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.127571"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 475.7529630661011,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.127701"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 446.19227027893066,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.127889"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 472.5156717300415,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.128056"
+        },
+        {
+          "filename": "9.16-原来我也是白月光-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 482.48733043670654,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T14:37:30.128092"
+        }
+      ],
+      "total_duration": 1530.6000000000001,
+      "processing_time": 1892.0048491954803,
+      "start_time": "2025-09-15T14:05:56.386111",
+      "end_time": "2025-09-15T14:37:28.390960",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "姐姐结婚，我也结",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/姐姐结婚，我也结",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/姐姐结婚，我也结",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 493.5849304199219,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.707543"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 492.03479385375977,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.713376"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 524.8433647155762,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.713659"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 477.759557723999,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.713998"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 155.2934446334839,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.714294"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 529.9116382598877,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.714516"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 484.4760732650757,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.714732"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 549.4605684280396,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.715019"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 500.0292282104492,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.715242"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 97.93528175354004,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.715417"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 491.15338611602783,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.715575"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 310.7510404586792,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.715760"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 533.576738357544,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.715941"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 550.7493314743042,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.716115"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 517.5957431793213,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.716274"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 33.73329830169678,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.716436"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 555.905647277832,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.716602"
+        },
+        {
+          "filename": "9.16-姐姐结婚，我也结-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 474.14330673217773,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:09:06.716660"
+        }
+      ],
+      "total_duration": 4819.9721070000005,
+      "processing_time": 1894.6636128425598,
+      "start_time": "2025-09-15T14:37:30.132215",
+      "end_time": "2025-09-15T15:09:04.795828",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "秘色棋局",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/秘色棋局",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/秘色棋局",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.16-秘色棋局-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 448.98054122924805,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.606736"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 496.5147066116333,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.607931"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 512.7033233642578,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.608287"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 516.0624742507935,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.608635"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 451.41429138183594,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.608961"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 502.09091091156006,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.609388"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 168.76256275177002,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.609704"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 520.0684785842896,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.610049"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 466.4808988571167,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.610393"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 503.41004276275635,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.610750"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 435.9095764160156,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.611148"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 527.8211097717285,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.611493"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 435.3329105377197,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.611784"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 37.022396087646484,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.612042"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 479.46460151672363,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.612706"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 233.16052913665771,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.612888"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 456.20113468170166,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.613003"
+        },
+        {
+          "filename": "9.16-秘色棋局-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 462.6059341430664,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T15:41:48.613062"
+        }
+      ],
+      "total_duration": 4877.550859,
+      "processing_time": 1959.7462441921234,
+      "start_time": "2025-09-15T15:09:06.720672",
+      "end_time": "2025-09-15T15:41:46.466916",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "萌宝重生助妈咪逆风翻盘",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/萌宝重生助妈咪逆风翻盘",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/萌宝重生助妈咪逆风翻盘",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 178.45494651794434,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.104928"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 105.29045009613037,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.115244"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 502.099645614624,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.118499"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 313.1271228790283,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.120468"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 511.9237642288208,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.121107"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 555.3237905502319,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.122377"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 488.640588760376,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.123478"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 514.6353235244751,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.127404"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 457.5965166091919,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.128784"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 547.548113822937,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.135335"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 492.7450180053711,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.136249"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 501.07616996765137,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.136956"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 529.6532564163208,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.137429"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 435.5076274871826,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.138000"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 108.17820644378662,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.138623"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 549.5869970321655,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.139192"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 470.79032611846924,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.139683"
+        },
+        {
+          "filename": "9.16-萌宝重生助妈咪逆风翻盘-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 514.8361988067627,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:14:20.139761"
+        }
+      ],
+      "total_duration": 4010.92,
+      "processing_time": 1948.4683661460876,
+      "start_time": "2025-09-15T15:41:48.617204",
+      "end_time": "2025-09-15T16:14:17.085570",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "郡主来破案，神奇动物在哪里",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/郡主来破案，神奇动物在哪里",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/郡主来破案，神奇动物在哪里",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 491.75622272491455,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.408863"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 542.2442226409912,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.413860"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 63.538527488708496,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.414108"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 497.47816467285156,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.414722"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 494.81923484802246,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.429455"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 484.7426986694336,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.429884"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 561.6327133178711,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.430174"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 503.3959217071533,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.430412"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 511.5069303512573,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.430705"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 545.3992156982422,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.430915"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 511.17248153686523,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.431287"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 386.3090181350708,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.431660"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 489.2846097946167,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.432117"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 512.6934509277344,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.432352"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 170.47130966186523,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.432535"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 371.47328090667725,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.432701"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 495.345645904541,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.432844"
+        },
+        {
+          "filename": "9.16-郡主来破案，神奇动物在哪里-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 486.80885791778564,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T16:48:08.432880"
+        }
+      ],
+      "total_duration": 5382.394736000001,
+      "processing_time": 2025.2509579658508,
+      "start_time": "2025-09-15T16:14:20.144923",
+      "end_time": "2025-09-15T16:48:05.395881",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生校花追不停！我靠系统逆袭",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生校花追不停！我靠系统逆袭",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/重生校花追不停！我靠系统逆袭",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 516.6239614486694,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.340471"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 505.6410913467407,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.356542"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 502.9145450592041,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.357022"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 559.9698143005371,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.357268"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 531.1574230194092,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.357878"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 520.7001075744629,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.358175"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 538.6427745819092,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.358425"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 471.3721580505371,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.359182"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 538.4864416122437,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.359505"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 487.425256729126,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.359741"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 498.50928497314453,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.359936"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 541.4082355499268,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.360092"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 505.1122303009033,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.360252"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 462.63901805877686,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.360402"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 535.1025123596191,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.360570"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 547.1293926239014,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.360754"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 489.4549732208252,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.360924"
+        },
+        {
+          "filename": "9.16-重生校花追不停！我靠系统逆袭-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 557.3349418640137,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T17:28:18.360963"
+        }
+      ],
+      "total_duration": 6729.828699999999,
+      "processing_time": 2405.657628297806,
+      "start_time": "2025-09-15T16:48:08.450153",
+      "end_time": "2025-09-15T17:28:14.107781",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生灾荒年，我靠种田发家护嫂",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生灾荒年，我靠种田发家护嫂",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/重生灾荒年，我靠种田发家护嫂",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 15,
+      "success_rate": 0.8333333333333334,
+      "materials": [
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 501.14459133148193,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.985863"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 508.8142795562744,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.987348"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 497.8899517059326,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.988141"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 55.35373592376709,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.988395"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 510.65337562561035,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.988578"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 529.9519462585449,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.988852"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 478.2718324661255,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.989079"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 512.645055770874,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.989325"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 499.7871780395508,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.989874"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 547.510251045227,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.990158"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 513.2872219085693,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.990937"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 522.0812692642212,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.991199"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 522.3682718276978,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.991956"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 518.6211614608765,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.992150"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 507.7399673461914,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.992321"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 559.5290002822876,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.992528"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 536.1337852478027,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.993011"
+        },
+        {
+          "filename": "9.16-重生灾荒年，我靠种田发家护嫂-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 475.7500457763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T18:29:04.993058"
+        }
+      ],
+      "total_duration": 4122.626052000001,
+      "processing_time": 3645.0158870220184,
+      "start_time": "2025-09-15T17:28:18.369194",
+      "end_time": "2025-09-15T18:29:03.385081",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "风起时不说爱你",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/风起时不说爱你",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.16导出/风起时不说爱你",
+      "date_str": "9.16",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 17,
+      "success_rate": 0.9444444444444444,
+      "materials": [
+        {
+          "filename": "9.16-风起时不说爱你-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 479.6827516555786,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.058099"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 81.36578464508057,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.062522"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 448.60650539398193,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.063140"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 520.9620189666748,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.063271"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 491.09486293792725,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.064107"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 470.9047956466675,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.064352"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 414.026819229126,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.064613"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 472.9983129501343,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.064737"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 458.2694330215454,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.064858"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 489.2790880203247,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.065049"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 503.0570640563965,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.065199"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 411.0047836303711,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.065367"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 339.59868335723877,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.065594"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 496.6528625488281,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.066016"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 494.11441802978516,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.066130"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 489.6639747619629,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.066427"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 484.91040897369385,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.066582"
+        },
+        {
+          "filename": "9.16-风起时不说爱你-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 505.67592906951904,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-15T19:11:41.066610"
+        }
+      ],
+      "total_duration": 3784.0874349999995,
+      "processing_time": 2554.62079000473,
+      "start_time": "2025-09-15T18:29:04.997811",
+      "end_time": "2025-09-15T19:11:39.618601",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.16",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "专业和亲，副业谐星",
+          "萌宝重生助妈咪逆风翻盘",
+          "风起时不说爱你",
+          "秘色棋局",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "原来我也是白月光",
+          "重生校花追不停！我靠系统逆袭",
+          "姐姐结婚，我也结"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblzO48FFil82fas",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 9,
+  "successful_dramas": 7,
+  "total_materials": 162,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.16 --count 18",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 20663.687736988068,
+  "total_size_mb": 74238.3086605072
+}

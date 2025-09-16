@@ -1,0 +1,2680 @@
+{
+  "session_id": "2025-09-12_08-59-58",
+  "start_time": "2025-09-12T08:59:58.010428",
+  "end_time": "2025-09-12T16:06:00.738729",
+  "dramas": [
+    {
+      "name": "1986：重塑完美人生",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/1986：重塑完美人生",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/1986：重塑完美人生",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 501.0970449447632,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.733900"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 107.56554412841797,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.737492"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 147.6484432220459,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.737916"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 515.4076642990112,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.744748"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 534.3972759246826,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.744993"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 516.0759325027466,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.749077"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 502.2071533203125,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.750940"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 426.56953144073486,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.751112"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 505.4649381637573,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.751230"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 538.6831188201904,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.751337"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 525.634464263916,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.751467"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 536.770715713501,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.751570"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 475.6224184036255,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.751732"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 509.18342304229736,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.751950"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 530.4871301651001,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.752133"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 499.5132179260254,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.752231"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 512.9414939880371,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.752321"
+        },
+        {
+          "filename": "9.13-1986：重塑完美人生-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 199.24404430389404,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T09:43:48.752339"
+        }
+      ],
+      "total_duration": 3233.745556,
+      "processing_time": 2628.589770078659,
+      "start_time": "2025-09-12T08:59:58.701877",
+      "end_time": "2025-09-12T09:43:47.291647",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "东露引",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/东露引",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/东露引",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-东露引-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 516.0232353210449,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.762016"
+        },
+        {
+          "filename": "9.13-东露引-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 555.0608587265015,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.762620"
+        },
+        {
+          "filename": "9.13-东露引-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 514.3828296661377,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.763849"
+        },
+        {
+          "filename": "9.13-东露引-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 521.4705715179443,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.765422"
+        },
+        {
+          "filename": "9.13-东露引-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 516.7459154129028,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.767142"
+        },
+        {
+          "filename": "9.13-东露引-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 542.1058855056763,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.767376"
+        },
+        {
+          "filename": "9.13-东露引-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 547.7489709854126,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.768437"
+        },
+        {
+          "filename": "9.13-东露引-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 510.03534507751465,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.768872"
+        },
+        {
+          "filename": "9.13-东露引-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 542.5273275375366,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.769061"
+        },
+        {
+          "filename": "9.13-东露引-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 550.6319551467896,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.770645"
+        },
+        {
+          "filename": "9.13-东露引-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 508.5353145599365,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.770863"
+        },
+        {
+          "filename": "9.13-东露引-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 229.3106927871704,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.771049"
+        },
+        {
+          "filename": "9.13-东露引-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 542.4467248916626,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.771155"
+        },
+        {
+          "filename": "9.13-东露引-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 542.4835357666016,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.771259"
+        },
+        {
+          "filename": "9.13-东露引-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 517.8761224746704,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.771341"
+        },
+        {
+          "filename": "9.13-东露引-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 517.2445335388184,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.771434"
+        },
+        {
+          "filename": "9.13-东露引-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 501.7556982040405,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.771536"
+        },
+        {
+          "filename": "9.13-东露引-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 517.6736011505127,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T10:36:57.771561"
+        }
+      ],
+      "total_duration": 5804.56,
+      "processing_time": 3187.2355840206146,
+      "start_time": "2025-09-12T09:43:48.757822",
+      "end_time": "2025-09-12T10:36:55.993406",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "傻白甜竟是黑莲花",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/傻白甜竟是黑莲花",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/傻白甜竟是黑莲花",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 498.5829610824585,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.135639"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 534.177619934082,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.140178"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 496.88911056518555,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.141104"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 465.12103939056396,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.142185"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 42.609848976135254,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.143186"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 111.8503532409668,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.143531"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 454.48404121398926,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.143762"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 485.5692186355591,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.144938"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 505.6985092163086,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.145934"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 512.3199157714844,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.146097"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 466.06754779815674,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.146234"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 466.92101287841797,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.146363"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 560.1242523193359,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.146496"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 528.0119886398315,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.146840"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 508.0045518875122,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.146994"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 497.74930572509766,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.147189"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 502.5302562713623,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.147345"
+        },
+        {
+          "filename": "9.13-傻白甜竟是黑莲花-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 497.1613607406616,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T11:23:45.147362"
+        }
+      ],
+      "total_duration": 3782.103263999999,
+      "processing_time": 2805.726706981659,
+      "start_time": "2025-09-12T10:36:57.775160",
+      "end_time": "2025-09-12T11:23:43.501867",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "妙眼小村医",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/妙眼小村医",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/妙眼小村医",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-妙眼小村医-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 533.8331727981567,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.614420"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 322.2194137573242,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.617432"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 406.55623149871826,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.617877"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 546.6421947479248,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.618100"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 144.00836181640625,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.618295"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 533.0735054016113,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.618472"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 66.2806978225708,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.618710"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 525.5339775085449,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.619236"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 106.16669368743896,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.619760"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 493.6450824737549,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.620158"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 540.0499582290649,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.620345"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 517.7433881759644,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.620519"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 514.480731010437,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.620681"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 498.6211338043213,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.620859"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 530.7090835571289,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.621018"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 537.9087905883789,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.621188"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 525.8030214309692,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.621363"
+        },
+        {
+          "filename": "9.13-妙眼小村医-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 498.1309003829956,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:09:21.621375"
+        }
+      ],
+      "total_duration": 3324.5261190000006,
+      "processing_time": 2735.0076100826263,
+      "start_time": "2025-09-12T11:23:45.152042",
+      "end_time": "2025-09-12T12:09:20.159652",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "嫡母归来，国公府上下听令",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/嫡母归来，国公府上下听令",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/嫡母归来，国公府上下听令",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 525.0919351577759,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.095492"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 510.5958433151245,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.096340"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 570.4381217956543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.096508"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 551.2552490234375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.096712"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 518.2844333648682,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.096827"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 541.8847694396973,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.097753"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 510.4177885055542,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.097859"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 374.67433071136475,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098015"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 517.3158025741577,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098107"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 583.1895236968994,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098201"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 491.4206552505493,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098292"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 568.6796112060547,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098397"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 450.75204944610596,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098498"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 489.5794954299927,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098584"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 525.7996826171875,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098689"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 550.816276550293,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098785"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 73.13197898864746,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098868"
+        },
+        {
+          "filename": "9.13-嫡母归来，国公府上下听令-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 518.1183261871338,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T12:57:11.098883"
+        }
+      ],
+      "total_duration": 5634.399999999999,
+      "processing_time": 2867.9751768112183,
+      "start_time": "2025-09-12T12:09:21.625035",
+      "end_time": "2025-09-12T12:57:09.600212",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "穿书八零千里寻夫火辣辣",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/穿书八零千里寻夫火辣辣",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/穿书八零千里寻夫火辣辣",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 108.90683841705322,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.841775"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 505.62264251708984,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.845330"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 533.005744934082,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.845510"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 431.2917947769165,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.845722"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 515.4355325698853,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.846125"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 524.0485725402832,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.846356"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 526.7286615371704,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.846523"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 501.9657974243164,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.846672"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 516.7706003189087,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.919566"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 536.4708271026611,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.919792"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 494.18850231170654,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.919878"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 456.5830936431885,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.919994"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 479.69186782836914,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.920059"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 496.5841817855835,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.920112"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 572.6683368682861,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.920333"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 479.76965045928955,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.920403"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 512.0821962356567,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.920458"
+        },
+        {
+          "filename": "9.13-穿书八零千里寻夫火辣辣-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 515.2454557418823,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T13:46:48.920473"
+        }
+      ],
+      "total_duration": 5319.869336999999,
+      "processing_time": 2976.1681368350983,
+      "start_time": "2025-09-12T12:57:11.101063",
+      "end_time": "2025-09-12T13:46:47.269200",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "逆袭，从签到神级姐姐开始",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/逆袭，从签到神级姐姐开始",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/逆袭，从签到神级姐姐开始",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 510.9527597427368,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.418460"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 546.5256433486938,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.422910"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 514.0035734176636,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.423031"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 487.2487516403198,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.423131"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 510.76902961730957,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.423223"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 531.7476015090942,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.423528"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 530.4403924942017,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.423641"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 529.6454381942749,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.423942"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 535.8592414855957,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.424336"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 355.6420907974243,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.424509"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 519.1169338226318,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.424676"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 529.947790145874,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.424864"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 108.06981372833252,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.425055"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 531.9645147323608,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.425256"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 520.6548318862915,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.425430"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 513.2520198822021,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.425597"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 527.6556386947632,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.425775"
+        },
+        {
+          "filename": "9.13-逆袭，从签到神级姐姐开始-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 512.2520389556885,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T14:36:03.425791"
+        }
+      ],
+      "total_duration": 4067.920042999999,
+      "processing_time": 2952.780448913574,
+      "start_time": "2025-09-12T13:46:48.924594",
+      "end_time": "2025-09-12T14:36:01.705043",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "那年花好月圆",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/那年花好月圆",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/那年花好月圆",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-那年花好月圆-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 477.3288679122925,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.778316"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 491.64369201660156,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.779377"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 496.37178325653076,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.779877"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 510.91918182373047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.780033"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 485.6739664077759,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.780457"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 116.7074203491211,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.780655"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 487.13071060180664,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.780897"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 526.1396141052246,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.781183"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 118.85770225524902,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.782595"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 456.4051342010498,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.782929"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 526.3907127380371,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.783360"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 522.681981086731,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.783502"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 483.8618230819702,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.783632"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 530.3216333389282,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.783751"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 509.47100257873535,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.783877"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 504.10799980163574,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.784018"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 499.85614109039307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.784212"
+        },
+        {
+          "filename": "9.13-那年花好月圆-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 501.33261585235596,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T15:23:17.784255"
+        }
+      ],
+      "total_duration": 6466.102338,
+      "processing_time": 2831.42596411705,
+      "start_time": "2025-09-12T14:36:03.429917",
+      "end_time": "2025-09-12T15:23:14.855881",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重返八零拾旧爱",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重返八零拾旧爱",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.13导出/重返八零拾旧爱",
+      "date_str": "9.13",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 537.8221969604492,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.140163"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 535.2856864929199,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.150211"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 555.8481340408325,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.151368"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 212.82489490509033,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.152174"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 534.0966806411743,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.153311"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 518.8888530731201,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.153544"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 533.823205947876,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.153719"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 492.8860750198364,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.154109"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 284.2325792312622,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.154412"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 495.27406883239746,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.154513"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 543.0229415893555,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.154638"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 543.2602024078369,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.154757"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 519.7084283828735,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.154860"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 525.5109825134277,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.154975"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 555.6141872406006,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.155082"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 534.6897144317627,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.155177"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 532.9687376022339,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.155322"
+        },
+        {
+          "filename": "9.13-重返八零拾旧爱-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 451.80899143218994,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-12T16:06:00.155337"
+        }
+      ],
+      "total_duration": 4083.093964999999,
+      "processing_time": 2560.758497953415,
+      "start_time": "2025-09-12T15:23:17.788611",
+      "end_time": "2025-09-12T16:05:58.547109",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.13",
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "妙眼小村医",
+          "1986：重塑完美人生",
+          "东露引",
+          "逆袭，从签到神级姐姐开始",
+          "傻白甜竟是黑莲花",
+          "穿书八零千里寻夫火辣辣",
+          "重返八零拾旧爱",
+          "嫡母归来，国公府上下听令",
+          "那年花好月圆"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "已完成",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 9,
+  "successful_dramas": 9,
+  "total_materials": 162,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.13 --ai-scene-detection --count 18",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 25545.667895793915,
+  "total_size_mb": 76800.87472343445
+}
