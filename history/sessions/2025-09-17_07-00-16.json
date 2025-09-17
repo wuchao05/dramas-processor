@@ -1,0 +1,892 @@
+{
+  "session_id": "2025-09-17_07-00-16",
+  "start_time": "2025-09-17T07:00:16.658992",
+  "end_time": "2025-09-17T10:38:34.396914",
+  "dramas": [
+    {
+      "name": "开局一元，颠覆人生",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/开局一元，颠覆人生",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.17导出/开局一元，颠覆人生",
+      "date_str": "9.17",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 536.6322641372681,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.916753"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 469.12065505981445,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.921083"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 474.8349542617798,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.921209"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 512.3652296066284,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.921327"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 477.4720516204834,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.921435"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 497.68606662750244,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.921545"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 501.0849609375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.921682"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 531.4266195297241,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.921915"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 511.23395252227783,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.922360"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 502.60706901550293,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.922671"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 497.9271354675293,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.922795"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 496.6775074005127,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.922902"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 530.8930139541626,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.923003"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 556.6115245819092,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.923108"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 488.60067081451416,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.923215"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 501.96109771728516,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.923322"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 457.07419204711914,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.923421"
+        },
+        {
+          "filename": "9.17-开局一元，颠覆人生-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 506.5987777709961,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T08:05:04.923436"
+        }
+      ],
+      "total_duration": 2608.2946450000004,
+      "processing_time": 3877.1800167560577,
+      "start_time": "2025-09-17T07:00:18.074561",
+      "end_time": "2025-09-17T08:04:55.254578",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.17",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盖世神医在都市",
+          "开局一元，颠覆人生",
+          "萌宝重生助妈咪逆风翻盘"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "盖世神医在都市",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/盖世神医在都市",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.17导出/盖世神医在都市",
+      "date_str": "9.17",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.17-盖世神医在都市-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 522.9872226715088,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.902289"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 524.3572444915771,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.931513"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 528.3330745697021,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.939917"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 467.98980236053467,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.940960"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 538.7098598480225,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.943802"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 475.5290050506592,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.944200"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 505.7313423156738,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.944672"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 525.5324172973633,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:37.976042"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 505.98005199432373,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.005833"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 533.0471878051758,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.006141"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 489.0857095718384,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.018023"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 490.7176322937012,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.018708"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 499.7142038345337,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.020444"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 536.1199817657471,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.022069"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 527.0895576477051,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.022562"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 527.3493604660034,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.022880"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 484.1556034088135,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.023255"
+        },
+        {
+          "filename": "9.17-盖世神医在都市-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 513.1862678527832,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T09:01:38.023283"
+        }
+      ],
+      "total_duration": 2459.4800000000005,
+      "processing_time": 3389.1832752227783,
+      "start_time": "2025-09-17T08:05:04.929053",
+      "end_time": "2025-09-17T09:01:34.112328",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.17",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盖世神医在都市",
+          "开局一元，颠覆人生",
+          "萌宝重生助妈咪逆风翻盘"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "萌宝重生助妈咪逆风翻盘",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/萌宝重生助妈咪逆风翻盘",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.17导出/萌宝重生助妈咪逆风翻盘",
+      "date_str": "9.17",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 17,
+      "success_rate": 0.9444444444444444,
+      "materials": [
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 488.06672859191895,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.604714"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 494.5067491531372,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.608165"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 504.0685806274414,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.608497"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 513.3084955215454,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.608633"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 504.8167772293091,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.609065"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 541.1233539581299,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.609493"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 490.9912919998169,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.609585"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 533.141077041626,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.609670"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 479.5479106903076,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.609795"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 480.6177234649658,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.609930"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 478.66607570648193,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.610045"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 514.0563535690308,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.610506"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 514.0564241409302,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.611111"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 517.4641780853271,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.611201"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 542.9011726379395,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.611282"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 549.356035232544,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.611362"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 492.3829870223999,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.611437"
+        },
+        {
+          "filename": "9.17-萌宝重生助妈咪逆风翻盘-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 546.9024991989136,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T10:38:32.611629"
+        }
+      ],
+      "total_duration": 4010.92,
+      "processing_time": 5811.589663028717,
+      "start_time": "2025-09-17T09:01:38.026353",
+      "end_time": "2025-09-17T10:38:29.616016",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.17",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盖世神医在都市",
+          "开局一元，颠覆人生",
+          "萌宝重生助妈咪逆风翻盘"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 3,
+  "successful_dramas": 2,
+  "total_materials": 54,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.17 --count 18",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 13077.952955007553,
+  "total_size_mb": 27432.39768218994
+}

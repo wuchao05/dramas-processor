@@ -423,7 +423,22 @@ class VideoEncoder:
     
     def build_segments_at_episode_boundaries(self, episodes: List[str], start_ep_idx: int, 
                                            start_offset: float, min_sec: float, max_sec: float) -> List[Tuple[str, float, float]]:
-        """Build segments aligned at episode boundaries."""
+        """Build segments aligned at episode boundaries with guaranteed minimum duration."""
+        # First, calculate available content from this start point
+        available_duration = self._calculate_available_duration(episodes, start_ep_idx, start_offset)
+        
+        # If available content is less than minimum, try to find a better start point
+        if available_duration < min_sec:
+            print(f"⚠️ 当前起始点可用时长 {available_duration:.1f}s < 最小要求 {min_sec:.1f}s，尝试调整...")
+            adjusted_start = self._find_valid_start_point(episodes, min_sec, max_sec)
+            if adjusted_start:
+                start_ep_idx, start_offset = adjusted_start
+                print(f"✅ 调整起始点: 第{start_ep_idx+1}集 {start_offset:.1f}s")
+            else:
+                print(f"⚠️ 无法找到满足最小时长的起始点，跳过此素材")
+                return []
+        
+        # Build segment choices from the valid start point
         choices = []
         total = 0.0
         for i in range(start_ep_idx, len(episodes)):
@@ -444,17 +459,86 @@ class VideoEncoder:
         if not choices:
             return []
 
+        # Find optimal cutoff within valid range
         target_mid = (min_sec + max_sec) / 2.0
-        candidate_idxs = [j for j, (_, _, _, cum) in enumerate(choices) if min_sec <= cum <= max_sec]
-        if candidate_idxs:
-            cut_upto = min(candidate_idxs, key=lambda j: abs(choices[j][3] - target_mid))
+        
+        # Only consider choices that meet minimum duration requirement
+        valid_choices = [j for j, (_, _, _, cum) in enumerate(choices) if cum >= min_sec]
+        
+        if valid_choices:
+            # Among valid choices, prefer those within max_sec range
+            preferred_choices = [j for j in valid_choices if choices[j][3] <= max_sec]
+            if preferred_choices:
+                cut_upto = min(preferred_choices, key=lambda j: abs(choices[j][3] - target_mid))
+            else:
+                # If no choice within max_sec, take the shortest valid one
+                cut_upto = min(valid_choices, key=lambda j: choices[j][3])
         else:
-            cut_upto = min(range(len(choices)), key=lambda j: abs(choices[j][3] - target_mid))
+            # This should not happen given our pre-check, but as fallback
+            print(f"⚠️ 警告：无法满足最小时长要求 {min_sec:.1f}s")
+            return []
 
+        # Build final segment list
         segs: List[Tuple[str, float, float]] = []
         for j, (i, s, e, _) in enumerate(choices[: cut_upto + 1]):
             segs.append((episodes[i], s, e))
+        
+        # Verify final duration meets requirement
+        final_duration = 0.0
+        for i, (ep_path, start, end) in enumerate(segs):
+            seg_duration = end - start
+            final_duration += seg_duration
+        if final_duration < min_sec:
+            print(f"⚠️ 最终时长 {final_duration:.1f}s < 最小要求 {min_sec:.1f}s，跳过此素材")
+            return []
+            
         return segs
+    
+    def _calculate_available_duration(self, episodes: List[str], start_ep_idx: int, start_offset: float) -> float:
+        """Calculate total available duration from given start point."""
+        total_duration = 0.0
+        for i in range(start_ep_idx, len(episodes)):
+            try:
+                dur = probe_duration(episodes[i])
+                if i == start_ep_idx:
+                    available = max(0.0, dur - start_offset)
+                else:
+                    available = dur
+                total_duration += available
+            except Exception:
+                continue
+        return total_duration
+    
+    def _find_valid_start_point(self, episodes: List[str], min_sec: float, max_sec: float) -> Optional[Tuple[int, float]]:
+        """Find a start point that can provide minimum required duration."""
+        # Try each episode as starting point
+        for ep_idx in range(len(episodes)):
+            try:
+                episode_duration = probe_duration(episodes[ep_idx])
+                
+                # Calculate maximum safe offset for this episode
+                available_from_ep = self._calculate_available_duration(episodes, ep_idx, 0.0)
+                
+                if available_from_ep < min_sec:
+                    continue  # This episode can't provide enough content even from start
+                
+                # Find maximum offset that still allows min_sec of content
+                max_safe_offset = episode_duration - min_sec
+                if max_safe_offset < 0:
+                    max_safe_offset = 0.0
+                
+                # Conservative offset: take from earlier in the episode
+                safe_offset = min(max_safe_offset, episode_duration * 0.1)  # Max 10% into episode
+                
+                # Verify this start point can provide minimum duration
+                available_duration = self._calculate_available_duration(episodes, ep_idx, safe_offset)
+                if available_duration >= min_sec:
+                    return (ep_idx, safe_offset)
+                    
+            except Exception:
+                continue
+        
+        return None  # No valid start point found
     
     def process_material(self, episodes: List[str], drama_name: str, start_ep_idx: int, start_offset: float,
                         min_sec: float, max_sec: float, out_path: str, reference_resolution: Tuple[int, int],
@@ -466,6 +550,14 @@ class VideoEncoder:
         workdir = tempfile.mkdtemp(prefix="mat_", dir=temp_root)
         t0_all = time.time()
         print(f"🎬 开始素材 | 剧：{drama_name} | 第 {material_idx} / {material_total} 条 | 临时目录：{workdir}")
+        
+        # Display episode range and start point info
+        episode_names = [os.path.basename(ep) for ep in episodes]
+        start_episode_name = episode_names[start_ep_idx] if start_ep_idx < len(episode_names) else "N/A"
+        print(f"📚 剧集范围: 共 {len(episodes)} 集")
+        print(f"   起始集: 第{start_ep_idx + 1}集 ({start_episode_name})")
+        print(f"   起始偏移: {start_offset:.1f}s")
+        print(f"   时长要求: {min_sec:.1f}s ~ {max_sec:.1f}s")
 
         try:
             ref_w, ref_h = reference_resolution
@@ -479,6 +571,22 @@ class VideoEncoder:
             if not segs:
                 print("⚠️ 无可用片段，跳过。")
                 return None
+            
+            # Display selected segments info
+            total_selected_duration = sum(end - start for _, start, end in segs)
+            print(f"✅ 已选择 {len(segs)} 个片段，总时长: {total_selected_duration:.1f}s")
+            
+            # Show detailed segment breakdown
+            if len(segs) > 1:
+                print("📋 片段详情:")
+                for i, (ep_path, s_time, e_time) in enumerate(segs, 1):
+                    ep_name = os.path.basename(ep_path)
+                    duration = e_time - s_time
+                    print(f"   {i}. {ep_name}: {s_time:.1f}s-{e_time:.1f}s (时长: {duration:.1f}s)")
+            else:
+                ep_name = os.path.basename(segs[0][0])
+                s_time, e_time = segs[0][1], segs[0][2]
+                print(f"📋 单片段: {ep_name}: {s_time:.1f}s-{e_time:.1f}s")
 
             # Process individual segments
             tmp_parts = []

@@ -15,6 +15,7 @@ class FeishuConfig(BaseModel):
     field_names: List[str] = Field(default_factory=list, description="需要获取的字段名")
     status_field_name: str = Field(default="当前状态", description="状态字段名")
     completed_status_value: str = Field(default="已完成", description="已完成状态值")
+    processing_status_value: str = Field(default="剪辑中", description="处理中状态值")
     page_size: int = Field(default=200, description="分页大小")
     token_refresh_interval: int = Field(default=7200000, description="token刷新间隔(毫秒)")
 

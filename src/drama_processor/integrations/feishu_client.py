@@ -317,7 +317,7 @@ class FeishuClient:
     def update_record_status(
         self, 
         record_id: str, 
-        status: str = "已完成"
+        status: str = "待上传"
     ) -> bool:
         """
         更新记录状态

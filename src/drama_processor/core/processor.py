@@ -262,25 +262,111 @@ class DramaProcessor:
         starts = []
         num_episodes = len(project.episodes)
         
+        episode_paths = [str(ep.file_path) for ep in project.episodes]
+        min_duration = self.config.min_duration
+        
+        # Calculate episode range limit (exclude last N episodes from config)
+        exclude_count = self.config.exclude_last_episodes
+        max_start_episode = max(0, num_episodes - exclude_count)
+        if max_start_episode <= 0:
+            logger.warning(f"⚠️ 剧集总数过少({num_episodes}集)，无法应用最后{exclude_count}集限制")
+            max_start_episode = num_episodes
+        
+        # Log start point generation info
+        total_duration = sum(ep.duration or 0 for ep in project.episodes)
+        mode = "随机" if self.config.random_start else "均匀分布"
+        logger.info(f"🎲 生成起始点: {mode}模式 | 需要{count}个 | 总剧集{num_episodes}集 | 总时长{total_duration:.1f}s")
+        logger.info(f"📊 起始范围限制: 前{max_start_episode}集 (排除最后{exclude_count}集)")
+        
         if self.config.random_start:
-            # Random start points
-            for _ in range(count):
-                ep_idx = random.randrange(num_episodes)
+            # Random start points with duration validation
+            attempts = 0
+            max_attempts = count * 3  # Allow more attempts to find valid points
+            
+            while len(starts) < count and attempts < max_attempts:
+                attempts += 1
+                # Limit episode selection to exclude last 10 episodes
+                ep_idx = random.randrange(max_start_episode)
                 episode = project.episodes[ep_idx]
+                
                 if episode.duration:
-                    max_offset = min(60.0, episode.duration / 3.0)
-                    offset = round(random.uniform(0, max_offset), 3)
+                    # Calculate available duration from this episode onwards
+                    available_duration = self._calculate_total_duration_from_episode(
+                        episode_paths, ep_idx, 0.0)
+                    
+                    if available_duration < min_duration:
+                        continue  # Skip this episode, not enough content
+                    
+                    # Calculate safe offset range
+                    remaining_episodes_duration = self._calculate_total_duration_from_episode(
+                        episode_paths, ep_idx + 1, 0.0) if ep_idx + 1 < len(episode_paths) else 0.0
+                    max_safe_offset = episode.duration - (min_duration - remaining_episodes_duration)
+                    max_safe_offset = max(0.0, min(max_safe_offset, episode.duration * 0.3))  # Max 30% into episode
+                    
+                    if max_safe_offset > 0:
+                        offset = round(random.uniform(0, max_safe_offset), 3)
+                    else:
+                        offset = 0.0
                 else:
                     offset = 0.0
-                starts.append((ep_idx, offset))
+                
+                # Verify this start point can provide minimum duration
+                if self._verify_start_point_duration(episode_paths, ep_idx, offset, min_duration):
+                    episode_name = project.episodes[ep_idx].file_path.name
+                    available_duration = self._calculate_total_duration_from_episode(episode_paths, ep_idx, offset)
+                    logger.info(f"🎯 选中起始点 {len(starts)+1}: 第{ep_idx+1}集 {episode_name} | 偏移{offset:.1f}s | 可用时长{available_duration:.1f}s")
+                    starts.append((ep_idx, offset))
+                
+            # If we couldn't find enough random points, fill with safe defaults
+            while len(starts) < count:
+                logger.warning(f"Could not find enough valid random start points, using safe defaults")
+                for ep_idx in range(min(max_start_episode, count - len(starts))):
+                    if self._verify_start_point_duration(episode_paths, ep_idx, 0.0, min_duration):
+                        starts.append((ep_idx, 0.0))
+                break
         else:
-            # Evenly distributed starts
-            step = max(1, num_episodes // max(1, count))
+            # Evenly distributed starts with validation (within allowed range)
+            step = max(1, max_start_episode // max(1, count))
             for i in range(count):
-                ep_idx = min(i * step, num_episodes - 1)
-                starts.append((ep_idx, 0.0))
+                ep_idx = min(i * step, max_start_episode - 1)
+                
+                # Verify this start point provides enough duration
+                if self._verify_start_point_duration(episode_paths, ep_idx, 0.0, min_duration):
+                    episode_name = project.episodes[ep_idx].file_path.name
+                    available_duration = self._calculate_total_duration_from_episode(episode_paths, ep_idx, 0.0)
+                    logger.info(f"📍 均匀分布起始点 {len(starts)+1}: 第{ep_idx+1}集 {episode_name} | 偏移0.0s | 可用时长{available_duration:.1f}s")
+                    starts.append((ep_idx, 0.0))
+                else:
+                    # Try to find the earliest valid episode within allowed range
+                    for alt_ep_idx in range(max_start_episode):
+                        if self._verify_start_point_duration(episode_paths, alt_ep_idx, 0.0, min_duration):
+                            starts.append((alt_ep_idx, 0.0))
+                            break
+        
+        if len(starts) < count:
+            logger.warning(f"Only found {len(starts)} valid start points out of {count} requested")
         
         return starts
+    
+    def _calculate_total_duration_from_episode(self, episode_paths: List[str], start_ep_idx: int, start_offset: float) -> float:
+        """Calculate total available duration from given episode and offset."""
+        total_duration = 0.0
+        for i in range(start_ep_idx, len(episode_paths)):
+            try:
+                dur = probe_duration(episode_paths[i])
+                if i == start_ep_idx:
+                    available = max(0.0, dur - start_offset)
+                else:
+                    available = dur
+                total_duration += available
+            except Exception:
+                continue
+        return total_duration
+    
+    def _verify_start_point_duration(self, episode_paths: List[str], ep_idx: int, offset: float, min_duration: float) -> bool:
+        """Verify that a start point can provide the minimum required duration."""
+        available_duration = self._calculate_total_duration_from_episode(episode_paths, ep_idx, offset)
+        return available_duration >= min_duration
     
     def process_single_material(self, project: DramaProject, material_idx: int, 
                               start_ep_idx: int, start_offset: float, 
@@ -289,7 +375,14 @@ class DramaProcessor:
         """Process a single material - equivalent to build_one_material."""
         start_time = time.time()
         
+        # Log detailed start point info
+        episode_name = project.episodes[start_ep_idx].file_path.name if start_ep_idx < len(project.episodes) else "Unknown"
+        available_duration = self._calculate_total_duration_from_episode(
+            [str(ep.file_path) for ep in project.episodes], start_ep_idx, start_offset)
+        
         logger.info(f"🎬 开始素材 | 剧：{project.name} | 第 {material_idx} / {material_total} 条")
+        logger.info(f"   📍 起始点: 第{start_ep_idx+1}集 ({episode_name}) | 偏移: {start_offset:.1f}s")
+        logger.info(f"   ⏱️ 可用时长: {available_duration:.1f}s | 目标: {self.config.min_duration}~{self.config.max_duration}s")
         
         # Get episode paths
         episode_paths = [str(ep.file_path) for ep in project.episodes]
@@ -561,13 +654,18 @@ class DramaProcessor:
                 out_dir, run_suffix, start_index, total_to_make = result
                 total_materials_planned += total_to_make
                 
-                # Update status to "剪辑中" when starting processing
+                # Update status to processing when starting processing
                 if self.status_callback:
                     try:
-                        self.status_callback(project.name, "剪辑中")
-                        logger.info(f"📝 已更新 '{project.name}' 状态为'剪辑中'")
+                        # Get the processing status value from config, fallback to "剪辑中"
+                        processing_status = "剪辑中"
+                        if self.config.feishu and self.config.feishu.processing_status_value:
+                            processing_status = self.config.feishu.processing_status_value
+                        
+                        self.status_callback(project.name, processing_status)
+                        logger.info(f"📝 已更新 '{project.name}' 状态为'{processing_status}'")
                     except Exception as e:
-                        logger.warning(f"⚠️ 更新 '{project.name}' 状态为'剪辑中'失败: {e}")
+                        logger.warning(f"⚠️ 更新 '{project.name}' 状态失败: {e}")
                 
                 # Log project info
                 ref_w, ref_h = project.reference_resolution or (1920, 1080)
@@ -588,13 +686,18 @@ class DramaProcessor:
                 
                 # Record successful processing details
                 if completed > 0:
-                    # Update status to "待上传" when processing is completed successfully
+                    # Update status when processing is completed successfully
                     if self.status_callback:
+                        # Get the completed status value from config, fallback to "待上传"
+                        completed_status = "待上传"
+                        if self.config.feishu and self.config.feishu.completed_status_value:
+                            completed_status = self.config.feishu.completed_status_value
+                        
                         try:
-                            self.status_callback(project.name, "待上传")
-                            logger.info(f"📝 已更新 '{project.name}' 状态为'待上传'")
+                            self.status_callback(project.name, completed_status)
+                            logger.info(f"📝 已更新 '{project.name}' 状态为'{completed_status}'")
                         except Exception as e:
-                            logger.warning(f"⚠️ 更新 '{project.name}' 状态为'待上传'失败: {e}")
+                            logger.warning(f"⚠️ 更新 '{project.name}' 状态为'{completed_status}'失败: {e}")
                     
                     # 构建素材文件路径列表
                     materials_list = []
@@ -656,13 +759,18 @@ class DramaProcessor:
         # Send completion notification
         if self.feishu_notifier:
             try:
+                # Get the completed status value from config, fallback to "待上传"
+                completed_status = "待上传"
+                if self.config.feishu and self.config.feishu.completed_status_value:
+                    completed_status = self.config.feishu.completed_status_value
+                
                 # 构建剧目结果信息
                 dramas_results = []
                 for drama_info in successful_dramas:
                     dramas_results.append({
                         'name': drama_info['name'],
                         'date': drama_info['date'],
-                        'status': '待上传',
+                        'status': completed_status,
                         'completed': drama_info['completed'],
                         'planned': drama_info['planned'],
                         'output_dir': drama_info['output_dir']

@@ -120,6 +120,9 @@ class ProcessingConfig(BaseModel):
     count: int = Field(default=1, description="Number of materials per drama")
     date_str: Optional[str] = Field(default=None, description="Date string for filenames")
     
+    # Start point selection settings
+    exclude_last_episodes: int = Field(default=10, description="Exclude the last N episodes when selecting start points")
+    
     # Text overlay settings
     title_font_size: int = Field(default=36, description="Title font size")
     bottom_font_size: int = Field(default=28, description="Bottom text font size")

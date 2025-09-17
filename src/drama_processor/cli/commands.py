@@ -975,13 +975,18 @@ def feishu_run(ctx, status: str, root_dir: Optional[Path],
             
             dedup_manager = get_date_dedup_manager()
             
+            # Get the completed status value from config, fallback to "待上传"
+            completed_status = "待上传"
+            if config.feishu and config.feishu.completed_status_value:
+                completed_status = config.feishu.completed_status_value
+            
             # 构建处理结果列表
             drama_results = []
             for drama_name, info in drama_info.items():
                 drama_results.append({
                     'name': drama_name,
                     'date': info.get('date', '未知'),
-                    'status': '已完成',  # 简化处理，实际应该根据处理结果
+                    'status': completed_status,  # Use configured status value
                     'completed': 1 if total_done > 0 else 0,  # 简化处理
                     'planned': 1
                 })
@@ -1293,13 +1298,18 @@ def feishu_select(ctx, status: str, root_dir: Optional[Path],
             
             dedup_manager = get_date_dedup_manager()
             
+            # Get the completed status value from config, fallback to "待上传"
+            completed_status = "待上传"
+            if config.feishu and config.feishu.completed_status_value:
+                completed_status = config.feishu.completed_status_value
+            
             # 构建处理结果列表
             drama_results = []
             for drama_name, info in drama_info.items():
                 drama_results.append({
                     'name': drama_name,
                     'date': info.get('date', '未知'),
-                    'status': '已完成',  # 简化处理，实际应该根据处理结果
+                    'status': completed_status,  # Use configured status value
                     'completed': 1 if total_done > 0 else 0,  # 简化处理
                     'planned': 1
                 })
