@@ -11,8 +11,8 @@ from ..utils.files import write_text_file
 class TextOverlay:
     """Handles text overlay generation for videos."""
     
-    def __init__(self, watermark_path: Optional[str] = None):
-        self.title_colors = [
+    def __init__(self, watermark_path: Optional[str] = None, title_colors: Optional[List[str]] = None):
+        self.title_colors = title_colors or [
             "#FFA500", "#FFB347", "#FF8C00", "#FFD580", "#E69500", "#FFAE42",
         ]
         self.watermark_path = watermark_path

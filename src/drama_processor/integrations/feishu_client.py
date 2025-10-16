@@ -113,7 +113,7 @@ class FeishuClient:
     
     def search_records(
         self, 
-        status_filter: str = "待剪辑",
+        status_filter: Optional[str] = None,
         date_filter: Optional[str] = None,
         field_names: Optional[List[str]] = None,
         page_size: Optional[int] = None,
@@ -124,7 +124,7 @@ class FeishuClient:
         搜索记录
         
         Args:
-            status_filter: 状态过滤条件
+            status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
             field_names: 需要获取的字段名列表
             page_size: 分页大小
@@ -135,6 +135,10 @@ class FeishuClient:
             搜索结果
         """
         self._ensure_valid_token()
+        
+        # 使用配置中的默认状态值
+        if status_filter is None:
+            status_filter = self.config.pending_status_value
         
         # 构建请求URL
         url = f"{self.config.base_url}/apps/{self.config.app_token}/tables/{self.config.table_id}/records/search"
@@ -221,12 +225,12 @@ class FeishuClient:
         except Exception as e:
             raise FeishuAPIError(f"搜索记录失败: {str(e)}")
     
-    def get_pending_dramas(self, status_filter: str = "待剪辑", date_filter: Optional[str] = None) -> List[str]:
+    def get_pending_dramas(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> List[str]:
         """
         获取指定状态的剧名列表
         
         Args:
-            status_filter: 状态过滤条件（默认：待剪辑）
+            status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
         
         Returns:
@@ -236,15 +240,16 @@ class FeishuClient:
             response = self.search_records(status_filter=status_filter, date_filter=date_filter)
             return response.drama_names
         except Exception as e:
-            logger.error(f"获取{status_filter}剧名失败: {str(e)}")
+            actual_status = status_filter or self.config.pending_status_value
+            logger.error(f"获取{actual_status}剧名失败: {str(e)}")
             raise
     
-    def get_pending_dramas_with_records(self, status_filter: str = "待剪辑", date_filter: Optional[str] = None) -> Dict[str, str]:
+    def get_pending_dramas_with_records(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> Dict[str, str]:
         """
         获取指定状态的剧名和对应的记录ID
         
         Args:
-            status_filter: 状态过滤条件（默认：待剪辑）
+            status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
         
         Returns:
@@ -259,15 +264,16 @@ class FeishuClient:
                     drama_records[drama_name] = record.record_id
             return drama_records
         except Exception as e:
-            logger.error(f"获取{status_filter}剧名和记录ID失败: {str(e)}")
+            actual_status = status_filter or self.config.pending_status_value
+            logger.error(f"获取{actual_status}剧名和记录ID失败: {str(e)}")
             raise
     
-    def get_pending_dramas_with_dates(self, status_filter: str = "待剪辑", date_filter: Optional[str] = None) -> Dict[str, Dict[str, str]]:
+    def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> Dict[str, Dict[str, str]]:
         """
         获取指定状态的剧名和对应的记录信息（包括日期）
         
         Args:
-            status_filter: 状态过滤条件（默认：待剪辑）
+            status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
         
         Returns:
@@ -311,7 +317,8 @@ class FeishuClient:
                     }
             return drama_info
         except Exception as e:
-            logger.error(f"获取{status_filter}剧名和日期信息失败: {str(e)}")
+            actual_status = status_filter or self.config.pending_status_value
+            logger.error(f"获取{actual_status}剧名和日期信息失败: {str(e)}")
             raise
     
     def update_record_status(
@@ -341,7 +348,7 @@ class FeishuClient:
         
         payload = {
             "fields": {
-                "当前状态": status
+                self.config.status_field_name: status
             }
         }
         

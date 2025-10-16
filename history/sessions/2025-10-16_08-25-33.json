@@ -1,0 +1,447 @@
+{
+  "session_id": "2025-10-16_08-25-33",
+  "start_time": "2025-10-16T08:25:33.390682",
+  "end_time": "2025-10-16T09:11:19.368692",
+  "dramas": [
+    {
+      "name": "乖，叫老公",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/乖，叫老公",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.17导出/乖，叫老公",
+      "date_str": "10.17",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "10.17-乖，叫老公-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 515.9227209091187,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.923073"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 489.716347694397,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.927427"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 479.41043281555176,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.927700"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 464.9950695037842,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.927999"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 511.5247039794922,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.928297"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 478.0318555831909,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.928636"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 396.9935760498047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.928915"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 449.6888790130615,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.929190"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 348.35545921325684,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.929475"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 420.73497009277344,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.929756"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 458.091290473938,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.930060"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 415.9859781265259,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.930281"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 457.67173194885254,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.930547"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 406.2916498184204,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.930733"
+        },
+        {
+          "filename": "10.17-乖，叫老公-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 398.01988220214844,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-10-16T08:50:40.930780"
+        }
+      ],
+      "total_duration": 6216.164169,
+      "processing_time": 1502.8350517749786,
+      "start_time": "2025-10-16T08:25:35.096485",
+      "end_time": "2025-10-16T08:50:37.931537",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.17",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "萍通剧坊"
+            },
+            {
+              "range": "10-11",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "12-13",
+              "text": "看家本领"
+            },
+            {
+              "range": "14-15",
+              "text": "奈煊剧场"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "萍通剧坊",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "乖，叫老公",
+          "捡闺女后，受气王爷被旺成了皇帝",
+          "叫我杨神医",
+          "驯野",
+          "小不点的幸福生活",
+          "儿媳别怕，婆婆为你撑腰",
+          "唯愿此生共白头",
+          "大叔盛宠乖乖新娘甜入怀",
+          "全村大喜！小姐找了个好女婿",
+          "重生70：起飞吧我的开挂人生"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "儿媳别怕，婆婆为你撑腰",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/儿媳别怕，婆婆为你撑腰",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.17导出/儿媳别怕，婆婆为你撑腰",
+      "date_str": "10.17",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 14,
+      "success_rate": 0.9333333333333333,
+      "materials": [],
+      "total_duration": 3506.880000000001,
+      "processing_time": 1234.5778303146362,
+      "start_time": "2025-10-16T08:50:40.934673",
+      "end_time": "2025-10-16T09:11:15.512503",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.17",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "萍通剧坊"
+            },
+            {
+              "range": "10-11",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "12-13",
+              "text": "看家本领"
+            },
+            {
+              "range": "14-15",
+              "text": "奈煊剧场"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "萍通剧坊",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "乖，叫老公",
+          "捡闺女后，受气王爷被旺成了皇帝",
+          "叫我杨神医",
+          "驯野",
+          "小不点的幸福生活",
+          "儿媳别怕，婆婆为你撑腰",
+          "唯愿此生共白头",
+          "大叔盛宠乖乖新娘甜入怀",
+          "全村大喜！小姐找了个好女婿",
+          "重生70：起飞吧我的开挂人生"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 2,
+  "successful_dramas": 1,
+  "total_materials": 15,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 10.17 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 2737.412882089615,
+  "total_size_mb": 6691.434547424316
+}

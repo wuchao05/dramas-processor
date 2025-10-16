@@ -1,0 +1,823 @@
+{
+  "session_id": "2025-09-24_17-03-17",
+  "start_time": "2025-09-24T17:03:17.744778",
+  "end_time": "2025-09-24T18:19:00.278899",
+  "dramas": [
+    {
+      "name": "透视小地主",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/透视小地主",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.24导出/透视小地主",
+      "date_str": "9.24",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.24-透视小地主-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 448.7216100692749,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.707763"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 562.7928991317749,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.712508"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 596.4643363952637,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.712908"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 526.5426263809204,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.713146"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 524.532395362854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.713432"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 546.3930854797363,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.713655"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 494.0639171600342,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.713841"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 572.2753067016602,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.714273"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 509.4555263519287,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.714519"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 549.7888116836548,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.714716"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 522.3853931427002,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.714869"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 582.2884464263916,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.715022"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 519.7239923477173,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.715236"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 509.4176607131958,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.715406"
+        },
+        {
+          "filename": "9.24-透视小地主-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 537.922191619873,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:30:12.715453"
+        }
+      ],
+      "total_duration": 6137.079999999999,
+      "processing_time": 1608.8199701309204,
+      "start_time": "2025-09-24T17:03:20.090747",
+      "end_time": "2025-09-24T17:30:08.910717",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.24",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "非她不可",
+          "透视小地主",
+          "驯野"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "非她不可",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/非她不可",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.24导出/非她不可",
+      "date_str": "9.24",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.24-非她不可-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 488.392409324646,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.423845"
+        },
+        {
+          "filename": "9.24-非她不可-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 451.54919719696045,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.443101"
+        },
+        {
+          "filename": "9.24-非她不可-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 533.6330900192261,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.443473"
+        },
+        {
+          "filename": "9.24-非她不可-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 461.75330352783203,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.445077"
+        },
+        {
+          "filename": "9.24-非她不可-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 477.84794998168945,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.445520"
+        },
+        {
+          "filename": "9.24-非她不可-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 478.9646329879761,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.447562"
+        },
+        {
+          "filename": "9.24-非她不可-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 472.66568183898926,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.449567"
+        },
+        {
+          "filename": "9.24-非她不可-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 452.92995262145996,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.451173"
+        },
+        {
+          "filename": "9.24-非她不可-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 449.80175495147705,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.451825"
+        },
+        {
+          "filename": "9.24-非她不可-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 485.69929599761963,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.452071"
+        },
+        {
+          "filename": "9.24-非她不可-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 500.7984285354614,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.453485"
+        },
+        {
+          "filename": "9.24-非她不可-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 466.1779451370239,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.453705"
+        },
+        {
+          "filename": "9.24-非她不可-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 481.35365200042725,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.453884"
+        },
+        {
+          "filename": "9.24-非她不可-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 467.1485719680786,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.454096"
+        },
+        {
+          "filename": "9.24-非她不可-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 470.5366334915161,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T17:53:51.456189"
+        }
+      ],
+      "total_duration": 2235.9326509999996,
+      "processing_time": 1415.5631942749023,
+      "start_time": "2025-09-24T17:30:12.721554",
+      "end_time": "2025-09-24T17:53:48.284748",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.24",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "非她不可",
+          "透视小地主",
+          "驯野"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "驯野",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/驯野",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.24导出/驯野",
+      "date_str": "9.24",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.24-驯野-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 501.93667697906494,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.526030"
+        },
+        {
+          "filename": "9.24-驯野-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 532.9257650375366,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.549793"
+        },
+        {
+          "filename": "9.24-驯野-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 500.81186294555664,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.551224"
+        },
+        {
+          "filename": "9.24-驯野-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 553.4075698852539,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.552618"
+        },
+        {
+          "filename": "9.24-驯野-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 531.1578483581543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.553613"
+        },
+        {
+          "filename": "9.24-驯野-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 422.06688594818115,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.554416"
+        },
+        {
+          "filename": "9.24-驯野-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 505.20997428894043,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.555660"
+        },
+        {
+          "filename": "9.24-驯野-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 512.8750801086426,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.556152"
+        },
+        {
+          "filename": "9.24-驯野-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 464.39318466186523,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.556692"
+        },
+        {
+          "filename": "9.24-驯野-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 458.35871505737305,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.557185"
+        },
+        {
+          "filename": "9.24-驯野-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 551.9035539627075,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.557580"
+        },
+        {
+          "filename": "9.24-驯野-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 516.2395601272583,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.557926"
+        },
+        {
+          "filename": "9.24-驯野-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 469.5538692474365,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.558396"
+        },
+        {
+          "filename": "9.24-驯野-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 523.4601345062256,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.559033"
+        },
+        {
+          "filename": "9.24-驯野-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 480.0044775009155,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-24T18:18:58.559160"
+        }
+      ],
+      "total_duration": 8228.2,
+      "processing_time": 1503.8078029155731,
+      "start_time": "2025-09-24T17:53:51.476271",
+      "end_time": "2025-09-24T18:18:55.284074",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.24",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "非她不可",
+          "透视小地主",
+          "驯野"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 3,
+  "successful_dramas": 3,
+  "total_materials": 45,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.24 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 4528.190967321396,
+  "total_size_mb": 22666.325857162476
+}

@@ -1,0 +1,2208 @@
+{
+  "session_id": "2025-09-29_13-52-26",
+  "start_time": "2025-09-29T13:52:26.365573",
+  "end_time": "2025-09-29T17:18:25.944026",
+  "dramas": [
+    {
+      "name": "兄弟收手吧，外面全是警察",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/兄弟收手吧，外面全是警察",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/兄弟收手吧，外面全是警察",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 452.85882568359375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.550356"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 450.20722103118896,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.554217"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 468.99590969085693,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.554444"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 472.7303924560547,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.554627"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 445.94781017303467,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.554799"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 491.4148588180542,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.555188"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 486.82653999328613,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.555298"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 445.67450046539307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.555426"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 496.5980815887451,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.555548"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 481.0244960784912,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.555657"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 474.97981452941895,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.555770"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 519.1074829101562,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.555886"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 498.35255336761475,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.556015"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 445.368803024292,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.556138"
+        },
+        {
+          "filename": "9.29-兄弟收手吧，外面全是警察-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 463.8052158355713,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:17:37.556172"
+        }
+      ],
+      "total_duration": 5542.528248999999,
+      "processing_time": 1506.0599601268768,
+      "start_time": "2025-09-29T13:52:28.277025",
+      "end_time": "2025-09-29T14:17:34.336985",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "唯愿此生共白头",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/唯愿此生共白头",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/唯愿此生共白头",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-唯愿此生共白头-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 490.3098258972168,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.875064"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 496.77877712249756,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.883403"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 483.5758275985718,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.884123"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 483.42823791503906,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.885221"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 522.4973764419556,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.887172"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 529.7460498809814,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.888710"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 552.8337059020996,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.889313"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 533.9496688842773,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.890499"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 519.1675891876221,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.891247"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 540.8917942047119,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.891715"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 555.0174312591553,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.893109"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 520.0045700073242,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.894522"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 529.4081172943115,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.895309"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 475.53844451904297,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.896680"
+        },
+        {
+          "filename": "9.29-唯愿此生共白头-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 500.7114372253418,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T14:43:36.896822"
+        }
+      ],
+      "total_duration": 2026.6400000000003,
+      "processing_time": 1556.1337740421295,
+      "start_time": "2025-09-29T14:17:37.561025",
+      "end_time": "2025-09-29T14:43:33.694799",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "我一个扎纸匠怎么成警局常客了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/我一个扎纸匠怎么成警局常客了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/我一个扎纸匠怎么成警局常客了",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 561.0891284942627,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.835465"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 546.0528478622437,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.840927"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 562.2799234390259,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.841132"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 508.19411754608154,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.841315"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 541.7062969207764,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.841455"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 554.3041772842407,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.841660"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 481.0273275375366,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.841956"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 511.90315341949463,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.842160"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 510.2347688674927,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.842336"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 526.7871532440186,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.842470"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 558.1876487731934,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.842649"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 554.1574325561523,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.842829"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 549.4912719726562,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.843072"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 568.4987058639526,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.843379"
+        },
+        {
+          "filename": "9.29-我一个扎纸匠怎么成警局常客了-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 590.6532077789307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:10:09.843460"
+        }
+      ],
+      "total_duration": 2515.1600000000003,
+      "processing_time": 1589.9270498752594,
+      "start_time": "2025-09-29T14:43:36.904101",
+      "end_time": "2025-09-29T15:10:06.831151",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "盛夏芬德拉",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/盛夏芬德拉",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/盛夏芬德拉",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-盛夏芬德拉-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 359.93057346343994,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.260152"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 323.57550525665283,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.263767"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 378.5003967285156,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.264018"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 323.91719341278076,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.264211"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 335.35190868377686,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.264355"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 443.71243381500244,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.265433"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 359.97203540802,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.265632"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 277.08733654022217,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.265783"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 347.8694906234741,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.265916"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 333.31056213378906,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.266086"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 360.70201778411865,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.266273"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 408.9832534790039,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.266443"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 310.57049465179443,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.266628"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 345.99271297454834,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.266800"
+        },
+        {
+          "filename": "9.29-盛夏芬德拉-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 360.03649711608887,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T15:35:05.266853"
+        }
+      ],
+      "total_duration": 8015.153440000001,
+      "processing_time": 1492.6954448223114,
+      "start_time": "2025-09-29T15:10:09.850183",
+      "end_time": "2025-09-29T15:35:02.545628",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "穿成萌宝重建商业帝国",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/穿成萌宝重建商业帝国",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/穿成萌宝重建商业帝国",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 489.21502780914307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.657072"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 547.9291172027588,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.658601"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 526.2257604598999,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.658863"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 477.6983804702759,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.659690"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 498.4622468948364,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.659929"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 495.8772201538086,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.660140"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 474.67518043518066,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.660323"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 478.0765562057495,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.660493"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 456.2177667617798,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.660679"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 487.31884002685547,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.660902"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 510.7895736694336,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.661077"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 446.4040412902832,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.661258"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 495.1198034286499,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.661516"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 513.77268409729,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.661712"
+        },
+        {
+          "filename": "9.29-穿成萌宝重建商业帝国-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 516.287579536438,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:00:35.662274"
+        }
+      ],
+      "total_duration": 6455.479999999999,
+      "processing_time": 1524.9711871147156,
+      "start_time": "2025-09-29T15:35:05.270098",
+      "end_time": "2025-09-29T16:00:30.241285",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "老婆别慌，我全家都是高手",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/老婆别慌，我全家都是高手",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/老婆别慌，我全家都是高手",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 462.54754543304443,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.447835"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 568.7454595565796,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.454916"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 454.7277183532715,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.455262"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 540.976372718811,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.455696"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 556.8940668106079,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.456431"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 527.7935829162598,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.456978"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 490.94539165496826,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.457212"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 505.4488639831543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.457606"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 486.38238620758057,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.457869"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 529.172532081604,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.458960"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 464.54041957855225,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.461061"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 562.4324913024902,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.461471"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 507.041784286499,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.461972"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 528.7591753005981,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.462146"
+        },
+        {
+          "filename": "9.29-老婆别慌，我全家都是高手-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 508.42746925354004,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:26:12.462321"
+        }
+      ],
+      "total_duration": 4614.792491000001,
+      "processing_time": 1532.5983469486237,
+      "start_time": "2025-09-29T16:00:35.665357",
+      "end_time": "2025-09-29T16:26:08.263704",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "裙下芬德拉",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/裙下芬德拉",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/裙下芬德拉",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-裙下芬德拉-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 487.6901578903198,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.779187"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 495.16105365753174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.785090"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 510.86998653411865,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.785441"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 520.7122974395752,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.785641"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 512.3770446777344,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.785797"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 536.5132007598877,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.785971"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 547.9055013656616,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.786217"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 513.0717372894287,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.786663"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 488.5579137802124,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.786818"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 429.8078804016113,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.787034"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 477.67437267303467,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.787224"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 485.6447982788086,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.787439"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 505.22319316864014,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.788124"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 506.0503988265991,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.788388"
+        },
+        {
+          "filename": "9.29-裙下芬德拉-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 501.5423860549927,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T16:51:44.788426"
+        }
+      ],
+      "total_duration": 6696.080000000001,
+      "processing_time": 1528.9966111183167,
+      "start_time": "2025-09-29T16:26:12.470239",
+      "end_time": "2025-09-29T16:51:41.466850",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "长生万年被曾孙女直播曝光了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/长生万年被曾孙女直播曝光了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/长生万年被曾孙女直播曝光了",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 503.76553535461426,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.252123"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 484.64760971069336,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.258628"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 485.25854778289795,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.259812"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 540.9667205810547,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.260647"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 503.35004901885986,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.260906"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 542.8947324752808,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.261171"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 543.035174369812,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.261514"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 536.652834892273,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.262106"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 542.8313074111938,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.262296"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 519.4139051437378,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.262537"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 564.6687459945679,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.262775"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 523.5458669662476,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.262975"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 523.0658226013184,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.263235"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 488.6560888290405,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.263542"
+        },
+        {
+          "filename": "9.29-长生万年被曾孙女直播曝光了-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 458.26534938812256,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T17:18:24.263601"
+        }
+      ],
+      "total_duration": 7028.538744999999,
+      "processing_time": 1596.6823589801788,
+      "start_time": "2025-09-29T16:51:44.795031",
+      "end_time": "2025-09-29T17:18:21.477390",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "盛夏芬德拉",
+          "我一个扎纸匠怎么成警局常客了",
+          "老婆别慌，我全家都是高手",
+          "唯愿此生共白头",
+          "穿成萌宝重建商业帝国",
+          "裙下芬德拉",
+          "兄弟收手吧，外面全是警察",
+          "长生万年被曾孙女直播曝光了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 8,
+  "successful_dramas": 8,
+  "total_materials": 120,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.29 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 12328.064733028412,
+  "total_size_mb": 58610.556183815
+}

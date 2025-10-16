@@ -8,7 +8,7 @@
 - [1. drama-processor process](#1-drama-processor-process)
 - [2. fscut run](#2-fscut-run)
 - [3. fscut select](#3-fscut-select)
-- [AI 功能详解](#ai功能详解)
+- [去重功能详解](#去重功能详解)
 - [参数详解](#参数详解)
 - [使用示例](#使用示例)
 
@@ -86,9 +86,8 @@ drama-processor process [ROOT_DIR] [OPTIONS]
 - `--filter-threads INTEGER`: 滤镜并行线程数（默认=CPU 核数一半，至少 2）
 - `--verbose`: 详细日志：显示完整的 FFmpeg 命令
 
-#### AI 增强设置
+#### 去重功能设置
 
-- `--ai-scene-detection`: 启用 AI 智能场景检测，自动选择最佳剪辑点
 - `--enable-deduplication`: 启用剪辑点去重功能，避免生成重复素材
 
 #### 飞书通知设置
@@ -118,10 +117,7 @@ def process_command(ctx, root_dir, ...):
         projects = interactive_select_projects()
 
     # 3. 处理器初始化
-    if ai_scene_detection:
-        processor = AIEnhancedProcessor(config, enable_ai_scene_detection=True)
-    else:
-        processor = DramaProcessor(config)
+    processor = DramaProcessor(config)
 
     # 4. 批量处理
     for project in projects:
@@ -140,7 +136,7 @@ fscut run [OPTIONS] [ROOT_DIR]
 
 ### 特有参数
 
-- `--status STRING`: 筛选状态（默认："待剪辑"）
+- `--status STRING`: 筛选状态（默认：使用配置文件中的 `pending_status_value`）
 
 ### 功能实现
 
@@ -163,10 +159,7 @@ def feishu_run(ctx, status, ...):
         client.update_record_status(record_id, new_status)
 
     # 4. 处理器创建（带状态回调）
-    if ai_scene_detection:
-        processor = AIEnhancedProcessor(config, status_callback=status_update_callback)
-    else:
-        processor = DramaProcessor(config, status_callback=status_update_callback)
+    processor = DramaProcessor(config, status_callback=status_update_callback)
 
     # 5. 自动处理所有剧目
     for drama_name in dramas:
@@ -187,7 +180,7 @@ fscut select [OPTIONS] [ROOT_DIR]
 
 ### 特有参数
 
-- `--status STRING`: 筛选状态（默认："待剪辑"）
+- `--status STRING`: 筛选状态（默认：使用配置文件中的 `pending_status_value`）
 
 ### 功能实现
 
@@ -212,47 +205,9 @@ def feishu_select(ctx, status, ...):
         processor.process_project(project)
 ```
 
-## AI 功能详解
+## 去重功能详解
 
-### 1. AI 智能场景检测 (`--ai-scene-detection`)
-
-**功能**：使用 AI 算法自动识别视频中的场景变化，选择最佳剪辑点。
-
-**实现原理**：
-
-- 使用深度学习模型分析视频帧
-- 识别场景转换、对话开始/结束等关键时刻
-- 计算每个候选剪辑点的质量评分
-- 自动选择评分最高的剪辑点
-
-**使用示例**：
-
-```bash
-# 启用AI场景检测
-drama-processor process /path/to/dramas --ai-scene-detection
-
-# 结合其他参数
-fscut run --ai-scene-detection --count 5 --min-sec 600
-```
-
-**处理器创建**：
-
-```python
-if ai_scene_detection:
-    click.echo("🤖 启用AI智能场景处理...")
-    click.echo("  ✅ AI场景检测：自动识别场景变化")
-    click.echo("  ✅ 智能剪辑点：选择最佳片段")
-
-    processor = AIEnhancedProcessor(
-        config,
-        enable_ai_scene_detection=True,
-        status_callback=callback
-    )
-else:
-    processor = DramaProcessor(config, status_callback=callback)
-```
-
-### 2. 剪辑点去重功能 (`--enable-deduplication`)
+### 剪辑点去重功能 (`--enable-deduplication`)
 
 **功能**：避免在多次运行时生成重复的素材内容。
 
@@ -260,7 +215,7 @@ else:
 
 - **持久化存储**：将已使用的剪辑点保存到文件
 - **排除半径**：新剪辑点与已使用剪辑点距离小于 30 秒时被跳过
-- **智能回退**：当 AI 剪辑点全部被使用时，自动回退到随机生成
+- **智能回退**：当所有剪辑点全部被使用时，自动回退到随机生成
 
 **存储位置**：`{temp_dir}/cut_points_history/{hash}_{drama_name}.json`
 
@@ -270,15 +225,15 @@ else:
 # 启用去重功能
 drama-processor process /path/to/dramas --enable-deduplication
 
-# 同时启用AI检测和去重
-fscut sync --ai-scene-detection --enable-deduplication --auto-update
+# 启用去重功能
+fscut sync --enable-deduplication --auto-update
 ```
 
 **实现细节**：
 
 ```python
-class AIEnhancedProcessor(DramaProcessor):
-    def __init__(self, config, enable_ai_scene_detection=True):
+class DramaProcessor:
+    def __init__(self, config):
         # 去重配置
         self.enable_deduplication = config.enable_deduplication
         self.used_cut_points = []  # 已使用的剪辑点
@@ -321,12 +276,11 @@ class AIEnhancedProcessor(DramaProcessor):
 | `--fast-mode`      | flag | False      | 快速模式（关闭色彩扰动） |
 | `--filter-threads` | int  | CPU 核数/2 | 滤镜处理线程数           |
 
-### AI 增强参数
+### 去重功能参数
 
-| 参数                     | 类型 | 默认值 | 说明             |
-| ------------------------ | ---- | ------ | ---------------- |
-| `--ai-scene-detection`   | flag | False  | 启用 AI 场景检测 |
-| `--enable-deduplication` | flag | False  | 启用剪辑点去重   |
+| 参数                     | 类型 | 默认值 | 说明           |
+| ------------------------ | ---- | ------ | -------------- |
+| `--enable-deduplication` | flag | False  | 启用剪辑点去重 |
 
 ## 使用示例
 
@@ -343,9 +297,8 @@ drama-processor process /path/to/dramas --count 5 --min-sec 600 --max-sec 1200
 ### 高级功能
 
 ```bash
-# 启用AI功能
+# 启用去重功能
 drama-processor process /path/to/dramas \
-  --ai-scene-detection \
   --enable-deduplication \
   --count 8 \
   --jobs 3
@@ -361,17 +314,17 @@ drama-processor process /path/to/dramas \
 ### 飞书集成
 
 ```bash
-# 自动处理飞书表格中的待剪辑剧目
-fscut run --ai-scene-detection --enable-deduplication
+# 自动处理飞书表格中的待处理剧目
+fscut run --enable-deduplication
 
 # 选择性处理特定剧目
 fscut select --status "待剪辑" --count 3
 
 # 预览待处理剧目（替代原 sync --dry-run）
-fscut select --status "待剪辑"  # 查看列表后取消
+fscut select  # 查看列表后取消（使用配置中的默认状态）
 
 # 全自动处理（替代原 sync --auto-update）
-fscut run --ai-scene-detection --enable-deduplication
+fscut run --enable-deduplication
 ```
 
 ### 完整配置示例
@@ -379,8 +332,6 @@ fscut run --ai-scene-detection --enable-deduplication
 ```bash
 # 生产环境推荐配置（使用 fscut run）
 fscut run \
-  --status "待剪辑" \
-  --ai-scene-detection \
   --enable-deduplication \
   --count 10 \
   --min-sec 480 \
@@ -408,7 +359,7 @@ count: 10
 min_sec: 480
 max_sec: 900
 
-# AI功能
+# 去重功能
 enable_deduplication: true
 
 # 性能设置
@@ -425,9 +376,9 @@ feishu:
 
 ## 注意事项
 
-1. **AI 功能需要额外资源**：启用 AI 场景检测会增加处理时间和内存使用
-2. **去重功能持久化**：剪辑点去重数据会保存到磁盘，确保有足够存储空间
-3. **并发设置**：`--jobs` 参数建议设置为 2-4，过高可能导致系统负载过大
+1. **去重功能持久化**：剪辑点去重数据会保存到磁盘，确保有足够存储空间
+2. **并发设置**：`--jobs` 参数建议设置为 2-4，过高可能导致系统负载过大
+3. **快速模式**：使用 `--fast-mode` 可以显著提升处理速度
 4. **飞书配置**：使用飞书相关命令前需要正确配置飞书应用信息
 5. **临时目录**：处理大量剧集时确保临时目录有足够空间
 

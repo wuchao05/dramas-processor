@@ -1,0 +1,283 @@
+{
+  "session_id": "2025-09-20_23-51-58",
+  "start_time": "2025-09-20T23:51:58.597379",
+  "end_time": "2025-09-21T00:18:00.526373",
+  "dramas": [
+    {
+      "name": "乡村小农民，我靠系统发家致富",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/乡村小农民，我靠系统发家致富",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.21导出/乡村小农民，我靠系统发家致富",
+      "date_str": "9.21",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 520.7094526290894,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.709580"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 530.7743663787842,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.715956"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 518.5060625076294,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.716241"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 510.6914939880371,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.716608"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 540.3673524856567,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.717130"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 521.597806930542,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.717375"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 528.4343824386597,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.717535"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 531.6731424331665,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.717826"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 530.1311140060425,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.718054"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 511.6306037902832,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.718287"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 517.9041137695312,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.718555"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 529.6100053787231,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.718770"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 545.0389652252197,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.718972"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 541.9154787063599,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.719165"
+        },
+        {
+          "filename": "9.21-乡村小农民，我靠系统发家致富-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 536.58434009552,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-21T00:17:59.719222"
+        }
+      ],
+      "total_duration": 2828.198045000001,
+      "processing_time": 1557.817864894867,
+      "start_time": "2025-09-20T23:52:00.388698",
+      "end_time": "2025-09-21T00:17:58.206563",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.21",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "乡村小农民，我靠系统发家致富"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 1,
+  "successful_dramas": 1,
+  "total_materials": 15,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.21 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 1557.817864894867,
+  "total_size_mb": 7915.568680763245
+}

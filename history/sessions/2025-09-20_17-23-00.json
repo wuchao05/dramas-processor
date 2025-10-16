@@ -1,0 +1,552 @@
+{
+  "session_id": "2025-09-20_17-23-00",
+  "start_time": "2025-09-20T17:23:00.889423",
+  "end_time": "2025-09-20T18:16:48.493122",
+  "dramas": [
+    {
+      "name": "开局抽奖，被姐姐们宠上天",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/开局抽奖，被姐姐们宠上天",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.21导出/开局抽奖，被姐姐们宠上天",
+      "date_str": "9.21",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 531.7892036437988,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.671170"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 493.29187965393066,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.676609"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 519.3525447845459,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.688437"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 495.5107765197754,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.689518"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 525.7441396713257,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.690139"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 476.1540937423706,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.690336"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 536.2663917541504,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.690858"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 539.893440246582,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.691380"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 523.4639282226562,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.691609"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 544.2974720001221,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.691797"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 555.8159112930298,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.691978"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 539.8611497879028,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.692148"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 538.4787073135376,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.692328"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 549.919282913208,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.692477"
+        },
+        {
+          "filename": "9.21-开局抽奖，被姐姐们宠上天-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 534.8014421463013,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T17:51:14.692520"
+        }
+      ],
+      "total_duration": 5750.786456,
+      "processing_time": 1688.4619340896606,
+      "start_time": "2025-09-20T17:23:02.460541",
+      "end_time": "2025-09-20T17:51:10.922475",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.21",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "开局抽奖，被姐姐们宠上天",
+          "陆总白月光是她"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "陆总白月光是她",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/陆总白月光是她",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.21导出/陆总白月光是她",
+      "date_str": "9.21",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.21-陆总白月光是她-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 570.8756237030029,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.765696"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 578.157377243042,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.770503"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 491.08219623565674,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.771017"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 511.5573892593384,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.771865"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 484.0570297241211,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772010"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 479.9654703140259,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772157"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 484.6850709915161,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772341"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 520.0290756225586,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772465"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 507.04351139068604,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772582"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 516.9180488586426,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772705"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 509.3774518966675,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772852"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 532.1449460983276,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.772985"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 466.3756093978882,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.773175"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 508.068320274353,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.773361"
+        },
+        {
+          "filename": "9.21-陆总白月光是她-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 450.57328510284424,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-20T18:16:39.773429"
+        }
+      ],
+      "total_duration": 5669.267797000001,
+      "processing_time": 1523.46928524971,
+      "start_time": "2025-09-20T17:51:14.699175",
+      "end_time": "2025-09-20T18:16:38.168460",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.21",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "开局抽奖，被姐姐们宠上天",
+          "陆总白月光是她"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 2,
+  "successful_dramas": 2,
+  "total_materials": 30,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.21 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 3211.9312193393707,
+  "total_size_mb": 15515.550769805908
+}

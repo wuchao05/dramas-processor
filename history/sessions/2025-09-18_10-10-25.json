@@ -1,0 +1,1188 @@
+{
+  "session_id": "2025-09-18_10-10-25",
+  "start_time": "2025-09-18T10:10:25.531165",
+  "end_time": "2025-09-18T16:08:14.064748",
+  "dramas": [
+    {
+      "name": "侯门悍妻：夫人凶名在外，本官得宠着",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/侯门悍妻：夫人凶名在外，本官得宠着",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/侯门悍妻：夫人凶名在外，本官得宠着",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 480.9064750671387,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.606085"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 548.6091012954712,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.610427"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 555.4419059753418,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.610602"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 543.2082643508911,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.610772"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 563.7292947769165,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.611015"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 484.35762882232666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.611396"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 481.1555366516113,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.611705"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 494.03893280029297,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.612259"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 559.3316192626953,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.612409"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 575.8802089691162,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.612547"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 558.7849245071411,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.612754"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 542.0832262039185,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.613207"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 517.9149942398071,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.613351"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 567.2277460098267,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.613475"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 519.8912439346313,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.613593"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 544.1787376403809,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.613735"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 549.4686288833618,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.613855"
+        },
+        {
+          "filename": "9.18-侯门悍妻：夫人凶名在外，本官得宠着-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 551.4561996459961,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:09:17.613893"
+        }
+      ],
+      "total_duration": 4499.947005,
+      "processing_time": 3515.1269290447235,
+      "start_time": "2025-09-18T10:10:39.549835",
+      "end_time": "2025-09-18T11:09:14.676764",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "大庆第一刀",
+          "修炼十万年，你说我是杂役",
+          "侯门悍妻：夫人凶名在外，本官得宠着",
+          "最强破烂王"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "修炼十万年，你说我是杂役",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/修炼十万年，你说我是杂役",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/修炼十万年，你说我是杂役",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 537.3715009689331,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.407426"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 526.2548627853394,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.408796"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 518.9983539581299,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.416656"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 512.9748544692993,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.417085"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 511.54387855529785,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.419405"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 549.8742837905884,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.419892"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 494.0372247695923,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.420151"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 546.5229234695435,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.420397"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 550.614743232727,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.420682"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 507.9797477722168,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.421151"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 558.8585596084595,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.421358"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 556.593671798706,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.421506"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 499.99241161346436,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.421639"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 540.0033493041992,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.422704"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 524.1345529556274,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.425299"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 501.7498483657837,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.425617"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 502.5396337509155,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.425755"
+        },
+        {
+          "filename": "9.18-修炼十万年，你说我是杂役-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 545.157675743103,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:13:54.425774"
+        }
+      ],
+      "total_duration": 4600.6277770000015,
+      "processing_time": 3872.062183856964,
+      "start_time": "2025-09-18T11:09:17.620660",
+      "end_time": "2025-09-18T12:13:49.682844",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "大庆第一刀",
+          "修炼十万年，你说我是杂役",
+          "侯门悍妻：夫人凶名在外，本官得宠着",
+          "最强破烂王"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "大庆第一刀",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/大庆第一刀",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/大庆第一刀",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 15,
+      "success_rate": 0.8333333333333334,
+      "materials": [
+        {
+          "filename": "9.18-大庆第一刀-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 539.5307931900024,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.105437"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 516.5606489181519,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.106137"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 523.0980472564697,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.114326"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 533.373875617981,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.114513"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 520.3368377685547,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.114669"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 511.8864917755127,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.114797"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 511.2835884094238,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.115128"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 485.029091835022,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.115243"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 585.0731496810913,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123119"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 544.0583953857422,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123369"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 537.9863529205322,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123484"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 513.1325597763062,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123568"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 529.5431480407715,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123643"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 535.7772254943848,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123724"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 515.6384010314941,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123798"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 530.3828468322754,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123878"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 488.0985679626465,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.123969"
+        },
+        {
+          "filename": "9.18-大庆第一刀-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 488.40318775177,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:44:39.124024"
+        }
+      ],
+      "total_duration": 6874.414573999998,
+      "processing_time": 5440.444263935089,
+      "start_time": "2025-09-18T12:13:54.433514",
+      "end_time": "2025-09-18T13:44:34.877778",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "大庆第一刀",
+          "修炼十万年，你说我是杂役",
+          "侯门悍妻：夫人凶名在外，本官得宠着",
+          "最强破烂王"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "最强破烂王",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/最强破烂王",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/最强破烂王",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 15,
+      "success_rate": 0.8333333333333334,
+      "materials": [
+        {
+          "filename": "9.18-最强破烂王-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 511.7572250366211,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.221499"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 541.1141376495361,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.246078"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 503.6289176940918,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.246340"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 491.59275913238525,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.249000"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 523.6388130187988,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.249233"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 546.2407102584839,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.249381"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 439.0000457763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.249522"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 443.7500457763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.249667"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 463.4764232635498,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.253699"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 547.4974756240845,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.255102"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 524.8249816894531,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.255272"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 506.7318115234375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.255434"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 502.84656620025635,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.255592"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 507.1949348449707,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.255733"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 504.43041706085205,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.255891"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 499.68830394744873,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.256042"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 499.61279106140137,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.256211"
+        },
+        {
+          "filename": "9.18-最强破烂王-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 507.1683988571167,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:08:12.256224"
+        }
+      ],
+      "total_duration": 3794.274307,
+      "processing_time": 8608.442780017853,
+      "start_time": "2025-09-18T13:44:39.127200",
+      "end_time": "2025-09-18T16:08:07.569980",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "大庆第一刀",
+          "修炼十万年，你说我是杂役",
+          "侯门悍妻：夫人凶名在外，本官得宠着",
+          "最强破烂王"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 4,
+  "successful_dramas": 2,
+  "total_materials": 72,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.18 --count 18",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 21436.07615685463,
+  "total_size_mb": 37596.254714012146
+}

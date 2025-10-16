@@ -260,6 +260,7 @@ class DramaProcessor:
             return []
         
         starts = []
+        used_points = set()  # Track used (episode_idx, offset) pairs to prevent duplicates
         num_episodes = len(project.episodes)
         
         episode_paths = [str(ep.file_path) for ep in project.episodes]
@@ -279,9 +280,10 @@ class DramaProcessor:
         logger.info(f"📊 起始范围限制: 前{max_start_episode}集 (排除最后{exclude_count}集)")
         
         if self.config.random_start:
-            # Random start points with duration validation
+            # Random start points with duration validation and light deduplication
             attempts = 0
-            max_attempts = count * 3  # Allow more attempts to find valid points
+            max_attempts = count * 5  # Moderate attempts, allow some duplicates
+            duplicate_threshold = max(2, count // 3)  # Allow up to 1/3 duplicates
             
             while len(starts) < count and attempts < max_attempts:
                 attempts += 1
@@ -310,19 +312,32 @@ class DramaProcessor:
                 else:
                     offset = 0.0
                 
+                # Light deduplication: only avoid excessive duplicates
+                point_key = (ep_idx, offset)
+                duplicate_count = sum(1 for used_point in used_points if used_point == point_key)
+                
+                # Allow some duplicates but not too many
+                if duplicate_count >= duplicate_threshold:
+                    continue  # Skip if too many duplicates
+                
                 # Verify this start point can provide minimum duration
                 if self._verify_start_point_duration(episode_paths, ep_idx, offset, min_duration):
                     episode_name = project.episodes[ep_idx].file_path.name
                     available_duration = self._calculate_total_duration_from_episode(episode_paths, ep_idx, offset)
-                    logger.info(f"🎯 选中起始点 {len(starts)+1}: 第{ep_idx+1}集 {episode_name} | 偏移{offset:.1f}s | 可用时长{available_duration:.1f}s")
+                    duplicate_marker = " (重复)" if duplicate_count > 0 else ""
+                    logger.info(f"🎯 选中起始点 {len(starts)+1}: 第{ep_idx+1}集 {episode_name} | 偏移{offset:.1f}s | 可用时长{available_duration:.1f}s{duplicate_marker}")
                     starts.append((ep_idx, offset))
+                    used_points.add(point_key)  # Mark as used
                 
             # If we couldn't find enough random points, fill with safe defaults
             while len(starts) < count:
-                logger.warning(f"Could not find enough valid random start points, using safe defaults")
+                logger.warning(f"⚠️ 无法找到足够的随机起始点，使用安全默认值")
                 for ep_idx in range(min(max_start_episode, count - len(starts))):
-                    if self._verify_start_point_duration(episode_paths, ep_idx, 0.0, min_duration):
+                    point_key = (ep_idx, 0.0)
+                    duplicate_count = sum(1 for used_point in used_points if used_point == point_key)
+                    if duplicate_count < duplicate_threshold and self._verify_start_point_duration(episode_paths, ep_idx, 0.0, min_duration):
                         starts.append((ep_idx, 0.0))
+                        used_points.add(point_key)
                 break
         else:
             # Evenly distributed starts with validation (within allowed range)
@@ -546,8 +561,9 @@ class DramaProcessor:
             # Use the original logic for backward compatibility
             actual_exports_root = exports_root
             if self.config.date_str:
+                # 直接在基础目录下创建日期目录，而不是{date}导出
                 parent_dir = os.path.dirname(os.path.abspath(exports_root))
-                actual_exports_root = os.path.join(parent_dir, f"{self.config.date_str}导出")
+                actual_exports_root = os.path.join(parent_dir, self.config.date_str)
         
         os.makedirs(actual_exports_root, exist_ok=True)
         
@@ -605,10 +621,12 @@ class DramaProcessor:
                     drama_name = os.path.basename(drama_dir.rstrip("/"))
                     # 使用传入的日期信息，如果没有则使用配置中的日期
                     start_drama_date = drama_dates.get(drama_name) if drama_dates else self.config.get_date_str()
+                    # 使用配置中的待处理状态值
+                    status_value = self.config.feishu.pending_status_value if self.config.feishu else "待剪辑"
                     dramas_info.append({
                         'name': drama_name,
                         'date': start_drama_date,
-                        'status': '待剪辑'
+                        'status': status_value
                     })
                 
                 self.feishu_notifier.send_start_notification(dramas_info, self.config)

@@ -138,7 +138,9 @@ class FeishuNotifier:
                 drama_list_text += f"\n📅 {date_key} ({len(dramas_for_date)}部):\n"
                 for drama in dramas_for_date:
                     drama_name = drama.get('name', '未知')
-                    drama_status = drama.get('status', '待剪辑')
+                    # 使用配置中的待处理状态值作为默认值
+                    default_status = config.feishu.pending_status_value if config.feishu else "待剪辑"
+                    drama_status = drama.get('status', default_status)
                     drama_list_text += f"  {overall_index}. {drama_name} (状态: {drama_status})\n"
                     overall_index += 1
             

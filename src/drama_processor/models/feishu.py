@@ -14,6 +14,7 @@ class FeishuConfig(BaseModel):
     base_url: str = Field(default="https://open.feishu.cn/open-apis/bitable/v1", description="API基础URL")
     field_names: List[str] = Field(default_factory=list, description="需要获取的字段名")
     status_field_name: str = Field(default="当前状态", description="状态字段名")
+    pending_status_value: str = Field(default="待剪辑", description="待处理状态值")
     completed_status_value: str = Field(default="已完成", description="已完成状态值")
     processing_status_value: str = Field(default="剪辑中", description="处理中状态值")
     page_size: int = Field(default=200, description="分页大小")

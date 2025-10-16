@@ -1,0 +1,2491 @@
+{
+  "session_id": "2025-09-25_11-06-05",
+  "start_time": "2025-09-25T11:06:05.931760",
+  "end_time": "2025-09-25T16:19:26.965071",
+  "dramas": [
+    {
+      "name": "乡村异能，万物皆可为我用",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/乡村异能，万物皆可为我用",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/乡村异能，万物皆可为我用",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 518.090353012085,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.974630"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 513.5451641082764,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.977540"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 499.01334953308105,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.978012"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 513.3306798934937,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.978304"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 542.2003803253174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.978789"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 480.3229389190674,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.979055"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 462.1710796356201,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.979167"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 505.8079996109009,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.979268"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 504.87067699432373,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.979576"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 530.1352396011353,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.979950"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 509.44103145599365,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.980075"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 505.6246385574341,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.980299"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 499.7003536224365,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.980400"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 527.659818649292,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.980486"
+        },
+        {
+          "filename": "9.26-乡村异能，万物皆可为我用-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 519.7619972229004,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T11:42:52.980501"
+        }
+      ],
+      "total_duration": 5265.695145999999,
+      "processing_time": 2203.4395377635956,
+      "start_time": "2025-09-25T11:06:07.776832",
+      "end_time": "2025-09-25T11:42:51.216370",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "傅总莫慌，夫人坚决不离婚了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/傅总莫慌，夫人坚决不离婚了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/傅总莫慌，夫人坚决不离婚了",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 529.1634883880615,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.026371"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 500.9268636703491,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.027129"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 561.3593454360962,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.027249"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 496.14209175109863,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.027423"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 554.9132289886475,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.027836"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 478.5711784362793,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.028057"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 497.23572731018066,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.028229"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 490.5030994415283,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.028399"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 489.51539611816406,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.028955"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 492.2065896987915,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.029121"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 519.351279258728,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.029310"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 478.8319606781006,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.029493"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 537.4224243164062,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.029673"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 497.66644287109375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.030123"
+        },
+        {
+          "filename": "9.26-傅总莫慌，夫人坚决不离婚了-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 464.11357593536377,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T12:24:28.030146"
+        }
+      ],
+      "total_duration": 5678.12256,
+      "processing_time": 2493.383003950119,
+      "start_time": "2025-09-25T11:42:52.984898",
+      "end_time": "2025-09-25T12:24:26.367902",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "出狱后，我六亲缘浅",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/出狱后，我六亲缘浅",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/出狱后，我六亲缘浅",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 548.3484764099121,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.617742"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 541.2884893417358,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.620937"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 495.21294689178467,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.621252"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 575.4606418609619,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.621645"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 498.3230981826782,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.622069"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 512.137843132019,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.622183"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 574.8320350646973,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.622294"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 548.4176502227783,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.622415"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 541.1764850616455,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.623297"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 543.6538896560669,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.623405"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 519.6055374145508,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.623589"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 539.0111436843872,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.623963"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 541.7714653015137,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.624213"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 500.17028045654297,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.624655"
+        },
+        {
+          "filename": "9.26-出狱后，我六亲缘浅-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 551.924144744873,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:07:13.624682"
+        }
+      ],
+      "total_duration": 2538.92,
+      "processing_time": 2564.221456050873,
+      "start_time": "2025-09-25T12:24:28.033213",
+      "end_time": "2025-09-25T13:07:12.254669",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "我本将心对明月",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/我本将心对明月",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/我本将心对明月",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-我本将心对明月-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 528.8450336456299,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.963078"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 508.86613941192627,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.966949"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 533.8000221252441,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.967163"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 548.0481233596802,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.967543"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 502.5708427429199,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.968178"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 533.657564163208,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.968346"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 535.4446277618408,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.968734"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 522.424069404602,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.969240"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 561.1888475418091,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.970236"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 509.9690418243408,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.970509"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 505.2440013885498,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.971041"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 511.324236869812,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.971274"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 538.5153045654297,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.971656"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 540.5966892242432,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.971938"
+        },
+        {
+          "filename": "9.26-我本将心对明月-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 563.2842741012573,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T13:50:37.971958"
+        }
+      ],
+      "total_duration": 4258.247687,
+      "processing_time": 2602.774572134018,
+      "start_time": "2025-09-25T13:07:13.627278",
+      "end_time": "2025-09-25T13:50:36.401850",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "月光下的隐秘",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/月光下的隐秘",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/月光下的隐秘",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-月光下的隐秘-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 439.1388578414917,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.739612"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 396.31742763519287,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.747562"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 385.09562587738037,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.750454"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 455.13498401641846,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.750636"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 376.0304546356201,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.750763"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 384.4799690246582,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.751105"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 395.0401258468628,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.751317"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 444.74285411834717,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.751938"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 391.9483165740967,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.752069"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 454.5312671661377,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.752188"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 444.9520139694214,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.752301"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 471.5155715942383,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.752403"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 385.3134412765503,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.752533"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 380.8834562301636,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.752646"
+        },
+        {
+          "filename": "9.26-月光下的隐秘-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 490.653977394104,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T14:19:35.752659"
+        }
+      ],
+      "total_duration": 5825.226688999999,
+      "processing_time": 1732.653413772583,
+      "start_time": "2025-09-25T13:50:37.975577",
+      "end_time": "2025-09-25T14:19:30.628991",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "穿成农家小福星，逃荒路上开挂了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/穿成农家小福星，逃荒路上开挂了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/穿成农家小福星，逃荒路上开挂了",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 553.5047807693481,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.137269"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 524.760347366333,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.141867"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 534.3855772018433,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.142405"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 500.639684677124,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.142611"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 524.1766576766968,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.142853"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 625.1366348266602,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.143406"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 486.7775478363037,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.143851"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 521.8514976501465,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.144038"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 461.37064361572266,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.144492"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 533.6942224502563,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.144651"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 498.66043853759766,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.144910"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 508.6425724029541,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.145096"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 531.4021997451782,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.145332"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 491.76397800445557,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.145483"
+        },
+        {
+          "filename": "9.26-穿成农家小福星，逃荒路上开挂了-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 531.4475469589233,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:01:02.145520"
+        }
+      ],
+      "total_duration": 6882.938271999998,
+      "processing_time": 2483.1071600914,
+      "start_time": "2025-09-25T14:19:35.755389",
+      "end_time": "2025-09-25T15:00:58.862549",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "都市：我的能力有亿点多",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/都市：我的能力有亿点多",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/都市：我的能力有亿点多",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 509.5375328063965,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.930422"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 521.1351642608643,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.934869"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 513.0038204193115,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.935012"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 509.2823085784912,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.935351"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 521.6189393997192,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.935643"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 539.4274015426636,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.935752"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 507.002646446228,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.935880"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 534.6385717391968,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.935995"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 475.92733097076416,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.936324"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 501.2095355987549,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.936435"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 509.6813974380493,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.936697"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 523.1485433578491,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.936801"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 537.2108564376831,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.936979"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 507.1022758483887,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.937089"
+        },
+        {
+          "filename": "9.26-都市：我的能力有亿点多-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 525.2927055358887,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:28:01.937106"
+        }
+      ],
+      "total_duration": 3774.778089,
+      "processing_time": 1616.4729850292206,
+      "start_time": "2025-09-25T15:01:02.150162",
+      "end_time": "2025-09-25T15:27:58.623147",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生后，女帝用江山换我一句原谅",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生后，女帝用江山换我一句原谅",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/重生后，女帝用江山换我一句原谅",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 522.3525505065918,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.277666"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 535.4074468612671,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.282128"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 534.2516775131226,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.282378"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 500.04415130615234,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.282574"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 513.7175245285034,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.282769"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 520.0204477310181,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.282934"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 511.25632190704346,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.283494"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 532.7074279785156,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.283767"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 520.5768270492554,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.283973"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 537.2229595184326,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.284182"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 543.5048666000366,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.284406"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 518.8310546875,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.284632"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 528.1612577438354,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.284847"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 510.1849889755249,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.285038"
+        },
+        {
+          "filename": "9.26-重生后，女帝用江山换我一句原谅-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 517.8389225006104,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T15:53:44.285085"
+        }
+      ],
+      "total_duration": 4521.167817,
+      "processing_time": 1539.4799690246582,
+      "start_time": "2025-09-25T15:28:01.940733",
+      "end_time": "2025-09-25T15:53:41.420702",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "长生万年被曾孙女直播曝光了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/长生万年被曾孙女直播曝光了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.26导出/长生万年被曾孙女直播曝光了",
+      "date_str": "9.26",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 543.2011423110962,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.087018"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 512.5325603485107,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.088085"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 515.5693254470825,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.088666"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 483.38860416412354,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.088921"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 559.6260528564453,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.089280"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 557.8291454315186,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.089457"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 523.5118951797485,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.089766"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 519.2206153869629,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.090059"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 520.1742668151855,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.090327"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 513.3576488494873,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.090634"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 526.0591697692871,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.090933"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 486.51971530914307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.091239"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 509.19322776794434,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.091508"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 501.832968711853,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.091766"
+        },
+        {
+          "filename": "9.26-长生万年被曾孙女直播曝光了-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 509.5803909301758,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-25T16:19:25.091817"
+        }
+      ],
+      "total_duration": 7028.538744999999,
+      "processing_time": 1534.981891155243,
+      "start_time": "2025-09-25T15:53:44.290811",
+      "end_time": "2025-09-25T16:19:19.272702",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.26",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "都市：我的能力有亿点多",
+          "长生万年被曾孙女直播曝光了",
+          "我本将心对明月",
+          "乡村异能，万物皆可为我用",
+          "月光下的隐秘",
+          "重生后，女帝用江山换我一句原谅",
+          "穿成农家小福星，逃荒路上开挂了",
+          "出狱后，我六亲缘浅",
+          "傅总莫慌，夫人坚决不离婚了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 9,
+  "successful_dramas": 9,
+  "total_materials": 135,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.26 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 18770.51398897171,
+  "total_size_mb": 68681.59819698334
+}

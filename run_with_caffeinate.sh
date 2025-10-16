@@ -10,7 +10,7 @@ if [ $# -eq 0 ]; then
     echo ""
     echo "示例:"
     echo "  $0 process --count 2 --verbose"
-    echo "  $0 feishu run --status 待剪辑"
+    echo "  $0 feishu run"
     echo "  $0 analyze /path/to/dramas"
     exit 1
 fi

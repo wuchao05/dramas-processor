@@ -1,0 +1,283 @@
+{
+  "session_id": "2025-09-29_09-14-34",
+  "start_time": "2025-09-29T09:14:34.509537",
+  "end_time": "2025-09-29T09:42:02.385699",
+  "dramas": [
+    {
+      "name": "无敌贾二虎",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/无敌贾二虎",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/无敌贾二虎",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-无敌贾二虎-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 539.2438287734985,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.572710"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 546.2140197753906,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.576568"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 509.5144672393799,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.576758"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 473.05896854400635,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.576904"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 503.81671047210693,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577014"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 503.82445335388184,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577131"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 475.2464475631714,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577240"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 500.1927318572998,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577370"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 514.8316335678101,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577489"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 514.9448547363281,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577624"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 592.5397882461548,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577756"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 494.50913429260254,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.577872"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 525.9111013412476,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.578006"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 476.37384128570557,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.578120"
+        },
+        {
+          "filename": "9.30-无敌贾二虎-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 520.8643035888672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T09:41:52.578162"
+        }
+      ],
+      "total_duration": 5537.5599999999995,
+      "processing_time": 1633.2460827827454,
+      "start_time": "2025-09-29T09:14:36.528653",
+      "end_time": "2025-09-29T09:41:49.774736",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "无敌贾二虎"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 1,
+  "successful_dramas": 1,
+  "total_materials": 15,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.30 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 1633.2460827827454,
+  "total_size_mb": 7691.086284637451
+}

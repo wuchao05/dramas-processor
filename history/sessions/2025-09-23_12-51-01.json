@@ -1,0 +1,1371 @@
+{
+  "session_id": "2025-09-23_12-51-01",
+  "start_time": "2025-09-23T12:51:01.496146",
+  "end_time": "2025-09-23T14:56:31.986877",
+  "dramas": [
+    {
+      "name": "八零替嫁，老公他身份非凡",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/八零替嫁，老公他身份非凡",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.23导出/八零替嫁，老公他身份非凡",
+      "date_str": "9.23",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 503.330997467041,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.430457"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 497.12078189849854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.435141"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 510.1174125671387,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.435423"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 491.53643798828125,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.435639"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 484.88540840148926,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.435850"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 450.6744804382324,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.436085"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 506.92158126831055,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.436300"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 444.05350494384766,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.436549"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 489.4883909225464,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.436760"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 503.57007122039795,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.436965"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 489.071213722229,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.437156"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 522.8381175994873,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.437347"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 446.6300621032715,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.437535"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 486.94732570648193,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.437734"
+        },
+        {
+          "filename": "9.23-八零替嫁，老公他身份非凡-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 508.20365047454834,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:16:20.437795"
+        }
+      ],
+      "total_duration": 5062.928225,
+      "processing_time": 1506.0850358009338,
+      "start_time": "2025-09-23T12:51:11.582101",
+      "end_time": "2025-09-23T13:16:17.667137",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.23",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "八零替嫁，老公他身份非凡",
+          "督军开门！小福星来啦",
+          "剧透！未来老公竟是他",
+          "凤啼血",
+          "机长先生，你的未婚妻嫁人了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "凤啼血",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/凤啼血",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.23导出/凤啼血",
+      "date_str": "9.23",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.23-凤啼血-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 558.0915966033936,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.134774"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 492.2403268814087,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.160247"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 508.13155364990234,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.160688"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 549.6816349029541,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.161434"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 495.11726474761963,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.167536"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 493.68932056427,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.168599"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 546.198709487915,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.169304"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 494.65162467956543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.169824"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 514.4539546966553,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.171305"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 488.2409782409668,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.172841"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 515.5472526550293,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.173652"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 541.0755367279053,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.174463"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 566.6177577972412,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.176311"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 528.8549175262451,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.178015"
+        },
+        {
+          "filename": "9.23-凤啼血-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 506.38692474365234,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T13:41:16.178182"
+        }
+      ],
+      "total_duration": 4398.222422999998,
+      "processing_time": 1492.9298553466797,
+      "start_time": "2025-09-23T13:16:20.443803",
+      "end_time": "2025-09-23T13:41:13.373658",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.23",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "八零替嫁，老公他身份非凡",
+          "督军开门！小福星来啦",
+          "剧透！未来老公竟是他",
+          "凤啼血",
+          "机长先生，你的未婚妻嫁人了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "剧透！未来老公竟是他",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/剧透！未来老公竟是他",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.23导出/剧透！未来老公竟是他",
+      "date_str": "9.23",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 474.1232624053955,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.215024"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 501.8597412109375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.216181"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 486.61998558044434,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.216506"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 470.7436828613281,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.217559"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 489.2191162109375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.217843"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 491.9972114562988,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.218121"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 513.2911682128906,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.218635"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 490.5261878967285,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.218843"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 469.48881816864014,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.219091"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 517.0587387084961,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.219313"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 468.7842073440552,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.219636"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 466.4768476486206,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.220221"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 460.39300441741943,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.220942"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 523.3277540206909,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.221370"
+        },
+        {
+          "filename": "9.23-剧透！未来老公竟是他-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 481.5273027420044,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:06:44.221505"
+        }
+      ],
+      "total_duration": 3428.1596780000004,
+      "processing_time": 1515.3920419216156,
+      "start_time": "2025-09-23T13:41:16.197445",
+      "end_time": "2025-09-23T14:06:31.589487",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.23",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "八零替嫁，老公他身份非凡",
+          "督军开门！小福星来啦",
+          "剧透！未来老公竟是他",
+          "凤啼血",
+          "机长先生，你的未婚妻嫁人了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "机长先生，你的未婚妻嫁人了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/机长先生，你的未婚妻嫁人了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.23导出/机长先生，你的未婚妻嫁人了",
+      "date_str": "9.23",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 429.90605545043945,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.636646"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 487.97253131866455,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.641136"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 459.68199825286865,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.641382"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 552.4798278808594,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.641615"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 442.08378314971924,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.641749"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 464.777645111084,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.641888"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 431.4011297225952,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.642615"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 429.5222759246826,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.642813"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 505.7212905883789,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.642991"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 528.9330234527588,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.643209"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 534.2226839065552,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.643394"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 471.3985643386841,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.643522"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 504.5095748901367,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.644275"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 515.5378112792969,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.644743"
+        },
+        {
+          "filename": "9.23-机长先生，你的未婚妻嫁人了-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 482.43192768096924,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:30:37.644811"
+        }
+      ],
+      "total_duration": 3319.7632849999995,
+      "processing_time": 1430.466408252716,
+      "start_time": "2025-09-23T14:06:44.225319",
+      "end_time": "2025-09-23T14:30:34.691727",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.23",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "八零替嫁，老公他身份非凡",
+          "督军开门！小福星来啦",
+          "剧透！未来老公竟是他",
+          "凤啼血",
+          "机长先生，你的未婚妻嫁人了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "督军开门！小福星来啦",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/督军开门！小福星来啦",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.23导出/督军开门！小福星来啦",
+      "date_str": "9.23",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 512.3703022003174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.163443"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 473.280216217041,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.168475"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 510.4689655303955,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.169073"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 478.4647960662842,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.169278"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 481.01928520202637,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.169844"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 507.0301170349121,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.170089"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 538.4948053359985,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.170324"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 487.67638397216797,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.170671"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 502.4222192764282,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.171105"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 518.4905700683594,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.171346"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 529.2890577316284,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.171609"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 578.3328809738159,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.171814"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 559.5934467315674,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.172052"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 566.2527418136597,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.172110"
+        },
+        {
+          "filename": "9.23-督军开门！小福星来啦-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 489.72192573547363,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-23T14:56:22.172168"
+        }
+      ],
+      "total_duration": 6107.840000000001,
+      "processing_time": 1541.428121805191,
+      "start_time": "2025-09-23T14:30:37.649125",
+      "end_time": "2025-09-23T14:56:19.077247",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.23",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "八零替嫁，老公他身份非凡",
+          "督军开门！小福星来啦",
+          "剧透！未来老公竟是他",
+          "凤啼血",
+          "机长先生，你的未婚妻嫁人了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑-new",
+          "completed_status_value": "待上传-new",
+          "processing_status_value": "剪辑中-new",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 5,
+  "successful_dramas": 5,
+  "total_materials": 75,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.23 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 7486.301463127136,
+  "total_size_mb": 37413.29365634918
+}

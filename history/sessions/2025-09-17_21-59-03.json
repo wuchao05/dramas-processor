@@ -1,0 +1,1786 @@
+{
+  "session_id": "2025-09-17_21-59-03",
+  "start_time": "2025-09-17T21:59:03.937059",
+  "end_time": "2025-09-18T03:32:21.529462",
+  "dramas": [
+    {
+      "name": "确诊那天，我决定为女儿活一次",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/确诊那天，我决定为女儿活一次",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/确诊那天，我决定为女儿活一次",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 456.59725189208984,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.496471"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 532.3013820648193,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.530637"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 410.5196409225464,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.533147"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 486.4127130508423,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.533473"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 504.94175815582275,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.533717"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 498.2957992553711,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.534169"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 375.049578666687,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.534317"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 507.48761558532715,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.534458"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 514.3333225250244,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.534582"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 405.29967975616455,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.534866"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 485.0880718231201,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.535108"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 512.0949821472168,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.535410"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 453.3652038574219,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.535679"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 500.94329166412354,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.535919"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 502.19994831085205,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.536209"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 509.85356616973877,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.536472"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 408.1515083312988,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.536701"
+        },
+        {
+          "filename": "9.18-确诊那天，我决定为女儿活一次-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 479.3660593032837,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:06:28.536724"
+        }
+      ],
+      "total_duration": 1141.0800000000002,
+      "processing_time": 4040.264654159546,
+      "start_time": "2025-09-17T21:59:06.543249",
+      "end_time": "2025-09-17T23:06:26.807903",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "那年花好月圆",
+          "请改造我",
+          "确诊那天，我决定为女儿活一次"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "被父皇猜忌后我选择统领天下",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/被父皇猜忌后我选择统领天下",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/被父皇猜忌后我选择统领天下-001",
+      "date_str": "9.18",
+      "run_suffix": "001",
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-01-001.mp4",
+          "duration": 690.0,
+          "size_mb": 513.151346206665,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.900037"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-02-001.mp4",
+          "duration": 690.0,
+          "size_mb": 512.9196424484253,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.900748"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-03-001.mp4",
+          "duration": 690.0,
+          "size_mb": 549.9193382263184,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.901128"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-04-001.mp4",
+          "duration": 690.0,
+          "size_mb": 544.9690036773682,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.901459"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-05-001.mp4",
+          "duration": 690.0,
+          "size_mb": 482.72615242004395,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.902104"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-06-001.mp4",
+          "duration": 690.0,
+          "size_mb": 495.9114580154419,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.902755"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-07-001.mp4",
+          "duration": 690.0,
+          "size_mb": 526.7140665054321,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.903058"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-08-001.mp4",
+          "duration": 690.0,
+          "size_mb": 551.853588104248,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.903275"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-09-001.mp4",
+          "duration": 690.0,
+          "size_mb": 558.0325584411621,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.903434"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-10-001.mp4",
+          "duration": 690.0,
+          "size_mb": 528.1521072387695,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.903564"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-11-001.mp4",
+          "duration": 690.0,
+          "size_mb": 513.22678565979,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.903695"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-12-001.mp4",
+          "duration": 690.0,
+          "size_mb": 512.5925226211548,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.903855"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-13-001.mp4",
+          "duration": 690.0,
+          "size_mb": 558.0237283706665,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.904048"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-14-001.mp4",
+          "duration": 690.0,
+          "size_mb": 484.1527690887451,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.904217"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-15-001.mp4",
+          "duration": 690.0,
+          "size_mb": 523.8718576431274,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.904351"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-16-001.mp4",
+          "duration": 690.0,
+          "size_mb": 534.5969429016113,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.904544"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-17-001.mp4",
+          "duration": 690.0,
+          "size_mb": 553.5699806213379,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.904858"
+        },
+        {
+          "filename": "9.18-被父皇猜忌后我选择统领天下-xh-18-001.mp4",
+          "duration": 690.0,
+          "size_mb": 499.5806770324707,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-17T23:47:14.904946"
+        }
+      ],
+      "total_duration": 2695.1527899999996,
+      "processing_time": 2443.7359569072723,
+      "start_time": "2025-09-17T23:06:28.541749",
+      "end_time": "2025-09-17T23:47:12.277706",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "那年花好月圆",
+          "请改造我",
+          "确诊那天，我决定为女儿活一次"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "请改造我",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/请改造我",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/请改造我",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-请改造我-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 474.95767402648926,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.790922"
+        },
+        {
+          "filename": "9.18-请改造我-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 513.5158195495605,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.796499"
+        },
+        {
+          "filename": "9.18-请改造我-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 388.8639106750488,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.797129"
+        },
+        {
+          "filename": "9.18-请改造我-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 533.5044412612915,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.797350"
+        },
+        {
+          "filename": "9.18-请改造我-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 505.7504138946533,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.797956"
+        },
+        {
+          "filename": "9.18-请改造我-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 446.96941471099854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.798160"
+        },
+        {
+          "filename": "9.18-请改造我-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 444.918776512146,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.798292"
+        },
+        {
+          "filename": "9.18-请改造我-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 479.9274387359619,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.798872"
+        },
+        {
+          "filename": "9.18-请改造我-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 496.7534980773926,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.799171"
+        },
+        {
+          "filename": "9.18-请改造我-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 504.1368703842163,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.799294"
+        },
+        {
+          "filename": "9.18-请改造我-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 450.2646322250366,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.799441"
+        },
+        {
+          "filename": "9.18-请改造我-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 502.38853454589844,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.799618"
+        },
+        {
+          "filename": "9.18-请改造我-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 508.464054107666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.799794"
+        },
+        {
+          "filename": "9.18-请改造我-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 510.570969581604,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.799999"
+        },
+        {
+          "filename": "9.18-请改造我-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 512.6941518783569,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.800170"
+        },
+        {
+          "filename": "9.18-请改造我-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 447.5185260772705,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.800327"
+        },
+        {
+          "filename": "9.18-请改造我-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 506.3728303909302,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.800484"
+        },
+        {
+          "filename": "9.18-请改造我-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 482.61691761016846,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T00:35:01.800533"
+        }
+      ],
+      "total_duration": 5456.017774000002,
+      "processing_time": 2864.9272689819336,
+      "start_time": "2025-09-17T23:47:14.908590",
+      "end_time": "2025-09-18T00:34:59.835859",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "那年花好月圆",
+          "请改造我",
+          "确诊那天，我决定为女儿活一次"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "那年花好月圆",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/那年花好月圆",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/那年花好月圆",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-那年花好月圆-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 513.2848119735718,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.525504"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 503.3573818206787,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.531269"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 504.66533851623535,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.532340"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 524.205864906311,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.532800"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 483.351749420166,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.533026"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 483.3449487686157,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.533508"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 515.9398403167725,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.533718"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 478.3704309463501,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.533881"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 514.4711980819702,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.534355"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 447.74340057373047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.534757"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 466.508996963501,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.534928"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 506.8820905685425,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.535134"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 518.9893951416016,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.535418"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 483.9819622039795,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.535576"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 509.2567386627197,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.535722"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 513.3541860580444,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.535887"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 502.83577156066895,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.536056"
+        },
+        {
+          "filename": "9.18-那年花好月圆-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 469.3241558074951,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T01:24:37.536106"
+        }
+      ],
+      "total_duration": 6466.102338,
+      "processing_time": 2972.345325946808,
+      "start_time": "2025-09-18T00:35:01.804847",
+      "end_time": "2025-09-18T01:24:34.150173",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "那年花好月圆",
+          "请改造我",
+          "确诊那天，我决定为女儿活一次"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "郡主来破案，神奇动物在哪里",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/郡主来破案，神奇动物在哪里",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/郡主来破案，神奇动物在哪里",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 513.0374174118042,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.809945"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 530.5377321243286,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.812156"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 538.1308860778809,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.812723"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 539.4238586425781,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.822212"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 534.138219833374,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.822741"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 495.13626766204834,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.822986"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 550.2911329269409,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.823396"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 493.3530206680298,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.823620"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 544.8395891189575,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.823781"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 518.6722002029419,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.823947"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 495.5804080963135,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.824071"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 505.6606607437134,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.824672"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 494.59582710266113,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.825118"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 506.4022512435913,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.825527"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 556.6967458724976,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.825711"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 522.7012252807617,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.825857"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 527.6866550445557,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.826047"
+        },
+        {
+          "filename": "9.18-郡主来破案，神奇动物在哪里-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 496.27312183380127,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T02:27:11.826082"
+        }
+      ],
+      "total_duration": 5382.394736000001,
+      "processing_time": 3750.576408147812,
+      "start_time": "2025-09-18T01:24:37.540091",
+      "end_time": "2025-09-18T02:27:08.116499",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "那年花好月圆",
+          "请改造我",
+          "确诊那天，我决定为女儿活一次"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生灾荒年，我靠种田发家护嫂",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生灾荒年，我靠种田发家护嫂",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.18导出/重生灾荒年，我靠种田发家护嫂",
+      "date_str": "9.18",
+      "run_suffix": null,
+      "planned_count": 18,
+      "completed_count": 18,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 533.5933036804199,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.733958"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 530.0103216171265,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.737010"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 530.7478113174438,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.737139"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 516.4656829833984,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.737244"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 532.1307096481323,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.737624"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 533.350269317627,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.737799"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 556.8496513366699,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.737963"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 523.8279361724854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.738124"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 505.8221426010132,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.738294"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 508.12566089630127,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.738488"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 525.1991214752197,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.738758"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 519.7748861312866,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.738972"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 514.3796987533569,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.739152"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 529.5497064590454,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.761916"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 561.1752624511719,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.762091"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-16.mp4",
+          "duration": 690.0,
+          "size_mb": 504.82532691955566,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.762220"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-17.mp4",
+          "duration": 690.0,
+          "size_mb": 551.6252088546753,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.762323"
+        },
+        {
+          "filename": "9.18-重生灾荒年，我靠种田发家护嫂-xh-18.mp4",
+          "duration": 690.0,
+          "size_mb": 542.923418045044,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:32:12.762345"
+        }
+      ],
+      "total_duration": 4122.626052000001,
+      "processing_time": 3899.026076078415,
+      "start_time": "2025-09-18T02:27:11.834234",
+      "end_time": "2025-09-18T03:32:10.860310",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 18,
+        "date_str": "9.18",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "重生灾荒年，我靠种田发家护嫂",
+          "郡主来破案，神奇动物在哪里",
+          "那年花好月圆",
+          "请改造我",
+          "确诊那天，我决定为女儿活一次"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 6,
+  "successful_dramas": 6,
+  "total_materials": 108,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.18 --count 18",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 19970.875690221786,
+  "total_size_mb": 54519.856373786926
+}

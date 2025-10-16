@@ -1,0 +1,1096 @@
+{
+  "session_id": "2025-09-29_06-10-19",
+  "start_time": "2025-09-29T06:10:19.597580",
+  "end_time": "2025-09-29T07:48:12.731222",
+  "dramas": [
+    {
+      "name": "我有八个姐姐，但是她们都是弟控",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/我有八个姐姐，但是她们都是弟控",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/我有八个姐姐，但是她们都是弟控",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 472.92118072509766,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.317635"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 512.0590667724609,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.317857"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 527.2252292633057,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.318011"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 471.5936574935913,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.318165"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 494.2526922225952,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.318309"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 542.5670289993286,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.318458"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 537.0685634613037,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.318601"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 511.2746229171753,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.318779"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 453.1217098236084,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.318904"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 520.7115488052368,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.319040"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 523.6006593704224,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.319168"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 514.6763210296631,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.319296"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 476.5254907608032,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.319424"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 550.506459236145,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.319559"
+        },
+        {
+          "filename": "9.29-我有八个姐姐，但是她们都是弟控-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 510.13434886932373,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:34:28.319572"
+        }
+      ],
+      "total_duration": 6057.189790000001,
+      "processing_time": 1446.4321331977844,
+      "start_time": "2025-09-29T06:10:20.501831",
+      "end_time": "2025-09-29T06:34:26.933964",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "锦鲤小仙君驾到，坏东西通通闪开",
+          "我有八个姐姐，但是她们都是弟控",
+          "穿越古代，从卖蚊香开始到一品皇商",
+          "重生八五，回到怀孕老婆去世前"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "穿越古代，从卖蚊香开始到一品皇商",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/穿越古代，从卖蚊香开始到一品皇商",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/穿越古代，从卖蚊香开始到一品皇商",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 508.1026268005371,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.242763"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 510.5995988845825,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.242904"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 529.93821144104,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243043"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 517.1588516235352,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243197"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 534.0621843338013,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243324"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 509.06177043914795,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243481"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 535.9997177124023,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243597"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 537.8638763427734,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243716"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 536.4207859039307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243836"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 509.4057273864746,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.243954"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 518.1000003814697,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.244061"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 511.6381998062134,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.244179"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 551.5193910598755,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.244293"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 500.26250171661377,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.244412"
+        },
+        {
+          "filename": "9.29-穿越古代，从卖蚊香开始到一品皇商-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 510.95828342437744,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T06:58:58.244427"
+        }
+      ],
+      "total_duration": 4414.713441000001,
+      "processing_time": 1468.436794757843,
+      "start_time": "2025-09-29T06:34:28.321112",
+      "end_time": "2025-09-29T06:58:56.757907",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "锦鲤小仙君驾到，坏东西通通闪开",
+          "我有八个姐姐，但是她们都是弟控",
+          "穿越古代，从卖蚊香开始到一品皇商",
+          "重生八五，回到怀孕老婆去世前"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生八五，回到怀孕老婆去世前",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生八五，回到怀孕老婆去世前",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/重生八五，回到怀孕老婆去世前",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 552.9478969573975,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.590144"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 501.0792245864868,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.590353"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 530.1430606842041,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.590494"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 511.2821617126465,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.590609"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 480.0954542160034,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.590736"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 475.7227268218994,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.590849"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 538.4227657318115,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.590957"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 554.9777688980103,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591080"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 516.9005517959595,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591192"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 536.2738361358643,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591300"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 534.9151086807251,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591404"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 533.8669290542603,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591516"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 535.8122701644897,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591620"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 494.3839054107666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591722"
+        },
+        {
+          "filename": "9.29-重生八五，回到怀孕老婆去世前-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 500.66448974609375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:23:27.591734"
+        }
+      ],
+      "total_duration": 4881.519999999999,
+      "processing_time": 1467.8546450138092,
+      "start_time": "2025-09-29T06:58:58.244513",
+      "end_time": "2025-09-29T07:23:26.099158",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "锦鲤小仙君驾到，坏东西通通闪开",
+          "我有八个姐姐，但是她们都是弟控",
+          "穿越古代，从卖蚊香开始到一品皇商",
+          "重生八五，回到怀孕老婆去世前"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "锦鲤小仙君驾到，坏东西通通闪开",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/锦鲤小仙君驾到，坏东西通通闪开",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.29导出/锦鲤小仙君驾到，坏东西通通闪开",
+      "date_str": "9.29",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 544.8715209960938,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.874315"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 553.3533878326416,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.874632"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 539.7778797149658,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.874756"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 547.3966121673584,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.874864"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 534.5783109664917,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.874991"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 494.10406494140625,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875100"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 493.35709953308105,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875230"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 533.0650205612183,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875340"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 558.4069080352783,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875457"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 536.0102214813232,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875552"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 523.8762950897217,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875641"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 530.6538782119751,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875757"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 548.2581367492676,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875859"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 499.5789575576782,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875973"
+        },
+        {
+          "filename": "9.29-锦鲤小仙君驾到，坏东西通通闪开-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 483.54805850982666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T07:48:11.875985"
+        }
+      ],
+      "total_duration": 5363.640000000002,
+      "processing_time": 1482.6576290130615,
+      "start_time": "2025-09-29T07:23:27.591825",
+      "end_time": "2025-09-29T07:48:10.249454",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.29",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "锦鲤小仙君驾到，坏东西通通闪开",
+          "我有八个姐姐，但是她们都是弟控",
+          "穿越古代，从卖蚊香开始到一品皇商",
+          "重生八五，回到怀孕老婆去世前"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 4,
+  "successful_dramas": 4,
+  "total_materials": 60,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.29 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 5865.381201982498,
+  "total_size_mb": 31157.654809951782
+}

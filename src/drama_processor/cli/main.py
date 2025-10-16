@@ -11,7 +11,7 @@ from ..config import ConfigManager, get_default_config
 from ..core.processor import DramaProcessor
 from ..utils.logging import setup_logging
 from .commands import process_command, analyze_command, config_command, legacy_run_command, history_command, feishu_command
-from .ai_commands import add_ai_commands
+# AI功能已移除
 
 
 @click.group()
@@ -90,8 +90,7 @@ cli.add_command(legacy_run_command)
 cli.add_command(history_command)
 cli.add_command(feishu_command)
 
-# 添加AI命令
-add_ai_commands(cli)
+# AI功能已移除
 
 
 def main():

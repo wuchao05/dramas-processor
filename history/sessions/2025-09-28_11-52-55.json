@@ -1,0 +1,2256 @@
+{
+  "session_id": "2025-09-28_11-52-55",
+  "start_time": "2025-09-28T11:52:55.465826",
+  "end_time": "2025-09-28T15:13:31.237783",
+  "dramas": [
+    {
+      "name": "人生五十之同学会上惊艳全场",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/人生五十之同学会上惊艳全场",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/人生五十之同学会上惊艳全场",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 577.3434562683105,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.541108"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 539.9329490661621,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.545767"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 525.4481134414673,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.546147"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 551.3680896759033,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.546718"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 554.869215965271,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.547019"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 519.2913198471069,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.547304"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 550.6162691116333,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.547712"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 541.9966897964478,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.548051"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 507.0978956222534,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.548365"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 512.2968530654907,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.548663"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 530.7050266265869,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.548875"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 503.87227725982666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.549130"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 508.66122817993164,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.549359"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 559.9559078216553,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.549570"
+        },
+        {
+          "filename": "9.30-人生五十之同学会上惊艳全场-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 569.1473770141602,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:18:11.549632"
+        }
+      ],
+      "total_duration": 3026.7200000000007,
+      "processing_time": 1511.1442077159882,
+      "start_time": "2025-09-28T11:52:57.802532",
+      "end_time": "2025-09-28T12:18:08.946740",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "入职保安，我能偷听美女心声",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/入职保安，我能偷听美女心声",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/入职保安，我能偷听美女心声",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 519.0360956192017,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.497751"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 519.1005802154541,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.501297"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 542.7468900680542,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.501599"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 513.8124704360962,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.501821"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 527.134428024292,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.501977"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 518.6571912765503,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.502106"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 500.5808382034302,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.502262"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 506.1365776062012,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.502461"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 518.5593490600586,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.502607"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 510.406943321228,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.502792"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 527.9016876220703,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.502980"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 500.1354761123657,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.503157"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 524.6198959350586,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.503314"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 493.99764823913574,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.503474"
+        },
+        {
+          "filename": "9.30-入职保安，我能偷听美女心声-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 538.1490211486816,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T12:42:42.503510"
+        }
+      ],
+      "total_duration": 5215.520000000002,
+      "processing_time": 1468.3348240852356,
+      "start_time": "2025-09-28T12:18:11.554056",
+      "end_time": "2025-09-28T12:42:39.888880",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "凡女仙盆",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/凡女仙盆",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/凡女仙盆",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-凡女仙盆-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 488.81841945648193,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.292342"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 544.4378452301025,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.297592"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 539.6512393951416,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.297996"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 522.6521348953247,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.298328"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 539.7742471694946,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.298659"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 506.56561374664307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.298966"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 480.41716861724854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.299269"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 524.2075424194336,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.299580"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 508.59865856170654,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.299853"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 505.06192111968994,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.300133"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 524.8445911407471,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.300449"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 543.9566564559937,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.300797"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 537.0093212127686,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.301117"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 445.46799087524414,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.301417"
+        },
+        {
+          "filename": "9.30-凡女仙盆-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 513.8905067443848,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:07:47.301528"
+        }
+      ],
+      "total_duration": 5095.484623000001,
+      "processing_time": 1501.9796290397644,
+      "start_time": "2025-09-28T12:42:42.506620",
+      "end_time": "2025-09-28T13:07:44.486249",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "别惹真千金，她爸是超级女儿奴",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/别惹真千金，她爸是超级女儿奴",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/别惹真千金，她爸是超级女儿奴",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 489.34985065460205,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.550449"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 502.6030979156494,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.551216"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 504.1050500869751,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.551362"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 576.9414701461792,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.551539"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 513.3457326889038,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.551691"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 548.6478443145752,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.551847"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 549.0007286071777,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.551973"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 510.0653018951416,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552094"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 546.8031749725342,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552225"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 527.6520195007324,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552351"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 480.6079406738281,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552468"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 490.829026222229,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552603"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 520.3717784881592,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552721"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 504.97240447998047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552836"
+        },
+        {
+          "filename": "9.30-别惹真千金，她爸是超级女儿奴-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 534.9018716812134,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:31:28.552869"
+        }
+      ],
+      "total_duration": 2191.299751,
+      "processing_time": 1417.182207107544,
+      "start_time": "2025-09-28T13:07:47.305634",
+      "end_time": "2025-09-28T13:31:24.487841",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "卿似孤山沉月轮",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/卿似孤山沉月轮",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/卿似孤山沉月轮",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 543.0101737976074,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.308168"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 517.9305572509766,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.313033"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 537.0106544494629,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.313381"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 511.8947410583496,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.313673"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 483.2112855911255,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.313971"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 563.0012407302856,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.314531"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 431.1198043823242,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.314774"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 502.6806335449219,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.314979"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 483.6019515991211,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.315196"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 531.966028213501,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.315387"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 488.20215034484863,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.315568"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 528.1413192749023,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.315737"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 519.1477727890015,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.315851"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 494.84157371520996,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.315985"
+        },
+        {
+          "filename": "9.30-卿似孤山沉月轮-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 519.3441619873047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T13:57:13.316018"
+        }
+      ],
+      "total_duration": 4888.358066000001,
+      "processing_time": 1541.9951848983765,
+      "start_time": "2025-09-28T13:31:28.555703",
+      "end_time": "2025-09-28T13:57:10.550888",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "大叔盛宠乖乖新娘甜入怀",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/大叔盛宠乖乖新娘甜入怀",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/大叔盛宠乖乖新娘甜入怀",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 513.4098472595215,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.966151"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 542.019341468811,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.974134"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 536.3814382553101,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.974470"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 540.646897315979,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.974832"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 519.411660194397,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.975045"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 552.1640882492065,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.975259"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 509.72583866119385,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.975431"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 531.3330898284912,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.975624"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 528.1383600234985,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.975796"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 508.75512313842773,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.975962"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 541.1714134216309,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.976125"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 510.0283908843994,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.977003"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 546.3674163818359,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.977246"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 534.6362495422363,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.978094"
+        },
+        {
+          "filename": "9.30-大叔盛宠乖乖新娘甜入怀-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 517.1239290237427,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:22:20.978145"
+        }
+      ],
+      "total_duration": 3002.999999999999,
+      "processing_time": 1504.787987947464,
+      "start_time": "2025-09-28T13:57:13.319322",
+      "end_time": "2025-09-28T14:22:18.107310",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "她搅翻朝野了，王爷你怎么还递刀",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/她搅翻朝野了，王爷你怎么还递刀",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/她搅翻朝野了，王爷你怎么还递刀",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 543.7625751495361,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.310258"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 549.5384368896484,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.314509"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 528.7943525314331,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.314907"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 507.2730531692505,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.315262"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 523.7651090621948,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.315673"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 534.3917045593262,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.316008"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 511.49023818969727,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.316289"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 537.1438426971436,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.316588"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 500.32437324523926,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.316879"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 531.7134494781494,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.317165"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 475.37339305877686,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.317530"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 484.27273178100586,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.317883"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 553.9388780593872,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.318173"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 482.52758026123047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.318454"
+        },
+        {
+          "filename": "9.30-她搅翻朝野了，王爷你怎么还递刀-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 555.8647727966309,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T14:47:44.318544"
+        }
+      ],
+      "total_duration": 5820.339429999999,
+      "processing_time": 1520.4363420009613,
+      "start_time": "2025-09-28T14:22:20.985278",
+      "end_time": "2025-09-28T14:47:41.421620",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "开局一元，颠覆人生",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/开局一元，颠覆人生",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/开局一元，颠覆人生",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 7,
+      "success_rate": 0.4666666666666667,
+      "materials": [
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 519.4760999679565,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.776276"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 503.2941951751709,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.779616"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 512.8937168121338,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.779867"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 529.2606468200684,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.780104"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 496.48212909698486,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.780337"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 525.2108144760132,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.780572"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 493.7390260696411,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.780740"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 140.5000457763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.780944"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.781170"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.781361"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.781611"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.781900"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.782102"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.782142"
+        },
+        {
+          "filename": "9.30-开局一元，颠覆人生-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-28T15:13:17.782173"
+        }
+      ],
+      "total_duration": 2608.2946450000004,
+      "processing_time": 1530.8965220451355,
+      "start_time": "2025-09-28T14:47:44.322749",
+      "end_time": "2025-09-28T15:13:15.219271",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "被父皇猜忌后我选择统领天下",
+          "别惹真千金，她爸是超级女儿奴",
+          "人生五十之同学会上惊艳全场",
+          "入职保安，我能偷听美女心声",
+          "开局遇到她，我带三宝成功种田",
+          "闺蜜对不起，我老公是你大哥",
+          "大叔盛宠乖乖新娘甜入怀",
+          "开局一元，颠覆人生",
+          "凡女仙盆",
+          "机长先生，你的未婚妻嫁人了",
+          "卿似孤山沉月轮",
+          "我本将心对明月",
+          "最强破烂王",
+          "她搅翻朝野了，王爷你怎么还递刀"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 8,
+  "successful_dramas": 7,
+  "total_materials": 120,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.30 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 11996.75690484047,
+  "total_size_mb": 58466.57720851898
+}

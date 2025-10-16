@@ -4,8 +4,8 @@
 # Basic processing settings
 target_fps: 60
 smart_fps: true
-fast_mode: false
-filter_threads: 8 # Will be set to max(4, min(8, CPU_cores*75%)) if not specified
+fast_mode: true # 优化：启用快速模式，减少不必要的滤镜处理
+filter_threads: 16 # 优化：增加滤镜线程数，提升FFmpeg处理速度
 verbose: false # Show detailed FFmpeg commands and debug information
 
 # Duration settings (in seconds)
@@ -13,14 +13,14 @@ min_duration: 480.0 # 8 minutes (--min-sec)
 max_duration: 900.0 # 15 minutes (--max-sec)
 
 # Material generation settings
-count: 10 # Number of materials per drama (--count)
+count: 15 # Number of materials per drama (--count)
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
   # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录
 
 # Start point selection settings
 exclude_last_episodes:
-  10 # Exclude the last N episodes when selecting start points
+  8 # Exclude the last N episodes when selecting start points
   # 在选择起始点时排除最后N集，确保有足够的后续内容用于剪辑
   # 例如：设置为10表示起始点不会选择最后10集
 
@@ -81,22 +81,22 @@ brand_text_mapping:
     - range: "04-06"
       text: "斯娜看剧"
     - range: "07-09"
-      text: "清妍短剧"
-    - range: "10-12"
-      text: "看家本领"
-    - range: "13-15"
-      text: "奈煊剧场"
-    - range: "16-18"
       text: "萍通剧坊"
+    - range: "10-11"
+      text: "清妍短剧"
+    - range: "12-13"
+      text: "看家本领"
+    - range: "14-15"
+      text: "奈煊剧场"
 
   # 循环模式配置 (mode: "cycle")
   cycle_texts:
     - "小红看剧"
     - "斯娜看剧"
+    - "萍通剧坊"
     - "清妍短剧"
     - "看家本领"
     - "奈煊剧场"
-    - "萍通剧坊"
 
   # 默认文案（当素材编号不匹配任何范围时使用）
   default_text: "热门短剧"
@@ -141,8 +141,9 @@ feishu:
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"
-  completed_status_value: "待上传"
+  pending_status_value: "待剪辑" # 待处理状态值，用于筛选飞书记录
   processing_status_value: "剪辑中"
+  completed_status_value: "待上传"
   page_size: 200
   token_refresh_interval: 7200000
 

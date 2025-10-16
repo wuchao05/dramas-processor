@@ -1,0 +1,1927 @@
+{
+  "session_id": "2025-09-19_12-18-14",
+  "start_time": "2025-09-19T12:18:14.416725",
+  "end_time": "2025-09-19T15:14:38.297114",
+  "dramas": [
+    {
+      "name": "丹道无敌，宗门仙子都来求丹",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/丹道无敌，宗门仙子都来求丹",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.20导出/丹道无敌，宗门仙子都来求丹",
+      "date_str": "9.20",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 519.0331764221191,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.124292"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 514.6356611251831,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.128263"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 524.2037591934204,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.128591"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 489.22118282318115,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.128858"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 496.4231004714966,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.129083"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 567.9958457946777,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.129308"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 502.51858043670654,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.129531"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 521.3874597549438,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.129799"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 519.3005647659302,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.130000"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 509.7209300994873,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.130294"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 515.549186706543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.130583"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 482.05958461761475,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.130809"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 536.4219341278076,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.130989"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 529.898811340332,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.131153"
+        },
+        {
+          "filename": "9.20-丹道无敌，宗门仙子都来求丹-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 522.6746244430542,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T12:44:21.131206"
+        }
+      ],
+      "total_duration": 6282.755076,
+      "processing_time": 1562.1647417545319,
+      "start_time": "2025-09-19T12:18:16.512344",
+      "end_time": "2025-09-19T12:44:18.677086",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.20",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "那年花好月圆",
+          "重生灾荒年，我靠种田发家护嫂",
+          "八零小娇妻的逆袭路",
+          "前妻不哭，我有助女为乐系统",
+          "猫鼠游戏",
+          "丹道无敌，宗门仙子都来求丹",
+          "七零踹白月光后下乡发家娶村花",
+          "修炼十万年，你说我是杂役"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "修炼十万年，你说我是杂役",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/修炼十万年，你说我是杂役",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.20导出/修炼十万年，你说我是杂役",
+      "date_str": "9.20",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 540.9726324081421,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:35.998020"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 536.2073259353638,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.001967"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 548.4917583465576,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.002304"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 505.973237991333,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.002667"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 557.7600355148315,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.002962"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 522.2463874816895,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.003212"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 510.73760890960693,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.003431"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 530.7470693588257,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.003640"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 518.1031484603882,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.003843"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 545.3420581817627,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.004053"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 560.4963026046753,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.004285"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 537.3257684707642,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.004493"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 549.3840456008911,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.004742"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 508.2230405807495,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.004895"
+        },
+        {
+          "filename": "9.20-修炼十万年，你说我是杂役-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 556.618203163147,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:09:36.004943"
+        }
+      ],
+      "total_duration": 4600.6277770000015,
+      "processing_time": 1512.3684132099152,
+      "start_time": "2025-09-19T12:44:21.134673",
+      "end_time": "2025-09-19T13:09:33.503086",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.20",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "那年花好月圆",
+          "重生灾荒年，我靠种田发家护嫂",
+          "八零小娇妻的逆袭路",
+          "前妻不哭，我有助女为乐系统",
+          "猫鼠游戏",
+          "丹道无敌，宗门仙子都来求丹",
+          "七零踹白月光后下乡发家娶村花",
+          "修炼十万年，你说我是杂役"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "八零小娇妻的逆袭路",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/八零小娇妻的逆袭路",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.20导出/八零小娇妻的逆袭路",
+      "date_str": "9.20",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 530.9330024719238,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.579707"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 544.4967098236084,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.589015"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 490.6718626022339,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.589234"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 539.5161418914795,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.589405"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 489.8431148529053,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.589582"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 521.2498216629028,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.589750"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 513.7761821746826,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.589893"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 515.082444190979,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.590083"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 491.1315002441406,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.590294"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 525.3912401199341,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.590480"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 500.2324047088623,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.590664"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 525.9103412628174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.590845"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 490.1034460067749,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.591027"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 517.1023178100586,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.591198"
+        },
+        {
+          "filename": "9.20-八零小娇妻的逆袭路-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 535.4508876800537,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T13:35:29.591266"
+        }
+      ],
+      "total_duration": 4828.619228000001,
+      "processing_time": 1551.0022656917572,
+      "start_time": "2025-09-19T13:09:36.008174",
+      "end_time": "2025-09-19T13:35:27.010440",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.20",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "那年花好月圆",
+          "重生灾荒年，我靠种田发家护嫂",
+          "八零小娇妻的逆袭路",
+          "前妻不哭，我有助女为乐系统",
+          "猫鼠游戏",
+          "丹道无敌，宗门仙子都来求丹",
+          "七零踹白月光后下乡发家娶村花",
+          "修炼十万年，你说我是杂役"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "前妻不哭，我有助女为乐系统",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/前妻不哭，我有助女为乐系统",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.20导出/前妻不哭，我有助女为乐系统",
+      "date_str": "9.20",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 526.098349571228,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.760902"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 537.2769060134888,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.766072"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 529.6529569625854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.766350"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 530.5115385055542,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.766577"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 539.2701768875122,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.766790"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 539.3210849761963,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.767117"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 536.7005214691162,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.767332"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 489.5897445678711,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.767561"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 536.7773485183716,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.767783"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 509.8215913772583,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.768084"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 545.800407409668,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.768323"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 520.4526519775391,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.768574"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 491.49874210357666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.768776"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 509.931565284729,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.768957"
+        },
+        {
+          "filename": "9.20-前妻不哭，我有助女为乐系统-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 536.5051555633545,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:00:51.769007"
+        }
+      ],
+      "total_duration": 6148.559999999999,
+      "processing_time": 1515.7074508666992,
+      "start_time": "2025-09-19T13:35:29.594637",
+      "end_time": "2025-09-19T14:00:45.302088",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.20",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "那年花好月圆",
+          "重生灾荒年，我靠种田发家护嫂",
+          "八零小娇妻的逆袭路",
+          "前妻不哭，我有助女为乐系统",
+          "猫鼠游戏",
+          "丹道无敌，宗门仙子都来求丹",
+          "七零踹白月光后下乡发家娶村花",
+          "修炼十万年，你说我是杂役"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "猫鼠游戏",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/猫鼠游戏",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.20导出/猫鼠游戏",
+      "date_str": "9.20",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.20-猫鼠游戏-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 528.2607679367065,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.033392"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 516.2271547317505,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.034556"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 498.8033838272095,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.034920"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 517.2993717193604,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.035267"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 525.9830293655396,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.035665"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 512.5695600509644,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.036015"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 526.2374019622803,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.036348"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 529.0097599029541,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.036644"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 514.588526725769,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.036911"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 530.0415191650391,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.037188"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 513.1242637634277,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.037462"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 512.6082944869995,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.037749"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 531.9616775512695,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.038029"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 509.6155138015747,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.038290"
+        },
+        {
+          "filename": "9.20-猫鼠游戏-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 497.0096311569214,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:24:54.038384"
+        }
+      ],
+      "total_duration": 2891.6763719999994,
+      "processing_time": 1437.9119882583618,
+      "start_time": "2025-09-19T14:00:51.772369",
+      "end_time": "2025-09-19T14:24:49.684357",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.20",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "那年花好月圆",
+          "重生灾荒年，我靠种田发家护嫂",
+          "八零小娇妻的逆袭路",
+          "前妻不哭，我有助女为乐系统",
+          "猫鼠游戏",
+          "丹道无敌，宗门仙子都来求丹",
+          "七零踹白月光后下乡发家娶村花",
+          "修炼十万年，你说我是杂役"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "那年花好月圆",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/那年花好月圆",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.20导出/那年花好月圆",
+      "date_str": "9.20",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.20-那年花好月圆-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 525.255054473877,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.237722"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 516.7549848556519,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.241679"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 521.0151166915894,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.241944"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 481.90237045288086,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.242194"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 448.3618869781494,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.242479"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 509.6116485595703,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.242758"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 504.6672649383545,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.242973"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 527.9890022277832,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.243196"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 482.97102069854736,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.243374"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 510.5911855697632,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.243565"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 529.96324634552,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.243719"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 464.1809968948364,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.243888"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 499.4983558654785,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.244065"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 486.04089546203613,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.244219"
+        },
+        {
+          "filename": "9.20-那年花好月圆-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 532.4104766845703,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T14:49:42.244267"
+        }
+      ],
+      "total_duration": 6466.102338,
+      "processing_time": 1485.5041053295135,
+      "start_time": "2025-09-19T14:24:54.041820",
+      "end_time": "2025-09-19T14:49:39.545925",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.20",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "那年花好月圆",
+          "重生灾荒年，我靠种田发家护嫂",
+          "八零小娇妻的逆袭路",
+          "前妻不哭，我有助女为乐系统",
+          "猫鼠游戏",
+          "丹道无敌，宗门仙子都来求丹",
+          "七零踹白月光后下乡发家娶村花",
+          "修炼十万年，你说我是杂役"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生灾荒年，我靠种田发家护嫂",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生灾荒年，我靠种田发家护嫂",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.20导出/重生灾荒年，我靠种田发家护嫂",
+      "date_str": "9.20",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 533.1863784790039,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.344394"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 514.7539539337158,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.347958"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 553.8570423126221,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.348210"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 551.3244857788086,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.348398"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 556.9369344711304,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.348553"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 509.5922508239746,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.348781"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 525.5225715637207,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.348965"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 503.27938079833984,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.349124"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 502.05171489715576,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.349274"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 524.8279228210449,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.349444"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 566.8723344802856,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.349640"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 534.4160966873169,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.349774"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 499.4647560119629,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.349902"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 507.85487842559814,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.350022"
+        },
+        {
+          "filename": "9.20-重生灾荒年，我靠种田发家护嫂-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 516.4750452041626,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T15:14:36.350054"
+        }
+      ],
+      "total_duration": 4122.626052000001,
+      "processing_time": 1491.0518519878387,
+      "start_time": "2025-09-19T14:49:42.247577",
+      "end_time": "2025-09-19T15:14:33.299429",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.20",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "那年花好月圆",
+          "重生灾荒年，我靠种田发家护嫂",
+          "八零小娇妻的逆袭路",
+          "前妻不哭，我有助女为乐系统",
+          "猫鼠游戏",
+          "丹道无敌，宗门仙子都来求丹",
+          "七零踹白月光后下乡发家娶村花",
+          "修炼十万年，你说我是杂役"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 7,
+  "successful_dramas": 7,
+  "total_materials": 105,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.20 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 10555.710817098618,
+  "total_size_mb": 54594.74229335785
+}

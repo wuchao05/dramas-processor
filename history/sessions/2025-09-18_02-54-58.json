@@ -1,0 +1,5756 @@
+{
+  "session_id": "2025-09-18_02-54-58",
+  "start_time": "2025-09-18T02:54:58.106065",
+  "end_time": "2025-09-18T19:25:53.968210",
+  "dramas": [
+    {
+      "name": "云家的小棉袄奶甜奶软",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/云家的小棉袄奶甜奶软",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/云家的小棉袄奶甜奶软",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 540.2088785171509,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.322845"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 517.9510297775269,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.327644"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 543.2903118133545,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.327999"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 504.77002716064453,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.328371"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 542.8936033248901,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.328620"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 557.0961818695068,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.329029"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 502.83685970306396,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.329319"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 552.1921787261963,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.329662"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 539.3268966674805,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.330044"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 550.8477506637573,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.330443"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 507.07470893859863,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.330715"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 509.7674083709717,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.331032"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 490.02351474761963,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.331330"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 522.1578493118286,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.331644"
+        },
+        {
+          "filename": "9.19-云家的小棉袄奶甜奶软-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 529.8992900848389,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T03:42:14.331699"
+        }
+      ],
+      "total_duration": 6673.919999999999,
+      "processing_time": 2832.9567999839783,
+      "start_time": "2025-09-18T02:54:59.817909",
+      "end_time": "2025-09-18T03:42:12.774709",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "傅爷的小青梅又飒又美",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/傅爷的小青梅又飒又美",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/傅爷的小青梅又飒又美",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 533.7461624145508,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.653374"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 513.0733280181885,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.657973"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 507.11639499664307,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.658215"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 563.7061862945557,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.658419"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 514.559645652771,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.658624"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 533.979697227478,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.658801"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 527.4659595489502,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.659032"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 489.5810136795044,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.659493"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 529.1716241836548,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.660052"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 506.32317066192627,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.660226"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 535.1436166763306,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.660422"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 485.8988914489746,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.660544"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 536.4791202545166,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.660681"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 485.17376232147217,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.661065"
+        },
+        {
+          "filename": "9.19-傅爷的小青梅又飒又美-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 511.7126226425171,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:17:42.661106"
+        }
+      ],
+      "total_duration": 5910.44,
+      "processing_time": 2126.785815000534,
+      "start_time": "2025-09-18T03:42:14.336371",
+      "end_time": "2025-09-18T04:17:41.122186",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "八零小娇妻的逆袭路",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/八零小娇妻的逆袭路",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/八零小娇妻的逆袭路",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 496.2094917297363,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.728831"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 498.04218769073486,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.736408"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 518.3364067077637,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.737039"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 505.1521234512329,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.737387"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 482.8970060348511,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.737689"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 499.1877727508545,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.737970"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 487.5421142578125,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.738217"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 539.2894124984741,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.738536"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 526.7386198043823,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.738853"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 491.5335350036621,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.739133"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 510.4589891433716,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.739493"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 520.8180046081543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.739903"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 525.0799837112427,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.740106"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 479.6763582229614,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.740221"
+        },
+        {
+          "filename": "9.19-八零小娇妻的逆袭路-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 543.5462846755981,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T04:52:48.740261"
+        }
+      ],
+      "total_duration": 4828.619228000001,
+      "processing_time": 2104.070221185684,
+      "start_time": "2025-09-18T04:17:42.664981",
+      "end_time": "2025-09-18T04:52:46.735202",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "八零：天降福宝竟是天道亲闺女",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/八零：天降福宝竟是天道亲闺女",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/八零：天降福宝竟是天道亲闺女",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 514.3136367797852,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.792720"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 536.005633354187,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.796058"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 520.9876480102539,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.796349"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 527.1617565155029,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.796643"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 557.7551946640015,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.796829"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 555.4139623641968,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.797018"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 533.3895349502563,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.797171"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 518.9431095123291,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.797323"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 555.2856740951538,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.797490"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 556.215841293335,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.797634"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 562.0918645858765,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.797773"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 522.0915031433105,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.797946"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 552.4545660018921,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.798112"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 509.85455226898193,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.798311"
+        },
+        {
+          "filename": "9.19-八零：天降福宝竟是天道亲闺女-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 550.3563480377197,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T05:28:20.798359"
+        }
+      ],
+      "total_duration": 4908.88,
+      "processing_time": 2130.320415019989,
+      "start_time": "2025-09-18T04:52:48.753400",
+      "end_time": "2025-09-18T05:28:19.073815",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "别惹真千金，她爸是超级女儿奴",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/别惹真千金，她爸是超级女儿奴",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/别惹真千金，她爸是超级女儿奴",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 514.754641532898,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.629787"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 569.0634431838989,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.634907"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 557.4153213500977,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.635255"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 523.7440395355225,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.635661"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 504.59904861450195,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.635886"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 573.4362888336182,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.636135"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 519.0252876281738,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.636342"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 513.244668006897,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.636562"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 497.1880121231079,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.636760"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 484.8568515777588,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.636969"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 506.19997119903564,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.637184"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 515.2809324264526,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.637812"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 507.0838279724121,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.638055"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 507.77470111846924,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.638281"
+        },
+        {
+          "filename": "9.19-别惹真千金，她爸是超级女儿奴-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 483.54600048065186,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:01:21.638353"
+        }
+      ],
+      "total_duration": 2191.299751,
+      "processing_time": 1979.1446869373322,
+      "start_time": "2025-09-18T05:28:20.802115",
+      "end_time": "2025-09-18T06:01:19.946802",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "前妻不哭，我有助女为乐系统",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/前妻不哭，我有助女为乐系统",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/前妻不哭，我有助女为乐系统",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 549.9742641448975,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.781144"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 529.0434236526489,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.785700"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 502.53870582580566,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.785927"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 561.3082733154297,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.786144"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 532.3924083709717,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.786337"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 547.3931531906128,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.786541"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 526.521107673645,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.786715"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 555.6759309768677,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.786878"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 527.1896743774414,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.787056"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 517.0064697265625,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.787211"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 540.6370601654053,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.787541"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 569.8094491958618,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.787800"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 534.569501876831,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.787990"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 552.6883945465088,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.788194"
+        },
+        {
+          "filename": "9.19-前妻不哭，我有助女为乐系统-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 546.7295942306519,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T06:37:38.788222"
+        }
+      ],
+      "total_duration": 6148.559999999999,
+      "processing_time": 2175.6516637802124,
+      "start_time": "2025-09-18T06:01:21.642230",
+      "end_time": "2025-09-18T06:37:37.293894",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "回到民国成僵尸，我的儿子是道长",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/回到民国成僵尸，我的儿子是道长",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/回到民国成僵尸，我的儿子是道长",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 526.179762840271,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.451533"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 546.8253221511841,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.452851"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 505.34257984161377,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.453165"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 525.6697540283203,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.453460"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 474.86421966552734,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.453751"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 566.5776586532593,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.454340"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 513.1858501434326,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.454639"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 560.8836917877197,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.454927"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 561.7244157791138,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.455485"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 491.6079378128052,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.455853"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 492.40160369873047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.456597"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 483.5036268234253,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.456907"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 534.7579765319824,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.457155"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 483.0673246383667,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.457381"
+        },
+        {
+          "filename": "9.19-回到民国成僵尸，我的儿子是道长-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 511.5304079055786,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:10:21.457585"
+        }
+      ],
+      "total_duration": 1489.179364,
+      "processing_time": 1952.309322834015,
+      "start_time": "2025-09-18T06:37:38.792576",
+      "end_time": "2025-09-18T07:10:11.101899",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "国公府弃女，被狼群宠成小公主",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/国公府弃女，被狼群宠成小公主",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/国公府弃女，被狼群宠成小公主",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 547.9386587142944,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.212059"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 492.4171657562256,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.215800"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 540.7694005966187,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.216062"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 529.3373880386353,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.216366"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 472.3609342575073,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.216883"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 479.80969047546387,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.217066"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 488.65611934661865,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.217243"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 537.0435419082642,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.217428"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 500.8365726470947,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.217647"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 496.32658100128174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.217862"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 544.6703205108643,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.218083"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 556.0071382522583,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.218289"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 516.2130889892578,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.218535"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 547.7860641479492,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.218746"
+        },
+        {
+          "filename": "9.19-国公府弃女，被狼群宠成小公主-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 531.0745086669922,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T07:44:10.218796"
+        }
+      ],
+      "total_duration": 6527.341473,
+      "processing_time": 2027.225733757019,
+      "start_time": "2025-09-18T07:10:21.461423",
+      "end_time": "2025-09-18T07:44:08.687157",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "在我不当后悔文男主后",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/在我不当后悔文男主后",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/在我不当后悔文男主后",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 542.9139747619629,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.497272"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 506.4571056365967,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.501422"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 537.9631900787354,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.501618"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 482.6841354370117,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.501790"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 543.928861618042,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.501940"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 517.3527011871338,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.502086"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 540.6078987121582,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.502241"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 517.1832590103149,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.502372"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 496.05384063720703,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.502524"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 543.1368885040283,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.502666"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 557.291558265686,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.502820"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 460.9420499801636,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.502980"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 552.0160207748413,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.503445"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 517.1625928878784,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.503584"
+        },
+        {
+          "filename": "9.19-在我不当后悔文男主后-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 556.66188621521,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:19:47.503620"
+        }
+      ],
+      "total_duration": 7732.690336000002,
+      "processing_time": 2135.6689488887787,
+      "start_time": "2025-09-18T07:44:10.222704",
+      "end_time": "2025-09-18T08:19:45.891653",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "妙眼小村医",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/妙眼小村医",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/妙眼小村医",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-妙眼小村医-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 545.7268838882446,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.167197"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 519.0865001678467,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.171279"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 532.6864633560181,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.171644"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 503.926944732666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.172016"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 524.8655672073364,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.172337"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 526.9486637115479,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.172663"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 512.4802770614624,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.172951"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 530.6611394882202,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.173184"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 521.0553064346313,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.173384"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 540.6497421264648,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.173583"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 487.10956382751465,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.173777"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 492.12448501586914,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.173975"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 494.3125190734863,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.174160"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 538.2782621383667,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.174334"
+        },
+        {
+          "filename": "9.19-妙眼小村医-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 380.53189182281494,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T08:53:45.174391"
+        }
+      ],
+      "total_duration": 3324.5261190000006,
+      "processing_time": 2035.6279559135437,
+      "start_time": "2025-09-18T08:19:47.506777",
+      "end_time": "2025-09-18T08:53:43.134733",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "姐姐结婚，我也结",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/姐姐结婚，我也结",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/姐姐结婚，我也结",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 509.7903051376343,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.797972"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 541.5592355728149,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.799873"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 506.41029930114746,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.800720"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 508.3650417327881,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.801000"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 459.5141077041626,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.801408"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 504.4905996322632,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.802054"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 481.36863231658936,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.802697"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 480.6479558944702,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.802884"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 489.88385486602783,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.804320"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 538.4481010437012,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.804703"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 443.4866695404053,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.805007"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 537.2198867797852,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.805771"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 450.57877254486084,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.807250"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 462.7444829940796,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.808357"
+        },
+        {
+          "filename": "9.19-姐姐结婚，我也结-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 492.7995309829712,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T09:25:23.808404"
+        }
+      ],
+      "total_duration": 4819.9721070000005,
+      "processing_time": 1895.6198163032532,
+      "start_time": "2025-09-18T08:53:45.178055",
+      "end_time": "2025-09-18T09:25:20.797871",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "嫡母归来，国公府上下听令",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/嫡母归来，国公府上下听令",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/嫡母归来，国公府上下听令",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 537.8771324157715,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.528387"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 561.9557952880859,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.532477"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 539.4305429458618,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.532702"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 536.9656915664673,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.533264"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 569.829873085022,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.533400"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 572.3014907836914,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.533569"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 525.9341678619385,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.533719"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 579.9031047821045,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.533866"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 523.8867454528809,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.533987"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 508.3295564651489,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.534103"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 526.4164733886719,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.534202"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 572.6346750259399,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.534289"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 513.7398548126221,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.534401"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 516.4528856277466,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.534511"
+        },
+        {
+          "filename": "9.19-嫡母归来，国公府上下听令-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 584.0346441268921,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T10:53:03.534713"
+        }
+      ],
+      "total_duration": 5634.399999999999,
+      "processing_time": 5256.527253627777,
+      "start_time": "2025-09-18T09:25:23.815461",
+      "end_time": "2025-09-18T10:53:00.342715",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "山村开局娶村花",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/山村开局娶村花",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/山村开局娶村花",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-山村开局娶村花-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 541.9571199417114,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.767520"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 450.3641881942749,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.768957"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 520.7800188064575,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.769733"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 481.8483371734619,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.769968"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 479.7248020172119,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.933494"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 479.5187749862671,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.934051"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 490.2320671081543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.935106"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 496.11322593688965,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.935289"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 476.12464427948,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.935923"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 471.9002447128296,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.936061"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 548.6982622146606,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.936193"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 536.4566793441772,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.936299"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 516.0027341842651,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.936730"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 466.1920518875122,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.937218"
+        },
+        {
+          "filename": "9.19-山村开局娶村花-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 476.6527099609375,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T11:42:44.937249"
+        }
+      ],
+      "total_duration": 5991.3490440000005,
+      "processing_time": 2976.246248960495,
+      "start_time": "2025-09-18T10:53:03.538024",
+      "end_time": "2025-09-18T11:42:39.784273",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "幸得相遇离婚时",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/幸得相遇离婚时",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/幸得相遇离婚时",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 402.111780166626,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.477181"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 303.0053472518921,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.482305"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 325.8738889694214,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.482603"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 282.9008560180664,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.482862"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 278.58552265167236,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.483753"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 339.9970064163208,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.484019"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 376.5293951034546,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.484214"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 289.6373052597046,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.484466"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 253.84972286224365,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.484662"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 290.2084150314331,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.486993"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 367.8951187133789,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.489019"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 297.89958000183105,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.489467"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 379.201865196228,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.490475"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 352.9185905456543,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.490950"
+        },
+        {
+          "filename": "9.19-幸得相遇离婚时-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 360.5446090698242,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T12:27:53.491035"
+        }
+      ],
+      "total_duration": 7491.5035339999995,
+      "processing_time": 2705.669426202774,
+      "start_time": "2025-09-18T11:42:44.940488",
+      "end_time": "2025-09-18T12:27:50.609914",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "江湖：千门八将",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/江湖：千门八将",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/江湖：千门八将",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 13,
+      "success_rate": 0.8666666666666667,
+      "materials": [
+        {
+          "filename": "9.19-江湖：千门八将-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 461.2857265472412,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.167716"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 465.1132221221924,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.193416"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 453.3188486099243,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.233741"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 485.6976509094238,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.304565"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 574.5813341140747,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.304728"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 575.2519836425781,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.433699"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 451.9389657974243,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.433870"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 571.2204256057739,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.690512"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 479.49554538726807,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:51.690711"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 463.2118215560913,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:52.201526"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 479.37996101379395,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:52.201661"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 575.391435623169,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:53.178380"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 487.17489433288574,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:53.178527"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 476.9391984939575,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:53.277841"
+        },
+        {
+          "filename": "9.19-江湖：千门八将-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 390.0000457763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T13:31:53.277997"
+        }
+      ],
+      "total_duration": 1319.623831,
+      "processing_time": 3832.9443697929382,
+      "start_time": "2025-09-18T12:27:53.501572",
+      "end_time": "2025-09-18T13:31:46.445942",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "真千金她是学霸",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/真千金她是学霸",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/真千金她是学霸",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 13,
+      "success_rate": 0.8666666666666667,
+      "materials": [
+        {
+          "filename": "9.19-真千金她是学霸-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 476.7585859298706,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.187146"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 501.4378910064697,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.187502"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 438.80737686157227,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.187681"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 452.57591247558594,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.187697"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 512.8228559494019,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.187865"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 502.547194480896,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.188039"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 465.6508569717407,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.188053"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 533.1419410705566,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.188311"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 431.7825689315796,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.188527"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 426.7107801437378,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.188949"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 457.1268358230591,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.189167"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 510.94225215911865,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.189387"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 539.1450233459473,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.189649"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 438.4550018310547,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.189897"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 504.082968711853,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T15:40:35.189919"
+        }
+      ],
+      "total_duration": 4902.490017000001,
+      "processing_time": 7717.226034879684,
+      "start_time": "2025-09-18T13:31:53.283902",
+      "end_time": "2025-09-18T15:40:30.509937",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "美女别闹，我只是保安",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/美女别闹，我只是保安",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/美女别闹，我只是保安",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 13,
+      "success_rate": 0.8666666666666667,
+      "materials": [
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 503.43794536590576,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.694609"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 576.6646366119385,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.698010"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 515.8566732406616,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.698301"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 568.1010656356812,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.698804"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 492.0217409133911,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.699303"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 552.8418979644775,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.699593"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 491.3570737838745,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.699869"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 551.0186576843262,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.700174"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 507.05056381225586,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.700439"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 549.2693758010864,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.700794"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 558.1116313934326,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.701077"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 566.97607421875,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.701323"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 471.0740690231323,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.701600"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 521.4606046676636,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.701859"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 494.65325260162354,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T16:40:25.701878"
+        }
+      ],
+      "total_duration": 6631.88,
+      "processing_time": 3587.6175401210785,
+      "start_time": "2025-09-18T15:40:35.193809",
+      "end_time": "2025-09-18T16:40:22.811349",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "被父皇猜忌后我选择统领天下",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/被父皇猜忌后我选择统领天下",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/被父皇猜忌后我选择统领天下",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 11,
+      "success_rate": 0.7333333333333333,
+      "materials": [
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 530.0511655807495,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.792429"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 524.4473724365234,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.796419"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 496.31940364837646,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.797881"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 537.4280414581299,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.798508"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 499.385066986084,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.798905"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 496.6376152038574,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.799324"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 490.39623260498047,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.799877"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 576.9009580612183,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.800673"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 514.0000457763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.801659"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 491.5633153915405,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.802016"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 541.1153221130371,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.802167"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 534.3827209472656,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.802612"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 480.95502281188965,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.802717"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 552.1639442443848,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.802879"
+        },
+        {
+          "filename": "9.19-被父皇猜忌后我选择统领天下-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 488.7824125289917,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:00:50.802891"
+        }
+      ],
+      "total_duration": 2695.1527899999996,
+      "processing_time": 4820.191066741943,
+      "start_time": "2025-09-18T16:40:25.704696",
+      "end_time": "2025-09-18T18:00:45.895763",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "重生灾荒年，我靠种田发家护嫂",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/重生灾荒年，我靠种田发家护嫂",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/重生灾荒年，我靠种田发家护嫂",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 523.5275249481201,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.118252"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 527.0169868469238,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.147454"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 527.5829944610596,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.147692"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 517.3514404296875,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.148646"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 507.76454734802246,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.148949"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 541.3633460998535,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.149266"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 503.80859088897705,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.149350"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 517.0825881958008,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.149629"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 518.6195755004883,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.150161"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 560.091230392456,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.150478"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 505.61848640441895,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.151235"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 520.2031755447388,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.151440"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 532.881498336792,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.151835"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 512.545090675354,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.151999"
+        },
+        {
+          "filename": "9.19-重生灾荒年，我靠种田发家护嫂-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 521.1249580383301,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T18:44:53.152217"
+        }
+      ],
+      "total_duration": 4122.626052000001,
+      "processing_time": 2640.9926409721375,
+      "start_time": "2025-09-18T18:00:50.806488",
+      "end_time": "2025-09-18T18:44:51.799129",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "难得夫妻是少年",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/难得夫妻是少年",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/难得夫妻是少年",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-难得夫妻是少年-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 512.9352331161499,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:52.658935"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 490.89525508880615,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:52.663672"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 505.0511722564697,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:52.664111"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 511.88558292388916,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:52.664644"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 559.9609127044678,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.384213"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 498.6828508377075,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.384935"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 522.9448165893555,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.385332"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 542.866114616394,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.385460"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 519.2470073699951,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.385549"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 531.5471830368042,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.385687"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 569.0314359664917,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.385962"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 524.2047939300537,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.386036"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 503.1749153137207,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.386161"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 558.8424577713013,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.386235"
+        },
+        {
+          "filename": "9.19-难得夫妻是少年-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 518.1821660995483,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-18T19:25:53.386272"
+        }
+      ],
+      "total_duration": 4545.618093000002,
+      "processing_time": 2458.115314245224,
+      "start_time": "2025-09-18T18:44:53.156030",
+      "end_time": "2025-09-18T19:25:51.271344",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "被父皇猜忌后我选择统领天下",
+          "国公府弃女，被狼群宠成小公主",
+          "回到民国成僵尸，我的儿子是道长",
+          "江湖：千门八将",
+          "真千金她是学霸",
+          "重生灾荒年，我靠种田发家护嫂",
+          "幸得相遇离婚时",
+          "别惹真千金，她爸是超级女儿奴",
+          "云家的小棉袄奶甜奶软",
+          "难得夫妻是少年",
+          "八零小娇妻的逆袭路",
+          "妙眼小村医",
+          "姐姐结婚，我也结",
+          "傅爷的小青梅又飒又美",
+          "前妻不哭，我有助女为乐系统",
+          "在我不当后悔文男主后",
+          "嫡母归来，国公府上下听令",
+          "八零：天降福宝竟是天道亲闺女",
+          "山村开局娶村花",
+          "姐姐别怕我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 20,
+  "successful_dramas": 16,
+  "total_materials": 300,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.19 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 59390.91127514839,
+  "total_size_mb": 152206.3286409378
+}

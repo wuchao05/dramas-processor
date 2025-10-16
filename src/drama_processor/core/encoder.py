@@ -33,14 +33,12 @@ class VideoEncoder:
         self.audio_sr = 48000
         self.soft_crf = "22"
         
-        # Text overlay settings
-        self.title_font_size = 36
-        self.bottom_font_size = 28
-        self.side_font_size = 28
+        # Text overlay settings (from config)
+        self.title_font_size = config.title_font_size
+        self.bottom_font_size = config.bottom_font_size
+        self.side_font_size = config.side_font_size
         
-        self.title_colors = [
-            "#FFA500", "#FFB347", "#FF8C00", "#FFD580", "#E69500", "#FFAE42",
-        ]
+        self.title_colors = config.title_colors
         
         # Watermark settings
         self.watermark_path = watermark_path

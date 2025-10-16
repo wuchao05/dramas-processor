@@ -4,6 +4,7 @@
 pydantic>=1.10.0,<3.0.0
 click>=8.0.0
 PyYAML>=6.0
+requests>=2.25.0
 
 # Optional interactive features
 InquirerPy>=0.3.0

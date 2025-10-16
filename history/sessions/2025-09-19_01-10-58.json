@@ -1,0 +1,826 @@
+{
+  "session_id": "2025-09-19_01-10-58",
+  "start_time": "2025-09-19T01:10:58.994434",
+  "end_time": "2025-09-19T02:32:26.327478",
+  "dramas": [
+    {
+      "name": "乡村绝品神医",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/乡村绝品神医",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/乡村绝品神医",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-乡村绝品神医-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 505.0352973937988,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.670203"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 441.1368827819824,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.673967"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 511.75034046173096,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.674318"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 502.857666015625,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.674653"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 491.09135913848877,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.674967"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 410.1475067138672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.675303"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 506.5634822845459,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.675603"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 478.6856994628906,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.675852"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 492.95702362060547,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.676059"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 539.6658601760864,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.676215"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 510.98383712768555,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.676390"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 507.9870386123657,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.676542"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 504.5536708831787,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.676710"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 489.4256896972656,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.676880"
+        },
+        {
+          "filename": "9.19-乡村绝品神医-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 508.24806213378906,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:35:43.676923"
+        }
+      ],
+      "total_duration": 2710.725163,
+      "processing_time": 1481.641093969345,
+      "start_time": "2025-09-19T01:11:00.202038",
+      "end_time": "2025-09-19T01:35:41.843132",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "真千金她是学霸",
+          "乡村绝品神医",
+          "姐姐别怕，我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "真千金她是学霸",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/真千金她是学霸",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/真千金她是学霸",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-真千金她是学霸-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 516.7556676864624,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.395869"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 523.3749532699585,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.399676"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 481.78687953948975,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.399944"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 488.1521816253662,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.400223"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 511.1863307952881,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.400475"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 453.93328189849854,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.400694"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 486.2490110397339,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.400935"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 496.7610836029053,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.401154"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 479.9653596878052,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.401399"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 478.08976459503174,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.401602"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 562.4259080886841,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.401805"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 462.9570083618164,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.402027"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 458.5412483215332,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.402234"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 439.5651569366455,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.402393"
+        },
+        {
+          "filename": "9.19-真千金她是学霸-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 461.87889289855957,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T01:59:56.402441"
+        }
+      ],
+      "total_duration": 4902.490017000001,
+      "processing_time": 1450.4734966754913,
+      "start_time": "2025-09-19T01:35:43.680527",
+      "end_time": "2025-09-19T01:59:54.154024",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "真千金她是学霸",
+          "乡村绝品神医",
+          "姐姐别怕，我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "美女别闹，我只是保安",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/美女别闹，我只是保安",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.19导出/美女别闹，我只是保安",
+      "date_str": "9.19",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 543.1415119171143,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.509962"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 539.276741027832,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.512475"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 516.2295045852661,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.512719"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 522.8331241607666,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.512909"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 575.608983039856,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513032"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 466.0743646621704,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513145"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 482.19372940063477,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513248"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 538.6599111557007,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513379"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 471.69229221343994,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513518"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 491.69041633605957,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513639"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 582.1030435562134,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513790"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 521.4469890594482,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.513926"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 491.21255111694336,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.514036"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 491.8162422180176,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.514166"
+        },
+        {
+          "filename": "9.19-美女别闹，我只是保安-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 540.634843826294,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-19T02:32:25.514181"
+        }
+      ],
+      "total_duration": 6631.88,
+      "processing_time": 1947.3923289775848,
+      "start_time": "2025-09-19T01:59:56.405959",
+      "end_time": "2025-09-19T02:32:23.798288",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.19",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-12",
+              "text": "看家本领"
+            },
+            {
+              "range": "13-15",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "16-18",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "美女别闹，我只是保安",
+          "丹道无敌宗门仙子都来求丹",
+          "真千金她是学霸",
+          "乡村绝品神医",
+          "姐姐别怕，我已经无敌了"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 3,
+  "successful_dramas": 3,
+  "total_materials": 45,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.19 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 4879.506919622421,
+  "total_size_mb": 22477.32639312744
+}

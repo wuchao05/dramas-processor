@@ -21,7 +21,7 @@ fscutlist() { ./feishu_quick.sh list "$@"; }     # 查看待处理列表（支�
 # 常用组合别名
 alias fscutfast='./feishu_quick.sh run --fast --jobs 4'           # 快速处理（4并发）
 alias fscutquick='./feishu_quick.sh select --fast --jobs 2'       # 快速选择（2并发）
-alias fscutpreview='./feishu_quick.sh select --status "待剪辑"'     # 预览待处理剧目
+alias fscutpreview='./feishu_quick.sh select'     # 预览待处理剧目（使用配置中的默认状态）
 alias fscuthigh='./feishu_quick.sh run --jobs 4 --count 15'       # 高产出（15条/剧，4并发）
 
 # 状态查看别名
@@ -33,7 +33,7 @@ alias fscut待上传='./feishu_quick.sh list --status 待上传'
 alias fscuthelp='echo "
 飞书剧列表剪辑别名（所有命令都支持参数）:
   fscut        - 主命令（无参数时默认run）
-  fscut run    - 剪辑处理所有待剪辑
+  fscut run    - 剪辑处理所有待处理剧目
   fscut select - 交互选择剧目
   fscut list   - 查看待处理列表
   
@@ -57,7 +57,7 @@ alias fscuthelp='echo "
   fscut run --date \"9.4\"         - 处理特定日期的剧目
   fscut run --jobs 8 --count 20  - 8并发处理，每剧20条
   fscut select --fast            - 快速选择模式
-  fscut list --status 待剪辑      - 查看待剪辑状态
+  fscut list --status 待剪辑      - 查看特定状态剧目
   fscut sync --dry-run           - 预览同步模式
 "'
 

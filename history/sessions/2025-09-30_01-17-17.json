@@ -1,0 +1,1270 @@
+{
+  "session_id": "2025-09-30_01-17-17",
+  "start_time": "2025-09-30T01:17:17.448090",
+  "end_time": "2025-09-30T03:31:33.372659",
+  "dramas": [
+    {
+      "name": "八岁萌娃，单枪匹马挑皇城",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/八岁萌娃，单枪匹马挑皇城",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.1/八岁萌娃，单枪匹马挑皇城",
+      "date_str": "10.1",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 483.90729904174805,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.833823"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 496.5570697784424,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.836619"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 509.79444217681885,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.836847"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 534.717999458313,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.837008"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 526.4944829940796,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.837131"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 560.6066551208496,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.837254"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 480.98097133636475,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.837658"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 534.7098407745361,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.837812"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 528.5706758499146,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.837947"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 537.9099588394165,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.838066"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 518.935097694397,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.838197"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 559.1645011901855,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.838356"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 514.8272562026978,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.838709"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 497.9535303115845,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.838726"
+        },
+        {
+          "filename": "10.1-八岁萌娃，单枪匹马挑皇城-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 546.8059272766113,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T01:40:37.838912"
+        }
+      ],
+      "total_duration": 4993.680000000001,
+      "processing_time": 1365.3480830192566,
+      "start_time": "2025-09-30T01:17:52.483052",
+      "end_time": "2025-09-30T01:40:37.831135",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.1",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 6,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": null,
+        "include": null,
+        "exclude": null,
+        "full": false,
+        "no_interactive": false,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": null,
+        "feishu_webhook_url": null,
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "她只有三分乖",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/她只有三分乖",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.1/她只有三分乖",
+      "date_str": "10.1",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "10.1-她只有三分乖-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 468.4023084640503,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.825619"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 453.16068744659424,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.828213"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 480.9069242477417,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.828394"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 487.21153259277344,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.828527"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 470.9508590698242,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.828696"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 476.1462574005127,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.828841"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 390.17528438568115,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.828985"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 472.39293575286865,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829124"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 462.84707164764404,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829267"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 414.80131244659424,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829389"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 476.7169466018677,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829526"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 501.8287363052368,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829660"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 429.89179134368896,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829823"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 466.0564069747925,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829850"
+        },
+        {
+          "filename": "10.1-她只有三分乖-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 576.0758008956909,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:02:46.829868"
+        }
+      ],
+      "total_duration": 5931.590881999999,
+      "processing_time": 1328.9812979698181,
+      "start_time": "2025-09-30T01:40:37.842477",
+      "end_time": "2025-09-30T02:02:46.823775",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.1",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 6,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": null,
+        "include": null,
+        "exclude": null,
+        "full": false,
+        "no_interactive": false,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": null,
+        "feishu_webhook_url": null,
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "姐姐别怕，我已经无敌了",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/姐姐别怕，我已经无敌了",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.1/姐姐别怕，我已经无敌了",
+      "date_str": "10.1",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 503.715859413147,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.895110"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 525.8361215591431,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.904442"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 534.802562713623,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.904683"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 540.0280084609985,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.904838"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 542.7596158981323,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.904978"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 557.7283315658569,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905105"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 538.9434242248535,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905237"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 504.47826766967773,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905353"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 545.9863815307617,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905465"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 519.8932247161865,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905574"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 553.5930309295654,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905687"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 554.9334268569946,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905799"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 487.332106590271,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905910"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 526.252420425415,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905924"
+        },
+        {
+          "filename": "10.1-姐姐别怕，我已经无敌了-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 514.5490789413452,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:26:15.905938"
+        }
+      ],
+      "total_duration": 5396.956027,
+      "processing_time": 1409.0617542266846,
+      "start_time": "2025-09-30T02:02:46.832212",
+      "end_time": "2025-09-30T02:26:15.893966",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.1",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 6,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": null,
+        "include": null,
+        "exclude": null,
+        "full": false,
+        "no_interactive": false,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": null,
+        "feishu_webhook_url": null,
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "若星不渡雪",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/若星不渡雪",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.1/若星不渡雪",
+      "date_str": "10.1",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "10.1-若星不渡雪-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 443.3418493270874,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.676066"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 478.0588207244873,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.681074"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 481.7919645309448,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.681455"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 498.41881561279297,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.681799"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 465.2405185699463,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.682095"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 472.6106081008911,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.682413"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 440.1403465270996,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.682699"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 488.7415475845337,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.683011"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 474.4298505783081,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.683307"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 463.14481353759766,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.683571"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 459.9494276046753,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.683758"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 529.4741773605347,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.683925"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 459.7734537124634,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.684094"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 510.8768587112427,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.684109"
+        },
+        {
+          "filename": "10.1-若星不渡雪-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 506.6044931411743,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T02:48:59.684125"
+        }
+      ],
+      "total_duration": 5083.603377,
+      "processing_time": 1363.7630751132965,
+      "start_time": "2025-09-30T02:26:15.911656",
+      "end_time": "2025-09-30T02:48:59.674731",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.1",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 6,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": null,
+        "include": null,
+        "exclude": null,
+        "full": false,
+        "no_interactive": false,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": null,
+        "feishu_webhook_url": null,
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "萌宝重生助妈咪逆风翻盘",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/萌宝重生助妈咪逆风翻盘",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.1/萌宝重生助妈咪逆风翻盘",
+      "date_str": "10.1",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 484.3810338973999,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.251268"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 507.85307025909424,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.253827"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 494.0408411026001,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.253987"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 517.7642860412598,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.254187"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 520.925763130188,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.254357"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 545.9576034545898,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.254492"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 477.1957607269287,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.254655"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 514.526762008667,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.254783"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 509.3002681732178,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.254899"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 538.7710418701172,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.255000"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 518.289909362793,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.255718"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 528.9317083358765,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.255907"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 537.6211462020874,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.255925"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 511.2818794250488,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.256041"
+        },
+        {
+          "filename": "10.1-萌宝重生助妈咪逆风翻盘-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 550.4134616851807,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:11:46.256054"
+        }
+      ],
+      "total_duration": 4010.92,
+      "processing_time": 1366.5637748241425,
+      "start_time": "2025-09-30T02:48:59.686565",
+      "end_time": "2025-09-30T03:11:46.250340",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.1",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 6,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": null,
+        "include": null,
+        "exclude": null,
+        "full": false,
+        "no_interactive": false,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": null,
+        "feishu_webhook_url": null,
+        "enable_feishu_notification": true
+      }
+    },
+    {
+      "name": "闪婚后，顾指挥独宠农家娇妻",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/闪婚后，顾指挥独宠农家娇妻",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/10.1/闪婚后，顾指挥独宠农家娇妻",
+      "date_str": "10.1",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 15,
+      "success_rate": 1.0,
+      "materials": [
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 398.49085903167725,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.647274"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 460.86095809936523,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.647555"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 506.7917137145996,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.647692"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 515.1116466522217,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.647838"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 520.7661724090576,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648004"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 550.7341356277466,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648149"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 388.84249114990234,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648263"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 389.9432954788208,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648376"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 454.9887065887451,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648505"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 452.8325719833374,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648624"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 459.7366952896118,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648738"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 515.4858636856079,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648861"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 548.0533123016357,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.648970"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 507.3398094177246,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.649085"
+        },
+        {
+          "filename": "10.1-闪婚后，顾指挥独宠农家娇妻-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 554.1699600219727,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-30T03:31:32.649098"
+        }
+      ],
+      "total_duration": 784.9270520000001,
+      "processing_time": 1186.3880507946014,
+      "start_time": "2025-09-30T03:11:46.258412",
+      "end_time": "2025-09-30T03:31:32.646463",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": false,
+        "filter_threads": 7,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "10.1",
+        "exclude_last_episodes": 10,
+        "title_font_size": 36,
+        "bottom_font_size": 28,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 6,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": null,
+        "include": null,
+        "exclude": null,
+        "full": false,
+        "no_interactive": false,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": null,
+        "feishu_webhook_url": null,
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 6,
+  "successful_dramas": 6,
+  "total_materials": 90,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor process --count 15 --date 10.1",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 8020.1060359478,
+  "total_size_mb": 44964.33269786835
+}

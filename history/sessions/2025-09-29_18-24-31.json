@@ -1,0 +1,300 @@
+{
+  "session_id": "2025-09-29_18-24-31",
+  "start_time": "2025-09-29T18:24:31.992971",
+  "end_time": "2025-09-29T18:53:20.231740",
+  "dramas": [
+    {
+      "name": "天籁少女归来即巅峰",
+      "source_path": "/Volumes/爆爆盘/短剧剪辑/源素材视频/天籁少女归来即巅峰",
+      "output_dir": "/Volumes/爆爆盘/短剧剪辑/9.30导出/天籁少女归来即巅峰",
+      "date_str": "9.30",
+      "run_suffix": null,
+      "planned_count": 15,
+      "completed_count": 11,
+      "success_rate": 0.7333333333333333,
+      "materials": [
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-01.mp4",
+          "duration": 690.0,
+          "size_mb": 544.2482929229736,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.326200"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-02.mp4",
+          "duration": 690.0,
+          "size_mb": 525.2127742767334,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.337576"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-03.mp4",
+          "duration": 690.0,
+          "size_mb": 516.8672456741333,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.338210"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-04.mp4",
+          "duration": 690.0,
+          "size_mb": 525.855016708374,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.338572"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-05.mp4",
+          "duration": 690.0,
+          "size_mb": 542.8651514053345,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.339661"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-06.mp4",
+          "duration": 690.0,
+          "size_mb": 519.7091312408447,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.340144"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-07.mp4",
+          "duration": 690.0,
+          "size_mb": 540.0669460296631,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.340886"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-08.mp4",
+          "duration": 690.0,
+          "size_mb": 549.2054252624512,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341080"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-09.mp4",
+          "duration": 690.0,
+          "size_mb": 541.6026248931885,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341223"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-10.mp4",
+          "duration": 690.0,
+          "size_mb": 552.3130836486816,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341348"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-11.mp4",
+          "duration": 690.0,
+          "size_mb": 479.1828317642212,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341482"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-12.mp4",
+          "duration": 690.0,
+          "size_mb": 297.2500457763672,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341605"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-13.mp4",
+          "duration": 690.0,
+          "size_mb": 4.57763671875e-05,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341761"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-14.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341873"
+        },
+        {
+          "filename": "9.30-天籁少女归来即巅峰-xh-15.mp4",
+          "duration": 690.0,
+          "size_mb": 0.0,
+          "start_time": 0.0,
+          "end_time": 690.0,
+          "created_at": "2025-09-29T18:52:33.341890"
+        }
+      ],
+      "total_duration": 6526.88,
+      "processing_time": 1676.7369039058685,
+      "start_time": "2025-09-29T18:24:34.004493",
+      "end_time": "2025-09-29T18:52:30.741397",
+      "config_snapshot": {
+        "target_fps": 60,
+        "smart_fps": true,
+        "fast_mode": true,
+        "filter_threads": 16,
+        "verbose": false,
+        "min_duration": 480.0,
+        "max_duration": 900.0,
+        "count": 15,
+        "date_str": "9.30",
+        "exclude_last_episodes": 8,
+        "title_font_size": 36,
+        "bottom_font_size": 8,
+        "side_font_size": 28,
+        "footer_text": "热门短剧 休闲必看",
+        "side_text": "剧情纯属虚构 请勿模仿",
+        "title_colors": [
+          "#FFA500",
+          "#FFB347",
+          "#FF8C00",
+          "#FFD580",
+          "#E69500",
+          "#FFAE42"
+        ],
+        "random_start": true,
+        "seed": null,
+        "use_hardware": true,
+        "keep_temp": false,
+        "jobs": 1,
+        "canvas": null,
+        "reference_resolution": null,
+        "default_source_dir": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+        "backup_source_dir": "/Volumes/机械盘/短剧剪辑/源素材视频",
+        "temp_dir": null,
+        "output_dir": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+        "tail_cache_dir": "/tmp/tails_cache",
+        "tail_file": "/Users/wuchao/Documents/dramas_processor/assets/tail.mp4",
+        "refresh_tail_cache": false,
+        "font_file": null,
+        "watermark_path": "assets/watermark-xiaohong.png",
+        "enable_watermark": false,
+        "enable_brand_text": true,
+        "brand_text": "小红看剧",
+        "brand_text_mapping": {
+          "mode": "range",
+          "ranges": [
+            {
+              "range": "01-03",
+              "text": "小红看剧"
+            },
+            {
+              "range": "04-06",
+              "text": "斯娜看剧"
+            },
+            {
+              "range": "07-09",
+              "text": "清妍短剧"
+            },
+            {
+              "range": "10-11",
+              "text": "看家本领"
+            },
+            {
+              "range": "12-13",
+              "text": "奈煊剧场"
+            },
+            {
+              "range": "14-15",
+              "text": "萍通剧坊"
+            }
+          ],
+          "cycle_texts": [
+            "小红看剧",
+            "斯娜看剧",
+            "清妍短剧",
+            "看家本领",
+            "奈煊剧场",
+            "萍通剧坊"
+          ],
+          "default_text": "热门短剧"
+        },
+        "include": [
+          "婚礼现场，嫁给前任死对头",
+          "我家女婿有点狂",
+          "签到系统助我走上人生巅峰",
+          "野狗吻月亮",
+          "萌宝出击冷面爹地哪里逃",
+          "透视小地主",
+          "长生万年被曾孙女直播曝光了",
+          "这个保镖太无敌了",
+          "我能看见倒计时",
+          "长姐归来！尔等皆是臣",
+          "父如高楼",
+          "雾锁青松终见月",
+          "嫡母归来，国公府上下听令",
+          "我有吹牛成真系统第二部",
+          "天籁少女归来即巅峰",
+          "摸鱼系统成就最强打工人",
+          "福星奶团来旺家，帅府全家宠不停",
+          "锦鲤小仙君驾到，坏东西通通闪开"
+        ],
+        "exclude": null,
+        "full": false,
+        "no_interactive": true,
+        "enable_deduplication": false,
+        "video": {
+          "hw_codec": "h264_videotoolbox",
+          "sw_codec": "libx264",
+          "bitrate": "9000k",
+          "max_rate": "9000k",
+          "buffer_size": "14000k",
+          "soft_crf": "22",
+          "preset": "veryfast",
+          "profile": "high",
+          "level": "4.2",
+          "hw_level": "4.2",
+          "sw_level": "4.1",
+          "tag": "avc1",
+          "pixel_format": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "bitrate": "128k",
+          "sample_rate": 48000
+        },
+        "feishu": {
+          "app_id": "cli_a839f03393785013",
+          "app_secret": "63orqvu6Wyyb9iEelFqvndl2AKiAFN38",
+          "app_token": "Ff6xbY43BawXsCsdkfccRNhbn3f",
+          "table_id": "tblVC9djdl4PSqIG",
+          "base_url": "https://open.feishu.cn/open-apis/bitable/v1",
+          "field_names": [
+            "剧名",
+            "账户",
+            "日期",
+            "搭建时间",
+            "主体"
+          ],
+          "status_field_name": "当前状态",
+          "pending_status_value": "待剪辑",
+          "completed_status_value": "待上传",
+          "processing_status_value": "剪辑中",
+          "page_size": 200,
+          "token_refresh_interval": 7200000
+        },
+        "feishu_webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355",
+        "enable_feishu_notification": true
+      }
+    }
+  ],
+  "total_dramas": 1,
+  "successful_dramas": 0,
+  "total_materials": 15,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.30 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 1676.7369039058685,
+  "total_size_mb": 6134.3786153793335
+}

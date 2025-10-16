@@ -1,0 +1,15 @@
+{
+  "session_id": "2025-09-24_16-57-39",
+  "start_time": "2025-09-24T16:57:39.970865",
+  "end_time": "2025-09-24T16:57:50.352482",
+  "dramas": [],
+  "total_dramas": 0,
+  "successful_dramas": 0,
+  "total_materials": 0,
+  "command_line": "/Users/wuchao/Library/Python/3.9/bin/drama-processor feishu run --date 9.24 --count 15",
+  "config_file": null,
+  "source_directory": "/Volumes/爆爆盘/短剧剪辑/源素材视频",
+  "output_directory": "/Volumes/爆爆盘/短剧剪辑/导出素材",
+  "total_processing_time": 0.0,
+  "total_size_mb": 0.0
+}
