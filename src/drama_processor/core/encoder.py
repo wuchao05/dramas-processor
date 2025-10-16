@@ -75,10 +75,14 @@ class VideoEncoder:
                 available_encoders = result.stdout
                 for codec in codec_priority:
                     if codec in available_encoders:
-                        print(f"✅ 检测到硬件编码器: {codec}")
-                        return codec
+                        # Test if the codec actually works
+                        if self._test_codec(codec):
+                            print(f"✅ 检测到可用的硬件编码器: {codec}")
+                            return codec
+                        else:
+                            print(f"⚠️ 硬件编码器 {codec} 不可用，继续检测...")
                 
-                print("⚠️ 未检测到硬件编码器，将使用软件编码")
+                print("⚠️ 未检测到可用的硬件编码器，将使用软件编码")
                 return "libx264"
             else:
                 print("⚠️ 无法检测编码器，使用默认配置")
@@ -87,6 +91,39 @@ class VideoEncoder:
         except (subprocess.TimeoutExpired, FileNotFoundError, Exception) as e:
             print(f"⚠️ 编码器检测失败: {e}")
             return preferred_codec or "libx264"
+    
+    def _test_codec(self, codec: str) -> bool:
+        """Test if a hardware codec actually works by doing a quick encoding test."""
+        try:
+            # Create a simple test pattern and try to encode it
+            test_cmd = [
+                "ffmpeg", "-y", "-f", "lavfi", "-i", "testsrc=duration=1:size=320x240:rate=1",
+                "-c:v", codec, "-t", "0.1", "-f", "null", "-"
+            ]
+            
+            result = subprocess.run(
+                test_cmd,
+                capture_output=True,
+                text=True,
+                timeout=15
+            )
+            
+            # Check if encoding succeeded (return code 0) and no critical errors
+            if result.returncode == 0:
+                return True
+            else:
+                # Check for common hardware encoding errors
+                error_output = result.stderr.lower()
+                if any(error in error_output for error in [
+                    "driver does not support", "required nvenc api version",
+                    "minimum required nvidia driver", "could not open encoder",
+                    "function not implemented", "invalid argument"
+                ]):
+                    return False
+                return False
+                
+        except (subprocess.TimeoutExpired, Exception):
+            return False
     
     def run_ffmpeg(self, cmd: List[str], label: Optional[str] = None) -> subprocess.CompletedProcess:
         """Run ffmpeg command with configurable logging verbosity."""
@@ -318,8 +355,15 @@ class VideoEncoder:
             label = f"规范化片段#{seg_idx}/{seg_total}"
         t0 = time.time()
         try:
-            self.run_ffmpeg(build_cmd(self.video_codec_hw, True) if use_hw else build_cmd(self.video_codec_sw, False), label=label)
-        except Exception:
+            if use_hw:
+                # Try hardware encoding first
+                result = self.run_ffmpeg(build_cmd(self.video_codec_hw, True), label=label)
+                # Check if hardware encoding actually failed
+                if result.returncode != 0:
+                    raise Exception("Hardware encoding failed")
+            else:
+                self.run_ffmpeg(build_cmd(self.video_codec_sw, False), label=label)
+        except Exception as e:
             if use_hw:
                 print("⚠️ 硬编失败，回退到 x264 软编…")
                 self.run_ffmpeg(build_cmd(self.video_codec_sw, False), label=label+"(fallback-x264)")
