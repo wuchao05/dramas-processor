@@ -78,7 +78,7 @@ class BrandTextMapping(BaseModel):
 class VideoConfig(BaseModel):
     """Video encoding configuration."""
     
-    hw_codec: str = Field(default="h264_videotoolbox", description="Hardware video codec")
+    hw_codec: str = Field(default="auto", description="Hardware video codec (auto-detect if 'auto')")
     sw_codec: str = Field(default="libx264", description="Software video codec") 
     bitrate: str = Field(default="9000k", description="Video bitrate")
     max_rate: str = Field(default="9000k", description="Maximum bitrate")
@@ -149,8 +149,8 @@ class ProcessingConfig(BaseModel):
     reference_resolution: Optional[Tuple[int, int]] = Field(default=None, description="Reference resolution")
     
     # Directory settings
-    default_source_dir: str = Field(default="/Volumes/爆爆盘/短剧剪辑/源素材视频", description="Default source drama directory")
-    backup_source_dir: str = Field(default="/Volumes/机械盘/短剧剪辑/源素材视频", description="Backup source drama directory")
+    default_source_dir: str = Field(default="/mnt/d/短剧剪辑/源素材视频", description="Default source drama directory")
+    backup_source_dir: str = Field(default="/mnt/e/短剧剪辑/源素材视频", description="Backup source drama directory")
     temp_dir: Optional[str] = Field(default=None, description="Temporary directory")
     output_dir: str = Field(default="../导出素材", description="Output directory")
     tail_cache_dir: str = Field(default="/tmp/tails_cache", description="Tail cache directory")
@@ -205,14 +205,23 @@ class ProcessingConfig(BaseModel):
             return self.font_file
         
         # Try to find system font
-        from ..utils.files import find_font
-        font_path = find_font("Kaiti")
+        from ..utils.system import find_font
+        font_path = find_font("wqy")
         if font_path:
             return font_path
         
-        # Fallback
-        fallback = "/Users/wuchao/Library/Application Support/com.electron.lark.font_workaround/PingFang.ttc"
-        return fallback if os.path.exists(fallback) else ""
+        # WSL Linux fallback fonts
+        fallback_fonts = [
+            "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+            "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
+            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
+        ]
+        
+        for font in fallback_fonts:
+            if os.path.exists(font):
+                return font
+        
+        return ""
     
     def get_actual_source_dir(self) -> str:
         """Get the actual source directory to use, with fallback to backup."""

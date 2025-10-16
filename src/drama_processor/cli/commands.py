@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 @click.option("--seed", type=int, default=None, help="随机起点种子；不传则每次运行都会不同")
 
 # Video settings
-@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认硬编(h264_videotoolbox)")
+@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认自动检测硬编")
 @click.option("--fps", type=int, default=60, help="输出帧率（默认60）")
 @click.option("--smart-fps/--no-smart-fps", default=True, help="自适应帧率：源<40fps 用源帧率，否则封顶45fps（默认开启）")
 @click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")
@@ -757,7 +757,7 @@ def feishu_list(ctx, status: Optional[str], date: Optional[str]):
 @click.option("--random-start/--no-random-start", default=None, help="随机起点，提升多样性（默认使用配置文件）")
 @click.option("--seed", type=int, default=None, help="随机起点种子；不传则每次运行都会不同")
 # Video settings
-@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认硬编(h264_videotoolbox)")
+@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认自动检测硬编")
 @click.option("--fps", type=int, default=None, help="输出帧率（默认使用配置文件）")
 @click.option("--smart-fps/--no-smart-fps", default=None, help="自适应帧率：源<40fps 用源帧率，否则封顶45fps（默认使用配置文件）")
 @click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")
@@ -1062,7 +1062,7 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
 @click.option("--random-start/--no-random-start", default=None, help="随机起点，提升多样性（默认使用配置文件）")
 @click.option("--seed", type=int, default=None, help="随机起点种子；不传则每次运行都会不同")
 # Video settings
-@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认硬编(h264_videotoolbox)")
+@click.option("--sw", is_flag=True, help="使用软编(libx264)；默认自动检测硬编")
 @click.option("--fps", type=int, default=None, help="输出帧率（默认使用配置文件）")
 @click.option("--smart-fps/--no-smart-fps", default=None, help="自适应帧率：源<40fps 用源帧率，否则封顶45fps（默认使用配置文件）")
 @click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")

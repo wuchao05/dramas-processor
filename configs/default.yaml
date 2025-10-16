@@ -50,9 +50,9 @@ canvas: null # Canvas size: 'WxH' or 'first' (--canvas)
 reference_resolution: null # Will be auto-detected
 
 # Directory settings
-default_source_dir: "/Volumes/爆爆盘/短剧剪辑/源素材视频" # 默认源素材视频目录
-backup_source_dir: "/Volumes/机械盘/短剧剪辑/源素材视频" # 备份源素材视频目录
-temp_dir: null # Temporary directory (--temp-dir), defaults to /tmp
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径：D盘短剧剪辑源素材视频目录
+backup_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：E盘备份源素材视频目录
+temp_dir: "/tmp/drama_processor" # WSL Linux 临时目录
 output_dir:
   "../导出素材" # 输出目录 (--out-dir)
   # 如果设置了date_str，实际会使用其上一层的"{date_str}导出"目录
@@ -61,7 +61,7 @@ tail_file: "assets/tail.mp4" # 默认尾部视频文件
 refresh_tail_cache: false # Force refresh tail cache (--refresh-tail-cache)
 
 # Font settings
-font_file: null # Font file path (--font-file), auto-detected if null
+font_file: "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc" # WSL Linux 字体路径
 
 # Watermark settings
 watermark_path: "assets/watermark-xiaohong.png" # 水印图片路径
@@ -111,7 +111,7 @@ no_interactive: false # Disable interactive selection (--no-interactive)
 
 # Video encoding settings
 video:
-  hw_codec: "h264_videotoolbox" # Hardware video codec
+  hw_codec: "auto" # 自动检测最佳硬件编码器 (WSL推荐)
   sw_codec: "libx264" # Software video codec
   bitrate: "9000k" # Video bitrate
   max_rate: "9000k" # Maximum bitrate

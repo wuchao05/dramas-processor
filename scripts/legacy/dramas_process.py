@@ -33,7 +33,7 @@ def find_font(name_hint: str) -> str:
 
 # ============== 可调参数（默认值） ==============
 TARGET_FPS_DEFAULT = 60
-VIDEO_CODEC_HW = "h264_videotoolbox"
+VIDEO_CODEC_HW = "h264_vaapi"  # WSL Linux 硬件编码器
 VIDEO_CODEC_SW = "libx264"
 BITRATE = "9000k"
 AUDIO_BR = "128k"
@@ -684,7 +684,7 @@ def main():
     p.add_argument("--date-str", type=str, default=None, help="文件名前缀日期，如 8.26；默认当天")
     p.add_argument("--random-start", action="store_true", default=True, help="随机起点，提升多样性（默认开启）")
     p.add_argument("--seed", type=int, default=None, help="随机起点种子；不传则每次运行都会不同")
-    p.add_argument("--sw", action="store_true", help="使用软编(libx264)；默认硬编(h264_videotoolbox)")
+    p.add_argument("--sw", action="store_true", help="使用软编(libx264)；默认硬编(h264_vaapi)")
     p.add_argument("--fps", type=int, default=TARGET_FPS_DEFAULT, help="输出帧率（默认60）")
     p.add_argument("--smart-fps", action="store_true", default=True, help="自适应帧率：源<40fps 用源帧率，否则封顶45fps（默认开启）")
     p.add_argument("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")

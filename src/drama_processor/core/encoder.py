@@ -25,13 +25,13 @@ class VideoEncoder:
     def __init__(self, config: ProcessingConfig, watermark_path: Optional[str] = None):
         self.config = config
         
-        # Video encoding settings
-        self.video_codec_hw = "h264_videotoolbox"
-        self.video_codec_sw = "libx264"
-        self.bitrate = "9000k"
+        # Video encoding settings (from config)
+        self.video_codec_hw = self._detect_best_hw_codec(config.hw_codec)
+        self.video_codec_sw = config.sw_codec
+        self.bitrate = config.bitrate
         self.audio_br = "128k"
         self.audio_sr = 48000
-        self.soft_crf = "22"
+        self.soft_crf = config.soft_crf
         
         # Text overlay settings (from config)
         self.title_font_size = config.title_font_size
@@ -46,6 +46,47 @@ class VideoEncoder:
         # Brand text settings (from config)
         self.config = config  # Keep reference to config for dynamic text selection
         self.use_brand_text = config.enable_brand_text
+    
+    def _detect_best_hw_codec(self, preferred_codec: str) -> str:
+        """Detect the best available hardware codec for the current environment."""
+        # Priority order for WSL/Windows environment
+        codec_priority = [
+            "h264_nvenc",    # NVIDIA GPU (most common in WSL)
+            "h264_qsv",      # Intel Quick Sync Video
+            "h264_amf",      # AMD GPU
+            "h264_videotoolbox",  # macOS (if running on Mac)
+            "h264_vaapi",    # Linux VA-API (pure Linux)
+        ]
+        
+        # If user specified a codec, try it first
+        if preferred_codec and preferred_codec != "auto":
+            codec_priority.insert(0, preferred_codec)
+        
+        # Check which codecs are available
+        try:
+            result = subprocess.run(
+                ["ffmpeg", "-encoders"], 
+                capture_output=True, 
+                text=True, 
+                timeout=10
+            )
+            
+            if result.returncode == 0:
+                available_encoders = result.stdout
+                for codec in codec_priority:
+                    if codec in available_encoders:
+                        print(f"✅ 检测到硬件编码器: {codec}")
+                        return codec
+                
+                print("⚠️ 未检测到硬件编码器，将使用软件编码")
+                return "libx264"
+            else:
+                print("⚠️ 无法检测编码器，使用默认配置")
+                return preferred_codec or "libx264"
+                
+        except (subprocess.TimeoutExpired, FileNotFoundError, Exception) as e:
+            print(f"⚠️ 编码器检测失败: {e}")
+            return preferred_codec or "libx264"
     
     def run_ffmpeg(self, cmd: List[str], label: Optional[str] = None) -> subprocess.CompletedProcess:
         """Run ffmpeg command with configurable logging verbosity."""
@@ -263,7 +304,7 @@ class VideoEncoder:
             
             if hw:
                 cmd += ["-level", "4.2", "-tag:v", "avc1", "-b:v", self.bitrate, 
-                       "-maxrate", "9000k", "-bufsize", "14000k"]
+                       "-maxrate", self.config.max_rate, "-bufsize", self.config.buffer_size]
             else:
                 cmd += ["-level", "4.1", "-preset", "veryfast", "-crf", self.soft_crf, 
                        "-pix_fmt", "yuv420p"]
@@ -305,7 +346,7 @@ class VideoEncoder:
             ]
             if hw:
                 cmd += ["-level", "4.2", "-tag:v", "avc1", "-b:v", self.bitrate,
-                       "-maxrate", "9000k", "-bufsize", "14000k"]
+                       "-maxrate", self.config.max_rate, "-bufsize", self.config.buffer_size]
             else:
                 cmd += ["-level", "4.1", "-preset", "veryfast", "-crf", self.soft_crf,
                        "-pix_fmt", "yuv420p"]
