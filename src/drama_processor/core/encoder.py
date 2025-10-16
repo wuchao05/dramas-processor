@@ -26,12 +26,12 @@ class VideoEncoder:
         self.config = config
         
         # Video encoding settings (from config)
-        self.video_codec_hw = self._detect_best_hw_codec(config.hw_codec)
-        self.video_codec_sw = config.sw_codec
-        self.bitrate = config.bitrate
-        self.audio_br = "128k"
-        self.audio_sr = 48000
-        self.soft_crf = config.soft_crf
+        self.video_codec_hw = self._detect_best_hw_codec(config.video.hw_codec)
+        self.video_codec_sw = config.video.sw_codec
+        self.bitrate = config.video.bitrate
+        self.audio_br = config.audio.bitrate
+        self.audio_sr = config.audio.sample_rate
+        self.soft_crf = config.video.soft_crf
         
         # Text overlay settings (from config)
         self.title_font_size = config.title_font_size
@@ -282,7 +282,7 @@ class VideoEncoder:
                     "-filter_threads", str(filter_threads),
                     "-filter_complex_threads", str(filter_threads),
                     "-c:v", vcodec,
-                    "-profile:v", "high",
+                    "-profile:v", self.config.video.profile,
                 ]
             else:
                 # Use text overlays (including brand text if enabled)
@@ -299,15 +299,15 @@ class VideoEncoder:
                     "-filter_threads", str(filter_threads),
                     "-filter_complex_threads", str(filter_threads),
                     "-c:v", vcodec,
-                    "-profile:v", "high",
+                    "-profile:v", self.config.video.profile,
                 ]
             
             if hw:
-                cmd += ["-level", "4.2", "-tag:v", "avc1", "-b:v", self.bitrate, 
-                       "-maxrate", self.config.max_rate, "-bufsize", self.config.buffer_size]
+                cmd += ["-level", self.config.video.hw_level, "-tag:v", self.config.video.tag, "-b:v", self.bitrate, 
+                       "-maxrate", self.config.video.max_rate, "-bufsize", self.config.video.buffer_size]
             else:
-                cmd += ["-level", "4.1", "-preset", "veryfast", "-crf", self.soft_crf, 
-                       "-pix_fmt", "yuv420p"]
+                cmd += ["-level", self.config.video.sw_level, "-preset", self.config.video.preset, "-crf", self.soft_crf, 
+                       "-pix_fmt", self.config.video.pixel_format]
             cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr), 
                    "-movflags", "+faststart", out_path]
             return cmd
@@ -342,14 +342,14 @@ class VideoEncoder:
                 "-filter_threads", str(filter_threads),
                 "-filter_complex_threads", str(filter_threads),
                 "-c:v", vcodec,
-                "-profile:v", "high",
+                "-profile:v", self.config.video.profile,
             ]
             if hw:
-                cmd += ["-level", "4.2", "-tag:v", "avc1", "-b:v", self.bitrate,
-                       "-maxrate", self.config.max_rate, "-bufsize", self.config.buffer_size]
+                cmd += ["-level", self.config.video.hw_level, "-tag:v", self.config.video.tag, "-b:v", self.bitrate,
+                       "-maxrate", self.config.video.max_rate, "-bufsize", self.config.video.buffer_size]
             else:
-                cmd += ["-level", "4.1", "-preset", "veryfast", "-crf", self.soft_crf,
-                       "-pix_fmt", "yuv420p"]
+                cmd += ["-level", self.config.video.sw_level, "-preset", self.config.video.preset, "-crf", self.soft_crf,
+                       "-pix_fmt", self.config.video.pixel_format]
             cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr),
                    "-movflags", "+faststart", out_path]
             return cmd
