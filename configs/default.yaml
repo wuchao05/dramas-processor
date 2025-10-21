@@ -113,10 +113,10 @@ no_interactive: false # Disable interactive selection (--no-interactive)
 video:
   hw_codec: "auto" # 自动检测最佳硬件编码器 (WSL推荐)
   sw_codec: "libx264" # Software video codec
-  bitrate: "9000k" # Video bitrate
-  max_rate: "9000k" # Maximum bitrate
-  buffer_size: "14000k" # Buffer size
-  soft_crf: "22" # Software encoding CRF
+  bitrate: "6500k" # Video bitrate
+  max_rate: "6500k" # Maximum bitrate
+  buffer_size: "8000k" # Buffer size
+  soft_crf: "24" # Software encoding CRF
   preset: "veryfast" # Encoding preset
   profile: "high" # H.264 profile
   level: "4.2" # Default H.264 level
