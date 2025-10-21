@@ -58,6 +58,11 @@ class FeishuAPIError(Exception):
     pass
 
 
+class FeishuRecordNotFoundError(Exception):
+    """飞书记录未找到异常，用于中断剪辑"""
+    pass
+
+
 class FeishuClient:
     """飞书API客户端"""
     
@@ -359,7 +364,11 @@ class FeishuClient:
             
             result = response.json()
             if result.get("code") != 0:
-                raise FeishuAPIError(f"更新状态失败: {result.get('msg')}")
+                error_msg = result.get('msg', '')
+                if error_msg == 'RecordIdNotFound':
+                    raise FeishuRecordNotFoundError(f"记录ID未找到，中断这部剧的剪辑: {record_id}")
+                else:
+                    raise FeishuAPIError(f"更新状态失败: {error_msg}")
             
             logger.info(f"记录 {record_id} 状态更新成功")
             return True

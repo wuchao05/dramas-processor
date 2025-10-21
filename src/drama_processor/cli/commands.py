@@ -997,7 +997,13 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
                     else:
                         click.echo(f"⚠️ 更新 '{drama_name}' 状态失败，但不影响处理流程", err=True)
                 except Exception as e:
-                    click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
+                    # 检查是否是记录未找到错误
+                    from ..integrations.feishu_client import FeishuRecordNotFoundError
+                    if isinstance(e, FeishuRecordNotFoundError):
+                        click.echo(f"❌ 记录ID未找到，中断这部剧的剪辑: {drama_name}", err=True)
+                        raise  # 重新抛出异常，中断处理
+                    else:
+                        click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
         
         # 初始化处理器
         click.echo("🚀 启用快速处理模式...")
@@ -1348,7 +1354,13 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
                     else:
                         click.echo(f"⚠️ 更新 '{drama_name}' 状态失败，但不影响处理流程", err=True)
                 except Exception as e:
-                    click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
+                    # 检查是否是记录未找到错误
+                    from ..integrations.feishu_client import FeishuRecordNotFoundError
+                    if isinstance(e, FeishuRecordNotFoundError):
+                        click.echo(f"❌ 记录ID未找到，中断这部剧的剪辑: {drama_name}", err=True)
+                        raise  # 重新抛出异常，中断处理
+                    else:
+                        click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
         
         # 初始化处理器
         click.echo("🚀 启用快速处理模式...")
