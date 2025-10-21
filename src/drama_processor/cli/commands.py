@@ -994,16 +994,22 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
                     success = client.update_record_status(record_id, new_status)
                     if success:
                         click.echo(f"✅ 已更新 '{drama_name}' 状态为 '{new_status}'")
+                        return True  # 成功更新
                     else:
                         click.echo(f"⚠️ 更新 '{drama_name}' 状态失败，但不影响处理流程", err=True)
+                        return False  # 更新失败但不影响处理
                 except Exception as e:
                     # 检查是否是记录未找到错误
                     from ..integrations.feishu_client import FeishuRecordNotFoundError
                     if isinstance(e, FeishuRecordNotFoundError):
-                        click.echo(f"❌ 记录ID未找到，中断这部剧的剪辑: {drama_name}", err=True)
-                        raise  # 重新抛出异常，中断处理
+                        click.echo(f"❌ 记录ID未找到，跳过这部剧的剪辑: {drama_name}", err=True)
+                        return "SKIP"  # 返回特殊值，标识需要跳过处理
                     else:
                         click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
+                        return False  # 其他错误不影响处理
+            else:
+                click.echo(f"⚠️ 未找到 '{drama_name}' 的记录ID，跳过处理", err=True)
+                return "SKIP"  # 未找到记录ID，跳过处理
         
         # 初始化处理器
         click.echo("🚀 启用快速处理模式...")
@@ -1351,16 +1357,22 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
                     success = client.update_record_status(record_id, new_status)
                     if success:
                         click.echo(f"✅ 已更新 '{drama_name}' 状态为 '{new_status}'")
+                        return True  # 成功更新
                     else:
                         click.echo(f"⚠️ 更新 '{drama_name}' 状态失败，但不影响处理流程", err=True)
+                        return False  # 更新失败但不影响处理
                 except Exception as e:
                     # 检查是否是记录未找到错误
                     from ..integrations.feishu_client import FeishuRecordNotFoundError
                     if isinstance(e, FeishuRecordNotFoundError):
-                        click.echo(f"❌ 记录ID未找到，中断这部剧的剪辑: {drama_name}", err=True)
-                        raise  # 重新抛出异常，中断处理
+                        click.echo(f"❌ 记录ID未找到，跳过这部剧的剪辑: {drama_name}", err=True)
+                        return "SKIP"  # 返回特殊值，标识需要跳过处理
                     else:
                         click.echo(f"⚠️ 更新 '{drama_name}' 状态时出错: {e}，但不影响处理流程", err=True)
+                        return False  # 其他错误不影响处理
+            else:
+                click.echo(f"⚠️ 未找到 '{drama_name}' 的记录ID，跳过处理", err=True)
+                return "SKIP"  # 未找到记录ID，跳过处理
         
         # 初始化处理器
         click.echo("🚀 启用快速处理模式...")

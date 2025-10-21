@@ -680,8 +680,16 @@ class DramaProcessor:
                         if self.config.feishu and self.config.feishu.processing_status_value:
                             processing_status = self.config.feishu.processing_status_value
                         
-                        self.status_callback(project.name, processing_status)
-                        logger.info(f"📝 已更新 '{project.name}' 状态为'{processing_status}'")
+                        callback_result = self.status_callback(project.name, processing_status)
+                        
+                        # 检查回调函数的返回值
+                        if callback_result == "SKIP":
+                            logger.warning(f"⚠️ 跳过处理 '{project.name}' - 状态更新返回SKIP")
+                            continue  # 跳过这部剧的处理
+                        elif callback_result is True:
+                            logger.info(f"📝 已更新 '{project.name}' 状态为'{processing_status}'")
+                        else:
+                            logger.warning(f"⚠️ 更新 '{project.name}' 状态失败，但继续处理")
                     except Exception as e:
                         logger.warning(f"⚠️ 更新 '{project.name}' 状态失败: {e}")
                 
