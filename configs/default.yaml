@@ -131,13 +131,29 @@ audio:
   bitrate: "128k" # Audio bitrate
   sample_rate: 48000 # Audio sample rate
 
-# 飞书API配置
+# 飞书API配置 - 吴超
+# feishu:
+#   app_id: "cli_a839f03393785013"
+#   app_secret: "63orqvu6Wyyb9iEelFqvndl2AKiAFN38"
+#   app_token: "Ff6xbY43BawXsCsdkfccRNhbn3f"
+#   # table_id: "tblzO48FFil82fas" # 牵龙
+#   table_id: "tblVC9djdl4PSqIG" # 散柔
+#   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
+#   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
+#   status_field_name: "当前状态"
+#   pending_status_value: "待剪辑" # 待处理状态值，用于筛选飞书记录
+#   processing_status_value: "剪辑中"
+#   completed_status_value: "待上传"
+#   page_size: 200
+#   token_refresh_interval: 7200000
+
+# 飞书API配置 - 小红
 feishu:
-  app_id: "cli_a839f03393785013"
-  app_secret: "63orqvu6Wyyb9iEelFqvndl2AKiAFN38"
-  app_token: "Ff6xbY43BawXsCsdkfccRNhbn3f"
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   # table_id: "tblzO48FFil82fas" # 牵龙
-  table_id: "tblVC9djdl4PSqIG" # 散柔
+  table_id: "tblsAgNBXHYKRwgD" # 散柔
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"
