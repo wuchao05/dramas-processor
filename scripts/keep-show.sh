@@ -1,10 +1,12 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 # 保留白名单中的顶层目录（每个剧=一个顶层目录），其余清理/移动
+# 支持 macOS、Linux、WSL 环境
 # 用法：
-#   pbpaste | ./keep-shows-v2.sh "/Volumes/SSD1T/dramas"           # 预演（不删除）
-#   pbpaste | ./keep-shows-v2.sh --apply "/Volumes/SSD1T/dramas"   # 真删/真移动
-#   可选： --to "/Volumes/HDD4T/_Recycle"   # 不直接删，先移到回收目录
-#         --case-insensitive                # 名称忽略大小写
+#   pbpaste | ./keep-show.sh "/mnt/c/dramas"                      # 预演（不删除）
+#   pbpaste | ./keep-show.sh --apply "/mnt/c/dramas"              # 真删/真移动
+#   可选： --to "/mnt/c/_Recycle"                                 # 不直接删，先移到回收目录
+#         --case-insensitive                                       # 名称忽略大小写
+#         --wsl                                                    # WSL 环境优化
 set -euo pipefail
 IFS=$'\n\t'
 LC_ALL=C
@@ -12,6 +14,7 @@ LC_ALL=C
 APPLY=0
 MOVE_TO=""
 CASE_INS=0
+WSL_MODE=0
 SRC=""
 
 while [[ $# -gt 0 ]]; do
@@ -19,6 +22,7 @@ while [[ $# -gt 0 ]]; do
     --apply) APPLY=1; shift ;;
     --to) MOVE_TO="${2:-}"; shift 2 ;;
     --case-insensitive) CASE_INS=1; shift ;;
+    --wsl) WSL_MODE=1; shift ;;
     -*)
       echo "[ERR] 未知参数：$1" >&2; exit 2 ;;
     *)
@@ -27,7 +31,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "${SRC}" ]]; then
-  echo "[ERR] 请输入源目录，例如：/Volumes/SSD1T/dramas" >&2; exit 2
+  if [[ $WSL_MODE -eq 1 ]]; then
+    echo "[ERR] 请输入源目录，例如：/mnt/c/dramas" >&2; exit 2
+  else
+    echo "[ERR] 请输入源目录，例如：/Volumes/SSD1T/dramas" >&2; exit 2
+  fi
 fi
 if [[ ! -d "${SRC}" ]]; then
   echo "[ERR] 源目录不存在：${SRC}" >&2; exit 2
@@ -48,8 +56,38 @@ read_whitelist() {
 }
 
 if [ -t 0 ]; then
-  command -v pbpaste >/dev/null 2>&1 || { echo "[ERR] 没有 STDIN 或 pbpaste" >&2; exit 2; }
-  pbpaste | read_whitelist
+  # 检测环境并选择合适的剪贴板命令
+  if command -v pbpaste >/dev/null 2>&1; then
+    # macOS 环境
+    pbpaste | read_whitelist
+  elif command -v xclip >/dev/null 2>&1; then
+    # Linux/WSL 环境 (xclip)
+    xclip -selection clipboard -o | read_whitelist
+  elif command -v xsel >/dev/null 2>&1; then
+    # Linux/WSL 环境 (xsel)
+    xsel --clipboard --output | read_whitelist
+  elif command -v powershell.exe >/dev/null 2>&1 && [[ $WSL_MODE -eq 1 ]]; then
+    # WSL 环境，使用 Windows PowerShell
+    powershell.exe -Command "Get-Clipboard" | read_whitelist
+  else
+    echo "[ERR] 没有可用的剪贴板工具" >&2
+    echo "请安装以下工具之一：" >&2
+    if command -v pacman >/dev/null 2>&1; then
+      echo "  - xclip: sudo pacman -S xclip" >&2
+      echo "  - xsel: sudo pacman -S xsel" >&2
+    elif command -v apt-get >/dev/null 2>&1; then
+      echo "  - xclip: sudo apt-get install xclip" >&2
+      echo "  - xsel: sudo apt-get install xsel" >&2
+    elif command -v yum >/dev/null 2>&1; then
+      echo "  - xclip: sudo yum install xclip" >&2
+      echo "  - xsel: sudo yum install xsel" >&2
+    else
+      echo "  - xclip: 请使用您的包管理器安装 xclip" >&2
+      echo "  - xsel: 请使用您的包管理器安装 xsel" >&2
+    fi
+    echo "  - 或使用管道输入: echo '剧名1\n剧名2' | $0 $*" >&2
+    exit 2
+  fi
 else
   read_whitelist
 fi
