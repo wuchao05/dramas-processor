@@ -44,7 +44,10 @@ if [[ -n "${MOVE_TO}" ]]; then
   mkdir -p "${MOVE_TO}" || { echo "[ERR] 无法创建移动目标目录：${MOVE_TO}" >&2; exit 2; }
 fi
 
-WL_FILE="$(mktemp)"; trap 'rm -f "$WL_FILE" "$WL_AVAIL" "$WL_MISS"' EXIT
+WL_FILE="$(mktemp)"
+WL_AVAIL="$(mktemp)"
+WL_MISS="$(mktemp)"
+trap 'rm -f "$WL_FILE" "$WL_AVAIL" "$WL_MISS"' EXIT
 
 # 读取白名单（来自 STDIN 或剪贴板），规范化、去重
 read_whitelist() {

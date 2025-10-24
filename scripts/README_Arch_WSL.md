@@ -15,13 +15,21 @@ sudo pacman -S xclip
 ### 2. 预演清理
 
 ```bash
-pbpaste | ./keep-show.sh "/mnt/c/dramas"
+# 方法1：使用 WSL 专用脚本（推荐）
+./keep-show-wsl.sh "/mnt/c/dramas"
+
+# 方法2：直接使用主脚本
+./keep-show.sh "/mnt/c/dramas"
 ```
 
 ### 3. 执行清理
 
 ```bash
-pbpaste | ./keep-show.sh --apply "/mnt/c/dramas"
+# 方法1：使用 WSL 专用脚本（推荐）
+./keep-show-wsl.sh --apply "/mnt/c/dramas"
+
+# 方法2：直接使用主脚本
+./keep-show.sh --apply "/mnt/c/dramas"
 ```
 
 ## 📋 常用命令
@@ -30,26 +38,26 @@ pbpaste | ./keep-show.sh --apply "/mnt/c/dramas"
 
 ```bash
 # 预演模式（推荐先使用）
-pbpaste | ./keep-show.sh "/mnt/c/dramas"
+./keep-show-wsl.sh "/mnt/c/dramas"
 
 # 实际执行
-pbpaste | ./keep-show.sh --apply "/mnt/c/dramas"
+./keep-show-wsl.sh --apply "/mnt/c/dramas"
 
 # 移动到回收站（更安全）
-pbpaste | ./keep-show.sh --apply --to "/mnt/c/_Recycle" "/mnt/c/dramas"
+./keep-show-wsl.sh --apply --to "/mnt/c/_Recycle" "/mnt/c/dramas"
 ```
 
 ### 高级选项
 
 ```bash
 # 忽略大小写
-pbpaste | ./keep-show.sh --case-insensitive "/mnt/c/dramas"
+./keep-show-wsl.sh --case-insensitive "/mnt/c/dramas"
 
 # WSL 优化模式
-pbpaste | ./keep-show.sh --wsl "/mnt/c/dramas"
+./keep-show-wsl.sh --wsl "/mnt/c/dramas"
 
 # 组合使用
-pbpaste | ./keep-show.sh --apply --case-insensitive --wsl "/mnt/c/dramas"
+./keep-show-wsl.sh --apply --case-insensitive --wsl "/mnt/c/dramas"
 ```
 
 ## 🎯 路径映射
@@ -64,18 +72,29 @@ pbpaste | ./keep-show.sh --apply --case-insensitive --wsl "/mnt/c/dramas"
 
 ### 剪贴板问题
 
+#### 错误：`pbpaste: command not found`
+
+这是因为 WSL 环境中没有 `pbpaste` 命令。解决方案：
+
 ```bash
-# 安装 xclip
+# 方法1：安装 xclip（推荐）
 sudo pacman -S xclip
 
-# 或者安装 xsel
+# 方法2：安装 xsel
 sudo pacman -S xsel
 
-# 使用管道输入（无需剪贴板）
+# 方法3：使用 WSL 专用脚本（自动处理剪贴板）
+./keep-show-wsl.sh "/mnt/c/dramas"
+
+# 方法4：使用管道输入（无需剪贴板）
 echo "剧名1
 剧名2
 剧名3" | ./keep-show.sh "/mnt/c/dramas"
 ```
+
+#### 错误：`WL_AVAIL: unbound variable`
+
+这是脚本内部错误，已修复。如果仍有问题，请使用最新版本的脚本。
 
 ### 权限问题
 
@@ -99,10 +118,10 @@ sudo chmod 755 "/mnt/c/dramas"
 
 ```bash
 # 1. 预演查看会删除什么
-pbpaste | ./keep-show.sh "/mnt/c/dramas"
+./keep-show-wsl.sh "/mnt/c/dramas"
 
 # 2. 安全执行（移动到回收站）
-pbpaste | ./keep-show.sh --apply --to "/mnt/c/_Recycle" "/mnt/c/dramas"
+./keep-show-wsl.sh --apply --to "/mnt/c/_Recycle" "/mnt/c/dramas"
 
 # 3. 确认无误后删除回收站内容
 rm -rf "/mnt/c/_Recycle"/*
@@ -112,9 +131,9 @@ rm -rf "/mnt/c/_Recycle"/*
 
 ```bash
 # 处理多个驱动器
-pbpaste | ./keep-show.sh --apply "/mnt/c/dramas"
-pbpaste | ./keep-show.sh --apply "/mnt/d/dramas"
-pbpaste | ./keep-show.sh --apply "/mnt/e/dramas"
+./keep-show-wsl.sh --apply "/mnt/c/dramas"
+./keep-show-wsl.sh --apply "/mnt/d/dramas"
+./keep-show-wsl.sh --apply "/mnt/e/dramas"
 ```
 
 ---
