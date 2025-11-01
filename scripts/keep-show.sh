@@ -122,9 +122,8 @@ comm -23 <(sort -u "$WL_FILE") <(sort -u "$AVAIL_FILE") > "$WL_MISS" || true
 MISS_CNT=$(wc -l < "$WL_MISS" | tr -d ' ')
 if [[ "$MISS_CNT" -gt 0 ]]; then
   echo ""
-  echo "⚠️  以下白名单剧目在磁盘中【未找到】（共 ${MISS_CNT} 条，展示前 20 条）："
-  head -n 20 "$WL_MISS"
-  [[ "$MISS_CNT" -gt 20 ]] && echo "(其余 $(($MISS_CNT-20)) 条已省略)"
+  echo "⚠️  以下白名单剧目在磁盘中【未找到】（共 ${MISS_CNT} 条）："
+  cat "$WL_MISS"
 fi
 
 # 根据白名单判定保留/清理
