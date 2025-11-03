@@ -149,7 +149,7 @@ class ProcessingConfig(BaseModel):
     reference_resolution: Optional[Tuple[int, int]] = Field(default=None, description="Reference resolution")
     
     # Directory settings
-    default_source_dir: str = Field(default="/mnt/d/短剧剪辑/源素材视频", description="Default source drama directory")
+    default_source_dir: str = Field(default="/mnt/e/短剧剪辑/源素材视频", description="Default source drama directory")
     backup_source_dir: str = Field(default="/mnt/e/短剧剪辑/源素材视频", description="Backup source drama directory")
     temp_dir: Optional[str] = Field(default=None, description="Temporary directory")
     output_dir: str = Field(default="../导出素材", description="Output directory")
