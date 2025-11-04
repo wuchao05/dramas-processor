@@ -478,7 +478,7 @@ class DramaProcessor:
             # Sequential processing
             for i, (ep_idx, offset) in enumerate(start_points):
                 material_idx = start_index + i
-                base_name = f"{date_str}-{project.name}-xh-{material_idx:02d}"
+                base_name = f"{date_str}-{project.name}-xl-{material_idx:02d}"
                 if run_suffix:
                     base_name += f"-{run_suffix}"
                 output_path = os.path.join(out_dir, base_name + ".mp4")
@@ -503,7 +503,7 @@ class DramaProcessor:
                 futures = []
                 for i, (ep_idx, offset) in enumerate(start_points):
                     material_idx = start_index + i
-                    base_name = f"{date_str}-{project.name}-xh-{material_idx:02d}"
+                    base_name = f"{date_str}-{project.name}-xl-{material_idx:02d}"
                     if run_suffix:
                         base_name += f"-{run_suffix}"
                     output_path = os.path.join(out_dir, base_name + ".mp4")

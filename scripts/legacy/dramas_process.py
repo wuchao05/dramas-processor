@@ -925,7 +925,7 @@ def main():
 
         with ThreadPoolExecutor(max_workers=jobs) as ex:
             for idx2, (ep_idx, offset) in enumerate(starts, start=start_index):
-                base_name = f"{date_str}-{drama_name}-xh-{idx2:02d}"
+                base_name = f"{date_str}-{drama_name}-xl-{idx2:02d}"
                 if run_suffix:
                     base_name += f"-{run_suffix}"
                 out_path = os.path.join(out_dir, base_name + ".mp4")
