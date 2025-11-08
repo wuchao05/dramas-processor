@@ -13,7 +13,7 @@ min_duration: 480.0 # 8 minutes (--min-sec)
 max_duration: 900.0 # 15 minutes (--max-sec)
 
 # Material generation settings
-count: 21 # Number of materials per drama (--count)
+count: 10 # Number of materials per drama (--count)
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
   # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录
@@ -76,9 +76,9 @@ brand_text_mapping:
 
   # 范围映射模式配置 (mode: "range")
   ranges:
-    - range: "01-03" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
+    - range: "01-05" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
       text: "俨雅看剧"
-    - range: "04-06"
+    - range: "06-10"
       text: "茹悟好剧"
 
   # 循环模式配置 (mode: "cycle")
