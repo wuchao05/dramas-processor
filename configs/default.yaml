@@ -13,7 +13,7 @@ min_duration: 480.0 # 8 minutes (--min-sec)
 max_duration: 900.0 # 15 minutes (--max-sec)
 
 # Material generation settings
-count: 7 # Number of materials per drama (--count)
+count: 5 # Number of materials per drama (--count)
 material_code: "xh" # 素材文件名中使用的标识（可更改为 xh 等）
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
@@ -128,7 +128,7 @@ feishu:
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   # table_id: "tblzO48FFil82fas" # 牵龙
-  table_id: "tblU2gdZSltbN5Bt" # 散柔
+  table_id: "tblVC9djdl4PSqIG" # 散柔
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"
