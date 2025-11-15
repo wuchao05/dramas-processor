@@ -13,8 +13,8 @@ min_duration: 480.0 # 8 minutes (--min-sec)
 max_duration: 900.0 # 15 minutes (--max-sec)
 
 # Material generation settings
-count: 7 # Number of materials per drama (--count)
-material_code: "xh" # 素材文件名中使用的标识（可更改为 xh 等）
+count: 10 # Number of materials per drama (--count)
+material_code: "xl" # 素材文件名中使用的标识（可更改为 xh 等）
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
   # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录
@@ -51,7 +51,7 @@ canvas: null # Canvas size: 'WxH' or 'first' (--canvas)
 reference_resolution: null # Will be auto-detected
 
 # Directory settings
-default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径：D盘短剧剪辑源素材视频目录
+default_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：D盘短剧剪辑源素材视频目录
 backup_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：E盘备份源素材视频目录
 temp_dir: "/tmp/drama_processor" # WSL Linux 临时目录
 output_dir:
