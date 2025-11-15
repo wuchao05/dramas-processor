@@ -14,6 +14,7 @@ max_duration: 900.0 # 15 minutes (--max-sec)
 
 # Material generation settings
 count: 7 # Number of materials per drama (--count)
+material_code: "xh" # 素材文件名中使用的标识（可更改为 xh 等）
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
   # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录

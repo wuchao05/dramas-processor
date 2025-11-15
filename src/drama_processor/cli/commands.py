@@ -235,6 +235,7 @@ def process_command(
         
         # Material generation - use CLI overrides if provided, otherwise use file config
         count=count if count != 10 else base_config.count,
+        material_code=base_config.material_code,
         date_str=date if date is not None else base_config.date_str,
         
         # Text overlay settings - use CLI overrides if provided, otherwise use file config

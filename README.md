@@ -191,6 +191,7 @@ fast_mode: false
 min_duration: 480.0
 max_duration: 900.0
 count: 1
+material_code: "xh"
 footer_text: "热门短剧 休闲必看"
 side_text: "剧情纯属虚构 请勿模仿"
 use_hardware: true
@@ -205,6 +206,8 @@ feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/xxxx"
 ```
 
 > 💡 需要彻底关闭所有飞书相关功能时，可在配置中将 `enable_feishu_features` 设为 `false`，相关命令、状态同步与通知都会被跳过。
+>
+> 🎯 希望输出文件名中使用不同的素材标识（如 `xh`）时，修改 `material_code` 即可全局生效。
 
 ## 🗂️ **智能源目录功能**
 

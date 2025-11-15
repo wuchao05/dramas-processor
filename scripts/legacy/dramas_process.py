@@ -15,6 +15,7 @@
 # 原始功能（交互、多选、尾部缓存、封面等）全部保留；CLI 兼容且新增参数向后兼容。
 
 import os, sys, glob, argparse, subprocess, shlex, math, tempfile, random, json, shutil, hashlib, time
+import yaml
 from datetime import datetime
 from collections import Counter
 from typing import List, Tuple, Optional, Dict
@@ -51,6 +52,32 @@ SIDE_FONT_SIZE = 28
 TITLE_COLORS = [
     "#FFA500", "#FFB347", "#FF8C00", "#FFD580", "#E69500", "#FFAE42",
 ]
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
+DEFAULT_CONFIG_PATH = os.path.join(PROJECT_ROOT, "configs", "default.yaml")
+
+def load_material_code_from_config(default: str = "xh") -> str:
+    """Load material code from config file or environment."""
+    env_value = os.environ.get("DRAMA_PROCESSOR_MATERIAL_CODE")
+    if env_value:
+        env_value = env_value.strip()
+        if env_value:
+            return env_value
+    try:
+        if os.path.exists(DEFAULT_CONFIG_PATH):
+            with open(DEFAULT_CONFIG_PATH, "r", encoding="utf-8") as f:
+                config_data = yaml.safe_load(f) or {}
+                code = config_data.get("material_code")
+                if code:
+                    code = str(code).strip()
+                    if code:
+                        return code
+    except Exception as exc:
+        print(f"⚠️ 无法从配置读取 material_code：{exc}")
+    return default
+
+MATERIAL_CODE = load_material_code_from_config()
 
 # ============== 基础工具 ==============
 
@@ -925,7 +952,7 @@ def main():
 
         with ThreadPoolExecutor(max_workers=jobs) as ex:
             for idx2, (ep_idx, offset) in enumerate(starts, start=start_index):
-                base_name = f"{date_str}-{drama_name}-xl-{idx2:02d}"
+                base_name = f"{date_str}-{drama_name}-{MATERIAL_CODE}-{idx2:02d}"
                 if run_suffix:
                     base_name += f"-{run_suffix}"
                 out_path = os.path.join(out_dir, base_name + ".mp4")

@@ -462,6 +462,7 @@ class DramaProcessor:
         
         # Use drama-specific date if provided, otherwise fall back to config date
         date_str = drama_date or self.config.get_date_str()
+        material_code = self.config.get_material_code()
         
         # Prepare tasks
         tasks = []
@@ -481,7 +482,7 @@ class DramaProcessor:
             # Sequential processing
             for i, (ep_idx, offset) in enumerate(start_points):
                 material_idx = start_index + i
-                base_name = f"{date_str}-{project.name}-xl-{material_idx:02d}"
+                base_name = f"{date_str}-{project.name}-{material_code}-{material_idx:02d}"
                 if run_suffix:
                     base_name += f"-{run_suffix}"
                 output_path = os.path.join(out_dir, base_name + ".mp4")
@@ -506,7 +507,7 @@ class DramaProcessor:
                 futures = []
                 for i, (ep_idx, offset) in enumerate(start_points):
                     material_idx = start_index + i
-                    base_name = f"{date_str}-{project.name}-xl-{material_idx:02d}"
+                    base_name = f"{date_str}-{project.name}-{material_code}-{material_idx:02d}"
                     if run_suffix:
                         base_name += f"-{run_suffix}"
                     output_path = os.path.join(out_dir, base_name + ".mp4")

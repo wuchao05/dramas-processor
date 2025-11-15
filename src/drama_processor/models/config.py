@@ -118,6 +118,7 @@ class ProcessingConfig(BaseModel):
     
     # Material generation settings
     count: int = Field(default=1, description="Number of materials per drama")
+    material_code: str = Field(default="xl", description="Identifier used in exported filenames")
     date_str: Optional[str] = Field(default=None, description="Date string for filenames")
     
     # Start point selection settings
@@ -213,6 +214,13 @@ class ProcessingConfig(BaseModel):
             return self.date_str
         now = datetime.now()
         return f"{now.month}.{now.day}"
+    
+    def get_material_code(self) -> str:
+        """Get sanitized material code for filenames."""
+        code = (self.material_code or "xl").strip()
+        if not code:
+            return "xl"
+        return code
     
     def get_default_font(self) -> str:
         """Get default font file path."""
