@@ -69,22 +69,22 @@ enable_watermark: false # 启用水印功能，将logo放置在左上角
 enable_brand_text: true # 启用品牌文字功能，默认文字为"小红看剧"
 brand_text: "热门短剧" # 品牌文字内容（默认文案，向后兼容）
 
-# 多素材文案配置 - 支持范围映射和循环模式
-brand_text_mapping:
-  # 模式选择: "range" 为范围映射模式, "cycle" 为循环模式
-  mode: "range" # "range" | "cycle"
+# # 多素材文案配置 - 支持范围映射和循环模式
+# brand_text_mapping:
+#   # 模式选择: "range" 为范围映射模式, "cycle" 为循环模式
+#   mode: "range" # "range" | "cycle"
 
-  # 范围映射模式配置 (mode: "range")
-  ranges:
-    - range: "01-07" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
-      text: "热门短剧"
+#   # 范围映射模式配置 (mode: "range")
+#   ranges:
+#     - range: "01-07" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
+#       text: "热门短剧"
 
-  # 循环模式配置 (mode: "cycle")
-  cycle_texts:
-    - "热门短剧"
+#   # 循环模式配置 (mode: "cycle")
+#   cycle_texts:
+#     - "热门短剧"
 
-  # 默认文案（当素材编号不匹配任何范围时使用）
-  default_text: "热门短剧"
+#   # 默认文案（当素材编号不匹配任何范围时使用）
+#   default_text: "热门短剧"
 
 # Selection settings
 include: null # Include specific dramas (--include)
