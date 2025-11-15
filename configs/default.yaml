@@ -118,6 +118,8 @@ audio:
 
 # Feishu integration toggle
 enable_feishu_features: true # 全局控制飞书功能，关闭后所有飞书相关功能失效
+enable_feishu_notifications: true # 启用飞书通知功能，发送处理状态更新到飞书
+feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355" # 自定义飞书机器人Webhook URL（可选，覆盖默认配置）
 
 # 飞书API配置 - 小来
 feishu:
