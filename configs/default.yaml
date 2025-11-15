@@ -50,7 +50,7 @@ canvas: null # Canvas size: 'WxH' or 'first' (--canvas)
 reference_resolution: null # Will be auto-detected
 
 # Directory settings
-default_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：D盘短剧剪辑源素材视频目录
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径：D盘短剧剪辑源素材视频目录
 backup_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：E盘备份源素材视频目录
 temp_dir: "/tmp/drama_processor" # WSL Linux 临时目录
 output_dir:
