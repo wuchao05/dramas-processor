@@ -13,7 +13,7 @@ min_duration: 480.0 # 8 minutes (--min-sec)
 max_duration: 900.0 # 15 minutes (--max-sec)
 
 # Material generation settings
-count: 7 # Number of materials per drama (--count)
+count: 25 # Number of materials per drama (--count)
 material_code: "xh" # 素材文件名中使用的标识（可更改为 xh 等）
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
@@ -70,22 +70,37 @@ enable_watermark: false # 启用水印功能，将logo放置在左上角
 enable_brand_text: true # 启用品牌文字功能，默认文字为"小红看剧"
 brand_text: "热门短剧" # 品牌文字内容（默认文案，向后兼容）
 
-# # 多素材文案配置 - 支持范围映射和循环模式
-# brand_text_mapping:
-#   # 模式选择: "range" 为范围映射模式, "cycle" 为循环模式
-#   mode: "range" # "range" | "cycle"
+ # 多素材文案配置 - 支持范围映射和循环模式
+brand_text_mapping:
+  # 模式选择: "range" 为范围映射模式, "cycle" 为循环模式
+  mode: "range" # "range" | "cycle"
 
-#   # 范围映射模式配置 (mode: "range")
-#   ranges:
-#     - range: "01-07" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
-#       text: "热门短剧"
+  # 范围映射模式配置 (mode: "range")
+  ranges:
+    - range: "01-05" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
+      text: "小红看剧"
+    - range: "06-10"
+      text: "斯娜看剧"
+    - range: "11-15"
+      text: "萍通剧坊"
+    - range: "16-18"
+      text: "清妍短剧"
+    - range: "19-22"
+      text: "看家本领"
+    - range: "23-25"
+      text: "奈煊剧场"
 
-#   # 循环模式配置 (mode: "cycle")
-#   cycle_texts:
-#     - "热门短剧"
+  # 循环模式配置 (mode: "cycle")
+  cycle_texts:
+    - "小红看剧"
+    - "斯娜看剧"
+    - "萍通剧坊"
+    - "清妍短剧"
+    - "看家本领"
+    - "奈煊剧场"
 
-#   # 默认文案（当素材编号不匹配任何范围时使用）
-#   default_text: "热门短剧"
+  # 默认文案（当素材编号不匹配任何范围时使用）
+  default_text: "热门短剧"
 
 # Selection settings
 include: null # Include specific dramas (--include)
@@ -122,13 +137,13 @@ enable_feishu_features: true # 全局控制飞书功能，关闭后所有飞书�
 enable_feishu_notifications: true # 启用飞书通知功能，发送处理状态更新到飞书
 feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355" # 自定义飞书机器人Webhook URL（可选，覆盖默认配置）
 
-# 飞书API配置 - 小来
+# 飞书API配置 - 小红
 feishu:
   app_id: "cli_a870f7611b7b1013"
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   # table_id: "tblzO48FFil82fas" # 牵龙
-  table_id: "tblU2gdZSltbN5Bt" # 散柔
+  table_id: "tblVC9djdl4PSqIG" # 散柔
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"
