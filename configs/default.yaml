@@ -116,6 +116,9 @@ audio:
   bitrate: "128k" # Audio bitrate
   sample_rate: 48000 # Audio sample rate
 
+# Feishu integration toggle
+enable_feishu_features: true # 全局控制飞书功能，关闭后所有飞书相关功能失效
+
 # 飞书API配置 - 小来
 feishu:
   app_id: "cli_a870f7611b7b1013"

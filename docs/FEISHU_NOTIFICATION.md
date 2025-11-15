@@ -29,9 +29,12 @@ python -m drama_processor process --no-feishu-notification
 
 ```yaml
 # 飞书通知配置
+enable_feishu_features: true  # 全局开关，关闭后所有飞书相关能力失效
 feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355"
 enable_feishu_notification: true
 ```
+
+> 提示：如果 `enable_feishu_features` 设置为 `false`，所有飞书相关能力（包括表格同步与群机器人通知）都会被跳过，即使单独开启通知或配置了 API 参数也不会生效。
 
 ## 通知内容示例
 

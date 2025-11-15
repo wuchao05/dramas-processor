@@ -182,6 +182,9 @@ class ProcessingConfig(BaseModel):
     video: VideoConfig = Field(default_factory=VideoConfig)
     audio: AudioConfig = Field(default_factory=AudioConfig)
     
+    # 飞书功能开关
+    enable_feishu_features: bool = Field(default=True, description="启用所有飞书相关功能")
+    
     # 飞书API配置
     feishu: Optional[FeishuConfig] = Field(default=None, description="飞书API配置")
     
@@ -191,6 +194,18 @@ class ProcessingConfig(BaseModel):
         description="飞书群通知webhook地址"
     )
     enable_feishu_notification: bool = Field(default=True, description="启用飞书群通知")
+    
+    def is_feishu_features_enabled(self) -> bool:
+        """Check if Feishu features are enabled."""
+        return bool(self.enable_feishu_features)
+    
+    def is_feishu_api_enabled(self) -> bool:
+        """Check if Feishu API integration can be used."""
+        return bool(self.enable_feishu_features and self.feishu)
+    
+    def is_feishu_notification_enabled(self) -> bool:
+        """Check if Feishu notifications can be sent."""
+        return bool(self.enable_feishu_features and self.enable_feishu_notification and self.feishu_webhook_url)
     
     def get_date_str(self) -> str:
         """Get date string for filename generation."""
@@ -262,4 +277,3 @@ class ProcessingConfig(BaseModel):
         if v <= min_dur:
             raise ValueError("Max duration must be greater than min duration")
         return v
-

@@ -268,6 +268,7 @@ def process_command(
         # Feishu notification settings - use CLI overrides if provided, otherwise use file config
         feishu_webhook_url=feishu_webhook if feishu_webhook is not None else base_config.feishu_webhook_url,
         enable_feishu_notification=not no_feishu_notification if no_feishu_notification else base_config.enable_feishu_notification,
+        enable_feishu_features=base_config.enable_feishu_features,
         
         # Deduplication settings - use CLI overrides if provided, otherwise use file config
         enable_deduplication=enable_deduplication if enable_deduplication != False else base_config.enable_deduplication,
@@ -686,6 +687,16 @@ def feishu_command():
     pass
 
 
+def _ensure_feishu_cli_enabled(config: ProcessingConfig) -> None:
+    """Ensure Feishu-related CLI commands are allowed."""
+    if not config.is_feishu_features_enabled():
+        click.echo("❌ 配置中已关闭飞书功能。如需使用，请将 enable_feishu_features 设为 true", err=True)
+        sys.exit(1)
+    if not config.feishu:
+        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
+        sys.exit(1)
+
+
 @feishu_command.command("list")
 @click.option("--status", type=str, default=None, help="筛选状态（默认使用配置文件中的pending_status_value）")
 @click.option("--date", type=str, default=None, help="筛选日期，如 9.6；默认不筛选")
@@ -694,9 +705,7 @@ def feishu_list(ctx, status: Optional[str], date: Optional[str]):
     """查看飞书表格中的待处理剧目列表。"""
     config = ctx.obj.get("config") or ProcessingConfig()
     
-    if not config.feishu:
-        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
-        sys.exit(1)
+    _ensure_feishu_cli_enabled(config)
     
     try:
         from ..integrations.feishu_client import FeishuClient, _convert_date_format
@@ -820,9 +829,7 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
     base_config = load_config_with_fallback(config_path)
     config = ctx.obj.get("config") or base_config
     
-    if not config.feishu:
-        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
-        sys.exit(1)
+    _ensure_feishu_cli_enabled(config)
     
     try:
         from ..integrations.feishu_client import FeishuClient, _convert_date_format
@@ -1137,9 +1144,7 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
     base_config = load_config_with_fallback(config_path)
     config = ctx.obj.get("config") or base_config
     
-    if not config.feishu:
-        click.echo("❌ 飞书配置未设置，请在配置文件中添加飞书相关配置", err=True)
-        sys.exit(1)
+    _ensure_feishu_cli_enabled(config)
     
     try:
         from ..integrations.feishu_client import FeishuClient, _convert_date_format
@@ -1431,6 +1436,10 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
 @click.pass_context
 def feishu_dedup(ctx, action: str, date: Optional[str]):
     """管理飞书日期去重记录。"""
+    config = ctx.obj.get("config") or ProcessingConfig()
+    if not config.is_feishu_features_enabled():
+        click.echo("❌ 配置中已关闭飞书功能，无法使用日期去重命令", err=True)
+        sys.exit(1)
     try:
         from ..utils.date_deduplication import get_date_dedup_manager
         
@@ -1503,4 +1512,3 @@ def feishu_dedup(ctx, action: str, date: Optional[str]):
         if ctx.obj.get("debug"):
             import traceback
             traceback.print_exc()
-

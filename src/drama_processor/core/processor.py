@@ -43,7 +43,10 @@ class DramaProcessor:
                            Called with (drama_name, new_status) parameters.
         """
         self.config = config
-        self.status_callback = status_callback
+        feishu_api_enabled = config.is_feishu_api_enabled()
+        self.status_callback = status_callback if feishu_api_enabled else None
+        if status_callback and not feishu_api_enabled:
+            logger.info("飞书功能已关闭，跳过飞书状态同步")
         
         # Initialize components
         self.analyzer = VideoAnalyzer()
@@ -68,7 +71,7 @@ class DramaProcessor:
         
         # Initialize Feishu notifier if enabled
         self.feishu_notifier: Optional[FeishuNotifier] = None
-        if config.enable_feishu_notification:
+        if config.is_feishu_notification_enabled():
             self.feishu_notifier = create_feishu_notifier(config)
             if self.feishu_notifier:
                 logger.info("飞书通知功能已启用")

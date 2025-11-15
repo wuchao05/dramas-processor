@@ -197,7 +197,14 @@ use_hardware: true
 jobs: 1
 output_dir: "../导出素材"
 tail_cache_dir: "/tmp/tails_cache"
+
+# 飞书功能控制
+enable_feishu_features: true
+enable_feishu_notification: true
+feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/xxxx"
 ```
+
+> 💡 需要彻底关闭所有飞书相关功能时，可在配置中将 `enable_feishu_features` 设为 `false`，相关命令、状态同步与通知都会被跳过。
 
 ## 🗂️ **智能源目录功能**
 
