@@ -215,9 +215,15 @@ class FeishuWatcher:
         processed = set()
         self._notify(f"🎯 日期 {date_label} 首次检测到 {len(initial_info)} 部待剪辑剧")
         idle_rounds = 0
+        cached_info = dict(initial_info)
         
         while not self._stop:
-            current_info = self._fetch_date_tasks(date_label)
+            if cached_info is not None:
+                current_info = cached_info
+                cached_info = None
+            else:
+                current_info = self._fetch_date_tasks(date_label)
+            
             # 仅保留尚未处理、仍为待剪辑状态的数据
             pending = {
                 name: info for name, info in current_info.items()
@@ -233,23 +239,26 @@ class FeishuWatcher:
                 continue
             
             idle_rounds = 0
-            for drama_name, info in pending.items():
-                if self._stop:
-                    break
-                # 再次确认仍在该日期的待剪辑列表中（防止轮询间隔内被挪走）
-                latest = self._fetch_date_tasks(date_label)
-                if drama_name not in latest:
-                    self._notify(f"⏭️ 侦测到 '{drama_name}' 已不在 {date_label} 待剪辑列表，跳过")
-                    processed.add(drama_name)
-                    continue
-                
-                try:
-                    self._process_single_drama(date_label, drama_name, info)
-                except Exception as exc:  # pylint: disable=broad-except
-                    logger.error(f"❌ 剧目 {drama_name} 处理失败: {exc}")
-                    self._notify(f"❌ '{drama_name}' 处理失败：{exc}")
-                finally:
-                    processed.add(drama_name)
+            # 仅取一个剧目处理，剩余的留待下一轮，以便实时检测变动
+            drama_name, info = next(iter(pending.items()))
+            if self._stop:
+                break
+            
+            latest_snapshot = self._fetch_date_tasks(date_label)
+            if drama_name not in latest_snapshot:
+                self._notify(f"⏭️ 侦测到 '{drama_name}' 已不在 {date_label} 待剪辑列表，跳过")
+                processed.add(drama_name)
+                cached_info = None
+                continue
+            
+            try:
+                self._process_single_drama(date_label, drama_name, info)
+            except Exception as exc:  # pylint: disable=broad-except
+                logger.error(f"❌ 剧目 {drama_name} 处理失败: {exc}")
+                self._notify(f"❌ '{drama_name}' 处理失败：{exc}")
+            finally:
+                processed.add(drama_name)
+                cached_info = None
             
             if self._stop:
                 break
