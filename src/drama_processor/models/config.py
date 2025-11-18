@@ -188,6 +188,7 @@ class ProcessingConfig(BaseModel):
     
     # 飞书API配置
     feishu: Optional[FeishuConfig] = Field(default=None, description="飞书API配置")
+    feishu_watcher: FeishuWatcherConfig = Field(default_factory=FeishuWatcherConfig, description="飞书轮询配置")
     
     # 飞书通知配置
     feishu_webhook_url: Optional[str] = Field(
@@ -207,6 +208,10 @@ class ProcessingConfig(BaseModel):
     def is_feishu_notification_enabled(self) -> bool:
         """Check if Feishu notifications can be sent."""
         return bool(self.enable_feishu_features and self.enable_feishu_notification and self.feishu_webhook_url)
+    
+    def is_feishu_watcher_enabled(self) -> bool:
+        """Check if Feishu watcher can run."""
+        return bool(self.enable_feishu_features and self.feishu_watcher and self.feishu_watcher.enabled)
     
     def get_date_str(self) -> str:
         """Get date string for filename generation."""
@@ -285,3 +290,16 @@ class ProcessingConfig(BaseModel):
         if v <= min_dur:
             raise ValueError("Max duration must be greater than min duration")
         return v
+class FeishuWatcherConfig(BaseModel):
+    """Feishu watcher configuration."""
+    
+    enabled: bool = Field(default=False, description="是否启用飞书轮询任务")
+    poll_interval: int = Field(default=1800, description="轮询飞书的间隔（秒）")
+    max_dates_per_cycle: int = Field(default=1, description="单次轮询最多自动启动的日期任务数量")
+    settle_seconds: int = Field(default=120, description="同一日期在无新任务时继续等待的秒数")
+    settle_rounds: int = Field(default=2, description="连续空轮次数，超过后认为该日期没有新任务")
+    idle_exit_minutes: Optional[int] = Field(default=None, description="长时间无任务时自动退出（分钟），None 表示一直运行")
+    state_dir: str = Field(default="history/feishu_watcher", description="轮询状态存储目录")
+    date_whitelist: Optional[List[str]] = Field(default=None, description="仅监听指定日期列表")
+    date_blacklist: Optional[List[str]] = Field(default=None, description="需要忽略的日期列表")
+    status_filter: Optional[str] = Field(default=None, description="覆盖默认的飞书状态过滤值")

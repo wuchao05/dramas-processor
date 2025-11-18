@@ -11,6 +11,7 @@ import click
 from ..config import ConfigManager, save_config
 from ..core.processor import DramaProcessor
 # AI功能已移除
+from ..integrations.feishu_watcher import FeishuWatcher as FeishuAutoWatcher
 from ..models.config import ProcessingConfig
 from ..models.project import DramaProject
 from ..utils.system import ensure_dir
@@ -795,6 +796,7 @@ def feishu_list(ctx, status: Optional[str], date: Optional[str]):
 # Date deduplication settings
 @click.option("--skip-processed", is_flag=True, help="跳过已经处理过的剧集（基于日期去重）")
 @click.option("--force-reprocess", is_flag=True, help="强制重新处理所有剧集，忽略历史记录")
+@click.option("--yes", "auto_confirm", is_flag=True, help="无需确认提示，直接开始处理")
 @click.pass_context  
 def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
     # Material generation
@@ -818,7 +820,7 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
     # Deduplication
     enable_deduplication: bool,
     # Date deduplication
-    skip_processed: bool, force_reprocess: bool):
+    skip_processed: bool, force_reprocess: bool, auto_confirm: bool):
     """一键查询飞书表格中的剧目并自动剪辑，自动更新状态。"""
     # 加载配置文件作为基础配置
     from ..config.loader import load_config_with_fallback
@@ -890,9 +892,12 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
             click.echo(f"{i:2d}. {drama}")
         
         # 确认处理
-        if not click.confirm(f"\n确认要自动剪辑这 {len(dramas)} 部剧吗？（状态将自动更新）"):
-            click.echo("取消处理")
-            return
+        if not auto_confirm:
+            if not click.confirm(f"\n确认要自动剪辑这 {len(dramas)} 部剧吗？（状态将自动更新）"):
+                click.echo("取消处理")
+                return
+        else:
+            click.echo(f"\n✅ 自动确认：即将剪辑 {len(dramas)} 部剧")
         
         # 更新配置以包含传入的参数
         config.include = dramas
@@ -1429,6 +1434,62 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
             import traceback
             traceback.print_exc()
         sys.exit(1)
+
+
+@feishu_command.command("dedup")
+@click.option("--action", type=click.Choice(['list', 'clear', 'summary']), default='list', help="操作类型：list(列出记录)、clear(清除记录)、summary(查看摘要)")
+@click.option("--date", type=str, default=None, help="指定日期，如 9.12 (仅用于 clear 和 summary 操作)")
+@click.pass_context
+def _parse_date_list_option(raw: Optional[str]) -> Optional[List[str]]:
+    """Parse comma-separated date filters."""
+    if not raw:
+        return None
+    values = []
+    for part in raw.split(","):
+        value = part.strip()
+        if value:
+            values.append(value)
+    return values or None
+
+
+@feishu_command.command("watch")
+@click.option("--poll-interval", type=int, default=None, help="轮询飞书待剪辑剧的间隔（秒）")
+@click.option("--status", type=str, default=None, help="覆盖默认状态过滤值")
+@click.option("--dates", type=str, default=None, help="仅监听指定日期（逗号分隔，如 9.17,9.18）")
+@click.option("--max-dates", type=int, default=None, help="单次轮询最多自动触发的日期任务数")
+@click.option("--run-once", is_flag=True, help="只执行一次轮询后退出")
+@click.pass_context
+def feishu_watch(ctx, poll_interval: Optional[int], status: Optional[str],
+                 dates: Optional[str], max_dates: Optional[int], run_once: bool):
+    """守护式轮询飞书待剪辑列表，自动按日期启动剪辑任务。"""
+    config = ctx.obj.get("config") or ProcessingConfig()
+    _ensure_feishu_cli_enabled(config)
+    
+    watcher_cfg = config.feishu_watcher
+    date_whitelist = _parse_date_list_option(dates) or watcher_cfg.date_whitelist
+    
+    if not config.is_feishu_watcher_enabled() and not run_once:
+        click.echo("⚠️ 当前配置中未开启 feishu_watcher.enabled，将以临时模式运行")
+    
+    watcher = FeishuAutoWatcher(
+        config=config,
+        poll_interval=poll_interval or watcher_cfg.poll_interval,
+        max_dates_per_cycle=max_dates or watcher_cfg.max_dates_per_cycle,
+        settle_seconds=watcher_cfg.settle_seconds,
+        settle_rounds=watcher_cfg.settle_rounds,
+        date_whitelist=date_whitelist,
+        date_blacklist=watcher_cfg.date_blacklist,
+        status_filter=status or watcher_cfg.status_filter,
+        idle_exit_minutes=watcher_cfg.idle_exit_minutes,
+        state_dir=watcher_cfg.state_dir,
+        echo=click.echo
+    )
+    
+    try:
+        watcher.run(run_once=run_once)
+    except KeyboardInterrupt:
+        click.echo("\n🛑 已停止飞书自动轮询")
+        watcher.stop()
 
 
 @feishu_command.command("dedup")
