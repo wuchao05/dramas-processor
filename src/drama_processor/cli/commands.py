@@ -1436,10 +1436,6 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
         sys.exit(1)
 
 
-@feishu_command.command("dedup")
-@click.option("--action", type=click.Choice(['list', 'clear', 'summary']), default='list', help="操作类型：list(列出记录)、clear(清除记录)、summary(查看摘要)")
-@click.option("--date", type=str, default=None, help="指定日期，如 9.12 (仅用于 clear 和 summary 操作)")
-@click.pass_context
 def _parse_date_list_option(raw: Optional[str]) -> Optional[List[str]]:
     """Parse comma-separated date filters."""
     if not raw:
