@@ -1467,6 +1467,17 @@ def feishu_watch(ctx, poll_interval: Optional[int], status: Optional[str],
     if not config.is_feishu_watcher_enabled() and not run_once:
         click.echo("⚠️ 当前配置中未开启 feishu_watcher.enabled，将以临时模式运行")
     
+    # Ensure output directory is absolute and aligned with实际源目录
+    export_base = config.get_export_base_dir()
+    current_out_dir = config.output_dir or "../导出素材"
+    if not os.path.isabs(current_out_dir):
+        # 统一基于导出基目录拼接
+        target_name = os.path.basename(current_out_dir.rstrip("/")) or "导出素材"
+        config.output_dir = os.path.join(export_base, target_name)
+    else:
+        config.output_dir = current_out_dir
+    os.makedirs(config.output_dir, exist_ok=True)
+    
     watcher = FeishuAutoWatcher(
         config=config,
         poll_interval=poll_interval or watcher_cfg.poll_interval,

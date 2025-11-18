@@ -5,6 +5,7 @@ import time
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
 
+from concurrent.futures import ThreadPoolExecutor
 from ..core.processor import DramaProcessor
 from ..models.config import ProcessingConfig
 from .feishu_client import FeishuClient, _convert_date_format, FeishuRecordNotFoundError
@@ -81,6 +82,10 @@ class FeishuWatcher:
             self.echo(message)
         else:
             logger.info(message)
+
+    def _create_client(self) -> FeishuClient:
+        """Create a new Feishu client instance for worker threads."""
+        return FeishuClient(self.base_config.feishu)
     
     @staticmethod
     def _normalize_date_list(items: Optional[List[str]]) -> Optional[List[str]]:
@@ -136,10 +141,23 @@ class FeishuWatcher:
             return False
         
         processed_any = False
-        for date_label in target_dates[: self.max_dates]:
-            processed_any |= self._process_date(date_label, grouped.get(date_label, {}))
-            if self._stop:
-                break
+        selected_dates = target_dates[: self.max_dates]
+        if not selected_dates:
+            return False
+        with ThreadPoolExecutor(max_workers=len(selected_dates)) as executor:
+            futures = []
+            for date_label in selected_dates:
+                initial_info = dict(grouped.get(date_label, {}))
+                futures.append(executor.submit(self._process_date, date_label, initial_info))
+            for future in futures:
+                if self._stop:
+                    break
+                try:
+                    if future.result():
+                        processed_any = True
+                except Exception as exc:  # pylint: disable=broad-except
+                    logger.error(f"❌ 日期任务执行失败: {exc}")
+                    self._notify(f"❌ 日期任务执行失败：{exc}")
         return processed_any
     
     def _group_by_date(self, drama_info: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, Dict[str, str]]]:
@@ -162,15 +180,17 @@ class FeishuWatcher:
         self._notify(f"🎯 日期 {date_label} 检测到待剪辑剧，开始处理")
         processed_any = False
         try:
-            self._run_batch(date_label, initial_info or {})
+            client = self._create_client()
+            self._run_batch(date_label, initial_info or {}, client)
             processed_any = True
         except Exception as exc:  # pylint: disable=broad-except
             logger.error(f"❌ 日期 {date_label} 处理失败: {exc}")
             self._notify(f"❌ 日期 {date_label} 处理失败：{exc}")
         return processed_any
     
-    def _fetch_date_tasks(self, date_label: str) -> Dict[str, Dict[str, str]]:
+    def _fetch_date_tasks(self, date_label: str, client: Optional[FeishuClient] = None) -> Dict[str, Dict[str, str]]:
         """Fetch pending dramas for a specific date."""
+        client_obj = client or self.client
         date_filter = None
         if date_label and date_label not in ("未知", "未知日期"):
             try:
@@ -179,7 +199,7 @@ class FeishuWatcher:
                 date_filter = None
         
         try:
-            info = self.client.get_pending_dramas_with_dates(
+            info = client_obj.get_pending_dramas_with_dates(
                 status_filter=self.status_filter,
                 date_filter=date_filter
             )
@@ -194,7 +214,7 @@ class FeishuWatcher:
             }
         return info
     
-    def _run_batch(self, date_label: str, initial_info: Dict[str, Dict[str, str]]) -> None:
+    def _run_batch(self, date_label: str, initial_info: Dict[str, Dict[str, str]], client: FeishuClient) -> None:
         """Process dramas of a specific date one by one with live synchronization."""
         processed = set()
         self._notify(f"🎯 日期 {date_label} 首次检测到 {len(initial_info)} 部待剪辑剧")
@@ -206,7 +226,7 @@ class FeishuWatcher:
                 current_info = cached_info
                 cached_info = None
             else:
-                current_info = self._fetch_date_tasks(date_label)
+                current_info = self._fetch_date_tasks(date_label, client)
             
             # 仅保留尚未处理、仍为待剪辑状态的数据
             pending = {
@@ -228,7 +248,7 @@ class FeishuWatcher:
             if self._stop:
                 break
             
-            latest_snapshot = self._fetch_date_tasks(date_label)
+            latest_snapshot = self._fetch_date_tasks(date_label, client)
             if drama_name not in latest_snapshot:
                 self._notify(f"⏭️ 侦测到 '{drama_name}' 已不在 {date_label} 待剪辑列表，跳过")
                 processed.add(drama_name)
@@ -236,7 +256,7 @@ class FeishuWatcher:
                 continue
             
             try:
-                processed_ok = self._process_single_drama(date_label, drama_name, info)
+                processed_ok = self._process_single_drama(date_label, drama_name, info, client)
             except Exception as exc:  # pylint: disable=broad-except
                 logger.error(f"❌ 剧目 {drama_name} 处理失败: {exc}")
                 self._notify(f"❌ '{drama_name}' 处理失败：{exc}")
@@ -246,12 +266,12 @@ class FeishuWatcher:
                 cached_info = None
             
             if not processed_ok:
-                self._notify(f"⏭️ '{drama_name}' 本地未找到可处理的目录，跳过并继续下一个日期")
-                break
+                self._notify(f"⏭️ '{drama_name}' 本地未找到可处理的目录，跳过并继续下一个剧目/日期")
+                continue
             
             if self._stop:
                 break
-    def _process_single_drama(self, date_label: str, drama_name: str, info: Dict[str, str]) -> bool:
+    def _process_single_drama(self, date_label: str, drama_name: str, info: Dict[str, str], client: FeishuClient) -> bool:
         """Process a single drama extracted from Feishu."""
         config_copy = self.base_config.copy(deep=True)
         config_copy.include = [drama_name]
@@ -269,7 +289,7 @@ class FeishuWatcher:
             if drama != drama_name or not record_id:
                 return "SKIP"
             try:
-                success = self.client.update_record_status(record_id, new_status)
+                success = client.update_record_status(record_id, new_status)
                 return True if success else False
             except FeishuRecordNotFoundError as exc:
                 logger.warning(f"⚠️ 记录 {record_id} 未找到，跳过 '{drama_name}'：{exc}")
