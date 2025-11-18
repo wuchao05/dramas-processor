@@ -137,7 +137,7 @@ class FeishuWatcher:
         
         processed_any = False
         for date_label in target_dates[: self.max_dates]:
-            processed_any |= self._process_date(date_label)
+            processed_any |= self._process_date(date_label, grouped.get(date_label, {}))
             if self._stop:
                 break
         return processed_any
@@ -157,32 +157,16 @@ class FeishuWatcher:
             dates = [d for d in dates if d not in self.date_blacklist]
         return dates
     
-    def _process_date(self, date_label: str) -> bool:
-        """Continuously process a single date until no new tasks appear."""
+    def _process_date(self, date_label: str, initial_info: Dict[str, Dict[str, str]]) -> bool:
+        """Process a single date batch using the provided initial data."""
         self._notify(f"🎯 日期 {date_label} 检测到待剪辑剧，开始处理")
-        idle_rounds = 0
         processed_any = False
-        
-        while not self._stop:
-            date_tasks = self._fetch_date_tasks(date_label)
-            if not date_tasks:
-                idle_rounds += 1
-                if idle_rounds >= self.settle_rounds:
-                    self._notify(f"✅ 日期 {date_label} 暂无新的待剪辑剧，进入待命")
-                    break
-                self._sleep_with_cancel(self.settle_seconds)
-                continue
-            
-            idle_rounds = 0
+        try:
+            self._run_batch(date_label, initial_info or {})
             processed_any = True
-            try:
-                self._run_batch(date_label, date_tasks)
-            except Exception as exc:  # pylint: disable=broad-except
-                logger.error(f"❌ 日期 {date_label} 处理失败: {exc}")
-                self._notify(f"❌ 日期 {date_label} 处理失败：{exc}")
-            if self._stop:
-                break
-        
+        except Exception as exc:  # pylint: disable=broad-except
+            logger.error(f"❌ 日期 {date_label} 处理失败: {exc}")
+            self._notify(f"❌ 日期 {date_label} 处理失败：{exc}")
         return processed_any
     
     def _fetch_date_tasks(self, date_label: str) -> Dict[str, Dict[str, str]]:
