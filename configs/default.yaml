@@ -122,7 +122,7 @@ enable_feishu_features: true # 全局控制飞书功能，关闭后所有飞书�
 enable_feishu_notification: true # 启用飞书通知功能，发送处理状态更新到飞书
 feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355" # 自定义飞书机器人Webhook URL（可选，覆盖默认配置）
 
-# 飞书API配置 - 小来
+# 飞书API配置 - 小红
 feishu:
   app_id: "cli_a870f7611b7b1013"
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
@@ -137,6 +137,19 @@ feishu:
   completed_status_value: "待上传"
   page_size: 200
   token_refresh_interval: 7200000
+
+# 飞书轮询配置
+feishu_watcher:
+  enabled: true # 是否开启自动轮询
+  poll_interval: 1800 # 轮询飞书的间隔（秒）
+  max_dates_per_cycle: 1 # 单次轮询最多并行触发的日期任务数量
+  settle_seconds: 120 # 同一日期任务在无新剧时继续等待的秒数
+  settle_rounds: 2 # 连续空轮次数，超过后认为该日期暂时无新任务
+  idle_exit_minutes: null # 长时间无任务时自动退出（分钟），null 表示一直运行
+  state_dir: "history/feishu_watcher" # watcher 状态存储目录
+  date_whitelist: [] # 仅监听的日期列表（为空表示全部日期）
+  date_blacklist: [] # 忽略的日期列表
+  status_filter: null # 覆盖默认的状态过滤值（默认使用 pending_status_value）
 
 # 日期去重设置
 date_deduplication:

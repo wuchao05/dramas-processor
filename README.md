@@ -208,6 +208,8 @@ feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/xxxx"
 > 💡 需要彻底关闭所有飞书相关功能时，可在配置中将 `enable_feishu_features` 设为 `false`，相关命令、状态同步与通知都会被跳过。
 >
 > 🎯 希望输出文件名中使用不同的素材标识（如 `xh`）时，修改 `material_code` 即可全局生效。
+>
+> 🚀 想让飞书待剪辑剧自动轮询并按日期触发剪辑，可参考 [docs/FEISHU_WATCHER.md](docs/FEISHU_WATCHER.md)。
 
 ## 🗂️ **智能源目录功能**
 
