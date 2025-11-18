@@ -127,6 +127,9 @@ class FeishuWatcher:
             return False
         
         grouped = self._group_by_date(drama_info)
+        if grouped:
+            summary = ", ".join(f"{date}:{len(items)}部" for date, items in grouped.items())
+            self._notify(f"📚 分组结果：{summary}")
         target_dates = self._select_dates(grouped)
         if not target_dates:
             self._notify("📭 没有符合过滤条件的日期任务")
