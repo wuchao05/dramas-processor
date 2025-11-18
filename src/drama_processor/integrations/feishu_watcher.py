@@ -4,8 +4,11 @@ import logging
 import time
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
+from datetime import datetime
 
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, Future
+from dataclasses import dataclass
+from threading import Event
 from ..core.processor import DramaProcessor
 from ..models.config import ProcessingConfig
 from .feishu_client import FeishuClient, _convert_date_format, FeishuRecordNotFoundError
@@ -49,6 +52,8 @@ class FeishuWatcher:
         self.state_dir.mkdir(parents=True, exist_ok=True)
         self._stop = False
         self.last_activity = time.time()
+        self.executor = ThreadPoolExecutor(max_workers=self.max_dates)
+        self.active_tasks: Dict[str, "DateTask"] = {}
     
     def run(self, run_once: bool = False) -> None:
         """Start the watcher."""
@@ -69,11 +74,16 @@ class FeishuWatcher:
                 
                 self._sleep_with_cancel(self.poll_interval)
         finally:
+            if run_once:
+                self._wait_for_tasks()
             self._stop = True
+            self._cancel_all_tasks()
+            self.executor.shutdown(wait=True, cancel_futures=False)
     
     def stop(self) -> None:
         """Request watcher stop."""
         self._stop = True
+        self._cancel_all_tasks()
     
     # Internal helpers -----------------------------------------------------
     
@@ -97,6 +107,71 @@ class FeishuWatcher:
             if item:
                 normalized.append(item)
         return normalized or None
+    
+    def _priority_value(self, date_str: str) -> tuple:
+        """Compute priority for given date (lower tuple => higher priority)."""
+        today = datetime.now().date()
+        try:
+            if "." in date_str:
+                month, day = date_str.split(".", 1)
+                target = datetime(today.year, int(month), int(day)).date()
+            elif "-" in date_str:
+                target = datetime.strptime(date_str, "%Y-%m-%d").date()
+            else:
+                raise ValueError
+        except Exception:
+            return (2, 9999, date_str)
+        delta = (target - today).days
+        group = 0 if delta <= 0 else 1  # 今天或已过期优先，其次未来日期
+        return (group, abs(delta), date_str)
+    
+    def _start_date_task(self, date_label: str, initial_info: Dict[str, Dict[str, str]], priority: tuple) -> None:
+        cancel_event = Event()
+        client = self._create_client()
+        future = self.executor.submit(self._process_date, date_label, initial_info, cancel_event, client)
+        self.active_tasks[date_label] = DateTask(future=future, cancel_event=cancel_event, priority=priority)
+        self._notify(f"🚀 启动日期 {date_label} 任务，优先级 {priority}")
+    
+    def _cancel_task(self, date_label: str) -> None:
+        task = self.active_tasks.get(date_label)
+        if not task:
+            return
+        task.cancel_event.set()
+        self._notify(f"⏹️ 正在停止日期 {date_label} 任务...")
+        try:
+            # 等待任务结束（允许其完成当前素材后退出）
+            task.future.result(timeout=5)
+        except Exception:
+            pass
+        finally:
+            self.active_tasks.pop(date_label, None)
+    
+    def _cancel_all_tasks(self) -> None:
+        for date_label in list(self.active_tasks.keys()):
+            self._cancel_task(date_label)
+    
+    def _wait_for_tasks(self) -> None:
+        for date_label, task in list(self.active_tasks.items()):
+            try:
+                task.future.result()
+            except Exception:
+                pass
+    
+    def _cleanup_finished_tasks(self) -> None:
+        for date_label, task in list(self.active_tasks.items()):
+            if task.future.done():
+                try:
+                    task.future.result()
+                    self._notify(f"✅ 日期 {date_label} 任务已完成")
+                except Exception as exc:
+                    logger.error(f"❌ 日期 {date_label} 任务异常结束: {exc}")
+                    self._notify(f"❌ 日期 {date_label} 任务异常结束：{exc}")
+                self.active_tasks.pop(date_label, None)
+    
+    def _get_lowest_priority_date(self) -> Optional[str]:
+        if not self.active_tasks:
+            return None
+        return max(self.active_tasks.items(), key=lambda item: item[1].priority)[0]
     
     @staticmethod
     def _date_sort_key(date_str: str) -> tuple:
@@ -140,24 +215,25 @@ class FeishuWatcher:
             self._notify("📭 没有符合过滤条件的日期任务")
             return False
         
-        processed_any = False
-        selected_dates = target_dates[: self.max_dates]
-        if not selected_dates:
-            return False
-        with ThreadPoolExecutor(max_workers=len(selected_dates)) as executor:
-            futures = []
-            for date_label in selected_dates:
-                initial_info = dict(grouped.get(date_label, {}))
-                futures.append(executor.submit(self._process_date, date_label, initial_info))
-            for future in futures:
-                if self._stop:
-                    break
-                try:
-                    if future.result():
-                        processed_any = True
-                except Exception as exc:  # pylint: disable=broad-except
-                    logger.error(f"❌ 日期任务执行失败: {exc}")
-                    self._notify(f"❌ 日期任务执行失败：{exc}")
+        self._cleanup_finished_tasks()
+        processed_any = bool(self.active_tasks)
+        for date_label in target_dates:
+            if self._stop:
+                break
+            if date_label in self.active_tasks:
+                continue
+            priority = self._priority_value(date_label)
+            initial_info = dict(grouped.get(date_label, {}))
+            if len(self.active_tasks) < self.max_dates:
+                self._start_date_task(date_label, initial_info, priority)
+                processed_any = True
+            else:
+                worst_date = self._get_lowest_priority_date()
+                if worst_date and priority < self.active_tasks[worst_date].priority:
+                    self._notify(f"⏹️ 为优先日期 {date_label}，准备停止 {worst_date} 任务")
+                    self._cancel_task(worst_date)
+                    self._start_date_task(date_label, initial_info, priority)
+                    processed_any = True
         return processed_any
     
     def _group_by_date(self, drama_info: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, Dict[str, str]]]:
@@ -175,13 +251,12 @@ class FeishuWatcher:
             dates = [d for d in dates if d not in self.date_blacklist]
         return dates
     
-    def _process_date(self, date_label: str, initial_info: Dict[str, Dict[str, str]]) -> bool:
+    def _process_date(self, date_label: str, initial_info: Dict[str, Dict[str, str]], cancel_event: Event, client: FeishuClient) -> bool:
         """Process a single date batch using the provided initial data."""
         self._notify(f"🎯 日期 {date_label} 检测到待剪辑剧，开始处理")
         processed_any = False
         try:
-            client = self._create_client()
-            self._run_batch(date_label, initial_info or {}, client)
+            self._run_batch(date_label, initial_info or {}, client, cancel_event)
             processed_any = True
         except Exception as exc:  # pylint: disable=broad-except
             logger.error(f"❌ 日期 {date_label} 处理失败: {exc}")
@@ -214,7 +289,7 @@ class FeishuWatcher:
             }
         return info
     
-    def _run_batch(self, date_label: str, initial_info: Dict[str, Dict[str, str]], client: FeishuClient) -> None:
+    def _run_batch(self, date_label: str, initial_info: Dict[str, Dict[str, str]], client: FeishuClient, cancel_event: Event) -> None:
         """Process dramas of a specific date one by one with live synchronization."""
         processed = set()
         self._notify(f"🎯 日期 {date_label} 首次检测到 {len(initial_info)} 部待剪辑剧")
@@ -222,6 +297,9 @@ class FeishuWatcher:
         cached_info = dict(initial_info)
         
         while not self._stop:
+            if cancel_event.is_set():
+                self._notify(f"⏹️ 日期 {date_label} 任务收到停止信号，结束")
+                break
             if cached_info is not None:
                 current_info = cached_info
                 cached_info = None
@@ -247,6 +325,9 @@ class FeishuWatcher:
             drama_name, info = next(iter(pending.items()))
             if self._stop:
                 break
+            if cancel_event.is_set():
+                self._notify(f"⏹️ 日期 {date_label} 任务收到停止信号，结束")
+                break
             
             latest_snapshot = self._fetch_date_tasks(date_label, client)
             if drama_name not in latest_snapshot:
@@ -256,7 +337,7 @@ class FeishuWatcher:
                 continue
             
             try:
-                processed_ok = self._process_single_drama(date_label, drama_name, info, client)
+                processed_ok = self._process_single_drama(date_label, drama_name, info, client, cancel_event)
             except Exception as exc:  # pylint: disable=broad-except
                 logger.error(f"❌ 剧目 {drama_name} 处理失败: {exc}")
                 self._notify(f"❌ '{drama_name}' 处理失败：{exc}")
@@ -271,8 +352,10 @@ class FeishuWatcher:
             
             if self._stop:
                 break
-    def _process_single_drama(self, date_label: str, drama_name: str, info: Dict[str, str], client: FeishuClient) -> bool:
+    def _process_single_drama(self, date_label: str, drama_name: str, info: Dict[str, str], client: FeishuClient, cancel_event: Event) -> bool:
         """Process a single drama extracted from Feishu."""
+        if cancel_event.is_set():
+            return False
         config_copy = self.base_config.copy(deep=True)
         config_copy.include = [drama_name]
         config_copy.exclude = None
@@ -308,3 +391,9 @@ class FeishuWatcher:
             return False
         self._notify(f"✅ {drama_name} 完成：{total_done}/{total_planned} 条素材")
         return True
+@dataclass
+class DateTask:
+    """Track an active date processing task."""
+    future: Future
+    cancel_event: Event
+    priority: tuple
