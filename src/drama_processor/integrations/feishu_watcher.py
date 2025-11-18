@@ -252,17 +252,22 @@ class FeishuWatcher:
                 continue
             
             try:
-                self._process_single_drama(date_label, drama_name, info)
+                processed_ok = self._process_single_drama(date_label, drama_name, info)
             except Exception as exc:  # pylint: disable=broad-except
                 logger.error(f"❌ 剧目 {drama_name} 处理失败: {exc}")
                 self._notify(f"❌ '{drama_name}' 处理失败：{exc}")
+                processed_ok = False
             finally:
                 processed.add(drama_name)
                 cached_info = None
             
+            if not processed_ok:
+                self._notify(f"⏭️ '{drama_name}' 本地未找到可处理的目录，跳过并继续下一个日期")
+                break
+            
             if self._stop:
                 break
-    def _process_single_drama(self, date_label: str, drama_name: str, info: Dict[str, str]) -> None:
+    def _process_single_drama(self, date_label: str, drama_name: str, info: Dict[str, str]) -> bool:
         """Process a single drama extracted from Feishu."""
         config_copy = self.base_config.copy(deep=True)
         config_copy.include = [drama_name]
@@ -294,4 +299,8 @@ class FeishuWatcher:
         
         self._notify(f"🎬 开始处理 {date_label} - {drama_name}")
         total_done, total_planned = processor.process_all_dramas(str(root_path), drama_dates)
+        if total_planned == 0:
+            self._notify(f"⚠️ 未找到 '{drama_name}' 对应的本地剧集目录，跳过")
+            return False
         self._notify(f"✅ {drama_name} 完成：{total_done}/{total_planned} 条素材")
+        return True
