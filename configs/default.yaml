@@ -143,7 +143,7 @@ feishu:
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   # table_id: "tblzO48FFil82fas" # 牵龙
-  table_id: "tblVC9djdl4PSqIG" # 散柔
+  table_id: "tblsAgNBXHYKRwgD" # 散柔
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"
