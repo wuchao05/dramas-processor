@@ -1,27 +1,28 @@
+---
 # Drama Processor Default Configuration
 # 专业短剧视频处理工具的默认配置文件
 
 # Basic processing settings
 target_fps: 60
 smart_fps: true
-fast_mode: true # 优化：启用快速模式，减少不必要的滤镜处理
-filter_threads: 16 # 优化：增加滤镜线程数，提升FFmpeg处理速度
-verbose: false # Show detailed FFmpeg commands and debug information
+fast_mode: true  # 优化：启用快速模式，减少不必要的滤镜处理
+filter_threads: 16  # 优化：增加滤镜线程数，提升FFmpeg处理速度
+verbose: false  # Show detailed FFmpeg commands and debug information
 
 # Duration settings (in seconds)
-min_duration: 480.0 # 8 minutes (--min-sec)
-max_duration: 900.0 # 15 minutes (--max-sec)
+min_duration: 480.0  # 8 minutes (--min-sec)
+max_duration: 900.0  # 15 minutes (--max-sec)
 
 # Material generation settings
-count: 25 # Number of materials per drama (--count)
-material_code: "xh" # 素材文件名中使用的标识（可更改为 xh 等）
+count: 25  # Number of materials per drama (--count)
+material_code: "xh"  # 素材文件名中使用的标识（可更改为 xh 等）
 date_str:
-  null # 日期字符串，用于文件名和目录组织 (--date)
+  null  # 日期字符串，用于文件名和目录组织 (--date)
   # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录
 
 # Start point selection settings
 exclude_last_episodes:
-  8 # Exclude the last N episodes when selecting start points
+  8  # Exclude the last N episodes when selecting start points
   # 在选择起始点时排除最后N集，确保有足够的后续内容用于剪辑
   # 例如：设置为10表示起始点不会选择最后10集
 
@@ -29,55 +30,55 @@ exclude_last_episodes:
 title_font_size: 36
 bottom_font_size: 8
 side_font_size: 28
-footer_text: "热门短剧 休闲必看" # (--footer-text)
-side_text: "剧情纯属虚构 请勿模仿" # (--side-text)
+footer_text: "热门短剧 休闲必看"  # (--footer-text)
+side_text: "剧情纯属虚构 请勿模仿"  # (--side-text)
 title_colors:
-  - "#FFA500" # Orange
-  - "#FFB347" # Light Orange
-  - "#FF8C00" # Dark Orange
-  - "#FFD580" # Peach
-  - "#E69500" # Earth Orange
-  - "#FFAE42" # Bright Orange
+  - "#FFA500"  # Orange
+  - "#FFB347"  # Light Orange
+  - "#FF8C00"  # Dark Orange
+  - "#FFD580"  # Peach
+  - "#E69500"  # Earth Orange
+  - "#FFAE42"  # Bright Orange
 
 # Processing behavior
-random_start: true # (--random-start / --no-random-start)
-seed: null # Random seed (--seed)
-use_hardware: true # Use hardware encoding by default (--sw inverts this)
-keep_temp: false # (--keep-temp)
-jobs: 1 # Concurrent jobs per drama (--jobs)
+random_start: true  # (--random-start / --no-random-start)
+seed: null  # Random seed (--seed)
+use_hardware: true  # Use hardware encoding by default (--sw inverts this)
+keep_temp: false  # (--keep-temp)
+jobs: 1  # Concurrent jobs per drama (--jobs)
 
 # Canvas/Resolution settings
-canvas: null # Canvas size: 'WxH' or 'first' (--canvas)
-reference_resolution: null # Will be auto-detected
+canvas: null  # Canvas size: 'WxH' or 'first' (--canvas)
+reference_resolution: null  # Will be auto-detected
 
 # Directory settings
-default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径：D盘短剧剪辑源素材视频目录
-backup_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：E盘备份源素材视频目录
-temp_dir: "/tmp/drama_processor" # WSL Linux 临时目录
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频"  # WSL 路径：D盘短剧剪辑源素材视频目录
+backup_source_dir: "/mnt/e/短剧剪辑/源素材视频"  # WSL 路径：E盘备份源素材视频目录
+temp_dir: "/tmp/drama_processor"  # WSL Linux 临时目录
 output_dir:
-  "../导出素材" # 输出目录 (--out-dir)
+  "../导出素材"  # 输出目录 (--out-dir)
   # 如果设置了date_str，实际会使用其上一层的"{date_str}导出"目录
-tail_cache_dir: "/tmp/tails_cache" # 尾部视频缓存目录
-tail_file: "assets/tail.mp4" # 默认尾部视频文件
-refresh_tail_cache: false # Force refresh tail cache (--refresh-tail-cache)
+tail_cache_dir: "/tmp/tails_cache"  # 尾部视频缓存目录
+tail_file: "assets/tail.mp4"  # 默认尾部视频文件
+refresh_tail_cache: false  # Force refresh tail cache (--refresh-tail-cache)
 
 # Font settings
-font_file: "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc" # WSL Linux 字体路径
+font_file: "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"  # WSL Linux 字体路径
 
 # Watermark settings
-watermark_path: "assets/watermark-xiaohong.png" # 水印图片路径
-enable_watermark: false # 启用水印功能，将logo放置在左上角
-enable_brand_text: true # 启用品牌文字功能，默认文字为"小红看剧"
-brand_text: "热门短剧" # 品牌文字内容（默认文案，向后兼容）
+watermark_path: "assets/watermark-xiaohong.png"  # 水印图片路径
+enable_watermark: false  # 启用水印功能，将logo放置在左上角
+enable_brand_text: true  # 启用品牌文字功能，默认文字为"小红看剧"
+brand_text: "热门短剧"  # 品牌文字内容（默认文案，向后兼容）
 
- # 多素材文案配置 - 支持范围映射和循环模式
+# 多素材文案配置 - 支持范围映射和循环模式
 brand_text_mapping:
   # 模式选择: "range" 为范围映射模式, "cycle" 为循环模式
-  mode: "range" # "range" | "cycle"
+  mode: "range"  # "range" | "cycle"
 
   # 范围映射模式配置 (mode: "range")
   ranges:
-    - range: "01-05" # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
+    - range: "01-05"  # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
       text: "小红看剧"
     - range: "06-10"
       text: "斯娜看剧"
@@ -103,39 +104,39 @@ brand_text_mapping:
   default_text: "热门短剧"
 
 # Selection settings
-include: null # Include specific dramas (--include)
-exclude: null # Exclude specific dramas (--exclude)
-full: false # Process all dramas (--full)
-no_interactive: false # Disable interactive selection (--no-interactive)
+include: null  # Include specific dramas (--include)
+exclude: null  # Exclude specific dramas (--exclude)
+full: false  # Process all dramas (--full)
+no_interactive: false  # Disable interactive selection (--no-interactive)
 
 # Cover settings - REMOVED
 
 # Video encoding settings
 video:
-  hw_codec: "auto" # 自动检测最佳硬件编码器 (WSL推荐)
-  sw_codec: "libx264" # Software video codec
-  bitrate: "6500k" # Video bitrate
-  max_rate: "6500k" # Maximum bitrate
-  buffer_size: "8000k" # Buffer size
-  soft_crf: "24" # Software encoding CRF
-  preset: "veryfast" # Encoding preset
-  profile: "high" # H.264 profile
-  level: "4.2" # Default H.264 level
-  hw_level: "4.2" # Hardware encoding level
-  sw_level: "4.1" # Software encoding level
-  tag: "avc1" # Video tag for hardware encoding
-  pixel_format: "yuv420p" # Pixel format
+  hw_codec: "auto"  # 自动检测最佳硬件编码器 (WSL推荐)
+  sw_codec: "libx264"  # Software video codec
+  bitrate: "6500k"  # Video bitrate
+  max_rate: "6500k"  # Maximum bitrate
+  buffer_size: "8000k"  # Buffer size
+  soft_crf: "24"  # Software encoding CRF
+  preset: "veryfast"  # Encoding preset
+  profile: "high"  # H.264 profile
+  level: "4.2"  # Default H.264 level
+  hw_level: "4.2"  # Hardware encoding level
+  sw_level: "4.1"  # Software encoding level
+  tag: "avc1"  # Video tag for hardware encoding
+  pixel_format: "yuv420p"  # Pixel format
 
 # Audio encoding settings
 audio:
-  codec: "aac" # Audio codec
-  bitrate: "128k" # Audio bitrate
-  sample_rate: 48000 # Audio sample rate
+  codec: "aac"  # Audio codec
+  bitrate: "128k"  # Audio bitrate
+  sample_rate: 48000  # Audio sample rate
 
 # Feishu integration toggle
-enable_feishu_features: true # 全局控制飞书功能，关闭后所有飞书相关功能失效
-enable_feishu_notification: false # 启用飞书通知功能，发送处理状态更新到飞书
-feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355" # 自定义飞书机器人Webhook URL（可选，覆盖默认配置）
+enable_feishu_features: true  # 全局控制飞书功能，关闭后所有飞书相关功能失效
+enable_feishu_notification: false  # 启用飞书通知功能，发送处理状态更新到飞书
+feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355"  # 自定义飞书机器人Webhook URL（可选，覆盖默认配置）
 
 # 飞书API配置 - 小红
 feishu:
@@ -143,11 +144,11 @@ feishu:
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   # table_id: "tblzO48FFil82fas" # 牵龙
-  table_id: "tblsAgNBXHYKRwgD" # 散柔
+  table_id: "tblsAgNBXHYKRwgD"  # 散柔
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"
-  pending_status_value: "待剪辑" # 待处理状态值，用于筛选飞书记录
+  pending_status_value: "待剪辑"  # 待处理状态值，用于筛选飞书记录
   processing_status_value: "剪辑中"
   completed_status_value: "待上传"
   missing_source_status_value: "无源视频"
@@ -156,19 +157,19 @@ feishu:
 
 # 飞书轮询配置
 feishu_watcher:
-  enabled: true # 是否开启自动轮询
-  poll_interval: 1800 # 轮询飞书的间隔（秒）
-  max_dates_per_cycle: 2 # 单次轮询最多并行触发的日期任务数量
-  settle_seconds: 120 # 同一日期任务在无新剧时继续等待的秒数
-  settle_rounds: 1 # 连续空轮次数，超过后认为该日期暂时无新任务
-  idle_exit_minutes: null # 长时间无任务时自动退出（分钟），null 表示一直运行
-  state_dir: "history/feishu_watcher" # watcher 状态存储目录
-  date_whitelist: [] # 仅监听的日期列表（为空表示全部日期）
-  date_blacklist: [] # 忽略的日期列表
-  status_filter: null # 覆盖默认的状态过滤值（默认使用 pending_status_value）
+  enabled: true  # 是否开启自动轮询
+  poll_interval: 1800  # 轮询飞书的间隔（秒）
+  max_dates_per_cycle: 2  # 单次轮询最多并行触发的日期任务数量
+  settle_seconds: 120  # 同一日期任务在无新剧时继续等待的秒数
+  settle_rounds: 1  # 连续空轮次数，超过后认为该日期暂时无新任务
+  idle_exit_minutes: null  # 长时间无任务时自动退出（分钟），null 表示一直运行
+  state_dir: "history/feishu_watcher"  # watcher 状态存储目录
+  date_whitelist: []  # 仅监听的日期列表（为空表示全部日期）
+  date_blacklist: []  # 忽略的日期列表
+  status_filter: null  # 覆盖默认的状态过滤值（默认使用 pending_status_value）
 
 # 日期去重设置
 date_deduplication:
-  enabled: true # 启用日期去重功能
-  storage_dir: "history/date_dedup" # 存储目录（相对于项目根目录）
-  skip_processed_by_default: false # 默认是否跳过已处理剧集（用户可通过 --skip-processed 覆盖）
+  enabled: true  # 启用日期去重功能
+  storage_dir: "history/date_dedup"  # 存储目录（相对于项目根目录）
+  skip_processed_by_default: false  # 默认是否跳过已处理剧集（用户可通过 --skip-processed 覆盖）
