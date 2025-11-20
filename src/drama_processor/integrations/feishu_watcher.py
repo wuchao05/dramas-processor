@@ -53,6 +53,7 @@ class FeishuWatcher:
         self._stop = False
         self.last_activity = time.time()
         self.executor = ThreadPoolExecutor(max_workers=self.max_dates)
+        self._wake_event = Event()
         self.active_tasks: Dict[str, "DateTask"] = {}
     
     def run(self, run_once: bool = False) -> None:
@@ -72,7 +73,9 @@ class FeishuWatcher:
                         self._notify("⏹️ 长时间未检测到待剪辑剧目，自动停止轮询")
                         break
                 
-                self._sleep_with_cancel(self.poll_interval)
+                # 等待下一次轮询，如期间有剧目完成会立即唤醒
+                if self._wake_event.wait(timeout=self.poll_interval):
+                    self._wake_event.clear()
         finally:
             if run_once:
                 self._wait_for_tasks()
@@ -299,6 +302,7 @@ class FeishuWatcher:
         while not self._stop:
             if cancel_event.is_set():
                 self._notify(f"⏹️ 日期 {date_label} 任务收到停止信号，结束")
+                self._wake_event.set()
                 break
             if cached_info is not None:
                 current_info = cached_info
@@ -316,6 +320,7 @@ class FeishuWatcher:
                 idle_rounds += 1
                 if idle_rounds >= self.settle_rounds:
                     self._notify(f"✅ 日期 {date_label} 暂无新的待剪辑剧，结束本轮处理")
+                    self._wake_event.set()
                     break
                 self._sleep_with_cancel(self.settle_seconds)
                 continue
@@ -327,6 +332,7 @@ class FeishuWatcher:
                 break
             if cancel_event.is_set():
                 self._notify(f"⏹️ 日期 {date_label} 任务收到停止信号，结束")
+                self._wake_event.set()
                 break
             
             latest_snapshot = self._fetch_date_tasks(date_label, client)
@@ -352,9 +358,11 @@ class FeishuWatcher:
             
             if self._stop:
                 break
+        self._wake_event.set()
     def _process_single_drama(self, date_label: str, drama_name: str, info: Dict[str, str], client: FeishuClient, cancel_event: Event) -> bool:
         """Process a single drama extracted from Feishu."""
         if cancel_event.is_set():
+            self._wake_event.set()
             return False
         config_copy = self.base_config.copy(deep=True)
         config_copy.include = [drama_name]
@@ -388,8 +396,20 @@ class FeishuWatcher:
         total_done, total_planned = processor.process_all_dramas(str(root_path), drama_dates)
         if total_planned == 0:
             self._notify(f"⚠️ 未找到 '{drama_name}' 对应的本地剧集目录，跳过")
+            missing_status = None
+            if self.base_config.feishu:
+                missing_status = getattr(self.base_config.feishu, "missing_source_status_value", None)
+            missing_status = missing_status or "无源视频"
+            if record_id:
+                try:
+                    if client.update_record_status(record_id, missing_status):
+                        self._notify(f"📝 已将 '{drama_name}' 状态更新为 '{missing_status}'")
+                except Exception as exc:  # pylint: disable=broad-except
+                    logger.warning(f"⚠️ 更新 '{drama_name}' 缺失状态失败: {exc}")
+            self._wake_event.set()
             return False
         self._notify(f"✅ {drama_name} 完成：{total_done}/{total_planned} 条素材")
+        self._wake_event.set()
         return True
 @dataclass
 class DateTask:

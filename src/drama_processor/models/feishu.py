@@ -17,6 +17,7 @@ class FeishuConfig(BaseModel):
     pending_status_value: str = Field(default="待剪辑", description="待处理状态值")
     completed_status_value: str = Field(default="已完成", description="已完成状态值")
     processing_status_value: str = Field(default="剪辑中", description="处理中状态值")
+    missing_source_status_value: str = Field(default="无源视频", description="无源素材状态值")
     page_size: int = Field(default=200, description="分页大小")
     token_refresh_interval: int = Field(default=7200000, description="token刷新间隔(毫秒)")
 
