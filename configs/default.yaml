@@ -159,7 +159,7 @@ feishu:
 feishu_watcher:
   enabled: true  # 是否开启自动轮询
   poll_interval: 1800  # 轮询飞书的间隔（秒）
-  max_dates_per_cycle: 2  # 单次轮询最多并行触发的日期任务数量
+  max_dates_per_cycle: 1  # 单次轮询最多并行触发的日期任务数量
   settle_seconds: 120  # 同一日期任务在无新剧时继续等待的秒数
   settle_rounds: 1  # 连续空轮次数，超过后认为该日期暂时无新任务
   idle_exit_minutes: null  # 长时间无任务时自动退出（分钟），null 表示一直运行
