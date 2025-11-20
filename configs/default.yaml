@@ -78,18 +78,20 @@ brand_text_mapping:
 
   # 范围映射模式配置 (mode: "range")
   ranges:
-    - range: "01-05"  # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
+    - range: "01-04"  # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
       text: "小红看剧"
-    - range: "06-10"
+    - range: "05-08"
       text: "斯娜看剧"
-    - range: "11-15"
+    - range: "09-12"
       text: "萍通剧坊"
-    - range: "16-18"
+    - range: "13-15"
       text: "清妍短剧"
-    - range: "19-22"
+    - range: "16-18"
       text: "看家本领"
-    - range: "23-25"
+    - range: "19-21"
       text: "奈煊剧场"
+    - range: "22-25"
+      text: "葸辉好剧"
 
   # 循环模式配置 (mode: "cycle")
   cycle_texts:
@@ -99,6 +101,7 @@ brand_text_mapping:
     - "清妍短剧"
     - "看家本领"
     - "奈煊剧场"
+    - "葸辉好剧"
 
   # 默认文案（当素材编号不匹配任何范围时使用）
   default_text: "热门短剧"
