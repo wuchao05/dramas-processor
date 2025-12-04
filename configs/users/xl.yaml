@@ -3,49 +3,51 @@
 
 # 素材生成设置
 count: 10 # 每部剧生成素材数量
-material_code: 'xl' # 素材文件名标识
+material_code: "xl" # 素材文件名标识
 
 # 标题颜色 - 蓝青色系
 title_colors:
-  - '#00CED1' # Dark Turquoise
-  - '#20B2AA' # Light Sea Green
-  - '#48D1CC' # Medium Turquoise
-  - '#40E0D0' # Turquoise
-  - '#5F9EA0' # Cadet Blue
-  - '#00BFFF' # Deep Sky Blue
+  - "#00CED1" # Dark Turquoise
+  - "#20B2AA" # Light Sea Green
+  - "#48D1CC" # Medium Turquoise
+  - "#40E0D0" # Turquoise
+  - "#5F9EA0" # Cadet Blue
+  - "#00BFFF" # Deep Sky Blue
 
 # 目录设置
-default_source_dir: '/mnt/e/短剧剪辑/源素材视频' # WSL 路径
+default_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径
 
 # 多素材文案配置
 brand_text_mapping:
-  mode: 'range'
+  mode: "range"
   ranges:
-    - range: '01-10'
-      text: '热门短剧'
+    - range: "01-05"
+      text: "茹悟好剧"
+    - range: "06-10"
+      text: "浮生剧场"
   cycle_texts:
-    - '热门短剧'
-  default_text: '热门短剧'
+    - "茹悟好剧"
+    - "浮生剧场"
+  default_text: "热门短剧"
 
 # 飞书功能开关
 enable_feishu_features: true
 enable_feishu_notification: false
-feishu_webhook_url: 'https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355'
+feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355"
 
 # 飞书API配置
-# TODO: 请填写 xl 用户的飞书配置
 feishu:
-  app_id: 'cli_a870f7611b7b1013'
-  app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
-  app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
-  table_id: 'tblU2gdZSltbN5Bt' # TODO: 请填写 xl 用户的表格ID
-  base_url: 'https://open.feishu.cn/open-apis/bitable/v1'
-  field_names: ['剧名', '账户', '日期', '搭建时间', '主体']
-  status_field_name: '当前状态'
-  pending_status_value: '待剪辑'
-  processing_status_value: '剪辑中'
-  completed_status_value: '待上传'
-  missing_source_status_value: '无源视频'
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
+  table_id: "tblU2gdZSltbN5Bt"
+  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
+  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
+  status_field_name: "当前状态"
+  pending_status_value: "待剪辑"
+  processing_status_value: "剪辑中"
+  completed_status_value: "待上传"
+  missing_source_status_value: "无源视频"
   page_size: 200
   token_refresh_interval: 7200000
 
@@ -57,8 +59,7 @@ feishu_watcher:
   settle_seconds: 120
   settle_rounds: 1
   idle_exit_minutes: null
-  state_dir: 'history/feishu_watcher'
+  state_dir: "history/feishu_watcher"
   date_whitelist: []
   date_blacklist: []
   status_filter: null
-
