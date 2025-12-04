@@ -120,6 +120,9 @@ class FeishuWatcherConfig(BaseModel):
 class ProcessingConfig(BaseModel):
     """Main processing configuration."""
     
+    # 当前激活的用户配置
+    active_user: Optional[str] = Field(default=None, description="当前激活的用户配置名称（如 xh, xl, xx）")
+    
     # Basic settings
     target_fps: int = Field(default=60, description="Target FPS")
     smart_fps: bool = Field(default=True, description="Enable smart FPS adaptation")
@@ -305,16 +308,3 @@ class ProcessingConfig(BaseModel):
         if v <= min_dur:
             raise ValueError("Max duration must be greater than min duration")
         return v
-class FeishuWatcherConfig(BaseModel):
-    """Feishu watcher configuration."""
-    
-    enabled: bool = Field(default=False, description="是否启用飞书轮询任务")
-    poll_interval: int = Field(default=1800, description="轮询飞书的间隔（秒）")
-    max_dates_per_cycle: int = Field(default=1, description="单次轮询最多自动启动的日期任务数量")
-    settle_seconds: int = Field(default=120, description="同一日期在无新任务时继续等待的秒数")
-    settle_rounds: int = Field(default=2, description="连续空轮次数，超过后认为该日期没有新任务")
-    idle_exit_minutes: Optional[int] = Field(default=None, description="长时间无任务时自动退出（分钟），None 表示一直运行")
-    state_dir: str = Field(default="history/feishu_watcher", description="轮询状态存储目录")
-    date_whitelist: Optional[List[str]] = Field(default=None, description="仅监听指定日期列表")
-    date_blacklist: Optional[List[str]] = Field(default=None, description="需要忽略的日期列表")
-    status_filter: Optional[str] = Field(default=None, description="覆盖默认的飞书状态过滤值")

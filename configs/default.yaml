@@ -2,6 +2,11 @@
 # Drama Processor Default Configuration
 # 专业短剧视频处理工具的默认配置文件
 
+# 当前激活的用户配置
+# 可选值: xh, xl, xx
+# 用户专属配置文件位于 configs/users/{active_user}.yaml
+active_user: xh
+
 # Basic processing settings
 target_fps: 60
 smart_fps: true
@@ -13,9 +18,8 @@ verbose: false # Show detailed FFmpeg commands and debug information
 min_duration: 480.0 # 8 minutes (--min-sec)
 max_duration: 900.0 # 15 minutes (--max-sec)
 
-# Material generation settings
-count: 25 # Number of materials per drama (--count)
-material_code: 'xh' # 素材文件名中使用的标识（可更改为 xh 等）
+# Material generation settings (可被用户配置覆盖)
+# count, material_code 已移至用户配置文件
 date_str:
   null # 日期字符串，用于文件名和目录组织 (--date)
   # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录
@@ -32,13 +36,7 @@ bottom_font_size: 8
 side_font_size: 28
 footer_text: '热门短剧 休闲必看' # (--footer-text)
 side_text: '剧情纯属虚构 请勿模仿' # (--side-text)
-title_colors:
-  - '#FFA500' # Orange
-  - '#FFB347' # Light Orange
-  - '#FF8C00' # Dark Orange
-  - '#FFD580' # Peach
-  - '#E69500' # Earth Orange
-  - '#FFAE42' # Bright Orange
+# title_colors 已移至用户配置文件
 
 # Processing behavior
 random_start: true # (--random-start / --no-random-start)
@@ -51,8 +49,8 @@ jobs: 1 # Concurrent jobs per drama (--jobs)
 canvas: null # Canvas size: 'WxH' or 'first' (--canvas)
 reference_resolution: null # Will be auto-detected
 
-# Directory settings
-default_source_dir: '/mnt/d/短剧剪辑/源素材视频' # WSL 路径：D盘短剧剪辑源素材视频目录
+# Directory settings (部分已移至用户配置)
+# default_source_dir 已移至用户配置文件
 backup_source_dir: '/mnt/e/短剧剪辑/源素材视频' # WSL 路径：E盘备份源素材视频目录
 temp_dir: '/tmp/drama_processor' # WSL Linux 临时目录
 output_dir:
@@ -70,44 +68,7 @@ watermark_path: 'assets/watermark-xiaohong.png' # 水印图片路径
 enable_watermark: false # 启用水印功能，将logo放置在左上角
 enable_brand_text: true # 启用品牌文字功能，默认文字为"小红看剧"
 brand_text: '热门短剧' # 品牌文字内容（默认文案，向后兼容）
-
-# 多素材文案配置 - 支持范围映射和循环模式
-brand_text_mapping:
-  # 模式选择: "range" 为范围映射模式, "cycle" 为循环模式
-  mode: 'range' # "range" | "cycle"
-
-  # 范围映射模式配置 (mode: "range")
-  ranges:
-    - range: '01-04' # 素材编号范围（支持格式: "01-03", "01,02,03", "01"）
-      text: '小红看剧'
-    - range: '05-08'
-      text: '斯娜看剧'
-    - range: '09-12'
-      text: '清妍短剧'
-    - range: '13-16'
-      text: '葸辉好剧'
-    - range: '17-20'
-      text: '哈哈看剧'
-    - range: '21-22'
-      text: '萍通剧坊'
-    - range: '23-24'
-      text: '看家本领'
-    - range: '25'
-      text: '奈煊剧场'
-
-  # 循环模式配置 (mode: "cycle")
-  cycle_texts:
-    - '小红看剧'
-    - '斯娜看剧'
-    - '清妍短剧'
-    - '葸辉好剧'
-    - '哈哈看剧'
-    - '萍通剧坊'
-    - '看家本领'
-    - '奈煊剧场'
-
-  # 默认文案（当素材编号不匹配任何范围时使用）
-  default_text: '热门短剧'
+# brand_text_mapping 已移至用户配置文件
 
 # Selection settings
 include: null # Include specific dramas (--include)
@@ -139,40 +100,12 @@ audio:
   bitrate: '128k' # Audio bitrate
   sample_rate: 48000 # Audio sample rate
 
-# Feishu integration toggle
-enable_feishu_features: true # 全局控制飞书功能，关闭后所有飞书相关功能失效
-enable_feishu_notification: false # 启用飞书通知功能，发送处理状态更新到飞书
-feishu_webhook_url: 'https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355' # 自定义飞书机器人Webhook URL（可选，覆盖默认配置）
-
-# 飞书API配置 - 小红
-feishu:
-  app_id: 'cli_a870f7611b7b1013'
-  app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
-  app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
-  # table_id: "tblzO48FFil82fas" # 牵龙
-  table_id: 'tblDOyi2Lzs80sv0' # 剧集状态-xh
-  base_url: 'https://open.feishu.cn/open-apis/bitable/v1'
-  field_names: ['剧名', '账户', '日期', '搭建时间', '主体']
-  status_field_name: '当前状态'
-  pending_status_value: '待剪辑' # 待处理状态值，用于筛选飞书记录
-  processing_status_value: '剪辑中'
-  completed_status_value: '待上传'
-  missing_source_status_value: '无源视频'
-  page_size: 200
-  token_refresh_interval: 7200000
-
-# 飞书轮询配置
-feishu_watcher:
-  enabled: true # 是否开启自动轮询
-  poll_interval: 1800 # 轮询飞书的间隔（秒）
-  max_dates_per_cycle: 1 # 单次轮询最多并行触发的日期任务数量
-  settle_seconds: 120 # 同一日期任务在无新剧时继续等待的秒数
-  settle_rounds: 1 # 连续空轮次数，超过后认为该日期暂时无新任务
-  idle_exit_minutes: null # 长时间无任务时自动退出（分钟），null 表示一直运行
-  state_dir: 'history/feishu_watcher' # watcher 状态存储目录
-  date_whitelist: [] # 仅监听的日期列表（为空表示全部日期）
-  date_blacklist: [] # 忽略的日期列表
-  status_filter: null # 覆盖默认的状态过滤值（默认使用 pending_status_value）
+# 以下飞书相关配置已移至用户配置文件：
+# - enable_feishu_features
+# - enable_feishu_notification
+# - feishu_webhook_url
+# - feishu
+# - feishu_watcher
 
 # 日期去重设置
 date_deduplication:
