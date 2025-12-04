@@ -3,69 +3,69 @@
 
 # 素材生成设置
 count: 25 # 每部剧生成素材数量
-material_code: 'xh' # 素材文件名标识
+material_code: "xh" # 素材文件名标识
 
 # 标题颜色
 title_colors:
-  - '#FFA500' # Orange
-  - '#FFB347' # Light Orange
-  - '#FF8C00' # Dark Orange
-  - '#FFD580' # Peach
-  - '#E69500' # Earth Orange
-  - '#FFAE42' # Bright Orange
+  - "#FFA500" # Orange
+  - "#FFB347" # Light Orange
+  - "#FF8C00" # Dark Orange
+  - "#FFD580" # Peach
+  - "#E69500" # Earth Orange
+  - "#FFAE42" # Bright Orange
 
 # 目录设置
-default_source_dir: '/mnt/d/短剧剪辑/源素材视频' # WSL 路径
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
 
 # 多素材文案配置
 brand_text_mapping:
-  mode: 'range'
+  mode: "range"
   ranges:
-    - range: '01-04'
-      text: '小红看剧'
-    - range: '05-08'
-      text: '斯娜看剧'
-    - range: '09-12'
-      text: '清妍短剧'
-    - range: '13-16'
-      text: '葸辉好剧'
-    - range: '17-20'
-      text: '哈哈看剧'
-    - range: '21-22'
-      text: '萍通剧坊'
-    - range: '23-24'
-      text: '看家本领'
-    - range: '25'
-      text: '奈煊剧场'
+    - range: "01-04"
+      text: "小红看剧"
+    - range: "05-08"
+      text: "斯娜看剧"
+    - range: "09-12"
+      text: "清妍短剧"
+    - range: "13-16"
+      text: "葸辉好剧"
+    - range: "17-20"
+      text: "哈哈看剧"
+    - range: "21-22"
+      text: "萍通剧坊"
+    - range: "23-24"
+      text: "看家本领"
+    - range: "25"
+      text: "奈煊剧场"
   cycle_texts:
-    - '小红看剧'
-    - '斯娜看剧'
-    - '清妍短剧'
-    - '葸辉好剧'
-    - '哈哈看剧'
-    - '萍通剧坊'
-    - '看家本领'
-    - '奈煊剧场'
-  default_text: '热门短剧'
+    - "小红看剧"
+    - "斯娜看剧"
+    - "清妍短剧"
+    - "葸辉好剧"
+    - "哈哈看剧"
+    - "萍通剧坊"
+    - "看家本领"
+    - "奈煊剧场"
+  default_text: "热门短剧"
 
 # 飞书功能开关
 enable_feishu_features: true
 enable_feishu_notification: false
-feishu_webhook_url: 'https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355'
+feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355"
 
 # 飞书API配置
 feishu:
-  app_id: 'cli_a870f7611b7b1013'
-  app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
-  app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
-  table_id: 'tblDOyi2Lzs80sv0' # 剧集状态-xh
-  base_url: 'https://open.feishu.cn/open-apis/bitable/v1'
-  field_names: ['剧名', '账户', '日期', '搭建时间', '主体']
-  status_field_name: '当前状态'
-  pending_status_value: '待剪辑'
-  processing_status_value: '剪辑中'
-  completed_status_value: '待上传'
-  missing_source_status_value: '无源视频'
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
+  table_id: "tblDOyi2Lzs80sv0" # 剧集状态-xh
+  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
+  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
+  status_field_name: "当前状态"
+  pending_status_value: "待剪辑"
+  processing_status_value: "剪辑中"
+  completed_status_value: "待上传"
+  missing_source_status_value: "无源视频"
   page_size: 200
   token_refresh_interval: 7200000
 
@@ -77,8 +77,7 @@ feishu_watcher:
   settle_seconds: 120
   settle_rounds: 1
   idle_exit_minutes: null
-  state_dir: 'history/feishu_watcher'
+  state_dir: "history/feishu_watcher"
   date_whitelist: []
   date_blacklist: []
   status_filter: null
-

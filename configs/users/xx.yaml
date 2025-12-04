@@ -5,14 +5,14 @@
 count: 10 # 每部剧生成素材数量
 material_code: 'xx' # 素材文件名标识
 
-# 标题颜色
+# 标题颜色 - 绿色系
 title_colors:
-  - '#FFA500' # Orange
-  - '#FFB347' # Light Orange
-  - '#FF8C00' # Dark Orange
-  - '#FFD580' # Peach
-  - '#E69500' # Earth Orange
-  - '#FFAE42' # Bright Orange
+  - '#32CD32' # Lime Green
+  - '#00FA9A' # Medium Spring Green
+  - '#7CFC00' # Lawn Green
+  - '#98FB98' # Pale Green
+  - '#3CB371' # Medium Sea Green
+  - '#00FF7F' # Spring Green
 
 # 目录设置
 default_source_dir: '/mnt/e/短剧剪辑/源素材视频' # WSL 路径

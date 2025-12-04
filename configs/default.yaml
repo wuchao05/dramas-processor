@@ -34,8 +34,8 @@ exclude_last_episodes:
 title_font_size: 36
 bottom_font_size: 8
 side_font_size: 28
-footer_text: '热门短剧 休闲必看' # (--footer-text)
-side_text: '剧情纯属虚构 请勿模仿' # (--side-text)
+footer_text: "热门短剧 休闲必看" # (--footer-text)
+side_text: "剧情纯属虚构 请勿模仿" # (--side-text)
 # title_colors 已移至用户配置文件
 
 # Processing behavior
@@ -51,23 +51,23 @@ reference_resolution: null # Will be auto-detected
 
 # Directory settings (部分已移至用户配置)
 # default_source_dir 已移至用户配置文件
-backup_source_dir: '/mnt/e/短剧剪辑/源素材视频' # WSL 路径：E盘备份源素材视频目录
-temp_dir: '/tmp/drama_processor' # WSL Linux 临时目录
+backup_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：E盘备份源素材视频目录
+temp_dir: "/tmp/drama_processor" # WSL Linux 临时目录
 output_dir:
-  '../导出素材' # 输出目录 (--out-dir)
+  "../导出素材" # 输出目录 (--out-dir)
   # 如果设置了date_str，实际会使用其上一层的"{date_str}导出"目录
-tail_cache_dir: '/tmp/tails_cache' # 尾部视频缓存目录
-tail_file: 'assets/tail.mp4' # 默认尾部视频文件
+tail_cache_dir: "/tmp/tails_cache" # 尾部视频缓存目录
+tail_file: "assets/tail.mp4" # 默认尾部视频文件
 refresh_tail_cache: false # Force refresh tail cache (--refresh-tail-cache)
 
 # Font settings
-font_file: '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc' # WSL Linux 字体路径
+font_file: "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc" # WSL Linux 字体路径
 
 # Watermark settings
-watermark_path: 'assets/watermark-xiaohong.png' # 水印图片路径
+watermark_path: "assets/watermark-xiaohong.png" # 水印图片路径
 enable_watermark: false # 启用水印功能，将logo放置在左上角
 enable_brand_text: true # 启用品牌文字功能，默认文字为"小红看剧"
-brand_text: '热门短剧' # 品牌文字内容（默认文案，向后兼容）
+brand_text: "热门短剧" # 品牌文字内容（默认文案，向后兼容）
 # brand_text_mapping 已移至用户配置文件
 
 # Selection settings
@@ -80,24 +80,24 @@ no_interactive: false # Disable interactive selection (--no-interactive)
 
 # Video encoding settings
 video:
-  hw_codec: 'auto' # 自动检测最佳硬件编码器 (WSL推荐)
-  sw_codec: 'libx264' # Software video codec
-  bitrate: '6500k' # Video bitrate
-  max_rate: '6500k' # Maximum bitrate
-  buffer_size: '8000k' # Buffer size
-  soft_crf: '24' # Software encoding CRF
-  preset: 'veryfast' # Encoding preset
-  profile: 'high' # H.264 profile
-  level: '4.2' # Default H.264 level
-  hw_level: '4.2' # Hardware encoding level
-  sw_level: '4.1' # Software encoding level
-  tag: 'avc1' # Video tag for hardware encoding
-  pixel_format: 'yuv420p' # Pixel format
+  hw_codec: "auto" # 自动检测最佳硬件编码器 (WSL推荐)
+  sw_codec: "libx264" # Software video codec
+  bitrate: "6500k" # Video bitrate
+  max_rate: "6500k" # Maximum bitrate
+  buffer_size: "8000k" # Buffer size
+  soft_crf: "24" # Software encoding CRF
+  preset: "veryfast" # Encoding preset
+  profile: "high" # H.264 profile
+  level: "4.2" # Default H.264 level
+  hw_level: "4.2" # Hardware encoding level
+  sw_level: "4.1" # Software encoding level
+  tag: "avc1" # Video tag for hardware encoding
+  pixel_format: "yuv420p" # Pixel format
 
 # Audio encoding settings
 audio:
-  codec: 'aac' # Audio codec
-  bitrate: '128k' # Audio bitrate
+  codec: "aac" # Audio codec
+  bitrate: "128k" # Audio bitrate
   sample_rate: 48000 # Audio sample rate
 
 # 以下飞书相关配置已移至用户配置文件：
@@ -110,5 +110,5 @@ audio:
 # 日期去重设置
 date_deduplication:
   enabled: true # 启用日期去重功能
-  storage_dir: 'history/date_dedup' # 存储目录（相对于项目根目录）
+  storage_dir: "history/date_dedup" # 存储目录（相对于项目根目录）
   skip_processed_by_default: false # 默认是否跳过已处理剧集（用户可通过 --skip-processed 覆盖）
