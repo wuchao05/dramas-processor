@@ -28,7 +28,7 @@ brand_text_mapping:
   default_text: "热门短剧"
 
 # 飞书功能开关
-enable_feishu_features: false
+enable_feishu_features: true
 enable_feishu_notification: false
 feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355"
 
