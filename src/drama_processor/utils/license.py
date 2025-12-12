@@ -10,6 +10,7 @@ import base64
 import json
 import logging
 import os
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Set
@@ -29,8 +30,9 @@ FEATURE_ALL = "*"
 # 默认公钥（Ed25519），请在你自己发放 license 前替换为真实公钥。
 # 也可以通过环境变量 DRAMA_PROCESSOR_PUBLIC_KEY 传入 PEM 公钥覆盖。
 DEFAULT_PUBLIC_KEY_PEM = """-----BEGIN PUBLIC KEY-----
-<REPLACE_WITH_YOUR_ED25519_PUBLIC_KEY_PEM>
------END PUBLIC KEY-----"""
+MCowBQYDK2VwAyEArQNAUDDUGTVPmukpkkAQXNtCWpfM8MC6hWLsgOBsaQE=
+-----END PUBLIC KEY-----
+"""
 
 
 class LicenseError(Exception):
@@ -177,6 +179,18 @@ def get_license_info_from_args_and_env(
 
     校验失败时返回 None（并可选记录 warning）。
     """
+    # 开发态旁路：仅在非 PyInstaller（非 frozen）场景下生效。
+    # 方便你在源码根目录调试 Feishu 功能时不必携带 license。
+    dev_bypass_raw = os.environ.get("DRAMA_PROCESSOR_DEV_BYPASS")
+    if not getattr(sys, "frozen", False) and dev_bypass_raw:
+        if dev_bypass_raw.strip().lower() in {"1", "true", "yes", "y", "on"}:
+            return LicenseInfo(
+                user="dev-bypass",
+                features={FEATURE_ALL},
+                expires_at=None,
+                raw={"dev_bypass": True},
+            )
+
     argv = argv or []
     path = _find_license_path_in_argv(argv) or os.environ.get("DRAMA_PROCESSOR_LICENSE")
     if not path:
@@ -188,8 +202,9 @@ def get_license_info_from_args_and_env(
         return None
 
 
-def get_allowed_features_from_args_and_env(argv: Optional[List[str]] = None) -> Set[str]:
+def get_allowed_features_from_args_and_env(
+    argv: Optional[List[str]] = None,
+) -> Set[str]:
     """快速获取授权 feature 集合（用于 import 时决定是否注册命令）。"""
     info = get_license_info_from_args_and_env(argv)
     return info.features if info else set()
-

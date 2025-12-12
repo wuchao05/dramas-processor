@@ -69,6 +69,8 @@ export DRAMA_PROCESSOR_LICENSE=/path/to/license.json
 drama-processor feishu run
 ```
 
+> 开发调试：在源码运行（非 PyInstaller 二进制）时，可设置 `DRAMA_PROCESSOR_DEV_BYPASS=1` 跳过 license 校验以使用 `feishu` 命令；对发布的二进制无效。
+
 ### License 文件格式（Ed25519）
 
 License 为 JSON，示例：

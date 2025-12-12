@@ -72,3 +72,6 @@ htmlcov/
 # Temporary files
 *.tmp
 *.temp
+
+# License keys（本地生成，避免泄露）
+license_keys/
