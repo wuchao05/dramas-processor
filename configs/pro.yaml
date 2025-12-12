@@ -1,0 +1,146 @@
+---
+# Drama Processor Pro 配置模板（对外/自用）
+#
+# 说明：
+# - Pro 版本可在 license 授权后使用 Feishu 能力。
+# - 本文件不依赖 users 目录，方便直接复制到 pro_release/configs/。
+# - 请在发给别人前替换所有占位符（尤其是 Feishu 凭据）。
+
+# ===================== 必填：源素材目录 =====================
+# WSL 路径示例：/mnt/d/短剧剪辑/源素材视频
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频"
+# 备份目录：可与主目录相同或填另一路径
+backup_source_dir: "/mnt/d/短剧剪辑/源素材视频"
+
+# ===================== 素材生成与文件命名 =====================
+count: 10
+material_code: "pro"
+date_str: null
+
+# ===================== 时长/起点策略 =====================
+min_duration: 480.0
+max_duration: 900.0
+exclude_last_episodes: 8
+random_start: true
+seed: null
+
+# ===================== 标题颜色 =====================
+title_colors:
+  - "#FFA500"
+  - "#FFB347"
+  - "#FF8C00"
+
+# ===================== 多素材品牌文案 =====================
+enable_brand_text: true
+brand_text: "热门短剧"
+brand_text_mapping:
+  mode: "range"
+  ranges:
+    - range: "01-10"
+      text: "Pro看剧"
+  cycle_texts:
+    - "Pro看剧"
+  default_text: "热门短剧"
+
+# ===================== 文字叠加 =====================
+title_font_size: 36
+bottom_font_size: 8
+side_font_size: 28
+footer_text: "热门短剧 休闲必看"
+side_text: "剧情纯属虚构 请勿模仿"
+font_file: null
+
+# ===================== 视频/性能 =====================
+target_fps: 60
+smart_fps: true
+fast_mode: true
+filter_threads: 16
+verbose: false
+use_hardware: true
+keep_temp: false
+jobs: 1
+
+# ===================== 画布/分辨率 =====================
+canvas: null
+reference_resolution: null
+
+# ===================== 目录/尾部 =====================
+temp_dir: null
+output_dir: "../导出素材"
+tail_cache_dir: "/tmp/tails_cache"
+tail_file: "assets/tail.mp4"
+refresh_tail_cache: false
+
+# ===================== 去重 =====================
+enable_deduplication: false
+
+# ===================== 水印（Pro 默认关闭） =====================
+enable_watermark: false
+watermark_path: "assets/watermark-xiaohong.png"
+
+# ===================== 编码参数 =====================
+video:
+  hw_codec: "auto"
+  sw_codec: "libx264"
+  bitrate: "6500k"
+  max_rate: "6500k"
+  buffer_size: "8000k"
+  soft_crf: "24"
+  preset: "veryfast"
+  profile: "high"
+  level: "4.2"
+  hw_level: "4.2"
+  sw_level: "4.1"
+  tag: "avc1"
+  pixel_format: "yuv420p"
+
+audio:
+  codec: "aac"
+  bitrate: "128k"
+  sample_rate: 48000
+
+# ===================== 日期去重（本地） =====================
+date_deduplication:
+  enabled: true
+  storage_dir: "history/date_dedup"
+  skip_processed_by_default: false
+
+# ===================== 选择策略（一般不用改） =====================
+include: null
+exclude: null
+full: false
+no_interactive: false
+
+# ===================== Pro：Feishu 能力（需 license 才生效） =====================
+# 注意：没有 license 的情况下，Pro 会强制关闭 Feishu 并隐藏 feishu 命令。
+enable_feishu_features: true
+enable_feishu_notification: false
+feishu_webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/REPLACE_ME"
+
+feishu:
+  app_id: "cli_xxx_REPLACE_ME"
+  app_secret: "REPLACE_ME"
+  app_token: "REPLACE_ME"
+  table_id: "tbl_xxx_REPLACE_ME"
+  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
+  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
+  status_field_name: "当前状态"
+  pending_status_value: "待剪辑"
+  processing_status_value: "剪辑中"
+  completed_status_value: "待上传"
+  missing_source_status_value: "无源视频"
+  page_size: 200
+  token_refresh_interval: 7200000
+
+feishu_watcher:
+  enabled: false
+  poll_interval: 1800
+  max_dates_per_cycle: 1
+  settle_seconds: 120
+  settle_rounds: 2
+  idle_exit_minutes: null
+  state_dir: "history/feishu_watcher"
+  date_whitelist: []
+  date_blacklist: []
+  status_filter: null
+
