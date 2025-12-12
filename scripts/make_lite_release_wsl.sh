@@ -147,6 +147,13 @@ chmod +x "${OUT_DIR}/${NAME}"
 cp -a "${REPO_ROOT}/assets/." "${OUT_DIR}/assets/"
 cp -f "${LITE_CONFIG}" "${OUT_DIR}/configs/lite.yaml"
 
+# Lite 包默认不带水印资源（你朋友暂时用不上）
+for f in "${OUT_DIR}/assets"/watermark-*; do
+  if [[ -f "$f" ]]; then
+    rm -f "$f"
+  fi
+done
+
 echo "[OK] 发布目录已准备完成。"
 
 if [[ "${NO_ARCHIVE}" -eq 0 ]]; then
