@@ -79,6 +79,20 @@ drama-processor feishu list
 
 Lite 版用于对外给朋友使用：保留除 Feishu 外的所有功能，且运行时强制关闭 Feishu。
 
+### 2.0 发布包机器绑定（重要）
+
+Lite/Pro 的**发布包（二进制）**默认启用“机器绑定授权”：
+
+- 必须提供与当前机器匹配的 `license.json`，否则程序会直接退出。
+- 推荐把 `license.json` 放在二进制同目录（自动识别），避免每次传参。
+- 获取指纹（让朋友执行并把输出发给你）：
+
+```bash
+./drama-processor-lite --print-fingerprint
+```
+
+你再用仓库内的签发工具生成绑定该指纹的 `license.json`（见第 3.2 节示例）。
+
 ### 2.1 生成 Lite 包
 
 在 WSL/Linux 的仓库根目录（已激活 `.venv`）：
@@ -126,7 +140,9 @@ sudo apt-get install ffmpeg   # Ubuntu
 
 cd lite_release
 chmod +x drama-processor-lite
-# 发布包运行需要 license（机器绑定），推荐把 license.json 放在二进制同目录（会自动识别）
+# 发布包运行需要 license（机器绑定）：
+# 1) 先打印指纹发给你签发 license：./drama-processor-lite --print-fingerprint
+# 2) 将你签发的 license.json 放到本目录（与二进制同级）
 ./drama-processor-lite process
 ```
 
@@ -134,7 +150,7 @@ chmod +x drama-processor-lite
 
 - 可用：`process`、`analyze`、`history`、`config`、隐藏的 `run`。  
 - 不可用：任何 `feishu ...` 命令（不会出现在 `--help` 里）。  
-- 不需要 license。
+- 发布包运行需要 license（仅用于机器绑定；是否包含 `feishu` 特性对 Lite 无影响）。
 
 ---
 
@@ -157,7 +173,7 @@ pro_release/
   drama-processor
   assets/
   configs/
-    default.yaml   # 脚本会把你指定的 pro.yaml 拷贝成 default.yaml
+    pro.yaml
 ```
 
 ### 3.2 License 生成与使用
@@ -216,15 +232,15 @@ export DRAMA_PROCESSOR_LICENSE=/path/to/license.json
 
 ### 3.3 配置方式
 
-- Pro 二进制不传 `-c` 时，会优先找 `configs/pro.yaml`（存在则用），否则回退 `configs/default.yaml`。
-- 推荐放一份 `configs/pro.yaml` 在发布包里，并写好飞书凭据（不要用你的 users 文件直接复制给别人）。
+- Pro 二进制不传 `-c` 时，会优先找 `configs/pro.yaml`（存在则用）。
+- 推荐把飞书凭据写在发布包内的 `configs/pro.yaml`（不要用你的 `configs/users/*.yaml` 直接复制给别人）。
 
 ### 3.4 功能范围
 
-- 无 license：Pro ≈ Lite（本地剪辑功能全有，Feishu 被隐藏且强制关闭）。  
-- 有 license（features 包含 `feishu` 或 `*`）：
-  - `feishu list/run/watch/dedup` 可用；
-  - `process/analyze/history/config` 照常可用。
+- 发布包运行：必须有 license（机器绑定），否则无法启动。
+- license 的 `features` 决定是否允许 Feishu：
+  - 包含 `feishu` 或 `*`：`feishu list/run/watch/dedup` 可用。
+  - 不包含 `feishu`：仍可用 `process/analyze/history/config`，但 `feishu` 会被隐藏/禁用。
 
 ---
 
