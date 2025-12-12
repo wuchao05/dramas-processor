@@ -50,7 +50,8 @@ python -m drama_processor.cli.main process
 ### 1.2 配置方式
 
 - **Lite 源码运行**：不传 `-c` 时会优先用 `configs/lite.yaml`（存在则生效）。  
-- **Pro 源码运行**：不传 `-c` 时会优先用 `configs/pro.yaml`，找不到再回退 `configs/default.yaml`。
+- **Pro 源码运行**：不传 `-c` 时会优先用 `configs/pro.yaml`，找不到再回退 `configs/default.yaml`。  
+  - 但当你设置了 `DRAMA_PROCESSOR_DEV_BYPASS=1`（源码调试 Feishu）时，会强制优先使用 `configs/default.yaml`，避免误用面向发布包的 `pro.yaml`。
 - 你可以通过 `-c/--config` 指定任意配置文件：
 
 ```bash
@@ -225,4 +226,3 @@ export DRAMA_PROCESSOR_LICENSE=/path/to/license.json
   不能，必须是字符串。无需备份时可填与主目录一致。
 - **加 `--date 11.12` 后导出目录名是什么？**  
   会创建 `11.12导出/`（新版已修复）。
-

@@ -1,6 +1,7 @@
 """Main CLI entry point."""
 
 import logging
+import os
 import sys
 from pathlib import Path
 from typing import List, Optional
@@ -77,20 +78,39 @@ def cli(
     # Load configuration
     # If no config specified, try to find default config file
     if config is None:
-        # Try to find default config file
-        # Pro 版本默认优先使用 configs/pro.yaml（若存在），否则回退 default.yaml
-        default_config_paths = [
-            Path("configs/pro.yaml"),
-            Path("configs/default.yaml"),
-            Path("config/pro.yaml"),
-            Path("config/default.yaml"),
-            Path("pro.yaml"),
-            Path("default.yaml"),
-            Path.cwd() / "configs" / "pro.yaml",
-            Path.cwd() / "configs" / "default.yaml",
-            Path.cwd() / "config" / "pro.yaml",
-            Path.cwd() / "config" / "default.yaml",
-        ]
+        # Try to find default config file.
+        # 约定：
+        # - Pro 二进制：优先 pro.yaml（若存在），否则回退 default.yaml
+        # - 源码开发态 + DEV_BYPASS：为避免误用 pro.yaml（仅面向发布包），强制优先 default.yaml
+        dev_bypass_raw = os.environ.get("DRAMA_PROCESSOR_DEV_BYPASS")
+        dev_bypass_enabled = (
+            not getattr(sys, "frozen", False)
+            and dev_bypass_raw is not None
+            and dev_bypass_raw.strip().lower() in {"1", "true", "yes", "y", "on"}
+        )
+
+        if dev_bypass_enabled:
+            default_config_paths = [
+                Path("configs/default.yaml"),
+                Path("config/default.yaml"),
+                Path("default.yaml"),
+                Path.cwd() / "configs" / "default.yaml",
+                Path.cwd() / "config" / "default.yaml",
+            ]
+        else:
+            # Pro 版本默认优先使用 configs/pro.yaml（若存在），否则回退 default.yaml
+            default_config_paths = [
+                Path("configs/pro.yaml"),
+                Path("configs/default.yaml"),
+                Path("config/pro.yaml"),
+                Path("config/default.yaml"),
+                Path("pro.yaml"),
+                Path("default.yaml"),
+                Path.cwd() / "configs" / "pro.yaml",
+                Path.cwd() / "configs" / "default.yaml",
+                Path.cwd() / "config" / "pro.yaml",
+                Path.cwd() / "config" / "default.yaml",
+            ]
         
         for config_path in default_config_paths:
             if config_path.exists():

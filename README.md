@@ -217,7 +217,8 @@ drama-processor -c configs/default.yaml process /path/to/dramas
 drama-processor -c my-config.yaml process /path/to/dramas
 ```
 
-> Pro 版本在不指定 `-c/--config` 时，会优先查找并使用 `configs/pro.yaml`（若存在），否则回退到 `configs/default.yaml`。
+> Pro 版本在不指定 `-c/--config` 时，会优先查找并使用 `configs/pro.yaml`（若存在），否则回退到 `configs/default.yaml`。  
+> 但在源码开发态并设置 `DRAMA_PROCESSOR_DEV_BYPASS=1` 时，会强制优先使用 `configs/default.yaml`。
 
 ### 配置文件示例
 
