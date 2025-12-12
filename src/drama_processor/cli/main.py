@@ -78,11 +78,17 @@ def cli(
     # If no config specified, try to find default config file
     if config is None:
         # Try to find default config file
+        # Pro 版本默认优先使用 configs/pro.yaml（若存在），否则回退 default.yaml
         default_config_paths = [
+            Path("configs/pro.yaml"),
             Path("configs/default.yaml"),
-            Path("config/default.yaml"), 
+            Path("config/pro.yaml"),
+            Path("config/default.yaml"),
+            Path("pro.yaml"),
             Path("default.yaml"),
+            Path.cwd() / "configs" / "pro.yaml",
             Path.cwd() / "configs" / "default.yaml",
+            Path.cwd() / "config" / "pro.yaml",
             Path.cwd() / "config" / "default.yaml",
         ]
         
