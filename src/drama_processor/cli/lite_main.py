@@ -12,9 +12,11 @@ from typing import Optional
 
 import click
 
-from ..config import ConfigManager, get_default_config
-from ..utils.logging import setup_logging
-from .commands import (
+# 注意：Lite 入口会被 PyInstaller 作为脚本直接执行，
+# 相对导入在该场景下会失效，因此这里使用绝对导入。
+from drama_processor.config import ConfigManager, get_default_config
+from drama_processor.utils.logging import setup_logging
+from drama_processor.cli.commands import (
     analyze_command,
     config_command,
     history_command,
@@ -117,4 +119,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
