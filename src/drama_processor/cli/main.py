@@ -10,6 +10,7 @@ import click
 
 from ..config import ConfigManager, get_default_config
 from ..core.processor import DramaProcessor
+from ..utils.fingerprint import get_machine_fingerprint
 from ..utils.logging import setup_logging
 from ..utils.license import (
     FEATURE_ALL,
@@ -40,6 +41,11 @@ _ALLOWED_FEATURES_AT_IMPORT = get_allowed_features_from_args_and_env(sys.argv)
     help="授权文件路径（可选，用于解锁 Feishu 等高级功能）",
 )
 @click.option(
+    "--print-fingerprint",
+    is_flag=True,
+    help="打印本机指纹（用于签发 license），打印后退出",
+)
+@click.option(
     "--log-level",
     type=click.Choice(["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]),
     default="INFO",
@@ -60,6 +66,7 @@ def cli(
     ctx,
     config: Optional[Path],
     license: Optional[Path],
+    print_fingerprint: bool,
     log_level: str,
     log_file: Optional[Path],
     no_rich: bool,
@@ -74,6 +81,10 @@ def cli(
         log_file=log_file,
         use_rich=not no_rich
     )
+
+    if print_fingerprint:
+        click.echo(get_machine_fingerprint())
+        return
     
     # Load configuration
     # If no config specified, try to find default config file
@@ -126,19 +137,27 @@ def cli(
         processing_config = get_default_config()
         logger.info("Using default configuration")
 
-    # License 校验：显式 --license 优先，否则从 argv/env 读取
+    # License 校验：显式 --license 优先，否则从 argv/env/默认路径读取
     license_info = None
     if license is not None:
         try:
             license_info = load_and_verify_license(str(license))
             logger.info("License 校验通过")
         except (LicenseError, Exception) as e:
-            logger.warning(f"License 校验失败，将以未授权模式运行：{e}")
-            license_info = None
+            click.echo(f"❌ License 校验失败：{e}", err=True)
+            sys.exit(1)
     else:
         license_info = get_license_info_from_args_and_env(sys.argv, logger_=logger)
 
     ctx.obj["license"] = license_info
+
+    # 二进制发布包强制要求 license（机器绑定）
+    if getattr(sys, "frozen", False) and license_info is None:
+        click.echo(
+            "❌ 缺少 license：发布包运行需要机器绑定授权文件（可用 --license 指定，或放置 license.json 到二进制同目录）",
+            err=True,
+        )
+        sys.exit(1)
 
     # 未授权 feishu 时，强制关闭所有 feishu 相关配置，避免通过 process 侧路使用
     if not (license_info and license_info.allows(FEATURE_FEISHU)):

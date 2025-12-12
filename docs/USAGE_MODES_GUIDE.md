@@ -126,6 +126,7 @@ sudo apt-get install ffmpeg   # Ubuntu
 
 cd lite_release
 chmod +x drama-processor-lite
+# 发布包运行需要 license（机器绑定），推荐把 license.json 放在二进制同目录（会自动识别）
 ./drama-processor-lite process
 ```
 
@@ -177,6 +178,25 @@ python scripts/license_tool.py sign \
   --private-key license_keys/ed25519_private.pem \
   --user me \
   --features process,analyze,config,history,feishu \
+  --bind-current-machine \
+  --expires-at 2026-01-01 \
+  --out license.json
+```
+
+如果是给朋友签发（你不在朋友机器上操作），让朋友先在发布包目录执行：
+
+```bash
+./drama-processor --print-fingerprint
+```
+
+把输出的指纹发给你，然后你用：
+
+```bash
+python scripts/license_tool.py sign \
+  --private-key license_keys/ed25519_private.pem \
+  --user friend-a \
+  --features process,analyze,config,history,feishu \
+  --machine-fingerprint <朋友发来的指纹> \
   --expires-at 2026-01-01 \
   --out license.json
 ```
@@ -192,7 +212,7 @@ export DRAMA_PROCESSOR_LICENSE=/path/to/license.json
 ./drama-processor feishu run
 ```
 
-> 当前不支持把 license 路径写进配置文件，原因是配置易被分发/提交，安全性差。
+> 提示：你也可以直接把 `license.json` 放在二进制同目录，程序会自动识别，无需每次传参/设环境变量。
 
 ### 3.3 配置方式
 

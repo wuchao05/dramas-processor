@@ -13,7 +13,10 @@ import os
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
+
+from .fingerprint import get_machine_fingerprint
 
 
 logger = logging.getLogger(__name__)
@@ -25,6 +28,8 @@ FEATURE_CONFIG = "config"
 FEATURE_HISTORY = "history"
 FEATURE_FEISHU = "feishu"
 FEATURE_ALL = "*"
+
+LICENSE_MACHINE_FINGERPRINT_FIELD = "machine_fingerprint"
 
 
 # 默认公钥（Ed25519），请在你自己发放 license 前替换为真实公钥。
@@ -60,6 +65,31 @@ def _find_license_path_in_argv(argv: List[str]) -> Optional[str]:
             return argv[i + 1]
         if arg.startswith("--license="):
             return arg.split("=", 1)[1]
+    return None
+
+
+def _find_default_license_path() -> Optional[str]:
+    """尝试自动寻找 license.json（无需每次传参）。"""
+    candidates = []
+
+    # 1) 当前目录
+    try:
+        candidates.append(Path.cwd() / "license.json")
+    except Exception:
+        pass
+
+    # 2) 可执行文件所在目录（发布包常见）
+    try:
+        candidates.append(Path(sys.executable).resolve().parent / "license.json")
+    except Exception:
+        pass
+
+    for p in candidates:
+        try:
+            if p.is_file():
+                return str(p)
+        except Exception:
+            continue
     return None
 
 
@@ -144,6 +174,18 @@ def verify_license_dict(
     except InvalidSignature as e:
         raise LicenseError("license 签名校验失败") from e
 
+    # 机器绑定校验：
+    # - 对 PyInstaller 二进制（sys.frozen）强制要求 machine_fingerprint
+    # - 源码模式下：若 license 中带了 machine_fingerprint 也会校验
+    machine_fp_in_license = data.get(LICENSE_MACHINE_FINGERPRINT_FIELD)
+    require_machine_binding = bool(getattr(sys, "frozen", False))
+    if require_machine_binding and not machine_fp_in_license:
+        raise LicenseError("license 缺少 machine_fingerprint（二进制运行必须绑定机器）")
+    if isinstance(machine_fp_in_license, str) and machine_fp_in_license.strip():
+        current_fp = get_machine_fingerprint()
+        if current_fp != machine_fp_in_license.strip():
+            raise LicenseError("license 与当前机器不匹配")
+
     expires_at = None
     expires_at_raw = data.get("expires_at")
     if isinstance(expires_at_raw, str) and expires_at_raw.strip():
@@ -192,7 +234,11 @@ def get_license_info_from_args_and_env(
             )
 
     argv = argv or []
-    path = _find_license_path_in_argv(argv) or os.environ.get("DRAMA_PROCESSOR_LICENSE")
+    path = (
+        _find_license_path_in_argv(argv)
+        or os.environ.get("DRAMA_PROCESSOR_LICENSE")
+        or _find_default_license_path()
+    )
     if not path:
         return None
     try:

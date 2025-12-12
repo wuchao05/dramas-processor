@@ -31,6 +31,39 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
 
+try:
+    # 在仓库内运行时可直接 import
+    from drama_processor.utils.fingerprint import get_machine_fingerprint
+except Exception:
+    # 允许未安装 -e 的情况下运行（例如仅复制 scripts/ 出来）
+    import hashlib
+    import subprocess
+
+    def get_machine_fingerprint() -> str:
+        linux_id = ""
+        try:
+            with open("/etc/machine-id", "r", encoding="utf-8") as f:
+                linux_id = f.read().strip()
+        except Exception:
+            pass
+        win_guid = ""
+        try:
+            out = subprocess.check_output(
+                ["/mnt/c/Windows/System32/reg.exe", "query", r"HKLM\SOFTWARE\Microsoft\Cryptography", "/v", "MachineGuid"],
+                text=True,
+                stderr=subprocess.DEVNULL,
+            )
+            for line in out.splitlines():
+                if "MachineGuid" in line and "REG_" in line:
+                    parts = line.split()
+                    if parts:
+                        win_guid = parts[-1].strip()
+                        break
+        except Exception:
+            pass
+        raw = f"win:{win_guid}|linux:{linux_id}".encode("utf-8", errors="ignore")
+        return hashlib.sha256(raw).hexdigest()
+
 
 def canonical_payload_bytes(data: Dict[str, Any]) -> bytes:
     """将 license 中除 signature 外字段做稳定序列化，作为签名原文。"""
@@ -147,6 +180,11 @@ def cmd_sign(args: argparse.Namespace) -> None:
         "features": features,
     }
 
+    if args.machine_fingerprint:
+        license_data["machine_fingerprint"] = args.machine_fingerprint.strip()
+    elif args.bind_current_machine:
+        license_data["machine_fingerprint"] = get_machine_fingerprint()
+
     if args.expires_at:
         license_data["expires_at"] = parse_expires_at(args.expires_at)
 
@@ -212,6 +250,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Drama Processor License 工具（Ed25519）")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
+    p_fp = sub.add_parser("fingerprint", help="打印本机指纹（用于签发 license）")
+    p_fp.set_defaults(func=lambda _args: print(get_machine_fingerprint()))
+
     p_keys = sub.add_parser("gen-keys", help="生成 Ed25519 密钥对")
     p_keys.add_argument("--out-dir", default="license_keys", help="输出目录（默认 license_keys/）")
     p_keys.add_argument("--password", default=None, help="可选：为私钥设置密码")
@@ -225,6 +266,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--features",
         required=True,
         help="功能列表，逗号分隔，如 process,analyze,config,history,feishu 或 *",
+    )
+    p_sign.add_argument(
+        "--machine-fingerprint",
+        default=None,
+        help="绑定的机器指纹（由对方运行 --print-fingerprint 或本工具 fingerprint 获得）",
+    )
+    p_sign.add_argument(
+        "--bind-current-machine",
+        action="store_true",
+        help="直接绑定当前机器指纹（用于你在本机自用签发）",
     )
     p_sign.add_argument("--expires-at", default=None, help="可选：过期时间（ISO8601 或 YYYY-MM-DD）")
     p_sign.add_argument("--out", default="license.json", help="输出 license 路径（默认 license.json）")
@@ -246,4 +297,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
