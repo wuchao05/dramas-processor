@@ -103,7 +103,17 @@ else
 fi
 
 if ! "${PYTHON}" -c "import PyInstaller" >/dev/null 2>&1; then
-  echo "[ERR] 未安装 pyinstaller，请先执行：pip install pyinstaller" >&2
+  echo "[ERR] 未安装 pyinstaller。" >&2
+  echo "" >&2
+  echo "在 Arch/WSL 里系统 Python 通常启用 PEP 668，系统 pip 不能直接装包。" >&2
+  echo "推荐做法：在仓库根目录创建并激活虚拟环境后安装：" >&2
+  echo "  python -m venv .venv" >&2
+  echo "  source .venv/bin/activate" >&2
+  echo "  pip install -r requirements.txt" >&2
+  echo "  pip install -e ." >&2
+  echo "  pip install pyinstaller" >&2
+  echo "" >&2
+  echo "或者用 pacman 安装（包名可先 pacman -Ss pyinstaller 查询）。" >&2
   exit 1
 fi
 
@@ -114,7 +124,8 @@ fi
 
 if [[ "${SKIP_BUILD}" -eq 0 ]]; then
   echo "[INFO] 开始构建 Lite 二进制..."
-  (cd "${REPO_ROOT}" && "${PYTHON}" -m PyInstaller -F -n "${NAME}" -m drama_processor.cli.lite_main)
+  # PyInstaller 需要传入入口脚本路径（不能用 python 的 -m 模块方式）
+  (cd "${REPO_ROOT}" && "${PYTHON}" -m PyInstaller -F -n "${NAME}" "src/drama_processor/cli/lite_main.py")
 else
   echo "[INFO] 跳过构建，直接打包..."
 fi
