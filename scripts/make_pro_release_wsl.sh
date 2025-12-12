@@ -4,7 +4,7 @@
 # 发布包包含：
 # - dist/drama-processor 生成的二进制
 # - assets/ 资源目录（不做裁剪）
-# - configs/default.yaml（默认不包含 configs/users，避免泄露飞书密钥）
+# - configs/pro.yaml（默认不包含 configs/users，避免泄露飞书密钥）
 #
 # 用法：
 #   bash scripts/make_pro_release_wsl.sh
@@ -21,7 +21,7 @@ usage() {
 
 选项：
   --out DIR            输出发布目录（默认：仓库根目录/pro_release）
-  --pro-config PATH    要打包的配置文件（默认：configs/default.yaml，会拷贝为 configs/default.yaml）
+  --pro-config PATH    要打包的配置文件（默认优先：configs/pro.yaml；会拷贝为 configs/pro.yaml）
   --skip-build         不重新编译二进制，只做打包
   --no-archive         不生成 zip/tar.gz 压缩包
   --clean              清理旧的 build/dist/spec 后再构建
@@ -46,7 +46,12 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 NAME="drama-processor"
 OUT_DIR="${REPO_ROOT}/pro_release"
-PRO_CONFIG="${REPO_ROOT}/configs/default.yaml"
+# 默认优先使用 pro.yaml（若不存在则回退 default.yaml）
+if [[ -f "${REPO_ROOT}/configs/pro.yaml" ]]; then
+  PRO_CONFIG="${REPO_ROOT}/configs/pro.yaml"
+else
+  PRO_CONFIG="${REPO_ROOT}/configs/default.yaml"
+fi
 
 SKIP_BUILD=0
 NO_ARCHIVE=0
@@ -137,6 +142,8 @@ cp -f "${DIST_BIN}" "${OUT_DIR}/${NAME}"
 chmod +x "${OUT_DIR}/${NAME}"
 
 cp -a "${REPO_ROOT}/assets/." "${OUT_DIR}/assets/"
+# Pro 包默认带 pro.yaml；为兼容旧习惯，同时复制一份 default.yaml（内容相同）
+cp -f "${PRO_CONFIG}" "${OUT_DIR}/configs/pro.yaml"
 cp -f "${PRO_CONFIG}" "${OUT_DIR}/configs/default.yaml"
 
 echo "[OK] 发布目录已准备完成。"
@@ -163,5 +170,4 @@ fi
 echo ""
 echo "下一步："
 echo "1. 本地运行：./${NAME} process 或 ./${NAME} --license license.json feishu list"
-echo "2. 如需发给别人，请确认 configs/default.yaml 不含 secrets，再手动补充 pro.yaml/license.json"
-
+echo "2. 如需发给别人，请确认 configs/pro.yaml 不含 secrets，再手动补充 license.json"
