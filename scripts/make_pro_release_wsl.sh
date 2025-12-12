@@ -142,9 +142,8 @@ cp -f "${DIST_BIN}" "${OUT_DIR}/${NAME}"
 chmod +x "${OUT_DIR}/${NAME}"
 
 cp -a "${REPO_ROOT}/assets/." "${OUT_DIR}/assets/"
-# Pro 包默认带 pro.yaml；为兼容旧习惯，同时复制一份 default.yaml（内容相同）
+# Pro 包仅包含 pro.yaml（由 Pro 入口默认优先读取）
 cp -f "${PRO_CONFIG}" "${OUT_DIR}/configs/pro.yaml"
-cp -f "${PRO_CONFIG}" "${OUT_DIR}/configs/default.yaml"
 
 echo "[OK] 发布目录已准备完成。"
 
