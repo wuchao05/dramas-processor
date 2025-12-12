@@ -14,7 +14,7 @@ from ..core.processor import DramaProcessor
 from ..integrations.feishu_watcher import FeishuWatcher as FeishuAutoWatcher
 from ..models.config import ProcessingConfig
 from ..models.project import DramaProject
-from ..utils.system import ensure_dir
+from ..utils.system import ensure_dir, resolve_asset_path
 from ..utils.history import HistoryManager
 
 
@@ -293,23 +293,27 @@ def process_command(
     
     # Handle tail file and update config
     if tail_file:
-        # Explicit tail file
+        # Explicit tail file（支持相对路径到发布包目录）
         if os.path.isfile(tail_file):
             config.tail_file = tail_file
         else:
-            click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
-            config.tail_file = None
+            resolved = resolve_asset_path(tail_file)
+            if resolved:
+                config.tail_file = resolved
+            else:
+                click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
+                config.tail_file = None
     else:
-        # Check for tail.mp4 in assets directory (new structure)
-        project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-        default_tail = os.path.join(project_root, "assets", "tail.mp4")
-        if os.path.isfile(default_tail):
+        # 优先在运行时根目录中查找默认尾部 assets/tail.mp4
+        default_tail = resolve_asset_path("assets/tail.mp4")
+        if default_tail:
             config.tail_file = default_tail
         elif config.tail_file:
-            # Check if the config file tail_file path exists relative to project root
-            config_tail_path = os.path.join(project_root, config.tail_file) if not os.path.isabs(config.tail_file) else config.tail_file
-            if not os.path.isfile(config_tail_path):
-                click.echo(f"⚠️ 配置中的尾部文件不存在：{config_tail_path}")
+            resolved = resolve_asset_path(config.tail_file)
+            if resolved:
+                config.tail_file = resolved
+            else:
+                click.echo(f"⚠️ 配置中的尾部文件不存在：{config.tail_file}")
                 config.tail_file = None
     
     # AI enhancement settings
@@ -960,23 +964,25 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
         
         # Handle tail file similar to process command
         if tail_file:
-            # Explicit tail file
             if os.path.isfile(tail_file):
                 config.tail_file = tail_file
             else:
-                click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
-                config.tail_file = None
+                resolved = resolve_asset_path(tail_file)
+                if resolved:
+                    config.tail_file = resolved
+                else:
+                    click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
+                    config.tail_file = None
         else:
-            # Check for tail.mp4 in assets directory (new structure)
-            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-            default_tail = os.path.join(project_root, "assets", "tail.mp4")
-            if os.path.isfile(default_tail):
+            default_tail = resolve_asset_path("assets/tail.mp4")
+            if default_tail:
                 config.tail_file = default_tail
             elif config.tail_file:
-                # Check if the config file tail_file path exists relative to project root
-                config_tail_path = os.path.join(project_root, config.tail_file) if not os.path.isabs(config.tail_file) else config.tail_file
-                if not os.path.isfile(config_tail_path):
-                    click.echo(f"⚠️ 配置中的尾部文件不存在：{config_tail_path}")
+                resolved = resolve_asset_path(config.tail_file)
+                if resolved:
+                    config.tail_file = resolved
+                else:
+                    click.echo(f"⚠️ 配置中的尾部文件不存在：{config.tail_file}")
                     config.tail_file = None
         
         if jobs is not None:
@@ -1321,23 +1327,25 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
         
         # Handle tail file similar to process command
         if tail_file:
-            # Explicit tail file
             if os.path.isfile(tail_file):
                 config.tail_file = tail_file
             else:
-                click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
-                config.tail_file = None
+                resolved = resolve_asset_path(tail_file)
+                if resolved:
+                    config.tail_file = resolved
+                else:
+                    click.echo(f"⚠️ 指定的尾部文件不存在：{tail_file}")
+                    config.tail_file = None
         else:
-            # Check for tail.mp4 in assets directory (new structure)
-            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-            default_tail = os.path.join(project_root, "assets", "tail.mp4")
-            if os.path.isfile(default_tail):
+            default_tail = resolve_asset_path("assets/tail.mp4")
+            if default_tail:
                 config.tail_file = default_tail
             elif config.tail_file:
-                # Check if the config file tail_file path exists relative to project root
-                config_tail_path = os.path.join(project_root, config.tail_file) if not os.path.isabs(config.tail_file) else config.tail_file
-                if not os.path.isfile(config_tail_path):
-                    click.echo(f"⚠️ 配置中的尾部文件不存在：{config_tail_path}")
+                resolved = resolve_asset_path(config.tail_file)
+                if resolved:
+                    config.tail_file = resolved
+                else:
+                    click.echo(f"⚠️ 配置中的尾部文件不存在：{config.tail_file}")
                     config.tail_file = None
         
         if jobs is not None:
