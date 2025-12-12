@@ -28,7 +28,7 @@ from .commands import process_command, analyze_command, config_command, legacy_r
 _ALLOWED_FEATURES_AT_IMPORT = get_allowed_features_from_args_and_env(sys.argv)
 
 
-@click.group()
+@click.group(invoke_without_command=True)
 @click.option(
     "--config",
     "-c",
@@ -84,7 +84,12 @@ def cli(
 
     if print_fingerprint:
         click.echo(get_machine_fingerprint())
-        return
+        ctx.exit(0)
+
+    # 未传子命令时直接显示帮助，避免报 Missing command
+    if ctx.invoked_subcommand is None:
+        click.echo(ctx.get_help())
+        ctx.exit(0)
     
     # Load configuration
     # If no config specified, try to find default config file
