@@ -565,9 +565,9 @@ class DramaProcessor:
             # Use the original logic for backward compatibility
             actual_exports_root = exports_root
             if self.config.date_str:
-                # 直接在基础目录下创建日期目录，而不是{date}导出
+                # 在导出根目录上一层创建“{date}导出”目录
                 parent_dir = os.path.dirname(os.path.abspath(exports_root))
-                actual_exports_root = os.path.join(parent_dir, self.config.date_str)
+                actual_exports_root = os.path.join(parent_dir, f"{self.config.date_str}导出")
         
         os.makedirs(actual_exports_root, exist_ok=True)
         
