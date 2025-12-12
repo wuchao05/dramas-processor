@@ -44,6 +44,46 @@ drama-processor process /path/to/dramas --fast-mode --sw --jobs 4
 drama-processor process --date "9.3" --count 2
 ```
 
+## 🧩 Lite 版本与授权（License）
+
+为方便对外分发且保护隐私，本项目提供两套 CLI：
+
+- `drama-processor-lite`：保留除 Feishu 之外的全部功能（process/analyze/config/history），且运行时强制关闭任何 Feishu 相关配置。
+- `drama-processor`：全功能版本；`feishu` 命令组与所有 Feishu 能力需通过 License 授权后才会加载/启用。
+
+### Lite 用法
+
+```bash
+# 建议配合 lite 配置使用（确保 Feishu 永久关闭）
+drama-processor-lite -c configs/lite.yaml process /path/to/dramas
+```
+
+### Pro + License 用法
+
+```bash
+# 通过 --license 解锁 Feishu 功能（必须放在子命令前）
+drama-processor --license /path/to/license.json feishu list
+
+# 或者通过环境变量指定
+export DRAMA_PROCESSOR_LICENSE=/path/to/license.json
+drama-processor feishu run
+```
+
+### License 文件格式（Ed25519）
+
+License 为 JSON，示例：
+
+```json
+{
+  "user": "friend-a",
+  "features": ["process", "analyze", "config", "history", "feishu"],
+  "expires_at": "2026-01-01T00:00:00Z",
+  "signature": "Base64URL(Ed25519_sign(canonical_payload))"
+}
+```
+
+签名原文 `canonical_payload` 为去掉 `signature` 字段后的 JSON，按 `sort_keys=True` + `separators=(',',':')` 规范化序列化得到的 UTF-8 字节。
+
 ## 📋 **完整命令参数**
 
 ### 素材生成设置

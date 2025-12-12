@@ -1,0 +1,12 @@
+---
+# Drama Processor Lite 配置示例
+# 仅用于对外分发的“无 Feishu”版本
+
+# 强制关闭所有 Feishu 能力（API/轮询/通知）
+enable_feishu_features: false
+enable_feishu_notification: false
+feishu_webhook_url: null
+feishu: null
+feishu_watcher:
+  enabled: false
+

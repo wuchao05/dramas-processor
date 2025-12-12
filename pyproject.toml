@@ -31,6 +31,7 @@ dependencies = [
     "inquirerpy>=0.3.0",
     "rich>=13.0.0",
     "typing-extensions>=4.0.0",
+    "cryptography>=42.0.0",
 ]
 
 [project.optional-dependencies]
@@ -46,6 +47,7 @@ dev = [
 
 [project.scripts]
 drama-processor = "drama_processor.cli.main:main"
+drama-processor-lite = "drama_processor.cli.lite_main:main"
 
 [project.urls]
 Homepage = "https://github.com/your-org/drama-processor"
@@ -108,4 +110,3 @@ addopts = [
     "--cov-report=html",
     "--cov-report=xml",
 ]
-
