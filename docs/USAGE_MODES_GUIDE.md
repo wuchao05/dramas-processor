@@ -16,6 +16,53 @@
 
 ---
 
+## 0.1 发布包（Lite/Pro）机器绑定授权流程（重要）
+
+Lite/Pro 的**打包后二进制发布包**默认启用“机器绑定授权”，用于防止朋友把包转发给其他人使用。
+
+机制说明：
+
+- 你本地保存 **Ed25519 私钥**，用于签发 `license.json`（不要发给任何人）。
+- 程序内置 **Ed25519 公钥**，用于验签 `license.json`。
+- `license.json` 里包含 `machine_fingerprint`（机器指纹），发布包运行时必须与当前机器匹配。
+
+一次性准备（你只需做一次）：
+
+1. 生成密钥对：
+
+```bash
+python scripts/license_tool.py gen-keys
+```
+
+2. 把公钥 `license_keys/ed25519_public.pem` 的 PEM 内容复制到  
+   `src/drama_processor/utils/license.py` 的 `DEFAULT_PUBLIC_KEY_PEM`，然后重新出包（否则发布包无法验签）。
+
+给朋友发包（每台机器都要做一次）：
+
+1. 你先把 Lite/Pro 包发给朋友（此时朋友只能做“打印指纹”操作）。
+2. 朋友在发布包目录执行（不需要 license）：
+
+```bash
+./drama-processor-lite --print-fingerprint
+# 或 Pro：./drama-processor --print-fingerprint
+```
+
+3. 朋友把输出的指纹发给你。
+4. 你用私钥签发绑定该指纹的 `license.json`，并发回给朋友。
+5. 朋友把 `license.json` 放到二进制同目录（推荐），程序会自动识别，无需每次传参：
+
+```
+lite_release/
+  drama-processor-lite
+  license.json
+```
+
+没有 license 会怎样？
+
+- 发布包（二进制）下：除了 `--print-fingerprint` 外，其他命令会直接退出并提示缺少/无效 license。
+
+---
+
 ## 1. 在源码下直接执行剪辑（开发/自用）
 
 ### 1.1 安装与运行
@@ -81,17 +128,28 @@ Lite 版用于对外给朋友使用：保留除 Feishu 外的所有功能，且�
 
 ### 2.0 发布包机器绑定（重要）
 
-Lite/Pro 的**发布包（二进制）**默认启用“机器绑定授权”：
+Lite 包的机器绑定流程同 0.1，这里按时间顺序再写一遍（方便直接照做）：
 
-- 必须提供与当前机器匹配的 `license.json`，否则程序会直接退出。
-- 推荐把 `license.json` 放在二进制同目录（自动识别），避免每次传参。
-- 获取指纹（让朋友执行并把输出发给你）：
+1. 你先生成并发给朋友 `lite_release/`。
+2. 朋友执行并把指纹发你：
 
 ```bash
 ./drama-processor-lite --print-fingerprint
 ```
 
-你再用仓库内的签发工具生成绑定该指纹的 `license.json`（见第 3.2 节示例）。
+3. 你签发（Lite 建议 features 不包含 feishu）：
+
+```bash
+python scripts/license_tool.py sign \
+  --private-key license_keys/ed25519_private.pem \
+  --user friend-a \
+  --features process,analyze,config,history \
+  --machine-fingerprint <朋友发来的指纹> \
+  --expires-at 2026-01-01 \
+  --out license.json
+```
+
+4. 朋友把 `license.json` 放到 `lite_release/`（与二进制同级），然后才能运行 `process/analyze/history/config`。
 
 ### 2.1 生成 Lite 包
 
@@ -150,7 +208,7 @@ chmod +x drama-processor-lite
 
 - 可用：`process`、`analyze`、`history`、`config`、隐藏的 `run`。  
 - 不可用：任何 `feishu ...` 命令（不会出现在 `--help` 里）。  
-- 发布包运行需要 license（仅用于机器绑定；是否包含 `feishu` 特性对 Lite 无影响）。
+- 发布包运行需要 license（用于机器绑定；即便 license 的 `features` 包含 `feishu`，Lite 也不会开放 Feishu）。
 
 ---
 
@@ -178,16 +236,9 @@ pro_release/
 
 ### 3.2 License 生成与使用
 
-1) 生成密钥对（只需一次）：
+Pro 发布包运行同样受“机器绑定授权”约束（见 0.1），这里补充签发示例与 Feishu 授权说明。
 
-```bash
-python scripts/license_tool.py gen-keys
-```
-
-2) 把公钥 `license_keys/ed25519_public.pem` 的内容复制到  
-`src/drama_processor/utils/license.py` 的 `DEFAULT_PUBLIC_KEY_PEM`，然后**重新打 Pro 包**（否则验签必失败）。
-
-3) 给自己/朋友签发 license：
+给自己签发（绑定当前机器）：
 
 ```bash
 python scripts/license_tool.py sign \
@@ -199,7 +250,7 @@ python scripts/license_tool.py sign \
   --out license.json
 ```
 
-如果是给朋友签发（你不在朋友机器上操作），让朋友先在发布包目录执行：
+给朋友签发（绑定朋友机器）：
 
 ```bash
 ./drama-processor --print-fingerprint
@@ -217,18 +268,20 @@ python scripts/license_tool.py sign \
   --out license.json
 ```
 
-4) 使用 license（两种方式二选一）：
+使用 license（三种方式任选其一）：
 
 ```bash
-# 方式 A：命令行参数（必须放在子命令前）
+# 方式 A：把 license.json 放在二进制同目录（推荐，自动识别）
+
+# 方式 B：命令行参数（必须放在子命令前）
 ./drama-processor --license /path/to/license.json feishu list
 
-# 方式 B：环境变量
+# 方式 C：环境变量
 export DRAMA_PROCESSOR_LICENSE=/path/to/license.json
 ./drama-processor feishu run
 ```
 
-> 提示：你也可以直接把 `license.json` 放在二进制同目录，程序会自动识别，无需每次传参/设环境变量。
+> 注意：如果 license 的 `features` 不包含 `feishu`（或 `*`），则 Pro 仍可做本地剪辑，但 `feishu` 命令会被隐藏/禁用。
 
 ### 3.3 配置方式
 
