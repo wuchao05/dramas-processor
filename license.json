@@ -1,0 +1,12 @@
+{
+  "user": "wuchao",
+  "features": [
+    "process",
+    "analyze",
+    "config",
+    "history"
+  ],
+  "machine_fingerprint": "9667b295265e3c3052d8925e0e81f116d07db8f78e8968348203db34b5537493",
+  "expires_at": "2025-12-14T00:00:00Z",
+  "signature": "5JTPDW25ujsOo0zkZtkbvjRMuI3kpXA-ndToWvoPtJTsd9JKfs80kjz8rRTANcT7J4oRjUzfoyceMaDkY8G4DA"
+}

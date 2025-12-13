@@ -1,0 +1,128 @@
+---
+# Drama Processor Lite 配置示例（对外分发）
+# Lite 版本会强制关闭所有 Feishu 能力，且发布包默认不包含水印文件。
+#
+# 说明：
+# - 你需要把“朋友专属配置”直接写在此文件里（不要用 users 目录）。
+# - 下面标记“必填/建议填写”的字段请按朋友机器实际情况修改。
+
+# ===================== 必填：源素材目录 =====================
+# WSL 路径示例：/mnt/d/短剧剪辑/源素材视频
+default_source_dir: '/mnt/d/短剧剪辑/源素材视频'
+# 备份目录：Pydantic 模型要求是字符串，不能填 null。
+# 不需要备份目录时，建议填与 default_source_dir 相同的路径即可。
+backup_source_dir: '/mnt/d/短剧剪辑/源素材视频'
+
+# ===================== 必填：素材生成与文件命名 =====================
+# 每部剧生成素材条数
+count: 10
+# 文件名中的素材标识（2~3位字母/数字即可）
+material_code: 'fr'
+# 日期前缀（可选，如 "12.12"，不填则自动用当天）
+date_str: null
+
+# ===================== 时长/起点策略 =====================
+min_duration: 480.0
+max_duration: 900.0
+# 选择起点时排除最后 N 集，避免素材不够
+exclude_last_episodes: 8
+random_start: true
+seed: null
+
+# ===================== 必填：标题颜色 =====================
+title_colors:
+  - '#FFA500'
+  - '#FFB347'
+  - '#FF8C00'
+
+# ===================== 必填：多素材品牌文案 =====================
+enable_brand_text: true
+# 默认品牌文案（向后兼容）
+brand_text: '热门短剧'
+brand_text_mapping:
+  # range: 按编号范围映射；cycle: 循环映射
+  mode: 'range'
+  ranges:
+    - range: '01-10'
+      text: '看好剧'
+  cycle_texts:
+    - '看好剧'
+  default_text: '热门短剧'
+
+# ===================== 文字叠加 =====================
+title_font_size: 36
+bottom_font_size: 8
+side_font_size: 28
+footer_text: '热门短剧 休闲必看'
+side_text: '剧情纯属虚构 请勿模仿'
+# 不填则自动寻找系统字体
+font_file: null
+
+# ===================== 视频/性能 =====================
+target_fps: 60
+smart_fps: true
+fast_mode: true
+filter_threads: 16
+verbose: false
+use_hardware: true
+keep_temp: false
+jobs: 1
+
+# ===================== 画布/分辨率 =====================
+canvas: null
+reference_resolution: null
+
+# ===================== 目录/尾部 =====================
+temp_dir: null
+output_dir: '../导出素材'
+tail_cache_dir: '/tmp/tails_cache'
+tail_file: 'assets/tail.mp4'
+refresh_tail_cache: false
+
+# ===================== 去重 =====================
+enable_deduplication: false
+
+# ===================== 水印（Lite 包默认不带水印文件） =====================
+enable_watermark: false
+watermark_path: null
+
+# ===================== 编码参数 =====================
+video:
+  hw_codec: 'auto'
+  sw_codec: 'libx264'
+  bitrate: '6500k'
+  max_rate: '6500k'
+  buffer_size: '8000k'
+  soft_crf: '24'
+  preset: 'veryfast'
+  profile: 'high'
+  level: '4.2'
+  hw_level: '4.2'
+  sw_level: '4.1'
+  tag: 'avc1'
+  pixel_format: 'yuv420p'
+
+audio:
+  codec: 'aac'
+  bitrate: '128k'
+  sample_rate: 48000
+
+# ===================== 日期去重（本地） =====================
+date_deduplication:
+  enabled: true
+  storage_dir: 'history/date_dedup'
+  skip_processed_by_default: false
+
+# ===================== 选择策略（一般不用改） =====================
+include: null
+exclude: null
+full: false
+no_interactive: false
+
+# ===================== Lite 固定：Feishu 全关 =====================
+enable_feishu_features: false
+enable_feishu_notification: false
+feishu_webhook_url: null
+feishu: null
+feishu_watcher:
+  enabled: false

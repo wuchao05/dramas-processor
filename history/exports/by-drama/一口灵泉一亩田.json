@@ -1,0 +1,15 @@
+[
+  {
+    "session_id": "2025-12-12_17-47-56",
+    "date": "2025-12-12",
+    "output_dir": "/mnt/d/短剧剪辑/导出素材/一口灵泉一亩田",
+    "materials": [
+      "12.12-一口灵泉一亩田-fr-01.mp4",
+      "12.12-一口灵泉一亩田-fr-02.mp4"
+    ],
+    "materials_count": 2,
+    "completed": true,
+    "size_mb": 163.36600399017334,
+    "processing_time": 68.48511815071106
+  }
+]
