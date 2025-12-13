@@ -8,16 +8,16 @@
 
 # ===================== 必填：源素材目录 =====================
 # WSL 路径示例：/mnt/d/短剧剪辑/源素材视频
-default_source_dir: "/mnt/d/短剧剪辑/源素材视频"
+default_source_dir: '/mnt/d/短剧剪辑/源素材视频'
 # 备份目录：Pydantic 模型要求是字符串，不能填 null。
 # 不需要备份目录时，建议填与 default_source_dir 相同的路径即可。
-backup_source_dir: "/mnt/d/短剧剪辑/源素材视频"
+backup_source_dir: '/mnt/d/短剧剪辑/源素材视频'
 
 # ===================== 必填：素材生成与文件命名 =====================
 # 每部剧生成素材条数
 count: 10
 # 文件名中的素材标识（2~3位字母/数字即可）
-material_code: "fr"
+material_code: 'fr'
 # 日期前缀（可选，如 "12.12"，不填则自动用当天）
 date_str: null
 
@@ -31,30 +31,30 @@ seed: null
 
 # ===================== 必填：标题颜色 =====================
 title_colors:
-  - "#FFA500"
-  - "#FFB347"
-  - "#FF8C00"
+  - '#FFA500'
+  - '#FFB347'
+  - '#FF8C00'
 
 # ===================== 必填：多素材品牌文案 =====================
 enable_brand_text: true
 # 默认品牌文案（向后兼容）
-brand_text: "热门短剧"
+brand_text: '热门短剧'
 brand_text_mapping:
   # range: 按编号范围映射；cycle: 循环映射
-  mode: "range"
+  mode: 'range'
   ranges:
-    - range: "01-10"
-      text: "朋友看剧"
+    - range: '01-10'
+      text: '看好剧'
   cycle_texts:
-    - "朋友看剧"
-  default_text: "热门短剧"
+    - '看好剧'
+  default_text: '热门短剧'
 
 # ===================== 文字叠加 =====================
 title_font_size: 36
 bottom_font_size: 8
 side_font_size: 28
-footer_text: "热门短剧 休闲必看"
-side_text: "剧情纯属虚构 请勿模仿"
+footer_text: '热门短剧 休闲必看'
+side_text: '剧情纯属虚构 请勿模仿'
 # 不填则自动寻找系统字体
 font_file: null
 
@@ -74,9 +74,9 @@ reference_resolution: null
 
 # ===================== 目录/尾部 =====================
 temp_dir: null
-output_dir: "../导出素材"
-tail_cache_dir: "/tmp/tails_cache"
-tail_file: "assets/tail.mp4"
+output_dir: '../导出素材'
+tail_cache_dir: '/tmp/tails_cache'
+tail_file: 'assets/tail.mp4'
 refresh_tail_cache: false
 
 # ===================== 去重 =====================
@@ -88,29 +88,29 @@ watermark_path: null
 
 # ===================== 编码参数 =====================
 video:
-  hw_codec: "auto"
-  sw_codec: "libx264"
-  bitrate: "6500k"
-  max_rate: "6500k"
-  buffer_size: "8000k"
-  soft_crf: "24"
-  preset: "veryfast"
-  profile: "high"
-  level: "4.2"
-  hw_level: "4.2"
-  sw_level: "4.1"
-  tag: "avc1"
-  pixel_format: "yuv420p"
+  hw_codec: 'auto'
+  sw_codec: 'libx264'
+  bitrate: '6500k'
+  max_rate: '6500k'
+  buffer_size: '8000k'
+  soft_crf: '24'
+  preset: 'veryfast'
+  profile: 'high'
+  level: '4.2'
+  hw_level: '4.2'
+  sw_level: '4.1'
+  tag: 'avc1'
+  pixel_format: 'yuv420p'
 
 audio:
-  codec: "aac"
-  bitrate: "128k"
+  codec: 'aac'
+  bitrate: '128k'
   sample_rate: 48000
 
 # ===================== 日期去重（本地） =====================
 date_deduplication:
   enabled: true
-  storage_dir: "history/date_dedup"
+  storage_dir: 'history/date_dedup'
   skip_processed_by_default: false
 
 # ===================== 选择策略（一般不用改） =====================

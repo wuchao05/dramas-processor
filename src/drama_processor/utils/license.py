@@ -35,7 +35,7 @@ LICENSE_MACHINE_FINGERPRINT_FIELD = "machine_fingerprint"
 # 默认公钥（Ed25519），请在你自己发放 license 前替换为真实公钥。
 # 也可以通过环境变量 DRAMA_PROCESSOR_PUBLIC_KEY 传入 PEM 公钥覆盖。
 DEFAULT_PUBLIC_KEY_PEM = """-----BEGIN PUBLIC KEY-----
-MCowBQYDK2VwAyEArQNAUDDUGTVPmukpkkAQXNtCWpfM8MC6hWLsgOBsaQE=
+MCowBQYDK2VwAyEAnql5sH4g3GmJEbiP1THlfRDPA2NlFVSjD1Iajzjd5nY=
 -----END PUBLIC KEY-----
 """
 
