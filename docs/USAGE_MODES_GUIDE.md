@@ -140,13 +140,13 @@ Lite 包的机器绑定流程同 0.1，这里按时间顺序再写一遍（方�
 3. 你签发（Lite 建议 features 不包含 feishu）：
 
 ```bash
-python scripts/license_tool.py sign \
+python3 scripts/license_tool.py sign \
   --private-key license_keys/ed25519_private.pem \
   --user friend-a \
   --features process,analyze,config,history \
-  --machine-fingerprint <朋友发来的指纹> \
-  --expires-at 2026-01-01 \
-  --out license.json
+  --machine-fingerprint 7f8f84a2d314091af7660a7d20545571d353e8456309cae0595301b940a3bb0f \
+  --expires-at 2026-05-01 \
+  --out cy1-license.json
 ```
 
 4. 朋友把 `license.json` 放到 `lite_release/`（与二进制同级），然后才能运行 `process/analyze/history/config`。

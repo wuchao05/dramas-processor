@@ -49,14 +49,31 @@ class VideoEncoder:
     
     def _detect_best_hw_codec(self, preferred_codec: str) -> str:
         """Detect the best available hardware codec for the current environment."""
-        # Priority order for WSL/Windows environment
-        codec_priority = [
-            "h264_nvenc",    # NVIDIA GPU (most common in WSL)
-            "h264_qsv",      # Intel Quick Sync Video
-            "h264_amf",      # AMD GPU
-            "h264_videotoolbox",  # macOS (if running on Mac)
-            "h264_vaapi",    # Linux VA-API (pure Linux)
-        ]
+        import platform
+        
+        # Determine codec priority based on platform
+        system = platform.system()
+        
+        if system == "Darwin":  # macOS
+            # On macOS, VideoToolbox works best with Apple Silicon and Intel iGPU
+            # AMD discrete GPUs on macOS typically don't support hardware encoding via FFmpeg
+            codec_priority = [
+                "h264_videotoolbox",  # macOS hardware encoding (Apple Silicon / Intel iGPU)
+            ]
+            # Note: h264_amf is Windows-only, not available on macOS
+        elif system == "Windows":
+            codec_priority = [
+                "h264_nvenc",    # NVIDIA GPU
+                "h264_qsv",      # Intel Quick Sync Video
+                "h264_amf",      # AMD GPU (Windows only)
+            ]
+        else:  # Linux/WSL
+            codec_priority = [
+                "h264_nvenc",    # NVIDIA GPU
+                "h264_qsv",      # Intel Quick Sync Video
+                "h264_vaapi",    # Linux VA-API
+                "h264_amf",      # AMD GPU (if available)
+            ]
         
         # If user specified a codec, try it first
         if preferred_codec and preferred_codec != "auto":
@@ -82,7 +99,12 @@ class VideoEncoder:
                         else:
                             print(f"⚠️ 硬件编码器 {codec} 不可用，继续检测...")
                 
-                print("⚠️ 未检测到可用的硬件编码器，将使用软件编码")
+                # Provide platform-specific guidance
+                if system == "Darwin":
+                    print("⚠️ 未检测到可用的硬件编码器")
+                    print("💡 macOS 上的 AMD 独显通常不支持 FFmpeg 硬件编码，建议使用软件编码 (--sw)")
+                else:
+                    print("⚠️ 未检测到可用的硬件编码器，将使用软件编码")
                 return "libx264"
             else:
                 print("⚠️ 无法检测编码器，使用默认配置")
@@ -112,14 +134,34 @@ class VideoEncoder:
             if result.returncode == 0:
                 return True
             else:
-                # Check for common hardware encoding errors
+                # Check for common hardware encoding errors and provide specific guidance
                 error_output = result.stderr.lower()
-                if any(error in error_output for error in [
+                
+                # AMD AMF specific errors
+                if codec == "h264_amf" and any(error in error_output for error in [
+                    "cannot load amf", "amf not found", "could not load library",
+                    "function not implemented", "encoder not found"
+                ]):
+                    print(f"   💡 AMF 编码器不可用，可能原因：")
+                    print(f"      - FFmpeg 未编译 AMF 支持（需要完整版 FFmpeg）")
+                    print(f"      - AMD 驱动版本过旧")
+                    print(f"      - 缺少 AMF SDK 运行时库")
+                    return False
+                
+                # NVIDIA NVENC specific errors
+                if codec == "h264_nvenc" and any(error in error_output for error in [
                     "driver does not support", "required nvenc api version",
-                    "minimum required nvidia driver", "could not open encoder",
-                    "function not implemented", "invalid argument"
+                    "minimum required nvidia driver"
+                ]):
+                    print(f"   💡 NVENC 编码器不可用，需要更新 NVIDIA 驱动")
+                    return False
+                
+                # Generic hardware encoder errors
+                if any(error in error_output for error in [
+                    "could not open encoder", "invalid argument", "not supported"
                 ]):
                     return False
+                    
                 return False
                 
         except (subprocess.TimeoutExpired, Exception):

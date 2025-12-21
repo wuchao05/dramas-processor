@@ -1,11 +1,4 @@
 ---
-# Drama Processor Lite 配置示例（对外分发）
-# Lite 版本会强制关闭所有 Feishu 能力，且发布包默认不包含水印文件。
-#
-# 说明：
-# - 你需要把“朋友专属配置”直接写在此文件里（不要用 users 目录）。
-# - 下面标记“必填/建议填写”的字段请按朋友机器实际情况修改。
-
 # ===================== 必填：源素材目录 =====================
 # WSL 路径示例：/mnt/d/短剧剪辑/源素材视频
 default_source_dir: '/mnt/d/短剧剪辑/源素材视频'
@@ -82,10 +75,6 @@ refresh_tail_cache: false
 # ===================== 去重 =====================
 enable_deduplication: false
 
-# ===================== 水印（Lite 包默认不带水印文件） =====================
-enable_watermark: false
-watermark_path: null
-
 # ===================== 编码参数 =====================
 video:
   hw_codec: 'auto'
@@ -118,11 +107,3 @@ include: null
 exclude: null
 full: false
 no_interactive: false
-
-# ===================== Lite 固定：Feishu 全关 =====================
-enable_feishu_features: false
-enable_feishu_notification: false
-feishu_webhook_url: null
-feishu: null
-feishu_watcher:
-  enabled: false
