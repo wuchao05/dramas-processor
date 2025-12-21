@@ -1,0 +1,12 @@
+{
+  "user": "cy2",
+  "features": [
+    "process",
+    "analyze",
+    "config",
+    "history"
+  ],
+  "machine_fingerprint": "11539fbddd804b0794daa1ca7ac2630daff709d58ef2a10ec63dfad0c5ae2f67",
+  "expires_at": "2026-12-14T00:00:00Z",
+  "signature": "98GhFydBDg1iCG4RL3_n51GJHLS4YtwDlOWJz8OV_3XPKQkLDt8ETp7D86drZpWaHV2huYkyND92KHCgjXPrAg"
+}
