@@ -2,48 +2,36 @@
 # 此文件包含用户专属配置，会覆盖 default.yaml 中的对应字段
 
 # 素材生成设置
-count: 24 # 每部剧生成素材数量
+count: 18 # 每部剧生成素材数量
 material_code: 'xh' # 素材文件名标识
 
 # 标题颜色
 title_colors:
-  - '#FFA500' # Orange
-  - '#FFB347' # Light Orange
-  - '#FF8C00' # Dark Orange
-  - '#FFD580' # Peach
-  - '#E69500' # Earth Orange
-  - '#FFAE42' # Bright Orange
+  - '#32CD32' # Lime Green
+  - '#00FA9A' # Medium Spring Green
+  - '#7CFC00' # Lawn Green
+  - '#98FB98' # Pale Green
+  - '#3CB371' # Medium Sea Green
+  - '#00FF7F' # Spring Green
 
 # 目录设置
 default_source_dir: '/mnt/d/短剧剪辑/源素材视频' # WSL 路径
 
 # 多素材文案配置
 brand_text_mapping:
-  mode: 'range'
+  mode: ''
   ranges:
     - range: '01-06'
       text: '葸辉好剧'
-    - range: '07-09'
-      text: '萍通剧坊'
-    - range: '10-12'
-      text: '哈哈看剧'
-    - range: '13-15'
+    - range: '07-12'
       text: '小红看剧'
-    - range: '16-18'
+    - range: '13-18'
       text: '斯娜看剧'
-    - range: '19-21'
-      text: '清妍短剧'
-    - range: '22-24'
-      text: '看家本领'
   cycle_texts:
     - '葸辉好剧'
-    - '萍通剧坊'
-    - '哈哈看剧'
     - '小红看剧'
     - '斯娜看剧'
-    - '清妍短剧'
-    - '看家本领'
-  default_text: '热门短剧'
+  default_text: '天天看好剧'
 
 # 飞书功能开关
 enable_feishu_features: true
@@ -55,7 +43,7 @@ feishu:
   app_id: 'cli_a870f7611b7b1013'
   app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
   app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
-  table_id: 'tblDOyi2Lzs80sv0'
+  table_id: 'tblJcLhLpEkmFkga'
   base_url: 'https://open.feishu.cn/open-apis/bitable/v1'
   field_names: ['剧名', '账户', '日期', '搭建时间', '主体']
   status_field_name: '当前状态'
