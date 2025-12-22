@@ -45,6 +45,7 @@ class VideoEncoder:
         self.title_font_size = config.title_font_size
         self.bottom_font_size = config.bottom_font_size
         self.side_font_size = config.side_font_size
+        self.vertical_line_spacing = config.vertical_line_spacing
         
         self.title_colors = config.title_colors
         
@@ -310,9 +311,12 @@ class VideoEncoder:
             f"fontcolor=white@0.85:box=0:"
             f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
         )
+        line_spacing_opt = ""
+        if self.vertical_line_spacing:
+            line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
         dt_side = (
             f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
-            f"fontcolor=white@0.85:box=0:"
+            f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
             f"x=w-text_w-{margin}:y={margin + 200}"
         )
         
@@ -332,7 +336,7 @@ class VideoEncoder:
             
             dt_brand = (
                 f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
-                f"fontcolor=white@0.85:box=0:"
+                f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
                 f"x={margin}:y={margin + 200}"
             )
             filters.append(dt_brand)

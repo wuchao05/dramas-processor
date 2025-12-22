@@ -153,6 +153,7 @@ class DramaProcessorGUI(tk.Tk):
         self.var_material_code = tk.StringVar()
         self.var_title_colors = tk.StringVar()
         self.var_brand_default = tk.StringVar()
+        self.var_vertical_spacing = tk.StringVar()
 
         self.var_count = tk.StringVar()
         self.var_min_duration = tk.StringVar()
@@ -369,11 +370,16 @@ class DramaProcessorGUI(tk.Tk):
         ttk.Entry(user_opts, textvariable=self.var_brand_default).grid(
             row=1, column=1, sticky="w", padx=6
         )
-        ttk.Checkbutton(user_opts, text="启用飞书功能", variable=self.var_enable_feishu).grid(
-            row=1, column=2, sticky="w", padx=(16, 0)
+        ttk.Label(user_opts, text="竖排字距").grid(row=1, column=2, sticky="w", padx=(16, 0))
+        ttk.Entry(user_opts, textvariable=self.var_vertical_spacing, width=8).grid(
+            row=1, column=3, sticky="w", padx=6
         )
 
-        ttk.Label(user_opts, text="多素材文案(range)").grid(row=2, column=0, sticky="nw", pady=(6, 0))
+        ttk.Checkbutton(user_opts, text="启用飞书功能", variable=self.var_enable_feishu).grid(
+            row=2, column=0, sticky="w", pady=6
+        )
+
+        ttk.Label(user_opts, text="多素材文案(range)").grid(row=3, column=0, sticky="nw", pady=(6, 0))
         self.brand_ranges_text = ScrolledText(
             user_opts,
             height=4,
@@ -382,11 +388,11 @@ class DramaProcessorGUI(tk.Tk):
             foreground=self._ui_fg,
             insertbackground=self._ui_fg,
         )
-        self.brand_ranges_text.grid(row=2, column=1, columnspan=3, sticky="ew", padx=6, pady=(6, 0))
+        self.brand_ranges_text.grid(row=3, column=1, columnspan=3, sticky="ew", padx=6, pady=(6, 0))
         ttk.Label(
             user_opts,
             text="格式示例：01-03=萍通剧坊（每行一条，支持 01-03 / 01,02 / 01）",
-        ).grid(row=3, column=1, columnspan=3, sticky="w", padx=6, pady=(4, 0))
+        ).grid(row=4, column=1, columnspan=3, sticky="w", padx=6, pady=(4, 0))
 
         actions = ttk.Frame(main)
         actions.grid(row=4, column=0, sticky="ew")
@@ -472,6 +478,10 @@ class DramaProcessorGUI(tk.Tk):
         self.var_material_code.set(str(config.material_code))
         self.var_title_colors.set(", ".join(config.title_colors or []))
         self.var_enable_feishu.set(bool(config.enable_feishu_features))
+        if config.vertical_line_spacing == 0:
+            self.var_vertical_spacing.set(str(-6))
+        else:
+            self.var_vertical_spacing.set(str(config.vertical_line_spacing))
         if config.output_dir:
             self.var_output.set(str(config.output_dir))
         if config.font_file:
@@ -732,6 +742,8 @@ class DramaProcessorGUI(tk.Tk):
         brand_default = self.var_brand_default.get().strip()
         brand_ranges = self._parse_brand_ranges()
         enable_feishu = bool(self.var_enable_feishu.get())
+        spacing_raw = self.var_vertical_spacing.get().strip()
+        vertical_spacing = _parse_int(spacing_raw, "竖排字距") if spacing_raw else 0
 
         if count <= 0:
             raise ValueError("素材条数必须大于 0")
@@ -753,6 +765,7 @@ class DramaProcessorGUI(tk.Tk):
             "verbose": bool(self.var_verbose.get()),
             "enable_feishu_features": enable_feishu,
             "enable_feishu_notification": enable_feishu,
+            "vertical_line_spacing": vertical_spacing,
         }
         if not enable_feishu:
             overrides["feishu_watcher"] = {"enabled": False}

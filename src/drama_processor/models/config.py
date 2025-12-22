@@ -146,6 +146,7 @@ class ProcessingConfig(BaseModel):
     title_font_size: int = Field(default=36, description="Title font size")
     bottom_font_size: int = Field(default=28, description="Bottom text font size")
     side_font_size: int = Field(default=28, description="Side text font size")
+    vertical_line_spacing: int = Field(default=0, description="Vertical text line spacing in pixels")
     footer_text: str = Field(default="热门短剧 休闲必看", description="Footer text")
     side_text: str = Field(default="剧情纯属虚构 请勿模仿", description="Side text")
     title_colors: List[str] = Field(

@@ -34,6 +34,7 @@ exclude_last_episodes:
 title_font_size: 36
 bottom_font_size: 8
 side_font_size: 28
+vertical_line_spacing: 0 # 竖排文字行距（像素，可为负数）
 footer_text: "热门短剧 休闲必看" # (--footer-text)
 side_text: "剧情纯属虚构 请勿模仿" # (--side-text)
 # title_colors 已移至用户配置文件
