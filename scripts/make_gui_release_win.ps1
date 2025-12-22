@@ -16,7 +16,7 @@ if (-not $scriptDir) {
 }
 
 $repoRoot = Split-Path -Parent $scriptDir
-$entry = Join-Path $repoRoot "src\drama_processor\gui\app.py"
+$entry = Join-Path $repoRoot "scripts\gui_entry.py"
 if (-not (Test-Path $entry)) {
     $repoRoot = (Get-Location).Path
     $entry = Join-Path $repoRoot "src\drama_processor\gui\app.py"
@@ -46,6 +46,6 @@ foreach ($item in $addData) {
     $addDataArgs += @("--add-data", $item)
 }
 
-& pyinstaller -F -w -n "drama-processor-gui" $entry @addDataArgs --distpath $distDir --workpath $buildDir
+& pyinstaller -F -w -n "drama-processor-gui" $entry @addDataArgs --paths (Join-Path $repoRoot "src") --distpath $distDir --workpath $buildDir
 
 Write-Host ("Done: {0}" -f (Join-Path $distDir "drama-processor-gui.exe"))
