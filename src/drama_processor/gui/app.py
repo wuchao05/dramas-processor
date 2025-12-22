@@ -486,11 +486,19 @@ class DramaProcessorGUI(tk.Tk):
         self.var_enable_feishu.set(bool(config.enable_feishu_features))
         self.var_title_font_size.set(str(config.title_font_size))
         self.var_side_font_size.set(str(config.side_font_size))
-        self.var_bottom_font_size.set(str(config.bottom_font_size))
+        bottom_size = config.bottom_font_size
+        if bottom_size == 8:
+            bottom_size = 28
+        self.var_bottom_font_size.set(str(bottom_size))
         if config.output_dir:
             self.var_output.set(str(config.output_dir))
-        if config.font_file:
-            self.var_font_file.set(str(config.font_file))
+        font_path = str(config.font_file) if config.font_file else ""
+        if _is_windows():
+            default_win_font = r"C:\Windows\Fonts\msyh.ttc"
+            if not font_path or font_path.startswith("/") or not os.path.isfile(font_path):
+                font_path = default_win_font
+        if font_path:
+            self.var_font_file.set(font_path)
         self._base_brand_text = config.brand_text or "热门短剧"
         default_text = self._base_brand_text
         ranges = None
