@@ -621,7 +621,10 @@ class DramaProcessorGUI(tk.Tk):
             if config.output_dir and not os.path.isabs(config.output_dir):
                 config.output_dir = os.path.abspath(os.path.join(base_root, "exports"))
 
-        if not config.temp_dir:
+        if _is_windows():
+            if not config.temp_dir or config.temp_dir.startswith("/tmp"):
+                config.temp_dir = tempfile.gettempdir()
+        elif not config.temp_dir:
             config.temp_dir = tempfile.gettempdir()
         if not config.tail_cache_dir or config.tail_cache_dir.startswith("/tmp"):
             config.tail_cache_dir = os.path.join(tempfile.gettempdir(), "tails_cache")
@@ -640,7 +643,7 @@ class DramaProcessorGUI(tk.Tk):
             resolved = resolve_asset_path(config.font_file)
             if resolved:
                 config.font_file = resolved
-        elif _is_windows():
+        if _is_windows() and (not config.font_file or not os.path.isfile(config.font_file)):
             font_path = _find_windows_font()
             if font_path:
                 config.font_file = font_path

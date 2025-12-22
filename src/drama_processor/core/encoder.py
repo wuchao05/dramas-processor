@@ -242,6 +242,12 @@ class VideoEncoder:
     def even(self, x: int) -> int:
         """Ensure even number for video dimensions."""
         return x if x % 2 == 0 else x - 1
+
+    def _filter_path(self, path: str) -> str:
+        """转换路径为 FFmpeg filter 友好格式（避免 Windows 反斜杠被转义）。"""
+        if os.name == "nt":
+            return path.replace("\\", "/")
+        return path
     
     def to_vertical(self, text: str) -> str:
         """Convert text to vertical layout."""
@@ -285,20 +291,24 @@ class VideoEncoder:
         write_text_file(side_txtf, self.to_vertical(side_text))
 
         title_color = random.choice(self.title_colors)
+        fontfile_filter = self._filter_path(fontfile)
+        title_txt_filter = self._filter_path(title_txt)
+        bottom_txt_filter = self._filter_path(bottom_txt)
+        side_txt_filter = self._filter_path(side_txtf)
 
         # Text overlay filters
         dt_top = (
-            f"drawtext=fontfile='{fontfile}':textfile='{title_txt}':fontsize={title_fs}:"
+            f"drawtext=fontfile='{fontfile_filter}':textfile='{title_txt_filter}':fontsize={title_fs}:"
             f"fontcolor={title_color}@0.9:shadowx=1:shadowy=1:box=0:"
             f"x=(w-text_w)/2:y={margin + 20}"
         )
         dt_bottom = (
-            f"drawtext=fontfile='{fontfile}':textfile='{bottom_txt}':fontsize={bottom_fs}:"
+            f"drawtext=fontfile='{fontfile_filter}':textfile='{bottom_txt_filter}':fontsize={bottom_fs}:"
             f"fontcolor=white@0.85:box=0:"
             f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
         )
         dt_side = (
-            f"drawtext=fontfile='{fontfile}':textfile='{side_txtf}':fontsize={side_fs}:"
+            f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
             f"fontcolor=white@0.85:box=0:"
             f"x=w-text_w-{margin}:y={margin + 200}"
         )
@@ -315,9 +325,10 @@ class VideoEncoder:
             
             brand_txt = os.path.join(workdir, "brand.txt")
             write_text_file(brand_txt, self.to_vertical(brand_text))
+            brand_txt_filter = self._filter_path(brand_txt)
             
             dt_brand = (
-                f"drawtext=fontfile='{fontfile}':textfile='{brand_txt}':fontsize={side_fs}:"
+                f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
                 f"fontcolor=white@0.85:box=0:"
                 f"x={margin}:y={margin + 200}"
             )
