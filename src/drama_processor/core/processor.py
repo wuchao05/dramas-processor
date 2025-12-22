@@ -682,138 +682,138 @@ class DramaProcessor:
                 drama_start_time = time.time()  # 记录单个剧目开始时间
                 
                 try:
-                # Create project
-                project = self.create_drama_project(drama_dir)
+                    # Create project
+                    project = self.create_drama_project(drama_dir)
                 
-                if not project.episodes:
-                    logger.warning(f"Skipping {project.name}: no episodes found")
-                    continue
+                    if not project.episodes:
+                        logger.warning(f"Skipping {project.name}: no episodes found")
+                        continue
                 
-                # Get drama-specific date if available
-                drama_date = drama_dates.get(project.name) if drama_dates else None
+                    # Get drama-specific date if available
+                    drama_date = drama_dates.get(project.name) if drama_dates else None
                 
-                # Determine the export directory for this drama
-                if drama_date and drama_dates:
-                    # Create date-specific export directory
-                    parent_dir = os.path.dirname(os.path.abspath(actual_exports_root))
-                    date_export_dir = os.path.join(parent_dir, f"{drama_date}导出")
-                    os.makedirs(date_export_dir, exist_ok=True)
-                    drama_export_root = date_export_dir
-                else:
-                    # Use the common export directory
-                    drama_export_root = actual_exports_root
+                    # Determine the export directory for this drama
+                    if drama_date and drama_dates:
+                        # Create date-specific export directory
+                        parent_dir = os.path.dirname(os.path.abspath(actual_exports_root))
+                        date_export_dir = os.path.join(parent_dir, f"{drama_date}导出")
+                        os.makedirs(date_export_dir, exist_ok=True)
+                        drama_export_root = date_export_dir
+                    else:
+                        # Use the common export directory
+                        drama_export_root = actual_exports_root
                 
-                # Prepare output directory
-                result = self.prepare_project_output_dir(project, drama_export_root, drama_date)
-                if result[0] is None:  # Skip this drama
-                    continue
+                    # Prepare output directory
+                    result = self.prepare_project_output_dir(project, drama_export_root, drama_date)
+                    if result[0] is None:  # Skip this drama
+                        continue
                 
-                out_dir, run_suffix, start_index, total_to_make = result
-                total_materials_planned += total_to_make
+                    out_dir, run_suffix, start_index, total_to_make = result
+                    total_materials_planned += total_to_make
                 
-                # Update status to processing when starting processing
-                if self.status_callback:
-                    try:
-                        # Get the processing status value from config, fallback to "剪辑中"
-                        processing_status = "剪辑中"
-                        if self.config.feishu and self.config.feishu.processing_status_value:
-                            processing_status = self.config.feishu.processing_status_value
-                        
-                        callback_result = self.status_callback(project.name, processing_status)
-                        
-                        # 检查回调函数的返回值
-                        if callback_result == "SKIP":
-                            logger.warning(f"⚠️ 跳过处理 '{project.name}' - 状态更新返回SKIP")
-                            continue  # 跳过这部剧的处理
-                        elif callback_result is True:
-                            logger.info(f"📝 已更新 '{project.name}' 状态为'{processing_status}'")
-                        else:
-                            logger.warning(f"⚠️ 更新 '{project.name}' 状态失败，但继续处理")
-                    except Exception as e:
-                        logger.warning(f"⚠️ 更新 '{project.name}' 状态失败: {e}")
-                
-                # Log project info
-                ref_w, ref_h = project.reference_resolution or (1920, 1080)
-                logger.info(
-                    f"=== {project.name} | 参考画布：{ref_w}x{ref_h} | "
-                    f"输出FPS：{project.target_fps} | 运行批次：{run_suffix or '首次'} | "
-                    f"计划生成：{total_to_make} 条，每条 {self.config.min_duration}~{self.config.max_duration}s ==="
-                )
-                
-                # Process materials
-                completed, project_time = self.process_project_materials(
-                    project, out_dir, run_suffix, start_index, total_to_make, temp_root, drama_date
-                )
-                total_materials_done += completed
-                if self.cancel_event is not None and self.cancel_event.is_set():
-                    raise CancelledError("已取消处理")
-                
-                drama_end_time = time.time()  # 记录单个剧目结束时间
-                drama_total_time = drama_end_time - drama_start_time  # 计算剧目总耗时
-                
-                # Record successful processing details
-                if completed > 0:
-                    # Update status when processing is completed successfully
+                    # Update status to processing when starting processing
                     if self.status_callback:
-                        # Get the completed status value from config, fallback to "待上传"
-                        completed_status = "待上传"
-                        if self.config.feishu and self.config.feishu.completed_status_value:
-                            completed_status = self.config.feishu.completed_status_value
-                        
                         try:
-                            self.status_callback(project.name, completed_status)
-                            logger.info(f"📝 已更新 '{project.name}' 状态为'{completed_status}'")
+                            # Get the processing status value from config, fallback to "剪辑中"
+                            processing_status = "剪辑中"
+                            if self.config.feishu and self.config.feishu.processing_status_value:
+                                processing_status = self.config.feishu.processing_status_value
+                        
+                            callback_result = self.status_callback(project.name, processing_status)
+                        
+                            # 检查回调函数的返回值
+                            if callback_result == "SKIP":
+                                logger.warning(f"⚠️ 跳过处理 '{project.name}' - 状态更新返回SKIP")
+                                continue  # 跳过这部剧的处理
+                            elif callback_result is True:
+                                logger.info(f"📝 已更新 '{project.name}' 状态为'{processing_status}'")
+                            else:
+                                logger.warning(f"⚠️ 更新 '{project.name}' 状态失败，但继续处理")
                         except Exception as e:
-                            logger.warning(f"⚠️ 更新 '{project.name}' 状态为'{completed_status}'失败: {e}")
-                    
-                    # 构建素材文件路径列表
-                    materials_list = []
-                    if os.path.exists(out_dir):
-                        for file in os.listdir(out_dir):
-                            if file.endswith(('.mp4', '.mov', '.avi')):
-                                materials_list.append(os.path.join(out_dir, file))
-                    
-                    drama_info = {
-                        'name': project.name,
-                        'completed': completed,
-                        'planned': total_to_make,
-                        'output_dir': out_dir,
-                        'date': drama_date or self.config.get_date_str(),
-                        'run_suffix': run_suffix,
-                        'source_path': drama_dir,
-                        'materials': materials_list,
-                        'total_duration': sum(ep.duration or 0 for ep in project.episodes),
-                        'duration_per_material': (self.config.min_duration + self.config.max_duration) / 2,
-                        'start_time': drama_start_time,
-                        'end_time': drama_end_time,
-                        'processing_time': drama_total_time  # 总体时间（包含准备、处理、整理）
-                    }
-                    
-                    successful_dramas.append(drama_info)
-                    
-                    # 添加到历史记录（使用总体时间）
-                    self.history_manager.add_drama_record(session, drama_info, self.config, drama_total_time)
+                            logger.warning(f"⚠️ 更新 '{project.name}' 状态失败: {e}")
                 
-                # 即使没有成功，也记录开始时间用于统计
-                elif total_to_make > 0:
-                    # 失败的剧目也记录到历史中
-                    drama_info = {
-                        'name': project.name,
-                        'completed': 0,
-                        'planned': total_to_make,
-                        'output_dir': out_dir,
-                        'date': drama_date or self.config.get_date_str(),
-                        'run_suffix': run_suffix,
-                        'source_path': drama_dir,
-                        'materials': [],
-                        'total_duration': sum(ep.duration or 0 for ep in project.episodes),
-                        'duration_per_material': 0,
-                        'start_time': drama_start_time,
-                        'end_time': drama_end_time,
-                        'processing_time': drama_total_time
-                    }
+                    # Log project info
+                    ref_w, ref_h = project.reference_resolution or (1920, 1080)
+                    logger.info(
+                        f"=== {project.name} | 参考画布：{ref_w}x{ref_h} | "
+                        f"输出FPS：{project.target_fps} | 运行批次：{run_suffix or '首次'} | "
+                        f"计划生成：{total_to_make} 条，每条 {self.config.min_duration}~{self.config.max_duration}s ==="
+                    )
+                
+                    # Process materials
+                    completed, project_time = self.process_project_materials(
+                        project, out_dir, run_suffix, start_index, total_to_make, temp_root, drama_date
+                    )
+                    total_materials_done += completed
+                    if self.cancel_event is not None and self.cancel_event.is_set():
+                        raise CancelledError("已取消处理")
+                
+                    drama_end_time = time.time()  # 记录单个剧目结束时间
+                    drama_total_time = drama_end_time - drama_start_time  # 计算剧目总耗时
+                
+                    # Record successful processing details
+                    if completed > 0:
+                        # Update status when processing is completed successfully
+                        if self.status_callback:
+                            # Get the completed status value from config, fallback to "待上传"
+                            completed_status = "待上传"
+                            if self.config.feishu and self.config.feishu.completed_status_value:
+                                completed_status = self.config.feishu.completed_status_value
+                        
+                            try:
+                                self.status_callback(project.name, completed_status)
+                                logger.info(f"📝 已更新 '{project.name}' 状态为'{completed_status}'")
+                            except Exception as e:
+                                logger.warning(f"⚠️ 更新 '{project.name}' 状态为'{completed_status}'失败: {e}")
                     
-                    self.history_manager.add_drama_record(session, drama_info, self.config, drama_total_time)
+                        # 构建素材文件路径列表
+                        materials_list = []
+                        if os.path.exists(out_dir):
+                            for file in os.listdir(out_dir):
+                                if file.endswith(('.mp4', '.mov', '.avi')):
+                                    materials_list.append(os.path.join(out_dir, file))
+                    
+                        drama_info = {
+                            'name': project.name,
+                            'completed': completed,
+                            'planned': total_to_make,
+                            'output_dir': out_dir,
+                            'date': drama_date or self.config.get_date_str(),
+                            'run_suffix': run_suffix,
+                            'source_path': drama_dir,
+                            'materials': materials_list,
+                            'total_duration': sum(ep.duration or 0 for ep in project.episodes),
+                            'duration_per_material': (self.config.min_duration + self.config.max_duration) / 2,
+                            'start_time': drama_start_time,
+                            'end_time': drama_end_time,
+                            'processing_time': drama_total_time  # 总体时间（包含准备、处理、整理）
+                        }
+                    
+                        successful_dramas.append(drama_info)
+                    
+                        # 添加到历史记录（使用总体时间）
+                        self.history_manager.add_drama_record(session, drama_info, self.config, drama_total_time)
+                
+                    # 即使没有成功，也记录开始时间用于统计
+                    elif total_to_make > 0:
+                        # 失败的剧目也记录到历史中
+                        drama_info = {
+                            'name': project.name,
+                            'completed': 0,
+                            'planned': total_to_make,
+                            'output_dir': out_dir,
+                            'date': drama_date or self.config.get_date_str(),
+                            'run_suffix': run_suffix,
+                            'source_path': drama_dir,
+                            'materials': [],
+                            'total_duration': sum(ep.duration or 0 for ep in project.episodes),
+                            'duration_per_material': 0,
+                            'start_time': drama_start_time,
+                            'end_time': drama_end_time,
+                            'processing_time': drama_total_time
+                        }
+                    
+                        self.history_manager.add_drama_record(session, drama_info, self.config, drama_total_time)
                 
                 except CancelledError:
                     raise
