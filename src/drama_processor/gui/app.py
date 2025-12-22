@@ -118,6 +118,8 @@ class DramaProcessorGUI(tk.Tk):
         self._running = False
         self._total_dramas = 0
         self._completed_dramas = 0
+        self._drama_names: List[str] = []
+        self._processing_root: Optional[str] = None
 
         self._ui_bg = "#f5f5f5"
         self._ui_fg = "#222222"
@@ -228,8 +230,49 @@ class DramaProcessorGUI(tk.Tk):
         ttk.Entry(form, textvariable=self.var_font_file).grid(row=3, column=1, sticky="ew", padx=6)
         ttk.Button(form, text="选择", command=self._choose_font).grid(row=3, column=2)
 
+        drama_frame = ttk.LabelFrame(main, text="剧目选择", padding=10)
+        drama_frame.grid(row=1, column=0, sticky="nsew")
+        drama_frame.columnconfigure(0, weight=1)
+        drama_frame.rowconfigure(1, weight=1)
+
+        ttk.Label(drama_frame, text="从素材目录中选择要处理的剧目（支持多选）").grid(
+            row=0, column=0, sticky="w"
+        )
+
+        list_frame = ttk.Frame(drama_frame)
+        list_frame.grid(row=1, column=0, sticky="nsew", pady=6)
+        list_frame.columnconfigure(0, weight=1)
+        list_frame.rowconfigure(0, weight=1)
+
+        self.drama_listbox = tk.Listbox(
+            list_frame,
+            selectmode="extended",
+            height=6,
+            activestyle="none",
+            background=self._log_bg,
+            foreground=self._log_fg,
+            selectbackground="#c7ddff",
+            selectforeground="#1f1f1f",
+        )
+        self.drama_listbox.grid(row=0, column=0, sticky="nsew")
+        scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.drama_listbox.yview)
+        scrollbar.grid(row=0, column=1, sticky="ns")
+        self.drama_listbox.configure(yscrollcommand=scrollbar.set)
+
+        list_actions = ttk.Frame(drama_frame)
+        list_actions.grid(row=2, column=0, sticky="w")
+        ttk.Button(list_actions, text="刷新列表", command=self._refresh_drama_list).grid(
+            row=0, column=0, sticky="w"
+        )
+        ttk.Button(list_actions, text="全选", command=self._select_all_dramas).grid(
+            row=0, column=1, sticky="w", padx=6
+        )
+        ttk.Button(list_actions, text="清空选择", command=self._clear_drama_selection).grid(
+            row=0, column=2, sticky="w"
+        )
+
         opts = ttk.LabelFrame(main, text="处理参数", padding=10)
-        opts.grid(row=1, column=0, sticky="ew", pady=10)
+        opts.grid(row=2, column=0, sticky="ew", pady=10)
         opts.columnconfigure(1, weight=1)
 
         ttk.Label(opts, text="素材条数").grid(row=0, column=0, sticky="w")
@@ -254,7 +297,7 @@ class DramaProcessorGUI(tk.Tk):
         ttk.Checkbutton(opts, text="详细日志", variable=self.var_verbose).grid(row=1, column=3, sticky="w", pady=6)
 
         actions = ttk.Frame(main)
-        actions.grid(row=2, column=0, sticky="ew")
+        actions.grid(row=3, column=0, sticky="ew")
         actions.columnconfigure(0, weight=1)
 
         self.btn_start = ttk.Button(actions, text="开始处理", command=self._start_processing)
@@ -262,7 +305,7 @@ class DramaProcessorGUI(tk.Tk):
         ttk.Button(actions, text="清空日志", command=self._clear_logs).grid(row=0, column=1, sticky="w", padx=8)
 
         progress = ttk.Frame(main)
-        progress.grid(row=3, column=0, sticky="ew", pady=8)
+        progress.grid(row=4, column=0, sticky="ew", pady=8)
         progress.columnconfigure(1, weight=1)
 
         ttk.Label(progress, textvariable=self.var_status).grid(row=0, column=0, sticky="w")
@@ -271,8 +314,8 @@ class DramaProcessorGUI(tk.Tk):
         ttk.Label(progress, textvariable=self.var_progress).grid(row=0, column=2, sticky="e")
 
         log_frame = ttk.LabelFrame(main, text="日志", padding=8)
-        log_frame.grid(row=4, column=0, sticky="nsew")
-        main.rowconfigure(4, weight=1)
+        log_frame.grid(row=5, column=0, sticky="nsew")
+        main.rowconfigure(5, weight=1)
         log_frame.columnconfigure(0, weight=1)
         log_frame.rowconfigure(0, weight=1)
 
@@ -295,6 +338,7 @@ class DramaProcessorGUI(tk.Tk):
         path = filedialog.askdirectory()
         if path:
             self.var_root.set(path)
+            self._refresh_drama_list()
 
     def _choose_config(self) -> None:
         path = filedialog.askopenfilename(
@@ -338,6 +382,45 @@ class DramaProcessorGUI(tk.Tk):
         self.log_text.delete("1.0", "end")
         self.log_text.configure(state="disabled")
 
+    def _refresh_drama_list(self) -> None:
+        root_dir = self.var_root.get().strip()
+        self.drama_listbox.delete(0, "end")
+        self._drama_names = []
+        self._processing_root = None
+
+        if not root_dir or not Path(root_dir).is_dir():
+            return
+
+        processing_root, preselect = self._resolve_list_root(root_dir)
+        self._processing_root = processing_root
+
+        drama_dirs = scan_drama_dirs(processing_root)
+        names = [Path(p).name for p in drama_dirs]
+        self._drama_names = names
+
+        for name in names:
+            self.drama_listbox.insert("end", name)
+
+        if preselect and preselect in names:
+            idx = names.index(preselect)
+            self.drama_listbox.selection_set(idx)
+            self.drama_listbox.see(idx)
+
+    def _resolve_list_root(self, root_dir: str) -> Tuple[str, Optional[str]]:
+        root_path = Path(root_dir)
+        if self._dir_has_mp4(root_path):
+            parent = root_path.parent
+            if parent != root_path:
+                self.var_root.set(str(parent))
+                return str(parent), root_path.name
+        return root_dir, None
+
+    def _select_all_dramas(self) -> None:
+        self.drama_listbox.selection_set(0, "end")
+
+    def _clear_drama_selection(self) -> None:
+        self.drama_listbox.selection_clear(0, "end")
+
     def _append_log(self, line: str) -> None:
         self.log_text.configure(state="normal")
         self.log_text.insert("end", line + "\n")
@@ -366,6 +449,14 @@ class DramaProcessorGUI(tk.Tk):
             messagebox.showerror("目录无效", "素材目录不存在或不可访问。")
             return
 
+        if self._processing_root is None or self._processing_root != root_dir:
+            self._refresh_drama_list()
+
+        selected = self._get_selected_dramas()
+        if not selected:
+            messagebox.showerror("未选择剧目", "请从列表中选择要处理的剧目。")
+            return
+
         if shutil.which("ffmpeg") is None:
             messagebox.showerror("缺少 FFmpeg", "未检测到 FFmpeg，请先安装并加入 PATH。")
             return
@@ -390,10 +481,20 @@ class DramaProcessorGUI(tk.Tk):
 
         worker = threading.Thread(
             target=self._run_processing,
-            args=(root_dir, config_path, overrides),
+            args=(self._processing_root or root_dir, config_path, overrides, selected),
             daemon=True,
         )
         worker.start()
+
+    def _get_selected_dramas(self) -> List[str]:
+        indices = list(self.drama_listbox.curselection())
+        if not indices:
+            return []
+        names = []
+        for idx in indices:
+            if 0 <= idx < len(self._drama_names):
+                names.append(self._drama_names[idx])
+        return names
 
     def _collect_overrides(self) -> Dict[str, object]:
         count = _parse_int(self.var_count.get().strip(), "素材条数")
@@ -436,19 +537,30 @@ class DramaProcessorGUI(tk.Tk):
         root_dir: str,
         config_path: Optional[str],
         overrides: Dict[str, object],
+        selected_dramas: List[str],
     ) -> None:
         original_stdout = sys.stdout
         original_stderr = sys.stderr
         try:
             config = self._load_config(config_path)
             self._apply_overrides(config, overrides)
-            self._adjust_config_for_gui(config)
+            processing_root, single_drama_name, base_root = self._resolve_processing_root(
+                root_dir
+            )
+            if not selected_dramas and single_drama_name:
+                selected_dramas = [single_drama_name]
+            self._adjust_config_for_gui(config, base_root, selected_dramas)
 
             self._configure_logging(config.verbose)
             sys.stdout = StreamRedirector(self._log_queue, "stdout")
             sys.stderr = StreamRedirector(self._log_queue, "stderr")
 
-            total = self._calculate_total_dramas(root_dir, config)
+            if single_drama_name and selected_dramas:
+                self._log_queue.put(
+                    ("log", f"检测到单剧目录，已默认勾选：{single_drama_name}")
+                )
+
+            total = self._calculate_total_dramas(processing_root, config)
             self._log_queue.put(("total", str(total)))
             if total == 0:
                 self._log_queue.put(("status", "未发现可处理剧目"))
@@ -456,7 +568,7 @@ class DramaProcessorGUI(tk.Tk):
                 return
 
             processor = DramaProcessor(config)
-            made, _ = processor.process_all_dramas(root_dir)
+            made, _ = processor.process_all_dramas(processing_root)
             self._log_queue.put(("status", "处理完成"))
             self._log_queue.put(("done", f"处理完成，共生成 {made} 条素材。"))
         except Exception as exc:
@@ -476,9 +588,20 @@ class DramaProcessorGUI(tk.Tk):
         for key, value in overrides.items():
             setattr(config, key, value)
 
-    def _adjust_config_for_gui(self, config: ProcessingConfig) -> None:
+    def _adjust_config_for_gui(
+        self,
+        config: ProcessingConfig,
+        base_root: str,
+        selected_dramas: List[str],
+    ) -> None:
         config.full = True
         config.no_interactive = True
+
+        if selected_dramas:
+            config.include = selected_dramas
+            config.exclude = None
+            if config.output_dir and not os.path.isabs(config.output_dir):
+                config.output_dir = os.path.abspath(os.path.join(base_root, "exports"))
 
         if not config.temp_dir:
             config.temp_dir = tempfile.gettempdir()
@@ -522,6 +645,26 @@ class DramaProcessorGUI(tk.Tk):
         if not all_dirs:
             return 0
         return len(self._filter_dramas(all_dirs, config))
+
+    def _resolve_processing_root(
+        self, root_dir: str
+    ) -> Tuple[str, Optional[str], str]:
+        """识别单剧目录并调整扫描根目录。"""
+        root_path = Path(root_dir)
+        if self._dir_has_mp4(root_path):
+            parent = root_path.parent
+            if parent != root_path:
+                return str(parent), root_path.name, root_dir
+        return root_dir, None, root_dir
+
+    def _dir_has_mp4(self, path: Path) -> bool:
+        try:
+            for entry in os.scandir(path):
+                if entry.is_file() and entry.name.lower().endswith(".mp4"):
+                    return True
+        except Exception:
+            return False
+        return False
 
     def _filter_dramas(self, all_dirs: List[str], config: ProcessingConfig) -> List[str]:
         exclude_set = set(config.exclude or [])
