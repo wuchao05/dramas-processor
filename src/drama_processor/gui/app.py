@@ -14,9 +14,11 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from tkinter.scrolledtext import ScrolledText
 
-from ..config.loader import load_config_with_fallback
+import yaml
+
+from ..config.defaults import get_default_config
 from ..core.processor import DramaProcessor
-from ..models.config import ProcessingConfig
+from ..models.config import BrandTextRange, ProcessingConfig
 from ..utils.files import scan_drama_dirs
 from ..utils.logging import setup_logging
 from ..utils.system import resolve_asset_path
@@ -125,6 +127,7 @@ class DramaProcessorGUI(tk.Tk):
         self._selected_drama_set: Set[str] = set()
         self._processing_root: Optional[str] = None
         self._cancel_event = threading.Event()
+        self._base_brand_text = "热门短剧"
 
         self._ui_bg = "#f5f5f5"
         self._ui_fg = "#222222"
@@ -147,6 +150,9 @@ class DramaProcessorGUI(tk.Tk):
         self.var_output = tk.StringVar()
         self.var_font_file = tk.StringVar()
         self.var_filter = tk.StringVar()
+        self.var_material_code = tk.StringVar()
+        self.var_title_colors = tk.StringVar()
+        self.var_brand_default = tk.StringVar()
 
         self.var_count = tk.StringVar()
         self.var_min_duration = tk.StringVar()
@@ -157,6 +163,7 @@ class DramaProcessorGUI(tk.Tk):
         self.var_fast_mode = tk.BooleanVar(value=True)
         self.var_keep_temp = tk.BooleanVar(value=False)
         self.var_verbose = tk.BooleanVar(value=False)
+        self.var_enable_feishu = tk.BooleanVar(value=False)
 
         self.var_status = tk.StringVar(value="就绪")
         self.var_progress = tk.StringVar(value="0/0")
@@ -344,8 +351,45 @@ class DramaProcessorGUI(tk.Tk):
         )
         ttk.Checkbutton(opts, text="详细日志", variable=self.var_verbose).grid(row=1, column=3, sticky="w", pady=6)
 
+        user_opts = ttk.LabelFrame(main, text="用户配置", padding=10)
+        user_opts.grid(row=3, column=0, sticky="ew", pady=(0, 10))
+        user_opts.columnconfigure(1, weight=0)
+        user_opts.columnconfigure(3, weight=1)
+
+        ttk.Label(user_opts, text="素材标识").grid(row=0, column=0, sticky="w")
+        ttk.Entry(user_opts, textvariable=self.var_material_code, width=10).grid(
+            row=0, column=1, sticky="w", padx=6
+        )
+        ttk.Label(user_opts, text="标题颜色").grid(row=0, column=2, sticky="w", padx=(16, 0))
+        ttk.Entry(user_opts, textvariable=self.var_title_colors).grid(
+            row=0, column=3, sticky="ew", padx=6
+        )
+
+        ttk.Label(user_opts, text="默认文案").grid(row=1, column=0, sticky="w", pady=6)
+        ttk.Entry(user_opts, textvariable=self.var_brand_default).grid(
+            row=1, column=1, sticky="w", padx=6
+        )
+        ttk.Checkbutton(user_opts, text="启用飞书功能", variable=self.var_enable_feishu).grid(
+            row=1, column=2, sticky="w", padx=(16, 0)
+        )
+
+        ttk.Label(user_opts, text="多素材文案(range)").grid(row=2, column=0, sticky="nw", pady=(6, 0))
+        self.brand_ranges_text = ScrolledText(
+            user_opts,
+            height=4,
+            wrap="word",
+            background=self._entry_bg,
+            foreground=self._ui_fg,
+            insertbackground=self._ui_fg,
+        )
+        self.brand_ranges_text.grid(row=2, column=1, columnspan=3, sticky="ew", padx=6, pady=(6, 0))
+        ttk.Label(
+            user_opts,
+            text="格式示例：01-03=萍通剧坊（每行一条，支持 01-03 / 01,02 / 01）",
+        ).grid(row=3, column=1, columnspan=3, sticky="w", padx=6, pady=(4, 0))
+
         actions = ttk.Frame(main)
-        actions.grid(row=3, column=0, sticky="ew")
+        actions.grid(row=4, column=0, sticky="ew")
         actions.columnconfigure(0, weight=1)
 
         self.btn_start = ttk.Button(actions, text="开始处理", command=self._start_processing)
@@ -355,7 +399,7 @@ class DramaProcessorGUI(tk.Tk):
         ttk.Button(actions, text="清空日志", command=self._clear_logs).grid(row=0, column=2, sticky="w", padx=8)
 
         progress = ttk.Frame(main)
-        progress.grid(row=4, column=0, sticky="ew", pady=8)
+        progress.grid(row=5, column=0, sticky="ew", pady=8)
         progress.columnconfigure(1, weight=1)
 
         ttk.Label(progress, textvariable=self.var_status).grid(row=0, column=0, sticky="w")
@@ -364,8 +408,8 @@ class DramaProcessorGUI(tk.Tk):
         ttk.Label(progress, textvariable=self.var_progress).grid(row=0, column=2, sticky="e")
 
         log_frame = ttk.LabelFrame(main, text="日志", padding=8)
-        log_frame.grid(row=5, column=0, sticky="nsew")
-        main.rowconfigure(5, weight=1)
+        log_frame.grid(row=6, column=0, sticky="nsew")
+        main.rowconfigure(6, weight=1)
         log_frame.columnconfigure(0, weight=1)
         log_frame.rowconfigure(0, weight=1)
 
@@ -381,7 +425,10 @@ class DramaProcessorGUI(tk.Tk):
         self.log_text.grid(row=0, column=0, sticky="nsew")
 
     def _apply_default_values(self) -> None:
-        config = self._load_config(None)
+        default_config = resolve_asset_path("configs/default.yaml")
+        if default_config:
+            self.var_config.set(str(default_config))
+        config = self._load_config(default_config)
         self._apply_config_to_form(config)
 
     def _choose_root(self) -> None:
@@ -422,10 +469,56 @@ class DramaProcessorGUI(tk.Tk):
         self.var_fast_mode.set(bool(config.fast_mode))
         self.var_keep_temp.set(bool(config.keep_temp))
         self.var_verbose.set(bool(config.verbose))
+        self.var_material_code.set(str(config.material_code))
+        self.var_title_colors.set(", ".join(config.title_colors or []))
+        self.var_enable_feishu.set(bool(config.enable_feishu_features))
         if config.output_dir:
             self.var_output.set(str(config.output_dir))
         if config.font_file:
             self.var_font_file.set(str(config.font_file))
+        self._base_brand_text = config.brand_text or "热门短剧"
+        default_text = self._base_brand_text
+        ranges = None
+        if config.brand_text_mapping:
+            default_text = config.brand_text_mapping.default_text or default_text
+            if config.brand_text_mapping.mode == "range":
+                ranges = config.brand_text_mapping.ranges or []
+        self.var_brand_default.set(default_text)
+        self._set_brand_ranges(ranges or [])
+
+    def _set_brand_ranges(self, ranges: List[BrandTextRange]) -> None:
+        self.brand_ranges_text.delete("1.0", "end")
+        for item in ranges:
+            self.brand_ranges_text.insert("end", f"{item.range}={item.text}\n")
+
+    def _parse_title_colors(self, raw: str) -> List[str]:
+        if not raw.strip():
+            return []
+        parts: List[str] = []
+        for chunk in raw.replace("\n", ",").split(","):
+            color = chunk.strip()
+            if color:
+                parts.append(color)
+        return parts
+
+    def _parse_brand_ranges(self) -> List[Dict[str, str]]:
+        raw = self.brand_ranges_text.get("1.0", "end").strip()
+        if not raw:
+            return []
+        ranges: List[Dict[str, str]] = []
+        for line in raw.splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            if "=" not in line:
+                raise ValueError("多素材文案格式错误，请使用 01-03=文案 的格式。")
+            range_part, text = line.split("=", 1)
+            range_part = range_part.strip()
+            text = text.strip()
+            if not range_part or not text:
+                raise ValueError("多素材文案格式错误，请填写完整的范围和文案。")
+            ranges.append({"range": range_part, "text": text})
+        return ranges
 
     def _clear_logs(self) -> None:
         self.log_text.configure(state="normal")
@@ -634,6 +727,11 @@ class DramaProcessorGUI(tk.Tk):
         min_dur = _parse_float(self.var_min_duration.get().strip(), "最小时长")
         max_dur = _parse_float(self.var_max_duration.get().strip(), "最大时长")
         jobs = _parse_int(self.var_jobs.get().strip(), "并发数")
+        material_code = self.var_material_code.get().strip()
+        title_colors = self._parse_title_colors(self.var_title_colors.get())
+        brand_default = self.var_brand_default.get().strip()
+        brand_ranges = self._parse_brand_ranges()
+        enable_feishu = bool(self.var_enable_feishu.get())
 
         if count <= 0:
             raise ValueError("素材条数必须大于 0")
@@ -653,7 +751,11 @@ class DramaProcessorGUI(tk.Tk):
             "fast_mode": bool(self.var_fast_mode.get()),
             "keep_temp": bool(self.var_keep_temp.get()),
             "verbose": bool(self.var_verbose.get()),
+            "enable_feishu_features": enable_feishu,
+            "enable_feishu_notification": enable_feishu,
         }
+        if not enable_feishu:
+            overrides["feishu_watcher"] = {"enabled": False}
 
         output_dir = self.var_output.get().strip()
         if output_dir:
@@ -662,6 +764,20 @@ class DramaProcessorGUI(tk.Tk):
         font_file = self.var_font_file.get().strip()
         if font_file:
             overrides["font_file"] = font_file
+        if material_code:
+            overrides["material_code"] = material_code
+        if title_colors:
+            overrides["title_colors"] = title_colors
+        if brand_ranges:
+            overrides["brand_text_mapping"] = {
+                "mode": "range",
+                "ranges": brand_ranges,
+                "default_text": brand_default or self._base_brand_text,
+            }
+            overrides["brand_text"] = brand_default or self._base_brand_text
+            overrides["enable_brand_text"] = True
+        elif brand_default:
+            overrides["brand_text"] = brand_default
 
         return overrides
 
@@ -715,9 +831,27 @@ class DramaProcessorGUI(tk.Tk):
 
     def _load_config(self, config_path: Optional[str]) -> ProcessingConfig:
         if config_path:
-            return load_config_with_fallback(config_path)
+            return self._load_config_without_user(config_path)
         default_config = resolve_asset_path("configs/default.yaml")
-        return load_config_with_fallback(default_config)
+        return self._load_config_without_user(default_config)
+
+    def _load_config_without_user(self, config_path: Optional[str]) -> ProcessingConfig:
+        if not config_path:
+            return get_default_config()
+        path = Path(config_path)
+        if not path.exists():
+            return get_default_config()
+        try:
+            with open(path, "r", encoding="utf-8") as handle:
+                data = yaml.safe_load(handle) or {}
+            data["active_user"] = None
+            if "enable_feishu_features" not in data:
+                data["enable_feishu_features"] = False
+            if "enable_feishu_notification" not in data:
+                data["enable_feishu_notification"] = False
+            return ProcessingConfig(**data)
+        except Exception:
+            return get_default_config()
 
     def _apply_overrides(self, config: ProcessingConfig, overrides: Dict[str, object]) -> None:
         for key, value in overrides.items():
