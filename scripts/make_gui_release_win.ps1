@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-# Windows 便携版 GUI 打包脚本（需要先安装 pyinstaller）
+# Windows portable GUI build script (requires pyinstaller)
 $scriptDir = $PSScriptRoot
 if (-not $scriptDir) {
     $scriptPath = $PSCommandPath
@@ -22,11 +22,11 @@ if (-not (Test-Path $entry)) {
     $entry = Join-Path $repoRoot "src\drama_processor\gui\app.py"
 }
 if (-not (Test-Path $entry)) {
-    throw "无法定位项目根目录，请在项目根目录执行该脚本。"
+    throw "Unable to locate project root. Run this script from the repo root."
 }
 
 if (-not (Get-Command pyinstaller -ErrorAction SilentlyContinue)) {
-    Write-Host "未检测到 pyinstaller，请先安装：pip install pyinstaller"
+    Write-Host "pyinstaller not found. Install it with: pip install pyinstaller"
     exit 1
 }
 
@@ -48,4 +48,4 @@ foreach ($item in $addData) {
 
 & pyinstaller -F -w -n "drama-processor-gui" $entry @addDataArgs --distpath $distDir --workpath $buildDir
 
-Write-Host "生成完成：$distDir\drama-processor-gui.exe"
+Write-Host ("Done: {0}" -f (Join-Path $distDir "drama-processor-gui.exe"))
