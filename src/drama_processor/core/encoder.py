@@ -245,9 +245,12 @@ class VideoEncoder:
 
     def _filter_path(self, path: str) -> str:
         """转换路径为 FFmpeg filter 友好格式（避免 Windows 反斜杠被转义）。"""
-        if os.name == "nt":
-            return path.replace("\\", "/")
-        return path
+        if os.name != "nt":
+            return path
+        normalized = path.replace("\\", "/")
+        normalized = normalized.replace(":", "\\:")
+        normalized = normalized.replace("'", "\\'")
+        return normalized
     
     def to_vertical(self, text: str) -> str:
         """Convert text to vertical layout."""

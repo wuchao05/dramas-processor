@@ -22,6 +22,15 @@ class TextOverlay:
         if "\n" in text:
             return text
         return "\n".join(list(text))
+
+    def _filter_path(self, path: str) -> str:
+        """转换路径为 FFmpeg filter 友好格式（避免 Windows 反斜杠被转义）。"""
+        if os.name != "nt":
+            return path
+        normalized = path.replace("\\", "/")
+        normalized = normalized.replace(":", "\\:")
+        normalized = normalized.replace("'", "\\'")
+        return normalized
     
     def create_text_files(self, workdir: str, drama_name: str, footer_text: str, side_text: str) -> tuple:
         """Create text files for overlay filters."""
@@ -42,12 +51,16 @@ class TextOverlay:
         """Build text overlay filter strings."""
         margin = max(12, int(ref_h * 0.037))
         title_color = random.choice(self.title_colors)
+        fontfile_filter = self._filter_path(fontfile)
+        title_txt_filter = self._filter_path(title_txt)
+        bottom_txt_filter = self._filter_path(bottom_txt)
+        side_txt_filter = self._filter_path(side_txtf)
         
         overlays = []
         
         # Title overlay (top center)
         dt_top = (
-            f"drawtext=fontfile='{fontfile}':textfile='{title_txt}':fontsize={title_font_size}:"
+            f"drawtext=fontfile='{fontfile_filter}':textfile='{title_txt_filter}':fontsize={title_font_size}:"
             f"fontcolor={title_color}@0.9:shadowx=1:shadowy=1:box=0:"
             f"x=(w-text_w)/2:y={margin + 20}"
         )
@@ -55,7 +68,7 @@ class TextOverlay:
         
         # Bottom overlay (bottom center)
         dt_bottom = (
-            f"drawtext=fontfile='{fontfile}':textfile='{bottom_txt}':fontsize={bottom_font_size}:"
+            f"drawtext=fontfile='{fontfile_filter}':textfile='{bottom_txt_filter}':fontsize={bottom_font_size}:"
             f"fontcolor=white@0.85:box=0:"
             f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
         )
@@ -63,7 +76,7 @@ class TextOverlay:
         
         # Side overlay (top right, vertical)
         dt_side = (
-            f"drawtext=fontfile='{fontfile}':textfile='{side_txtf}':fontsize={side_font_size}:"
+            f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_font_size}:"
             f"fontcolor=white@0.85:box=0:"
             f"x=w-text_w-{margin}:y={margin + 200}"
         )
