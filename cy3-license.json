@@ -1,0 +1,12 @@
+{
+  "user": "friend-b",
+  "features": [
+    "process",
+    "analyze",
+    "config",
+    "history"
+  ],
+  "machine_fingerprint": "0cff9205d03b7589e3888b6a317b8f6c3ac35d17d6bb7ded4bde524c536e357e",
+  "expires_at": "2026-05-01T00:00:00Z",
+  "signature": "QAVAzQtEERdsgZhNaCNU3v1HuexKcgcPmP0AYICrX_BTLjf1EZMWQyCafY7ayyLnME_3wDN7DRt87sjA0prFDw"
+}
