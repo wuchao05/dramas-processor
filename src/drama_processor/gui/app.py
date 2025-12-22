@@ -121,6 +121,7 @@ class DramaProcessorGUI(tk.Tk):
 
         self._ui_bg = "#f5f5f5"
         self._ui_fg = "#222222"
+        self._entry_bg = "#ffffff"
         self._log_bg = "#ffffff"
         self._log_fg = "#222222"
 
@@ -157,9 +158,6 @@ class DramaProcessorGUI(tk.Tk):
 
         if _is_windows() and "vista" in themes:
             theme = "vista"
-        elif sys.platform == "darwin":
-            # mac 深色模式下 ttk 可能出现黑底黑字，统一切到 clam
-            theme = "clam" if "clam" in themes else style.theme_use()
         else:
             theme = "clam" if "clam" in themes else style.theme_use()
 
@@ -168,16 +166,41 @@ class DramaProcessorGUI(tk.Tk):
         except tk.TclError:
             pass
 
-        bg = style.lookup("TFrame", "background") or "#f5f5f5"
-        fg = style.lookup("TLabel", "foreground") or "#222222"
-        self._ui_bg = bg
-        self._ui_fg = fg
-
-        style.configure("TFrame", background=bg)
-        style.configure("TLabelframe", background=bg)
-        style.configure("TLabelframe.Label", background=bg, foreground=fg)
-        style.configure("TLabel", background=bg, foreground=fg)
-        self.configure(background=bg)
+        if sys.platform == "darwin":
+            # mac 深色模式下 ttk 容易黑底黑字，强制亮色外观
+            try:
+                self.tk.call(
+                    "tk",
+                    "unsupported::MacWindowStyle",
+                    "appearance",
+                    self._w,
+                    "light",
+                )
+            except tk.TclError:
+                pass
+            self._ui_bg = "#f7f7f7"
+            self._ui_fg = "#1f1f1f"
+            self._entry_bg = "#ffffff"
+            self._log_bg = "#ffffff"
+            self._log_fg = "#1f1f1f"
+        else:
+            bg = style.lookup("TFrame", "background") or "#f5f5f5"
+            fg = style.lookup("TLabel", "foreground") or "#222222"
+            self._ui_bg = bg
+            self._ui_fg = fg
+            self._entry_bg = "#ffffff"
+            self._log_bg = "#ffffff"
+            self._log_fg = fg
+        style.configure(".", background=self._ui_bg, foreground=self._ui_fg)
+        style.configure("TFrame", background=self._ui_bg)
+        style.configure("TLabelframe", background=self._ui_bg)
+        style.configure("TLabelframe.Label", background=self._ui_bg, foreground=self._ui_fg)
+        style.configure("TLabel", background=self._ui_bg, foreground=self._ui_fg)
+        style.configure("TCheckbutton", background=self._ui_bg, foreground=self._ui_fg)
+        style.configure("TEntry", fieldbackground=self._entry_bg, foreground=self._ui_fg)
+        style.configure("TButton", background=self._ui_bg, foreground=self._ui_fg)
+        style.configure("TProgressbar", troughcolor="#dcdcdc")
+        self.configure(background=self._ui_bg)
 
     def _build_ui(self) -> None:
         main = ttk.Frame(self, padding=12)
