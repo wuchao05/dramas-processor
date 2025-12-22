@@ -8,7 +8,7 @@ import sys
 import tempfile
 import threading
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
@@ -119,7 +119,10 @@ class DramaProcessorGUI(tk.Tk):
         self._running = False
         self._total_dramas = 0
         self._completed_dramas = 0
-        self._drama_names: List[str] = []
+        self._all_drama_names: List[str] = []
+        self._filtered_drama_names: List[str] = []
+        self._selected_drama_names: List[str] = []
+        self._selected_drama_set: Set[str] = set()
         self._processing_root: Optional[str] = None
         self._cancel_event = threading.Event()
 
@@ -143,6 +146,7 @@ class DramaProcessorGUI(tk.Tk):
         self.var_config = tk.StringVar()
         self.var_output = tk.StringVar()
         self.var_font_file = tk.StringVar()
+        self.var_filter = tk.StringVar()
 
         self.var_count = tk.StringVar()
         self.var_min_duration = tk.StringVar()
@@ -237,18 +241,31 @@ class DramaProcessorGUI(tk.Tk):
         drama_frame.grid(row=1, column=0, sticky="nsew")
         drama_frame.columnconfigure(0, weight=1)
         drama_frame.rowconfigure(1, weight=1)
+        filter_frame = ttk.Frame(drama_frame)
+        filter_frame.grid(row=0, column=0, sticky="ew")
+        filter_frame.columnconfigure(2, weight=1)
 
-        ttk.Label(drama_frame, text="从素材目录中选择要处理的剧目（支持多选）").grid(
+        ttk.Label(filter_frame, text="从素材目录中选择要处理的剧目（支持多选）").grid(
             row=0, column=0, sticky="w"
         )
+        ttk.Label(filter_frame, text="搜索").grid(row=0, column=1, sticky="e", padx=(12, 4))
+        ttk.Entry(filter_frame, textvariable=self.var_filter).grid(row=0, column=2, sticky="ew")
+        self.var_filter.trace_add("write", lambda *_: self._apply_drama_filter())
 
         list_frame = ttk.Frame(drama_frame)
         list_frame.grid(row=1, column=0, sticky="nsew", pady=6)
         list_frame.columnconfigure(0, weight=1)
+        list_frame.columnconfigure(1, weight=1)
         list_frame.rowconfigure(0, weight=1)
 
+        available_frame = ttk.Frame(list_frame)
+        available_frame.grid(row=0, column=0, sticky="nsew", padx=(0, 6))
+        available_frame.columnconfigure(0, weight=1)
+        available_frame.rowconfigure(1, weight=1)
+
+        ttk.Label(available_frame, text="可选剧目").grid(row=0, column=0, sticky="w")
         self.drama_listbox = tk.Listbox(
-            list_frame,
+            available_frame,
             selectmode="extended",
             height=6,
             activestyle="none",
@@ -257,10 +274,38 @@ class DramaProcessorGUI(tk.Tk):
             selectbackground="#c7ddff",
             selectforeground="#1f1f1f",
         )
-        self.drama_listbox.grid(row=0, column=0, sticky="nsew")
-        scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.drama_listbox.yview)
-        scrollbar.grid(row=0, column=1, sticky="ns")
+        self.drama_listbox.grid(row=1, column=0, sticky="nsew")
+        scrollbar = ttk.Scrollbar(available_frame, orient="vertical", command=self.drama_listbox.yview)
+        scrollbar.grid(row=1, column=1, sticky="ns")
         self.drama_listbox.configure(yscrollcommand=scrollbar.set)
+        self.drama_listbox.bind("<<ListboxSelect>>", self._on_drama_list_select)
+
+        selected_frame = ttk.Frame(list_frame)
+        selected_frame.grid(row=0, column=1, sticky="nsew", padx=(6, 0))
+        selected_frame.columnconfigure(0, weight=1)
+        selected_frame.rowconfigure(1, weight=1)
+
+        ttk.Label(selected_frame, text="已选剧目").grid(row=0, column=0, sticky="w")
+        self.selected_listbox = tk.Listbox(
+            selected_frame,
+            selectmode="extended",
+            height=6,
+            activestyle="none",
+            background=self._log_bg,
+            foreground=self._log_fg,
+            selectbackground="#c7ddff",
+            selectforeground="#1f1f1f",
+        )
+        self.selected_listbox.grid(row=1, column=0, sticky="nsew")
+        selected_scrollbar = ttk.Scrollbar(
+            selected_frame, orient="vertical", command=self.selected_listbox.yview
+        )
+        selected_scrollbar.grid(row=1, column=1, sticky="ns")
+        self.selected_listbox.configure(yscrollcommand=selected_scrollbar.set)
+
+        ttk.Button(selected_frame, text="移除选中", command=self._remove_selected_dramas).grid(
+            row=2, column=0, sticky="w", pady=(6, 0)
+        )
 
         list_actions = ttk.Frame(drama_frame)
         list_actions.grid(row=2, column=0, sticky="w")
@@ -390,10 +435,14 @@ class DramaProcessorGUI(tk.Tk):
     def _refresh_drama_list(self) -> None:
         root_dir = self.var_root.get().strip()
         self.drama_listbox.delete(0, "end")
-        self._drama_names = []
+        self._all_drama_names = []
+        self._filtered_drama_names = []
         self._processing_root = None
 
         if not root_dir or not Path(root_dir).is_dir():
+            self._selected_drama_set = set()
+            self._selected_drama_names = []
+            self._refresh_selected_listbox()
             return
 
         processing_root, preselect = self._resolve_list_root(root_dir)
@@ -401,15 +450,22 @@ class DramaProcessorGUI(tk.Tk):
 
         drama_dirs = scan_drama_dirs(processing_root)
         names = [Path(p).name for p in drama_dirs]
-        self._drama_names = names
+        self._all_drama_names = names
 
-        for name in names:
-            self.drama_listbox.insert("end", name)
+        if self._selected_drama_names:
+            retained = [name for name in self._selected_drama_names if name in names]
+            self._selected_drama_set = set(retained)
+            self._selected_drama_names = retained
+        else:
+            self._selected_drama_set = set()
+            self._selected_drama_names = []
 
-        if preselect and preselect in names:
-            idx = names.index(preselect)
-            self.drama_listbox.selection_set(idx)
-            self.drama_listbox.see(idx)
+        if preselect and preselect in names and preselect not in self._selected_drama_set:
+            self._selected_drama_set.add(preselect)
+            self._selected_drama_names = [name for name in names if name in self._selected_drama_set]
+
+        self._apply_drama_filter()
+        self._refresh_selected_listbox()
 
     def _resolve_list_root(self, root_dir: str) -> Tuple[str, Optional[str]]:
         root_path = Path(root_dir)
@@ -420,11 +476,79 @@ class DramaProcessorGUI(tk.Tk):
                 return str(parent), root_path.name
         return root_dir, None
 
+    def _apply_drama_filter(self) -> None:
+        keyword = self.var_filter.get().strip().lower()
+        if keyword:
+            self._filtered_drama_names = [
+                name for name in self._all_drama_names if keyword in name.lower()
+            ]
+        else:
+            self._filtered_drama_names = list(self._all_drama_names)
+        self._rebuild_drama_listbox()
+
+    def _rebuild_drama_listbox(self) -> None:
+        self.drama_listbox.delete(0, "end")
+        for name in self._filtered_drama_names:
+            self.drama_listbox.insert("end", name)
+        self._sync_drama_listbox_selection()
+
+    def _sync_drama_listbox_selection(self) -> None:
+        self.drama_listbox.selection_clear(0, "end")
+        for idx, name in enumerate(self._filtered_drama_names):
+            if name in self._selected_drama_set:
+                self.drama_listbox.selection_set(idx)
+
+    def _on_drama_list_select(self, _event: Optional[tk.Event] = None) -> None:
+        selected_visible = {
+            self._filtered_drama_names[idx]
+            for idx in self.drama_listbox.curselection()
+            if 0 <= idx < len(self._filtered_drama_names)
+        }
+        visible_set = set(self._filtered_drama_names)
+        self._selected_drama_set = (self._selected_drama_set - visible_set) | selected_visible
+        self._selected_drama_names = [
+            name for name in self._all_drama_names if name in self._selected_drama_set
+        ]
+        self._refresh_selected_listbox()
+
+    def _refresh_selected_listbox(self) -> None:
+        self.selected_listbox.delete(0, "end")
+        for name in self._selected_drama_names:
+            self.selected_listbox.insert("end", name)
+
     def _select_all_dramas(self) -> None:
-        self.drama_listbox.selection_set(0, "end")
+        for name in self._filtered_drama_names:
+            self._selected_drama_set.add(name)
+        self._selected_drama_names = [
+            name for name in self._all_drama_names if name in self._selected_drama_set
+        ]
+        self._refresh_selected_listbox()
+        self._sync_drama_listbox_selection()
 
     def _clear_drama_selection(self) -> None:
-        self.drama_listbox.selection_clear(0, "end")
+        self._selected_drama_set.clear()
+        self._selected_drama_names = []
+        self._refresh_selected_listbox()
+        self._sync_drama_listbox_selection()
+
+    def _remove_selected_dramas(self) -> None:
+        indices = list(self.selected_listbox.curselection())
+        if not indices:
+            return
+        names_to_remove = [
+            self._selected_drama_names[idx]
+            for idx in indices
+            if 0 <= idx < len(self._selected_drama_names)
+        ]
+        if not names_to_remove:
+            return
+        for name in names_to_remove:
+            self._selected_drama_set.discard(name)
+        self._selected_drama_names = [
+            name for name in self._all_drama_names if name in self._selected_drama_set
+        ]
+        self._refresh_selected_listbox()
+        self._sync_drama_listbox_selection()
 
     def _append_log(self, line: str) -> None:
         self.log_text.configure(state="normal")
@@ -503,14 +627,7 @@ class DramaProcessorGUI(tk.Tk):
         self._append_log("🛑 已请求取消，将在当前任务结束后停止。")
 
     def _get_selected_dramas(self) -> List[str]:
-        indices = list(self.drama_listbox.curselection())
-        if not indices:
-            return []
-        names = []
-        for idx in indices:
-            if 0 <= idx < len(self._drama_names):
-                names.append(self._drama_names[idx])
-        return names
+        return list(self._selected_drama_names)
 
     def _collect_overrides(self) -> Dict[str, object]:
         count = _parse_int(self.var_count.get().strip(), "素材条数")
