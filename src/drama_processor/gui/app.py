@@ -18,7 +18,7 @@ import yaml
 
 from ..config.defaults import get_default_config
 from ..core.processor import DramaProcessor
-from ..models.config import BrandTextRange, ProcessingConfig
+from ..models.config import BrandTextMapping, BrandTextRange, FeishuWatcherConfig, ProcessingConfig
 from ..utils.files import scan_drama_dirs
 from ..utils.logging import setup_logging
 from ..utils.system import resolve_asset_path
@@ -777,7 +777,9 @@ class DramaProcessorGUI(tk.Tk):
             overrides["brand_text"] = brand_default or self._base_brand_text
             overrides["enable_brand_text"] = True
         elif brand_default:
+            overrides["brand_text_mapping"] = None
             overrides["brand_text"] = brand_default
+            overrides["enable_brand_text"] = True
 
         return overrides
 
@@ -855,6 +857,10 @@ class DramaProcessorGUI(tk.Tk):
 
     def _apply_overrides(self, config: ProcessingConfig, overrides: Dict[str, object]) -> None:
         for key, value in overrides.items():
+            if key == "brand_text_mapping" and isinstance(value, dict):
+                value = BrandTextMapping(**value)
+            elif key == "feishu_watcher" and isinstance(value, dict):
+                value = FeishuWatcherConfig(**value)
             setattr(config, key, value)
 
     def _adjust_config_for_gui(
