@@ -20,6 +20,7 @@ from ..models.config import ProcessingConfig
 from ..utils.files import scan_drama_dirs
 from ..utils.logging import setup_logging
 from ..utils.system import resolve_asset_path
+from ..utils.cancel import CancelledError
 
 
 LogItem = Tuple[str, str]
@@ -120,6 +121,7 @@ class DramaProcessorGUI(tk.Tk):
         self._completed_dramas = 0
         self._drama_names: List[str] = []
         self._processing_root: Optional[str] = None
+        self._cancel_event = threading.Event()
 
         self._ui_bg = "#f5f5f5"
         self._ui_fg = "#222222"
@@ -130,6 +132,7 @@ class DramaProcessorGUI(tk.Tk):
         self._init_vars()
         self._apply_theme()
         self._build_ui()
+        self._set_running_ui(False)
         self._apply_default_values()
 
         self.after(100, self._poll_log_queue)
@@ -302,7 +305,9 @@ class DramaProcessorGUI(tk.Tk):
 
         self.btn_start = ttk.Button(actions, text="开始处理", command=self._start_processing)
         self.btn_start.grid(row=0, column=0, sticky="w")
-        ttk.Button(actions, text="清空日志", command=self._clear_logs).grid(row=0, column=1, sticky="w", padx=8)
+        self.btn_cancel = ttk.Button(actions, text="取消处理", command=self._cancel_processing)
+        self.btn_cancel.grid(row=0, column=1, sticky="w", padx=8)
+        ttk.Button(actions, text="清空日志", command=self._clear_logs).grid(row=0, column=2, sticky="w", padx=8)
 
         progress = ttk.Frame(main)
         progress.grid(row=4, column=0, sticky="ew", pady=8)
@@ -429,6 +434,7 @@ class DramaProcessorGUI(tk.Tk):
 
     def _set_running_ui(self, running: bool) -> None:
         self.btn_start.configure(state="disabled" if running else "normal")
+        self.btn_cancel.configure(state="normal" if running else "disabled")
         if running:
             self.progress_bar.configure(mode="indeterminate", maximum=100)
             self.progress_bar.start(10)
@@ -473,6 +479,7 @@ class DramaProcessorGUI(tk.Tk):
             return
 
         self._running = True
+        self._cancel_event.clear()
         self.var_status.set("处理中...")
         self.var_progress.set("0/0")
         self._completed_dramas = 0
@@ -485,6 +492,15 @@ class DramaProcessorGUI(tk.Tk):
             daemon=True,
         )
         worker.start()
+
+    def _cancel_processing(self) -> None:
+        if not self._running:
+            return
+        if not messagebox.askyesno("确认取消", "确定要取消当前处理吗？"):
+            return
+        self._cancel_event.set()
+        self.var_status.set("正在取消...")
+        self._append_log("🛑 已请求取消，将在当前任务结束后停止。")
 
     def _get_selected_dramas(self) -> List[str]:
         indices = list(self.drama_listbox.curselection())
@@ -567,10 +583,12 @@ class DramaProcessorGUI(tk.Tk):
                 self._log_queue.put(("done", "未发现可处理剧目，已结束。"))
                 return
 
-            processor = DramaProcessor(config)
+            processor = DramaProcessor(config, cancel_event=self._cancel_event)
             made, _ = processor.process_all_dramas(processing_root)
             self._log_queue.put(("status", "处理完成"))
             self._log_queue.put(("done", f"处理完成，共生成 {made} 条素材。"))
+        except CancelledError:
+            self._log_queue.put(("cancelled", "已取消处理"))
         except Exception as exc:
             self._log_queue.put(("error", str(exc)))
         finally:
@@ -709,10 +727,13 @@ class DramaProcessorGUI(tk.Tk):
                 elif kind == "error":
                     self._append_log(f"❌ {payload}")
                     self.var_status.set("处理失败")
+                elif kind == "cancelled":
+                    self._append_log(payload)
+                    self.var_status.set("已取消")
                 elif kind == "finish":
                     self._running = False
                     self._set_running_ui(False)
-                    if self.var_status.get() in {"处理完成", "处理失败", "未发现可处理剧目"}:
+                    if self.var_status.get() in {"处理完成", "处理失败", "未发现可处理剧目", "已取消"}:
                         messagebox.showinfo("处理结束", self.var_status.get())
         except queue.Empty:
             pass

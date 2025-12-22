@@ -9,6 +9,7 @@ import subprocess
 import shlex
 import random
 import math
+from threading import Event
 from pathlib import Path
 from typing import List, Tuple, Optional, Dict, Any
 from collections import Counter
@@ -17,13 +18,20 @@ from ..models.config import ProcessingConfig
 from ..utils.video import probe_video_stream, probe_duration
 from ..utils.files import write_text_file, ensure_dir, md5_of_text, md5_of_file
 from ..utils.time import human_duration
+from ..utils.cancel import raise_if_cancelled
 
 
 class VideoEncoder:
     """Video encoder for drama processing."""
     
-    def __init__(self, config: ProcessingConfig, watermark_path: Optional[str] = None):
+    def __init__(
+        self,
+        config: ProcessingConfig,
+        watermark_path: Optional[str] = None,
+        cancel_event: Optional[Event] = None,
+    ):
         self.config = config
+        self.cancel_event = cancel_event
         
         # Video encoding settings (from config)
         self.video_codec_hw = self._detect_best_hw_codec(config.video.hw_codec)
@@ -173,6 +181,7 @@ class VideoEncoder:
     
     def run_ffmpeg(self, cmd: List[str], label: Optional[str] = None) -> subprocess.CompletedProcess:
         """Run ffmpeg command with configurable logging verbosity."""
+        raise_if_cancelled(self.cancel_event)
         # Extract key operation info instead of full command
         operation = "FFmpeg处理"
         if label:

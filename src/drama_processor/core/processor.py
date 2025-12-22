@@ -5,6 +5,7 @@ import os
 import random
 import sys
 import time
+from threading import Event
 from pathlib import Path
 from typing import List, Optional, Tuple, Set, Callable, Dict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -21,6 +22,7 @@ from ..utils.files import (
 from ..utils.video import probe_video_stream, probe_duration
 from ..utils.interactive import interactive_pick_dramas
 from ..utils.time import human_duration
+from ..utils.cancel import CancelledError, raise_if_cancelled
 from ..utils.history import HistoryManager
 from ..integrations.feishu_notification import create_feishu_notifier, FeishuNotifier
 
@@ -34,7 +36,12 @@ logger = logging.getLogger(__name__)
 class DramaProcessor:
     """Main drama processing orchestrator with complete dramas_process.py compatibility."""
     
-    def __init__(self, config: ProcessingConfig, status_callback: Optional[Callable[[str, str], None]] = None):
+    def __init__(
+        self,
+        config: ProcessingConfig,
+        status_callback: Optional[Callable[[str, str], None]] = None,
+        cancel_event: Optional[Event] = None,
+    ):
         """Initialize drama processor.
         
         Args:
@@ -45,6 +52,7 @@ class DramaProcessor:
         self.config = config
         feishu_api_enabled = config.is_feishu_api_enabled()
         self.status_callback = status_callback if feishu_api_enabled else None
+        self.cancel_event = cancel_event
         if status_callback and not feishu_api_enabled:
             logger.info("飞书功能已关闭，跳过飞书状态同步")
         
@@ -66,7 +74,11 @@ class DramaProcessor:
                 logger.warning(f"水印文件不存在: {watermark_path}, 将禁用水印功能")
                 watermark_path = None
         
-        self.encoder = VideoEncoder(config, watermark_path=watermark_path)
+        self.encoder = VideoEncoder(
+            config,
+            watermark_path=watermark_path,
+            cancel_event=cancel_event,
+        )
         self.history_manager = HistoryManager()
         
         # Initialize Feishu notifier if enabled
@@ -391,6 +403,7 @@ class DramaProcessor:
                               output_path: str, temp_root: str,
                               run_suffix: Optional[str], material_total: int) -> float:
         """Process a single material - equivalent to build_one_material."""
+        raise_if_cancelled(self.cancel_event)
         start_time = time.time()
         
         # Log detailed start point info
@@ -454,6 +467,8 @@ class DramaProcessor:
         """
         if total_to_make <= 0:
             return 0, 0.0
+
+        raise_if_cancelled(self.cancel_event)
         
         project_start_time = time.time()
         
@@ -468,11 +483,14 @@ class DramaProcessor:
         tasks = []
         def process_task(idx2: int, ep_idx: int, offset: float, output_path: str):
             try:
+                raise_if_cancelled(self.cancel_event)
                 dt = self.process_single_material(
                     project, idx2, ep_idx, offset, output_path, temp_root,
                     run_suffix, start_index + total_to_make - 1
                 )
                 return (idx2, None, dt, output_path)
+            except CancelledError as e:
+                return (idx2, e, 0.0, output_path)
             except Exception as e:
                 return (idx2, e, 0.0, output_path)
         
@@ -481,6 +499,9 @@ class DramaProcessor:
         if self.config.jobs == 1:
             # Sequential processing
             for i, (ep_idx, offset) in enumerate(start_points):
+                if self.cancel_event is not None and self.cancel_event.is_set():
+                    logger.info(f"🛑 已取消当前剧处理：{project.name}")
+                    break
                 material_idx = start_index + i
                 base_name = f"{date_str}-{project.name}-{material_code}-{material_idx:02d}"
                 if run_suffix:
@@ -489,6 +510,9 @@ class DramaProcessor:
                 
                 task_idx, error, dt, path = process_task(material_idx, ep_idx, offset, output_path)
                 if error:
+                    if isinstance(error, CancelledError):
+                        logger.info(f"🛑 已取消当前剧处理：{project.name}")
+                        break
                     logger.error(f"Material {task_idx} failed: {error}")
                 else:
                     completed_count += 1
@@ -506,6 +530,9 @@ class DramaProcessor:
             with ThreadPoolExecutor(max_workers=self.config.jobs) as executor:
                 futures = []
                 for i, (ep_idx, offset) in enumerate(start_points):
+                    if self.cancel_event is not None and self.cancel_event.is_set():
+                        logger.info(f"🛑 已取消当前剧处理：{project.name}")
+                        break
                     material_idx = start_index + i
                     base_name = f"{date_str}-{project.name}-{material_code}-{material_idx:02d}"
                     if run_suffix:
@@ -519,6 +546,9 @@ class DramaProcessor:
                 for future in as_completed(futures):
                     task_idx, error, dt, path = future.result()
                     if error:
+                        if isinstance(error, CancelledError):
+                            logger.info(f"🛑 已取消当前剧处理：{project.name}")
+                            break
                         logger.error(f"Material {task_idx} failed: {error}")
                     else:
                         completed_count += 1
@@ -532,7 +562,9 @@ class DramaProcessor:
                         logger.info(f"✅ 素材完成 | 剧：{project.name} | 第 {task_idx} 条 | 时长 {duration_str} | 用时 {human_duration(dt)} | 该剧剩余素材：{remain} 条")
         
         project_time = time.time() - project_start_time
-        logger.info(f"📦 本剧完成 | {project.name} | 本轮生成 {completed_count}/{total_to_make} 条 | 用时 {human_duration(project_time)}")
+        logger.info(
+            f"📦 本剧完成 | {project.name} | 本轮生成 {completed_count}/{total_to_make} 条 | 用时 {human_duration(project_time)}"
+        )
         
         return completed_count, project_time
     
@@ -643,10 +675,13 @@ class DramaProcessor:
         total_materials_done = 0
         successful_dramas = []  # Track successful processing results
         
-        for drama_dir in drama_dirs:
-            drama_start_time = time.time()  # 记录单个剧目开始时间
-            
-            try:
+        cancelled = False
+        try:
+            for drama_dir in drama_dirs:
+                raise_if_cancelled(self.cancel_event)
+                drama_start_time = time.time()  # 记录单个剧目开始时间
+                
+                try:
                 # Create project
                 project = self.create_drama_project(drama_dir)
                 
@@ -710,6 +745,8 @@ class DramaProcessor:
                     project, out_dir, run_suffix, start_index, total_to_make, temp_root, drama_date
                 )
                 total_materials_done += completed
+                if self.cancel_event is not None and self.cancel_event.is_set():
+                    raise CancelledError("已取消处理")
                 
                 drama_end_time = time.time()  # 记录单个剧目结束时间
                 drama_total_time = drama_end_time - drama_start_time  # 计算剧目总耗时
@@ -778,16 +815,24 @@ class DramaProcessor:
                     
                     self.history_manager.add_drama_record(session, drama_info, self.config, drama_total_time)
                 
-            except Exception as e:
-                logger.error(f"Failed to process drama {os.path.basename(drama_dir)}: {e}")
-                continue
+                except CancelledError:
+                    raise
+                except Exception as e:
+                    logger.error(f"Failed to process drama {os.path.basename(drama_dir)}: {e}")
+                    continue
+        except CancelledError:
+            cancelled = True
+            logger.info("🛑 已取消全部处理")
         
         # Final summary
         overall_time = time.time() - overall_start_time
-        logger.info(f"🎯 全部完成。输出根目录：{actual_exports_root} | 总计 {total_materials_done}/{total_materials_planned} 条 | 总用时 {human_duration(overall_time)}")
+        summary_prefix = "🛑 已取消" if cancelled else "🎯 全部完成"
+        logger.info(
+            f"{summary_prefix}。输出根目录：{actual_exports_root} | 总计 {total_materials_done}/{total_materials_planned} 条 | 总用时 {human_duration(overall_time)}"
+        )
         
         # Send completion notification
-        if self.feishu_notifier:
+        if self.feishu_notifier and not cancelled:
             try:
                 # Get the completed status value from config, fallback to "待上传"
                 completed_status = "待上传"
@@ -833,7 +878,8 @@ class DramaProcessor:
         self.history_manager.finish_session(session)
         
         # Print detailed completion summary
-        self._print_completion_summary(successful_dramas, actual_exports_root)
+        if not cancelled:
+            self._print_completion_summary(successful_dramas, actual_exports_root)
         
         # 显示历史记录保存信息
         if successful_dramas:
