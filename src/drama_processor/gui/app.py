@@ -119,7 +119,13 @@ class DramaProcessorGUI(tk.Tk):
         self._total_dramas = 0
         self._completed_dramas = 0
 
+        self._ui_bg = "#f5f5f5"
+        self._ui_fg = "#222222"
+        self._log_bg = "#ffffff"
+        self._log_fg = "#222222"
+
         self._init_vars()
+        self._apply_theme()
         self._build_ui()
         self._apply_default_values()
 
@@ -144,6 +150,34 @@ class DramaProcessorGUI(tk.Tk):
 
         self.var_status = tk.StringVar(value="就绪")
         self.var_progress = tk.StringVar(value="0/0")
+
+    def _apply_theme(self) -> None:
+        style = ttk.Style(self)
+        themes = style.theme_names()
+
+        if _is_windows() and "vista" in themes:
+            theme = "vista"
+        elif sys.platform == "darwin":
+            # mac 深色模式下 ttk 可能出现黑底黑字，统一切到 clam
+            theme = "clam" if "clam" in themes else style.theme_use()
+        else:
+            theme = "clam" if "clam" in themes else style.theme_use()
+
+        try:
+            style.theme_use(theme)
+        except tk.TclError:
+            pass
+
+        bg = style.lookup("TFrame", "background") or "#f5f5f5"
+        fg = style.lookup("TLabel", "foreground") or "#222222"
+        self._ui_bg = bg
+        self._ui_fg = fg
+
+        style.configure("TFrame", background=bg)
+        style.configure("TLabelframe", background=bg)
+        style.configure("TLabelframe.Label", background=bg, foreground=fg)
+        style.configure("TLabel", background=bg, foreground=fg)
+        self.configure(background=bg)
 
     def _build_ui(self) -> None:
         main = ttk.Frame(self, padding=12)
@@ -219,7 +253,15 @@ class DramaProcessorGUI(tk.Tk):
         log_frame.columnconfigure(0, weight=1)
         log_frame.rowconfigure(0, weight=1)
 
-        self.log_text = ScrolledText(log_frame, height=20, state="disabled", wrap="word")
+        self.log_text = ScrolledText(
+            log_frame,
+            height=20,
+            state="disabled",
+            wrap="word",
+            background=self._log_bg,
+            foreground=self._log_fg,
+            insertbackground=self._log_fg,
+        )
         self.log_text.grid(row=0, column=0, sticky="nsew")
 
     def _apply_default_values(self) -> None:
