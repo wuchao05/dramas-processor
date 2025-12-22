@@ -58,11 +58,12 @@ def probe_video_stream(path: Union[str, Path]) -> Dict[str, Any]:
     result = subprocess.run(
         cmd,
         capture_output=True,
-        text=True,
-        check=True
+        check=True,
     )
-    
-    info = json.loads(result.stdout)
+
+    raw_output = result.stdout or b""
+    text_output = raw_output.decode("utf-8", errors="replace")
+    info = json.loads(text_output)
     stream = (info.get("streams") or [{}])[0]
     format_info = info.get("format") or {}
     
@@ -124,11 +125,11 @@ def is_black_frame_at(video_path: Path, time: float, amount_pct: int = 98, pix_t
         result = subprocess.run(
             cmd,
             capture_output=True,
-            text=True,
-            check=False
+            check=False,
         )
-        
-        output = result.stdout or ""
+
+        raw_output = result.stdout or b""
+        output = raw_output.decode("utf-8", errors="replace")
         if "pblack:" in output:
             pblack_value = float(output.split("pblack:")[-1].split()[0])
             return pblack_value >= amount_pct
@@ -172,4 +173,3 @@ def extract_first_frame(video_path: Path, output_path: Path) -> None:
         str(output_path)
     ]
     subprocess.run(cmd, check=True, capture_output=True)
-

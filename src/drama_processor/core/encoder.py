@@ -84,7 +84,9 @@ class VideoEncoder:
             result = subprocess.run(
                 ["ffmpeg", "-encoders"], 
                 capture_output=True, 
-                text=True, 
+                text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=10
             )
             
@@ -127,6 +129,8 @@ class VideoEncoder:
                 test_cmd,
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=15
             )
             
@@ -196,8 +200,15 @@ class VideoEncoder:
         t0 = time.time()
         try:
             # Use timeout to prevent hanging and capture output in real-time
-            r = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, 
-                             text=True, timeout=300)  # 5 minutes timeout
+            r = subprocess.run(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=300,
+            )  # 5 minutes timeout
         except subprocess.TimeoutExpired:
             print(f"❌ {operation} 超时 (5分钟)")
             raise RuntimeError(f"Command timed out after 5 minutes: {operation}")
