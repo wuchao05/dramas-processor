@@ -123,7 +123,7 @@ fi
 
 if [[ "${SKIP_BUILD}" -eq 0 ]]; then
   echo "[INFO] 开始构建 Pro 二进制..."
-  (cd "${REPO_ROOT}" && "${PYTHON}" -m PyInstaller -F -n "${NAME}" "src/drama_processor/cli/main.py")
+  (cd "${REPO_ROOT}" && "${PYTHON}" -m PyInstaller -F -n "${NAME}" "scripts/cli_entry.py" --paths "${REPO_ROOT}/src")
 else
   echo "[INFO] 跳过构建，直接打包..."
 fi
