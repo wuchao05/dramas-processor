@@ -1320,11 +1320,22 @@ class DramaProcessorGUI(ctk.CTk):
             return get_default_config()
 
     def _apply_overrides(self, config: ProcessingConfig, overrides: Dict[str, object]) -> None:
+        from ..models.feishu import FeishuConfig
+        
         for key, value in overrides.items():
             if key == "brand_text_mapping" and isinstance(value, dict):
                 value = BrandTextMapping(**value)
             elif key == "feishu_watcher" and isinstance(value, dict):
                 value = FeishuWatcherConfig(**value)
+            elif key == "feishu" and isinstance(value, dict):
+                # 更新 feishu 配置的属性，而不是替换整个对象
+                if config.feishu:
+                    for feishu_key, feishu_value in value.items():
+                        setattr(config.feishu, feishu_key, feishu_value)
+                    continue  # 跳过 setattr，因为已经更新了属性
+                else:
+                    # 如果 config.feishu 为 None，创建新的 FeishuConfig 对象
+                    value = FeishuConfig(**value)
             setattr(config, key, value)
 
     def _adjust_config_for_gui(
