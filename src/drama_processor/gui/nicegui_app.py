@@ -586,8 +586,9 @@ class DramaProcessorGUI:
         self.selected_chips_container.clear()
         with self.selected_chips_container:
             for name in sorted(self.selected_drama_names):
-                with ui.chip(name, removable=True, on_remove=lambda n=name: self._remove_drama(n)):
-                    pass
+                # 使用 chip 和 icon 组合实现可移除效果
+                chip = ui.chip(name, icon='close', removable=True)
+                chip.on('click', lambda n=name: self._remove_drama(n))
     
     def _remove_drama(self, name: str):
         """移除已选剧目"""
