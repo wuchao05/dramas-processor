@@ -1220,6 +1220,14 @@ class DramaProcessorGUI(ctk.CTk):
         date_str = self.var_date.get().strip()
         if date_str:
             overrides["date_str"] = date_str
+        
+        # 添加源素材目录配置
+        root_dir = self.var_root.get().strip()
+        if root_dir:
+            # 解析 processing_root（可能是单剧目录或多剧根目录）
+            processing_root, _, _ = self._resolve_processing_root(root_dir)
+            overrides["default_source_dir"] = processing_root
+            overrides["backup_source_dir"] = processing_root
 
         output_dir = self.var_output.get().strip()
         if output_dir:
