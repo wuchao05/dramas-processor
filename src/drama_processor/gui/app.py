@@ -211,9 +211,17 @@ class DramaProcessorGUI(ctk.CTk):
         filter_frame.grid_columnconfigure(1, weight=1)
         
         ctk.CTkLabel(filter_frame, text="🔍 搜索:").grid(row=0, column=0, sticky="w", padx=(0, 10))
-        ctk.CTkEntry(filter_frame, textvariable=self.var_filter, placeholder_text="输入剧目名称筛选...").grid(
-            row=0, column=1, sticky="ew"
+        self.filter_entry = ctk.CTkEntry(
+            filter_frame, 
+            textvariable=self.var_filter, 
+            placeholder_text="输入剧目名称筛选，支持粘贴多行批量选择..."
         )
+        self.filter_entry.grid(row=0, column=1, sticky="ew")
+        # 绑定粘贴事件处理批量选择
+        self.filter_entry.bind("<<Paste>>", self._on_filter_paste)
+        # 绑定 Ctrl+V (Command+V on Mac) 作为备用
+        self.filter_entry.bind("<Control-v>", self._on_filter_paste)
+        self.filter_entry.bind("<Command-v>", self._on_filter_paste)
 
         # 列表容器
         list_container = ctk.CTkFrame(drama_frame, fg_color="transparent")
@@ -629,6 +637,97 @@ class DramaProcessorGUI(ctk.CTk):
                 return str(parent), root_path.name
         return root_dir, None
 
+    def _on_filter_paste(self, event: Optional[tk.Event] = None) -> None:
+        """处理搜索框粘贴事件，支持批量选择多个剧目"""
+        # 延迟执行以便获取粘贴后的内容
+        self.after(50, self._process_pasted_content)
+        # 返回 None 让默认粘贴行为继续
+        return None
+    
+    def _process_pasted_content(self) -> None:
+        """处理粘贴的内容，识别多行剧目并自动选中"""
+        content = self.var_filter.get().strip()
+        if not content:
+            return
+        
+        # 检查是否包含换行符（多行内容）
+        if '\n' in content or '\r' in content:
+            # 分割成多行
+            lines = content.replace('\r\n', '\n').replace('\r', '\n').split('\n')
+            # 清理每行并去除空行
+            drama_names = [line.strip() for line in lines if line.strip()]
+            
+            if drama_names:
+                matched_count = self._batch_select_dramas(drama_names)
+                # 清空搜索框
+                self.var_filter.set("")
+                # 显示提示信息
+                if matched_count > 0:
+                    self._append_log(f"✅ 批量选择：成功匹配并选中 {matched_count} 部剧目")
+                    if matched_count < len(drama_names):
+                        self._append_log(f"⚠️  有 {len(drama_names) - matched_count} 部剧目未找到匹配")
+                else:
+                    self._append_log(f"❌ 批量选择：未找到匹配的剧目")
+    
+    def _batch_select_dramas(self, drama_names: List[str]) -> int:
+        """批量选中剧目，支持模糊匹配
+        
+        Args:
+            drama_names: 要选中的剧目名称列表
+            
+        Returns:
+            成功匹配的数量
+        """
+        matched_count = 0
+        
+        for target_name in drama_names:
+            target_lower = target_name.lower().strip()
+            if not target_lower:
+                continue
+            
+            # 尝试精确匹配
+            exact_match = None
+            for available_name in self._all_drama_names:
+                if available_name.lower() == target_lower:
+                    exact_match = available_name
+                    break
+            
+            if exact_match:
+                # 精确匹配
+                if exact_match not in self._selected_drama_set:
+                    self._selected_drama_set.add(exact_match)
+                    matched_count += 1
+            else:
+                # 尝试模糊匹配（包含关系）
+                fuzzy_matches = [
+                    name for name in self._all_drama_names 
+                    if target_lower in name.lower()
+                ]
+                
+                if fuzzy_matches:
+                    # 如果只有一个模糊匹配，自动选择
+                    if len(fuzzy_matches) == 1:
+                        match_name = fuzzy_matches[0]
+                        if match_name not in self._selected_drama_set:
+                            self._selected_drama_set.add(match_name)
+                            matched_count += 1
+                    else:
+                        # 多个模糊匹配，选择最短的（最精确的）
+                        best_match = min(fuzzy_matches, key=len)
+                        if best_match not in self._selected_drama_set:
+                            self._selected_drama_set.add(best_match)
+                            matched_count += 1
+        
+        # 更新选中列表
+        if matched_count > 0:
+            self._selected_drama_names = [
+                name for name in self._all_drama_names if name in self._selected_drama_set
+            ]
+            self._refresh_selected_listbox()
+            self._sync_drama_listbox_selection()
+        
+        return matched_count
+    
     def _apply_drama_filter(self) -> None:
         keyword = self.var_filter.get().strip().lower()
         if keyword:
