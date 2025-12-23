@@ -716,13 +716,14 @@ class DramaProcessorGUI:
     
     def _collect_overrides(self) -> Dict:
         """收集配置覆盖"""
-        count = _parse_int(self.count, "素材条数")
-        min_dur = _parse_float(self.min_duration, "最小时长")
-        max_dur = _parse_float(self.max_duration, "最大时长")
-        jobs = _parse_int(self.jobs, "并发数")
-        title_font_size = _parse_int(self.title_font_size, "标题字号")
-        side_font_size = _parse_int(self.side_font_size, "侧边字号")
-        bottom_font_size = _parse_int(self.bottom_font_size, "底部字号")
+        # 注意：ui.number 绑定的值已经是数字类型，无需再解析
+        count = int(self.count) if isinstance(self.count, (int, float)) else _parse_int(str(self.count), "素材条数")
+        min_dur = float(self.min_duration) if isinstance(self.min_duration, (int, float)) else _parse_float(str(self.min_duration), "最小时长")
+        max_dur = float(self.max_duration) if isinstance(self.max_duration, (int, float)) else _parse_float(str(self.max_duration), "最大时长")
+        jobs = int(self.jobs) if isinstance(self.jobs, (int, float)) else _parse_int(str(self.jobs), "并发数")
+        title_font_size = int(self.title_font_size) if isinstance(self.title_font_size, (int, float)) else _parse_int(str(self.title_font_size), "标题字号")
+        side_font_size = int(self.side_font_size) if isinstance(self.side_font_size, (int, float)) else _parse_int(str(self.side_font_size), "侧边字号")
+        bottom_font_size = int(self.bottom_font_size) if isinstance(self.bottom_font_size, (int, float)) else _parse_int(str(self.bottom_font_size), "底部字号")
         
         if count <= 0:
             raise ValueError("素材条数必须大于 0")
