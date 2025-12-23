@@ -926,10 +926,17 @@ class DramaProcessorGUI(ctk.CTk):
         
         try:
             # 导入飞书客户端
-            from ..integrations.feishu_client import FeishuClient
+            from ..integrations.feishu_client import FeishuClient, _convert_date_format
             from ..models.feishu import FeishuConfig
             
             self._append_log(f"🔄 正在从飞书拉取 {date_str} 的待剪辑剧目...")
+            
+            # 转换日期格式：12.24 -> 2025-12-24
+            try:
+                converted_date = _convert_date_format(date_str)
+                self._append_log(f"📅 日期格式: {date_str} → {converted_date}")
+            except ValueError as e:
+                raise ValueError(f"日期格式错误: {e}\n请使用格式如: 12.24")
             
             # 创建飞书配置
             feishu_config = FeishuConfig(
@@ -942,8 +949,8 @@ class DramaProcessorGUI(ctk.CTk):
             # 创建飞书客户端
             client = FeishuClient(feishu_config)
             
-            # 获取待剪辑剧目（带日期信息）
-            dramas_dict = client.get_pending_dramas_with_dates(date_filter=date_str)
+            # 获取待剪辑剧目（带日期信息）- 使用转换后的日期
+            dramas_dict = client.get_pending_dramas_with_dates(date_filter=converted_date)
             
             if not dramas_dict:
                 self._append_log(f"⚠️  未找到 {date_str} 的待剪辑剧目")
