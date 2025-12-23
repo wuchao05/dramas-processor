@@ -166,6 +166,12 @@ class DramaProcessorGUI(ctk.CTk):
         self.var_keep_temp = tk.BooleanVar(value=False)
         self.var_verbose = tk.BooleanVar(value=False)
         self.var_enable_feishu = tk.BooleanVar(value=False)
+        
+        # 飞书配置变量
+        self.var_feishu_app_id = tk.StringVar()
+        self.var_feishu_app_secret = tk.StringVar()
+        self.var_feishu_app_token = tk.StringVar()
+        self.var_feishu_table_id = tk.StringVar()
 
         self.var_status = tk.StringVar(value="就绪")
         self.var_progress = tk.StringVar(value="0/0")
@@ -390,6 +396,38 @@ class DramaProcessorGUI(ctk.CTk):
             text_color="gray60",
             font=("", 11)
         ).grid(row=5, column=0, columnspan=3, sticky="w", padx=15, pady=(0, 15))
+        
+        # 飞书配置区域（当启用飞书功能时显示）
+        feishu_frame = ctk.CTkFrame(user_frame, fg_color="transparent")
+        feishu_frame.grid(row=6, column=0, columnspan=3, sticky="ew", padx=15, pady=(10, 15))
+        feishu_frame.grid_columnconfigure(1, weight=1)
+        feishu_frame.grid_columnconfigure(3, weight=1)
+        
+        ctk.CTkLabel(feishu_frame, text="📱 飞书配置（启用飞书后填写）", font=("", 13, "bold")).grid(
+            row=0, column=0, columnspan=4, sticky="w", pady=(0, 10)
+        )
+        
+        # 第一行：app_id 和 app_secret
+        ctk.CTkLabel(feishu_frame, text="App ID:").grid(row=1, column=0, sticky="w", padx=(0, 10))
+        ctk.CTkEntry(feishu_frame, textvariable=self.var_feishu_app_id, placeholder_text="cli_xxxxx").grid(
+            row=1, column=1, sticky="ew", padx=(0, 20)
+        )
+        
+        ctk.CTkLabel(feishu_frame, text="App Secret:").grid(row=1, column=2, sticky="w", padx=(0, 10))
+        ctk.CTkEntry(feishu_frame, textvariable=self.var_feishu_app_secret, placeholder_text="密钥", show="*").grid(
+            row=1, column=3, sticky="ew"
+        )
+        
+        # 第二行：app_token 和 table_id
+        ctk.CTkLabel(feishu_frame, text="App Token:").grid(row=2, column=0, sticky="w", padx=(0, 10), pady=(10, 0))
+        ctk.CTkEntry(feishu_frame, textvariable=self.var_feishu_app_token, placeholder_text="表格令牌").grid(
+            row=2, column=1, sticky="ew", padx=(0, 20), pady=(10, 0)
+        )
+        
+        ctk.CTkLabel(feishu_frame, text="Table ID:").grid(row=2, column=2, sticky="w", padx=(0, 10), pady=(10, 0))
+        ctk.CTkEntry(feishu_frame, textvariable=self.var_feishu_table_id, placeholder_text="tbl_xxxxx").grid(
+            row=2, column=3, sticky="ew", pady=(10, 0)
+        )
 
         # === 操作按钮区域 ===
         actions_frame = ctk.CTkFrame(main, fg_color="transparent")
@@ -556,6 +594,13 @@ class DramaProcessorGUI(ctk.CTk):
                 ranges = config.brand_text_mapping.ranges or []
         self.var_brand_default.set(default_text)
         self._set_brand_ranges(ranges or [])
+        
+        # 加载飞书配置
+        if config.feishu:
+            self.var_feishu_app_id.set(str(config.feishu.app_id or ""))
+            self.var_feishu_app_secret.set(str(config.feishu.app_secret or ""))
+            self.var_feishu_app_token.set(str(config.feishu.app_token or ""))
+            self.var_feishu_table_id.set(str(config.feishu.table_id or ""))
 
     def _set_brand_ranges(self, ranges: List[BrandTextRange]) -> None:
         self.brand_ranges_text.delete("1.0", "end")
@@ -975,6 +1020,25 @@ class DramaProcessorGUI(ctk.CTk):
         }
         if not enable_feishu:
             overrides["feishu_watcher"] = {"enabled": False}
+        else:
+            # 如果启用飞书功能，添加飞书配置
+            feishu_config = {}
+            app_id = self.var_feishu_app_id.get().strip()
+            app_secret = self.var_feishu_app_secret.get().strip()
+            app_token = self.var_feishu_app_token.get().strip()
+            table_id = self.var_feishu_table_id.get().strip()
+            
+            if app_id:
+                feishu_config["app_id"] = app_id
+            if app_secret:
+                feishu_config["app_secret"] = app_secret
+            if app_token:
+                feishu_config["app_token"] = app_token
+            if table_id:
+                feishu_config["table_id"] = table_id
+            
+            if feishu_config:
+                overrides["feishu"] = feishu_config
 
         output_dir = self.var_output.get().strip()
         if output_dir:

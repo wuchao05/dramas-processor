@@ -46,36 +46,12 @@ brand_text_mapping:
     - '斯娜看剧'
   default_text: '热门短剧'
 
-# 飞书功能开关
-enable_feishu_features: true
-enable_feishu_notification: false
-feishu_webhook_url: 'https://open.feishu.cn/open-apis/bot/v2/hook/6d2e64c2-a5b4-4f2e-b518-a8e314c4c355'
-
-# 飞书API配置
+# 飞书功能配置（核心字段）
+enable_feishu_features: true  # 飞书功能总开关
 feishu:
   app_id: 'cli_a870f7611b7b1013'
   app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
   app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
   table_id: 'tblDOyi2Lzs80sv0'
-  base_url: 'https://open.feishu.cn/open-apis/bitable/v1'
-  field_names: ['剧名', '账户', '日期', '搭建时间', '主体']
-  status_field_name: '当前状态'
-  pending_status_value: '待剪辑'
-  processing_status_value: '剪辑中'
-  completed_status_value: '待上传'
-  missing_source_status_value: '无源视频'
-  page_size: 200
-  token_refresh_interval: 7200000
 
-# 飞书轮询配置
-feishu_watcher:
-  enabled: true
-  poll_interval: 1800
-  max_dates_per_cycle: 1
-  settle_seconds: 120
-  settle_rounds: 1
-  idle_exit_minutes: null
-  state_dir: 'history/feishu_watcher'
-  date_whitelist: []
-  date_blacklist: []
-  status_filter: null
+# 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值
