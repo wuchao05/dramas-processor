@@ -172,7 +172,9 @@ class DramaProcessorGUI(ctk.CTk):
         self.var_feishu_app_secret = tk.StringVar()
         self.var_feishu_app_token = tk.StringVar()
         self.var_feishu_table_id = tk.StringVar()
-        self.var_feishu_date = tk.StringVar()  # 飞书日期（如 12.12）
+        
+        # 通用日期变量（用于导出目录组织和飞书拉取）
+        self.var_date = tk.StringVar()
 
         self.var_status = tk.StringVar(value="就绪")
         self.var_progress = tk.StringVar(value="0/0")
@@ -199,7 +201,20 @@ class DramaProcessorGUI(ctk.CTk):
         self._add_path_row(form_frame, 1, "素材目录", self.var_root, self._choose_root)
         self._add_path_row(form_frame, 2, "配置文件", self.var_config, self._choose_config)
         self._add_path_row(form_frame, 3, "输出目录", self.var_output, self._choose_output)
-        self._add_path_row(form_frame, 4, "字体文件", self.var_font_file, self._choose_font, pady_bottom=15)
+        self._add_path_row(form_frame, 4, "字体文件", self.var_font_file, self._choose_font)
+        
+        # 剪辑日期（用于导出目录组织）
+        ctk.CTkLabel(form_frame, text="剪辑日期:", width=80, anchor="w").grid(
+            row=5, column=0, sticky="w", padx=(15, 10), pady=(0, 15)
+        )
+        date_entry = ctk.CTkEntry(form_frame, textvariable=self.var_date, placeholder_text="如: 12.24（可选）", width=150)
+        date_entry.grid(row=5, column=1, sticky="w", padx=(0, 10), pady=(0, 15))
+        ctk.CTkLabel(
+            form_frame, 
+            text="填写后导出到: 输出目录/{日期}导出/", 
+            text_color="gray60",
+            font=("", 10)
+        ).grid(row=5, column=2, sticky="w", pady=(0, 15))
 
         # === 剧目选择区域 ===
         drama_frame = ctk.CTkFrame(main, corner_radius=10)
@@ -430,26 +445,21 @@ class DramaProcessorGUI(ctk.CTk):
             row=2, column=3, sticky="ew", pady=(10, 0)
         )
         
-        # 第三行：日期和拉取按钮
-        ctk.CTkLabel(feishu_frame, text="剪辑日期:").grid(row=3, column=0, sticky="w", padx=(0, 10), pady=(10, 0))
-        ctk.CTkEntry(feishu_frame, textvariable=self.var_feishu_date, placeholder_text="如: 12.12", width=100).grid(
-            row=3, column=1, sticky="w", pady=(10, 0)
-        )
-        
+        # 第三行：从飞书拉取按钮
         ctk.CTkButton(
             feishu_frame, 
             text="📥 从飞书拉取剧目", 
             command=self._fetch_dramas_from_feishu,
             fg_color="#2e7d32",
             hover_color="#1b5e20"
-        ).grid(row=3, column=2, columnspan=2, sticky="ew", padx=(20, 0), pady=(10, 0))
+        ).grid(row=3, column=0, columnspan=4, sticky="ew", padx=(0, 0), pady=(10, 5))
         
         ctk.CTkLabel(
             feishu_frame,
-            text="提示：填写日期后点击拉取，将自动从飞书表格获取该日期的待剪辑剧目",
+            text="提示：在基础设置中填写日期后，点击此按钮从飞书表格获取该日期的待剪辑剧目",
             text_color="gray60",
             font=("", 10)
-        ).grid(row=4, column=0, columnspan=4, sticky="w", pady=(5, 0))
+        ).grid(row=4, column=0, columnspan=4, sticky="w", pady=(0, 0))
 
         # === 操作按钮区域 ===
         actions_frame = ctk.CTkFrame(main, fg_color="transparent")
@@ -914,7 +924,7 @@ class DramaProcessorGUI(ctk.CTk):
         app_secret = self.var_feishu_app_secret.get().strip()
         app_token = self.var_feishu_app_token.get().strip()
         table_id = self.var_feishu_table_id.get().strip()
-        date_str = self.var_feishu_date.get().strip()
+        date_str = self.var_date.get().strip()  # 使用通用日期字段
         
         if not all([app_id, app_secret, app_token, table_id]):
             messagebox.showerror("配置不完整", "请填写完整的飞书配置（App ID、App Secret、App Token、Table ID）")
@@ -1168,10 +1178,11 @@ class DramaProcessorGUI(ctk.CTk):
             if feishu_config:
                 overrides["feishu"] = feishu_config
             
-            # 添加日期配置（用于组织导出目录）
-            date_str = self.var_feishu_date.get().strip()
-            if date_str:
-                overrides["date_str"] = date_str
+        
+        # 添加日期配置（用于组织导出目录）- 无论是否启用飞书都生效
+        date_str = self.var_date.get().strip()
+        if date_str:
+            overrides["date_str"] = date_str
 
         output_dir = self.var_output.get().strip()
         if output_dir:
