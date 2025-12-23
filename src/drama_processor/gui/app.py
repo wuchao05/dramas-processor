@@ -257,7 +257,10 @@ class DramaProcessorGUI(ctk.CTk):
         drama_scrollbar = ctk.CTkScrollbar(available_list_frame, command=self.drama_listbox.yview)
         drama_scrollbar.grid(row=0, column=1, sticky="ns", pady=2)
         self.drama_listbox.configure(yscrollcommand=drama_scrollbar.set)
-        self.drama_listbox.bind("<<ListboxSelect>>", self._on_drama_list_select)
+        # 使用鼠标释放和键盘事件，避免焦点变化导致的误触发
+        self.drama_listbox.bind("<ButtonRelease-1>", self._on_drama_list_select)
+        self.drama_listbox.bind("<space>", self._on_drama_list_select)
+        self.drama_listbox.bind("<Return>", self._on_drama_list_select)
 
         # 已选剧目列表
         ctk.CTkLabel(list_container, text="已选剧目", font=("", 13, "bold")).grid(
@@ -728,6 +731,18 @@ class DramaProcessorGUI(ctk.CTk):
         
         return matched_count
     
+    def _unbind_drama_events(self) -> None:
+        """解除剧目列表的所有事件绑定"""
+        self.drama_listbox.unbind("<ButtonRelease-1>")
+        self.drama_listbox.unbind("<space>")
+        self.drama_listbox.unbind("<Return>")
+    
+    def _bind_drama_events(self) -> None:
+        """绑定剧目列表的事件"""
+        self.drama_listbox.bind("<ButtonRelease-1>", self._on_drama_list_select)
+        self.drama_listbox.bind("<space>", self._on_drama_list_select)
+        self.drama_listbox.bind("<Return>", self._on_drama_list_select)
+    
     def _apply_drama_filter(self) -> None:
         keyword = self.var_filter.get().strip().lower()
         if keyword:
@@ -740,7 +755,7 @@ class DramaProcessorGUI(ctk.CTk):
 
     def _rebuild_drama_listbox(self) -> None:
         # 临时解除事件绑定，防止触发选择事件
-        self.drama_listbox.unbind("<<ListboxSelect>>")
+        self._unbind_drama_events()
         try:
             self.drama_listbox.delete(0, "end")
             for name in self._filtered_drama_names:
@@ -749,17 +764,17 @@ class DramaProcessorGUI(ctk.CTk):
             self._sync_drama_listbox_selection_internal()
         finally:
             # 重新绑定事件
-            self.drama_listbox.bind("<<ListboxSelect>>", self._on_drama_list_select)
+            self._bind_drama_events()
 
     def _sync_drama_listbox_selection(self) -> None:
         """同步左侧列表的选择状态（带事件保护）"""
         # 临时解除事件绑定，防止触发选择事件
-        self.drama_listbox.unbind("<<ListboxSelect>>")
+        self._unbind_drama_events()
         try:
             self._sync_drama_listbox_selection_internal()
         finally:
             # 重新绑定事件
-            self.drama_listbox.bind("<<ListboxSelect>>", self._on_drama_list_select)
+            self._bind_drama_events()
     
     def _sync_drama_listbox_selection_internal(self) -> None:
         """同步左侧列表的选择状态（内部方法，不处理事件绑定）"""
