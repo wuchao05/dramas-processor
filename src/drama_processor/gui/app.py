@@ -134,10 +134,16 @@ class DramaProcessorGUI(ctk.CTk):
         self._cancel_event = threading.Event()
         self._base_brand_text = "热门短剧"
         self._updating_list = False  # 标志位：防止程序内部更新列表时触发选择事件
+        
+        # 轮询相关
+        self._watcher_running = False
+        self._watcher_stop_event = threading.Event()
+        self._watcher_thread: Optional[threading.Thread] = None
 
         self._init_vars()
         self._build_ui()
         self._set_running_ui(False)
+        self._set_watcher_ui(False)
         self._apply_default_values()
 
         self.after(100, self._poll_log_queue)
@@ -456,10 +462,41 @@ class DramaProcessorGUI(ctk.CTk):
         
         ctk.CTkLabel(
             feishu_frame,
-            text="提示：在基础设置中填写日期后，点击此按钮从飞书表格获取该日期的待剪辑剧目",
+            text="提示：在基础设置中填写日期后，点击此按钮从飞书表格获取该日期的待剧辑剧目",
             text_color="gray60",
             font=("", 10)
-        ).grid(row=4, column=0, columnspan=4, sticky="w", pady=(0, 0))
+        ).grid(row=4, column=0, columnspan=4, sticky="w", pady=(0, 10))
+        
+        # 第四行：轮询按钮
+        watcher_btn_frame = ctk.CTkFrame(feishu_frame, fg_color="transparent")
+        watcher_btn_frame.grid(row=5, column=0, columnspan=4, sticky="ew", pady=(0, 5))
+        watcher_btn_frame.grid_columnconfigure(0, weight=1)
+        watcher_btn_frame.grid_columnconfigure(1, weight=1)
+        
+        self.btn_start_watcher = ctk.CTkButton(
+            watcher_btn_frame,
+            text="🔄 启动轮询剪辑",
+            command=self._start_watcher,
+            fg_color="#1976d2",
+            hover_color="#1565c0"
+        )
+        self.btn_start_watcher.grid(row=0, column=0, sticky="ew", padx=(0, 5))
+        
+        self.btn_stop_watcher = ctk.CTkButton(
+            watcher_btn_frame,
+            text="⏹️ 停止轮询",
+            command=self._stop_watcher,
+            fg_color="#f57c00",
+            hover_color="#e64a19"
+        )
+        self.btn_stop_watcher.grid(row=0, column=1, sticky="ew", padx=(5, 0))
+        
+        ctk.CTkLabel(
+            feishu_frame,
+            text="提示：启动后将持续监控飞书表格，自动处理新增的待剪辑剧目（相当于 feishu watch）",
+            text_color="gray60",
+            font=("", 10)
+        ).grid(row=6, column=0, columnspan=4, sticky="w", pady=(0, 0))
 
         # === 操作按钮区域 ===
         actions_frame = ctk.CTkFrame(main, fg_color="transparent")
@@ -1422,6 +1459,16 @@ class DramaProcessorGUI(ctk.CTk):
                     self._set_running_ui(False)
                     if self.var_status.get() in {"处理完成", "处理失败", "未发现可处理剧目", "已取消"}:
                         messagebox.showinfo("处理结束", self.var_status.get())
+                elif kind == "watcher_stopped":
+                    self._watcher_running = False
+                    self._set_watcher_ui(False)
+                    self.var_status.set("轮询已停止")
+                    messagebox.showinfo("轮询停止", "飞书轮询已停止")
+                elif kind == "watcher_error":
+                    self._watcher_running = False
+                    self._set_watcher_ui(False)
+                    self.var_status.set("轮询出错")
+                    messagebox.showerror("轮询出错", f"轮询过程中出错:\n{payload}")
         except queue.Empty:
             pass
         self.after(100, self._poll_log_queue)
@@ -1440,10 +1487,145 @@ class DramaProcessorGUI(ctk.CTk):
             self.progress_bar.start()
             self.var_progress.set("0/0")
 
+    def _start_watcher(self) -> None:
+        """启动飞书轮询剪辑"""
+        if self._watcher_running:
+            messagebox.showinfo("轮询已启动", "飞书轮询已经在运行中")
+            return
+        
+        if self._running:
+            messagebox.showwarning("正在处理", "请等待当前处理任务完成后再启动轮询")
+            return
+        
+        # 检查飞书功能是否启用
+        if not self.var_enable_feishu.get():
+            messagebox.showwarning("未启用飞书", "请先勾选'启用飞书功能'")
+            return
+        
+        # 检查飞书配置是否完整
+        app_id = self.var_feishu_app_id.get().strip()
+        app_secret = self.var_feishu_app_secret.get().strip()
+        app_token = self.var_feishu_app_token.get().strip()
+        table_id = self.var_feishu_table_id.get().strip()
+        
+        if not all([app_id, app_secret, app_token, table_id]):
+            messagebox.showerror("配置不完整", "请填写完整的飞书配置")
+            return
+        
+        # 确认启动
+        if not messagebox.askyesno(
+            "启动轮询确认",
+            "启动后将持续监控飞书表格，自动处理新增的待剪辑剧目。\n\n"
+            "轮询期间可能需要较长时间，确定要启动吗？"
+        ):
+            return
+        
+        try:
+            # 收集配置
+            config_path = self.var_config.get().strip() or None
+            config = self._load_config(config_path)
+            
+            # 应用飞书配置覆盖
+            overrides = self._collect_overrides()
+            self._apply_overrides(config, overrides)
+            
+            # 启动轮询
+            self._watcher_running = True
+            self._watcher_stop_event.clear()
+            self.var_status.set("轮询中...")
+            self._set_watcher_ui(True)
+            
+            self._append_log("🚀 启动飞书轮询剪辑...")
+            self._append_log(f"⏱️  轮询间隔: {config.feishu_watcher.poll_interval}秒")
+            
+            # 在后台线程运行
+            self._watcher_thread = threading.Thread(
+                target=self._run_watcher,
+                args=(config,),
+                daemon=True
+            )
+            self._watcher_thread.start()
+            
+        except Exception as e:
+            self._watcher_running = False
+            self._set_watcher_ui(False)
+            messagebox.showerror("启动失败", f"启动轮询失败: {e}")
+            self._append_log(f"❌ 启动轮询失败: {e}")
+    
+    def _stop_watcher(self) -> None:
+        """停止飞书轮询"""
+        if not self._watcher_running:
+            return
+        
+        if not messagebox.askyesno("确认停止", "确定要停止轮询吗？"):
+            return
+        
+        self._append_log("⏹️ 正在停止轮询...")
+        self.var_status.set("正在停止轮询...")
+        self._watcher_stop_event.set()
+    
+    def _run_watcher(self, config: ProcessingConfig) -> None:
+        """在后台线程中运行轮询任务"""
+        try:
+            from ..integrations.feishu_watcher import FeishuWatcher
+            
+            # 创建轮询器，传入日志回调
+            watcher = FeishuWatcher(
+                config=config,
+                poll_interval=config.feishu_watcher.poll_interval,
+                max_dates_per_cycle=config.feishu_watcher.max_dates_per_cycle,
+                settle_seconds=config.feishu_watcher.settle_seconds,
+                settle_rounds=config.feishu_watcher.settle_rounds,
+                date_whitelist=config.feishu_watcher.date_whitelist,
+                date_blacklist=config.feishu_watcher.date_blacklist,
+                status_filter=config.feishu_watcher.status_filter,
+                idle_exit_minutes=config.feishu_watcher.idle_exit_minutes,
+                state_dir=config.feishu_watcher.state_dir,
+                echo=lambda msg: self._log_queue.put(("log", msg))
+            )
+            
+            # 注入停止检查
+            original_stop = watcher._stop
+            
+            def check_stop():
+                return original_stop or self._watcher_stop_event.is_set()
+            
+            # 使用属性包装器替换 _stop 检查
+            class StopWrapper:
+                def __bool__(self):
+                    return check_stop()
+            
+            watcher._stop = StopWrapper()
+            
+            # 运行轮询
+            watcher.run(run_once=False)
+            
+            self._log_queue.put(("log", "✅ 轮询已停止"))
+            self._log_queue.put(("watcher_stopped", ""))
+            
+        except Exception as e:
+            self._log_queue.put(("log", f"❌ 轮询出错: {e}"))
+            self._log_queue.put(("watcher_error", str(e)))
+    
+    def _set_watcher_ui(self, running: bool) -> None:
+        """设置轮询相关的 UI 状态"""
+        self.btn_start_watcher.configure(state="disabled" if running else "normal")
+        self.btn_stop_watcher.configure(state="normal" if running else "disabled")
+        
+        # 轮询期间禁用处理按钮
+        if running:
+            self.btn_start.configure(state="disabled")
+    
     def _on_close(self) -> None:
         if self._running:
             if not messagebox.askyesno("确认退出", "任务仍在运行，确定要退出吗？"):
                 return
+        
+        if self._watcher_running:
+            if not messagebox.askyesno("确认退出", "轮询仍在运行，确定要退出吗？"):
+                return
+            self._watcher_stop_event.set()
+        
         self.destroy()
 
 
