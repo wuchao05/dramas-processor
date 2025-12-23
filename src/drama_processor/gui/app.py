@@ -739,37 +739,62 @@ class DramaProcessorGUI(ctk.CTk):
         self._rebuild_drama_listbox()
 
     def _rebuild_drama_listbox(self) -> None:
-        self._updating_list = True
+        # 临时解除事件绑定，防止触发选择事件
+        self.drama_listbox.unbind("<<ListboxSelect>>")
         try:
             self.drama_listbox.delete(0, "end")
             for name in self._filtered_drama_names:
                 self.drama_listbox.insert("end", name)
-            self._sync_drama_listbox_selection()
+            # 同步选择状态（不需要再次 unbind，因为已经在外层 unbind 了）
+            self._sync_drama_listbox_selection_internal()
         finally:
-            self._updating_list = False
+            # 重新绑定事件
+            self.drama_listbox.bind("<<ListboxSelect>>", self._on_drama_list_select)
 
     def _sync_drama_listbox_selection(self) -> None:
-        self._updating_list = True
+        """同步左侧列表的选择状态（带事件保护）"""
+        # 临时解除事件绑定，防止触发选择事件
+        self.drama_listbox.unbind("<<ListboxSelect>>")
         try:
-            self.drama_listbox.selection_clear(0, "end")
-            for idx, name in enumerate(self._filtered_drama_names):
-                if name in self._selected_drama_set:
-                    self.drama_listbox.selection_set(idx)
+            self._sync_drama_listbox_selection_internal()
         finally:
-            self._updating_list = False
+            # 重新绑定事件
+            self.drama_listbox.bind("<<ListboxSelect>>", self._on_drama_list_select)
+    
+    def _sync_drama_listbox_selection_internal(self) -> None:
+        """同步左侧列表的选择状态（内部方法，不处理事件绑定）"""
+        self.drama_listbox.selection_clear(0, "end")
+        for idx, name in enumerate(self._filtered_drama_names):
+            if name in self._selected_drama_set:
+                self.drama_listbox.selection_set(idx)
 
-    def _on_drama_list_select(self, _event: Optional[tk.Event] = None) -> None:
+    def _on_drama_list_select(self, event: Optional[tk.Event] = None) -> None:
         # 如果是程序内部更新列表，忽略此事件
         if self._updating_list:
             return
         
+        # 获取当前左侧列表的选中项
+        current_selection = self.drama_listbox.curselection()
+        
+        # 只有当有实际的交互时才处理（通过检查事件类型）
+        # 如果是焦点丢失导致的事件，忽略
+        if event and hasattr(event, 'type'):
+            # 某些事件类型可能不是用户真实点击
+            pass
+        
         selected_visible = {
             self._filtered_drama_names[idx]
-            for idx in self.drama_listbox.curselection()
+            for idx in current_selection
             if 0 <= idx < len(self._filtered_drama_names)
         }
         visible_set = set(self._filtered_drama_names)
+        
+        # 更新选中集合：
+        # 1. 移除当前可见范围内已取消选择的项
+        # 2. 添加当前可见范围内新选中的项
         self._selected_drama_set = (self._selected_drama_set - visible_set) | selected_visible
+        
+        # 更新选中列表（按照全部剧目的顺序）
         self._selected_drama_names = [
             name for name in self._all_drama_names if name in self._selected_drama_set
         ]
