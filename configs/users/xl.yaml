@@ -31,11 +31,10 @@ brand_text_mapping:
   default_text: "热门短剧"
 
 # 飞书功能配置（核心字段）
-enable_feishu_features: true  # 飞书功能总开关
+enable_feishu_features: true # 飞书功能总开关
 feishu:
   app_id: "cli_a870f7611b7b1013"
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   table_id: "tblU2gdZSltbN5Bt"
-
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值

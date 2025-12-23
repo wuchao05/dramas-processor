@@ -3,55 +3,54 @@
 
 # 素材生成设置
 count: 24 # 每部剧生成素材数量
-material_code: 'xh' # 素材文件名标识
+material_code: "xh" # 素材文件名标识
 
 # 标题颜色
 title_colors:
-  - '#FFA500' # Orange
-  - '#FFB347' # Light Orange
-  - '#FF8C00' # Dark Orange
-  - '#FFD580' # Peach
-  - '#E69500' # Earth Orange
-  - '#FFAE42' # Bright Orange
+  - "#FFA500" # Orange
+  - "#FFB347" # Light Orange
+  - "#FF8C00" # Dark Orange
+  - "#FFD580" # Peach
+  - "#E69500" # Earth Orange
+  - "#FFAE42" # Bright Orange
 
 # 目录设置
-default_source_dir: '/mnt/d/短剧剪辑/源素材视频' # WSL 路径
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
 
 # 多素材文案配置
 brand_text_mapping:
-  mode: 'range'
+  mode: "range"
   ranges:
-    - range: '01-03'
-      text: '萍通剧坊'
-    - range: '04-06'
-      text: '哈哈看剧'
-    - range: '07-09'
-      text: '清妍短剧'
-    - range: '10-13'
-      text: '看家本领'
-    - range: '14-18'
-      text: '葸辉好剧'
-    - range: '19-21'
-      text: '小红看剧'
-    - range: '22-24'
-      text: '斯娜看剧'
+    - range: "01-03"
+      text: "萍通剧坊"
+    - range: "04-06"
+      text: "哈哈看剧"
+    - range: "07-09"
+      text: "清妍短剧"
+    - range: "10-13"
+      text: "看家本领"
+    - range: "14-18"
+      text: "葸辉好剧"
+    - range: "19-21"
+      text: "小红看剧"
+    - range: "22-24"
+      text: "斯娜看剧"
 
   cycle_texts:
-    - '萍通剧坊'
-    - '哈哈看剧'
-    - '清妍短剧'
-    - '看家本领'
-    - '葸辉好剧'
-    - '小红看剧'
-    - '斯娜看剧'
-  default_text: '热门短剧'
+    - "萍通剧坊"
+    - "哈哈看剧"
+    - "清妍短剧"
+    - "看家本领"
+    - "葸辉好剧"
+    - "小红看剧"
+    - "斯娜看剧"
+  default_text: "热门短剧"
 
 # 飞书功能配置（核心字段）
-enable_feishu_features: true  # 飞书功能总开关
+enable_feishu_features: true # 飞书功能总开关
 feishu:
-  app_id: 'cli_a870f7611b7b1013'
-  app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
-  app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
-  table_id: 'tblDOyi2Lzs80sv0'
-
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
+  table_id: "tblDOyi2Lzs80sv0"
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值

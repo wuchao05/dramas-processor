@@ -172,6 +172,7 @@ class DramaProcessorGUI(ctk.CTk):
         self.var_feishu_app_secret = tk.StringVar()
         self.var_feishu_app_token = tk.StringVar()
         self.var_feishu_table_id = tk.StringVar()
+        self.var_feishu_date = tk.StringVar()  # 飞书日期（如 12.12）
 
         self.var_status = tk.StringVar(value="就绪")
         self.var_progress = tk.StringVar(value="0/0")
@@ -428,6 +429,27 @@ class DramaProcessorGUI(ctk.CTk):
         ctk.CTkEntry(feishu_frame, textvariable=self.var_feishu_table_id, placeholder_text="tbl_xxxxx").grid(
             row=2, column=3, sticky="ew", pady=(10, 0)
         )
+        
+        # 第三行：日期和拉取按钮
+        ctk.CTkLabel(feishu_frame, text="剪辑日期:").grid(row=3, column=0, sticky="w", padx=(0, 10), pady=(10, 0))
+        ctk.CTkEntry(feishu_frame, textvariable=self.var_feishu_date, placeholder_text="如: 12.12", width=100).grid(
+            row=3, column=1, sticky="w", pady=(10, 0)
+        )
+        
+        ctk.CTkButton(
+            feishu_frame, 
+            text="📥 从飞书拉取剧目", 
+            command=self._fetch_dramas_from_feishu,
+            fg_color="#2e7d32",
+            hover_color="#1b5e20"
+        ).grid(row=3, column=2, columnspan=2, sticky="ew", padx=(20, 0), pady=(10, 0))
+        
+        ctk.CTkLabel(
+            feishu_frame,
+            text="提示：填写日期后点击拉取，将自动从飞书表格获取该日期的待剪辑剧目",
+            text_color="gray60",
+            font=("", 10)
+        ).grid(row=4, column=0, columnspan=4, sticky="w", pady=(5, 0))
 
         # === 操作按钮区域 ===
         actions_frame = ctk.CTkFrame(main, fg_color="transparent")
@@ -879,6 +901,105 @@ class DramaProcessorGUI(ctk.CTk):
         self._selected_drama_names = []
         self._refresh_selected_listbox()
         self._sync_drama_listbox_selection()
+    
+    def _fetch_dramas_from_feishu(self) -> None:
+        """从飞书表格拉取指定日期的待剪辑剧目"""
+        # 检查飞书功能是否启用
+        if not self.var_enable_feishu.get():
+            messagebox.showwarning("未启用飞书", "请先勾选'启用飞书功能'")
+            return
+        
+        # 检查飞书配置是否完整
+        app_id = self.var_feishu_app_id.get().strip()
+        app_secret = self.var_feishu_app_secret.get().strip()
+        app_token = self.var_feishu_app_token.get().strip()
+        table_id = self.var_feishu_table_id.get().strip()
+        date_str = self.var_feishu_date.get().strip()
+        
+        if not all([app_id, app_secret, app_token, table_id]):
+            messagebox.showerror("配置不完整", "请填写完整的飞书配置（App ID、App Secret、App Token、Table ID）")
+            return
+        
+        if not date_str:
+            messagebox.showwarning("未填写日期", "请填写剪辑日期（如: 12.12）")
+            return
+        
+        try:
+            # 导入飞书客户端
+            from ..integrations.feishu_client import FeishuClient
+            from ..models.feishu import FeishuConfig
+            
+            self._append_log(f"🔄 正在从飞书拉取 {date_str} 的待剪辑剧目...")
+            
+            # 创建飞书配置
+            feishu_config = FeishuConfig(
+                app_id=app_id,
+                app_secret=app_secret,
+                app_token=app_token,
+                table_id=table_id,
+            )
+            
+            # 创建飞书客户端
+            client = FeishuClient(feishu_config)
+            
+            # 获取待剪辑剧目（带日期信息）
+            dramas_dict = client.get_pending_dramas_with_dates(date_filter=date_str)
+            
+            if not dramas_dict:
+                self._append_log(f"⚠️  未找到 {date_str} 的待剪辑剧目")
+                messagebox.showinfo("无待剪辑剧目", f"飞书表格中未找到 {date_str} 的待剪辑剧目")
+                return
+            
+            # 获取剧目名称列表
+            fetched_dramas = list(dramas_dict.keys())
+            
+            # 检查哪些剧目在本地可用
+            available_dramas = set(self._all_drama_names)
+            matched_dramas = []
+            missing_dramas = []
+            
+            for drama in fetched_dramas:
+                if drama in available_dramas:
+                    matched_dramas.append(drama)
+                else:
+                    missing_dramas.append(drama)
+            
+            # 添加到已选列表
+            for drama in matched_dramas:
+                if drama not in self._selected_drama_set:
+                    self._selected_drama_set.add(drama)
+            
+            self._selected_drama_names = [
+                name for name in self._all_drama_names if name in self._selected_drama_set
+            ]
+            self._refresh_selected_listbox()
+            self._sync_drama_listbox_selection()
+            
+            # 显示结果
+            result_msg = f"✅ 从飞书拉取完成！\n\n"
+            result_msg += f"日期: {date_str}\n"
+            result_msg += f"飞书待剪辑: {len(fetched_dramas)} 部\n"
+            result_msg += f"本地匹配: {len(matched_dramas)} 部\n"
+            
+            if missing_dramas:
+                result_msg += f"\n⚠️  本地未找到 {len(missing_dramas)} 部:\n"
+                for drama in missing_dramas[:5]:  # 最多显示5个
+                    result_msg += f"  - {drama}\n"
+                if len(missing_dramas) > 5:
+                    result_msg += f"  ... 还有 {len(missing_dramas) - 5} 部\n"
+            
+            self._append_log(f"✅ 成功从飞书拉取 {len(matched_dramas)} 部剧目")
+            if missing_dramas:
+                self._append_log(f"⚠️  有 {len(missing_dramas)} 部剧目在本地未找到")
+            
+            messagebox.showinfo("拉取完成", result_msg)
+            
+        except ImportError as e:
+            messagebox.showerror("导入错误", f"无法导入飞书客户端模块: {e}")
+            self._append_log(f"❌ 导入错误: {e}")
+        except Exception as e:
+            messagebox.showerror("拉取失败", f"从飞书拉取剧目失败:\n{str(e)}")
+            self._append_log(f"❌ 从飞书拉取失败: {e}")
 
     def _remove_selected_dramas(self) -> None:
         indices = list(self.selected_listbox.curselection())
@@ -1039,6 +1160,11 @@ class DramaProcessorGUI(ctk.CTk):
             
             if feishu_config:
                 overrides["feishu"] = feishu_config
+            
+            # 添加日期配置（用于组织导出目录）
+            date_str = self.var_feishu_date.get().strip()
+            if date_str:
+                overrides["date_str"] = date_str
 
         output_dir = self.var_output.get().strip()
         if output_dir:
