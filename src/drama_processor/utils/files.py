@@ -120,9 +120,8 @@ def prepare_export_dir(exports_root: str, drama_name: str, date_str: Optional[st
     """Prepare export directory with run suffix, optionally using date-based organization."""
     # 如果指定了日期字符串，创建基于日期的目录结构
     if date_str:
-        # 获取 exports_root 的父目录
-        parent_dir = os.path.dirname(os.path.abspath(exports_root))
-        date_export_dir = os.path.join(parent_dir, f"{date_str}导出")
+        # 在导出根目录下创建日期目录
+        date_export_dir = os.path.join(exports_root, f"{date_str}导出")
         
         # 确保日期导出目录存在
         os.makedirs(date_export_dir, exist_ok=True)
@@ -168,8 +167,7 @@ def get_latest_export_dir(exports_root: str, drama_name: str, date_str: Optional
     """Get the latest export directory for a drama, optionally using date-based organization."""
     # 如果指定了日期字符串，在对应的日期目录中查找
     if date_str:
-        parent_dir = os.path.dirname(os.path.abspath(exports_root))
-        date_export_dir = os.path.join(parent_dir, f"{date_str}导出")
+        date_export_dir = os.path.join(exports_root, f"{date_str}导出")
         exports_root = date_export_dir
     
     if not os.path.isdir(exports_root):
