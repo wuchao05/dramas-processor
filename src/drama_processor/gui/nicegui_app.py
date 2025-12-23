@@ -308,13 +308,13 @@ class DramaProcessorGUI:
             self.drama_table = ui.table(
                 columns=[
                     {'name': 'name', 'label': '剧名', 'field': 'name', 'align': 'left'},
-                    {'name': 'selected', 'label': '选择', 'field': 'selected', 'align': 'center'}
                 ],
                 rows=[],
                 selection='multiple',
                 row_key='name'
             ).classes('w-full').props('flat bordered')
-            self.drama_table.on('selection', self._on_drama_selection_change)
+            # 使用 update:selected 事件而不是 selection
+            self.drama_table.on('update:selected', self._on_drama_selection_change)
     
     def _build_params_config(self):
         """构建参数配置区域"""
@@ -438,38 +438,84 @@ class DramaProcessorGUI:
     
     async def _choose_root(self):
         """选择素材根目录"""
-        result = await nicegui_app.native.main_window.create_file_dialog(
-            nicegui_app.native.DialogType.DIRECTORY
-        )
-        if result:
-            self.root_dir = result[0] if isinstance(result, list) else result
-            self._on_root_dir_change()
+        # 在浏览器模式下，使用 tkinter 文件对话框
+        try:
+            from tkinter import filedialog
+            import tkinter as tk
+            
+            # 创建隐藏的 tk 根窗口
+            root = tk.Tk()
+            root.withdraw()
+            root.attributes('-topmost', True)
+            
+            result = filedialog.askdirectory(title='选择素材根目录')
+            root.destroy()
+            
+            if result:
+                self.root_dir = result
+                self._on_root_dir_change()
+        except Exception as e:
+            ui.notify(f'文件选择失败: {e}\n请手动输入路径', type='warning')
     
     async def _choose_config(self):
         """选择配置文件"""
-        result = await nicegui_app.native.main_window.create_file_dialog(
-            nicegui_app.native.DialogType.OPEN_FILE,
-            allow_multiple=False
-        )
-        if result:
-            self.config_path = result[0] if isinstance(result, list) else result
+        try:
+            from tkinter import filedialog
+            import tkinter as tk
+            
+            root = tk.Tk()
+            root.withdraw()
+            root.attributes('-topmost', True)
+            
+            result = filedialog.askopenfilename(
+                title='选择配置文件',
+                filetypes=[('YAML files', '*.yaml *.yml'), ('All files', '*.*')]
+            )
+            root.destroy()
+            
+            if result:
+                self.config_path = result
+        except Exception as e:
+            ui.notify(f'文件选择失败: {e}\n请手动输入路径', type='warning')
     
     async def _choose_output(self):
         """选择输出目录"""
-        result = await nicegui_app.native.main_window.create_file_dialog(
-            nicegui_app.native.DialogType.DIRECTORY
-        )
-        if result:
-            self.output_dir = result[0] if isinstance(result, list) else result
+        try:
+            from tkinter import filedialog
+            import tkinter as tk
+            
+            root = tk.Tk()
+            root.withdraw()
+            root.attributes('-topmost', True)
+            
+            result = filedialog.askdirectory(title='选择输出目录')
+            root.destroy()
+            
+            if result:
+                self.output_dir = result
+        except Exception as e:
+            ui.notify(f'文件选择失败: {e}\n请手动输入路径', type='warning')
     
     async def _choose_font(self):
         """选择字体文件"""
-        result = await nicegui_app.native.main_window.create_file_dialog(
-            nicegui_app.native.DialogType.OPEN_FILE,
-            allow_multiple=False
-        )
-        if result:
-            self.font_file = result[0] if isinstance(result, list) else result
+        try:
+            from tkinter import filedialog
+            import tkinter as tk
+            
+            root = tk.Tk()
+            root.withdraw()
+            root.attributes('-topmost', True)
+            
+            result = filedialog.askopenfilename(
+                title='选择字体文件',
+                filetypes=[('Font files', '*.ttf *.ttc *.otf'), ('All files', '*.*')]
+            )
+            root.destroy()
+            
+            if result:
+                self.font_file = result
+        except Exception as e:
+            ui.notify(f'文件选择失败: {e}\n请手动输入路径', type='warning')
     
     def _on_root_dir_change(self):
         """素材目录变化时刷新剧目列表"""
@@ -522,7 +568,7 @@ class DramaProcessorGUI:
             return
         
         rows = [
-            {'name': name, 'selected': name in self.selected_drama_names}
+            {'name': name}
             for name in self.filtered_drama_names
         ]
         self.drama_table.rows = rows
@@ -550,7 +596,15 @@ class DramaProcessorGUI:
     
     def _on_drama_selection_change(self, e):
         """剧目选择变化"""
-        self.selected_drama_names = {row['name'] for row in e.selection}
+        # e.args 包含选中的行数据
+        if hasattr(e, 'args') and e.args:
+            self.selected_drama_names = {row['name'] for row in e.args}
+        else:
+            # 如果事件参数不对，从 table.selected 获取
+            if self.drama_table and hasattr(self.drama_table, 'selected'):
+                self.selected_drama_names = {row['name'] for row in self.drama_table.selected}
+            else:
+                self.selected_drama_names = set()
         self._update_selected_chips()
     
     def _on_drama_filter_change(self, e):
