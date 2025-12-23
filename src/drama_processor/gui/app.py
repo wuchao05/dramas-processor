@@ -133,6 +133,7 @@ class DramaProcessorGUI(ctk.CTk):
         self._processing_root: Optional[str] = None
         self._cancel_event = threading.Event()
         self._base_brand_text = "热门短剧"
+        self._updating_list = False  # 标志位：防止程序内部更新列表时触发选择事件
 
         self._init_vars()
         self._build_ui()
@@ -639,18 +640,30 @@ class DramaProcessorGUI(ctk.CTk):
         self._rebuild_drama_listbox()
 
     def _rebuild_drama_listbox(self) -> None:
-        self.drama_listbox.delete(0, "end")
-        for name in self._filtered_drama_names:
-            self.drama_listbox.insert("end", name)
-        self._sync_drama_listbox_selection()
+        self._updating_list = True
+        try:
+            self.drama_listbox.delete(0, "end")
+            for name in self._filtered_drama_names:
+                self.drama_listbox.insert("end", name)
+            self._sync_drama_listbox_selection()
+        finally:
+            self._updating_list = False
 
     def _sync_drama_listbox_selection(self) -> None:
-        self.drama_listbox.selection_clear(0, "end")
-        for idx, name in enumerate(self._filtered_drama_names):
-            if name in self._selected_drama_set:
-                self.drama_listbox.selection_set(idx)
+        self._updating_list = True
+        try:
+            self.drama_listbox.selection_clear(0, "end")
+            for idx, name in enumerate(self._filtered_drama_names):
+                if name in self._selected_drama_set:
+                    self.drama_listbox.selection_set(idx)
+        finally:
+            self._updating_list = False
 
     def _on_drama_list_select(self, _event: Optional[tk.Event] = None) -> None:
+        # 如果是程序内部更新列表，忽略此事件
+        if self._updating_list:
+            return
+        
         selected_visible = {
             self._filtered_drama_names[idx]
             for idx in self.drama_listbox.curselection()
