@@ -1,4 +1,4 @@
-"""短剧批量剪辑 GUI（Tkinter）。"""
+"""短剧批量剪辑 GUI（CustomTkinter 现代化版本）。"""
 
 import logging
 import os
@@ -10,9 +10,9 @@ import threading
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
+import customtkinter as ctk
+from tkinter import filedialog, messagebox
 import tkinter as tk
-from tkinter import filedialog, messagebox, ttk
-from tkinter.scrolledtext import ScrolledText
 
 import yaml
 
@@ -108,14 +108,19 @@ def _parse_float(value: str, label: str) -> float:
         raise ValueError(f"{label}必须是数字") from exc
 
 
-class DramaProcessorGUI(tk.Tk):
-    """Tkinter GUI 主窗口。"""
+class DramaProcessorGUI(ctk.CTk):
+    """CustomTkinter GUI 主窗口 - 现代化版本。"""
 
     def __init__(self) -> None:
         super().__init__()
+        
+        # 设置主题和外观
+        ctk.set_appearance_mode("dark")  # 深色模式: "dark" / "light" / "system"
+        ctk.set_default_color_theme("blue")  # 主题色: "blue" / "green" / "dark-blue"
+        
         self.title("短剧批量剪辑工具")
-        self.geometry("980x720")
-        self.minsize(860, 640)
+        self.geometry("1100x800")
+        self.minsize(900, 700)
 
         self._log_queue: "queue.Queue[LogItem]" = queue.Queue()
         self._running = False
@@ -129,14 +134,7 @@ class DramaProcessorGUI(tk.Tk):
         self._cancel_event = threading.Event()
         self._base_brand_text = "热门短剧"
 
-        self._ui_bg = "#f5f5f5"
-        self._ui_fg = "#222222"
-        self._entry_bg = "#ffffff"
-        self._log_bg = "#ffffff"
-        self._log_fg = "#222222"
-
         self._init_vars()
-        self._apply_theme()
         self._build_ui()
         self._set_running_ui(False)
         self._apply_default_values()
@@ -170,271 +168,309 @@ class DramaProcessorGUI(tk.Tk):
 
         self.var_status = tk.StringVar(value="就绪")
         self.var_progress = tk.StringVar(value="0/0")
-
-    def _apply_theme(self) -> None:
-        style = ttk.Style(self)
-        themes = style.theme_names()
-
-        if _is_windows() and "vista" in themes:
-            theme = "vista"
-        else:
-            theme = "clam" if "clam" in themes else style.theme_use()
-
-        try:
-            style.theme_use(theme)
-        except tk.TclError:
-            pass
-
-        if sys.platform == "darwin":
-            # mac 深色模式下 ttk 容易黑底黑字，强制亮色外观
-            try:
-                self.tk.call(
-                    "tk",
-                    "unsupported::MacWindowStyle",
-                    "appearance",
-                    self._w,
-                    "light",
-                )
-            except tk.TclError:
-                pass
-            self._ui_bg = "#f7f7f7"
-            self._ui_fg = "#1f1f1f"
-            self._entry_bg = "#ffffff"
-            self._log_bg = "#ffffff"
-            self._log_fg = "#1f1f1f"
-        else:
-            bg = style.lookup("TFrame", "background") or "#f5f5f5"
-            fg = style.lookup("TLabel", "foreground") or "#222222"
-            self._ui_bg = bg
-            self._ui_fg = fg
-            self._entry_bg = "#ffffff"
-            self._log_bg = "#ffffff"
-            self._log_fg = fg
-        style.configure(".", background=self._ui_bg, foreground=self._ui_fg)
-        style.configure("TFrame", background=self._ui_bg)
-        style.configure("TLabelframe", background=self._ui_bg)
-        style.configure("TLabelframe.Label", background=self._ui_bg, foreground=self._ui_fg)
-        style.configure("TLabel", background=self._ui_bg, foreground=self._ui_fg)
-        style.configure("TCheckbutton", background=self._ui_bg, foreground=self._ui_fg)
-        style.configure("TEntry", fieldbackground=self._entry_bg, foreground=self._ui_fg)
-        style.configure("TButton", background=self._ui_bg, foreground=self._ui_fg)
-        style.configure("TProgressbar", troughcolor="#dcdcdc")
-        self.configure(background=self._ui_bg)
+        
+        # 添加过滤器回调
+        self.var_filter.trace_add("write", lambda *_: self._apply_drama_filter())
 
     def _build_ui(self) -> None:
-        main = ttk.Frame(self, padding=12)
-        main.grid(row=0, column=0, sticky="nsew")
+        # 主容器 - 使用网格布局
+        main = ctk.CTkScrollableFrame(self, fg_color="transparent")
+        main.grid(row=0, column=0, sticky="nsew", padx=15, pady=15)
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
 
-        form = ttk.LabelFrame(main, text="基础设置", padding=10)
-        form.grid(row=0, column=0, sticky="ew")
-        form.columnconfigure(1, weight=1)
-
-        ttk.Label(form, text="素材目录").grid(row=0, column=0, sticky="w")
-        ttk.Entry(form, textvariable=self.var_root).grid(row=0, column=1, sticky="ew", padx=6)
-        ttk.Button(form, text="选择", command=self._choose_root).grid(row=0, column=2)
-
-        ttk.Label(form, text="配置文件").grid(row=1, column=0, sticky="w", pady=6)
-        ttk.Entry(form, textvariable=self.var_config).grid(row=1, column=1, sticky="ew", padx=6)
-        ttk.Button(form, text="选择", command=self._choose_config).grid(row=1, column=2)
-
-        ttk.Label(form, text="输出目录").grid(row=2, column=0, sticky="w")
-        ttk.Entry(form, textvariable=self.var_output).grid(row=2, column=1, sticky="ew", padx=6)
-        ttk.Button(form, text="选择", command=self._choose_output).grid(row=2, column=2)
-
-        ttk.Label(form, text="字体文件").grid(row=3, column=0, sticky="w", pady=6)
-        ttk.Entry(form, textvariable=self.var_font_file).grid(row=3, column=1, sticky="ew", padx=6)
-        ttk.Button(form, text="选择", command=self._choose_font).grid(row=3, column=2)
-
-        drama_frame = ttk.LabelFrame(main, text="剧目选择", padding=10)
-        drama_frame.grid(row=1, column=0, sticky="nsew")
-        drama_frame.columnconfigure(0, weight=1)
-        drama_frame.rowconfigure(1, weight=1)
-        filter_frame = ttk.Frame(drama_frame)
-        filter_frame.grid(row=0, column=0, sticky="ew")
-        filter_frame.columnconfigure(2, weight=1)
-
-        ttk.Label(filter_frame, text="从素材目录中选择要处理的剧目（支持多选）").grid(
-            row=0, column=0, sticky="w"
+        # === 基础设置区域 ===
+        form_frame = ctk.CTkFrame(main, corner_radius=10)
+        form_frame.grid(row=0, column=0, sticky="ew", pady=(0, 15))
+        form_frame.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(form_frame, text="⚙️ 基础设置", font=("", 16, "bold")).grid(
+            row=0, column=0, columnspan=3, sticky="w", padx=15, pady=(15, 10)
         )
-        ttk.Label(filter_frame, text="搜索").grid(row=0, column=1, sticky="e", padx=(12, 4))
-        ttk.Entry(filter_frame, textvariable=self.var_filter).grid(row=0, column=2, sticky="ew")
-        self.var_filter.trace_add("write", lambda *_: self._apply_drama_filter())
 
-        list_frame = ttk.Frame(drama_frame)
-        list_frame.grid(row=1, column=0, sticky="nsew", pady=6)
-        list_frame.columnconfigure(0, weight=1)
-        list_frame.columnconfigure(1, weight=1)
-        list_frame.rowconfigure(0, weight=1)
+        self._add_path_row(form_frame, 1, "素材目录", self.var_root, self._choose_root)
+        self._add_path_row(form_frame, 2, "配置文件", self.var_config, self._choose_config)
+        self._add_path_row(form_frame, 3, "输出目录", self.var_output, self._choose_output)
+        self._add_path_row(form_frame, 4, "字体文件", self.var_font_file, self._choose_font, pady_bottom=15)
 
-        available_frame = ttk.Frame(list_frame)
-        available_frame.grid(row=0, column=0, sticky="nsew", padx=(0, 6))
-        available_frame.columnconfigure(0, weight=1)
-        available_frame.rowconfigure(1, weight=1)
+        # === 剧目选择区域 ===
+        drama_frame = ctk.CTkFrame(main, corner_radius=10)
+        drama_frame.grid(row=1, column=0, sticky="nsew", pady=(0, 15))
+        drama_frame.grid_columnconfigure(0, weight=1)
+        drama_frame.grid_rowconfigure(2, weight=1)
+        main.grid_rowconfigure(1, weight=1)
 
-        ttk.Label(available_frame, text="可选剧目").grid(row=0, column=0, sticky="w")
+        ctk.CTkLabel(drama_frame, text="🎬 剧目选择", font=("", 16, "bold")).grid(
+            row=0, column=0, sticky="w", padx=15, pady=(15, 10)
+        )
+
+        # 搜索框
+        filter_frame = ctk.CTkFrame(drama_frame, fg_color="transparent")
+        filter_frame.grid(row=1, column=0, sticky="ew", padx=15, pady=(0, 10))
+        filter_frame.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(filter_frame, text="🔍 搜索:").grid(row=0, column=0, sticky="w", padx=(0, 10))
+        ctk.CTkEntry(filter_frame, textvariable=self.var_filter, placeholder_text="输入剧目名称筛选...").grid(
+            row=0, column=1, sticky="ew"
+        )
+
+        # 列表容器
+        list_container = ctk.CTkFrame(drama_frame, fg_color="transparent")
+        list_container.grid(row=2, column=0, sticky="nsew", padx=15, pady=(0, 10))
+        list_container.grid_columnconfigure(0, weight=1)
+        list_container.grid_columnconfigure(1, weight=1)
+        list_container.grid_rowconfigure(1, weight=1)
+
+        # 可选剧目列表
+        ctk.CTkLabel(list_container, text="可选剧目", font=("", 13, "bold")).grid(
+            row=0, column=0, sticky="w", padx=(0, 5)
+        )
+        
+        available_list_frame = ctk.CTkFrame(list_container)
+        available_list_frame.grid(row=1, column=0, sticky="nsew", padx=(0, 5))
+        available_list_frame.grid_columnconfigure(0, weight=1)
+        available_list_frame.grid_rowconfigure(0, weight=1)
+        
         self.drama_listbox = tk.Listbox(
-            available_frame,
+            available_list_frame,
             selectmode="extended",
-            height=6,
+            height=8,
             activestyle="none",
-            background=self._log_bg,
-            foreground=self._log_fg,
-            selectbackground="#c7ddff",
-            selectforeground="#1f1f1f",
+            bg="#2b2b2b",
+            fg="#ffffff",
+            selectbackground="#1f6aa5",
+            selectforeground="#ffffff",
+            font=("", 11),
+            borderwidth=0,
+            highlightthickness=0,
         )
-        self.drama_listbox.grid(row=1, column=0, sticky="nsew")
-        scrollbar = ttk.Scrollbar(available_frame, orient="vertical", command=self.drama_listbox.yview)
-        scrollbar.grid(row=1, column=1, sticky="ns")
-        self.drama_listbox.configure(yscrollcommand=scrollbar.set)
+        self.drama_listbox.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)
+        drama_scrollbar = ctk.CTkScrollbar(available_list_frame, command=self.drama_listbox.yview)
+        drama_scrollbar.grid(row=0, column=1, sticky="ns", pady=2)
+        self.drama_listbox.configure(yscrollcommand=drama_scrollbar.set)
         self.drama_listbox.bind("<<ListboxSelect>>", self._on_drama_list_select)
 
-        selected_frame = ttk.Frame(list_frame)
-        selected_frame.grid(row=0, column=1, sticky="nsew", padx=(6, 0))
-        selected_frame.columnconfigure(0, weight=1)
-        selected_frame.rowconfigure(1, weight=1)
-
-        ttk.Label(selected_frame, text="已选剧目").grid(row=0, column=0, sticky="w")
+        # 已选剧目列表
+        ctk.CTkLabel(list_container, text="已选剧目", font=("", 13, "bold")).grid(
+            row=0, column=1, sticky="w", padx=(5, 0)
+        )
+        
+        selected_list_frame = ctk.CTkFrame(list_container)
+        selected_list_frame.grid(row=1, column=1, sticky="nsew", padx=(5, 0))
+        selected_list_frame.grid_columnconfigure(0, weight=1)
+        selected_list_frame.grid_rowconfigure(0, weight=1)
+        
         self.selected_listbox = tk.Listbox(
-            selected_frame,
+            selected_list_frame,
             selectmode="extended",
-            height=6,
+            height=8,
             activestyle="none",
-            background=self._log_bg,
-            foreground=self._log_fg,
-            selectbackground="#c7ddff",
-            selectforeground="#1f1f1f",
+            bg="#2b2b2b",
+            fg="#ffffff",
+            selectbackground="#1f6aa5",
+            selectforeground="#ffffff",
+            font=("", 11),
+            borderwidth=0,
+            highlightthickness=0,
         )
-        self.selected_listbox.grid(row=1, column=0, sticky="nsew")
-        selected_scrollbar = ttk.Scrollbar(
-            selected_frame, orient="vertical", command=self.selected_listbox.yview
-        )
-        selected_scrollbar.grid(row=1, column=1, sticky="ns")
+        self.selected_listbox.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)
+        selected_scrollbar = ctk.CTkScrollbar(selected_list_frame, command=self.selected_listbox.yview)
+        selected_scrollbar.grid(row=0, column=1, sticky="ns", pady=2)
         self.selected_listbox.configure(yscrollcommand=selected_scrollbar.set)
 
-        ttk.Button(selected_frame, text="移除选中", command=self._remove_selected_dramas).grid(
-            row=2, column=0, sticky="w", pady=(6, 0)
+        # 列表操作按钮
+        list_actions = ctk.CTkFrame(drama_frame, fg_color="transparent")
+        list_actions.grid(row=3, column=0, sticky="ew", padx=15, pady=(0, 15))
+        
+        ctk.CTkButton(list_actions, text="🔄 刷新列表", command=self._refresh_drama_list, width=120).grid(
+            row=0, column=0, padx=(0, 10)
+        )
+        ctk.CTkButton(list_actions, text="✅ 全选", command=self._select_all_dramas, width=100).grid(
+            row=0, column=1, padx=(0, 10)
+        )
+        ctk.CTkButton(list_actions, text="❌ 清空选择", command=self._clear_drama_selection, width=120).grid(
+            row=0, column=2, padx=(0, 10)
+        )
+        ctk.CTkButton(list_actions, text="➖ 移除选中", command=self._remove_selected_dramas, width=120).grid(
+            row=0, column=3
         )
 
-        list_actions = ttk.Frame(drama_frame)
-        list_actions.grid(row=2, column=0, sticky="w")
-        ttk.Button(list_actions, text="刷新列表", command=self._refresh_drama_list).grid(
-            row=0, column=0, sticky="w"
+        # === 处理参数区域 ===
+        opts_frame = ctk.CTkFrame(main, corner_radius=10)
+        opts_frame.grid(row=2, column=0, sticky="ew", pady=(0, 15))
+        
+        ctk.CTkLabel(opts_frame, text="⚡ 处理参数", font=("", 16, "bold")).grid(
+            row=0, column=0, columnspan=8, sticky="w", padx=15, pady=(15, 10)
         )
-        ttk.Button(list_actions, text="全选", command=self._select_all_dramas).grid(
-            row=0, column=1, sticky="w", padx=6
+
+        # 第一行参数
+        params_row1 = ctk.CTkFrame(opts_frame, fg_color="transparent")
+        params_row1.grid(row=1, column=0, columnspan=8, sticky="ew", padx=15, pady=(0, 10))
+        
+        self._add_param_field(params_row1, 0, "素材条数", self.var_count, width=80)
+        self._add_param_field(params_row1, 2, "最小时长(秒)", self.var_min_duration, width=80)
+        self._add_param_field(params_row1, 4, "最大时长(秒)", self.var_max_duration, width=80)
+        self._add_param_field(params_row1, 6, "并发数", self.var_jobs, width=60)
+
+        # 第二行 - 复选框
+        checks_row = ctk.CTkFrame(opts_frame, fg_color="transparent")
+        checks_row.grid(row=2, column=0, columnspan=8, sticky="ew", padx=15, pady=(0, 10))
+        
+        ctk.CTkCheckBox(checks_row, text="硬件编码", variable=self.var_use_hw).grid(row=0, column=0, padx=(0, 20))
+        ctk.CTkCheckBox(checks_row, text="快速模式", variable=self.var_fast_mode).grid(row=0, column=1, padx=(0, 20))
+        ctk.CTkCheckBox(checks_row, text="保留临时文件", variable=self.var_keep_temp).grid(row=0, column=2, padx=(0, 20))
+        ctk.CTkCheckBox(checks_row, text="详细日志", variable=self.var_verbose).grid(row=0, column=3)
+
+        # 第三行 - 字体大小
+        font_row = ctk.CTkFrame(opts_frame, fg_color="transparent")
+        font_row.grid(row=3, column=0, columnspan=8, sticky="ew", padx=15, pady=(0, 15))
+        
+        self._add_param_field(font_row, 0, "标题字号", self.var_title_font_size, width=70)
+        self._add_param_field(font_row, 2, "侧边字号", self.var_side_font_size, width=70)
+        self._add_param_field(font_row, 4, "底部字号", self.var_bottom_font_size, width=70)
+
+        # === 用户配置区域 ===
+        user_frame = ctk.CTkFrame(main, corner_radius=10)
+        user_frame.grid(row=3, column=0, sticky="ew", pady=(0, 15))
+        user_frame.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(user_frame, text="👤 用户配置", font=("", 16, "bold")).grid(
+            row=0, column=0, columnspan=3, sticky="w", padx=15, pady=(15, 10)
         )
-        ttk.Button(list_actions, text="清空选择", command=self._clear_drama_selection).grid(
+
+        # 第一行
+        user_row1 = ctk.CTkFrame(user_frame, fg_color="transparent")
+        user_row1.grid(row=1, column=0, columnspan=3, sticky="ew", padx=15, pady=(0, 10))
+        user_row1.grid_columnconfigure(1, weight=1)
+        user_row1.grid_columnconfigure(3, weight=1)
+        
+        ctk.CTkLabel(user_row1, text="素材标识:").grid(row=0, column=0, sticky="w", padx=(0, 10))
+        ctk.CTkEntry(user_row1, textvariable=self.var_material_code, width=100).grid(row=0, column=1, sticky="w")
+        
+        ctk.CTkLabel(user_row1, text="标题颜色:").grid(row=0, column=2, sticky="w", padx=(20, 10))
+        ctk.CTkEntry(user_row1, textvariable=self.var_title_colors, placeholder_text="如: red, blue, #FF5733").grid(
+            row=0, column=3, sticky="ew"
+        )
+
+        # 第二行
+        user_row2 = ctk.CTkFrame(user_frame, fg_color="transparent")
+        user_row2.grid(row=2, column=0, columnspan=3, sticky="ew", padx=15, pady=(0, 10))
+        user_row2.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(user_row2, text="默认文案:").grid(row=0, column=0, sticky="w", padx=(0, 10))
+        ctk.CTkEntry(user_row2, textvariable=self.var_brand_default, placeholder_text="如: 热门短剧").grid(
+            row=0, column=1, sticky="ew", padx=(0, 20)
+        )
+        
+        ctk.CTkCheckBox(user_row2, text="启用飞书功能", variable=self.var_enable_feishu).grid(
             row=0, column=2, sticky="w"
         )
 
-        opts = ttk.LabelFrame(main, text="处理参数", padding=10)
-        opts.grid(row=2, column=0, sticky="ew", pady=10)
-        opts.columnconfigure(1, weight=1)
-
-        ttk.Label(opts, text="素材条数").grid(row=0, column=0, sticky="w")
-        ttk.Entry(opts, textvariable=self.var_count, width=10).grid(row=0, column=1, sticky="w")
-
-        ttk.Label(opts, text="最小时长(秒)").grid(row=0, column=2, sticky="w", padx=(16, 0))
-        ttk.Entry(opts, textvariable=self.var_min_duration, width=10).grid(row=0, column=3, sticky="w")
-
-        ttk.Label(opts, text="最大时长(秒)").grid(row=0, column=4, sticky="w", padx=(16, 0))
-        ttk.Entry(opts, textvariable=self.var_max_duration, width=10).grid(row=0, column=5, sticky="w")
-
-        ttk.Label(opts, text="并发数").grid(row=0, column=6, sticky="w", padx=(16, 0))
-        ttk.Entry(opts, textvariable=self.var_jobs, width=8).grid(row=0, column=7, sticky="w")
-
-        ttk.Checkbutton(opts, text="硬件编码", variable=self.var_use_hw).grid(row=1, column=0, sticky="w", pady=6)
-        ttk.Checkbutton(opts, text="快速模式", variable=self.var_fast_mode).grid(
-            row=1, column=1, sticky="w", pady=6
-        )
-        ttk.Checkbutton(opts, text="保留临时文件", variable=self.var_keep_temp).grid(
-            row=1, column=2, sticky="w", pady=6
-        )
-        ttk.Checkbutton(opts, text="详细日志", variable=self.var_verbose).grid(row=1, column=3, sticky="w", pady=6)
-
-        ttk.Label(opts, text="标题字号").grid(row=2, column=0, sticky="w", pady=6)
-        ttk.Entry(opts, textvariable=self.var_title_font_size, width=8).grid(row=2, column=1, sticky="w")
-
-        ttk.Label(opts, text="侧边字号").grid(row=2, column=2, sticky="w", padx=(16, 0))
-        ttk.Entry(opts, textvariable=self.var_side_font_size, width=8).grid(row=2, column=3, sticky="w")
-
-        ttk.Label(opts, text="底部字号").grid(row=2, column=4, sticky="w", padx=(16, 0))
-        ttk.Entry(opts, textvariable=self.var_bottom_font_size, width=8).grid(row=2, column=5, sticky="w")
-
-        user_opts = ttk.LabelFrame(main, text="用户配置", padding=10)
-        user_opts.grid(row=3, column=0, sticky="ew", pady=(0, 10))
-        user_opts.columnconfigure(1, weight=0)
-        user_opts.columnconfigure(3, weight=1)
-
-        ttk.Label(user_opts, text="素材标识").grid(row=0, column=0, sticky="w")
-        ttk.Entry(user_opts, textvariable=self.var_material_code, width=10).grid(
-            row=0, column=1, sticky="w", padx=6
-        )
-        ttk.Label(user_opts, text="标题颜色").grid(row=0, column=2, sticky="w", padx=(16, 0))
-        ttk.Entry(user_opts, textvariable=self.var_title_colors).grid(
-            row=0, column=3, sticky="ew", padx=6
-        )
-
-        ttk.Label(user_opts, text="默认文案").grid(row=1, column=0, sticky="w", pady=6)
-        ttk.Entry(user_opts, textvariable=self.var_brand_default).grid(
-            row=1, column=1, sticky="w", padx=6
-        )
-        ttk.Checkbutton(user_opts, text="启用飞书功能", variable=self.var_enable_feishu).grid(
-            row=1, column=2, sticky="w", padx=(16, 0)
-        )
-
-        ttk.Label(user_opts, text="多素材文案(range)").grid(row=2, column=0, sticky="nw", pady=(6, 0))
-        self.brand_ranges_text = ScrolledText(
-            user_opts,
-            height=4,
-            wrap="word",
-            background=self._entry_bg,
-            foreground=self._ui_fg,
-            insertbackground=self._ui_fg,
-        )
-        self.brand_ranges_text.grid(row=2, column=1, columnspan=3, sticky="ew", padx=6, pady=(6, 0))
-        ttk.Label(
-            user_opts,
+        # 多素材文案
+        ctk.CTkLabel(user_frame, text="多素材文案(range):").grid(row=3, column=0, sticky="nw", padx=15, pady=(0, 5))
+        
+        self.brand_ranges_text = ctk.CTkTextbox(user_frame, height=80, wrap="word")
+        self.brand_ranges_text.grid(row=4, column=0, columnspan=3, sticky="ew", padx=15, pady=(0, 5))
+        
+        ctk.CTkLabel(
+            user_frame,
             text="格式示例：01-03=萍通剧坊（每行一条，支持 01-03 / 01,02 / 01）",
-        ).grid(row=3, column=1, columnspan=3, sticky="w", padx=6, pady=(4, 0))
+            text_color="gray60",
+            font=("", 11)
+        ).grid(row=5, column=0, columnspan=3, sticky="w", padx=15, pady=(0, 15))
 
-        actions = ttk.Frame(main)
-        actions.grid(row=4, column=0, sticky="ew")
-        actions.columnconfigure(0, weight=1)
-
-        self.btn_start = ttk.Button(actions, text="开始处理", command=self._start_processing)
-        self.btn_start.grid(row=0, column=0, sticky="w")
-        self.btn_cancel = ttk.Button(actions, text="取消处理", command=self._cancel_processing)
-        self.btn_cancel.grid(row=0, column=1, sticky="w", padx=8)
-        ttk.Button(actions, text="清空日志", command=self._clear_logs).grid(row=0, column=2, sticky="w", padx=8)
-
-        progress = ttk.Frame(main)
-        progress.grid(row=5, column=0, sticky="ew", pady=8)
-        progress.columnconfigure(1, weight=1)
-
-        ttk.Label(progress, textvariable=self.var_status).grid(row=0, column=0, sticky="w")
-        self.progress_bar = ttk.Progressbar(progress, mode="indeterminate")
-        self.progress_bar.grid(row=0, column=1, sticky="ew", padx=8)
-        ttk.Label(progress, textvariable=self.var_progress).grid(row=0, column=2, sticky="e")
-
-        log_frame = ttk.LabelFrame(main, text="日志", padding=8)
-        log_frame.grid(row=6, column=0, sticky="nsew")
-        main.rowconfigure(6, weight=1)
-        log_frame.columnconfigure(0, weight=1)
-        log_frame.rowconfigure(0, weight=1)
-
-        self.log_text = ScrolledText(
-            log_frame,
-            height=20,
-            state="disabled",
-            wrap="word",
-            background=self._log_bg,
-            foreground=self._log_fg,
-            insertbackground=self._log_fg,
+        # === 操作按钮区域 ===
+        actions_frame = ctk.CTkFrame(main, fg_color="transparent")
+        actions_frame.grid(row=4, column=0, sticky="ew", pady=(0, 15))
+        
+        self.btn_start = ctk.CTkButton(
+            actions_frame, 
+            text="▶️ 开始处理", 
+            command=self._start_processing,
+            height=40,
+            font=("", 14, "bold"),
+            fg_color="#1f6aa5",
+            hover_color="#1557b0"
         )
-        self.log_text.grid(row=0, column=0, sticky="nsew")
+        self.btn_start.grid(row=0, column=0, padx=(0, 10))
+        
+        self.btn_cancel = ctk.CTkButton(
+            actions_frame,
+            text="⏹️ 取消处理",
+            command=self._cancel_processing,
+            height=40,
+            font=("", 14, "bold"),
+            fg_color="#d32f2f",
+            hover_color="#b71c1c"
+        )
+        self.btn_cancel.grid(row=0, column=1, padx=(0, 10))
+        
+        ctk.CTkButton(
+            actions_frame,
+            text="🗑️ 清空日志",
+            command=self._clear_logs,
+            height=40,
+            font=("", 14)
+        ).grid(row=0, column=2)
+
+        # === 进度显示区域 ===
+        progress_frame = ctk.CTkFrame(main, corner_radius=10)
+        progress_frame.grid(row=5, column=0, sticky="ew", pady=(0, 15))
+        progress_frame.grid_columnconfigure(1, weight=1)
+        
+        self.status_label = ctk.CTkLabel(
+            progress_frame, 
+            textvariable=self.var_status,
+            font=("", 13, "bold")
+        )
+        self.status_label.grid(row=0, column=0, sticky="w", padx=15, pady=12)
+        
+        self.progress_bar = ctk.CTkProgressBar(progress_frame, mode="indeterminate")
+        self.progress_bar.grid(row=0, column=1, sticky="ew", padx=10, pady=12)
+        self.progress_bar.set(0)
+        
+        self.progress_label = ctk.CTkLabel(
+            progress_frame,
+            textvariable=self.var_progress,
+            font=("", 13)
+        )
+        self.progress_label.grid(row=0, column=2, sticky="e", padx=15, pady=12)
+
+        # === 日志显示区域 ===
+        log_frame = ctk.CTkFrame(main, corner_radius=10)
+        log_frame.grid(row=6, column=0, sticky="nsew")
+        log_frame.grid_columnconfigure(0, weight=1)
+        log_frame.grid_rowconfigure(1, weight=1)
+        main.grid_rowconfigure(6, weight=1)
+        
+        ctk.CTkLabel(log_frame, text="📋 处理日志", font=("", 16, "bold")).grid(
+            row=0, column=0, sticky="w", padx=15, pady=(15, 10)
+        )
+
+        self.log_text = ctk.CTkTextbox(log_frame, height=200, wrap="word", font=("Consolas", 10))
+        self.log_text.grid(row=1, column=0, sticky="nsew", padx=15, pady=(0, 15))
+        self.log_text.configure(state="disabled")
+
+    def _add_path_row(self, parent: ctk.CTkFrame, row: int, label: str, var: tk.StringVar, 
+                      command, pady_bottom: int = 10) -> None:
+        """添加路径选择行（标签 + 输入框 + 按钮）"""
+        ctk.CTkLabel(parent, text=f"{label}:", width=80, anchor="w").grid(
+            row=row, column=0, sticky="w", padx=(15, 10), pady=(0, pady_bottom)
+        )
+        ctk.CTkEntry(parent, textvariable=var).grid(
+            row=row, column=1, sticky="ew", padx=(0, 10), pady=(0, pady_bottom)
+        )
+        ctk.CTkButton(parent, text="浏览", command=command, width=80).grid(
+            row=row, column=2, sticky="e", padx=(0, 15), pady=(0, pady_bottom)
+        )
+
+    def _add_param_field(self, parent: ctk.CTkFrame, col: int, label: str, 
+                        var: tk.StringVar, width: int = 100) -> None:
+        """添加参数输入字段"""
+        ctk.CTkLabel(parent, text=f"{label}:").grid(row=0, column=col, sticky="w", padx=(0, 5))
+        ctk.CTkEntry(parent, textvariable=var, width=width).grid(
+            row=0, column=col + 1, sticky="w", padx=(0, 20)
+        )
 
     def _apply_default_values(self) -> None:
         default_config = resolve_asset_path("configs/default.yaml")
@@ -444,7 +480,7 @@ class DramaProcessorGUI(tk.Tk):
         self._apply_config_to_form(config)
 
     def _choose_root(self) -> None:
-        path = filedialog.askdirectory()
+        path = filedialog.askdirectory(title="选择素材目录")
         if path:
             self.var_root.set(path)
             self._refresh_drama_list()
@@ -460,7 +496,7 @@ class DramaProcessorGUI(tk.Tk):
             self._apply_config_to_form(config)
 
     def _choose_output(self) -> None:
-        path = filedialog.askdirectory()
+        path = filedialog.askdirectory(title="选择输出目录")
         if path:
             self.var_output.set(path)
 
@@ -676,11 +712,11 @@ class DramaProcessorGUI(tk.Tk):
         self.btn_start.configure(state="disabled" if running else "normal")
         self.btn_cancel.configure(state="normal" if running else "disabled")
         if running:
-            self.progress_bar.configure(mode="indeterminate", maximum=100)
-            self.progress_bar.start(10)
+            self.progress_bar.configure(mode="indeterminate")
+            self.progress_bar.start()
         else:
             self.progress_bar.stop()
-            self.progress_bar.configure(value=0)
+            self.progress_bar.set(0)
 
     def _start_processing(self) -> None:
         if self._running:
@@ -1035,12 +1071,13 @@ class DramaProcessorGUI(tk.Tk):
             self._completed_dramas = 0
         if self._total_dramas > 0:
             self.progress_bar.stop()
-            self.progress_bar.configure(
-                mode="determinate", maximum=self._total_dramas, value=self._completed_dramas
-            )
+            self.progress_bar.configure(mode="determinate")
+            progress_value = self._completed_dramas / self._total_dramas
+            self.progress_bar.set(progress_value)
             self.var_progress.set(f"{self._completed_dramas}/{self._total_dramas}")
         else:
-            self.progress_bar.configure(mode="indeterminate", maximum=100)
+            self.progress_bar.configure(mode="indeterminate")
+            self.progress_bar.start()
             self.var_progress.set("0/0")
 
     def _on_close(self) -> None:
