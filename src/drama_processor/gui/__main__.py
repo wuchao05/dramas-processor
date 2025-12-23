@@ -1,7 +1,7 @@
-"""GUI 模块入口。"""
+"""GUI 模块入口 - NiceGUI 版本。"""
 
-from .app import main
+from .nicegui_app import run_gui
 
 
 if __name__ == "__main__":
-    main()
+    run_gui()
