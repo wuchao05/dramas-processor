@@ -343,11 +343,15 @@ class DramaProcessorGUI:
                 with ui.column().classes('gap-2').style('flex: 1; min-width: 0;'):
                     ui.label('可选剧目').classes('text-sm font-bold text-gray-600')
                     
-                    # 搜索框
-                    self.drama_search_input = ui.input(placeholder='搜索剧目...') \
-                        .props('outlined dense clearable') \
-                        .classes('w-full') \
-                        .on('keydown.enter', self._on_drama_filter_change)
+                    # 搜索框 + 全选
+                    with ui.row().classes('w-full gap-2 items-center'):
+                        self.drama_search_input = ui.input(placeholder='搜索剧目...') \
+                            .props('outlined dense clearable') \
+                            .classes('flex-1') \
+                            .on('keydown.enter', self._on_drama_filter_change)
+                        ui.button('全选', icon='done_all', on_click=self._select_all_filtered) \
+                            .props('outline dense') \
+                            .classes('whitespace-nowrap')
                     
                     # 剧目列表（滚动区域）- 原生模式下 q-scroll-area 可能不渲染内容，改用原生滚动容器兜底
                     with ui.column().classes('w-full flex-1 border border-gray-200 rounded p-2').style(
@@ -840,7 +844,7 @@ class DramaProcessorGUI:
         return root_dir, None
 
     def _on_drama_filter_change(self, e):
-        """剧目搜索过滤（按回车触发，支持中英文逗号/换行分隔多剧名）"""
+        """剧目搜索过滤（按回车触发；英文逗号/换行分隔多剧名）"""
         # keydown.enter 事件不一定带 value，这里优先从输入框取值
         value = ""
         try:
@@ -854,31 +858,67 @@ class DramaProcessorGUI:
         if not value:
             self.filtered_drama_names = self.all_drama_names.copy()
         else:
-            # 支持多行/中英文逗号分隔的批量输入
-            normalized = value.replace("，", ",").replace("\n", ",")
-            # 同时兼容空格分隔
-            raw_terms: List[str] = []
-            for part in normalized.split(","):
-                part = part.strip()
-                if not part:
-                    continue
-                raw_terms.extend([p.strip() for p in part.split() if p.strip()])
+            if "，" in value:
+                ui.notify('多个剧名请使用英文逗号 "," 或换行分隔（不支持中文逗号）', type='warning')
 
-            search_terms = {t.lower() for t in raw_terms if t}
-            
-            if not search_terms:
-                self.filtered_drama_names = self.all_drama_names.copy()
+            # 多个剧名：仅允许英文逗号 + 换行
+            normalized = value.replace("\n", ",")
+            terms = [t.strip() for t in normalized.split(",") if t.strip()]
+
+            # 单个输入：模糊匹配；多个输入：精确匹配
+            if len(terms) <= 1:
+                term = (terms[0] if terms else "").strip().lower()
+                if not term:
+                    self.filtered_drama_names = self.all_drama_names.copy()
+                else:
+                    self.filtered_drama_names = [
+                        name for name in self.all_drama_names if term in name.lower()
+                    ]
             else:
-                self.filtered_drama_names = []
-                for name in self.all_drama_names:
-                    name_lower = name.lower()
-                    # 只要匹配任一关键词即可（批量选择模式）
-                    if any(term in name_lower for term in search_terms):
-                        self.filtered_drama_names.append(name)
-                        # 如果是精确匹配（通常是粘贴），自动选中
-                        if name_lower in search_terms:
-                            self._add_drama(name)
-        
+                exact_set = {t.lower() for t in terms if t}
+                self.filtered_drama_names = [
+                    name for name in self.all_drama_names if name.lower() in exact_set
+                ]
+            
+        # 注意：不再自动加入“已选剧目”，由“全选”按钮一次性加入
+        self._render_available_dramas()
+        self._render_selected_dramas()
+        self._update_process_btn_state()
+
+    def _select_all_filtered(self):
+        """将当前过滤列表中的剧目全部加入“已选剧目”（按列表顺序）"""
+        if not self.filtered_drama_names:
+            ui.notify('当前列表为空，无可全选的剧目', type='warning')
+            return
+
+        # 批量加入，避免逐个 notify 刷屏
+        added: List[str] = []
+        with self.queue_lock:
+            for name in self.filtered_drama_names:
+                if name in self.selected_drama_names:
+                    continue
+                self.selected_drama_names.add(name)
+                self.selected_drama_order.append(name)
+                added.append(name)
+
+                # 处理中追加：直接进入待剪辑队列
+                if self.is_running:
+                    self.drama_status_map[name] = DramaStatus.QUEUED
+                    self.drama_queue.append(name)
+                    self.total_dramas += 1
+                else:
+                    self.drama_status_map[name] = DramaStatus.PENDING
+
+        if not added:
+            ui.notify('这些剧目都已经在“已选剧目”中了', type='info')
+            return
+
+        if self.is_running:
+            self._update_progress()
+            ui.notify(f'已追加 {len(added)} 部剧目到待剪辑队列', type='positive')
+        else:
+            ui.notify(f'已选择 {len(added)} 部剧目', type='positive')
+
         self._render_available_dramas()
         self._render_selected_dramas()
         self._update_process_btn_state()
