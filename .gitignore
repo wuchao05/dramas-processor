@@ -27,6 +27,7 @@ MANIFEST
 # PyInstaller
 *.manifest
 *.spec
+!packaging/pyinstaller_gui_onefile.spec
 
 # Virtual environments
 venv/
