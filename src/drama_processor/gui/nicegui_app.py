@@ -361,11 +361,6 @@ class DramaProcessorGUI:
     @ui.refreshable
     def _render_available_dramas_refreshable(self):
         """可刷新的可选剧目列表"""
-        # 调试输出
-        logger.debug(f"渲染可选剧目: root_dir={self.root_dir}, "
-                    f"all_dramas={len(self.all_drama_names)}, "
-                    f"filtered={len(self.filtered_drama_names)}")
-        
         # 如果没有选择目录
         if not self.root_dir:
             with ui.column().classes('w-full py-8 items-center text-center'):
@@ -380,12 +375,9 @@ class DramaProcessorGUI:
                 ui.label('未找到剧目').classes('text-gray-400')
                 if self.root_dir:
                     ui.label(f'目录: {self.root_dir}').classes('text-xs text-gray-300 mt-2')
-                # 调试信息
-                ui.label(f'调试: all={len(self.all_drama_names)}, filtered={len(self.filtered_drama_names)}').classes('text-xs text-red-500 mt-2')
             return
         
         # 渲染剧目列表
-        logger.debug(f"开始渲染 {len(self.filtered_drama_names)} 个剧目")
         for name in self.filtered_drama_names:
             is_selected = name in self.selected_drama_names
             
