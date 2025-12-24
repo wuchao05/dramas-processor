@@ -84,10 +84,20 @@ hiddenimports += [
     "drama_processor.gui.nicegui_app",
 ]
 
-# 内置默认配置（只打 default.yaml）
-default_yaml = project_root / "configs" / "default.yaml"
-if default_yaml.exists():
-    datas.append((str(default_yaml), "configs"))
+# 内置配置文件（default.yaml 和所有用户配置）
+configs_dir = project_root / "configs"
+if configs_dir.exists():
+    # 打包 default.yaml
+    default_yaml = configs_dir / "default.yaml"
+    if default_yaml.exists():
+        datas.append((str(default_yaml), "configs"))
+    
+    # 打包 configs/users/ 目录下的所有用户配置
+    users_dir = configs_dir / "users"
+    if users_dir.exists():
+        for user_config in users_dir.glob("*.yaml"):
+            if user_config.is_file():
+                datas.append((str(user_config), "configs/users"))
 
 # 内置 assets（包含 tail.mp4、watermark、字体等）
 # 注意：PyInstaller 6.17 的 Analysis(datas=...) 期望 (src, dest_dir) 二元组；
