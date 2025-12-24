@@ -249,9 +249,10 @@ class DramaProcessorGUI:
                     ui.separator().props('vertical')
                     
                     # 主操作按钮
-                    self.process_btn = ui.button('开始处理选中', icon='play_arrow', on_click=lambda: self._run_processing(
-                        self.root_dir, self.config_path, self._collect_overrides(), list(self.selected_drama_names)
-                    )).classes('bg-indigo-600 text-white shadow-md hover:bg-indigo-700')
+                    self.cancel_btn = ui.button('取消', icon='stop', on_click=self._cancel_processing) \
+                        .classes('bg-red-500 text-white shadow-md hover:bg-red-600').props('hidden')
+                    self.process_btn = ui.button('开始处理选中', icon='play_arrow', on_click=self._on_start_processing_click) \
+                        .classes('bg-indigo-600 text-white shadow-md hover:bg-indigo-700')
 
             # 剧目列表 (使用 Refreshable)
             self._render_drama_list_refreshable()
@@ -591,43 +592,6 @@ class DramaProcessorGUI:
         self._update_process_btn_state()
 
     
-    async def _start_processing(self):
-        """开始处理"""
-        if self.is_running:
-            ui.notify('任务正在运行中', type='warning')
-            return
-        
-        if not self.selected_drama_names:
-            ui.notify('请先选择要处理的剧目', type='warning')
-            return
-        
-        if not self.processing_root:
-            ui.notify('请先选择素材目录', type='warning')
-            return
-        
-        try:
-            # 收集配置
-            overrides = self._collect_overrides()
-            
-            # 启动处理
-            self.is_running = True
-            self.cancel_event.clear()
-            self._set_ui_running(True)
-            
-            selected = list(self.selected_drama_names)
-            
-            # 在后台线程运行
-            self.processing_thread = threading.Thread(
-                target=self._run_processing,
-                args=(self.processing_root, self.config_path or None, overrides, selected),
-                daemon=True
-            )
-            self.processing_thread.start()
-            
-        except Exception as e:
-            self.is_running = False
-            self._set_ui_running(False)
-            ui.notify(f'启动失败: {e}', type='negative')
     
     def _cancel_processing(self):
         """取消处理"""
@@ -744,6 +708,45 @@ class DramaProcessorGUI:
         
         return ranges
     
+    async def _on_start_processing_click(self):
+        """点击开始处理按钮"""
+        if self.is_running:
+            ui.notify('已有任务在运行中', type='warning')
+            return
+            
+        if not self.root_dir:
+            ui.notify('请先选择素材目录', type='warning')
+            return
+            
+        if not self.selected_drama_names:
+            ui.notify('请先选择要处理的剧目', type='warning')
+            return
+
+        # 收集参数
+        root_dir = self.root_dir
+        config_path = self.config_path
+        overrides = self._collect_overrides()
+        selected_dramas = list(self.selected_drama_names)
+        
+        # 更新状态
+        self.is_running = True
+        self.cancel_event.clear()
+        self.completed_dramas = 0
+        self.total_dramas = 0
+        self.status_text = "准备处理..."
+        self._update_progress(reset=True)
+        self._set_ui_running(True)
+        
+        # 启动后台线程
+        self.processing_thread = threading.Thread(
+            target=self._run_processing,
+            args=(root_dir, config_path, overrides, selected_dramas),
+            daemon=True
+        )
+        self.processing_thread.start()
+        
+        ui.notify('开始后台处理...', type='positive')
+
     def _run_processing(self, root_dir: str, config_path: Optional[str], 
                        overrides: Dict, selected_dramas: List[str]):
         """在后台线程运行处理"""
@@ -886,12 +889,17 @@ class DramaProcessorGUI:
     
     def _set_ui_running(self, running: bool):
         """设置 UI 运行状态"""
-        if self.start_button:
-            self.start_button.enabled = not running
-        if self.cancel_button:
-            self.cancel_button.enabled = running
-        if self.start_watcher_button:
-            self.start_watcher_button.enabled = not running and not self.is_watcher_running
+        if hasattr(self, 'process_btn'):
+            self.process_btn.set_visibility(not running)
+        if hasattr(self, 'cancel_btn'):
+            self.cancel_btn.set_visibility(running)
+            # 初始状态下 props('hidden') 可能导致 visible 属性不同步，这里强制移除 hidden
+            if running:
+                self.cancel_btn.props(remove='hidden')
+        
+        if hasattr(self, 'watcher_btn'):
+            # 如果正在手动处理，禁用轮询按钮
+            self.watcher_btn.enabled = not running and not self.is_watcher_running
     
     def _poll_log_queue(self):
         """轮询日志队列"""
