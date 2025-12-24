@@ -307,8 +307,8 @@ class DramaProcessorGUI:
                 # 初始隐藏取消按钮
                 self.cancel_btn.set_visibility(False)
             
-            # 左右分栏容器 - 使用 flex 布局
-            with ui.row().classes('w-full gap-4').style('min-height: 500px; display: flex;'):
+            # 左右分栏容器 - 使用 flex 布局（原生模式下强制不换行，确保左右两栏）
+            with ui.row().classes('w-full gap-4').style('min-height: 500px; display: flex; flex-wrap: nowrap;'):
                 # 左侧：可选剧目列表
                 with ui.column().classes('gap-2').style('flex: 1; min-width: 0;'):
                     ui.label('可选剧目').classes('text-sm font-bold text-gray-600')
@@ -320,7 +320,7 @@ class DramaProcessorGUI:
                         .on('input', self._on_drama_filter_change)
                     
                     # 剧目列表（滚动区域）- 原生模式下 q-scroll-area 可能不渲染内容，改用原生滚动容器兜底
-                    with ui.column().classes('flex-1 border border-gray-200 rounded p-2').style(
+                    with ui.column().classes('w-full flex-1 border border-gray-200 rounded p-2').style(
                         'min-height: 400px; max-height: 400px; overflow-y: auto;'
                     ):
                         self.available_dramas_container = ui.column().classes('w-full gap-2')
@@ -333,7 +333,7 @@ class DramaProcessorGUI:
                                                  backward=lambda s: str(len(s)))
                     
                     # 已选剧目列表（带状态）- 同上，使用原生滚动容器兜底
-                    with ui.column().classes('flex-1 border border-gray-200 rounded p-2').style(
+                    with ui.column().classes('w-full flex-1 border border-gray-200 rounded p-2').style(
                         'min-height: 400px; max-height: 400px; overflow-y: auto;'
                     ):
                         self.selected_dramas_container = ui.column().classes('w-full gap-2')
