@@ -12,7 +12,7 @@
 
 from pathlib import Path
 
-from PyInstaller.utils.hooks import collect_all
+from PyInstaller.utils.hooks import collect_data_files, collect_dynamic_libs, collect_submodules
 
 
 block_cipher = None
@@ -22,12 +22,27 @@ block_cipher = None
 _spec_dir = Path(globals().get("SPECPATH", ".")).resolve()
 project_root = _spec_dir.parent
 
-# 收集 nicegui / pywebview 等动态依赖
-nicegui_datas, nicegui_binaries, nicegui_hidden = collect_all("nicegui")
-webview_datas, webview_binaries, webview_hidden = collect_all("webview")
-
 datas = []
-datas += nicegui_datas + webview_datas
+
+# 收集 nicegui 运行所需数据文件/动态库/隐藏导入
+# 注意：PyInstaller 6.17 下 collect_all() 返回的 datas 结构与 Analysis(datas=...) 期望格式不一致
+datas += collect_data_files("nicegui")
+binaries = []
+binaries += collect_dynamic_libs("nicegui")
+hiddenimports = []
+hiddenimports += collect_submodules("nicegui")
+
+# pywebview（Windows native 模式需要）
+datas += collect_data_files("webview")
+binaries += collect_dynamic_libs("webview")
+# webview 的 submodules 中可能包含 android/ios 等平台，显式列 Windows 常用即可
+hiddenimports += [
+    "webview",
+    "webview.platforms",
+    "webview.platforms.winforms",
+    "webview.platforms.edgechromium",
+    "webview.platforms.mshtml",
+]
 
 # 内置默认配置（只打 default.yaml）
 default_yaml = project_root / "configs" / "default.yaml"
@@ -40,13 +55,7 @@ if assets_dir.exists():
     # Tree 会把整个目录拷贝到包内的 assets/
     from PyInstaller.building.datastruct import Tree
 
-    datas.append(Tree(str(assets_dir), prefix="assets"))
-
-binaries = []
-binaries += nicegui_binaries + webview_binaries
-
-hiddenimports = []
-hiddenimports += nicegui_hidden + webview_hidden
+    datas += Tree(str(assets_dir), prefix="assets")
 
 a = Analysis(
     [str(project_root / "run_gui.py")],
