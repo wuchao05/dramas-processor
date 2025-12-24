@@ -347,7 +347,7 @@ class DramaProcessorGUI:
                     self.drama_search_input = ui.input(placeholder='搜索剧目...') \
                         .props('outlined dense clearable') \
                         .classes('w-full') \
-                        .on('input', self._on_drama_filter_change)
+                        .on('keydown.enter', self._on_drama_filter_change)
                     
                     # 剧目列表（滚动区域）- 原生模式下 q-scroll-area 可能不渲染内容，改用原生滚动容器兜底
                     with ui.column().classes('w-full flex-1 border border-gray-200 rounded p-2').style(
@@ -840,13 +840,31 @@ class DramaProcessorGUI:
         return root_dir, None
 
     def _on_drama_filter_change(self, e):
-        """剧目搜索过滤"""
-        value = e.value
+        """剧目搜索过滤（按回车触发，支持中英文逗号/换行分隔多剧名）"""
+        # keydown.enter 事件不一定带 value，这里优先从输入框取值
+        value = ""
+        try:
+            if self.drama_search_input is not None and getattr(self.drama_search_input, "value", None) is not None:
+                value = str(self.drama_search_input.value or "")
+            else:
+                value = str(getattr(e, "value", "") or "")
+        except Exception:
+            value = str(getattr(e, "value", "") or "")
+
         if not value:
             self.filtered_drama_names = self.all_drama_names.copy()
         else:
-            # 支持多行粘贴（自动分割）
-            search_terms = {t.strip().lower() for t in value.replace('\n', ' ').split() if t.strip()}
+            # 支持多行/中英文逗号分隔的批量输入
+            normalized = value.replace("，", ",").replace("\n", ",")
+            # 同时兼容空格分隔
+            raw_terms: List[str] = []
+            for part in normalized.split(","):
+                part = part.strip()
+                if not part:
+                    continue
+                raw_terms.extend([p.strip() for p in part.split() if p.strip()])
+
+            search_terms = {t.lower() for t in raw_terms if t}
             
             if not search_terms:
                 self.filtered_drama_names = self.all_drama_names.copy()
