@@ -138,6 +138,13 @@ def _parse_float(value: str, label: str) -> float:
         raise ValueError(f"{label} 必须是数字") from exc
 
 
+def _format_path_for_ui(path: str) -> str:
+    """用于 UI 展示/复制的路径格式化（统一使用 / 作为分隔符）。"""
+    if not path:
+        return path
+    return path.replace("\\", "/")
+
+
 class DramaProcessorGUI:
     """短剧处理器 GUI 应用（NiceGUI 版本）"""
 
@@ -407,7 +414,7 @@ class DramaProcessorGUI:
         if not self.export_path_display:
             ui.notify('暂无可复制的导出路径', type='warning')
             return
-        ui.clipboard.write(self.export_path_display)
+        ui.clipboard.write(_format_path_for_ui(self.export_path_display))
         ui.notify('已复制导出路径', type='positive')
 
     def _update_export_banner(self):
@@ -415,7 +422,7 @@ class DramaProcessorGUI:
         if not hasattr(self, 'export_banner') or not hasattr(self, 'export_path_label'):
             return
         if self.export_path_display:
-            self.export_path_label.text = self.export_path_display
+            self.export_path_label.text = _format_path_for_ui(self.export_path_display)
             self.export_banner.set_visibility(True)
         else:
             self.export_banner.set_visibility(False)
