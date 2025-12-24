@@ -193,7 +193,7 @@ class DramaProcessorGUI:
         formatter = logging.Formatter('%(message)s')
         gui_handler.setFormatter(formatter)
         root_logger.addHandler(gui_handler)
-        root_logger.setLevel(level)
+        root_logger.setLevel(level_num)
 
     def build_ui(self):
         """构建 UI 界面"""
