@@ -311,18 +311,47 @@ class VideoEncoder:
             f"fontcolor=white@0.85:box=0:"
             f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
         )
-        line_spacing_opt = ""
-        if self.vertical_line_spacing:
-            line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
-        dt_side = (
-            f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
-            f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
-            f"x=w-text_w-{margin}:y={margin + 200}"
-        )
         
-        filters = [base, dt_top, dt_bottom, dt_side]
+        # Side text - use individual drawtext for each character for tighter spacing
+        filters = [base, dt_top, dt_bottom]
         
-        # Add brand text overlay (same position and style as watermark would be)
+        try:
+            # Read side text content
+            with open(side_txtf, 'r', encoding='utf-8') as f:
+                side_text_content = f.read().strip()
+            
+            # Remove newlines to get original characters
+            side_chars = [c for c in side_text_content if c != '\n']
+            
+            # Character spacing: 0.75 = tighter, adjust as needed
+            char_spacing = int(side_fs * 0.75)
+            
+            # Create individual drawtext for each character
+            start_y = margin + 200
+            for i, char in enumerate(side_chars):
+                # Escape special characters for FFmpeg
+                escaped_char = char.replace("'", "\\'").replace(":", "\\:")
+                y_pos = start_y + i * char_spacing
+                
+                dt_char = (
+                    f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_fs}:"
+                    f"fontcolor=white@0.85:box=0:"
+                    f"x=w-text_w-{margin}:y={y_pos}"
+                )
+                filters.append(dt_char)
+        except Exception:
+            # Fallback to old method if reading fails
+            line_spacing_opt = ""
+            if self.vertical_line_spacing:
+                line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
+            dt_side = (
+                f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
+                f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
+                f"x=w-text_w-{margin}:y={margin + 200}"
+            )
+            filters.append(dt_side)
+        
+        # Add brand text overlay (left side, same tight spacing)
         if self.use_brand_text:
             # Get brand text for current material
             if material_idx is not None:
@@ -332,14 +361,43 @@ class VideoEncoder:
             
             brand_txt = os.path.join(workdir, "brand.txt")
             write_text_file(brand_txt, self.to_vertical(brand_text))
-            brand_txt_filter = self._filter_path(brand_txt)
             
-            dt_brand = (
-                f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
-                f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
-                f"x={margin}:y={margin + 200}"
-            )
-            filters.append(dt_brand)
+            try:
+                # Read brand text content
+                with open(brand_txt, 'r', encoding='utf-8') as f:
+                    brand_text_content = f.read().strip()
+                
+                # Remove newlines to get original characters
+                brand_chars = [c for c in brand_text_content if c != '\n']
+                
+                # Same tight character spacing as side text
+                char_spacing = int(side_fs * 0.75)
+                
+                # Create individual drawtext for each character
+                start_y = margin + 200
+                for i, char in enumerate(brand_chars):
+                    # Escape special characters for FFmpeg
+                    escaped_char = char.replace("'", "\\'").replace(":", "\\:")
+                    y_pos = start_y + i * char_spacing
+                    
+                    dt_char = (
+                        f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_fs}:"
+                        f"fontcolor=white@0.85:box=0:"
+                        f"x={margin}:y={y_pos}"
+                    )
+                    filters.append(dt_char)
+            except Exception:
+                # Fallback to old method
+                brand_txt_filter = self._filter_path(brand_txt)
+                line_spacing_opt = ""
+                if self.vertical_line_spacing:
+                    line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
+                dt_brand = (
+                    f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
+                    f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
+                    f"x={margin}:y={margin + 200}"
+                )
+                filters.append(dt_brand)
 
         return ",".join(filters)
     
