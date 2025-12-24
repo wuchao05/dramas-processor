@@ -1741,7 +1741,12 @@ def run_gui(native: Optional[bool] = None):
     
     # 创建应用实例
     gui = DramaProcessorGUI()
-    gui.build_ui()
+
+    # 关键：注册根路由，避免请求落入 NiceGUI 的 404 处理器（其会尝试 run_script/run_path(sys.argv[0])，
+    # 在 PyInstaller onefile 场景下 sys.argv[0] 是 exe，进而触发 “null bytes”）
+    @ui.page('/')
+    def _index():  # noqa: N802
+        gui.build_ui()
     
     # 运行应用
     if native_mode:
