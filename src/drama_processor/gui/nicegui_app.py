@@ -247,6 +247,33 @@ class DramaProcessorGUI:
         root_logger.addHandler(gui_handler)
         root_logger.setLevel(level_num)
 
+    def _is_feishu_config_ready(self) -> bool:
+        """飞书功能是否已完整配置（用于展示飞书监控横幅）"""
+        if not self.enable_feishu:
+            return False
+        return all(
+            [
+                bool((self.feishu_app_id or "").strip()),
+                bool((self.feishu_app_secret or "").strip()),
+                bool((self.feishu_app_token or "").strip()),
+                bool((self.feishu_table_id or "").strip()),
+            ]
+        )
+
+    def _update_feishu_banner_visibility(self) -> None:
+        """根据飞书配置就绪状态更新横幅可见性"""
+        if not hasattr(self, "status_banner"):
+            return
+        ready = self._is_feishu_config_ready()
+        self.status_banner.set_visibility(ready)
+        # 未就绪时，确保监控按钮不可用 & 如在运行则停止
+        if not ready and self.is_watcher_running:
+            self._stop_watcher()
+
+    def _on_feishu_fields_change(self, e) -> None:
+        """飞书配置字段变化"""
+        self._update_feishu_banner_visibility()
+
     def _on_enable_feishu_change(self, e) -> None:
         """启用飞书功能开关变化"""
         # e.value 为最新值
@@ -258,10 +285,10 @@ class DramaProcessorGUI:
             self._stop_watcher()
 
         # 横幅可见性由 bind_visibility_from 控制，这里补一次 UI 状态同步
-        if enabled and self.is_watcher_running:
-            self._set_watcher_ui(True)
-        elif enabled:
-            self._set_watcher_ui(False)
+        self._update_feishu_banner_visibility()
+        if self._is_feishu_config_ready():
+            # 配置完整时同步按钮状态
+            self._set_watcher_ui(self.is_watcher_running)
 
     def build_ui(self):
         """构建现代化 UI 界面"""
@@ -385,8 +412,8 @@ class DramaProcessorGUI:
     def _render_status_banner(self):
         """渲染状态横幅"""
         with ui.row().classes('w-full bg-blue-50 border border-blue-100 p-4 rounded-xl items-center justify-between shadow-sm') as self.status_banner:
-            # 仅在启用飞书功能时展示（默认隐藏）
-            self.status_banner.bind_visibility_from(self, 'enable_feishu')
+            # 仅在飞书“已启用 + 配置完整”时展示（默认隐藏）
+            self.status_banner.set_visibility(False)
             with ui.row().classes('items-center gap-4'):
                 self.status_icon = ui.icon('cloud_off', color='grey').classes('text-4xl')
                 with ui.column().classes('gap-1'):
@@ -396,6 +423,8 @@ class DramaProcessorGUI:
             with ui.row().classes('items-center gap-4'):
                 self.watcher_btn = ui.button('启动自动监控', on_click=self._toggle_watcher_from_banner) \
                     .classes('bg-blue-600 text-white shadow-md hover:bg-blue-700 rounded-lg')
+        # 初次渲染后同步可见性
+        self._update_feishu_banner_visibility()
     
     def _render_export_banner(self):
         """渲染导出路径横幅（独立于飞书）"""
@@ -606,10 +635,14 @@ class DramaProcessorGUI:
                                 .on('change', self._on_enable_feishu_change)
                         
                         with ui.column().classes('w-full gap-3 pl-6 border-l-2 border-gray-100').bind_visibility_from(self, 'enable_feishu'):
-                            ui.input('App ID').props('outlined dense type=password').bind_value(self, 'feishu_app_id').classes('w-full')
-                            ui.input('App Secret').props('outlined dense type=password').bind_value(self, 'feishu_app_secret').classes('w-full')
-                            ui.input('App Token').props('outlined dense type=password').bind_value(self, 'feishu_app_token').classes('w-full')
-                            ui.input('Table ID').props('outlined dense type=password').bind_value(self, 'feishu_table_id').classes('w-full')
+                            ui.input('App ID').props('outlined dense type=password').bind_value(self, 'feishu_app_id').classes('w-full') \
+                                .on('change', self._on_feishu_fields_change)
+                            ui.input('App Secret').props('outlined dense type=password').bind_value(self, 'feishu_app_secret').classes('w-full') \
+                                .on('change', self._on_feishu_fields_change)
+                            ui.input('App Token').props('outlined dense type=password').bind_value(self, 'feishu_app_token').classes('w-full') \
+                                .on('change', self._on_feishu_fields_change)
+                            ui.input('Table ID').props('outlined dense type=password').bind_value(self, 'feishu_table_id').classes('w-full') \
+                                .on('change', self._on_feishu_fields_change)
 
             # 弹窗 Footer
             with ui.row().classes('w-full bg-gray-50 p-4 border-t border-gray-200 justify-end gap-2'):
