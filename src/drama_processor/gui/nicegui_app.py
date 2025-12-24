@@ -240,9 +240,9 @@ class DramaProcessorGUI:
                         ui.button('关闭', icon='close', on_click=self.log_dialog.close) \
                             .classes('bg-gray-700 hover:bg-gray-600 text-white shadow-sm')
                 
-                # Content
-                with ui.scroll_area().classes('w-full flex-1 bg-gray-950'):
-                    self.log_container = ui.log(max_lines=5000).classes('w-full h-full p-6 font-mono text-sm text-green-400')
+                # Content - 使用 ui.log 自带的滚动功能
+                self.log_container = ui.log(max_lines=5000).classes('w-full flex-1') \
+                    .style('background-color: #0a0a0a; color: #4ade80; padding: 1.5rem; font-family: monospace; font-size: 0.875rem; line-height: 1.5;')
 
         # 3. 主内容区域
         with ui.column().classes('w-full max-w-7xl mx-auto p-6 gap-6'):
