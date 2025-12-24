@@ -359,6 +359,7 @@ class DramaProcessorGUI:
             self.export_path_label.text = f'📁 导出: {self.export_path_display}'
 
     @ui.refreshable
+    @ui.refreshable
     def _render_available_dramas_refreshable(self):
         """可刷新的可选剧目列表"""
         # 如果没有选择目录
