@@ -160,6 +160,8 @@ class DramaProcessorGUI:
         self.all_drama_names: List[str] = []
         self.filtered_drama_names: List[str] = []
         self.selected_drama_names: Set[str] = set()
+        # 已选剧目展示顺序：按选中/入队顺序排列（而不是按字母排序）
+        self.selected_drama_order: List[str] = []
         self.processing_root: Optional[str] = None
         
         # UI 容器引用（在 build_ui 中初始化）
@@ -486,7 +488,10 @@ class DramaProcessorGUI:
                 ui.label('未选择剧目').classes('text-gray-400 text-center py-8')
                 return
             
-            for name in sorted(self.selected_drama_names):
+            # 按选中/入队顺序展示；追加的剧目自然会在末尾
+            for name in list(self.selected_drama_order):
+                if name not in self.selected_drama_names:
+                    continue
                 status = self.drama_status_map.get(name, DramaStatus.PENDING)
                 
                 with ui.card().classes('w-full mb-2 p-3'):
@@ -628,6 +633,8 @@ class DramaProcessorGUI:
             return
         
         self.selected_drama_names.add(name)
+        with self.queue_lock:
+            self.selected_drama_order.append(name)
         
         # 根据当前是否在处理中决定初始状态
         if self.is_running:
@@ -662,6 +669,9 @@ class DramaProcessorGUI:
         
         self.selected_drama_names.discard(name)
         self.drama_status_map.pop(name, None)
+        with self.queue_lock:
+            if name in self.selected_drama_order:
+                self.selected_drama_order.remove(name)
         
         # 刷新UI
         self._render_available_dramas()
@@ -771,6 +781,7 @@ class DramaProcessorGUI:
             self.all_drama_names = []
             self.filtered_drama_names = []
             self.selected_drama_names = set()
+            self.selected_drama_order = []
             self.drama_status_map = {}
             self.processing_root = None
             ui.notify('请先选择有效的素材目录', type='warning')
@@ -790,6 +801,7 @@ class DramaProcessorGUI:
             self.all_drama_names = names
             self.filtered_drama_names = names.copy()
             self.selected_drama_names = set()
+            self.selected_drama_order = []
             self.drama_status_map = {}
             
             if preselect:
@@ -1009,10 +1021,12 @@ class DramaProcessorGUI:
             return
         
         # 初始化队列（仅包含 pending 状态的剧目）
-        pending_dramas = [
-            name for name in self.selected_drama_names 
-            if self.drama_status_map.get(name, DramaStatus.PENDING) == DramaStatus.PENDING
-        ]
+        pending_dramas: List[str] = []
+        for name in list(self.selected_drama_order):
+            if name not in self.selected_drama_names:
+                continue
+            if self.drama_status_map.get(name, DramaStatus.PENDING) == DramaStatus.PENDING:
+                pending_dramas.append(name)
         
         if not pending_dramas:
             ui.notify('没有待处理的剧目', type='warning')
