@@ -1699,12 +1699,16 @@ class DramaProcessorGUI:
                 self.font_file = font
 
 
-def run_gui():
-    """运行 GUI 应用"""
+def run_gui(native: Optional[bool] = None):
+    """运行 GUI 应用
+
+    Args:
+        native: 是否以 native 模式运行。为 None 时根据命令行参数 --native 自动判断。
+    """
     import sys
     
-    # 检查命令行参数
-    native_mode = '--native' in sys.argv
+    # 检查命令行参数（仅在未显式指定时）
+    native_mode = native if native is not None else ('--native' in sys.argv)
     
     # 创建应用实例
     gui = DramaProcessorGUI()
