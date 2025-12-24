@@ -22,7 +22,7 @@ from ..models.config import BrandTextMapping, BrandTextRange, FeishuWatcherConfi
 from ..utils.files import scan_drama_dirs
 from ..utils.logging import setup_logging
 from ..utils.system import resolve_asset_path
-from ..utils.cancel import CancelledError
+from ..utils.cancel import CancelledError, raise_if_cancelled
 
 
 LogItem = Tuple[str, str]
