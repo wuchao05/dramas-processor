@@ -1285,6 +1285,11 @@ class DramaProcessorGUI:
         # 优先通过运行时资源解析 default.yaml（支持 PyInstaller onefile / 原生模式）
         resolved_default = resolve_asset_path("configs/default.yaml")
         if resolved_default:
+            try:
+                # 让用户能在日志里确认：GUI 实际加载的是哪一个 default.yaml
+                self.log_queue.put(("log", f"📄 已加载默认配置: {resolved_default}"))
+            except Exception:
+                pass
             return load_config(resolved_default)
         
         # 兼容旧查找逻辑（开发态兜底）
