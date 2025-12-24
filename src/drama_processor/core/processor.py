@@ -717,12 +717,16 @@ class DramaProcessor:
                         date_export_dir = os.path.join(parent_dir, f"{drama_date}导出")
                         os.makedirs(date_export_dir, exist_ok=True)
                         drama_export_root = date_export_dir
+                        # Pass None as date_str since we've already created the date directory
+                        date_str_for_prepare = None
                     else:
                         # Use the common export directory
                         drama_export_root = actual_exports_root
+                        # Use the drama_date for prepare_export_dir to create date structure
+                        date_str_for_prepare = drama_date
                 
                     # Prepare output directory
-                    result = self.prepare_project_output_dir(project, drama_export_root, drama_date)
+                    result = self.prepare_project_output_dir(project, drama_export_root, date_str_for_prepare)
                     if result[0] is None:  # Skip this drama
                         continue
                 
