@@ -1066,12 +1066,23 @@ class DramaProcessorGUI:
             
             def on_drama_complete(drama_name: str):
                 self.log_queue.put(("drama_complete", drama_name))
+
+            # 仅当队列中该剧状态仍为“待剪辑”才允许处理；否则跳过
+            def should_process_drama(drama_name: str) -> bool:
+                status = self.drama_status_map.get(drama_name, DramaStatus.PENDING)
+                if status != DramaStatus.QUEUED:
+                    self.log_queue.put(
+                        ("log", f"⏭️ 跳过 {drama_name}：当前状态为「{status.label}」，非「待剪辑」")
+                    )
+                    return False
+                return True
             
             # 处理队列中的所有剧目
             made, _ = processor.process_all_dramas(
                 processing_root,
                 on_drama_start=on_drama_start,
-                on_drama_complete=on_drama_complete
+                on_drama_complete=on_drama_complete,
+                should_process_drama=should_process_drama,
             )
             
             self.log_queue.put(("done", f"处理完成，共生成 {made} 条素材。"))

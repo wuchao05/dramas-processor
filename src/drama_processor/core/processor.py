@@ -573,7 +573,8 @@ class DramaProcessor:
         root_dir: str, 
         drama_dates: Optional[Dict[str, str]] = None,
         on_drama_start: Optional[Callable[[str], None]] = None,
-        on_drama_complete: Optional[Callable[[str], None]] = None
+        on_drama_complete: Optional[Callable[[str], None]] = None,
+        should_process_drama: Optional[Callable[[str], bool]] = None,
     ) -> Tuple[int, int]:
         """
         Process all dramas with optional callbacks.
@@ -692,6 +693,15 @@ class DramaProcessor:
                     if not project.episodes:
                         logger.warning(f"Skipping {project.name}: no episodes found")
                         continue
+
+                    # GUI/外部可选过滤：仅当满足条件时才处理
+                    if should_process_drama is not None:
+                        try:
+                            if not should_process_drama(project.name):
+                                logger.info(f"⏭️ 跳过处理：{project.name}")
+                                continue
+                        except Exception as e:
+                            logger.warning(f"⚠️ should_process_drama 判断失败，默认继续处理：{project.name} | {e}")
                     
                     # 触发开始回调
                     if on_drama_start:
