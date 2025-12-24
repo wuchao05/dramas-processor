@@ -4,7 +4,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-from typing import Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional
 
 
 def find_font(name_hint: str) -> Optional[str]:
@@ -146,3 +146,25 @@ def resolve_asset_path(rel_or_abs_path: str, roots: Optional[Iterable[Path]] = N
         if candidate.is_file():
             return str(candidate)
     return None
+
+
+def get_windows_subprocess_kwargs_hide_console() -> Dict[str, Any]:
+    """在 Windows 上隐藏子进程控制台窗口（用于 ffmpeg/ffprobe 等命令）。
+
+    PyInstaller(console=False) 的 GUI 程序中，如果直接 subprocess.run，会频繁弹黑框。
+    """
+    if os.name != "nt":
+        return {}
+    kwargs: Dict[str, Any] = {}
+    # CREATE_NO_WINDOW: prevent console window from appearing
+    creationflags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    if creationflags:
+        kwargs["creationflags"] = creationflags
+    # startupinfo: hide window (extra safeguard)
+    startupinfo = getattr(subprocess, "STARTUPINFO", None)
+    if startupinfo:
+        si = subprocess.STARTUPINFO()  # type: ignore[attr-defined]
+        si.dwFlags |= getattr(subprocess, "STARTF_USESHOWWINDOW", 1)
+        si.wShowWindow = getattr(subprocess, "SW_HIDE", 0)
+        kwargs["startupinfo"] = si
+    return kwargs

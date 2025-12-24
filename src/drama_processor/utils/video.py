@@ -5,6 +5,7 @@ import subprocess
 from pathlib import Path
 from typing import Dict, Any, Optional, Union
 
+from .system import get_windows_subprocess_kwargs_hide_console
 
 def parse_rate(rate_str: Optional[str]) -> float:
     """Parse frame rate string.
@@ -59,6 +60,7 @@ def probe_video_stream(path: Union[str, Path]) -> Dict[str, Any]:
         cmd,
         capture_output=True,
         check=True,
+        **get_windows_subprocess_kwargs_hide_console(),
     )
 
     raw_output = result.stdout or b""
@@ -126,6 +128,7 @@ def is_black_frame_at(video_path: Path, time: float, amount_pct: int = 98, pix_t
             cmd,
             capture_output=True,
             check=False,
+            **get_windows_subprocess_kwargs_hide_console(),
         )
 
         raw_output = result.stdout or b""
@@ -161,7 +164,7 @@ def extract_first_frame(video_path: Path, output_path: Path) -> None:
                 "-frames:v", "1",
                 str(output_path)
             ]
-            subprocess.run(cmd, check=True, capture_output=True)
+            subprocess.run(cmd, check=True, capture_output=True, **get_windows_subprocess_kwargs_hide_console())
             return
     
     # Fallback: extract frame at 1 second
@@ -172,4 +175,4 @@ def extract_first_frame(video_path: Path, output_path: Path) -> None:
         "-frames:v", "1",
         str(output_path)
     ]
-    subprocess.run(cmd, check=True, capture_output=True)
+    subprocess.run(cmd, check=True, capture_output=True, **get_windows_subprocess_kwargs_hide_console())

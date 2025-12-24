@@ -19,6 +19,7 @@ from ..utils.video import probe_video_stream, probe_duration
 from ..utils.files import write_text_file, ensure_dir, md5_of_text, md5_of_file
 from ..utils.time import human_duration
 from ..utils.cancel import raise_if_cancelled
+from ..utils.system import get_windows_subprocess_kwargs_hide_console
 
 
 class VideoEncoder:
@@ -97,6 +98,7 @@ class VideoEncoder:
                 encoding="utf-8",
                 errors="replace",
                 timeout=10
+                , **get_windows_subprocess_kwargs_hide_console()
             )
             
             if result.returncode == 0:
@@ -141,6 +143,7 @@ class VideoEncoder:
                 encoding="utf-8",
                 errors="replace",
                 timeout=15
+                , **get_windows_subprocess_kwargs_hide_console()
             )
             
             # Check if encoding succeeded (return code 0) and no critical errors
@@ -218,6 +221,7 @@ class VideoEncoder:
                 encoding="utf-8",
                 errors="replace",
                 timeout=300,
+                **get_windows_subprocess_kwargs_hide_console(),
             )  # 5 minutes timeout
         except subprocess.TimeoutExpired:
             print(f"❌ {operation} 超时 (5分钟)")
