@@ -44,6 +44,46 @@ hiddenimports += [
     "webview.platforms.mshtml",
 ]
 
+# 显式添加 drama_processor 所有子模块（解决 ModuleNotFoundError）
+hiddenimports += collect_submodules("drama_processor")
+hiddenimports += [
+    "drama_processor.core",
+    "drama_processor.core.encoder",
+    "drama_processor.core.processor",
+    "drama_processor.core.analyzer",
+    "drama_processor.core.segments",
+    "drama_processor.core.overlay",
+    "drama_processor.models",
+    "drama_processor.models.config",
+    "drama_processor.models.project",
+    "drama_processor.models.episode",
+    "drama_processor.models.feishu",
+    "drama_processor.models.history",
+    "drama_processor.utils",
+    "drama_processor.utils.files",
+    "drama_processor.utils.video",
+    "drama_processor.utils.logging",
+    "drama_processor.utils.system",
+    "drama_processor.utils.text",
+    "drama_processor.utils.time",
+    "drama_processor.utils.interactive",
+    "drama_processor.utils.cancel",
+    "drama_processor.utils.history",
+    "drama_processor.utils.date_deduplication",
+    "drama_processor.config",
+    "drama_processor.config.loader",
+    "drama_processor.config.manager",
+    "drama_processor.config.defaults",
+    "drama_processor.integrations",
+    "drama_processor.integrations.feishu_client",
+    "drama_processor.integrations.feishu_notification",
+    "drama_processor.cli",
+    "drama_processor.cli.main",
+    "drama_processor.cli.commands",
+    "drama_processor.gui",
+    "drama_processor.gui.nicegui_app",
+]
+
 # 内置默认配置（只打 default.yaml）
 default_yaml = project_root / "configs" / "default.yaml"
 if default_yaml.exists():
