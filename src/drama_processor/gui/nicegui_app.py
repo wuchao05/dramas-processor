@@ -237,6 +237,22 @@ class DramaProcessorGUI:
         root_logger.addHandler(gui_handler)
         root_logger.setLevel(level_num)
 
+    def _on_enable_feishu_change(self, e) -> None:
+        """启用飞书功能开关变化"""
+        # e.value 为最新值
+        enabled = bool(getattr(e, 'value', self.enable_feishu))
+        self.enable_feishu = enabled
+
+        # 关闭飞书功能时，若轮询在跑则停止
+        if not enabled and self.is_watcher_running:
+            self._stop_watcher()
+
+        # 横幅可见性由 bind_visibility_from 控制，这里补一次 UI 状态同步
+        if enabled and self.is_watcher_running:
+            self._set_watcher_ui(True)
+        elif enabled:
+            self._set_watcher_ui(False)
+
     def build_ui(self):
         """构建现代化 UI 界面"""
         # 设置页面背景色和主题
@@ -289,7 +305,11 @@ class DramaProcessorGUI:
         with ui.column().classes('w-full max-w-7xl mx-auto p-6 gap-6'):
             
             # 状态横幅
+            # 飞书自动监控横幅（仅在启用飞书功能时显示）
             self._render_status_banner()
+
+            # 导出路径横幅（与飞书无关，单独展示）
+            self._render_export_banner()
 
             # 剧目选择区域 - 左右分栏
             ui.label('剧目选择').classes('text-xl font-bold mb-4')
@@ -351,24 +371,53 @@ class DramaProcessorGUI:
     def _render_status_banner(self):
         """渲染状态横幅"""
         with ui.row().classes('w-full bg-blue-50 border border-blue-100 p-4 rounded-xl items-center justify-between shadow-sm') as self.status_banner:
+            # 仅在启用飞书功能时展示（默认隐藏）
+            self.status_banner.bind_visibility_from(self, 'enable_feishu')
             with ui.row().classes('items-center gap-4'):
                 self.status_icon = ui.icon('cloud_off', color='grey').classes('text-4xl')
                 with ui.column().classes('gap-1'):
                     self.status_title = ui.label('飞书自动监控未启动').classes('font-bold text-gray-800 text-lg')
                     self.status_desc = ui.label('点击右侧按钮启动监控，自动处理飞书表格中的待剪辑剧目').classes('text-sm text-gray-500')
-                    
-                    # 导出路径（仅在处理中显示）
-                    self.export_path_label = ui.label('').classes('text-xs text-gray-400 font-mono') \
-                        .bind_visibility_from(self, 'is_running')
             
             with ui.row().classes('items-center gap-4'):
                 self.watcher_btn = ui.button('启动自动监控', on_click=self._toggle_watcher_from_banner) \
                     .classes('bg-blue-600 text-white shadow-md hover:bg-blue-700 rounded-lg')
     
-    def _update_status_banner_export_path(self):
-        """更新状态横幅中的导出路径"""
-        if hasattr(self, 'export_path_label') and self.export_path_display:
-            self.export_path_label.text = f'📁 导出: {self.export_path_display}'
+    def _render_export_banner(self):
+        """渲染导出路径横幅（独立于飞书）"""
+        with ui.row().classes(
+            'w-full bg-emerald-50 border border-emerald-100 p-3 rounded-xl items-center justify-between shadow-sm'
+        ) as self.export_banner:
+            # 默认不展示，等拿到导出路径再显示
+            self.export_banner.set_visibility(False)
+
+            with ui.row().classes('items-center gap-3'):
+                ui.icon('folder', color='positive').classes('text-2xl')
+                with ui.column().classes('gap-0'):
+                    ui.label('导出路径').classes('font-bold text-emerald-900')
+                    self.export_path_label = ui.label('').classes('text-xs text-emerald-800 font-mono')
+
+            ui.button('复制', icon='content_copy', on_click=self._copy_export_path) \
+                .props('flat dense') \
+                .classes('text-emerald-700')
+
+    def _copy_export_path(self):
+        """复制导出路径到剪贴板"""
+        if not self.export_path_display:
+            ui.notify('暂无可复制的导出路径', type='warning')
+            return
+        ui.clipboard.write(self.export_path_display)
+        ui.notify('已复制导出路径', type='positive')
+
+    def _update_export_banner(self):
+        """更新导出路径横幅"""
+        if not hasattr(self, 'export_banner') or not hasattr(self, 'export_path_label'):
+            return
+        if self.export_path_display:
+            self.export_path_label.text = self.export_path_display
+            self.export_banner.set_visibility(True)
+        else:
+            self.export_banner.set_visibility(False)
 
     def _render_available_dramas(self):
         """渲染可选剧目列表到容器"""
@@ -534,7 +583,10 @@ class DramaProcessorGUI:
                         with ui.row().classes('items-center gap-2'):
                             ui.icon('cloud', color='primary')
                             ui.label('飞书集成').classes('text-base font-bold text-gray-700')
-                            ui.switch().bind_value(self, 'enable_feishu').props('color=primary')
+                            ui.switch() \
+                                .bind_value(self, 'enable_feishu') \
+                                .props('color=primary') \
+                                .on('change', self._on_enable_feishu_change)
                         
                         with ui.column().classes('w-full gap-3 pl-6 border-l-2 border-gray-100').bind_visibility_from(self, 'enable_feishu'):
                             ui.input('App ID').props('outlined dense type=password').bind_value(self, 'feishu_app_id').classes('w-full')
@@ -624,6 +676,9 @@ class DramaProcessorGUI:
 
     def _toggle_watcher_from_banner(self):
         """从横幅切换监控状态"""
+        if not self.enable_feishu:
+            ui.notify('请先在设置中启用飞书功能', type='warning')
+            return
         if self.is_watcher_running:
             self._stop_watcher()
         else:
@@ -1207,7 +1262,7 @@ class DramaProcessorGUI:
                 elif kind == "export_path":
                     # 更新导出路径显示
                     self.export_path_display = payload
-                    self._update_status_banner_export_path()
+                    self._update_export_banner()
                 
                 elif kind == "drama_start":
                     # 剧目开始处理：pending/queued → processing
