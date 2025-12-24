@@ -155,6 +155,10 @@ class DramaProcessorGUI:
         self.selected_drama_names: Set[str] = set()
         self.processing_root: Optional[str] = None
         
+        # UI 容器引用（在 build_ui 中初始化）
+        self.available_dramas_container = None
+        self.selected_dramas_container = None
+        
         # 参数配置
         self.count = "1"
         self.min_duration = "480"
@@ -315,9 +319,9 @@ class DramaProcessorGUI:
                         .classes('w-full') \
                         .on('input', self._on_drama_filter_change)
                     
-                    # 剧目列表（滚动区域）
+                    # 剧目列表（滚动区域）- 使用容器引用
                     with ui.scroll_area().classes('flex-1 border border-gray-200 rounded p-2').style('min-height: 400px;'):
-                        self._render_available_dramas_refreshable()
+                        self.available_dramas_container = ui.column().classes('w-full gap-2')
                 
                 # 右侧：已选剧目
                 with ui.column().classes('gap-2').style('flex: 1; min-width: 0;'):
@@ -326,15 +330,19 @@ class DramaProcessorGUI:
                         ui.badge().bind_text_from(self, 'selected_drama_names', 
                                                  backward=lambda s: str(len(s)))
                     
-                    # 已选剧目列表（带状态）
+                    # 已选剧目列表（带状态）- 使用容器引用
                     with ui.scroll_area().classes('flex-1 border border-gray-200 rounded p-2').style('min-height: 400px;'):
-                        self._render_selected_dramas_refreshable()
+                        self.selected_dramas_container = ui.column().classes('w-full gap-2')
 
         # 启动日志轮询
         ui.timer(0.1, self._poll_log_queue)
         
         # 应用默认值
         self._apply_default_values()
+        
+        # 初始渲染剧目列表
+        self._render_available_dramas()
+        self._render_selected_dramas()
 
     def _render_status_banner(self):
         """渲染状态横幅"""
@@ -358,53 +366,58 @@ class DramaProcessorGUI:
         if hasattr(self, 'export_path_label') and self.export_path_display:
             self.export_path_label.text = f'📁 导出: {self.export_path_display}'
 
-    @ui.refreshable
-    def _render_available_dramas_refreshable(self):
-        """可刷新的可选剧目列表"""
-        # 调试信息 - 显示在UI顶部
-        ui.label(f'[调试] root={bool(self.root_dir)}, all={len(self.all_drama_names)}, filtered={len(self.filtered_drama_names)}').classes('text-xs text-blue-500 mb-2')
-        
-        # 如果没有选择目录
-        if not self.root_dir:
-            with ui.column().classes('w-full py-8 items-center text-center'):
-                ui.icon('folder_off', color='grey').classes('text-5xl mb-3 opacity-50')
-                ui.label('请先在设置中选择素材目录').classes('text-gray-400')
+    def _render_available_dramas(self):
+        """渲染可选剧目列表到容器"""
+        if not self.available_dramas_container:
             return
+        # 清空容器
+        self.available_dramas_container.clear()
         
-        # 如果选择了目录但没有剧目
-        if not self.filtered_drama_names:
-            with ui.column().classes('w-full py-8 items-center text-center'):
-                ui.icon('search_off', color='grey').classes('text-5xl mb-3 opacity-50')
-                ui.label('未找到剧目').classes('text-gray-400')
-                ui.label(f'目录: {self.root_dir}').classes('text-xs text-gray-300 mt-2')
-            return
-        
-        # 显示剧目数量
-        ui.label(f'共 {len(self.filtered_drama_names)} 部剧目').classes('text-sm text-gray-500 mb-2')
-        
-        # 渲染剧目列表
-        for name in self.filtered_drama_names:
-            is_selected = name in self.selected_drama_names
+        with self.available_dramas_container:
+            # 如果没有选择目录
+            if not self.root_dir:
+                with ui.column().classes('w-full py-8 items-center text-center'):
+                    ui.icon('folder_off', color='grey').classes('text-5xl mb-3 opacity-50')
+                    ui.label('请先在设置中选择素材目录').classes('text-gray-400')
+                return
             
-            with ui.card().classes('w-full mb-2 p-3 cursor-pointer hover:shadow-md transition-shadow'):
-                with ui.row().classes('w-full items-center justify-between gap-3'):
-                    # 剧目图标
-                    ui.icon('movie', color='grey').classes('text-2xl')
-                    
-                    # 剧名
-                    ui.label(name).classes('flex-1 font-medium text-sm')
-                    
-                    if is_selected:
-                        ui.icon('check_circle', color='positive').classes('text-green-500')
-                    else:
-                        ui.button('选择', on_click=lambda n=name: self._add_drama(n)) \
-                            .props('flat dense size=sm color=primary')
+            # 如果选择了目录但没有剧目
+            if not self.filtered_drama_names:
+                with ui.column().classes('w-full py-8 items-center text-center'):
+                    ui.icon('search_off', color='grey').classes('text-5xl mb-3 opacity-50')
+                    ui.label('未找到剧目').classes('text-gray-400')
+                    ui.label(f'目录: {self.root_dir}').classes('text-xs text-gray-300 mt-2')
+                return
+            
+            # 显示剧目数量
+            ui.label(f'共 {len(self.filtered_drama_names)} 部剧目').classes('text-sm text-gray-500 mb-2')
+            
+            # 渲染剧目列表
+            for name in self.filtered_drama_names:
+                is_selected = name in self.selected_drama_names
+                
+                with ui.card().classes('w-full mb-2 p-3 cursor-pointer hover:shadow-md transition-shadow'):
+                    with ui.row().classes('w-full items-center justify-between gap-3'):
+                        # 剧目图标
+                        ui.icon('movie', color='grey').classes('text-2xl')
+                        
+                        # 剧名
+                        ui.label(name).classes('flex-1 font-medium text-sm')
+                        
+                        if is_selected:
+                            ui.icon('check_circle', color='positive').classes('text-green-500')
+                        else:
+                            ui.button('选择', on_click=lambda n=name: self._add_drama(n)) \
+                                .props('flat dense size=sm color=primary')
 
-    @ui.refreshable
-    def _render_selected_dramas_refreshable(self):
-        """可刷新的已选剧目列表（带状态）"""
-        # 使用一个包装容器来确保内容正确渲染
-        with ui.column().classes('w-full gap-2'):
+    def _render_selected_dramas(self):
+        """渲染已选剧目列表到容器"""
+        if not self.selected_dramas_container:
+            return
+        # 清空容器
+        self.selected_dramas_container.clear()
+        
+        with self.selected_dramas_container:
             if not self.selected_drama_names:
                 ui.label('未选择剧目').classes('text-gray-400 text-center py-8')
                 return
@@ -560,8 +573,8 @@ class DramaProcessorGUI:
             self.drama_status_map[name] = DramaStatus.PENDING
         
         # 刷新UI
-        self._render_available_dramas_refreshable.refresh()
-        self._render_selected_dramas_refreshable.refresh()
+        self._render_available_dramas()
+        self._render_selected_dramas()
         self._update_process_btn_state()
 
     def _remove_drama(self, name: str):
@@ -580,8 +593,8 @@ class DramaProcessorGUI:
         self.drama_status_map.pop(name, None)
         
         # 刷新UI
-        self._render_available_dramas_refreshable.refresh()
-        self._render_selected_dramas_refreshable.refresh()
+        self._render_available_dramas()
+        self._render_selected_dramas()
         self._update_process_btn_state()
 
     def _batch_change_status(self, dramas: List[str], new_status: DramaStatus):
@@ -590,7 +603,7 @@ class DramaProcessorGUI:
             if name in self.selected_drama_names:
                 self.drama_status_map[name] = new_status
         
-        self._render_selected_dramas_refreshable.refresh()
+        self._render_selected_dramas()
 
     def _update_process_btn_state(self):
         """更新处理按钮状态"""
@@ -686,8 +699,8 @@ class DramaProcessorGUI:
             self.drama_status_map = {}
             self.processing_root = None
             ui.notify('请先选择有效的素材目录', type='warning')
-            self._render_available_dramas_refreshable.refresh()
-            self._render_selected_dramas_refreshable.refresh()
+            self._render_available_dramas()
+            self._render_selected_dramas()
             return
         
         processing_root, preselect = self._resolve_list_root(self.root_dir)
@@ -708,8 +721,8 @@ class DramaProcessorGUI:
                 self._add_drama(preselect)  # 使用 _add_drama 以正确初始化状态
             
             # 强制刷新 UI
-            self._render_available_dramas_refreshable.refresh()
-            self._render_selected_dramas_refreshable.refresh()
+            self._render_available_dramas()
+            self._render_selected_dramas()
             self._update_process_btn_state()
             
             # 显示扫描结果（带详细信息）
@@ -721,8 +734,8 @@ class DramaProcessorGUI:
             self.all_drama_names = []
             self.filtered_drama_names = []
             ui.notify(f'❌ 扫描失败: {e}', type='negative')
-            self._render_available_dramas_refreshable.refresh()
-            self._render_selected_dramas_refreshable.refresh()
+            self._render_available_dramas()
+            self._render_selected_dramas()
 
     def _resolve_list_root(self, root_dir: str) -> Tuple[str, Optional[str]]:
         """解析列表根目录"""
@@ -761,8 +774,8 @@ class DramaProcessorGUI:
                         if name_lower in search_terms:
                             self._add_drama(name)
         
-        self._render_available_dramas_refreshable.refresh()
-        self._render_selected_dramas_refreshable.refresh()
+        self._render_available_dramas()
+        self._render_selected_dramas()
         self._update_process_btn_state()
 
     
@@ -1194,7 +1207,7 @@ class DramaProcessorGUI:
                     drama_name = payload
                     self.drama_status_map[drama_name] = DramaStatus.PROCESSING
                     self.current_processing_drama = drama_name
-                    self._render_selected_dramas_refreshable.refresh()
+                    self._render_selected_dramas()
                 
                 elif kind == "drama_complete":
                     # 剧目完成处理：processing → completed
@@ -1203,7 +1216,7 @@ class DramaProcessorGUI:
                     if drama_name in self.drama_queue:
                         self.drama_queue.remove(drama_name)
                     self.current_processing_drama = None
-                    self._render_selected_dramas_refreshable.refresh()
+                    self._render_selected_dramas()
                     
         except queue.Empty:
             pass
