@@ -317,7 +317,8 @@ class DramaProcessorGUI:
                     
                     # 剧目列表（滚动区域）
                     with ui.scroll_area().classes('flex-1 border border-gray-200 rounded p-2').style('min-height: 400px;'):
-                        self._render_available_dramas_refreshable()
+                        with ui.column().classes('w-full'):
+                            self._render_available_dramas_refreshable()
                 
                 # 右侧：已选剧目
                 with ui.column().classes('gap-2').style('flex: 1; min-width: 0;'):
@@ -358,7 +359,6 @@ class DramaProcessorGUI:
         if hasattr(self, 'export_path_label') and self.export_path_display:
             self.export_path_label.text = f'📁 导出: {self.export_path_display}'
 
-    @ui.refreshable
     @ui.refreshable
     def _render_available_dramas_refreshable(self):
         """可刷新的可选剧目列表"""
