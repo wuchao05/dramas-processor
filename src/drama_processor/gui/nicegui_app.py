@@ -319,8 +319,10 @@ class DramaProcessorGUI:
                         .classes('w-full') \
                         .on('input', self._on_drama_filter_change)
                     
-                    # 剧目列表（滚动区域）- 使用容器引用
-                    with ui.scroll_area().classes('flex-1 border border-gray-200 rounded p-2').style('min-height: 400px;'):
+                    # 剧目列表（滚动区域）- 原生模式下 q-scroll-area 可能不渲染内容，改用原生滚动容器兜底
+                    with ui.column().classes('flex-1 border border-gray-200 rounded p-2').style(
+                        'min-height: 400px; max-height: 400px; overflow-y: auto;'
+                    ):
                         self.available_dramas_container = ui.column().classes('w-full gap-2')
                 
                 # 右侧：已选剧目
@@ -330,8 +332,10 @@ class DramaProcessorGUI:
                         ui.badge().bind_text_from(self, 'selected_drama_names', 
                                                  backward=lambda s: str(len(s)))
                     
-                    # 已选剧目列表（带状态）- 使用容器引用
-                    with ui.scroll_area().classes('flex-1 border border-gray-200 rounded p-2').style('min-height: 400px;'):
+                    # 已选剧目列表（带状态）- 同上，使用原生滚动容器兜底
+                    with ui.column().classes('flex-1 border border-gray-200 rounded p-2').style(
+                        'min-height: 400px; max-height: 400px; overflow-y: auto;'
+                    ):
                         self.selected_dramas_container = ui.column().classes('w-full gap-2')
 
         # 启动日志轮询
