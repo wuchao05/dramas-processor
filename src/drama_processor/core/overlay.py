@@ -54,7 +54,6 @@ class TextOverlay:
         fontfile_filter = self._filter_path(fontfile)
         title_txt_filter = self._filter_path(title_txt)
         bottom_txt_filter = self._filter_path(bottom_txt)
-        side_txt_filter = self._filter_path(side_txtf)
         
         overlays = []
         
@@ -75,14 +74,41 @@ class TextOverlay:
         overlays.append(dt_bottom)
         
         # Side overlay (top right, vertical)
-        # line_spacing 设为负值可以减少竖排文字的字间距
-        # 负值越大，字间距越小（例如 -10 到 -20）
-        dt_side = (
-            f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_font_size}:"
-            f"fontcolor=white@0.85:box=0:line_spacing=-15:"
-            f"x=w-text_w-{margin}:y={margin + 200}"
-        )
-        overlays.append(dt_side)
+        # 读取侧边文字内容，为每个字符创建独立的 drawtext
+        # 这样可以精确控制字间距
+        try:
+            with open(side_txtf, 'r', encoding='utf-8') as f:
+                side_text_content = f.read().strip()
+            
+            # 移除换行符，获取原始文本
+            side_chars = [c for c in side_text_content if c != '\n']
+            
+            # 字间距：可以调整这个值来控制紧密程度
+            # side_font_size 是字体大小，字间距设为字体大小的 0.9 倍比较合适
+            char_spacing = int(side_font_size * 0.9)
+            
+            # 为每个字符创建一个 drawtext
+            start_y = margin + 200
+            for i, char in enumerate(side_chars):
+                # 转义特殊字符
+                escaped_char = char.replace("'", "\\'").replace(":", "\\:")
+                y_pos = start_y + i * char_spacing
+                
+                dt_char = (
+                    f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_font_size}:"
+                    f"fontcolor=white@0.85:box=0:"
+                    f"x=w-text_w-{margin}:y={y_pos}"
+                )
+                overlays.append(dt_char)
+        except Exception as e:
+            # 如果读取失败，回退到原来的方法
+            side_txt_filter = self._filter_path(side_txtf)
+            dt_side = (
+                f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_font_size}:"
+                f"fontcolor=white@0.85:box=0:"
+                f"x=w-text_w-{margin}:y={margin + 200}"
+            )
+            overlays.append(dt_side)
         
         return overlays
     
