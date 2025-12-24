@@ -874,7 +874,22 @@ class DramaProcessorGUI:
     def _load_config(self, config_path: Optional[str]) -> ProcessingConfig:
         """加载配置"""
         if config_path:
+            # 用户指定了配置文件，使用指定的配置
             return load_config(config_path)
+        
+        # 尝试自动加载 default.yaml
+        default_config_paths = [
+            Path("configs/default.yaml"),
+            Path("config/default.yaml"),
+            Path.cwd() / "configs" / "default.yaml",
+            Path.cwd() / "config" / "default.yaml",
+        ]
+        
+        for config_file in default_config_paths:
+            if config_file.exists():
+                return load_config(str(config_file))
+        
+        # 如果找不到 default.yaml，使用内置默认配置
         return get_default_config()
     
     def _apply_overrides(self, config: ProcessingConfig, overrides: Dict):
