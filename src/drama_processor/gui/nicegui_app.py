@@ -368,7 +368,9 @@ class DramaProcessorGUI:
 
     def _render_available_dramas(self):
         """渲染可选剧目列表到容器"""
-        if not self.available_dramas_container:
+        # 注意：NiceGUI 的 Element 在某些版本/模式下可能会被 bool() 判定为 False
+        # 这里必须使用 is None 判断，否则会导致渲染逻辑被错误跳过（列表空白）
+        if self.available_dramas_container is None:
             return
         # 清空容器
         self.available_dramas_container.clear()
@@ -412,7 +414,8 @@ class DramaProcessorGUI:
 
     def _render_selected_dramas(self):
         """渲染已选剧目列表到容器"""
-        if not self.selected_dramas_container:
+        # 同上：必须使用 is None 判断，避免 bool(Element)==False 导致渲染被跳过
+        if self.selected_dramas_container is None:
             return
         # 清空容器
         self.selected_dramas_container.clear()
