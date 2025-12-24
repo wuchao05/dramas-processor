@@ -400,12 +400,12 @@ class VideoEncoder:
                 line_spacing_opt = ""
                 if self.vertical_line_spacing:
                     line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
-            dt_brand = (
-                f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
-                f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
-                f"x={margin}:y={margin + 200}"
-            )
-            filters.append(dt_brand)
+                dt_brand = (
+                    f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
+                    f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
+                    f"x={margin}:y={margin + 200}"
+                )
+                filters.append(dt_brand)
 
         return ",".join(filters)
     
