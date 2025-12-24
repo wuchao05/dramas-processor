@@ -129,10 +129,10 @@ class DramaProcessorGUI:
         self.min_duration = "480"
         self.max_duration = "900"
         self.jobs = "1"
-        self.material_code = ""
+        self.material_code = "xh"  # 默认素材用户名
         self.title_colors = ""
-        self.brand_default = "热门短剧"
-        self.brand_ranges = ""
+        self.brand_default = "小红看剧"  # 默认品牌文案
+        self.brand_ranges = ""  # 素材范围映射
         
         self.title_font_size = "55"
         self.side_font_size = "35"
@@ -403,6 +403,10 @@ class DramaProcessorGUI:
                             ui.input('并发数量').props('outlined dense type=number').bind_value(self, 'jobs')
                             ui.input('最小时长 (秒)').props('outlined dense type=number').bind_value(self, 'min_duration')
                             ui.input('最大时长 (秒)').props('outlined dense type=number').bind_value(self, 'max_duration')
+                        
+                        # 素材用户名
+                        ui.label('素材用户名标识').classes('text-sm text-gray-500 mt-2')
+                        ui.input(placeholder='例如: xh, xl (用于导出文件名)').props('outlined dense').bind_value(self, 'material_code').classes('w-full')
 
                         with ui.row().classes('w-full gap-6 mt-2'):
                             ui.switch('硬件加速').bind_value(self, 'use_hw').props('color=primary')
@@ -414,6 +418,12 @@ class DramaProcessorGUI:
                             ui.number('标题字号', min=10).props('outlined dense').bind_value(self, 'title_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 55)
                             ui.number('侧边字号', min=10).props('outlined dense').bind_value(self, 'side_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 35)
                             ui.number('底部字号', min=10).props('outlined dense').bind_value(self, 'bottom_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 30)
+                        
+                        # 品牌文案配置
+                        ui.label('品牌文案配置').classes('text-sm font-bold text-gray-500 mt-4')
+                        ui.input('默认品牌文案').props('outlined dense').bind_value(self, 'brand_default').classes('w-full')
+                        ui.label('素材范围映射 (可选)').classes('text-xs text-gray-400 mt-1')
+                        ui.textarea(placeholder='每行一个映射，格式: 文案名=素材范围\n例如:\n萍通剧坊=01-03\n小红看剧=04-06').props('outlined rows=3').bind_value(self, 'brand_ranges').classes('w-full')
 
                     ui.separator()
 
@@ -662,6 +672,10 @@ class DramaProcessorGUI:
             "bottom_font_size": bottom_font_size,
         }
         
+        # 添加素材用户名标识
+        if self.material_code:
+            overrides["material_code"] = self.material_code
+        
         # 添加源素材目录
         if self.processing_root:
             overrides["default_source_dir"] = self.processing_root
@@ -715,21 +729,49 @@ class DramaProcessorGUI:
         return overrides
     
     def _parse_brand_ranges(self) -> List[Dict]:
-        """解析品牌文案范围"""
+        """解析品牌文案范围
+        
+        支持两种格式：
+        1. 换行格式（推荐）：每行一个 "文案名=素材范围"
+           例如：
+           萍通剧坊=01-03
+           小红看剧=04-06
+        
+        2. 逗号格式（兼容）：逗号分隔的 "素材范围:文案名"
+           例如：01-03:萍通剧坊,04-06:小红看剧
+        """
         if not self.brand_ranges:
             return []
         
         ranges = []
-        for item in self.brand_ranges.split(','):
-            item = item.strip()
-            if ':' not in item:
-                continue
-            parts = item.split(':', 1)
-            if len(parts) != 2:
-                continue
-            range_str, text = parts[0].strip(), parts[1].strip()
-            if range_str and text:
-                ranges.append({"range": range_str, "text": text})
+        text = self.brand_ranges.strip()
+        
+        # 检测格式：如果包含换行符，使用换行格式；否则使用逗号格式
+        if '\n' in text or '=' in text:
+            # 换行格式: 文案名=范围
+            for line in text.split('\n'):
+                line = line.strip()
+                if not line or '=' not in line:
+                    continue
+                parts = line.split('=', 1)
+                if len(parts) != 2:
+                    continue
+                text_name = parts[0].strip()
+                range_str = parts[1].strip()
+                if text_name and range_str:
+                    ranges.append({"range": range_str, "text": text_name})
+        else:
+            # 逗号格式: 范围:文案（兼容旧格式）
+            for item in text.split(','):
+                item = item.strip()
+                if ':' not in item:
+                    continue
+                parts = item.split(':', 1)
+                if len(parts) != 2:
+                    continue
+                range_str, text_name = parts[0].strip(), parts[1].strip()
+                if range_str and text_name:
+                    ranges.append({"range": range_str, "text": text_name})
         
         return ranges
     
