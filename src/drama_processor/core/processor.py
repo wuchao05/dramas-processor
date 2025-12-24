@@ -594,11 +594,8 @@ class DramaProcessor:
             # When using drama-specific dates, use the base exports_root
             actual_exports_root = exports_root
         else:
-            # Use the original logic for backward compatibility
+            # Use the base exports_root, date_str will be handled in prepare_export_dir
             actual_exports_root = exports_root
-            if self.config.date_str:
-                # 在导出根目录下创建"{date}导出"目录
-                actual_exports_root = os.path.join(exports_root, f"{self.config.date_str}导出")
         
         os.makedirs(actual_exports_root, exist_ok=True)
         

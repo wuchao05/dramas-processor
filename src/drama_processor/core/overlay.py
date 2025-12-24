@@ -75,9 +75,10 @@ class TextOverlay:
         overlays.append(dt_bottom)
         
         # Side overlay (top right, vertical)
+        # line_spacing 设为负值可以减少竖排文字的字间距
         dt_side = (
             f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_font_size}:"
-            f"fontcolor=white@0.85:box=0:"
+            f"fontcolor=white@0.85:box=0:line_spacing=0:"
             f"x=w-text_w-{margin}:y={margin + 200}"
         )
         overlays.append(dt_side)
