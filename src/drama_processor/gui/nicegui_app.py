@@ -1180,6 +1180,18 @@ class DramaProcessorGUI:
             # 加载配置
             config = self._load_config(config_path)
             self._apply_overrides(config, overrides)
+
+            # 运行时资源路径修正（解决 onefile exe 下相对路径不可用问题）
+            # - tail_file / watermark_path 等配置通常是相对路径（如 assets/tail.mp4）
+            # - PyInstaller onefile 下需要通过 sys._MEIPASS / exe 目录定位
+            if config.tail_file and not os.path.isabs(config.tail_file):
+                resolved_tail = resolve_asset_path(config.tail_file)
+                if resolved_tail:
+                    config.tail_file = resolved_tail
+            if getattr(config, "watermark_path", None) and not os.path.isabs(config.watermark_path):
+                resolved_wm = resolve_asset_path(config.watermark_path)
+                if resolved_wm:
+                    config.watermark_path = resolved_wm
             
             processing_root, single_drama_name, base_root = self._resolve_processing_root(root_dir)
             
@@ -1269,16 +1281,14 @@ class DramaProcessorGUI:
         if config_path:
             # 用户指定了配置文件，使用指定的配置
             return load_config(config_path)
+
+        # 优先通过运行时资源解析 default.yaml（支持 PyInstaller onefile / 原生模式）
+        resolved_default = resolve_asset_path("configs/default.yaml")
+        if resolved_default:
+            return load_config(resolved_default)
         
-        # 尝试自动加载 default.yaml
-        default_config_paths = [
-            Path("configs/default.yaml"),
-            Path("config/default.yaml"),
-            Path.cwd() / "configs" / "default.yaml",
-            Path.cwd() / "config" / "default.yaml",
-        ]
-        
-        for config_file in default_config_paths:
+        # 兼容旧查找逻辑（开发态兜底）
+        for config_file in [Path("configs/default.yaml"), Path("config/default.yaml")]:
             if config_file.exists():
                 return load_config(str(config_file))
         
