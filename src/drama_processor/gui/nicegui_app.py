@@ -196,237 +196,261 @@ class DramaProcessorGUI:
         root_logger.setLevel(level_num)
 
     def build_ui(self):
-        """构建 UI 界面"""
-        # 设置深色主题和 Material Design 风格
+        """构建现代化 UI 界面"""
+        # 设置页面背景色和主题
+        ui.query('body').style('background-color: #F8FAFC') # Slate-50
         ui.colors(
-            primary='#3F51B5',      # Indigo
-            secondary='#E91E63',    # Pink
-            accent='#00BCD4',       # Cyan
-            positive='#4CAF50',     # Green
-            negative='#F44336',     # Red
-            info='#2196F3',         # Blue
-            warning='#FF9800'       # Orange
+            primary='#6366F1',      # Indigo-500
+            secondary='#EC4899',    # Pink-500
+            accent='#06B6D4',       # Cyan-500
+            positive='#10B981',     # Emerald-500
+            negative='#EF4444',     # Red-500
+            info='#3B82F6',         # Blue-500
+            warning='#F59E0B'       # Amber-500
         )
-        
-        # 主容器 - 使用滚动区域
-        with ui.column().classes('w-full p-4 gap-4'):
-            # Header
-            with ui.card().classes('w-full'):
-                with ui.row().classes('w-full items-center justify-between'):
-                    ui.label('🎬 短剧批量剪辑处理器').classes('text-h4 text-primary')
-                    self.status_label = ui.label(self.status_text).classes('text-h6')
+
+        # 1. 顶部导航栏
+        with ui.header().classes('bg-white text-gray-800 border-b border-gray-100 h-16 px-6 flex items-center justify-between shadow-sm'):
+            with ui.row().classes('items-center gap-2'):
+                ui.icon('movie_filter', color='primary').classes('text-3xl')
+                ui.label('爆剧爆剪').classes('text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-pink-500')
+                ui.label('v2.0').classes('text-xs text-gray-400 border border-gray-200 rounded px-1')
             
-            # 基础设置区域
-            self._build_basic_settings()
+            with ui.row().classes('gap-3'):
+                self.status_badge = ui.badge('就绪', color='green').props('rounded outline')
+                ui.button('查看日志', icon='assignment', on_click=lambda: self.log_drawer.toggle()).props('flat round color=grey')
+                ui.button('设置', icon='settings', on_click=self._open_settings_dialog).classes('bg-white text-gray-600 border border-gray-200 shadow-sm hover:bg-gray-50')
+
+        # 2. 底部日志抽屉
+        with ui.right_drawer(value=False).classes('bg-gray-900 text-white w-1/3 min-w-[400px]') as self.log_drawer:
+            with ui.row().classes('w-full items-center justify-between p-4 border-b border-gray-700'):
+                ui.label('运行日志').classes('text-lg font-bold')
+                ui.button(icon='close', on_click=lambda: self.log_drawer.toggle()).props('flat round color=white')
+            self.log_container = ui.log(max_lines=2000).classes('w-full h-full p-4 font-mono text-sm')
+
+        # 3. 主内容区域
+        with ui.column().classes('w-full max-w-7xl mx-auto p-6 gap-6'):
             
-            # 剧目选择区域
-            self._build_drama_selection()
-            
-            # 参数配置和飞书配置（两列布局）
-            with ui.row().classes('w-full gap-4'):
-                with ui.column().classes('flex-1'):
-                    self._build_params_config()
-                with ui.column().classes('flex-1'):
-                    self._build_feishu_config()
-            
-            # 操作按钮和进度
-            self._build_operations()
-            
-            # 日志输出
-            self._build_log_panel()
-        
+            # 状态横幅
+            self._render_status_banner()
+
+            # 顶部操作栏 (搜索 + 操作)
+            with ui.row().classes('w-full items-center justify-between'):
+                # 左侧：Tab 导航样式的过滤器
+                with ui.row().classes('gap-1 bg-gray-100 p-1 rounded-lg'):
+                    ui.button('全部剧目', icon='list').props('flat dense').classes('bg-white shadow-sm text-gray-800 px-4 rounded-md')
+                
+                # 右侧：搜索与刷新
+                with ui.row().classes('gap-3'):
+                    self.drama_search_input = ui.input(placeholder='搜索剧目...').props('outlined dense rounded bg-color=white').classes('w-64') \
+                        .on('input', self._on_drama_filter_change)
+                    ui.button(icon='refresh', on_click=self._refresh_drama_list).props('flat round color=grey').tooltip('刷新列表')
+                    
+                    ui.separator().props('vertical')
+                    
+                    # 主操作按钮
+                    self.process_btn = ui.button('开始处理选中', icon='play_arrow', on_click=lambda: self._run_processing(
+                        self.root_dir, self.config_path, self._collect_overrides(), list(self.selected_drama_names)
+                    )).classes('bg-indigo-600 text-white shadow-md hover:bg-indigo-700')
+
+            # 剧目列表 (使用 Refreshable)
+            self._render_drama_list_refreshable()
+
         # 启动日志轮询
         ui.timer(0.1, self._poll_log_queue)
         
         # 应用默认值
         self._apply_default_values()
+
+    def _render_status_banner(self):
+        """渲染状态横幅"""
+        with ui.row().classes('w-full bg-blue-50 border border-blue-100 p-4 rounded-xl items-center justify-between shadow-sm') as self.status_banner:
+            with ui.row().classes('items-center gap-4'):
+                self.status_icon = ui.icon('cloud_off', color='grey').classes('text-4xl')
+                with ui.column().classes('gap-0'):
+                    self.status_title = ui.label('飞书自动监控未启动').classes('font-bold text-gray-800 text-lg')
+                    self.status_desc = ui.label('点击右侧按钮启动监控，自动处理飞书表格中的待剪辑剧目').classes('text-sm text-gray-500')
+            
+            with ui.row().classes('items-center gap-4'):
+                self.watcher_btn = ui.button('启动自动监控', on_click=self._toggle_watcher_from_banner) \
+                    .classes('bg-blue-600 text-white shadow-md hover:bg-blue-700 rounded-lg')
+
+    @ui.refreshable
+    def _render_drama_list_refreshable(self):
+        """可刷新的剧目列表渲染"""
+        # 如果没有素材目录
+        if not self.root_dir:
+            with ui.column().classes('w-full py-12 items-center text-center text-gray-400'):
+                ui.icon('folder_off').classes('text-6xl mb-4 text-gray-200')
+                ui.label('未选择素材目录').classes('text-xl font-medium')
+                ui.button('去设置', on_click=self._open_settings_dialog).props('outline color=primary')
+            return
+
+        # 如果有目录但没有剧目
+        if not self.filtered_drama_names:
+            with ui.column().classes('w-full py-12 items-center text-center text-gray-400'):
+                ui.icon('search_off').classes('text-6xl mb-4 text-gray-200')
+                ui.label('未找到匹配的剧目').classes('text-xl font-medium')
+                ui.label(f'搜索路径: {self.root_dir}').classes('text-sm')
+            return
+
+        # 渲染剧目卡片网格
+        with ui.grid(columns=1).classes('w-full gap-4'):
+            for name in self.filtered_drama_names:
+                is_selected = name in self.selected_drama_names
+                
+                # 卡片容器
+                card_classes = 'w-full p-0 shadow-sm transition-all border rounded-xl '
+                card_classes += 'border-indigo-500 ring-2 ring-indigo-100' if is_selected else 'border-gray-200 hover:shadow-md hover:border-indigo-300'
+                
+                with ui.card().classes(card_classes):
+                    with ui.row().classes('p-5 w-full gap-6 items-center'):
+                        # 1. 选择复选框
+                        ui.checkbox(value=is_selected, on_change=lambda e, n=name: self._toggle_drama_selection(n, e.value)) \
+                            .props('size=lg color=primary keep-color')
+                        
+                        # 2. 图标占位
+                        with ui.column().classes('w-16 h-20 bg-gray-100 rounded-lg items-center justify-center flex-shrink-0'):
+                            ui.icon('movie', color='grey').classes('text-3xl opacity-50')
+
+                        # 3. 剧目信息
+                        with ui.column().classes('flex-1 gap-1'):
+                            with ui.row().classes('items-center gap-2'):
+                                ui.label(name).classes('text-lg font-bold text-gray-800')
+                                if is_selected:
+                                    ui.chip('待处理', icon='pending').props('dense').classes('bg-indigo-50 text-indigo-600')
+                            
+                            ui.label(f'路径: {name}').classes('text-xs text-gray-400 font-mono')
+
+                        # 4. 操作按钮
+                        with ui.row().classes('gap-2'):
+                            if is_selected:
+                                ui.button('取消', on_click=lambda n=name: self._toggle_drama_selection(n, False)) \
+                                    .props('flat color=grey size=sm')
+                            else:
+                                ui.button('选择', on_click=lambda n=name: self._toggle_drama_selection(n, True)) \
+                                    .props('outline color=primary size=sm')
+
+    def _open_settings_dialog(self):
+        """打开设置弹窗"""
+        with ui.dialog() as dialog, ui.card().classes('w-full max-w-3xl p-0 overflow-hidden'):
+            # 弹窗 Header
+            with ui.row().classes('w-full bg-gray-50 p-4 border-b border-gray-200 items-center justify-between'):
+                with ui.row().classes('items-center gap-2'):
+                    ui.icon('tune', color='primary')
+                    ui.label('全局设置').classes('text-lg font-bold text-gray-800')
+                ui.button(icon='close', on_click=dialog.close).props('flat round dense color=grey')
+            
+            # 弹窗 Content
+            with ui.scroll_area().classes('h-[60vh] w-full p-6'):
+                with ui.column().classes('w-full gap-6'):
+                    
+                    # 1. 路径设置
+                    with ui.column().classes('w-full gap-4'):
+                        ui.label('📁 路径配置').classes('text-base font-bold text-gray-700')
+                        
+                        # 素材目录
+                        ui.label('素材根目录').classes('text-sm text-gray-500')
+                        with ui.row().classes('w-full gap-2'):
+                            ui.input(placeholder='选择素材存放的文件夹').classes('flex-1').props('outlined dense') \
+                                .bind_value(self, 'root_dir').on('change', self._on_root_dir_change)
+                            ui.button('浏览', on_click=self._choose_root).classes('bg-gray-100 text-gray-700 shadow-sm border border-gray-200')
+
+                        # 输出目录
+                        ui.label('输出目录').classes('text-sm text-gray-500')
+                        with ui.row().classes('w-full gap-2'):
+                            ui.input(placeholder='处理完成后保存的位置').classes('flex-1').props('outlined dense') \
+                                .bind_value(self, 'output_dir')
+                            ui.button('浏览', on_click=self._choose_output).classes('bg-gray-100 text-gray-700 shadow-sm border border-gray-200')
+                        
+                        # 字体文件
+                        ui.label('字体文件').classes('text-sm text-gray-500')
+                        with ui.row().classes('w-full gap-2'):
+                            ui.input(placeholder='自定义字体文件 (.ttf/.ttc)').classes('flex-1').props('outlined dense') \
+                                .bind_value(self, 'font_file')
+                            ui.button('浏览', on_click=self._choose_font).classes('bg-gray-100 text-gray-700 shadow-sm border border-gray-200')
+
+                        # 剪辑日期
+                        ui.label('剪辑日期 (可选)').classes('text-sm text-gray-500')
+                        ui.input(placeholder='例如: 12.24').classes('w-full').props('outlined dense') \
+                            .bind_value(self, 'date_str')
+
+                    ui.separator()
+
+                    # 2. 参数设置
+                    with ui.column().classes('w-full gap-4'):
+                        ui.label('⚡️ 处理参数').classes('text-base font-bold text-gray-700')
+                        
+                        with ui.grid(columns=2).classes('w-full gap-4'):
+                            ui.input('素材条数').props('outlined dense type=number').bind_value(self, 'count')
+                            ui.input('并发数量').props('outlined dense type=number').bind_value(self, 'jobs')
+                            ui.input('最小时长 (秒)').props('outlined dense type=number').bind_value(self, 'min_duration')
+                            ui.input('最大时长 (秒)').props('outlined dense type=number').bind_value(self, 'max_duration')
+
+                        with ui.row().classes('w-full gap-6 mt-2'):
+                            ui.switch('硬件加速').bind_value(self, 'use_hw').props('color=primary')
+                            ui.switch('快速模式').bind_value(self, 'fast_mode').props('color=primary')
+
+                        # 字体大小设置
+                        ui.label('字体大小设置').classes('text-sm font-bold text-gray-500 mt-2')
+                        with ui.grid(columns=3).classes('w-full gap-4'):
+                            ui.number('标题字号', min=10).props('outlined dense').bind_value(self, 'title_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 55)
+                            ui.number('侧边字号', min=10).props('outlined dense').bind_value(self, 'side_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 35)
+                            ui.number('底部字号', min=10).props('outlined dense').bind_value(self, 'bottom_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 30)
+
+                    ui.separator()
+
+                    # 3. 飞书配置
+                    with ui.column().classes('w-full gap-4'):
+                        with ui.row().classes('items-center gap-2'):
+                            ui.icon('cloud', color='primary')
+                            ui.label('飞书集成').classes('text-base font-bold text-gray-700')
+                            ui.switch().bind_value(self, 'enable_feishu').props('color=primary')
+                        
+                        with ui.column().classes('w-full gap-3 pl-6 border-l-2 border-gray-100').bind_visibility_from(self, 'enable_feishu'):
+                            ui.input('App ID').props('outlined dense type=password').bind_value(self, 'feishu_app_id').classes('w-full')
+                            ui.input('App Secret').props('outlined dense type=password').bind_value(self, 'feishu_app_secret').classes('w-full')
+                            ui.input('App Token').props('outlined dense type=password').bind_value(self, 'feishu_app_token').classes('w-full')
+                            ui.input('Table ID').props('outlined dense type=password').bind_value(self, 'feishu_table_id').classes('w-full')
+
+            # 弹窗 Footer
+            with ui.row().classes('w-full bg-gray-50 p-4 border-t border-gray-200 justify-end gap-2'):
+                ui.button('关闭', on_click=dialog.close).classes('bg-white text-gray-700 border border-gray-300 shadow-sm hover:bg-gray-50')
+                ui.button('保存配置', on_click=lambda: [self._save_config_manually(), dialog.close()]).classes('bg-indigo-600 text-white shadow-md hover:bg-indigo-700')
+            
+            dialog.open()
+
+    def _save_config_manually(self):
+        """手动保存配置"""
+        ui.notify('配置已暂存', type='positive')
+
+    def _toggle_drama_selection(self, name: str, value: bool):
+        """切换剧目选择状态"""
+        if value:
+            self.selected_drama_names.add(name)
+        else:
+            self.selected_drama_names.discard(name)
+        
+        self._render_drama_list_refreshable.refresh()
+        self._update_process_btn_state()
+
+    def _update_process_btn_state(self):
+        """更新处理按钮状态"""
+        count = len(self.selected_drama_names)
+        if hasattr(self, 'process_btn'):
+            self.process_btn.text = f'开始处理选中 ({count})'
+            if count > 0:
+                self.process_btn.enable()
+            else:
+                self.process_btn.disable()
+
+    def _toggle_watcher_from_banner(self):
+        """从横幅切换监控状态"""
+        if self.is_watcher_running:
+            self._stop_watcher()
+        else:
+            self._start_watcher()
     
-    def _build_basic_settings(self):
-        """构建基础设置区域"""
-        with ui.card().classes('w-full'):
-            ui.label('⚙️ 基础设置').classes('text-h6 text-primary mb-2')
-            
-            with ui.grid(columns=2).classes('w-full gap-2'):
-                # 素材目录
-                ui.label('素材目录:').classes('self-center')
-                with ui.row().classes('flex-1 gap-2'):
-                    ui.input(placeholder='选择素材根目录').classes('flex-1') \
-                        .bind_value(self, 'root_dir') \
-                        .on('change', self._on_root_dir_change)
-                    ui.button('浏览', on_click=self._choose_root) \
-                        .props('outline color=primary')
-                
-                # 输出目录
-                ui.label('输出目录:').classes('self-center')
-                with ui.row().classes('flex-1 gap-2'):
-                    ui.input(placeholder='输出目录').classes('flex-1') \
-                        .bind_value(self, 'output_dir')
-                    ui.button('浏览', on_click=self._choose_output) \
-                        .props('outline color=primary')
-                
-                # 字体文件
-                ui.label('字体文件:').classes('self-center')
-                with ui.row().classes('flex-1 gap-2'):
-                    ui.input(placeholder='字体文件路径（可选）').classes('flex-1') \
-                        .bind_value(self, 'font_file')
-                    ui.button('浏览', on_click=self._choose_font) \
-                        .props('outline color=primary')
-                
-                # 剪辑日期
-                ui.label('剪辑日期:').classes('self-center')
-                with ui.column().classes('flex-1'):
-                    ui.input(placeholder='如: 12.24（可选）').classes('w-full') \
-                        .bind_value(self, 'date_str')
-                    ui.label('填写后导出到: 输出目录/{日期}导出/') \
-                        .classes('text-caption text-grey-6')
-    
-    def _build_drama_selection(self):
-        """构建剧目选择区域"""
-        with ui.card().classes('w-full'):
-            ui.label('🎭 剧目选择').classes('text-h6 text-primary mb-2')
-            
-            # 搜索框和刷新按钮
-            with ui.row().classes('w-full gap-2 mb-2'):
-                self.drama_search_input = ui.input(
-                    placeholder='搜索剧目（支持粘贴多行批量选择）'
-                ).classes('flex-1').on('input', self._on_drama_filter_change)
-                ui.button('刷新列表', on_click=self._refresh_drama_list) \
-                    .props('outline color=primary icon=refresh')
-            
-            # 已选剧目标签
-            with ui.row().classes('w-full gap-2 flex-wrap mb-2'):
-                ui.label('已选剧目:').classes('font-bold')
-                self.selected_chips_container = ui.row().classes('gap-1 flex-wrap')
-            
-            # 剧目表格
-            self.drama_table = ui.table(
-                columns=[
-                    {'name': 'name', 'label': '剧名', 'field': 'name', 'align': 'left'},
-                ],
-                rows=[],
-                selection='multiple',
-                row_key='name'
-            ).classes('w-full').props('flat bordered')
-            # 使用 update:selected 事件而不是 selection
-            self.drama_table.on('update:selected', self._on_drama_selection_change)
-    
-    def _build_params_config(self):
-        """构建参数配置区域"""
-        with ui.card().classes('w-full h-full'):
-            ui.label('🎚️ 参数配置').classes('text-h6 text-primary mb-2')
-            
-            with ui.column().classes('w-full gap-2'):
-                # 素材设置
-                ui.label('素材设置').classes('font-bold text-subtitle2')
-                ui.number('素材条数', value=10, min=1, max=100) \
-                    .classes('w-full').bind_value(self, 'count', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 10)
-                ui.number('最小时长(秒)', value=480, min=60, max=3600) \
-                    .classes('w-full').bind_value(self, 'min_duration', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 480)
-                ui.number('最大时长(秒)', value=900, min=60, max=3600) \
-                    .classes('w-full').bind_value(self, 'max_duration', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 900)
-                ui.number('并发数', value=6, min=1, max=32) \
-                    .classes('w-full').bind_value(self, 'jobs', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 6)
-                
-                ui.separator()
-                
-                # 字体设置
-                ui.label('字体设置').classes('font-bold text-subtitle2')
-                ui.number('标题字号', value=55, min=20, max=100) \
-                    .classes('w-full').bind_value(self, 'title_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 55)
-                ui.number('侧边字号', value=35, min=10, max=80) \
-                    .classes('w-full').bind_value(self, 'side_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 35)
-                ui.number('底部字号', value=30, min=10, max=80) \
-                    .classes('w-full').bind_value(self, 'bottom_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 30)
-                
-                ui.separator()
-                
-                # 品牌文案
-                ui.label('品牌文案').classes('font-bold text-subtitle2')
-                ui.input('默认文案').classes('w-full') \
-                    .bind_value(self, 'brand_default')
-                ui.input('范围映射（如: 01-03:小红看剧）').classes('w-full') \
-                    .bind_value(self, 'brand_ranges')
-                
-                ui.separator()
-                
-                # 开关选项
-                ui.label('其他选项').classes('font-bold text-subtitle2')
-                ui.switch('硬件加速').bind_value(self, 'use_hw')
-                ui.switch('快速模式').bind_value(self, 'fast_mode')
-                ui.switch('保留临时文件').bind_value(self, 'keep_temp')
-                ui.switch('详细日志').bind_value(self, 'verbose')
-    
-    def _build_feishu_config(self):
-        """构建飞书配置区域"""
-        with ui.card().classes('w-full h-full'):
-            ui.label('🚀 飞书配置').classes('text-h6 text-primary mb-2')
-            
-            with ui.column().classes('w-full gap-2'):
-                # 启用开关
-                ui.switch('启用飞书功能').bind_value(self, 'enable_feishu')
-                
-                ui.separator()
-                
-                # API 配置
-                ui.label('API 配置').classes('font-bold text-subtitle2')
-                ui.input('App ID').classes('w-full') \
-                    .bind_value(self, 'feishu_app_id')
-                ui.input('App Secret', password=True, password_toggle_button=True).classes('w-full') \
-                    .bind_value(self, 'feishu_app_secret')
-                ui.input('App Token').classes('w-full') \
-                    .bind_value(self, 'feishu_app_token')
-                ui.input('Table ID').classes('w-full') \
-                    .bind_value(self, 'feishu_table_id')
-                
-                ui.separator()
-                
-                # 操作按钮
-                ui.label('飞书操作').classes('font-bold text-subtitle2')
-                ui.button('📥 从飞书拉取剧目', on_click=self._fetch_dramas_from_feishu) \
-                    .props('color=positive').classes('w-full')
-                ui.label('提示：在基础设置中填写日期后，点击此按钮获取该日期的待剪辑剧目') \
-                    .classes('text-caption text-grey-6')
-                
-                with ui.row().classes('w-full gap-2'):
-                    self.start_watcher_button = ui.button(
-                        '🔄 启动轮询',
-                        on_click=self._start_watcher
-                    ).props('color=info').classes('flex-1')
-                    self.stop_watcher_button = ui.button(
-                        '⏹️ 停止轮询',
-                        on_click=self._stop_watcher
-                    ).props('color=warning outline').classes('flex-1')
-                
-                ui.label('提示：启动后将持续监控飞书表格，自动处理新增的待剪辑剧目') \
-                    .classes('text-caption text-grey-6')
-    
-    def _build_operations(self):
-        """构建操作区域"""
-        with ui.card().classes('w-full'):
-            ui.label('▶️ 操作').classes('text-h6 text-primary mb-2')
-            
-            # 按钮
-            with ui.row().classes('w-full gap-4 mb-4'):
-                self.start_button = ui.button(
-                    '开始处理',
-                    on_click=self._start_processing
-                ).props('size=lg color=primary icon=play_arrow').classes('flex-1')
-                
-                self.cancel_button = ui.button(
-                    '取消',
-                    on_click=self._cancel_processing
-                ).props('size=lg color=negative outline icon=stop').classes('flex-1')
-            
-            # 进度显示
-            with ui.column().classes('w-full gap-2'):
-                self.progress_label = ui.label('进度: 0/0').classes('font-bold')
-                self.progress_bar = ui.linear_progress(value=0).classes('w-full')
-    
-    def _build_log_panel(self):
-        """构建日志面板"""
-        with ui.expansion('📋 日志输出', icon='description').classes('w-full'):
-            with ui.card().classes('w-full bg-grey-9'):
-                self.log_container = ui.log(max_lines=1000).classes('w-full h-96 text-white')
     
     # ========== 事件处理方法 ==========
     
@@ -504,22 +528,28 @@ class DramaProcessorGUI:
         
         if not self.root_dir or not Path(self.root_dir).is_dir():
             ui.notify('请先选择有效的素材目录', type='warning')
+            self._render_drama_list_refreshable.refresh()
             return
         
         processing_root, preselect = self._resolve_list_root(self.root_dir)
         self.processing_root = processing_root
         
-        drama_dirs = scan_drama_dirs(processing_root)
-        names = [Path(p).name for p in drama_dirs]
-        self.all_drama_names = names
-        self.filtered_drama_names = names.copy()
-        
-        if preselect:
-            self.selected_drama_names = {preselect}
-        
-        self._update_drama_table()
-        ui.notify(f'已扫描到 {len(names)} 部剧目', type='positive')
-    
+        try:
+            drama_dirs = scan_drama_dirs(processing_root)
+            names = sorted([Path(p).name for p in drama_dirs])
+            self.all_drama_names = names
+            self.filtered_drama_names = names.copy()
+            
+            if preselect:
+                self.selected_drama_names = {preselect}
+            
+            # 刷新 UI
+            self._render_drama_list_refreshable.refresh()
+            self._update_process_btn_state()
+            ui.notify(f'已扫描到 {len(names)} 部剧目', type='positive')
+        except Exception as e:
+            ui.notify(f'扫描失败: {e}', type='negative')
+
     def _resolve_list_root(self, root_dir: str) -> Tuple[str, Optional[str]]:
         """解析列表根目录"""
         path = Path(root_dir)
@@ -534,112 +564,32 @@ class DramaProcessorGUI:
                 return root_dir, single_dir.name
         
         return root_dir, None
-    
-    def _update_drama_table(self):
-        """更新剧目表格"""
-        if self.drama_table is None:
-            return
-        
-        rows = [
-            {'name': name}
-            for name in self.filtered_drama_names
-        ]
-        self.drama_table.rows = rows
-        self.drama_table.selected = [
-            row for row in rows if row['name'] in self.selected_drama_names
-        ]
-        self.drama_table.update()
-        self._update_selected_chips()
-    
-    def _update_selected_chips(self):
-        """更新已选剧目标签"""
-        if self.selected_chips_container is None:
-            return
-        
-        self.selected_chips_container.clear()
-        with self.selected_chips_container:
-            for name in sorted(self.selected_drama_names):
-                # 使用 chip 和 icon 组合实现可移除效果
-                chip = ui.chip(name, icon='close', removable=True)
-                chip.on('click', lambda n=name: self._remove_drama(n))
-    
-    def _remove_drama(self, name: str):
-        """移除已选剧目"""
-        self.selected_drama_names.discard(name)
-        self._update_drama_table()
-    
-    def _on_drama_selection_change(self, e):
-        """剧目选择变化"""
-        # e.args 包含选中的行数据
-        if hasattr(e, 'args') and e.args:
-            self.selected_drama_names = {row['name'] for row in e.args}
-        else:
-            # 如果事件参数不对，从 table.selected 获取
-            if self.drama_table and hasattr(self.drama_table, 'selected'):
-                self.selected_drama_names = {row['name'] for row in self.drama_table.selected}
-            else:
-                self.selected_drama_names = set()
-        self._update_selected_chips()
-    
+
     def _on_drama_filter_change(self, e):
-        """剧目过滤变化"""
-        search_text = e.value.strip()
-        
-        # 检查是否是批量粘贴（多行）
-        if '\n' in search_text:
-            self._batch_select_dramas(search_text)
-            if self.drama_search_input:
-                self.drama_search_input.value = ''
-            return
-        
-        # 普通过滤
-        if not search_text:
+        """剧目搜索过滤"""
+        value = e.value
+        if not value:
             self.filtered_drama_names = self.all_drama_names.copy()
         else:
-            search_lower = search_text.lower()
-            self.filtered_drama_names = [
-                name for name in self.all_drama_names
-                if search_lower in name.lower()
-            ]
-        
-        self._update_drama_table()
-    
-    def _batch_select_dramas(self, text: str):
-        """批量选择剧目"""
-        lines = [line.strip() for line in text.split('\n') if line.strip()]
-        if not lines:
-            return
-        
-        matched = set()
-        unmatched = []
-        
-        for line in lines:
-            # 精确匹配
-            if line in self.all_drama_names:
-                matched.add(line)
-                continue
+            # 支持多行粘贴（自动分割）
+            search_terms = {t.strip().lower() for t in value.replace('\n', ' ').split() if t.strip()}
             
-            # 模糊匹配
-            best_match = None
-            best_ratio = 0.6
-            for name in self.all_drama_names:
-                ratio = SequenceMatcher(None, line, name).ratio()
-                if ratio > best_ratio:
-                    best_ratio = ratio
-                    best_match = name
-            
-            if best_match:
-                matched.add(best_match)
+            if not search_terms:
+                self.filtered_drama_names = self.all_drama_names.copy()
             else:
-                unmatched.append(line)
+                self.filtered_drama_names = []
+                for name in self.all_drama_names:
+                    name_lower = name.lower()
+                    # 只要匹配任一关键词即可（批量选择模式）
+                    if any(term in name_lower for term in search_terms):
+                        self.filtered_drama_names.append(name)
+                        # 如果是精确匹配（通常是粘贴），自动选中
+                        if name_lower in search_terms:
+                            self.selected_drama_names.add(name)
         
-        self.selected_drama_names.update(matched)
-        self._update_drama_table()
-        
-        if matched:
-            ui.notify(f'已选择 {len(matched)} 部剧目', type='positive')
-        if unmatched:
-            ui.notify(f'未匹配到: {", ".join(unmatched[:3])}{"..." if len(unmatched) > 3 else ""}', type='warning')
+        self._render_drama_list_refreshable.refresh()
+        self._update_process_btn_state()
+
     
     async def _start_processing(self):
         """开始处理"""
@@ -1075,7 +1025,8 @@ class DramaProcessorGUI:
             # 更新选择
             if matched:
                 self.selected_drama_names.update(matched)
-                self._update_drama_table()
+                self._render_drama_list_refreshable.refresh()
+                self._update_process_btn_state()
                 ui.notify(f'从飞书拉取成功：{len(matched)} 部剧目已选择', type='positive')
             
             if unmatched:
@@ -1194,12 +1145,41 @@ class DramaProcessorGUI:
     
     def _set_watcher_ui(self, running: bool):
         """设置轮询 UI 状态"""
-        if self.start_watcher_button:
-            self.start_watcher_button.enabled = not running
-        if self.stop_watcher_button:
-            self.stop_watcher_button.enabled = running
-        if self.start_button:
-            self.start_button.enabled = not running
+        # 更新横幅样式
+        if running:
+            self.status_banner.classes(remove='bg-blue-50 border-blue-100', add='bg-green-50 border-green-100')
+            self.status_icon.props('name=cloud_sync color=green').classes(remove='text-grey', add='text-green-500')
+            self.status_title.text = '飞书自动监控运行中'
+            self.status_desc.text = '正在持续监控飞书表格，新剧目将自动下载并处理'
+            
+            self.watcher_btn.text = '停止自动监控'
+            self.watcher_btn.classes(remove='bg-blue-600 hover:bg-blue-700', add='bg-orange-500 hover:bg-orange-600')
+            
+            # 更新 Badge
+            if hasattr(self, 'status_badge'):
+                self.status_badge.text = '监控中'
+                self.status_badge.props('color=green')
+        else:
+            self.status_banner.classes(remove='bg-green-50 border-green-100', add='bg-blue-50 border-blue-100')
+            self.status_icon.props('name=cloud_off color=grey').classes(remove='text-green-500', add='text-grey')
+            self.status_title.text = '飞书自动监控未启动'
+            self.status_desc.text = '点击右侧按钮启动监控，自动处理飞书表格中的待剪辑剧目'
+            
+            self.watcher_btn.text = '启动自动监控'
+            self.watcher_btn.classes(remove='bg-orange-500 hover:bg-orange-600', add='bg-blue-600 hover:bg-blue-700')
+
+            # 更新 Badge
+            if hasattr(self, 'status_badge'):
+                self.status_badge.text = '就绪'
+                self.status_badge.props('color=grey')
+        
+        # 禁用/启用手动开始按钮
+        if hasattr(self, 'process_btn'):
+            if running:
+                self.process_btn.disable()
+            else:
+                self._update_process_btn_state()
+
     
     def _apply_default_values(self):
         """应用默认值"""
