@@ -359,69 +359,74 @@ class DramaProcessorGUI:
             self.export_path_label.text = f'📁 导出: {self.export_path_display}'
 
     @ui.refreshable
+    @ui.refreshable
     def _render_available_dramas_refreshable(self):
         """可刷新的可选剧目列表"""
-        # 如果没有选择目录
-        if not self.root_dir:
-            with ui.column().classes('w-full py-8 items-center text-center'):
-                ui.icon('folder_off', color='grey').classes('text-5xl mb-3 opacity-50')
-                ui.label('请先在设置中选择素材目录').classes('text-gray-400')
-            return
-        
-        # 如果选择了目录但没有剧目
-        if not self.filtered_drama_names:
-            with ui.column().classes('w-full py-8 items-center text-center'):
-                ui.icon('search_off', color='grey').classes('text-5xl mb-3 opacity-50')
-                ui.label('未找到剧目').classes('text-gray-400')
-                if self.root_dir:
-                    ui.label(f'目录: {self.root_dir}').classes('text-xs text-gray-300 mt-2')
-            return
-        
-        # 渲染剧目列表
-        for name in self.filtered_drama_names:
-            is_selected = name in self.selected_drama_names
+        # 使用一个包装容器来确保内容正确渲染
+        with ui.column().classes('w-full gap-2'):
+            # 如果没有选择目录
+            if not self.root_dir:
+                with ui.column().classes('w-full py-8 items-center text-center'):
+                    ui.icon('folder_off', color='grey').classes('text-5xl mb-3 opacity-50')
+                    ui.label('请先在设置中选择素材目录').classes('text-gray-400')
+                return
             
-            with ui.card().classes('w-full mb-2 p-3 cursor-pointer hover:shadow-md transition-shadow'):
-                with ui.row().classes('w-full items-center justify-between gap-3'):
-                    # 剧目图标
-                    ui.icon('movie', color='grey').classes('text-2xl')
-                    
-                    # 剧名
-                    ui.label(name).classes('flex-1 font-medium text-sm')
-                    
-                    if is_selected:
-                        ui.icon('check_circle', color='positive').classes('text-green-500')
-                    else:
-                        ui.button('选择', on_click=lambda n=name: self._add_drama(n)) \
-                            .props('flat dense size=sm color=primary')
+            # 如果选择了目录但没有剧目
+            if not self.filtered_drama_names:
+                with ui.column().classes('w-full py-8 items-center text-center'):
+                    ui.icon('search_off', color='grey').classes('text-5xl mb-3 opacity-50')
+                    ui.label('未找到剧目').classes('text-gray-400')
+                    if self.root_dir:
+                        ui.label(f'目录: {self.root_dir}').classes('text-xs text-gray-300 mt-2')
+                return
+            
+            # 渲染剧目列表
+            for name in self.filtered_drama_names:
+                is_selected = name in self.selected_drama_names
+                
+                with ui.card().classes('w-full mb-2 p-3 cursor-pointer hover:shadow-md transition-shadow'):
+                    with ui.row().classes('w-full items-center justify-between gap-3'):
+                        # 剧目图标
+                        ui.icon('movie', color='grey').classes('text-2xl')
+                        
+                        # 剧名
+                        ui.label(name).classes('flex-1 font-medium text-sm')
+                        
+                        if is_selected:
+                            ui.icon('check_circle', color='positive').classes('text-green-500')
+                        else:
+                            ui.button('选择', on_click=lambda n=name: self._add_drama(n)) \
+                                .props('flat dense size=sm color=primary')
 
     @ui.refreshable
     def _render_selected_dramas_refreshable(self):
         """可刷新的已选剧目列表（带状态）"""
-        if not self.selected_drama_names:
-            ui.label('未选择剧目').classes('text-gray-400 text-center py-8')
-            return
-        
-        for name in sorted(self.selected_drama_names):
-            status = self.drama_status_map.get(name, DramaStatus.PENDING)
+        # 使用一个包装容器来确保内容正确渲染
+        with ui.column().classes('w-full gap-2'):
+            if not self.selected_drama_names:
+                ui.label('未选择剧目').classes('text-gray-400 text-center py-8')
+                return
             
-            with ui.card().classes('w-full mb-2 p-3'):
-                with ui.row().classes('w-full items-center gap-3'):
-                    # 状态徽章
-                    ui.badge(status.label, color=status.color) \
-                        .props('outline' if status != DramaStatus.PROCESSING else '')
-                    
-                    # 剧名
-                    ui.label(name).classes('flex-1 font-medium text-sm')
-                    
-                    # 删除按钮（仅在 pending 状态可删除）
-                    if status == DramaStatus.PENDING:
-                        ui.button(icon='delete', on_click=lambda n=name: self._remove_drama(n)) \
-                            .props('flat dense round size=sm color=negative')
-                    
-                    # 处理中动画
-                    if status == DramaStatus.PROCESSING:
-                        ui.spinner(size='sm', color='orange')
+            for name in sorted(self.selected_drama_names):
+                status = self.drama_status_map.get(name, DramaStatus.PENDING)
+                
+                with ui.card().classes('w-full mb-2 p-3'):
+                    with ui.row().classes('w-full items-center gap-3'):
+                        # 状态徽章
+                        ui.badge(status.label, color=status.color) \
+                            .props('outline' if status != DramaStatus.PROCESSING else '')
+                        
+                        # 剧名
+                        ui.label(name).classes('flex-1 font-medium text-sm')
+                        
+                        # 删除按钮（仅在 pending 状态可删除）
+                        if status == DramaStatus.PENDING:
+                            ui.button(icon='delete', on_click=lambda n=name: self._remove_drama(n)) \
+                                .props('flat dense round size=sm color=negative')
+                        
+                        # 处理中动画
+                        if status == DramaStatus.PROCESSING:
+                            ui.spinner(size='sm', color='orange')
 
     def _open_settings_dialog(self):
         """打开设置弹窗"""
