@@ -50,12 +50,16 @@ if default_yaml.exists():
     datas.append((str(default_yaml), "configs"))
 
 # 内置 assets（包含 tail.mp4、watermark、字体等）
+# 注意：PyInstaller 6.17 的 Analysis(datas=...) 期望 (src, dest_dir) 二元组；
+# Tree(...) 产生三元组，容易触发 “too many values to unpack (expected 2)”
 assets_dir = project_root / "assets"
 if assets_dir.exists():
-    # Tree 会把整个目录拷贝到包内的 assets/
-    from PyInstaller.building.datastruct import Tree
-
-    datas += Tree(str(assets_dir), prefix="assets")
+    for p in assets_dir.rglob("*"):
+        if not p.is_file():
+            continue
+        rel_parent = p.relative_to(assets_dir).parent  # e.g. "." / "fonts"
+        dest_dir = str(Path("assets") / rel_parent) if str(rel_parent) != "." else "assets"
+        datas.append((str(p), dest_dir))
 
 a = Analysis(
     [str(project_root / "run_gui.py")],
