@@ -181,13 +181,15 @@ class DramaProcessorGUI:
         
     def _configure_logging(self, verbose: bool = False) -> None:
         """配置日志系统"""
-        level = logging.DEBUG if verbose else logging.INFO
-        setup_logging(level=level)
+        # setup_logging 需要字符串类型的 level
+        level_str = "DEBUG" if verbose else "INFO"
+        level_num = logging.DEBUG if verbose else logging.INFO
+        setup_logging(level=level_str)
         root_logger = logging.getLogger()
         for handler in root_logger.handlers[:]:
             root_logger.removeHandler(handler)
         gui_handler = GuiLogHandler(self.log_queue)
-        gui_handler.setLevel(level)
+        gui_handler.setLevel(level_num)
         formatter = logging.Formatter('%(message)s')
         gui_handler.setFormatter(formatter)
         root_logger.addHandler(gui_handler)
