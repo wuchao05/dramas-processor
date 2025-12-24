@@ -861,19 +861,39 @@ class DramaProcessorGUI:
             if "，" in value:
                 ui.notify('多个剧名请使用英文逗号 "," 或换行分隔（不支持中文逗号）', type='warning')
 
-            # 多个剧名：仅允许英文逗号 + 换行
+            # 多个剧名：优先按英文逗号/换行分隔；同时支持“空格分隔粘贴”的智能识别
             normalized = value.replace("\n", ",")
             terms = [t.strip() for t in normalized.split(",") if t.strip()]
 
             # 单个输入：模糊匹配；多个输入：精确匹配
             if len(terms) <= 1:
-                term = (terms[0] if terms else "").strip().lower()
-                if not term:
+                raw = (terms[0] if terms else "").strip()
+                if not raw:
                     self.filtered_drama_names = self.all_drama_names.copy()
                 else:
-                    self.filtered_drama_names = [
-                        name for name in self.all_drama_names if term in name.lower()
-                    ]
+                    # 兼容“空格分隔的多剧名粘贴”，例如：
+                    # 高门主母的驯夫手册 妻子被做局... 盛夏芬德拉
+                    # 规则：如果按空格拆分后，能精确命中 >=2 个剧名，则按多部剧精确匹配处理；
+                    # 否则按单个输入做模糊匹配。
+                    space_terms = [t.strip() for t in raw.split() if t.strip()]
+                    if len(space_terms) >= 2:
+                        all_set = {n.lower() for n in self.all_drama_names}
+                        hit_count = sum(1 for t in space_terms if t.lower() in all_set)
+                        if hit_count >= 2:
+                            exact_set = {t.lower() for t in space_terms}
+                            self.filtered_drama_names = [
+                                name for name in self.all_drama_names if name.lower() in exact_set
+                            ]
+                        else:
+                            needle = raw.lower()
+                            self.filtered_drama_names = [
+                                name for name in self.all_drama_names if needle in name.lower()
+                            ]
+                    else:
+                        needle = raw.lower()
+                        self.filtered_drama_names = [
+                            name for name in self.all_drama_names if needle in name.lower()
+                        ]
             else:
                 exact_set = {t.lower() for t in terms if t}
                 self.filtered_drama_names = [
