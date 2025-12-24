@@ -152,6 +152,7 @@ class DramaProcessorGUI:
         
         # 处理状态
         self.is_running = False
+        self.log_count = 0
         self.is_watcher_running = False
         self.total_dramas = 0
         self.completed_dramas = 0
@@ -218,15 +219,30 @@ class DramaProcessorGUI:
             
             with ui.row().classes('gap-3'):
                 self.status_badge = ui.badge('就绪', color='green').props('rounded outline')
-                ui.button('查看日志', icon='assignment', on_click=lambda: self.log_drawer.toggle()).props('flat round color=grey')
-                ui.button('设置', icon='settings', on_click=self._open_settings_dialog).classes('bg-white text-gray-600 border border-gray-200 shadow-sm hover:bg-gray-50')
+                ui.button('查看日志', icon='assignment', on_click=lambda: self.log_dialog.open()) \
+                    .classes('text-gray-700 hover:text-indigo-600 font-medium')
+                ui.button('设置', icon='settings', on_click=self._open_settings_dialog) \
+                    .classes('text-gray-700 hover:text-indigo-600 font-medium')
 
-        # 2. 底部日志抽屉
-        with ui.right_drawer(value=False).classes('bg-gray-900 text-white w-1/3 min-w-[400px]') as self.log_drawer:
-            with ui.row().classes('w-full items-center justify-between p-4 border-b border-gray-700'):
-                ui.label('运行日志').classes('text-lg font-bold')
-                ui.button(icon='close', on_click=lambda: self.log_drawer.toggle()).props('flat round color=white')
-            self.log_container = ui.log(max_lines=2000).classes('w-full h-full p-4 font-mono text-sm')
+        # 2. 日志弹窗 (替代原来的抽屉)
+        with ui.dialog() as self.log_dialog:
+            with ui.card().classes('w-[90vw] max-w-6xl h-[85vh] p-0 flex flex-col shadow-2xl'):
+                # Header
+                with ui.row().classes('w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white p-4 items-center justify-between shadow-md'):
+                    with ui.row().classes('items-center gap-3'):
+                        ui.icon('terminal', color='positive').classes('text-3xl animate-pulse')
+                        ui.label('运行日志监控').classes('text-xl font-bold font-mono tracking-wide')
+                        self.log_status_badge = ui.badge('0 条', color='grey').props('outline')
+                    
+                    with ui.row().classes('gap-2'):
+                        ui.button('清空日志', icon='delete_sweep', on_click=self._clear_logs) \
+                            .classes('bg-red-500 hover:bg-red-600 text-white shadow-sm')
+                        ui.button('关闭', icon='close', on_click=self.log_dialog.close) \
+                            .classes('bg-gray-700 hover:bg-gray-600 text-white shadow-sm')
+                
+                # Content
+                with ui.scroll_area().classes('w-full flex-1 bg-gray-950'):
+                    self.log_container = ui.log(max_lines=5000).classes('w-full h-full p-6 font-mono text-sm text-green-400')
 
         # 3. 主内容区域
         with ui.column().classes('w-full max-w-7xl mx-auto p-6 gap-6'):
@@ -340,7 +356,7 @@ class DramaProcessorGUI:
                 with ui.row().classes('items-center gap-2'):
                     ui.icon('tune', color='primary')
                     ui.label('全局设置').classes('text-lg font-bold text-gray-800')
-                ui.button(icon='close', on_click=dialog.close).props('flat round dense color=grey')
+                ui.button(icon='close', on_click=dialog.close).props('flat round dense').classes('text-gray-500 hover:text-gray-700').tooltip('关闭')
             
             # 弹窗 Content
             with ui.scroll_area().classes('h-[60vh] w-full p-6'):
@@ -424,6 +440,15 @@ class DramaProcessorGUI:
     def _save_config_manually(self):
         """手动保存配置"""
         ui.notify('配置已暂存', type='positive')
+    
+    def _clear_logs(self):
+        """清空日志"""
+        if self.log_container:
+            self.log_container.clear()
+        self.log_count = 0
+        if hasattr(self, 'log_status_badge'):
+            self.log_status_badge.text = '0 条'
+        ui.notify('日志已清空', type='info')
 
     def _toggle_drama_selection(self, name: str, value: bool):
         """切换剧目选择状态"""
@@ -910,6 +935,9 @@ class DramaProcessorGUI:
                 if kind in {"log", "stdout", "stderr"}:
                     if payload and self.log_container:
                         self.log_container.push(payload)
+                        self.log_count += 1
+                        if hasattr(self, 'log_status_badge'):
+                            self.log_status_badge.text = f'{self.log_count} 条'
                         if "本剧完成" in payload:
                             self.completed_dramas += 1
                             self._update_progress()
