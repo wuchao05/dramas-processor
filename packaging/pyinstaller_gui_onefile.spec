@@ -17,7 +17,10 @@ from PyInstaller.utils.hooks import collect_all
 
 block_cipher = None
 
-project_root = Path(__file__).resolve().parents[1]
+# PyInstaller 执行 spec 时不一定提供 __file__，但会提供 SPECPATH（spec 所在目录）
+# 本 spec 位于 packaging/ 下，因此项目根目录为 SPECPATH 的上一级
+_spec_dir = Path(globals().get("SPECPATH", ".")).resolve()
+project_root = _spec_dir.parent
 
 # 收集 nicegui / pywebview 等动态依赖
 nicegui_datas, nicegui_binaries, nicegui_hidden = collect_all("nicegui")
