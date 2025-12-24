@@ -568,13 +568,21 @@ class DramaProcessor:
         
         return completed_count, project_time
     
-    def process_all_dramas(self, root_dir: str, drama_dates: Optional[Dict[str, str]] = None) -> Tuple[int, int]:
+    def process_all_dramas(
+        self, 
+        root_dir: str, 
+        drama_dates: Optional[Dict[str, str]] = None,
+        on_drama_start: Optional[Callable[[str], None]] = None,
+        on_drama_complete: Optional[Callable[[str], None]] = None
+    ) -> Tuple[int, int]:
         """
-        Process all dramas - main entry point equivalent to main() in dramas_process.py.
+        Process all dramas with optional callbacks.
         
         Args:
             root_dir: 根目录路径
             drama_dates: 可选的剧目日期映射，格式为 {剧名: 日期字符串}
+            on_drama_start: 剧目开始处理时的回调函数
+            on_drama_complete: 剧目完成处理时的回调函数
         """
         overall_start_time = time.time()
         
@@ -684,6 +692,10 @@ class DramaProcessor:
                     if not project.episodes:
                         logger.warning(f"Skipping {project.name}: no episodes found")
                         continue
+                    
+                    # 触发开始回调
+                    if on_drama_start:
+                        on_drama_start(project.name)
                 
                     # Get drama-specific date if available
                     drama_date = drama_dates.get(project.name) if drama_dates else None
@@ -810,6 +822,10 @@ class DramaProcessor:
                         }
                     
                         self.history_manager.add_drama_record(session, drama_info, self.config, drama_total_time)
+                    
+                    # 触发完成回调
+                    if on_drama_complete:
+                        on_drama_complete(project.name)
                 
                 except CancelledError:
                     raise
