@@ -49,7 +49,7 @@ hiddenimports = []
 hiddenimports += nicegui_hidden + webview_hidden
 
 a = Analysis(
-    ["run_gui.py"],
+    [str(project_root / "run_gui.py")],
     pathex=[str(project_root)],
     binaries=binaries,
     datas=datas,
