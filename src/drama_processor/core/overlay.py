@@ -83,9 +83,12 @@ class TextOverlay:
             # 移除换行符，获取原始文本
             side_chars = [c for c in side_text_content if c != '\n']
             
-            # 字间距：可以调整这个值来控制紧密程度
-            # side_font_size 是字体大小，字间距设为字体大小的 0.9 倍比较合适
-            char_spacing = int(side_font_size * 0.9)
+            # 字间距：调整这个系数来控制紧密程度
+            # 0.7 = 紧凑（当前设置）
+            # 0.8 = 较紧凑
+            # 0.9 = 正常间距
+            # 1.0 = 较宽松
+            char_spacing = int(side_font_size * 0.7)
             
             # 为每个字符创建一个 drawtext
             start_y = margin + 200
