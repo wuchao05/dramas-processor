@@ -1706,9 +1706,38 @@ def run_gui(native: Optional[bool] = None):
         native: 是否以 native 模式运行。为 None 时根据命令行参数 --native 自动判断。
     """
     import sys
+    import traceback
+    import tempfile
+    from pathlib import Path
     
     # 检查命令行参数（仅在未显式指定时）
     native_mode = native if native is not None else ('--native' in sys.argv)
+
+    # 在 PyInstaller onefile 等场景下，默认的 500 页面信息不够，提供可视化 traceback 便于定位问题
+    if getattr(sys, "frozen", False):
+        try:
+            from fastapi import Request
+            from starlette.responses import Response
+            from nicegui.client import Client
+
+            @nicegui_app.exception_handler(Exception)  # type: ignore[misc]
+            async def _exception_handler_500(request: Request, exception: Exception) -> Response:
+                tb = traceback.format_exc(chain=False).strip()
+                # 写入临时日志，方便用户反馈
+                try:
+                    log_path = Path(tempfile.gettempdir()) / "dramas_processor_gui_error.log"
+                    log_path.write_text(tb, encoding="utf-8", errors="ignore")
+                except Exception:
+                    pass
+
+                with Client(ui.page(''), request=request) as client:
+                    ui.label('500 Server error（程序内部错误）').classes('text-lg font-bold')
+                    ui.label('已将错误日志写入系统临时目录：dramas_processor_gui_error.log').classes('text-sm text-gray-500')
+                    ui.log(max_lines=2000).classes('w-full').push(tb)
+                return client.build_response(request, 500)
+        except Exception:
+            # 如果依赖不可用，不影响主流程
+            pass
     
     # 创建应用实例
     gui = DramaProcessorGUI()
