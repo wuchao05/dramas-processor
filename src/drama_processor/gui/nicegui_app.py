@@ -125,10 +125,10 @@ class DramaProcessorGUI:
         self.processing_root: Optional[str] = None
         
         # 参数配置
-        self.count = "10"
+        self.count = "1"
         self.min_duration = "480"
         self.max_duration = "900"
-        self.jobs = "6"
+        self.jobs = "1"
         self.material_code = ""
         self.title_colors = ""
         self.brand_default = "热门短剧"
@@ -254,14 +254,6 @@ class DramaProcessorGUI:
                         .bind_value(self, 'root_dir') \
                         .on('change', self._on_root_dir_change)
                     ui.button('浏览', on_click=self._choose_root) \
-                        .props('outline color=primary')
-                
-                # 配置文件
-                ui.label('配置文件:').classes('self-center')
-                with ui.row().classes('flex-1 gap-2'):
-                    ui.input(placeholder='选择配置文件（可选）').classes('flex-1') \
-                        .bind_value(self, 'config_path')
-                    ui.button('浏览', on_click=self._choose_config) \
                         .props('outline color=primary')
                 
                 # 输出目录
@@ -456,27 +448,6 @@ class DramaProcessorGUI:
             if result:
                 self.root_dir = result
                 self._on_root_dir_change()
-        except Exception as e:
-            ui.notify(f'文件选择失败: {e}\n请手动输入路径', type='warning')
-    
-    async def _choose_config(self):
-        """选择配置文件"""
-        try:
-            from tkinter import filedialog
-            import tkinter as tk
-            
-            root = tk.Tk()
-            root.withdraw()
-            root.attributes('-topmost', True)
-            
-            result = filedialog.askopenfilename(
-                title='选择配置文件',
-                filetypes=[('YAML files', '*.yaml *.yml'), ('All files', '*.*')]
-            )
-            root.destroy()
-            
-            if result:
-                self.config_path = result
         except Exception as e:
             ui.notify(f'文件选择失败: {e}\n请手动输入路径', type='warning')
     
