@@ -108,10 +108,12 @@ feishu_webhook_url: null # 飞书群机器人 webhook 地址
 
 # 飞书API配置（详细配置，用户只需提供核心字段）
 feishu:
-  app_id: null # 用户配置覆盖
-  app_secret: null # 用户配置覆盖
-  app_token: null # 用户配置覆盖
-  table_id: null # 用户配置覆盖
+  # 注意：这些字段在 Pydantic 模型里是必填字符串，不能为 null
+  # 用户在 GUI/用户配置中填写后会覆盖这里的空字符串
+  app_id: "" # 用户配置覆盖
+  app_secret: "" # 用户配置覆盖
+  app_token: "" # 用户配置覆盖
+  table_id: "" # 用户配置覆盖
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"

@@ -222,7 +222,15 @@ class ProcessingConfig(BaseModel):
     
     def is_feishu_api_enabled(self) -> bool:
         """Check if Feishu API integration can be used."""
-        return bool(self.enable_feishu_features and self.feishu)
+        if not self.enable_feishu_features or not self.feishu:
+            return False
+        # 必须四要素齐全才认为 API 可用（避免空字符串导致后续请求报错）
+        return bool(
+            (self.feishu.app_id or "").strip()
+            and (self.feishu.app_secret or "").strip()
+            and (self.feishu.app_token or "").strip()
+            and (self.feishu.table_id or "").strip()
+        )
     
     def is_feishu_notification_enabled(self) -> bool:
         """Check if Feishu notifications can be sent."""
@@ -230,7 +238,7 @@ class ProcessingConfig(BaseModel):
     
     def is_feishu_watcher_enabled(self) -> bool:
         """Check if Feishu watcher can run."""
-        return bool(self.enable_feishu_features and self.feishu_watcher and self.feishu_watcher.enabled)
+        return bool(self.is_feishu_api_enabled() and self.feishu_watcher and self.feishu_watcher.enabled)
     
     def get_date_str(self) -> str:
         """Get date string for filename generation."""
