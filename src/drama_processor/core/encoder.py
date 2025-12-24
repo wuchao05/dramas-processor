@@ -349,14 +349,14 @@ class VideoEncoder:
                 filters.append(dt_char)
         except Exception:
             # Fallback to old method if reading fails
-        line_spacing_opt = ""
-        if self.vertical_line_spacing:
-            line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
-        dt_side = (
-            f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
-            f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
-            f"x=w-text_w-{margin}:y={margin + 200}"
-        )
+            line_spacing_opt = ""
+            if self.vertical_line_spacing:
+                line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
+            dt_side = (
+                f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
+                f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
+                f"x=w-text_w-{margin}:y={margin + 200}"
+            )
             filters.append(dt_side)
         
         # Add brand text overlay (left side, same tight spacing)
