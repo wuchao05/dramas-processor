@@ -240,7 +240,11 @@ class VideoEncoder:
                 cmd_str = " ".join(shlex.quote(c) for c in cmd)
                 print(f"命令: {cmd_str}")
             print(f"输出: {r.stdout}")
-            raise RuntimeError(f"Command failed: {operation}")
+            err = RuntimeError(f"Command failed: {operation}")
+            # 供上层判断是否需要降级/重试（例如 malloc failed）
+            setattr(err, "ffmpeg_output", r.stdout or "")
+            setattr(err, "ffmpeg_cmd", cmd)
+            raise err
         
         return r
     
@@ -420,11 +424,24 @@ class VideoEncoder:
         """Normalize and trim video segment with text overlay."""
         dur = max(0.01, end_s - start_s)
         
-        def build_cmd(vcodec: str, hw: bool):
+        def _is_oom_error(text: str) -> bool:
+            t = (text or "").lower()
+            return any(
+                s in t
+                for s in [
+                    "malloc of size",
+                    "cannot allocate memory",
+                    "out of memory",
+                    "error while opening encoder",
+                ]
+            )
+
+        def build_cmd(vcodec: str, hw: bool, *, ft: Optional[int] = None, threads: Optional[int] = None):
             # Check if we should use watermark (only if brand text is disabled and watermark exists)
             use_watermark = (not self.use_brand_text and 
                            self.watermark_path and 
                            os.path.exists(self.watermark_path))
+            ft_val = int(ft) if ft is not None else int(filter_threads)
             
             if use_watermark:
                 # Use filter_complex for watermark + text overlays
@@ -458,8 +475,8 @@ class VideoEncoder:
                     "-map", "[out]", "-map", "0:a",
                     "-analyzeduration", "20M", "-probesize", "20M",
                     "-sws_flags", "fast_bilinear",
-                    "-filter_threads", str(filter_threads),
-                    "-filter_complex_threads", str(filter_threads),
+                    "-filter_threads", str(ft_val),
+                    "-filter_complex_threads", str(ft_val),
                     "-c:v", vcodec,
                     "-profile:v", self.config.video.profile,
                 ]
@@ -475,11 +492,15 @@ class VideoEncoder:
                     "-vf", vf,
                     "-analyzeduration", "20M", "-probesize", "20M",
                     "-sws_flags", "fast_bilinear",
-                    "-filter_threads", str(filter_threads),
-                    "-filter_complex_threads", str(filter_threads),
+                    "-filter_threads", str(ft_val),
+                    "-filter_complex_threads", str(ft_val),
                     "-c:v", vcodec,
                     "-profile:v", self.config.video.profile,
                 ]
+
+            # 限制编码线程数（可显著降低内存峰值；仅在需要时开启）
+            if threads is not None:
+                cmd += ["-threads", str(int(threads))]
             
             if hw:
                 cmd += ["-level", self.config.video.hw_level, "-tag:v", self.config.video.tag, "-b:v", self.bitrate, 
@@ -490,6 +511,16 @@ class VideoEncoder:
             cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr), 
                    "-movflags", "+faststart", out_path]
             return cmd
+
+        def _run_with_oom_retry(cmd_builder, label_text: str):
+            try:
+                return self.run_ffmpeg(cmd_builder(), label=label_text)
+            except Exception as e:
+                out = getattr(e, "ffmpeg_output", "") or str(e)
+                if _is_oom_error(out):
+                    print("⚠️ 检测到内存不足/编码器初始化失败，自动降线程重试一次（filter_threads=1, threads=1）…")
+                    return self.run_ffmpeg(cmd_builder(ft=1, threads=1), label=label_text + "(low-mem-retry)")
+                raise
         
         if seg_total == 1:
             label = f"规范化片段"
@@ -499,16 +530,16 @@ class VideoEncoder:
         try:
             if use_hw:
                 # Try hardware encoding first
-                result = self.run_ffmpeg(build_cmd(self.video_codec_hw, True), label=label)
+                result = _run_with_oom_retry(lambda **kw: build_cmd(self.video_codec_hw, True, **kw), label)
                 # Check if hardware encoding actually failed
                 if result.returncode != 0:
                     raise Exception("Hardware encoding failed")
             else:
-                self.run_ffmpeg(build_cmd(self.video_codec_sw, False), label=label)
+                _run_with_oom_retry(lambda **kw: build_cmd(self.video_codec_sw, False, **kw), label)
         except Exception as e:
             if use_hw:
                 print("⚠️ 硬编失败，回退到 x264 软编…")
-                self.run_ffmpeg(build_cmd(self.video_codec_sw, False), label=label+"(fallback-x264)")
+                _run_with_oom_retry(lambda **kw: build_cmd(self.video_codec_sw, False, **kw), label + "(fallback-x264)")
             else:
                 raise
         # Remove the extra completion print since run_ffmpeg already prints completion
