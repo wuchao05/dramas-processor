@@ -74,58 +74,13 @@ class TextOverlay:
         overlays.append(dt_bottom)
         
         # Side overlay (top right, vertical)
-        # 读取侧边文字内容，为每个字符创建独立的 drawtext
-        # 这样可以精确控制字间距
-        import logging
-        logger = logging.getLogger(__name__)
-        
-        try:
-            logger.info(f"尝试读取侧边文字文件: {side_txtf}")
-            with open(side_txtf, 'r', encoding='utf-8') as f:
-                side_text_content = f.read().strip()
-            
-            logger.info(f"侧边文字原始内容: {repr(side_text_content)}")
-            
-            # 移除换行符，获取原始文本
-            side_chars = [c for c in side_text_content if c != '\n']
-            
-            logger.info(f"移除换行后的字符列表: {side_chars}")
-            
-            # 字间距：调整这个系数来控制紧密程度
-            # 0.7 = 紧凑（当前设置）
-            # 0.8 = 较紧凑
-            # 0.9 = 正常间距
-            # 1.0 = 较宽松
-            char_spacing = int(side_font_size * 0.7)
-            
-            logger.info(f"字体大小: {side_font_size}, 字间距: {char_spacing}")
-            
-            # 为每个字符创建一个 drawtext
-            start_y = margin + 200
-            for i, char in enumerate(side_chars):
-                # 转义特殊字符
-                escaped_char = char.replace("'", "\\'").replace(":", "\\:")
-                y_pos = start_y + i * char_spacing
-                
-                dt_char = (
-                    f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_font_size}:"
-                    f"fontcolor=white@0.85:box=0:"
-                    f"x=w-text_w-{margin}:y={y_pos}"
-                )
-                overlays.append(dt_char)
-                logger.debug(f"添加字符 '{char}' 的 drawtext，y={y_pos}")
-            
-            logger.info(f"✅ 成功为 {len(side_chars)} 个字符创建独立 drawtext")
-        except Exception as e:
-            # 如果读取失败，回退到原来的方法
-            logger.warning(f"❌ 读取侧边文字文件失败，回退到旧方法: {e}")
-            side_txt_filter = self._filter_path(side_txtf)
-            dt_side = (
-                f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_font_size}:"
-                f"fontcolor=white@0.85:box=0:"
-                f"x=w-text_w-{margin}:y={margin + 200}"
-            )
-            overlays.append(dt_side)
+        side_txt_filter = self._filter_path(side_txtf)
+        dt_side = (
+            f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_font_size}:"
+            f"fontcolor=white@0.85:box=0:"
+            f"x=w-text_w-{margin}:y={margin + 200}"
+        )
+        overlays.append(dt_side)
         
         return overlays
     
