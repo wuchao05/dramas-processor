@@ -198,6 +198,7 @@ class DramaProcessorGUI:
         self.drama_queue: List[str] = []  # 处理队列
         self.current_processing_drama: Optional[str] = None  # 当前正在处理的剧目
         self.export_path_display: str = ""  # 当前导出路径
+        self.queue_lock = threading.Lock()  # 队列锁：支持处理中追加剧目
         
         # 后台任务
         self.log_queue: "queue.Queue[LogItem]" = queue.Queue()
@@ -624,9 +625,13 @@ class DramaProcessorGUI:
         # 根据当前是否在处理中决定初始状态
         if self.is_running:
             # 自动追加模式：直接设为 queued 并加入队列
-            self.drama_status_map[name] = DramaStatus.QUEUED
-            self.drama_queue.append(name)
+            with self.queue_lock:
+                self.drama_status_map[name] = DramaStatus.QUEUED
+                self.drama_queue.append(name)
+                # 追加即纳入本轮总数
+                self.total_dramas += 1
             ui.notify(f'已追加 {name} 到处理队列', type='positive')
+            self._update_progress()
         else:
             # 正常模式：设为 pending
             self.drama_status_map[name] = DramaStatus.PENDING
@@ -658,9 +663,10 @@ class DramaProcessorGUI:
 
     def _batch_change_status(self, dramas: List[str], new_status: DramaStatus):
         """批量修改剧目状态"""
-        for name in dramas:
-            if name in self.selected_drama_names:
-                self.drama_status_map[name] = new_status
+        with self.queue_lock:
+            for name in dramas:
+                if name in self.selected_drama_names:
+                    self.drama_status_map[name] = new_status
         
         self._render_selected_dramas()
 
@@ -1007,7 +1013,9 @@ class DramaProcessorGUI:
         
         # 将所有 pending 改为 queued
         self._batch_change_status(pending_dramas, DramaStatus.QUEUED)
-        self.drama_queue.extend(pending_dramas)
+        with self.queue_lock:
+            # 开始新一轮处理时重置队列（避免残留）
+            self.drama_queue = pending_dramas.copy()
         
         # 准备配置
         overrides = self._collect_overrides()
@@ -1017,7 +1025,8 @@ class DramaProcessorGUI:
         self.is_running = True
         self.cancel_event.clear()
         self.completed_dramas = 0
-        self.total_dramas = 0
+        self.total_dramas = len(pending_dramas)
+        self._update_progress(reset=True)
         self._set_ui_running(True)
         
         self.processing_thread = threading.Thread(
@@ -1049,7 +1058,9 @@ class DramaProcessorGUI:
             self.export_path_display = exports_root
             self.log_queue.put(("export_path", exports_root))
             
-            self._adjust_config_for_gui(config, base_root, selected_dramas)
+            # 不在这里固化 include（否则处理中追加的剧目无法被纳入）
+            # include 将在下面“按队列逐个处理”时动态设置
+            self._adjust_config_for_gui(config, base_root, [])
             
             # 配置日志
             self._configure_logging(config.verbose)
@@ -1077,15 +1088,40 @@ class DramaProcessorGUI:
                     return False
                 return True
             
-            # 处理队列中的所有剧目
-            made, _ = processor.process_all_dramas(
-                processing_root,
-                on_drama_start=on_drama_start,
-                on_drama_complete=on_drama_complete,
-                should_process_drama=should_process_drama,
-            )
+            # 按队列逐个处理：处理完当前队列后，如果用户又追加了“待剪辑”剧目，会继续处理
+            total_made = 0
+            while True:
+                raise_if_cancelled(self.cancel_event)
+
+                with self.queue_lock:
+                    next_name = self.drama_queue.pop(0) if self.drama_queue else None
+
+                if not next_name:
+                    break
+
+                # 仅处理“待剪辑”的队列项；否则跳过
+                status = self.drama_status_map.get(next_name, DramaStatus.PENDING)
+                if status != DramaStatus.QUEUED:
+                    self.log_queue.put(
+                        ("log", f"⏭️ 跳过队列项 {next_name}：当前状态为「{status.label}」，非「待剪辑」")
+                    )
+                    continue
+
+                # 每次只处理一个剧目，确保处理中追加能在下一轮被纳入
+                config.include = [next_name]
+                config.exclude = None
+                config.no_interactive = True
+                config.full = True
+
+                made, _ = processor.process_all_dramas(
+                    processing_root,
+                    on_drama_start=on_drama_start,
+                    on_drama_complete=on_drama_complete,
+                    should_process_drama=should_process_drama,
+                )
+                total_made += made
             
-            self.log_queue.put(("done", f"处理完成，共生成 {made} 条素材。"))
+            self.log_queue.put(("done", f"处理完成，共生成 {total_made} 条素材。"))
             
         except CancelledError:
             self.log_queue.put(("cancelled", "已取消处理"))
@@ -1286,8 +1322,6 @@ class DramaProcessorGUI:
                     # 剧目完成处理：processing → completed
                     drama_name = payload
                     self.drama_status_map[drama_name] = DramaStatus.COMPLETED
-                    if drama_name in self.drama_queue:
-                        self.drama_queue.remove(drama_name)
                     self.current_processing_drama = None
                     self._render_selected_dramas()
                     
