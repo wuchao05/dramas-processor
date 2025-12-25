@@ -331,8 +331,8 @@ class VideoEncoder:
             # Remove newlines to get original characters
             side_chars = [c for c in side_text_content if c != '\n']
             
-            # Character spacing: 1.1 = slightly loose
-            char_spacing = int(side_fs * 1.1)
+            # Character spacing: 1.3 = slightly loose
+            char_spacing = int(side_fs * 1.3)
             
             # Create individual drawtext for each character
             start_y = margin + 200
@@ -378,8 +378,8 @@ class VideoEncoder:
                 # Remove newlines to get original characters
                 brand_chars = [c for c in brand_text_content if c != '\n']
                 
-                # Same character spacing as side text (1.1 = slightly loose)
-                char_spacing = int(side_fs * 1.1)
+                # Same character spacing as side text (1.3 = slightly loose)
+                char_spacing = int(side_fs * 1.3)
                 
                 # Create individual drawtext for each character
                 start_y = margin + 200
