@@ -24,7 +24,7 @@ brand_text_mapping:
     - range: "01-03"
       text: "萍通剧坊"
     - range: "04-06"
-      text: "哈哈看剧"
+      text: "葸辉爆剧"
     - range: "07-09"
       text: "清妍短剧"
     - range: "10-13"
@@ -38,7 +38,7 @@ brand_text_mapping:
 
   cycle_texts:
     - "萍通剧坊"
-    - "哈哈看剧"
+    - "葸辉爆剧"
     - "清妍短剧"
     - "看家本领"
     - "葸辉好剧"
