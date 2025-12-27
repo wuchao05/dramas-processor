@@ -323,6 +323,26 @@ class VideoEncoder:
         # Side text - use individual drawtext for each character for tighter spacing
         filters = [base, dt_top, dt_bottom]
         
+        # Hook text overlay (appears only in first 3 seconds)
+        if self.config.enable_hook_text and self.config.hook_texts:
+            import random
+            hook_text = random.choice(self.config.hook_texts)
+            hook_fs = self.config.hook_font_size
+            hook_color = self.config.hook_text_color
+            hook_border = self.config.hook_border_color
+            hook_duration = self.config.hook_duration
+            
+            # Center position with shadow/border effect
+            # Using borderw for outline effect
+            dt_hook = (
+                f"drawtext=fontfile='{fontfile_filter}':text='{hook_text}':"
+                f"fontsize={hook_fs}:fontcolor={hook_color}:"
+                f"borderw=3:bordercolor={hook_border}:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2:"
+                f"enable='lt(t,{hook_duration})'"  # Only show for first N seconds
+            )
+            filters.append(dt_hook)
+        
         try:
             # Read side text content
             with open(side_txtf, 'r', encoding='utf-8') as f:

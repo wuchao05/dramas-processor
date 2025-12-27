@@ -157,6 +157,22 @@ class ProcessingConfig(BaseModel):
         description="Title color options"
     )
     
+    # Hook text settings (opening text that appears for first 3 seconds)
+    enable_hook_text: bool = Field(default=False, description="Enable hook text overlay at the beginning")
+    hook_texts: List[str] = Field(
+        default=[
+            "完结撒花",
+            "全集已更新", 
+            "追剧必看",
+            "热播推荐"
+        ],
+        description="Hook text options (randomly selected)"
+    )
+    hook_font_size: int = Field(default=110, description="Hook text font size (100-120px recommended)")
+    hook_duration: float = Field(default=3.0, description="Hook text display duration in seconds")
+    hook_text_color: str = Field(default="#FFE600", description="Hook text color")
+    hook_border_color: str = Field(default="#000000", description="Hook text border/outline color")
+    
     # Processing settings
     random_start: bool = Field(default=True, description="Use random start points")
     seed: Optional[int] = Field(default=None, description="Random seed")

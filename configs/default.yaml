@@ -35,11 +35,23 @@ exclude_last_episodes:
 # Text overlay settings
 title_font_size: 36
 bottom_font_size: 28
-side_font_size: 36
+side_font_size: 28
 vertical_line_spacing: 0 # 竖排文字行距（像素，可为负数）
 footer_text: "热门短剧 休闲必看" # (--footer-text)
 side_text: "剧情纯属虚构 请勿模仿" # (--side-text)
 # title_colors 已移至用户配置文件
+
+# Hook text settings (opening hook text overlay)
+enable_hook_text: false # 启用开头钩子文案（默认关闭，用户配置中开启）
+hook_texts:
+  - "完结撒花"
+  - "全集已更新"
+  - "追剧必看"
+  - "热播推荐"
+hook_font_size: 110 # 钩子文案字体大小 (100-120px)
+hook_duration: 3.0 # 钩子文案显示时长（秒）
+hook_text_color: "#FFE600" # 钩子文案颜色（亮黄色）
+hook_border_color: "#000000" # 钩子文案描边颜色（黑色）
 
 # Processing behavior
 random_start: true # (--random-start / --no-random-start)

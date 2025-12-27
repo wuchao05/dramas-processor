@@ -72,6 +72,20 @@ feishu:
   table_id: "tblDOyi2Lzs80sv0"
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值
 
+# 钩子文案配置（开头吸引眼球的大字）
+enable_hook_text: true # 启用钩子文案
+hook_texts:
+  - "完结撒花"
+  - "全集已更新"
+  - "追剧必看"
+  - "热播推荐"
+  - "大结局来了"
+  - "爆款短剧"
+hook_font_size: 110
+hook_duration: 3.0
+hook_text_color: "#FFE600"
+hook_border_color: "#000000"
+
 # NVENC 硬件编码优化配置（针对 RTX 2060）
 # ⚠️ 重要：避免内存错误
 video:
