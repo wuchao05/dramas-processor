@@ -2,7 +2,7 @@
 # 此文件包含用户专属配置，会覆盖 default.yaml 中的对应字段
 
 # 素材生成设置
-count: 20 # 每部剧生成素材数量
+count: 18 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
 # 标题颜色
@@ -35,21 +35,21 @@ brand_text_mapping:
     #   text: "小红看剧"
     # - range: "22-24"
     #   text: "斯娜看剧"
-    - range: "01-07"
+    - range: "01-04"
       text: "葸辉好剧"
-    - range: "08-12"
+    - range: "05-08"
       text: "葸辉爆剧"
-    - range: "13-14"
+    - range: "09-11"
       text: "斯娜看剧"
-    - range: "15-16"
+    - range: "12-14"
       text: "小红看剧"
-    - range: "17"
+    - range: "15"
       text: "萍通剧坊"
-    - range: "18"
+    - range: "16"
       text: "看家本领"
-    - range: "19"
+    - range: "17"
       text: "清妍短剧"
-    - range: "20"
+    - range: "18"
       text: "哈哈看剧"
 
   cycle_texts:
