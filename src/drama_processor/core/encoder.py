@@ -522,10 +522,21 @@ class VideoEncoder:
                 cmd += ["-threads", str(int(threads))]
             
             if hw:
+                # Hardware encoding parameters
                 cmd += ["-level", self.config.video.hw_level, "-tag:v", self.config.video.tag, "-b:v", self.bitrate, 
                        "-maxrate", self.config.video.max_rate, "-bufsize", self.config.video.buffer_size]
+                # Add hardware-specific preset if it's NVENC format (p1-p7)
+                preset = self.config.video.preset
+                if preset.startswith('p') and preset[1:].isdigit():
+                    cmd += ["-preset", preset]
             else:
-                cmd += ["-level", self.config.video.sw_level, "-preset", self.config.video.preset, "-crf", self.soft_crf, 
+                # Software encoding parameters
+                # Convert NVENC preset (p1-p7) to libx264 preset if needed
+                preset = self.config.video.preset
+                if preset.startswith('p') and preset[1:].isdigit():
+                    # NVENC preset detected, use default software preset
+                    preset = "veryfast"
+                cmd += ["-level", self.config.video.sw_level, "-preset", preset, "-crf", self.soft_crf, 
                        "-pix_fmt", self.config.video.pixel_format]
             cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr), 
                    "-movflags", "+faststart", out_path]
