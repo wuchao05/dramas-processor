@@ -325,7 +325,6 @@ class VideoEncoder:
         
         # Hook text overlay (appears only in first 3 seconds)
         if self.config.enable_hook_text and self.config.hook_texts:
-            import random
             hook_text = random.choice(self.config.hook_texts)
             hook_fs = self.config.hook_font_size
             hook_color = self.config.hook_text_color
