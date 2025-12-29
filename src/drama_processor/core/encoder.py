@@ -47,6 +47,7 @@ class VideoEncoder:
         self.bottom_font_size = config.bottom_font_size
         self.side_font_size = config.side_font_size
         self.vertical_line_spacing = config.vertical_line_spacing
+        self.title_opacity = config.title_opacity
         
         self.title_colors = config.title_colors
         
@@ -311,7 +312,7 @@ class VideoEncoder:
         # Text overlay filters
         dt_top = (
             f"drawtext=fontfile='{fontfile_filter}':textfile='{title_txt_filter}':fontsize={title_fs}:"
-            f"fontcolor={title_color}@0.9:shadowx=1:shadowy=1:box=0:"
+            f"fontcolor={title_color}@{self.title_opacity}:shadowx=1:shadowy=1:box=0:"
             f"x=(w-text_w)/2:y={margin + 20}"
         )
         dt_bottom = (
