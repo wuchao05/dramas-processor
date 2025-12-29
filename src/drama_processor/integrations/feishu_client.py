@@ -275,18 +275,18 @@ class FeishuClient:
     
     def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> Dict[str, Dict[str, str]]:
         """
-        获取指定状态的剧名和对应的记录信息（包括日期）
+        获取指定状态的剧名和对应的记录信息（包括日期和上架时间）
         
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
         
         Returns:
-            剧名到记录信息的映射字典，每个记录包含 {"record_id": str, "date": str}
+            剧名到记录信息的映射字典，每个记录包含 {"record_id": str, "date": str, "upload_time": int}
         """
         try:
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
-                                         field_names=["剧名", "日期"])
+                                         field_names=["剧名", "日期", "上架时间"])
             drama_info = {}
             for record in response.items:
                 if "剧名" in record.fields and record.fields["剧名"]:
@@ -316,9 +316,21 @@ class FeishuClient:
                             logger.warning(f"无法解析剧目 '{drama_name}' 的日期 '{date_value}': {e}")
                             drama_date = date_value  # 使用原始值
                     
+                    # 获取上架时间信息
+                    upload_time = None
+                    if "上架时间" in record.fields and record.fields["上架时间"]:
+                        upload_time_value = record.fields["上架时间"][0].text
+                        try:
+                            # 上架时间是时间戳（毫秒）格式
+                            if upload_time_value.isdigit():
+                                upload_time = int(upload_time_value)
+                        except (ValueError, TypeError) as e:
+                            logger.warning(f"无法解析剧目 '{drama_name}' 的上架时间 '{upload_time_value}': {e}")
+                    
                     drama_info[drama_name] = {
                         "record_id": record.record_id,
-                        "date": drama_date or "未知"
+                        "date": drama_date or "未知",
+                        "upload_time": upload_time  # None 表示没有上架时间
                     }
             return drama_info
         except Exception as e:

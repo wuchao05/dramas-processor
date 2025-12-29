@@ -104,10 +104,7 @@ class TextOverlay:
     
     def build_overlay_filter_chain(self, fontfile: str, ref_w: int, ref_h: int, fps: int,
                                   drama_name: str, footer_text: str, side_text: str,
-                                  workdir: str, fast_mode: bool = False, 
-                                  left_side_text: Optional[str] = None,
-                                  enable_left_side_text: bool = False,
-                                  enable_right_side_text: bool = True) -> str:
+                                  workdir: str, fast_mode: bool = False) -> str:
         """Build complete filter chain with text overlays."""
         # Base video processing
         base_filters = [f"scale={ref_w}:{ref_h}:force_original_aspect_ratio=decrease"]
@@ -130,16 +127,10 @@ class TextOverlay:
             base_filters.append(f"hue=h={hue}")
         
         # Create text files
-        title_txt, bottom_txt, side_txtf, left_side_txtf = self.create_text_files(
-            workdir, drama_name, footer_text, side_text, left_side_text
-        )
+        title_txt, bottom_txt, side_txtf = self.create_text_files(workdir, drama_name, footer_text, side_text)
         
         # Build text overlays
-        text_overlays = self.build_text_overlays(
-            fontfile, ref_w, ref_h, title_txt, bottom_txt, side_txtf, left_side_txtf,
-            enable_left_side_text=enable_left_side_text,
-            enable_right_side_text=enable_right_side_text
-        )
+        text_overlays = self.build_text_overlays(fontfile, ref_w, ref_h, title_txt, bottom_txt, side_txtf)
         
         # Combine all filters
         all_filters = base_filters + text_overlays

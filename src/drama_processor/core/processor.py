@@ -445,8 +445,7 @@ class DramaProcessor:
             material_idx=material_idx,
             material_total=material_total,
             fast_mode=self.config.fast_mode,
-            filter_threads=self.config.filter_threads,
-            left_side_text=self.config.left_side_text
+            filter_threads=self.config.filter_threads
         )
         
         processing_time = time.time() - start_time

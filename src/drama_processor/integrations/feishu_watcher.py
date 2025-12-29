@@ -244,6 +244,31 @@ class FeishuWatcher:
         for drama_name, info in drama_info.items():
             date_label = info.get("date") or "未知日期"
             grouped.setdefault(date_label, {})[drama_name] = info
+        
+        # 对每个日期组内的剧按上架时间降序排序（上架时间越晚优先级越高）
+        for date_label in grouped:
+            dramas_with_time = []
+            dramas_without_time = []
+            
+            for drama_name, info in grouped[date_label].items():
+                upload_time = info.get("upload_time")
+                if upload_time is not None:
+                    dramas_with_time.append((drama_name, info, upload_time))
+                else:
+                    dramas_without_time.append((drama_name, info))
+            
+            # 按上架时间降序排序（时间戳越大越靠前）
+            dramas_with_time.sort(key=lambda x: x[2], reverse=True)
+            
+            # 重新构建该日期的字典，有上架时间的在前，没有的在后
+            sorted_dict = {}
+            for drama_name, info, _ in dramas_with_time:
+                sorted_dict[drama_name] = info
+            for drama_name, info in dramas_without_time:
+                sorted_dict[drama_name] = info
+            
+            grouped[date_label] = sorted_dict
+        
         return dict(sorted(grouped.items(), key=lambda item: self._date_sort_key(item[0])))
     
     def _select_dates(self, grouped: Dict[str, Dict[str, Dict[str, str]]]) -> List[str]:
