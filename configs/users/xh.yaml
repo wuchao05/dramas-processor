@@ -6,13 +6,25 @@ count: 20 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
 # 标题颜色
+# title_colors:
+#   - "#FFA500" # Orange
+#   - "#FFB347" # Light Orange
+#   - "#FF8C00" # Dark Orange
+#   - "#FFD580" # Peach
+#   - "#E69500" # Earth Orange
+#   - "#FFAE42" # Bright Orange
 title_colors:
-  - "#FFA500" # Orange
-  - "#FFB347" # Light Orange
-  - "#FF8C00" # Dark Orange
-  - "#FFD580" # Peach
-  - "#E69500" # Earth Orange
-  - "#FFAE42" # Bright Orange
+  - "#FFE600"
+  - "#FFDD00"
+  - "#FF3333"
+  - "#FF69B4"
+  - "#00FFD9"
+  - "#FF4500"
+  - "#00BFFF"
+  - "#9400D3"
+  - "#F4A460"
+  - "#00FA9A"
+  - "#FFFFFF"
 
 # 目录设置
 default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径

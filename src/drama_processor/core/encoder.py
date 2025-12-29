@@ -48,6 +48,7 @@ class VideoEncoder:
         self.side_font_size = config.side_font_size
         self.vertical_line_spacing = config.vertical_line_spacing
         self.title_opacity = config.title_opacity
+        self.bottom_opacity = config.bottom_opacity
         
         self.title_colors = config.title_colors
         
@@ -317,7 +318,7 @@ class VideoEncoder:
         )
         dt_bottom = (
             f"drawtext=fontfile='{fontfile_filter}':textfile='{bottom_txt_filter}':fontsize={bottom_fs}:"
-            f"fontcolor=white@0.85:box=0:"
+            f"fontcolor=white@{self.bottom_opacity}:box=0:"
             f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
         )
         

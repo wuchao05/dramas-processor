@@ -42,6 +42,7 @@ side_text: "剧情纯属虚构请勿模仿" # 右侧文案 (--side-text)
 enable_left_side_text: false # 启用左侧文案滤镜（控制品牌文案brand_text显示）
 enable_right_side_text: false # 启用右侧文案滤镜（控制side_text显示）
 title_opacity: 0.9 # 标题文案透明度 (0.0-1.0)，1.0为完全不透明，0.0为完全透明
+bottom_opacity: 0.85 # 底部文案透明度 (0.0-1.0)
 # title_colors 已移至用户配置文件
 
 # Hook text settings (opening hook text overlay)
