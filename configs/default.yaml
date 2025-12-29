@@ -38,7 +38,9 @@ bottom_font_size: 28
 side_font_size: 28
 vertical_line_spacing: 0 # 竖排文字行距（像素，可为负数）
 footer_text: "热门短剧 休闲必看" # (--footer-text)
-side_text: "剧情纯属虚构 请勿模仿" # (--side-text)
+side_text: "剧情纯属虚构 请勿模仿" # 右侧文案 (--side-text)
+enable_left_side_text: true # 启用左侧文案滤镜（控制品牌文案brand_text显示）
+enable_right_side_text: true # 启用右侧文案滤镜（控制side_text显示）
 # title_colors 已移至用户配置文件
 
 # Hook text settings (opening hook text overlay)

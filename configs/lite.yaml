@@ -54,7 +54,10 @@ title_font_size: 36
 bottom_font_size: 8
 side_font_size: 28
 footer_text: '热门短剧 休闲必看'
-side_text: '剧情纯属虚构 请勿模仿'
+side_text: '剧情纯属虚构 请勿模仿' # 右侧文案
+left_side_text: '请勿相信视频中任何广告' # 左侧文案
+enable_left_side_text: false # 启用左侧文案滤镜
+enable_right_side_text: true # 启用右侧文案滤镜
 # 不填则自动寻找系统字体
 font_file: null
 

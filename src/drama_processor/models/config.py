@@ -148,7 +148,9 @@ class ProcessingConfig(BaseModel):
     side_font_size: int = Field(default=28, description="Side text font size")
     vertical_line_spacing: int = Field(default=0, description="Vertical text line spacing in pixels")
     footer_text: str = Field(default="热门短剧 休闲必看", description="Footer text")
-    side_text: str = Field(default="剧情纯属虚构 请勿模仿", description="Side text")
+    side_text: str = Field(default="剧情纯属虚构 请勿模仿", description="Side text (right side)")
+    enable_left_side_text: bool = Field(default=True, description="Enable left side text overlay (brand text)")
+    enable_right_side_text: bool = Field(default=True, description="Enable right side text overlay")
     title_colors: List[str] = Field(
         default=[
             "#FFA500", "#FFB347", "#FF8C00", 

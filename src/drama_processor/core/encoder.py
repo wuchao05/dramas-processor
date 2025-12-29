@@ -320,7 +320,7 @@ class VideoEncoder:
             f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
         )
         
-        # Side text - use individual drawtext for each character for tighter spacing
+        # Base filters with title and bottom text
         filters = [base, dt_top, dt_bottom]
         
         # Hook text overlay (appears only in first 3 seconds)
@@ -342,44 +342,47 @@ class VideoEncoder:
             )
             filters.append(dt_hook)
         
-        try:
-            # Read side text content
-            with open(side_txtf, 'r', encoding='utf-8') as f:
-                side_text_content = f.read().strip()
-            
-            # Remove newlines to get original characters
-            side_chars = [c for c in side_text_content if c != '\n']
-            
-            # Character spacing: 1.3 = slightly loose
-            char_spacing = int(side_fs * 1.3)
-            
-            # Create individual drawtext for each character
-            start_y = margin + 200
-            for i, char in enumerate(side_chars):
-                # Escape special characters for FFmpeg
-                escaped_char = char.replace("'", "\\'").replace(":", "\\:")
-                y_pos = start_y + i * char_spacing
+        # Right side text - use individual drawtext for each character for tighter spacing
+        if self.config.enable_right_side_text:
+            try:
+                # Read side text content
+                with open(side_txtf, 'r', encoding='utf-8') as f:
+                    side_text_content = f.read().strip()
                 
-                dt_char = (
-                    f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_fs}:"
-                    f"fontcolor=white@0.85:box=0:"
-                    f"x=w-text_w-{margin}:y={y_pos}"
+                # Remove newlines to get original characters
+                side_chars = [c for c in side_text_content if c != '\n']
+                
+                # Character spacing: 1.3 = slightly loose
+                char_spacing = int(side_fs * 1.3)
+                
+                # Create individual drawtext for each character
+                start_y = margin + 200
+                for i, char in enumerate(side_chars):
+                    # Escape special characters for FFmpeg
+                    escaped_char = char.replace("'", "\\'").replace(":", "\\:")
+                    y_pos = start_y + i * char_spacing
+                    
+                    dt_char = (
+                        f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_fs}:"
+                        f"fontcolor=white@0.85:box=0:"
+                        f"x=w-text_w-{margin}:y={y_pos}"
+                    )
+                    filters.append(dt_char)
+            except Exception:
+                # Fallback to old method if reading fails
+                line_spacing_opt = ""
+                if self.vertical_line_spacing:
+                    line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
+                dt_side = (
+                    f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
+                    f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
+                    f"x=w-text_w-{margin}:y={margin + 200}"
                 )
-                filters.append(dt_char)
-        except Exception:
-            # Fallback to old method if reading fails
-            line_spacing_opt = ""
-            if self.vertical_line_spacing:
-                line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
-            dt_side = (
-                f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
-                f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
-                f"x=w-text_w-{margin}:y={margin + 200}"
-            )
-            filters.append(dt_side)
+                filters.append(dt_side)
         
         # Add brand text overlay (left side, same tight spacing)
-        if self.use_brand_text:
+        # Controlled by enable_left_side_text
+        if self.use_brand_text and self.config.enable_left_side_text:
             # Get brand text for current material
             if material_idx is not None:
                 brand_text = self.config.get_brand_text_for_material(material_idx)
