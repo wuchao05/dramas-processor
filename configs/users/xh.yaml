@@ -108,14 +108,14 @@ hook_border_color: "#000000"
 # ⚠️ 重要：避免内存错误
 video:
   hw_codec: "h264_nvenc"
-  bitrate: "5000k" # 降低码率避免显存不足
-  max_rate: "5500k"
-  buffer_size: "6000k" # 降低 buffer size
-  preset: "p1" # 最快 preset，减少 GPU 负担
-  profile: "main" # main 比 high 占用更少资源
-  # level: "4.1"
-  # bitrate: "6500k"
-  # max_rate: "7000k"
-  # buffer_size: "9000k"
-  # preset: "p4"
-  # profile: "high"
+  # bitrate: "5000k"      # 降低码率避免显存不足
+  # max_rate: "5500k"
+  # buffer_size: "6000k"  # 降低 buffer size
+  # preset: "p1"          # 最快 preset，减少 GPU 负担
+  # profile: "main"       # main 比 high 占用更少资源
+  level: "4.1"
+  bitrate: "6500k"
+  max_rate: "7000k"
+  buffer_size: "9000k"
+  preset: "p4"
+  profile: "high"

@@ -13,7 +13,7 @@ smart_fps: true
 fast_mode: true # 优化：启用快速模式，减少不必要的滤镜处理
 # Windows/GUI onefile 场景下滤镜线程过高会导致 ffmpeg/x264 内存峰值过大，触发 malloc failed
 # 这里使用更稳妥的默认值（需要性能可在 CLI/用户配置中自行提高）
-filter_threads: 4
+filter_threads: 6
 verbose: false # Show detailed FFmpeg commands and debug information
 
 # Duration settings (in seconds)
