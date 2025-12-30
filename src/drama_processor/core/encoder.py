@@ -58,6 +58,8 @@ class VideoEncoder:
         # Brand text settings (from config)
         self.config = config  # Keep reference to config for dynamic text selection
         self.use_brand_text = config.enable_brand_text
+        self.enable_left_side_text = config.enable_left_side_text
+        self.enable_right_side_text = config.enable_right_side_text
     
     def _detect_best_hw_codec(self, preferred_codec: str) -> str:
         """Detect the best available hardware codec for the current environment."""
@@ -67,11 +69,25 @@ class VideoEncoder:
         system = platform.system()
         
         if system == "Darwin":  # macOS
-            codec_priority = ["h264_videotoolbox"]
+            # On macOS, VideoToolbox works best with Apple Silicon and Intel iGPU
+            # AMD discrete GPUs on macOS typically don't support hardware encoding via FFmpeg
+            codec_priority = [
+                "h264_videotoolbox",  # macOS hardware encoding (Apple Silicon / Intel iGPU)
+            ]
+            # Note: h264_amf is Windows-only, not available on macOS
         elif system == "Windows":
-            codec_priority = ["h264_nvenc", "h264_qsv", "h264_amf"]
+            codec_priority = [
+                "h264_nvenc",    # NVIDIA GPU
+                "h264_qsv",      # Intel Quick Sync Video
+                "h264_amf",      # AMD GPU (Windows only)
+            ]
         else:  # Linux/WSL
-            codec_priority = ["h264_nvenc", "h264_qsv", "h264_vaapi", "h264_amf"]
+            codec_priority = [
+                "h264_nvenc",    # NVIDIA GPU
+                "h264_qsv",      # Intel Quick Sync Video
+                "h264_vaapi",    # Linux VA-API
+                "h264_amf",      # AMD GPU (if available)
+            ]
         
         # If user specified a codec, try it first
         if preferred_codec and preferred_codec != "auto":
@@ -85,47 +101,122 @@ class VideoEncoder:
                 text=True,
                 encoding="utf-8",
                 errors="replace",
-                timeout=10,
-                **get_windows_subprocess_kwargs_hide_console()
+                timeout=10
+                , **get_windows_subprocess_kwargs_hide_console()
             )
             
             if result.returncode == 0:
                 available_encoders = result.stdout
                 for codec in codec_priority:
                     if codec in available_encoders:
-                        return codec
-            
-            return "libx264"
+                        # Test if the codec actually works
+                        if self._test_codec(codec):
+                            print(f"✅ 检测到可用的硬件编码器: {codec}")
+                            return codec
+                        else:
+                            print(f"⚠️ 硬件编码器 {codec} 不可用，继续检测...")
                 
-        except Exception:
+                # Provide platform-specific guidance
+                if system == "Darwin":
+                    print("⚠️ 未检测到可用的硬件编码器")
+                    print("💡 macOS 上的 AMD 独显通常不支持 FFmpeg 硬件编码，建议使用软件编码 (--sw)")
+                else:
+                    print("⚠️ 未检测到可用的硬件编码器，将使用软件编码")
+                return "libx264"
+            else:
+                print("⚠️ 无法检测编码器，使用默认配置")
+                return preferred_codec or "libx264"
+                
+        except (subprocess.TimeoutExpired, FileNotFoundError, Exception) as e:
+            print(f"⚠️ 编码器检测失败: {e}")
             return preferred_codec or "libx264"
     
-    def even(self, x: int) -> int:
-        """Ensure even number for video dimensions."""
-        return x if x % 2 == 0 else x - 1
-    
-    def _filter_path(self, path: str) -> str:
-        """转换路径为 FFmpeg filter 友好格式（避免 Windows 反斜杠被转义）。"""
-        if os.name != "nt":
-            return path
-        normalized = path.replace("\\", "/")
-        normalized = normalized.replace(":", "\\:")
-        normalized = normalized.replace("'", "\\'")
-        return normalized
+    def _test_codec(self, codec: str) -> bool:
+        """Test if a hardware codec actually works by doing a quick encoding test."""
+        try:
+            # Create a simple test pattern and try to encode it
+            test_cmd = [
+                "ffmpeg", "-y", "-f", "lavfi", "-i", "testsrc=duration=1:size=320x240:rate=1",
+                "-c:v", codec, "-t", "0.1", "-f", "null", "-"
+            ]
+            
+            result = subprocess.run(
+                test_cmd,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=15
+                , **get_windows_subprocess_kwargs_hide_console()
+            )
+            
+            # Check if encoding succeeded (return code 0) and no critical errors
+            if result.returncode == 0:
+                return True
+            else:
+                # Check for common hardware encoding errors and provide specific guidance
+                error_output = result.stderr.lower()
+                
+                # AMD AMF specific errors
+                if codec == "h264_amf" and any(error in error_output for error in [
+                    "cannot load amf", "amf not found", "could not load library",
+                    "function not implemented", "encoder not found"
+                ]):
+                    print(f"   💡 AMF 编码器不可用，可能原因：")
+                    print(f"      - FFmpeg 未编译 AMF 支持（需要完整版 FFmpeg）")
+                    print(f"      - AMD 驱动版本过旧")
+                    print(f"      - 缺少 AMF SDK 运行时库")
+                    return False
+                
+                # NVIDIA NVENC specific errors
+                if codec == "h264_nvenc" and any(error in error_output for error in [
+                    "driver does not support", "required nvenc api version",
+                    "minimum required nvidia driver"
+                ]):
+                    print(f"   💡 NVENC 编码器不可用，需要更新 NVIDIA 驱动")
+                    return False
+                
+                # Generic hardware encoder errors
+                if any(error in error_output for error in [
+                    "could not open encoder", "invalid argument", "not supported"
+                ]):
+                    return False
+                    
+                return False
+                
+        except (subprocess.TimeoutExpired, Exception):
+            return False
     
     def run_ffmpeg(self, cmd: List[str], label: Optional[str] = None) -> subprocess.CompletedProcess:
         """Run ffmpeg command with configurable logging verbosity."""
         raise_if_cancelled(self.cancel_event)
-        operation = label or "FFmpeg处理"
+        # Extract key operation info instead of full command
+        operation = "FFmpeg处理"
+        if label:
+            operation = label
+        elif len(cmd) > 1:
+            # Try to infer operation from command
+            if "concat" in " ".join(cmd):
+                operation = "视频拼接"
+            elif any("-i" in str(c) and ".jpg" in str(c) for c in cmd):
+                operation = "封面处理"
+            elif "drawtext" in " ".join(cmd):
+                operation = "文字叠加"
+            elif "-ss" in cmd:
+                operation = "视频片段提取"
         
+        # Show appropriate message based on verbose setting
         if self.config.verbose:
+            # Verbose mode: show full command like before
             cmd_str = " ".join(shlex.quote(c) for c in cmd)
             print(">>", cmd_str)
         else:
+            # Concise mode: show simple operation message
             print(f"🎬 {operation}...")
         
         t0 = time.time()
         try:
+            # Use timeout to prevent hanging and capture output in real-time
             r = subprocess.run(
                 cmd,
                 stdout=subprocess.PIPE,
@@ -135,11 +226,10 @@ class VideoEncoder:
                 errors="replace",
                 timeout=300,
                 **get_windows_subprocess_kwargs_hide_console(),
-            )
+            )  # 5 minutes timeout
         except subprocess.TimeoutExpired:
             print(f"❌ {operation} 超时 (5分钟)")
             raise RuntimeError(f"Command timed out after 5 minutes: {operation}")
-        
         dt = time.time() - t0
         
         if r.returncode == 0:
@@ -148,14 +238,32 @@ class VideoEncoder:
             else:
                 print(f"✅ {operation} 完成 - 耗时: {human_duration(dt)}")
         else:
-            if self.config.verbose:
-                print(f"❌ {operation} 失败 (返回码: {r.returncode})")
-                if r.stdout:
-                    print(r.stdout)
-            else:
-                print(f"❌ {operation} 失败")
+            print(f"❌ {operation} 失败")
+            # Always show command and output on error for debugging
+            if not self.config.verbose:
+                cmd_str = " ".join(shlex.quote(c) for c in cmd)
+                print(f"命令: {cmd_str}")
+            print(f"输出: {r.stdout}")
+            err = RuntimeError(f"Command failed: {operation}")
+            # 供上层判断是否需要降级/重试（例如 malloc failed）
+            setattr(err, "ffmpeg_output", r.stdout or "")
+            setattr(err, "ffmpeg_cmd", cmd)
+            raise err
         
         return r
+    
+    def even(self, x: int) -> int:
+        """Ensure even number for video dimensions."""
+        return x if x % 2 == 0 else x - 1
+
+    def _filter_path(self, path: str) -> str:
+        """转换路径为 FFmpeg filter 友好格式（避免 Windows 反斜杠被转义）。"""
+        if os.name != "nt":
+            return path
+        normalized = path.replace("\\", "/")
+        normalized = normalized.replace(":", "\\:")
+        normalized = normalized.replace("'", "\\'")
+        return normalized
     
     def to_vertical(self, text: str) -> str:
         """Convert text to vertical layout."""
@@ -234,43 +342,20 @@ class VideoEncoder:
             )
             filters.append(dt_hook)
         
-        # Right side text - use individual drawtext for each character for tighter spacing
+        # Right side text - simplified with textfile for better performance
         if self.config.enable_right_side_text:
+            line_spacing_opt = ""
+            if self.vertical_line_spacing:
+                line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
             try:
-                # Read side text content
-                with open(side_txtf, 'r', encoding='utf-8') as f:
-                    side_text_content = f.read().strip()
-                
-                # Remove newlines to get original characters
-                side_chars = [c for c in side_text_content if c != '\n']
-                
-                # Character spacing: 1.3 = slightly loose
-                char_spacing = int(side_fs * 1.3)
-                
-                # Create individual drawtext for each character
-                start_y = margin + 200
-                for i, char in enumerate(side_chars):
-                    # Escape special characters for FFmpeg
-                    escaped_char = char.replace("'", "\\'").replace(":", "\\:")
-                    y_pos = start_y + i * char_spacing
-                    
-                    dt_char = (
-                        f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_fs}:"
-                        f"fontcolor=white@0.85:box=0:"
-                        f"x=w-text_w-{margin}:y={y_pos}"
-                    )
-                    filters.append(dt_char)
-            except Exception:
-                # Fallback to old method if reading fails
-                line_spacing_opt = ""
-                if self.vertical_line_spacing:
-                    line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
                 dt_side = (
                     f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
                     f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
                     f"x=w-text_w-{margin}:y={margin + 200}"
                 )
                 filters.append(dt_side)
+            except Exception:
+                pass  # Silently skip if file not found
         
         # Add brand text overlay (left side, same tight spacing)
         # Controlled by enable_left_side_text
@@ -284,42 +369,20 @@ class VideoEncoder:
             brand_txt = os.path.join(workdir, "brand.txt")
             write_text_file(brand_txt, self.to_vertical(brand_text))
             
+            # Simplified with textfile for better performance
+            brand_txt_filter = self._filter_path(brand_txt)
+            line_spacing_opt = ""
+            if self.vertical_line_spacing:
+                line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
             try:
-                # Read brand text content
-                with open(brand_txt, 'r', encoding='utf-8') as f:
-                    brand_text_content = f.read().strip()
-                
-                # Remove newlines to get original characters
-                brand_chars = [c for c in brand_text_content if c != '\n']
-                
-                # Same character spacing as side text (1.3 = slightly loose)
-                char_spacing = int(side_fs * 1.3)
-                
-                # Create individual drawtext for each character
-                start_y = margin + 200
-                for i, char in enumerate(brand_chars):
-                    # Escape special characters for FFmpeg
-                    escaped_char = char.replace("'", "\\'").replace(":", "\\:")
-                    y_pos = start_y + i * char_spacing
-                    
-                    dt_char = (
-                        f"drawtext=fontfile='{fontfile_filter}':text='{escaped_char}':fontsize={side_fs}:"
-                        f"fontcolor=white@0.85:box=0:"
-                        f"x={margin}:y={y_pos}"
-                    )
-                    filters.append(dt_char)
-            except Exception:
-                # Fallback to old method
-                brand_txt_filter = self._filter_path(brand_txt)
-                line_spacing_opt = ""
-                if self.vertical_line_spacing:
-                    line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
                 dt_brand = (
                     f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
                     f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
                     f"x={margin}:y={margin + 200}"
                 )
                 filters.append(dt_brand)
+            except Exception:
+                pass  # Silently skip if file not found
 
         return ",".join(filters)
     
@@ -417,21 +480,10 @@ class VideoEncoder:
                 cmd += ["-threads", str(int(threads))]
             
             if hw:
-                # Hardware encoding parameters
                 cmd += ["-level", self.config.video.hw_level, "-tag:v", self.config.video.tag, "-b:v", self.bitrate, 
                        "-maxrate", self.config.video.max_rate, "-bufsize", self.config.video.buffer_size]
-                # Add hardware-specific preset if it's NVENC format (p1-p7)
-                preset = self.config.video.preset
-                if preset.startswith('p') and preset[1:].isdigit():
-                    cmd += ["-preset", preset]
             else:
-                # Software encoding parameters
-                # Convert NVENC preset (p1-p7) to libx264 preset if needed
-                preset = self.config.video.preset
-                if preset.startswith('p') and preset[1:].isdigit():
-                    # NVENC preset detected, use default software preset
-                    preset = "veryfast"
-                cmd += ["-level", self.config.video.sw_level, "-preset", preset, "-crf", self.soft_crf, 
+                cmd += ["-level", self.config.video.sw_level, "-preset", self.config.video.preset, "-crf", self.soft_crf, 
                        "-pix_fmt", self.config.video.pixel_format]
             cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr), 
                    "-movflags", "+faststart", out_path]
