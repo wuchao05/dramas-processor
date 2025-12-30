@@ -120,10 +120,17 @@ class FeishuWatcher:
                 month_int = int(month)
                 day_int = int(day)
                 
-                # 跨年判断：如果目标月份小于当前月份，说明是明年的日期
+                # 跨年判断：先按当前年份解析，如果日期在过去超过180天（约6个月），则认为是明年
                 year = today.year
-                if month_int < today.month:
-                    year = today.year + 1
+                try:
+                    temp_date = datetime(year, month_int, day_int).date()
+                    days_diff = (today - temp_date).days
+                    # 如果日期在过去超过180天，认为是明年的日期
+                    if days_diff > 180:
+                        year = today.year + 1
+                except ValueError:
+                    # 日期无效（如2月30日），保持当前年份
+                    pass
                 
                 target = datetime(year, month_int, day_int).date()
             elif "-" in date_str:

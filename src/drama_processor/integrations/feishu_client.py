@@ -46,11 +46,19 @@ def _convert_date_format(date_str: str) -> str:
         if day < 1 or day > 31:
             raise ValueError(f"日期超出范围 1-31: {day}")
         
-        # 跨年判断：如果目标月份小于当前月份，说明是明年的日期
-        # 例如：当前12月，目标1月 -> 明年1月
+        # 跨年判断：先按当前年份解析，如果日期在过去超过180天（约6个月），则认为是明年
+        # 例如：当前12月30日，目标1.1 -> 2025-01-01是364天前，超过180天 -> 明年1.1
+        # 例如：当前10月1日，目标9.30 -> 2025-09-30是1天前，不超过180天 -> 今年9.30
         year = current_year
-        if month < current_month:
-            year = current_year + 1
+        try:
+            temp_date = datetime(year, month, day).date()
+            days_diff = (now.date() - temp_date).days
+            # 如果日期在过去超过180天，认为是明年的日期
+            if days_diff > 180:
+                year = current_year + 1
+        except ValueError:
+            # 日期无效（如2月30日），保持当前年份
+            pass
         
         # 格式化为标准日期格式
         return f"{year}-{month:02d}-{day:02d}"
