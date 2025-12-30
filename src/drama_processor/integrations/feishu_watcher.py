@@ -111,11 +111,17 @@ class FeishuWatcher:
                 normalized.append(item)
         return normalized or None
     
-    def _priority_value(self, date_str: str) -> tuple:
+    def _priority_value(self, date_str: str, full_date: Optional[str] = None) -> tuple:
         """Compute priority for given date (lower tuple => higher priority)."""
         today = datetime.now().date()
         try:
-            if "." in date_str:
+            # 优先使用 full_date（完整日期格式），避免年份猜测问题
+            if full_date and "-" in full_date:
+                target = datetime.strptime(full_date, "%Y-%m-%d").date()
+            elif "-" in date_str:
+                target = datetime.strptime(date_str, "%Y-%m-%d").date()
+            elif "." in date_str:
+                # 简化格式，需要猜测年份（仅作为后备方案）
                 month, day = date_str.split(".", 1)
                 month_int = int(month)
                 day_int = int(day)
@@ -133,8 +139,6 @@ class FeishuWatcher:
                     pass
                 
                 target = datetime(year, month_int, day_int).date()
-            elif "-" in date_str:
-                target = datetime.strptime(date_str, "%Y-%m-%d").date()
             else:
                 raise ValueError
         except Exception:
@@ -240,8 +244,13 @@ class FeishuWatcher:
                 break
             if date_label in self.active_tasks:
                 continue
-            priority = self._priority_value(date_label)
             initial_info = dict(grouped.get(date_label, {}))
+            # 从该日期组的剧集中获取 full_date（所有剧集的 full_date 应该一致）
+            full_date = None
+            if initial_info:
+                first_drama_info = next(iter(initial_info.values()))
+                full_date = first_drama_info.get("full_date")
+            priority = self._priority_value(date_label, full_date)
             if len(self.active_tasks) < self.max_dates:
                 self._start_date_task(date_label, initial_info, priority)
                 processed_any = True

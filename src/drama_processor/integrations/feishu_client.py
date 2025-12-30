@@ -298,7 +298,13 @@ class FeishuClient:
             date_filter: 日期过滤条件，格式如 "2025-09-05"
         
         Returns:
-            剧名到记录信息的映射字典，每个记录包含 {"record_id": str, "date": str, "upload_time": int}
+            剧名到记录信息的映射字典，每个记录包含：
+            {
+                "record_id": str,
+                "date": str,          # 简化格式，如 "12.30"（用于文件命名）
+                "full_date": str,     # 完整格式，如 "2025-12-30"（用于日期匹配）
+                "upload_time": int
+            }
         """
         try:
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
@@ -308,8 +314,9 @@ class FeishuClient:
                 if "剧名" in record.fields and record.fields["剧名"]:
                     drama_name = record.fields["剧名"][0].text
                     
-                    # 获取日期信息
-                    drama_date = None
+                    # 获取日期信息（同时保存完整日期和简化格式）
+                    drama_date = None  # 简化格式，用于文件命名
+                    full_date = None   # 完整格式，用于日期匹配
                     if "日期" in record.fields and record.fields["日期"]:
                         # 飞书日期字段可能是时间戳格式，需要转换
                         date_value = record.fields["日期"][0].text
@@ -319,18 +326,29 @@ class FeishuClient:
                                 timestamp = int(date_value) / 1000  # 转换为秒
                                 date_obj = datetime.fromtimestamp(timestamp)
                                 drama_date = f"{date_obj.month}.{date_obj.day}"
+                                full_date = f"{date_obj.year}-{date_obj.month:02d}-{date_obj.day:02d}"
                             else:
                                 # 如果是日期字符串格式，尝试解析
                                 if "-" in date_value:
                                     # 格式: 2025-09-06
                                     date_obj = datetime.strptime(date_value, "%Y-%m-%d")
                                     drama_date = f"{date_obj.month}.{date_obj.day}"
+                                    full_date = date_value
                                 else:
-                                    # 可能已经是简化格式
+                                    # 可能已经是简化格式，尝试补全年份
                                     drama_date = date_value
+                                    # 尝试解析并补全年份
+                                    if "." in date_value:
+                                        try:
+                                            month, day = date_value.split(".", 1)
+                                            current_year = datetime.now().year
+                                            full_date = f"{current_year}-{int(month):02d}-{int(day):02d}"
+                                        except:
+                                            full_date = None
                         except (ValueError, TypeError) as e:
                             logger.warning(f"无法解析剧目 '{drama_name}' 的日期 '{date_value}': {e}")
                             drama_date = date_value  # 使用原始值
+                            full_date = None
                     
                     # 获取上架时间信息
                     upload_time = None
@@ -345,8 +363,9 @@ class FeishuClient:
                     
                     drama_info[drama_name] = {
                         "record_id": record.record_id,
-                        "date": drama_date or "未知",
-                        "upload_time": upload_time  # None 表示没有上架时间
+                        "date": drama_date or "未知",           # 简化格式，用于文件命名
+                        "full_date": full_date,                 # 完整格式，用于日期匹配
+                        "upload_time": upload_time              # None 表示没有上架时间
                     }
             return drama_info
         except Exception as e:
