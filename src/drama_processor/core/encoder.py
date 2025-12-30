@@ -100,6 +100,63 @@ class VideoEncoder:
         except Exception:
             return preferred_codec or "libx264"
     
+    def even(self, x: int) -> int:
+        """Ensure even number for video dimensions."""
+        return x if x % 2 == 0 else x - 1
+    
+    def _filter_path(self, path: str) -> str:
+        """转换路径为 FFmpeg filter 友好格式（避免 Windows 反斜杠被转义）。"""
+        if os.name != "nt":
+            return path
+        normalized = path.replace("\\", "/")
+        normalized = normalized.replace(":", "\\:")
+        normalized = normalized.replace("'", "\\'")
+        return normalized
+    
+    def run_ffmpeg(self, cmd: List[str], label: Optional[str] = None) -> subprocess.CompletedProcess:
+        """Run ffmpeg command with configurable logging verbosity."""
+        raise_if_cancelled(self.cancel_event)
+        operation = label or "FFmpeg处理"
+        
+        if self.config.verbose:
+            cmd_str = " ".join(shlex.quote(c) for c in cmd)
+            print(">>", cmd_str)
+        else:
+            print(f"🎬 {operation}...")
+        
+        t0 = time.time()
+        try:
+            r = subprocess.run(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=300,
+                **get_windows_subprocess_kwargs_hide_console(),
+            )
+        except subprocess.TimeoutExpired:
+            print(f"❌ {operation} 超时 (5分钟)")
+            raise RuntimeError(f"Command timed out after 5 minutes: {operation}")
+        
+        dt = time.time() - t0
+        
+        if r.returncode == 0:
+            if self.config.verbose:
+                print(f"⏱️ 命令[{operation}]耗时：{human_duration(dt)}")
+            else:
+                print(f"✅ {operation} 完成 - 耗时: {human_duration(dt)}")
+        else:
+            if self.config.verbose:
+                print(f"❌ {operation} 失败 (返回码: {r.returncode})")
+                if r.stdout:
+                    print(r.stdout)
+            else:
+                print(f"❌ {operation} 失败")
+        
+        return r
+    
     def to_vertical(self, text: str) -> str:
         """Convert text to vertical layout."""
         if "\n" in text:
