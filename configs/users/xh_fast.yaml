@@ -1,0 +1,66 @@
+# 用户配置 - xh（小红，管理员）- 性能优化版
+# 此配置专注于最快的剪辑速度，适度牺牲质量
+
+# 素材生成设置
+count: 20 # 每部剧生成素材数量
+material_code: "xh" # 素材文件名标识
+
+# 标题颜色
+title_colors:
+  - "#FFFFFF"
+
+# 目录设置
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
+
+# 多素材文案配置
+brand_text_mapping:
+  mode: "range"
+  ranges:
+    - range: "01-04"
+      text: "葸辉好剧"
+    - range: "05-08"
+      text: "葸辉爆剧"
+    - range: "09-12"
+      text: "斯娜看剧"
+    - range: "13-16"
+      text: "小红看剧"
+    - range: "17-20"
+      text: "哈哈看剧"
+
+  cycle_texts:
+    - "葸辉好剧"
+    - "葸辉爆剧"
+    - "斯娜看剧"
+    - "小红看剧"
+    - "哈哈看剧"
+  default_text: "热门短剧"
+
+# 飞书功能配置（核心字段）
+enable_feishu_features: true # 飞书功能总开关
+feishu:
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
+  table_id: "tblDOyi2Lzs80sv0"
+
+# 钩子文案配置（关闭以提升性能）
+enable_hook_text: false # 关闭钩子文案
+enable_left_side_text: false # 关闭左侧品牌文案
+enable_right_side_text: false # 关闭右侧文案
+
+# 性能优化：降低帧率
+target_fps: 25 # 25fps 比 60fps 快约 60%，画面流畅度对短剧影响不大
+
+# NVENC 硬件编码优化配置（极速模式）
+video:
+  hw_codec: "h264_nvenc"
+  level: "4.1"
+  bitrate: "5000k"      # 降低码率 (6500k → 5000k)
+  max_rate: "5500k"     # 对应降低 max_rate
+  buffer_size: "6000k"  # 降低 buffer size
+  preset: "p1"          # 最快 preset（p4 → p1，速度提升约 20-30%）
+  profile: "main"       # main profile 比 high 占用更少资源
+
+# 降低滤镜线程数
+filter_threads: 2 # 文字叠加不需要太多线程
+

@@ -74,48 +74,21 @@ feishu:
   table_id: "tblDOyi2Lzs80sv0"
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值
 
-# 钩子文案配置（开头吸引眼球的大字）
-enable_hook_text: false # 启用钩子文案
-hook_texts:
-  - "完结撒花"
-  - "独家首发"
-  - "全网首发"
-  - "追剧必看"
-  - "热播推荐"
-  - "火爆全网"
-  - "全集已更新"
-  - "大结局来了"
-
-hook_font_size:
-  150
-  #   text: "萍通剧坊"
-  # - range: "04-06"
-  #   text: "葸辉爆剧"
-  # - range: "07-09"
-  #   text: "清妍短剧"
-  # - range: "10-13"
-  #   text: "看家本领"
-  # - range: "14-18"
-  #   text: "葸辉好剧"
-  # - range: "19-21"
-  #   text: "小红看剧"
-  # - range: "22-24"
-hook_duration: 3.0
-hook_text_color: "#FFE600"
-hook_border_color: "#000000"
-
-# NVENC 硬件编码优化配置（针对 RTX 2060）
-# ⚠️ 重要：避免内存错误
+# NVENC 硬件编码优化配置（针对 RTX 2060 性能优化）
 video:
   hw_codec: "h264_nvenc"
-  # bitrate: "5000k"      # 降低码率避免显存不足
-  # max_rate: "5500k"
-  # buffer_size: "6000k"  # 降低 buffer size
-  # preset: "p1"          # 最快 preset，减少 GPU 负担
-  # profile: "main"       # main 比 high 占用更少资源
   level: "4.1"
-  bitrate: "6500k"
-  max_rate: "7000k"
-  buffer_size: "9000k"
-  preset: "p4"
-  profile: "high"
+  bitrate: "5000k"      # 降低码率避免显存不足，同时提升速度
+  max_rate: "5500k"
+  buffer_size: "6000k"  # 降低 buffer size
+  preset: "p1"          # 最快 preset，减少 GPU 负担（p4 → p1 可提升 20-30% 速度）
+  profile: "main"       # main 比 high 占用更少资源
+
+# 性能优化配置
+target_fps: 25          # 降低帧率（60fps → 25fps 可节省约 60% 编码时间）
+filter_threads: 2       # 降低滤镜线程数（文字叠加不需要太多线程）
+
+# 关闭非必要滤镜
+enable_hook_text: false        # 关闭钩子文案
+enable_left_side_text: false   # 关闭左侧品牌文案
+enable_right_side_text: false  # 关闭右侧文案
