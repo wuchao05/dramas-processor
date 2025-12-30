@@ -59,6 +59,47 @@ class VideoEncoder:
         self.config = config  # Keep reference to config for dynamic text selection
         self.use_brand_text = config.enable_brand_text
     
+    def _detect_best_hw_codec(self, preferred_codec: str) -> str:
+        """Detect the best available hardware codec for the current environment."""
+        import platform
+        
+        # Determine codec priority based on platform
+        system = platform.system()
+        
+        if system == "Darwin":  # macOS
+            codec_priority = ["h264_videotoolbox"]
+        elif system == "Windows":
+            codec_priority = ["h264_nvenc", "h264_qsv", "h264_amf"]
+        else:  # Linux/WSL
+            codec_priority = ["h264_nvenc", "h264_qsv", "h264_vaapi", "h264_amf"]
+        
+        # If user specified a codec, try it first
+        if preferred_codec and preferred_codec != "auto":
+            codec_priority.insert(0, preferred_codec)
+        
+        # Check which codecs are available
+        try:
+            result = subprocess.run(
+                ["ffmpeg", "-encoders"], 
+                capture_output=True, 
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=10,
+                **get_windows_subprocess_kwargs_hide_console()
+            )
+            
+            if result.returncode == 0:
+                available_encoders = result.stdout
+                for codec in codec_priority:
+                    if codec in available_encoders:
+                        return codec
+            
+            return "libx264"
+                
+        except Exception:
+            return preferred_codec or "libx264"
+    
     def to_vertical(self, text: str) -> str:
         """Convert text to vertical layout."""
         if "\n" in text:
