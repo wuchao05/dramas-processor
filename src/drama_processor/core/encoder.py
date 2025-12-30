@@ -29,6 +29,35 @@ class VideoEncoder:
         self,
         config: ProcessingConfig,
         watermark_path: Optional[str] = None,
+        cancel_event: Optional[Event] = None,
+    ):
+        self.config = config
+        self.cancel_event = cancel_event
+        
+        # Video encoding settings (from config)
+        self.video_codec_hw = self._detect_best_hw_codec(config.video.hw_codec)
+        self.video_codec_sw = config.video.sw_codec
+        self.bitrate = config.video.bitrate
+        self.audio_br = config.audio.bitrate
+        self.audio_sr = config.audio.sample_rate
+        self.soft_crf = config.video.soft_crf
+        
+        # Text overlay settings (from config)
+        self.title_font_size = config.title_font_size
+        self.bottom_font_size = config.bottom_font_size
+        self.side_font_size = config.side_font_size
+        self.vertical_line_spacing = config.vertical_line_spacing
+        self.title_opacity = config.title_opacity
+        self.bottom_opacity = config.bottom_opacity
+        
+        self.title_colors = config.title_colors
+        
+        # Watermark settings
+        self.watermark_path = watermark_path
+        
+        # Brand text settings (from config)
+        self.config = config  # Keep reference to config for dynamic text selection
+        self.use_brand_text = config.enable_brand_text
     
     def to_vertical(self, text: str) -> str:
         """Convert text to vertical layout."""
