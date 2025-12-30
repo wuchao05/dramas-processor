@@ -87,7 +87,7 @@ feishu:
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值
 
 # 钩子文案配置（开头吸引眼球的大字）
-enable_hook_text: false # 启用钩子文案
+enable_hook_text: true # 启用钩子文案
 hook_texts:
   - "完结撒花"
   - "独家首发"
