@@ -311,19 +311,15 @@ class VideoEncoder:
         side_txt_filter = self._filter_path(side_txtf)
 
         # Text overlay filters
+        # Title at bottom (replacing footer position)
         dt_top = (
             f"drawtext=fontfile='{fontfile_filter}':textfile='{title_txt_filter}':fontsize={title_fs}:"
             f"fontcolor={title_color}@{self.title_opacity}:shadowx=1:shadowy=1:box=0:"
-            f"x=(w-text_w)/2:y={margin + 20}"
-        )
-        dt_bottom = (
-            f"drawtext=fontfile='{fontfile_filter}':textfile='{bottom_txt_filter}':fontsize={bottom_fs}:"
-            f"fontcolor=white@{self.bottom_opacity}:box=0:"
             f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
         )
         
-        # Base filters with title and bottom text
-        filters = [base, dt_top, dt_bottom]
+        # Base filters with title only (no bottom text)
+        filters = [base, dt_top]
         
         # Hook text overlay (appears only in first 3 seconds)
         if self.config.enable_hook_text and self.config.hook_texts:

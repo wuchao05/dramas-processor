@@ -33,8 +33,8 @@ exclude_last_episodes:
   # 例如：设置为10表示起始点不会选择最后10集
 
 # Text overlay settings
-title_font_size: 48
-bottom_font_size: 36
+title_font_size: 36
+bottom_font_size: 28
 side_font_size: 28
 vertical_line_spacing: 0 # 竖排文字行距（像素，可为负数）
 footer_text: "剧情纯属虚构 请勿模仿" # (--footer-text)
