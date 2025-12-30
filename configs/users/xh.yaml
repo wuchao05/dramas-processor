@@ -36,18 +36,6 @@ brand_text_mapping:
   mode: "range"
   ranges:
     # - range: "01-03"
-    #   text: "萍通剧坊"
-    # - range: "04-06"
-    #   text: "葸辉爆剧"
-    # - range: "07-09"
-    #   text: "清妍短剧"
-    # - range: "10-13"
-    #   text: "看家本领"
-    # - range: "14-18"
-    #   text: "葸辉好剧"
-    # - range: "19-21"
-    #   text: "小红看剧"
-    # - range: "22-24"
     #   text: "斯娜看剧"
     - range: "01-04"
       text: "葸辉好剧"
@@ -87,7 +75,7 @@ feishu:
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值
 
 # 钩子文案配置（开头吸引眼球的大字）
-enable_hook_text: true # 启用钩子文案
+enable_hook_text: false # 启用钩子文案
 hook_texts:
   - "完结撒花"
   - "独家首发"
@@ -98,7 +86,20 @@ hook_texts:
   - "全集已更新"
   - "大结局来了"
 
-hook_font_size: 150
+hook_font_size:
+  150
+  #   text: "萍通剧坊"
+  # - range: "04-06"
+  #   text: "葸辉爆剧"
+  # - range: "07-09"
+  #   text: "清妍短剧"
+  # - range: "10-13"
+  #   text: "看家本领"
+  # - range: "14-18"
+  #   text: "葸辉好剧"
+  # - range: "19-21"
+  #   text: "小红看剧"
+  # - range: "22-24"
 hook_duration: 3.0
 hook_text_color: "#FFE600"
 hook_border_color: "#000000"
@@ -107,14 +108,14 @@ hook_border_color: "#000000"
 # ⚠️ 重要：避免内存错误
 video:
   hw_codec: "h264_nvenc"
-  # bitrate: "5000k"      # 降低码率避免显存不足
-  # max_rate: "5500k"
-  # buffer_size: "6000k"  # 降低 buffer size
-  # preset: "p1"          # 最快 preset，减少 GPU 负担
-  # profile: "main"       # main 比 high 占用更少资源
-  level: "4.1"
-  bitrate: "6500k"
-  max_rate: "7000k"
-  buffer_size: "9000k"
-  preset: "p4"
-  profile: "high"
+  bitrate: "5000k" # 降低码率避免显存不足
+  max_rate: "5500k"
+  buffer_size: "6000k" # 降低 buffer size
+  preset: "p1" # 最快 preset，减少 GPU 负担
+  profile: "main" # main 比 high 占用更少资源
+  # level: "4.1"
+  # bitrate: "6500k"
+  # max_rate: "7000k"
+  # buffer_size: "9000k"
+  # preset: "p4"
+  # profile: "high"
