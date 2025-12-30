@@ -117,7 +117,15 @@ class FeishuWatcher:
         try:
             if "." in date_str:
                 month, day = date_str.split(".", 1)
-                target = datetime(today.year, int(month), int(day)).date()
+                month_int = int(month)
+                day_int = int(day)
+                
+                # 跨年判断：如果目标月份小于当前月份，说明是明年的日期
+                year = today.year
+                if month_int < today.month:
+                    year = today.year + 1
+                
+                target = datetime(year, month_int, day_int).date()
             elif "-" in date_str:
                 target = datetime.strptime(date_str, "%Y-%m-%d").date()
             else:

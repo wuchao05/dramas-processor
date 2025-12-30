@@ -26,8 +26,10 @@ def _convert_date_format(date_str: str) -> str:
         飞书标准日期格式，如 "2025-09-05"
     """
     try:
-        # 当前年份
-        current_year = datetime.now().year
+        # 当前日期
+        now = datetime.now()
+        current_year = now.year
+        current_month = now.month
         
         # 分割月份和日期
         if '.' in date_str:
@@ -44,8 +46,14 @@ def _convert_date_format(date_str: str) -> str:
         if day < 1 or day > 31:
             raise ValueError(f"日期超出范围 1-31: {day}")
         
+        # 跨年判断：如果目标月份小于当前月份，说明是明年的日期
+        # 例如：当前12月，目标1月 -> 明年1月
+        year = current_year
+        if month < current_month:
+            year = current_year + 1
+        
         # 格式化为标准日期格式
-        return f"{current_year}-{month:02d}-{day:02d}"
+        return f"{year}-{month:02d}-{day:02d}"
         
     except ValueError as e:
         raise ValueError(f"日期格式转换失败: {e}")
