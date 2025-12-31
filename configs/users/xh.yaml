@@ -49,17 +49,17 @@ enable_left_side_text: false # 关闭左侧品牌文案
 enable_right_side_text: false # 关闭右侧文案
 
 # 性能优化：降低帧率
-target_fps: 25 # 25fps 比 60fps 快约 60%，画面流畅度对短剧影响不大
+# target_fps: 25 # 25fps 比 60fps 快约 60%，画面流畅度对短剧影响不大
 
 # NVENC 硬件编码优化配置（极速模式）
-video:
-  hw_codec: "h264_nvenc"
-  level: "4.1"
-  bitrate: "5000k" # 降低码率 (6500k → 5000k)
-  max_rate: "5500k" # 对应降低 max_rate
-  buffer_size: "6000k" # 降低 buffer size
-  preset: "p1" # 最快 preset（p4 → p1，速度提升约 20-30%）
-  profile: "main" # main profile 比 high 占用更少资源
+# video:
+#   hw_codec: "h264_nvenc"
+#   level: "4.1"
+#   bitrate: "5000k" # 降低码率 (6500k → 5000k)
+#   max_rate: "5500k" # 对应降低 max_rate
+#   buffer_size: "6000k" # 降低 buffer size
+#   preset: "p1" # 最快 preset（p4 → p1，速度提升约 20-30%）
+#   profile: "main" # main profile 比 high 占用更少资源
 
 # 降低滤镜线程数
 filter_threads: 2 # 文字叠加不需要太多线程

@@ -8,7 +8,7 @@
 active_user: xh
 
 # Basic processing settings
-target_fps: 30 # 降低帧率以提升性能（60fps → 30fps 可节省约50%编码时间）
+target_fps: 60
 smart_fps: true
 fast_mode: true # 优化：启用快速模式，减少不必要的滤镜处理
 # Windows/GUI onefile 场景下滤镜线程过高会导致 ffmpeg/x264 内存峰值过大，触发 malloc failed
