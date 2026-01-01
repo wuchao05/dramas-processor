@@ -44,7 +44,7 @@ feishu:
   table_id: 'tblDOyi2Lzs80sv0'
 
 # 钩子文案配置（关闭以提升性能）
-enable_hook_text: false # 关闭钩子文案
+enable_hook_text: true # 关闭钩子文案
 enable_left_side_text: false # 关闭左侧品牌文案
 enable_right_side_text: false # 关闭右侧文案
 
