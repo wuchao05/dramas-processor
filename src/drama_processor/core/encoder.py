@@ -484,8 +484,10 @@ class VideoEncoder:
             else:
                 cmd += ["-level", self.config.video.sw_level, "-preset", self.config.video.preset, "-crf", self.soft_crf, 
                        "-pix_fmt", self.config.video.pixel_format]
-            cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr), 
-                   "-movflags", "+faststart", out_path]
+            cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr)]
+            if self.config.video.faststart:
+                cmd += ["-movflags", "+faststart"]
+            cmd.append(out_path)
             return cmd
 
         def _run_with_oom_retry(cmd_builder, label_text: str):
@@ -543,8 +545,10 @@ class VideoEncoder:
             else:
                 cmd += ["-level", self.config.video.sw_level, "-preset", self.config.video.preset, "-crf", self.soft_crf,
                        "-pix_fmt", self.config.video.pixel_format]
-            cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr),
-                   "-movflags", "+faststart", out_path]
+            cmd += ["-c:a", "aac", "-b:a", self.audio_br, "-ar", str(self.audio_sr)]
+            if self.config.video.faststart:
+                cmd += ["-movflags", "+faststart"]
+            cmd.append(out_path)
             return cmd
         
         self.run_ffmpeg(build_cmd(self.video_codec_hw, True) if use_hw else build_cmd(self.video_codec_sw, False), 
@@ -590,12 +594,15 @@ class VideoEncoder:
 
     def concat_videos(self, list_file: str, out_path: str, filter_threads: int):
         """Concatenate videos using ffmpeg concat demuxer."""
-        self.run_ffmpeg([
+        cmd = [
             "ffmpeg", "-y",
             "-f", "concat", "-safe", "0", "-i", list_file,
-            "-c", "copy", "-movflags", "+faststart",
-            out_path
-        ], label=f"concat->{os.path.basename(out_path)}")
+            "-c", "copy"
+        ]
+        if self.config.video.faststart:
+            cmd.extend(["-movflags", "+faststart"])
+        cmd.append(out_path)
+        self.run_ffmpeg(cmd, label=f"concat->{os.path.basename(out_path)}")
     
     def write_ffconcat_list(self, paths: List[str], list_path: str):
         """Write ffmpeg concat file list."""
@@ -872,16 +879,22 @@ class VideoEncoder:
                 if tail_file:
                     print("⚠️ 指定的尾部文件不存在，跳过：", tail_file)
 
-            # Simple final copy with faststart (skip cover for now to fix duration issue)
+            # Simple final copy with optional faststart
             t0 = time.time()
             
-            self.run_ffmpeg([
+            cmd = [
                 "ffmpeg", "-y",
                 "-i", final_src,
-                "-c", "copy",
-                "-movflags", "+faststart",
-                out_path
-            ], label="最终输出")
+                "-c", "copy"
+            ]
+            
+            # Add faststart only if enabled in config (not needed for platform uploads like Douyin)
+            if self.config.video.faststart:
+                cmd.extend(["-movflags", "+faststart"])
+            
+            cmd.append(out_path)
+            
+            self.run_ffmpeg(cmd, label="最终输出")
             print(f"⏱️ 最终封装: {human_duration(time.time()-t0)}")
 
             dt_all = time.time() - t0_all

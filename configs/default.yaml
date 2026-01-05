@@ -112,6 +112,7 @@ video:
   sw_level: "4.1" # Software encoding level
   tag: "avc1" # Video tag for hardware encoding
   pixel_format: "yuv420p" # Pixel format
+  faststart: false # 启用faststart优化（用于网络流式播放，上传抖音等平台不需要，关闭可大幅提升速度）
 
 # Audio encoding settings
 audio:

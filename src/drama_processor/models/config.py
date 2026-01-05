@@ -91,6 +91,7 @@ class VideoConfig(BaseModel):
     sw_level: str = Field(default="4.1", description="Software encoding level")
     tag: str = Field(default="avc1", description="Video tag")
     pixel_format: str = Field(default="yuv420p", description="Pixel format")
+    faststart: bool = Field(default=False, description="Enable faststart for web streaming (slower output, not needed for platform uploads)")
 
 
 class AudioConfig(BaseModel):
