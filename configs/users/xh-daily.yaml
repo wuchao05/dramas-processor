@@ -33,6 +33,11 @@ brand_text_mapping:
     - "斯娜看剧"
   default_text: "天天看好剧"
 
+  # 钩子文案配置（关闭以提升性能）
+enable_hook_text: true # 关闭钩子文案
+enable_left_side_text: false # 关闭左侧品牌文案
+enable_right_side_text: false # 关闭右侧文案
+
 # 飞书功能配置（核心字段）
 enable_feishu_features: true # 飞书功能总开关
 feishu:
