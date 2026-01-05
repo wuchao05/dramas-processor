@@ -2,43 +2,42 @@
 # 此文件包含用户专属配置，会覆盖 default.yaml 中的对应字段
 
 # 素材生成设置
-count: 18 # 每部剧生成素材数量
-material_code: 'xh' # 素材文件名标识
+count: 40 # 每部剧生成素材数量
+material_code: "xh" # 素材文件名标识
 
 # 标题颜色
 title_colors:
-  - '#32CD32' # Lime Green
-  - '#00FA9A' # Medium Spring Green
-  - '#7CFC00' # Lawn Green
-  - '#98FB98' # Pale Green
-  - '#3CB371' # Medium Sea Green
-  - '#00FF7F' # Spring Green
+  - "#32CD32" # Lime Green
+  - "#00FA9A" # Medium Spring Green
+  - "#7CFC00" # Lawn Green
+  - "#98FB98" # Pale Green
+  - "#3CB371" # Medium Sea Green
+  - "#00FF7F" # Spring Green
 
 # 目录设置
-default_source_dir: '/mnt/d/短剧剪辑/源素材视频' # WSL 路径
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
 
 # 多素材文案配置
 brand_text_mapping:
-  mode: ''
+  mode: ""
   ranges:
-    - range: '01-06'
-      text: '葸辉好剧'
-    - range: '07-12'
-      text: '小红看剧'
-    - range: '13-18'
-      text: '斯娜看剧'
+    - range: "01-06"
+      text: "葸辉好剧"
+    - range: "07-12"
+      text: "小红看剧"
+    - range: "13-18"
+      text: "斯娜看剧"
   cycle_texts:
-    - '葸辉好剧'
-    - '小红看剧'
-    - '斯娜看剧'
-  default_text: '天天看好剧'
+    - "葸辉好剧"
+    - "小红看剧"
+    - "斯娜看剧"
+  default_text: "天天看好剧"
 
 # 飞书功能配置（核心字段）
-enable_feishu_features: true  # 飞书功能总开关
+enable_feishu_features: true # 飞书功能总开关
 feishu:
-  app_id: 'cli_a870f7611b7b1013'
-  app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
-  app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
-  table_id: 'tblJcLhLpEkmFkga'
-
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
+  table_id: "tblJcLhLpEkmFkga"
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值
