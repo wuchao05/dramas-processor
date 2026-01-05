@@ -328,15 +328,15 @@ class VideoEncoder:
             hook_text = random.choice(self.config.hook_texts)
             hook_fs = self.config.hook_font_size
             hook_color = self.config.hook_text_color
-            hook_border = self.config.hook_border_color
             hook_duration = self.config.hook_duration
+            hook_spacing = self.config.hook_letter_spacing
             
-            # Center position with shadow/border effect
-            # Using borderw for outline effect
+            # Center position with bold text (no border for better performance)
             dt_hook = (
                 f"drawtext=fontfile='{fontfile_filter}':text='{hook_text}':"
                 f"fontsize={hook_fs}:fontcolor={hook_color}:"
-                f"borderw=3:bordercolor={hook_border}:"
+                f"letter_spacing={hook_spacing}:"  # 字符间距
+                f"bold=1:"  # 加粗字体
                 f"x=(w-text_w)/2:y=(h-text_h)/2:"
                 f"enable='lt(t,{hook_duration})'"  # Only show for first N seconds
             )
