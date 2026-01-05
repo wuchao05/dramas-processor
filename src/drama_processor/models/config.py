@@ -174,8 +174,7 @@ class ProcessingConfig(BaseModel):
     )
     hook_font_size: int = Field(default=110, description="Hook text font size (100-120px recommended)")
     hook_duration: float = Field(default=3.0, description="Hook text display duration in seconds")
-    hook_text_color: str = Field(default="#FFE600", description="Hook text color (bold, no border for performance)")
-    hook_letter_spacing: int = Field(default=10, description="Hook text letter spacing in pixels (5-15 recommended)")
+    hook_text_color: str = Field(default="#FFE600", description="Hook text color (bold, no border for performance, auto-spaced)")
     
     # Processing settings
     random_start: bool = Field(default=True, description="Use random start points")

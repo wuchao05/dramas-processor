@@ -325,17 +325,17 @@ class VideoEncoder:
         
         # Hook text overlay (appears only in first 3 seconds)
         if self.config.enable_hook_text and self.config.hook_texts:
-            hook_text = random.choice(self.config.hook_texts)
+            hook_text_raw = random.choice(self.config.hook_texts)
+            # 在字符间插入空格实现字符间距效果（兼容所有 FFmpeg 版本）
+            hook_text = ' '.join(list(hook_text_raw))
             hook_fs = self.config.hook_font_size
             hook_color = self.config.hook_text_color
             hook_duration = self.config.hook_duration
-            hook_spacing = self.config.hook_letter_spacing
             
             # Center position with bold text (no border for better performance)
             dt_hook = (
                 f"drawtext=fontfile='{fontfile_filter}':text='{hook_text}':"
                 f"fontsize={hook_fs}:fontcolor={hook_color}:"
-                f"letter_spacing={hook_spacing}:"  # 字符间距
                 f"bold=1:"  # 加粗字体
                 f"x=(w-text_w)/2:y=(h-text_h)/2:"
                 f"enable='lt(t,{hook_duration})'"  # Only show for first N seconds

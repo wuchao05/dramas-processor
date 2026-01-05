@@ -55,8 +55,7 @@ hook_texts:
   - "火爆全网"
 hook_font_size: 120 # 钩子文案字体大小 (100-120px)
 hook_duration: 3.0 # 钩子文案显示时长（秒）
-hook_text_color: "#FFE600" # 钩子文案颜色（亮黄色，字体加粗，无描边提升渲染性能）
-hook_letter_spacing: 10 # 钩子文案字符间距（像素，推荐 5-15）
+hook_text_color: "#FFE600" # 钩子文案颜色（亮黄色，字体加粗，无描边提升渲染性能，字符间自动加空格增大间距）
 
 # Processing behavior
 random_start: true # (--random-start / --no-random-start)
