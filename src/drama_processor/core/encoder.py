@@ -332,11 +332,10 @@ class VideoEncoder:
             hook_color = self.config.hook_text_color
             hook_duration = self.config.hook_duration
             
-            # Center position with bold text (no border for better performance)
+            # Center position (no border/bold for better performance and compatibility)
             dt_hook = (
                 f"drawtext=fontfile='{fontfile_filter}':text='{hook_text}':"
                 f"fontsize={hook_fs}:fontcolor={hook_color}:"
-                f"bold=1:"  # 加粗字体
                 f"x=(w-text_w)/2:y=(h-text_h)/2:"
                 f"enable='lt(t,{hook_duration})'"  # Only show for first N seconds
             )
