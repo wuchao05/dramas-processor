@@ -154,6 +154,7 @@ class ProcessingConfig(BaseModel):
     enable_right_side_text: bool = Field(default=True, description="Enable right side text overlay")
     title_opacity: float = Field(default=0.9, ge=0.0, le=1.0, description="Title text opacity (0.0-1.0)")
     bottom_opacity: float = Field(default=0.85, ge=0.0, le=1.0, description="Bottom text opacity (0.0-1.0)")
+    title_position: str = Field(default="bottom", description="Title position: 'top' or 'bottom'")
     title_colors: List[str] = Field(
         default=[
             "#FFA500", "#FFB347", "#FF8C00", 

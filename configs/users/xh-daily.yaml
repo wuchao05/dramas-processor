@@ -5,7 +5,8 @@
 count: 40 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
-# 标题颜色
+# 标题配置
+title_position: "top"  # 标题位置：top（顶部）或 bottom（底部）
 title_colors:
   - "#32CD32" # Lime Green
   - "#00FA9A" # Medium Spring Green
@@ -20,7 +21,7 @@ temp_dir: "/home/drama_temp" # 临时目录（使用 WSL 原生文件系统，�
 tail_cache_dir: "/home/tails_cache" # 尾部缓存目录（使用 WSL 原生文件系统）
 
 # 品牌文案配置
-brand_text: "小红看剧"  # 固定左侧品牌文案为"小红看剧"
+brand_text: "小红看剧" # 固定左侧品牌文案为"小红看剧"
 
 # 多素材文案配置（注释掉，使用固定的 brand_text）
 # brand_text_mapping:
@@ -39,9 +40,9 @@ brand_text: "小红看剧"  # 固定左侧品牌文案为"小红看剧"
 #   default_text: "天天看好剧"
 
 # 钩子文案配置
-enable_hook_text: true # 启用钩子文案
+enable_hook_text: false # 启用钩子文案
 enable_left_side_text: true # 启用左侧品牌文案（显示"小红看剧"）
-enable_right_side_text: false # 关闭右侧文案
+enable_right_side_text: true # 关闭右侧文案
 
 # 飞书功能配置（核心字段）
 enable_feishu_features: true # 飞书功能总开关

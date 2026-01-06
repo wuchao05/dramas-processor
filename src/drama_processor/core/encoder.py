@@ -313,11 +313,17 @@ class VideoEncoder:
         side_txt_filter = self._filter_path(side_txtf)
 
         # Text overlay filters
-        # Title at bottom (replacing footer position)
+        # Title position (top or bottom based on config)
+        title_position = getattr(self.config, 'title_position', 'bottom')
+        if title_position == 'top':
+            title_y_pos = f"{margin + 20}"  # Top position
+        else:
+            title_y_pos = f"h-text_h-{margin + 120}"  # Bottom position (default)
+        
         dt_top = (
             f"drawtext=fontfile='{fontfile_filter}':textfile='{title_txt_filter}':fontsize={title_fs}:"
             f"fontcolor={title_color}@{self.title_opacity}:shadowx=1:shadowy=1:box=0:"
-            f"x=(w-text_w)/2:y=h-text_h-{margin + 120}"
+            f"x=(w-text_w)/2:y={title_y_pos}"
         )
         
         # Base filters with title only (no bottom text)

@@ -5,7 +5,8 @@
 count: 35 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
-# 标题颜色
+# 标题配置
+title_position: "top"  # 标题位置：top（顶部）或 bottom（底部）
 title_colors:
   - "#FFFFFF"
 
@@ -49,9 +50,9 @@ feishu:
 brand_text: "小红看剧" # 固定左侧品牌文案为"小红看剧"
 
 # 钩子文案配置（关闭以提升性能）
-enable_hook_text: true # 启用钩子文案
+enable_hook_text: false # 启用钩子文案
 enable_left_side_text: true # 启用左侧品牌文案（显示"小红看剧"）
-enable_right_side_text: false # 关闭右侧文案
+enable_right_side_text: true # 关闭右侧文案
 
 # 性能优化：降低帧率
 # target_fps: 25 # 25fps 比 60fps 快约 60%，画面流畅度对短剧影响不大
