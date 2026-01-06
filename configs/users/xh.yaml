@@ -6,7 +6,7 @@ count: 35 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
 # 标题配置
-title_position: "top"  # 标题位置：top（顶部）或 bottom（底部）
+title_position: "bottom" # 标题位置：top（顶部）或 bottom（底部）
 title_colors:
   - "#FFFFFF"
 

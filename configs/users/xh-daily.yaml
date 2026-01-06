@@ -6,7 +6,8 @@ count: 40 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
 # 标题配置
-title_position: "top"  # 标题位置：top（顶部）或 bottom（底部）
+title_position: "top" # 标题位置：top（顶部）或 bottom（底部）
+title_font_size: 36 # 标题字体大小
 title_colors:
   - "#32CD32" # Lime Green
   - "#00FA9A" # Medium Spring Green
