@@ -47,7 +47,63 @@ vertical_line_spacing: 8 # 竖排文字行距（正值增大间距，负值减�
 
 title_opacity: 0.9 # 标题文案透明度 (0.0-1.0)
 bottom_opacity: 0.85 # 底部文案透明度 (0.0-1.0) (已废弃，但保留字段)
-# title_colors 已移至用户配置文件
+# 标题颜色（丰富色系，适合短视频展示）
+title_colors:
+  # 蓝绿色系
+  - "#00CED1" # Dark Turquoise
+  - "#20B2AA" # Light Sea Green
+  - "#48D1CC" # Medium Turquoise
+  - "#40E0D0" # Turquoise
+  - "#5F9EA0" # Cadet Blue
+  - "#00BFFF" # Deep Sky Blue
+  - "#1E90FF" # Dodger Blue
+  - "#4169E1" # Royal Blue
+
+  # 绿色系
+  - "#32CD32" # Lime Green
+  - "#00FA9A" # Medium Spring Green
+  - "#7CFC00" # Lawn Green
+  - "#98FB98" # Pale Green
+  - "#3CB371" # Medium Sea Green
+  - "#00FF7F" # Spring Green
+  - "#90EE90" # Light Green
+  - "#00FF00" # Lime
+
+  # 橙色/金色系
+  - "#FFA500" # Orange
+  - "#FFB347" # Pastel Orange
+  - "#FF8C00" # Dark Orange
+  - "#FFD700" # Gold
+  - "#FFA07A" # Light Salmon
+  - "#FF7F50" # Coral
+  - "#FFAE42" # Yellow Orange
+
+  # 粉色/品红系
+  - "#FF69B4" # Hot Pink
+  - "#FFB6C1" # Light Pink
+  - "#FF1493" # Deep Pink
+  - "#FF00FF" # Magenta
+  - "#DA70D6" # Orchid
+  - "#EE82EE" # Violet
+
+  # 紫色系
+  - "#BA55D3" # Medium Orchid
+  - "#9370DB" # Medium Purple
+  - "#8A2BE2" # Blue Violet
+  - "#9932CC" # Dark Orchid
+  - "#9400D3" # Dark Violet
+
+  # 黄色系
+  - "#FFFF00" # Yellow
+  - "#FFE600" # Bright Yellow
+  - "#FFD580" # Light Orange
+  - "#F0E68C" # Khaki
+
+  # 红色系
+  - "#FF6347" # Tomato
+  - "#FF4500" # Orange Red
+  - "#DC143C" # Crimson
+  - "#FF0000" # Red
 
 # Hook text settings (opening hook text overlay)
 enable_hook_text: false # 启用开头钩子文案（默认关闭以保证性能，用户配置中可开启）
