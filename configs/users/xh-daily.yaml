@@ -47,9 +47,4 @@ feishu:
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   table_id: "tblJcLhLpEkmFkga"
-
-# 飞书轮询配置（关闭后台自动轮询，避免干扰剪辑日志）
-feishu_watcher:
-  enabled: false  # 关闭后台轮询，需要时手动执行 drama-processor feishu watch
-
 # 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值

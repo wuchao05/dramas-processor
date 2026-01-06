@@ -45,10 +45,6 @@ feishu:
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   table_id: "tblDOyi2Lzs80sv0"
 
-# 飞书轮询配置（关闭后台自动轮询，避免干扰剪辑日志）
-feishu_watcher:
-  enabled: false  # 关闭后台轮询，需要时手动执行 drama-processor feishu watch
-
 # 钩子文案配置（关闭以提升性能）
 enable_hook_text: true # 关闭钩子文案
 enable_left_side_text: false # 关闭左侧品牌文案
