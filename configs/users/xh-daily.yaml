@@ -16,6 +16,8 @@ title_colors:
 
 # 目录设置
 default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
+temp_dir: "/home/drama_temp" # 临时目录（使用 WSL 原生文件系统，快且空间大）
+tail_cache_dir: "/home/tails_cache" # 尾部缓存目录（使用 WSL 原生文件系统）
 
 # 多素材文案配置
 brand_text_mapping:
