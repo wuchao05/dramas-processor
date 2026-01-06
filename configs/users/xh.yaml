@@ -3,47 +3,51 @@
 
 # 素材生成设置
 count: 35 # 每部剧生成素材数量
-material_code: 'xh' # 素材文件名标识
+material_code: "xh" # 素材文件名标识
 
 # 标题颜色
 title_colors:
-  - '#FFFFFF'
+  - "#FFFFFF"
 
 # 目录设置
-default_source_dir: '/mnt/d/短剧剪辑/源素材视频' # WSL 路径
-temp_dir: '/home/drama_temp' # 临时目录（使用 WSL 原生文件系统，快且空间大）
-tail_cache_dir: '/home/tails_cache' # 尾部缓存目录（使用 WSL 原生文件系统）
+default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
+temp_dir: "/home/drama_temp" # 临时目录（使用 WSL 原生文件系统，快且空间大）
+tail_cache_dir: "/home/tails_cache" # 尾部缓存目录（使用 WSL 原生文件系统）
 
 # 多素材文案配置
 brand_text_mapping:
-  mode: 'range'
+  mode: "range"
   ranges:
-    - range: '01-04'
-      text: '葸辉好剧'
-    - range: '05-08'
-      text: '葸辉爆剧'
-    - range: '09-12'
-      text: '斯娜看剧'
-    - range: '13-16'
-      text: '小红看剧'
-    - range: '17-20'
-      text: '哈哈看剧'
+    - range: "01-04"
+      text: "葸辉好剧"
+    - range: "05-08"
+      text: "葸辉爆剧"
+    - range: "09-12"
+      text: "斯娜看剧"
+    - range: "13-16"
+      text: "小红看剧"
+    - range: "17-20"
+      text: "哈哈看剧"
 
   cycle_texts:
-    - '葸辉好剧'
-    - '葸辉爆剧'
-    - '斯娜看剧'
-    - '小红看剧'
-    - '哈哈看剧'
-  default_text: '热门短剧'
+    - "葸辉好剧"
+    - "葸辉爆剧"
+    - "斯娜看剧"
+    - "小红看剧"
+    - "哈哈看剧"
+  default_text: "热门短剧"
 
 # 飞书功能配置（核心字段）
 enable_feishu_features: true # 飞书功能总开关
 feishu:
-  app_id: 'cli_a870f7611b7b1013'
-  app_secret: 'NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z'
-  app_token: 'WdWvbGUXXaokk8sAS94c00IZnsf'
-  table_id: 'tblDOyi2Lzs80sv0'
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
+  table_id: "tblDOyi2Lzs80sv0"
+
+# 飞书轮询配置（关闭后台自动轮询，避免干扰剪辑日志）
+feishu_watcher:
+  enabled: false  # 关闭后台轮询，需要时手动执行 drama-processor feishu watch
 
 # 钩子文案配置（关闭以提升性能）
 enable_hook_text: true # 关闭钩子文案
