@@ -19,25 +19,28 @@ default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
 temp_dir: "/home/drama_temp" # 临时目录（使用 WSL 原生文件系统，快且空间大）
 tail_cache_dir: "/home/tails_cache" # 尾部缓存目录（使用 WSL 原生文件系统）
 
-# 多素材文案配置
-brand_text_mapping:
-  mode: ""
-  ranges:
-    - range: "01-06"
-      text: "葸辉好剧"
-    - range: "07-12"
-      text: "小红看剧"
-    - range: "13-18"
-      text: "斯娜看剧"
-  cycle_texts:
-    - "葸辉好剧"
-    - "小红看剧"
-    - "斯娜看剧"
-  default_text: "天天看好剧"
+# 品牌文案配置
+brand_text: "小红看剧"  # 固定左侧品牌文案为"小红看剧"
 
-  # 钩子文案配置（关闭以提升性能）
-enable_hook_text: true # 关闭钩子文案
-enable_left_side_text: false # 关闭左侧品牌文案
+# 多素材文案配置（注释掉，使用固定的 brand_text）
+# brand_text_mapping:
+#   mode: ""
+#   ranges:
+#     - range: "01-06"
+#       text: "葸辉好剧"
+#     - range: "07-12"
+#       text: "小红看剧"
+#     - range: "13-18"
+#       text: "斯娜看剧"
+#   cycle_texts:
+#     - "葸辉好剧"
+#     - "小红看剧"
+#     - "斯娜看剧"
+#   default_text: "天天看好剧"
+
+# 钩子文案配置
+enable_hook_text: true # 启用钩子文案
+enable_left_side_text: true # 启用左侧品牌文案（显示"小红看剧"）
 enable_right_side_text: false # 关闭右侧文案
 
 # 飞书功能配置（核心字段）
