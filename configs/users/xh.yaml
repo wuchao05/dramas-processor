@@ -7,6 +7,11 @@ material_code: "xh" # 素材文件名标识
 
 # 标题配置
 title_position: "bottom" # 标题位置：top（顶部）或 bottom（底部）
+
+# 侧边文案配置
+side_font_size: 24 # 侧边文案字体大小（默认 28）
+vertical_line_spacing: 15 # 竖排文字行距（正值增大间距，负值减小间距）
+
 title_colors:
   - "#FFFFFF"
 
