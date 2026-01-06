@@ -217,6 +217,10 @@ class FeishuWatcher:
     
     def _poll_once(self) -> bool:
         """Fetch current pending records and trigger processing."""
+        # 如果还有活跃任务在运行，跳过本次查询，避免在剪辑过程中打印查询日志
+        if self.active_tasks:
+            return True  # 返回 True 表示有活动，避免触发 idle_exit
+        
         try:
             drama_info = self.client.get_pending_dramas_with_dates(status_filter=self.status_filter)
         except Exception as exc:
