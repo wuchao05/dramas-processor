@@ -131,11 +131,11 @@ reference_resolution: null # Will be auto-detected
 # Directory settings (部分已移至用户配置)
 # default_source_dir 已移至用户配置文件
 backup_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：E盘备份源素材视频目录
-temp_dir: "/tmp/drama_processor" # 临时目录（默认 /tmp 速度快但空间小，建议在用户配置中改为 WSL 原生路径如 /home/drama_temp）
+temp_dir: "/home/drama_processor" # 临时目录（默认 /tmp 速度快但空间小，建议在用户配置中改为 WSL 原生路径如 /home/drama_temp）
 output_dir:
   "../导出素材" # 输出目录 (--out-dir)
   # 如果设置了date_str，实际会使用其上一层的"{date_str}导出"目录
-tail_cache_dir: "/tmp/tails_cache" # 尾部视频缓存目录（建议在用户配置中改为 WSL 原生路径如 /home/tails_cache）
+tail_cache_dir: "/home/tails_cache" # 尾部视频缓存目录（建议在用户配置中改为 WSL 原生路径如 /home/tails_cache）
 tail_file: "assets/tail.mp4" # 默认尾部视频文件
 refresh_tail_cache: false # Force refresh tail cache (--refresh-tail-cache)
 
