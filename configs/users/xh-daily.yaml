@@ -22,24 +22,49 @@ default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
 temp_dir: "/home/drama_temp" # 临时目录（使用 WSL 原生文件系统，快且空间大）
 tail_cache_dir: "/home/tails_cache" # 尾部缓存目录（使用 WSL 原生文件系统）
 
-# 品牌文案配置
-brand_text: "小红看剧" # 固定左侧品牌文案为"小红看剧"
+# 品牌文案配置（注释掉，使用下面的 brand_text_mapping）
+# brand_text: "小红看剧" # 固定左侧品牌文案为"小红看剧"
 
-# 多素材文案配置（注释掉，使用固定的 brand_text）
-# brand_text_mapping:
-#   mode: ""
-#   ranges:
-#     - range: "01-06"
-#       text: "葸辉好剧"
-#     - range: "07-12"
-#       text: "小红看剧"
-#     - range: "13-18"
-#       text: "斯娜看剧"
-#   cycle_texts:
-#     - "葸辉好剧"
-#     - "小红看剧"
-#     - "斯娜看剧"
-#   default_text: "天天看好剧"
+# 多素材文案配置（启用动态映射）
+brand_text_mapping:
+  mode: "range"
+  ranges:
+    - range: "01-06"
+      text: "斯娜看剧"
+    - range: "07-12"
+      text: "小红看剧"
+    - range: "13-17"
+      text: "清妍短剧"
+    - range: "18-21"
+      text: "葸辉爆剧"
+    - range: "22-25"
+      text: "哈哈看剧"
+    - range: "26-28"
+      text: "萍通剧坊"
+    - range: "29-30"
+      text: "葸辉好剧"
+    - range: "31-32"
+      text: "看家本领"
+    - range: "33-34"
+      text: "奈煊剧场"
+    - range: "35-37"
+      text: "婉纨好剧"
+    - range: "38-40"
+      text: "葸辉剧场"
+
+  cycle_texts:
+    - "斯娜看剧"
+    - "小红看剧"
+    - "清妍短剧"
+    - "葸辉爆剧"
+    - "哈哈看剧"
+    - "萍通剧坊"
+    - "葸辉好剧"
+    - "看家本领"
+    - "奈煊剧场"
+    - "婉纨好剧"
+    - "葸辉剧场"
+  default_text: "天天看好剧"
 
 # 钩子文案配置
 enable_hook_text: false # 启用钩子文案
