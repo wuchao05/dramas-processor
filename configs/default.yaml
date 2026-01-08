@@ -36,14 +36,14 @@ exclude_last_episodes:
 title_font_size: 36
 bottom_font_size: 28
 side_font_size: 28
-vertical_line_spacing: -10 # 竖排文字行距（像素，可为负数。负值让文字更紧凑）
+# vertical_line_spacing: -5 # 竖排文字行距（像素，可为负数。负值让文字更紧凑）
 footer_text: "剧情纯属虚构 请勿模仿" # (--footer-text) (已废弃，但保留字段)
 side_text: "剧情纯属虚构 请勿模仿" # 右侧文案 (--side-text)
 enable_left_side_text: false # 启用左侧文案滤镜（控制品牌文案brand_text显示）
 enable_right_side_text: false # 启用右侧文案滤镜（控制side_text显示）
 # 侧边文案配置
 side_font_size: 24 # 侧边文案字体大小（默认 28）
-vertical_line_spacing: 8 # 竖排文字行距（正值增大间距，负值减小间距）
+vertical_line_spacing: 5 # 竖排文字行距（正值增大间距，负值减小间距）
 
 title_opacity: 0.9 # 标题文案透明度 (0.0-1.0)
 bottom_opacity: 0.85 # 底部文案透明度 (0.0-1.0) (已废弃，但保留字段)
