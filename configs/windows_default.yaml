@@ -3,7 +3,7 @@
 # Windows Native Configuration
 
 # 当前激活的用户配置
-active_user: xh
+active_user: xh-daily
 
 # Basic processing settings
 target_fps: 60
@@ -13,8 +13,8 @@ filter_threads: 2
 verbose: false
 
 # Duration settings (in seconds)
-min_duration: 480.0  # 8 minutes
-max_duration: 900.0  # 15 minutes
+min_duration: 480.0 # 8 minutes
+max_duration: 900.0 # 15 minutes
 
 # Material generation settings
 date_str: null
@@ -105,16 +105,16 @@ reference_resolution: null
 
 # Directory settings (Windows 路径格式)
 # 修改为你的实际路径
-default_source_dir: "E:\\短剧剪辑\\源素材视频"
+default_source_dir: "D:\\短剧剪辑\\源素材视频"
 backup_source_dir: "E:\\短剧剪辑\\源素材视频"
-temp_dir: null  # 使用系统临时目录
+temp_dir: null # 使用系统临时目录
 output_dir: "..\\导出素材"
-tail_cache_dir: null  # 自动使用系统临时目录
+tail_cache_dir: null # 自动使用系统临时目录
 tail_file: "assets\\tail.mp4"
 refresh_tail_cache: false
 
 # Font settings (Windows 字体，null 则自动检测)
-font_file: null  # 自动检测微软雅黑等 Windows 字体
+font_file: null # 自动检测微软雅黑等 Windows 字体
 
 # Watermark settings
 watermark_path: "assets\\watermark-xiaohong.png"
