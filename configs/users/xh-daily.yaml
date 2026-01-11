@@ -57,6 +57,19 @@ feishu:
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   table_id: "tblJcLhLpEkmFkga"
 
+# 飞书轮询配置
+feishu_watcher:
+  enabled: true
+  poll_interval: 1800
+  max_dates_per_cycle: 1
+  settle_seconds: 120
+  settle_rounds: 1
+  idle_exit_minutes: null
+  state_dir: "history/feishu_watcher"
+  date_whitelist: []
+  date_blacklist: []
+  status_filter: null
+
 # 文案显示配置
 enable_hook_text: false
 enable_left_side_text: true
