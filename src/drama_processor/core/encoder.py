@@ -385,7 +385,7 @@ class VideoEncoder:
 
         write_text_file(title_txt, f"《{drama_name}》")
         write_text_file(bottom_txt, footer_text)
-        write_text_file(side_txtf, self.to_vertical(side_text))
+        write_text_file(side_txtf, side_text)  # 横排文本（不再竖排）
 
         title_color = random.choice(self.title_colors)
         fontfile_options = self._get_fontfile_options(fontfile)  # 自动处理 TTC 字体索引
@@ -428,22 +428,11 @@ class VideoEncoder:
             )
             filters.append(dt_hook)
 
-        # Right side text - simplified with textfile for better performance
-        if self.config.enable_right_side_text:
-            line_spacing_opt = ""
-            if self.vertical_line_spacing:
-                line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
-            try:
-                dt_side = (
-                    f"drawtext={fontfile_options}:textfile='{side_txt_filter}':fontsize={side_fs}:"
-                    f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
-                    f"x=w-text_w-{margin}:y={margin + 200}"
-                )
-                filters.append(dt_side)
-            except Exception:
-                pass  # Silently skip if file not found
-
-        # Add brand text overlay (left side, same tight spacing)
+        # Bottom text overlays - horizontal layout
+        # Brand text (top line) and side text (bottom line) at bottom of video
+        bottom_base_y = int(ref_h * 0.88)  # 底部起始位置（距离底部12%）
+        
+        # Brand text overlay (bottom area, top line) - horizontal
         # Controlled by enable_left_side_text
         if self.use_brand_text and self.config.enable_left_side_text:
             # Get brand text for current material
@@ -452,21 +441,35 @@ class VideoEncoder:
             else:
                 brand_text = self.config.brand_text
 
+            # 横排显示（不再竖排）
             brand_txt = os.path.join(workdir, "brand.txt")
-            write_text_file(brand_txt, self.to_vertical(brand_text))
+            write_text_file(brand_txt, brand_text)
 
-            # Simplified with textfile for better performance
             brand_txt_filter = self._filter_path(brand_txt)
-            line_spacing_opt = ""
-            if self.vertical_line_spacing:
-                line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
             try:
                 dt_brand = (
                     f"drawtext={fontfile_options}:textfile='{brand_txt_filter}':fontsize={side_fs}:"
-                    f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
-                    f"x={margin}:y={margin + 200}"
+                    f"fontcolor=white@0.85:box=0:"
+                    f"x=(w-text_w)/2:y={bottom_base_y}"  # 底部第一行，居中
                 )
                 filters.append(dt_brand)
+            except Exception:
+                pass  # Silently skip if file not found
+
+        # Side text overlay (bottom area, bottom line) - horizontal
+        # Simplified with textfile for better performance
+        if self.config.enable_right_side_text:
+            try:
+                # 计算第二行位置（第一行下方，留出间隔）
+                line_spacing = 10  # 两行之间的间隔（像素）
+                second_line_y = bottom_base_y + side_fs + line_spacing
+                
+                dt_side = (
+                    f"drawtext={fontfile_options}:textfile='{side_txt_filter}':fontsize={side_fs}:"
+                    f"fontcolor=white@0.85:box=0:"
+                    f"x=(w-text_w)/2:y={second_line_y}"  # 底部第二行，居中
+                )
+                filters.append(dt_side)
             except Exception:
                 pass  # Silently skip if file not found
 
