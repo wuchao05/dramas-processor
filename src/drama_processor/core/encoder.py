@@ -461,7 +461,7 @@ class VideoEncoder:
         if self.config.enable_right_side_text:
             try:
                 # 计算第二行位置（第一行下方，留出间隔）
-                line_spacing = 10  # 两行之间的间隔（像素）
+                line_spacing = 25  # 两行之间的间隔（像素，可调整）
                 second_line_y = bottom_base_y + side_fs + line_spacing
                 
                 dt_side = (
