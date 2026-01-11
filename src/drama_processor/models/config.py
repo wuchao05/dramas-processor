@@ -266,8 +266,8 @@ class ProcessingConfig(BaseModel):
     )
     temp_dir: Optional[str] = Field(default=None, description="Temporary directory")
     output_dir: str = Field(default="../导出素材", description="Output directory")
-    tail_cache_dir: str = Field(
-        default="/tmp/tails_cache", description="Tail cache directory"
+    tail_cache_dir: Optional[str] = Field(
+        default=None, description="Tail cache directory"
     )
     tail_file: Optional[str] = Field(
         default="assets/tail.mp4", description="Default tail video file"
