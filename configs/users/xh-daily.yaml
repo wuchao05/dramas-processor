@@ -5,8 +5,8 @@
 count: 40 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
-# 目录设置
-default_source_dir: "/mnt/d/短剧剪辑/源素材视频" # WSL 路径
+# 目录设置（Windows 格式）
+default_source_dir: "D:\\短剧剪辑\\源素材视频"
 
 # 多素材文案配置
 brand_text_mapping:
@@ -51,11 +51,22 @@ brand_text_mapping:
 
 # 飞书功能配置
 enable_feishu_features: true
+enable_feishu_notification: false
+
 feishu:
   app_id: "cli_a870f7611b7b1013"
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   table_id: "tblJcLhLpEkmFkga"
+  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
+  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
+  status_field_name: "当前状态"
+  pending_status_value: "待剪辑"
+  processing_status_value: "剪辑中"
+  completed_status_value: "待上传"
+  missing_source_status_value: "无源视频"
+  page_size: 200
+  token_refresh_interval: 7200000
 
 # 飞书轮询配置
 feishu_watcher:

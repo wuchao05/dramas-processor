@@ -152,25 +152,12 @@ audio:
   sample_rate: 48000
 
 # 飞书功能配置
-enable_feishu_features: false
+enable_feishu_features: false # 默认关闭，由用户配置覆盖
 enable_feishu_notification: false
 feishu_webhook_url: null
 
-# 飞书API配置
-feishu:
-  app_id: ""
-  app_secret: ""
-  app_token: ""
-  table_id: ""
-  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
-  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
-  status_field_name: "当前状态"
-  pending_status_value: "待剪辑"
-  processing_status_value: "剪辑中"
-  completed_status_value: "待上传"
-  missing_source_status_value: "无源视频"
-  page_size: 200
-  token_refresh_interval: 7200000
+# 飞书API配置（由用户配置提供，这里不设置空字段）
+feishu: null
 
 # 飞书轮询配置
 feishu_watcher:
