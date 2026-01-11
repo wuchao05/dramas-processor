@@ -180,6 +180,8 @@ class FeishuWatcher:
                 pass
     
     def _cleanup_finished_tasks(self) -> None:
+        """清理已完成的任务，并在任务完成时立即触发下一次轮询"""
+        tasks_cleaned = False
         for date_label, task in list(self.active_tasks.items()):
             if task.future.done():
                 try:
@@ -189,6 +191,12 @@ class FeishuWatcher:
                     logger.error(f"❌ 日期 {date_label} 任务异常结束: {exc}")
                     self._notify(f"❌ 日期 {date_label} 任务异常结束：{exc}")
                 self.active_tasks.pop(date_label, None)
+                tasks_cleaned = True
+        
+        # 如果有任务完成，立即唤醒主循环进行下一次轮询（查找其他日期的待剪辑剧）
+        if tasks_cleaned:
+            self._notify("🔄 日期任务完成，立即查找其他日期的待剪辑剧...")
+            self._wake_event.set()
     
     def _get_lowest_priority_date(self) -> Optional[str]:
         if not self.active_tasks:
@@ -217,6 +225,9 @@ class FeishuWatcher:
     
     def _poll_once(self) -> bool:
         """Fetch current pending records and trigger processing."""
+        # 首先清理已完成的任务（这样可以立即发现新的空闲槽位）
+        self._cleanup_finished_tasks()
+        
         # 如果还有活跃任务在运行，跳过本次查询，避免在剪辑过程中打印查询日志
         if self.active_tasks:
             return True  # 返回 True 表示有活动，避免触发 idle_exit
@@ -240,8 +251,6 @@ class FeishuWatcher:
         if not target_dates:
             self._notify("📭 没有符合过滤条件的日期任务")
             return False
-        
-        self._cleanup_finished_tasks()
         processed_any = bool(self.active_tasks)
         for date_label in target_dates:
             if self._stop:
