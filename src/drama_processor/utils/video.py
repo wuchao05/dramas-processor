@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Dict, Any, Optional, Union
 
 from .system import get_windows_subprocess_kwargs_hide_console
+from .ffmpeg import find_ffmpeg, find_ffprobe
 
 def parse_rate(rate_str: Optional[str]) -> float:
     """Parse frame rate string.
@@ -47,7 +48,7 @@ def probe_video_stream(path: Union[str, Path]) -> Dict[str, Any]:
         json.JSONDecodeError: If output is not valid JSON
     """
     cmd = [
-        "ffprobe",
+        find_ffprobe(),
         "-v", "error",
         "-select_streams", "v:0",
         "-show_streams",
@@ -115,7 +116,7 @@ def is_black_frame_at(video_path: Path, time: float, amount_pct: int = 98, pix_t
         True if frame is black
     """
     cmd = [
-        "ffmpeg", "-v", "error",
+        find_ffmpeg(), "-v", "error",
         "-i", str(video_path),
         "-ss", f"{time}",
         "-frames:v", "1",
@@ -158,7 +159,7 @@ def extract_first_frame(video_path: Path, output_path: Path) -> None:
     for time_point in probe_points:
         if not is_black_frame_at(video_path, time_point):
             cmd = [
-                "ffmpeg", "-y",
+                find_ffmpeg(), "-y",
                 "-i", str(video_path),
                 "-ss", f"{time_point}",
                 "-frames:v", "1",
@@ -169,7 +170,7 @@ def extract_first_frame(video_path: Path, output_path: Path) -> None:
     
     # Fallback: extract frame at 1 second
     cmd = [
-        "ffmpeg", "-y",
+        find_ffmpeg(), "-y",
         "-i", str(video_path),
         "-ss", "1.0",
         "-frames:v", "1",

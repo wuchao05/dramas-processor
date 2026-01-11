@@ -210,13 +210,23 @@ def count_existing_materials(dir_path: str) -> int:
 
 
 def ensure_temp_root(temp_root_opt: Optional[str]) -> str:
-    """Ensure temporary root directory exists."""
-    root = (temp_root_opt.strip() if temp_root_opt else "/tmp")
+    """确保临时目录存在，跨平台支持"""
+    import tempfile
+    
+    if temp_root_opt:
+        root = temp_root_opt.strip()
+        # 支持环境变量（Windows: %TEMP%, Linux: $TMPDIR）
+        root = os.path.expandvars(root)
+    else:
+        # 使用系统临时目录
+        root = os.path.join(tempfile.gettempdir(), "drama_processor")
+    
     try:
         os.makedirs(root, exist_ok=True)
     except Exception as e:
-        print(f"⚠️ 创建临时目录失败（{root}），回退到 /tmp：{e}")
-        root = "/tmp"
+        print(f"⚠️ 创建临时目录失败（{root}），使用系统默认：{e}")
+        root = os.path.join(tempfile.gettempdir(), "drama_processor")
         os.makedirs(root, exist_ok=True)
+    
     return root
 

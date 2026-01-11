@@ -12,20 +12,20 @@ from ..config import ConfigManager, get_default_config
 from ..core.processor import DramaProcessor
 from ..utils.fingerprint import get_machine_fingerprint
 from ..utils.logging import setup_logging
-from ..utils.license import (
-    FEATURE_ALL,
-    FEATURE_FEISHU,
-    LicenseError,
-    get_allowed_features_from_args_and_env,
-    get_license_info_from_args_and_env,
-    load_and_verify_license,
-)
+# from ..utils.license import (
+#     FEATURE_ALL,
+#     FEATURE_FEISHU,
+#     LicenseError,
+#     get_allowed_features_from_args_and_env,
+#     get_license_info_from_args_and_env,
+#     load_and_verify_license,
+# )
 from .commands import process_command, analyze_command, config_command, legacy_run_command, history_command, feishu_command
 # AI功能已移除
 
 
-# import 时先读取 license（参数/环境变量），决定是否注册 feishu 命令
-_ALLOWED_FEATURES_AT_IMPORT = get_allowed_features_from_args_and_env(sys.argv)
+# # import 时先读取 license（参数/环境变量），决定是否注册 feishu 命令
+# _ALLOWED_FEATURES_AT_IMPORT = get_allowed_features_from_args_and_env(sys.argv)
 
 
 @click.group(invoke_without_command=True)
@@ -35,16 +35,16 @@ _ALLOWED_FEATURES_AT_IMPORT = get_allowed_features_from_args_and_env(sys.argv)
     type=click.Path(exists=True, path_type=Path),
     help="Configuration file path"
 )
-@click.option(
-    "--license",
-    type=click.Path(exists=True, dir_okay=False, path_type=Path),
-    help="授权文件路径（可选，用于解锁 Feishu 等高级功能）",
-)
-@click.option(
-    "--print-fingerprint",
-    is_flag=True,
-    help="打印本机指纹（用于签发 license），打印后退出",
-)
+# @click.option(
+#     "--license",
+#     type=click.Path(exists=True, dir_okay=False, path_type=Path),
+#     help="授权文件路径（可选，用于解锁 Feishu 等高级功能）",
+# )
+# @click.option(
+#     "--print-fingerprint",
+#     is_flag=True,
+#     help="打印本机指纹（用于签发 license），打印后退出",
+# )
 @click.option(
     "--log-level",
     type=click.Choice(["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]),
@@ -65,8 +65,8 @@ _ALLOWED_FEATURES_AT_IMPORT = get_allowed_features_from_args_and_env(sys.argv)
 def cli(
     ctx,
     config: Optional[Path],
-    license: Optional[Path],
-    print_fingerprint: bool,
+    # license: Optional[Path],
+    # print_fingerprint: bool,
     log_level: str,
     log_file: Optional[Path],
     no_rich: bool,
@@ -82,9 +82,9 @@ def cli(
         use_rich=not no_rich
     )
 
-    if print_fingerprint:
-        click.echo(get_machine_fingerprint())
-        ctx.exit(0)
+    # if print_fingerprint:
+    #     click.echo(get_machine_fingerprint())
+    #     ctx.exit(0)
 
     # 未传子命令时直接显示帮助，避免报 Missing command
     if ctx.invoked_subcommand is None:
@@ -142,37 +142,37 @@ def cli(
         processing_config = get_default_config()
         logger.info("Using default configuration")
 
-    # License 校验：显式 --license 优先，否则从 argv/env/默认路径读取
-    license_info = None
-    if license is not None:
-        try:
-            license_info = load_and_verify_license(str(license))
-            logger.info("License 校验通过")
-        except (LicenseError, Exception) as e:
-            click.echo(f"❌ License 校验失败：{e}", err=True)
-            sys.exit(1)
-    else:
-        license_info = get_license_info_from_args_and_env(sys.argv, logger_=logger)
+    # # License 校验：显式 --license 优先，否则从 argv/env/默认路径读取
+    # license_info = None
+    # if license is not None:
+    #     try:
+    #         license_info = load_and_verify_license(str(license))
+    #         logger.info("License 校验通过")
+    #     except (LicenseError, Exception) as e:
+    #         click.echo(f"❌ License 校验失败：{e}", err=True)
+    #         sys.exit(1)
+    # else:
+    #     license_info = get_license_info_from_args_and_env(sys.argv, logger_=logger)
 
-    ctx.obj["license"] = license_info
+    # ctx.obj["license"] = license_info
 
-    # 二进制发布包强制要求 license（机器绑定）
-    if getattr(sys, "frozen", False) and license_info is None:
-        click.echo(
-            "❌ 缺少 license：发布包运行需要机器绑定授权文件（可用 --license 指定，或放置 license.json 到二进制同目录）",
-            err=True,
-        )
-        sys.exit(1)
+    # # 二进制发布包强制要求 license（机器绑定）
+    # if getattr(sys, "frozen", False) and license_info is None:
+    #     click.echo(
+    #         "❌ 缺少 license：发布包运行需要机器绑定授权文件（可用 --license 指定，或放置 license.json 到二进制同目录）",
+    #         err=True,
+    #     )
+    #     sys.exit(1)
 
-    # 未授权 feishu 时，强制关闭所有 feishu 相关配置，避免通过 process 侧路使用
-    if not (license_info and license_info.allows(FEATURE_FEISHU)):
-        if processing_config.enable_feishu_features:
-            logger.warning("未授权 Feishu 功能，已强制关闭 enable_feishu_features")
-        processing_config.enable_feishu_features = False
-        processing_config.enable_feishu_notification = False
-        processing_config.feishu = None
-        if processing_config.feishu_watcher:
-            processing_config.feishu_watcher.enabled = False
+    # # 未授权 feishu 时，强制关闭所有 feishu 相关配置，避免通过 process 侧路使用
+    # if not (license_info and license_info.allows(FEATURE_FEISHU)):
+    #     if processing_config.enable_feishu_features:
+    #         logger.warning("未授权 Feishu 功能，已强制关闭 enable_feishu_features")
+    #     processing_config.enable_feishu_features = False
+    #     processing_config.enable_feishu_notification = False
+    #     processing_config.feishu = None
+    #     if processing_config.feishu_watcher:
+    #         processing_config.feishu_watcher.enabled = False
     
     # Store in context
     ctx.obj["config_manager"] = config_manager
@@ -186,8 +186,9 @@ cli.add_command(analyze_command)
 cli.add_command(config_command)
 cli.add_command(legacy_run_command)
 cli.add_command(history_command)
-if FEATURE_ALL in _ALLOWED_FEATURES_AT_IMPORT or FEATURE_FEISHU in _ALLOWED_FEATURES_AT_IMPORT:
-    cli.add_command(feishu_command)
+# if FEATURE_ALL in _ALLOWED_FEATURES_AT_IMPORT or FEATURE_FEISHU in _ALLOWED_FEATURES_AT_IMPORT:
+#     cli.add_command(feishu_command)
+cli.add_command(feishu_command)  # License 逻辑已注释，直接注册 feishu 命令
 
 # AI功能已移除
 

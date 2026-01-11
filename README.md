@@ -2,12 +2,28 @@
 
 🎬 **专业的短剧视频处理工具** - 模块化、高效的短剧批量处理解决方案
 
+## 🎉 Windows 原生支持！
+
+**重要更新**：项目已全面支持 Windows 原生运行，无需 WSL！
+
+- ✅ **开箱即用** - 内置 FFmpeg，自动检测系统字体
+- ⚡ **性能更优** - Windows 原生硬件编码器性能提升 20-30%
+- 📦 **独立 exe** - 提供打包好的单文件可执行程序
+- 🎯 **简化部署** - 双击即可运行，无需配置环境
+
+📖 **文档导航**:
+- 🚀 [Windows 快速开始](docs/WINDOWS_QUICKSTART.md) - 5 分钟快速上手
+- 📚 [Windows 完整使用教程](docs/WINDOWS_使用教程.md) - 详细的安装、配置、使用指南
+- 🎬 [FFmpeg 安装图解教程](docs/FFMPEG_安装指南_Windows.md) - 手把手教你安装 FFmpeg
+- 🔧 [Windows 迁移文档](docs/WINDOWS_NATIVE_MIGRATION.md) - 技术细节和架构说明
+
 ## ✨ **主要特性**
 
 - 🎯 **功能完备**：支持所有主流短剧处理需求
 - 🚀 **模块化架构**：VideoEncoder、TextOverlay 等独立模块
 - ⚡ **智能优化**：自适应帧率、快速模式、硬件编码支持
 - 🔄 **尾部视频拼接**：完整的缓存机制和增量处理
+- 🪟 **跨平台**：Windows / Linux / macOS 全平台支持
 
 - 🎨 **文字叠加**：标题、底部、侧边文字的完整支持
 - 🔀 **交互选择**：基于 InquirerPy 的模糊搜索多选界面
@@ -16,6 +32,23 @@
 - ⚙️ **配置文件**：YAML 配置文件支持
 
 ## 🚀 **快速开始**
+
+### Windows 用户（推荐）
+
+1. **exe 版本（最简单）**
+   - 下载 `drama-processor-windows-vX.X.X.zip`
+   - 解压并运行 `dramas-processor-gui.exe`
+   - 参考：[Windows 快速开始](docs/WINDOWS_QUICKSTART.md)
+
+2. **开发环境**
+   ```powershell
+   # 下载 FFmpeg 到 bin/ 目录（见文档）
+   pip install -r requirements.txt
+   pip install -e .
+   python scripts\test_windows.py  # 测试环境
+   ```
+
+### Linux / macOS 用户
 
 ### 安装
 
@@ -27,11 +60,18 @@ pip install -e .
 
 ### 基础用法
 
-```bash
-# 使用默认源目录处理短剧（支持备份目录自动切换）
-drama-processor process
+**Windows**:
+```powershell
+# 使用 Windows 配置
+drama-processor -c configs\windows_default.yaml process E:\短剧库 --count 3
 
-# 处理指定目录的所有短剧
+# 或直接双击 GUI
+python run_gui.py
+```
+
+**Linux/macOS**:
+```bash
+# 使用默认源目录处理短剧
 drama-processor process /path/to/dramas
 
 # 生成3条素材，每条5-10分钟

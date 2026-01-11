@@ -70,6 +70,8 @@ hiddenimports += [
     "drama_processor.utils.cancel",
     "drama_processor.utils.history",
     "drama_processor.utils.date_deduplication",
+    "drama_processor.utils.ffmpeg",
+    "drama_processor.utils.fingerprint",
     "drama_processor.config",
     "drama_processor.config.loader",
     "drama_processor.config.manager",
@@ -101,7 +103,7 @@ if configs_dir.exists():
 
 # 内置 assets（包含 tail.mp4、watermark、字体等）
 # 注意：PyInstaller 6.17 的 Analysis(datas=...) 期望 (src, dest_dir) 二元组；
-# Tree(...) 产生三元组，容易触发 “too many values to unpack (expected 2)”
+# Tree(...) 产生三元组，容易触发 "too many values to unpack (expected 2)"
 assets_dir = project_root / "assets"
 if assets_dir.exists():
     for p in assets_dir.rglob("*"):
@@ -110,6 +112,16 @@ if assets_dir.exists():
         rel_parent = p.relative_to(assets_dir).parent  # e.g. "." / "fonts"
         dest_dir = str(Path("assets") / rel_parent) if str(rel_parent) != "." else "assets"
         datas.append((str(p), dest_dir))
+
+# 内置 FFmpeg 可执行文件（Windows）
+bin_dir = project_root / "bin"
+if bin_dir.exists():
+    ffmpeg_exe = bin_dir / "ffmpeg.exe"
+    ffprobe_exe = bin_dir / "ffprobe.exe"
+    if ffmpeg_exe.exists():
+        binaries.append((str(ffmpeg_exe), "bin"))
+    if ffprobe_exe.exists():
+        binaries.append((str(ffprobe_exe), "bin"))
 
 a = Analysis(
     [str(project_root / "run_gui.py")],

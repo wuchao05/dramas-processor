@@ -20,6 +20,7 @@ from ..utils.files import write_text_file, ensure_dir, md5_of_text, md5_of_file
 from ..utils.time import human_duration
 from ..utils.cancel import raise_if_cancelled
 from ..utils.system import get_windows_subprocess_kwargs_hide_console
+from ..utils.ffmpeg import find_ffmpeg, find_ffprobe
 
 
 class VideoEncoder:
@@ -96,7 +97,7 @@ class VideoEncoder:
         # Check which codecs are available
         try:
             result = subprocess.run(
-                ["ffmpeg", "-encoders"],
+                [find_ffmpeg(), "-encoders"],
                 capture_output=True,
                 text=True,
                 encoding="utf-8",
@@ -1195,7 +1196,7 @@ class VideoEncoder:
             # Simple final copy with optional faststart
             t0 = time.time()
 
-            cmd = ["ffmpeg", "-y", "-i", final_src, "-c", "copy"]
+            cmd = [find_ffmpeg(), "-y", "-i", final_src, "-c", "copy"]
 
             # Add faststart only if enabled in config (not needed for platform uploads like Douyin)
             if self.config.video.faststart:

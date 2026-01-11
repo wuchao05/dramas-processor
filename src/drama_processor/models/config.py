@@ -383,29 +383,43 @@ class ProcessingConfig(BaseModel):
         return code
 
     def get_default_font(self) -> str:
-        """Get default font file path."""
-        if self.font_file:
+        """获取字体文件路径，支持跨平台自动检测"""
+        # 1. 如果配置了字体且存在，直接使用
+        if self.font_file and os.path.exists(self.font_file):
             return self.font_file
-
-        # Try to find system font
-        from ..utils.system import find_font
-
-        font_path = find_font("wqy")
-        if font_path:
-            return font_path
-
-        # WSL Linux fallback fonts
-        fallback_fonts = [
-            "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
-            "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
-            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-        ]
-
-        for font in fallback_fonts:
-            if os.path.exists(font):
-                return font
-
-        return ""
+        
+        # 2. 根据平台自动检测
+        import platform
+        system = platform.system()
+        
+        if system == "Windows":
+            # Windows 常见中文字体
+            fonts = [
+                "C:\\Windows\\Fonts\\msyh.ttc",      # 微软雅黑
+                "C:\\Windows\\Fonts\\simhei.ttf",    # 黑体
+                "C:\\Windows\\Fonts\\simsun.ttc",    # 宋体
+                "C:\\Windows\\Fonts\\msyh.ttf",      # 微软雅黑（旧版）
+            ]
+            for font in fonts:
+                if os.path.exists(font):
+                    return font
+            return "C:\\Windows\\Fonts\\arial.ttf"  # 兜底
+        
+        elif system == "Linux":
+            # Linux 常见中文字体
+            fonts = [
+                "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+                "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
+                "/usr/share/fonts/truetype/arphic/uming.ttc",
+                "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+            ]
+            for font in fonts:
+                if os.path.exists(font):
+                    return font
+            return "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+        
+        else:  # macOS
+            return "/System/Library/Fonts/PingFang.ttc"
 
     def get_actual_source_dir(self) -> str:
         """Get the actual source directory to use, with fallback to backup."""
