@@ -297,16 +297,33 @@ class VideoEncoder:
         return normalized
     
     def _get_fontfile_options(self, fontfile: str) -> str:
-        """获取字体文件选项，自动处理 TTC 字体索引
+        """获取字体文件选项，自动处理 TTC 字体文件
         
         Returns:
-            字体选项字符串，例如: "fontfile='path':fontindex=0" 或 "fontfile='path'"
+            字体选项字符串，例如: "font='Microsoft YaHei'" 或 "fontfile='path'"
         """
-        fontfile_filter = self._filter_path(fontfile)
+        import platform
         
-        # 如果是 TTC 字体文件，添加字体索引（解决白色方块问题）
-        if fontfile.lower().endswith('.ttc'):
-            return f"fontfile='{fontfile_filter}':fontindex=0"
+        # Windows 系统：如果是 TTC 文件，使用字体名称而不是文件路径（避免索引问题）
+        if platform.system() == "Windows" and fontfile.lower().endswith('.ttc'):
+            # 映射常见 TTC 文件到字体名称
+            ttc_font_map = {
+                'msyh.ttc': 'Microsoft YaHei',
+                'msyhbd.ttc': 'Microsoft YaHei Bold',
+                'simsun.ttc': 'SimSun',
+                'simhei.ttc': 'SimHei',
+            }
+            
+            # 获取文件名
+            font_filename = fontfile.split('\\')[-1].split('/')[-1].lower()
+            
+            # 如果是已知的 TTC 文件，使用字体名称
+            if font_filename in ttc_font_map:
+                font_name = ttc_font_map[font_filename]
+                return f"font='{font_name}'"
+        
+        # 其他情况：直接使用文件路径
+        fontfile_filter = self._filter_path(fontfile)
         return f"fontfile='{fontfile_filter}'"
 
     def to_vertical(self, text: str) -> str:
