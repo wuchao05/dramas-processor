@@ -70,9 +70,15 @@ def md5_of_file(file_path: Path, chunk_size: int = 1024 * 1024) -> str:
 
 
 def write_text_file(path: str, text: str):
-    """Write text to file with UTF-8 encoding."""
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(text)
+    """Write text to file with UTF-8 encoding (without BOM, Unix line endings)."""
+    # 移除任何可能的 BOM 和其他隐藏字符
+    clean_text = text.strip()
+    # 确保使用 Unix 换行符（\n），避免 Windows 换行符（\r\n）问题
+    clean_text = clean_text.replace('\r\n', '\n').replace('\r', '\n')
+    
+    # 写入文件时使用 UTF-8 无 BOM，Unix 换行符
+    with open(path, "w", encoding="utf-8", newline='\n') as f:
+        f.write(clean_text)
 
 
 def ensure_dir(path: str) -> str:

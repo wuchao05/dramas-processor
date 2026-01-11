@@ -310,10 +310,12 @@ class VideoEncoder:
         return f"fontfile='{fontfile_filter}'"
 
     def to_vertical(self, text: str) -> str:
-        """Convert text to vertical layout."""
+        """Convert text to vertical layout (removes spaces to avoid rendering issues)."""
         if "\n" in text:
             return text
-        return "\n".join(list(text))
+        # 移除空格，避免在竖排时渲染成方块
+        text_no_spaces = text.replace(" ", "").replace("　", "")  # 移除半角和全角空格
+        return "\n".join(list(text_no_spaces))
 
     def build_overlay_filters(
         self,

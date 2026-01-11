@@ -8,6 +8,9 @@ material_code: "xh" # 素材文件名标识
 # 目录设置（Windows 格式）
 default_source_dir: "D:\\短剧剪辑\\源素材视频"
 
+# 字体设置（使用 Windows 自带字体）
+font_file: "C:\\Windows\\Fonts\\msyh.ttc" # 微软雅黑 TTC（代码会自动添加 fontindex）
+
 # 多素材文案配置
 brand_text_mapping:
   mode: "range"

@@ -18,10 +18,12 @@ class TextOverlay:
         self.watermark_path = watermark_path
     
     def to_vertical(self, text: str) -> str:
-        """Convert horizontal text to vertical layout."""
+        """Convert horizontal text to vertical layout (removes spaces to avoid rendering issues)."""
         if "\n" in text:
             return text
-        return "\n".join(list(text))
+        # 移除空格，避免在竖排时渲染成方块
+        text_no_spaces = text.replace(" ", "").replace("　", "")  # 移除半角和全角空格
+        return "\n".join(list(text_no_spaces))
 
     def _filter_path(self, path: str) -> str:
         """转换路径为 FFmpeg filter 友好格式（避免 Windows 反斜杠被转义）。"""
