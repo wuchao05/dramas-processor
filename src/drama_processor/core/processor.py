@@ -309,14 +309,14 @@ class DramaProcessor:
                 if episode.duration:
                     # Calculate available duration from this episode onwards
                     available_duration = self._calculate_total_duration_from_episode(
-                        episode_paths, ep_idx, 0.0)
+                        project, episode_paths, ep_idx, 0.0)
                     
                     if available_duration < min_duration:
                         continue  # Skip this episode, not enough content
                     
                     # Calculate safe offset range
                     remaining_episodes_duration = self._calculate_total_duration_from_episode(
-                        episode_paths, ep_idx + 1, 0.0) if ep_idx + 1 < len(episode_paths) else 0.0
+                        project, episode_paths, ep_idx + 1, 0.0) if ep_idx + 1 < len(episode_paths) else 0.0
                     max_safe_offset = episode.duration - (min_duration - remaining_episodes_duration)
                     max_safe_offset = max(0.0, min(max_safe_offset, episode.duration * 0.3))  # Max 30% into episode
                     
@@ -336,9 +336,9 @@ class DramaProcessor:
                     continue  # Skip if too many duplicates
                 
                 # Verify this start point can provide minimum duration
-                if self._verify_start_point_duration(episode_paths, ep_idx, offset, min_duration):
+                if self._verify_start_point_duration(project, episode_paths, ep_idx, offset, min_duration):
                     episode_name = project.episodes[ep_idx].file_path.name
-                    available_duration = self._calculate_total_duration_from_episode(episode_paths, ep_idx, offset)
+                    available_duration = self._calculate_total_duration_from_episode(project, episode_paths, ep_idx, offset)
                     duplicate_marker = " (重复)" if duplicate_count > 0 else ""
                     logger.info(f"🎯 选中起始点 {len(starts)+1}: 第{ep_idx+1}集 {episode_name} | 偏移{offset:.1f}s | 可用时长{available_duration:.1f}s{duplicate_marker}")
                     starts.append((ep_idx, offset))
@@ -350,7 +350,7 @@ class DramaProcessor:
                 for ep_idx in range(min(max_start_episode, count - len(starts))):
                     point_key = (ep_idx, 0.0)
                     duplicate_count = sum(1 for used_point in used_points if used_point == point_key)
-                    if duplicate_count < duplicate_threshold and self._verify_start_point_duration(episode_paths, ep_idx, 0.0, min_duration):
+                    if duplicate_count < duplicate_threshold and self._verify_start_point_duration(project, episode_paths, ep_idx, 0.0, min_duration):
                         starts.append((ep_idx, 0.0))
                         used_points.add(point_key)
                 break
@@ -361,9 +361,9 @@ class DramaProcessor:
                 ep_idx = min(i * step, max_start_episode - 1)
                 
                 # Verify this start point provides enough duration
-                if self._verify_start_point_duration(episode_paths, ep_idx, 0.0, min_duration):
+                if self._verify_start_point_duration(project, episode_paths, ep_idx, 0.0, min_duration):
                     episode_name = project.episodes[ep_idx].file_path.name
-                    available_duration = self._calculate_total_duration_from_episode(episode_paths, ep_idx, 0.0)
+                    available_duration = self._calculate_total_duration_from_episode(project, episode_paths, ep_idx, 0.0)
                     logger.info(f"📍 均匀分布起始点 {len(starts)+1}: 第{ep_idx+1}集 {episode_name} | 偏移0.0s | 可用时长{available_duration:.1f}s")
                     starts.append((ep_idx, 0.0))
                 else:
@@ -378,12 +378,25 @@ class DramaProcessor:
         
         return starts
     
-    def _calculate_total_duration_from_episode(self, episode_paths: List[str], start_ep_idx: int, start_offset: float) -> float:
+    def _calculate_total_duration_from_episode(self, project: DramaProject, episode_paths: List[str], start_ep_idx: int, start_offset: float) -> float:
         """Calculate total available duration from given episode and offset."""
         total_duration = 0.0
+        
+        # 使用缓存的 duration 而不是每次都 probe
+        # episode_paths 和 project.episodes 是一一对应的
         for i in range(start_ep_idx, len(episode_paths)):
             try:
-                dur = probe_duration(episode_paths[i])
+                # 优先使用已经缓存的 duration（从 Episode 对象）
+                if i < len(project.episodes):
+                    dur = project.episodes[i].duration
+                    if dur is None:
+                        # 如果没有缓存，才调用 probe
+                        dur = probe_duration(episode_paths[i])
+                        # 缓存到 Episode 对象中
+                        project.episodes[i].duration = dur
+                else:
+                    dur = probe_duration(episode_paths[i])
+                
                 if i == start_ep_idx:
                     available = max(0.0, dur - start_offset)
                 else:
@@ -393,9 +406,9 @@ class DramaProcessor:
                 continue
         return total_duration
     
-    def _verify_start_point_duration(self, episode_paths: List[str], ep_idx: int, offset: float, min_duration: float) -> bool:
+    def _verify_start_point_duration(self, project: DramaProject, episode_paths: List[str], ep_idx: int, offset: float, min_duration: float) -> bool:
         """Verify that a start point can provide the minimum required duration."""
-        available_duration = self._calculate_total_duration_from_episode(episode_paths, ep_idx, offset)
+        available_duration = self._calculate_total_duration_from_episode(project, episode_paths, ep_idx, offset)
         return available_duration >= min_duration
     
     def process_single_material(self, project: DramaProject, material_idx: int, 
@@ -409,7 +422,7 @@ class DramaProcessor:
         # Log detailed start point info
         episode_name = project.episodes[start_ep_idx].file_path.name if start_ep_idx < len(project.episodes) else "Unknown"
         available_duration = self._calculate_total_duration_from_episode(
-            [str(ep.file_path) for ep in project.episodes], start_ep_idx, start_offset)
+            project, [str(ep.file_path) for ep in project.episodes], start_ep_idx, start_offset)
         
         logger.info(f"🎬 开始素材 | 剧：{project.name} | 第 {material_idx} / {material_total} 条")
         logger.info(f"   📍 起始点: 第{start_ep_idx+1}集 ({episode_name}) | 偏移: {start_offset:.1f}s")
