@@ -59,13 +59,25 @@ print("\n" + "=" * 60)
 print("Step 3: 使用 ConfigManager 加载")
 print("=" * 60)
 
-from drama_processor.config import ConfigManager
+from drama_processor.config.loader import load_config
 
 config_path = Path("configs/windows_default.yaml")
+
+# 先尝试直接加载，看看是否有错误
+print(f"尝试直接加载: {config_path}")
+try:
+    config = load_config(config_path)
+    print("✅ 直接加载成功")
+except Exception as e:
+    print(f"❌ 直接加载失败: {e}")
+    import traceback
+    traceback.print_exc()
+
+print("\n使用 ConfigManager:")
+from drama_processor.config import ConfigManager
 manager = ConfigManager(config_path)
 config = manager.load()
 
-print(f"ConfigManager 加载:")
 print(f"  active_user: {config.active_user}")
 print(f"  enable_feishu_features: {config.enable_feishu_features}")
 print(f"  feishu 是否为 None: {config.feishu is None}")
