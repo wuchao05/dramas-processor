@@ -26,7 +26,7 @@ exclude_last_episodes: 8
 title_font_size: 36
 bottom_font_size: 28
 side_font_size: 24
-vertical_line_spacing: 5
+vertical_line_spacing: -10 # 竖排文字行距（负值让文字更紧凑）
 footer_text: "剧情纯属虚构 请勿模仿"
 side_text: "剧情纯属虚构 请勿模仿"
 enable_left_side_text: false

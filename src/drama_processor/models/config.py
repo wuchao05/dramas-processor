@@ -393,12 +393,14 @@ class ProcessingConfig(BaseModel):
         system = platform.system()
         
         if system == "Windows":
-            # Windows 常见中文字体
+            # Windows 常见中文字体（优先使用 TTF 单字体文件，避免 TTC 兼容性问题）
             fonts = [
-                "C:\\Windows\\Fonts\\msyh.ttc",      # 微软雅黑
+                "C:\\Windows\\Fonts\\msyh.ttf",      # 微软雅黑（优先 TTF）
+                "C:\\Windows\\Fonts\\msyhbd.ttf",    # 微软雅黑粗体
                 "C:\\Windows\\Fonts\\simhei.ttf",    # 黑体
-                "C:\\Windows\\Fonts\\simsun.ttc",    # 宋体
-                "C:\\Windows\\Fonts\\msyh.ttf",      # 微软雅黑（旧版）
+                "C:\\Windows\\Fonts\\simkai.ttf",    # 楷体
+                "C:\\Windows\\Fonts\\msyh.ttc",      # 微软雅黑 TTC（备选）
+                "C:\\Windows\\Fonts\\simsun.ttc",    # 宋体 TTC（备选）
             ]
             for font in fonts:
                 if os.path.exists(font):

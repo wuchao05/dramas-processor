@@ -295,6 +295,19 @@ class VideoEncoder:
         normalized = normalized.replace(":", "\\:")
         normalized = normalized.replace("'", "\\'")
         return normalized
+    
+    def _get_fontfile_options(self, fontfile: str) -> str:
+        """获取字体文件选项，自动处理 TTC 字体索引
+        
+        Returns:
+            字体选项字符串，例如: "fontfile='path':fontindex=0" 或 "fontfile='path'"
+        """
+        fontfile_filter = self._filter_path(fontfile)
+        
+        # 如果是 TTC 字体文件，添加字体索引（解决白色方块问题）
+        if fontfile.lower().endswith('.ttc'):
+            return f"fontfile='{fontfile_filter}':fontindex=0"
+        return f"fontfile='{fontfile_filter}'"
 
     def to_vertical(self, text: str) -> str:
         """Convert text to vertical layout."""
@@ -356,7 +369,7 @@ class VideoEncoder:
         write_text_file(side_txtf, self.to_vertical(side_text))
 
         title_color = random.choice(self.title_colors)
-        fontfile_filter = self._filter_path(fontfile)
+        fontfile_options = self._get_fontfile_options(fontfile)  # 自动处理 TTC 字体索引
         title_txt_filter = self._filter_path(title_txt)
         bottom_txt_filter = self._filter_path(bottom_txt)
         side_txt_filter = self._filter_path(side_txtf)
@@ -370,7 +383,7 @@ class VideoEncoder:
             title_y_pos = f"h-text_h-{margin + 120}"  # Bottom position (default)
 
         dt_top = (
-            f"drawtext=fontfile='{fontfile_filter}':textfile='{title_txt_filter}':fontsize={title_fs}:"
+            f"drawtext={fontfile_options}:textfile='{title_txt_filter}':fontsize={title_fs}:"
             f"fontcolor={title_color}@{self.title_opacity}:shadowx=1:shadowy=1:box=0:"
             f"x=(w-text_w)/2:y={title_y_pos}"
         )
@@ -389,7 +402,7 @@ class VideoEncoder:
 
             # Center position (no border/bold for better performance and compatibility)
             dt_hook = (
-                f"drawtext=fontfile='{fontfile_filter}':text='{hook_text}':"
+                f"drawtext={fontfile_options}:text='{hook_text}':"
                 f"fontsize={hook_fs}:fontcolor={hook_color}:"
                 f"x=(w-text_w)/2:y=(h-text_h)/2:"
                 f"enable='lt(t,{hook_duration})'"  # Only show for first N seconds
@@ -403,7 +416,7 @@ class VideoEncoder:
                 line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
             try:
                 dt_side = (
-                    f"drawtext=fontfile='{fontfile_filter}':textfile='{side_txt_filter}':fontsize={side_fs}:"
+                    f"drawtext={fontfile_options}:textfile='{side_txt_filter}':fontsize={side_fs}:"
                     f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
                     f"x=w-text_w-{margin}:y={margin + 200}"
                 )
@@ -430,7 +443,7 @@ class VideoEncoder:
                 line_spacing_opt = f":line_spacing={self.vertical_line_spacing}"
             try:
                 dt_brand = (
-                    f"drawtext=fontfile='{fontfile_filter}':textfile='{brand_txt_filter}':fontsize={side_fs}:"
+                    f"drawtext={fontfile_options}:textfile='{brand_txt_filter}':fontsize={side_fs}:"
                     f"fontcolor=white@0.85:box=0{line_spacing_opt}:"
                     f"x={margin}:y={margin + 200}"
                 )
