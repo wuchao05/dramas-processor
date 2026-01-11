@@ -17,12 +17,9 @@
 ### 必需软件
 
 - **Windows 10/11** (64 位)
-- **Python 3.8+**
-  - 下载地址: https://www.python.org/downloads/
-  - 安装时记得勾选 "Add Python to PATH"
-- **FFmpeg** (视频处理工具)
-  - 下载地址: https://www.gyan.dev/ffmpeg/builds/
-  - 推荐下载 `ffmpeg-release-essentials.zip`
+  - 需要 Windows 10 1809+ 或 Windows 11（支持 winget）
+- **Python 3.8+**（下面会教你安装）
+- **FFmpeg**（视频处理工具，下面会教你安装）
 
 ### 硬件建议
 
@@ -35,7 +32,7 @@
 
 ## 📦 安装步骤
 
-### 步骤 1: 获取项目代码
+### 步骤 0: 获取项目代码
 
 ```powershell
 # 如果已有代码，跳过此步骤
@@ -43,16 +40,46 @@ git clone <你的仓库地址>
 cd dramas_processor
 ```
 
-### 步骤 2: 安装 FFmpeg（必需）
+### 步骤 1: 安装 Python（使用 winget，推荐 ⭐⭐⭐）
 
-FFmpeg 是视频处理的核心工具，**必须安装**。推荐使用**方案一**（最简单快捷）。
-
-#### 方案一：使用 winget 安装（推荐 ⭐⭐⭐ 最简单）
-
-Windows 10/11 自带 `winget` 包管理器，一行命令即可安装！
+Windows 10/11 自带 `winget` 包管理器，一行命令安装 Python！
 
 ```powershell
-# 打开 PowerShell（无需管理员权限）
+# 安装 Python 3.12（推荐）
+winget install Python.Python.3.12
+
+# 或安装 Python 3.11
+winget install Python.Python.3.11
+```
+
+**验证安装**：
+
+```powershell
+# 关闭并重新打开 PowerShell（让 PATH 生效）
+python --version
+```
+
+✅ **完成！** 如果显示 `Python 3.12.x` 或 `Python 3.11.x`，说明安装成功。
+
+> 💡 **优点**：
+>
+> - 自动安装到系统 PATH
+> - 自动配置环境变量
+> - 一行命令搞定
+
+> ⚠️ **注意**：
+>
+> - 安装后需要**重新打开 PowerShell** 才能使用 python 命令
+> - 如果已经安装了 Python，可以跳过此步骤
+
+---
+
+### 步骤 2: 安装 FFmpeg（使用 winget，推荐 ⭐⭐⭐）
+
+同样使用 winget，一行命令安装 FFmpeg！
+
+```powershell
+# 安装 FFmpeg
 winget install --id=Gyan.FFmpeg -e
 ```
 
@@ -64,30 +91,35 @@ ffmpeg -version
 
 ✅ **完成！** 如果显示版本信息，说明安装成功。
 
-> 💡 **优点**：
->
-> - 自动安装到系统 PATH，全局可用
-> - 自动处理环境变量
-> - 一行命令，最简单
+---
 
-> ⚠️ **注意**：
->
-> - 需要 Windows 10 1809+ 或 Windows 11
-> - 如果提示 `winget` 不存在，请使用方案二
+### 可选：手动安装方式
+
+如果你的 Windows 版本不支持 winget（低于 Windows 10 1809），可以手动安装：
+
+#### 手动安装 Python
+
+1. 访问：https://www.python.org/downloads/
+2. 下载最新的 Python 3.12 或 3.11
+3. 运行安装程序
+4. ⚠️ **重要**：勾选 "Add Python to PATH"
+5. 点击 "Install Now"
+
+#### 手动安装 FFmpeg（方案二：内置到项目）
+
+如果你的系统没有 `winget`，或想将 FFmpeg 内置到项目中，可以使用这种方式
 
 ---
 
-#### 方案二：内置 FFmpeg 到项目（传统方式）
+#### 手动安装 FFmpeg（内置到项目）
 
-如果你的系统没有 `winget`，或想将 FFmpeg 内置到项目中，可以使用这种方式。
+如果你的系统没有 `winget`，或想将 FFmpeg 内置到项目中（打包时需要）：
 
 **详细步骤**：
 
 1. **下载 FFmpeg**
 
    访问官方下载页面：https://www.gyan.dev/ffmpeg/builds/
-
-   ![下载页面示例]
 
    - 找到 **"release builds"** 部分
    - 点击下载 **`ffmpeg-release-essentials.zip`** (约 70-80 MB)
@@ -126,13 +158,6 @@ ffmpeg -version
    copy "C:\Users\你的用户名\Downloads\ffmpeg-7.0-essentials_build\bin\ffprobe.exe" bin\
    ```
 
-   **或者直接用文件管理器**：
-
-   - 打开解压后的 `ffmpeg-7.0-essentials_build\bin\` 文件夹
-   - 找到 `ffmpeg.exe` 和 `ffprobe.exe`
-   - 复制这两个文件
-   - 粘贴到项目的 `bin\` 文件夹中
-
 4. **验证安装**
 
    ```powershell
@@ -140,96 +165,9 @@ ffmpeg -version
    .\bin\ffmpeg.exe -version
    ```
 
-   如果显示版本信息（类似下面），说明安装成功：
-
-   ```
-   ffmpeg version 7.0-essentials_build
-   built with gcc 13.2.0 (Rev1, Built by MSYS2 project)
-   configuration: ...
-   ```
-
-✅ **完成！** 现在 FFmpeg 已经内置到项目中，可以直接使用。
+✅ **完成！** 现在 FFmpeg 已经内置到项目中。
 
 ---
-
-#### 方案三：系统全局安装（可选，高级用户）
-
-如果你想在系统全局安装 FFmpeg（任何地方都能用），还有以下方式：
-
-**使用 Chocolatey**（需要先安装 Chocolatey）：
-
-如果你已经安装了 Chocolatey：
-
-```powershell
-# 以管理员权限运行 PowerShell
-choco install ffmpeg
-```
-
-如果没有 Chocolatey，建议使用**方案一（winget）**更简单。
-
----
-
-#### ❓ 常见问题
-
-**Q: 我应该用哪个方案？**  
-A:
-
-- **首选方案一（winget）**：最简单，一行命令搞定
-- 如果 winget 不可用，使用方案二（内置到项目）
-- 方案三适合已经安装了 Chocolatey 的高级用户
-
-**Q: winget 提示不存在怎么办？**  
-A:
-
-- 确认你的 Windows 版本（需要 Windows 10 1809+ 或 Windows 11）
-- 或者使用方案二（手动下载并内置）
-
-**Q: winget 安装和手动安装有什么区别？**  
-A:
-
-- **winget 安装**：FFmpeg 安装到系统，全局可用，项目不需要 `bin` 文件夹
-- **手动安装**：FFmpeg 在项目 `bin` 文件夹，仅项目可用，打包时会包含
-
-**Q: 我应该用哪种方式？**  
-A:
-
-- **开发环境**：推荐 winget（全局安装，方便调试）
-- **打包分发**：必须使用方案二（内置到 `bin` 文件夹），确保用户无需安装
-
-**Q: 使用 winget 安装后，打包时怎么办？**  
-A: 打包前需要下载 FFmpeg 到 `bin` 文件夹：
-
-```powershell
-# 从系统复制到项目（如果使用 winget 安装）
-mkdir bin
-copy "C:\Program Files\Gyan\FFmpeg\bin\ffmpeg.exe" bin\
-copy "C:\Program Files\Gyan\FFmpeg\bin\ffprobe.exe" bin\
-
-# 或者按方案二手动下载
-```
-
-**Q: 下载速度慢怎么办？**  
-A: 可以尝试：
-
-- 使用下载工具（如 IDM、迅雷）
-- 或从国内镜像下载（搜索"FFmpeg Windows 国内镜像"）
-
-**Q: 找不到 bin 文件夹怎么办？**  
-A: 在项目根目录创建：
-
-```powershell
-mkdir bin
-```
-
-**Q: 提示"找不到 ffmpeg.exe"怎么办？**  
-A: 检查：
-
-```powershell
-# 查看 bin 目录内容
-dir bin\
-```
-
-应该能看到 `ffmpeg.exe` 和 `ffprobe.exe`
 
 ### 步骤 3: 安装 Python 依赖
 
@@ -239,6 +177,9 @@ python -m venv venv
 
 # 激活虚拟环境
 .\venv\Scripts\activate
+
+# 升级 pip（可选）
+python -m pip install --upgrade pip
 
 # 安装依赖
 pip install -r requirements.txt

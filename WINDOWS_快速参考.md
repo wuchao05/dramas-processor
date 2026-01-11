@@ -4,35 +4,33 @@
 
 ### 第一次使用
 
-1. **安装 FFmpeg**（必需，选择一种方式）：
+**一键安装所有依赖**（使用 winget，推荐 ⭐⭐⭐）：
 
-   **方式 A：使用 winget（推荐，最简单）**
-   ```powershell
-   winget install --id=Gyan.FFmpeg -e
-   ```
+```powershell
+# 1. 安装 Python
+winget install Python.Python.3.12
 
-   **方式 B：手动下载内置到项目**
-   - 访问：https://www.gyan.dev/ffmpeg/builds/
-   - 下载：`ffmpeg-release-essentials.zip` (约 70-80 MB)
-   - 解压后，复制 `ffmpeg.exe` 和 `ffprobe.exe` 到项目的 `bin\` 文件夹
+# 2. 安装 FFmpeg
+winget install --id=Gyan.FFmpeg -e
 
-2. **运行设置脚本**（自动检查环境）：
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File setup_windows.ps1
-   ```
+# 重新打开 PowerShell（让 PATH 生效）
 
-3. **或手动设置**：
-   ```powershell
-   # 创建虚拟环境
-   python -m venv venv
-   .\venv\Scripts\activate
-   
-   # 安装依赖
-   pip install -r requirements.txt
-   
-   # 验证环境
-   python scripts\test_windows.py
-   ```
+# 3. 创建虚拟环境
+python -m venv venv
+.\venv\Scripts\activate
+
+# 4. 安装依赖
+pip install -r requirements.txt
+
+# 5. 验证环境
+python scripts\test_windows.py
+```
+
+**或使用自动设置脚本**：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File setup_windows.ps1
+```
 
 ### 启动命令行
 

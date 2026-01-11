@@ -4,6 +4,7 @@ import os
 import sys
 import subprocess
 from pathlib import Path
+from pathlib import Path
 
 
 def test_ffmpeg():
@@ -76,13 +77,16 @@ def test_config():
         if not os.path.exists(config_path):
             config_path = "configs/default.yaml"
         
-        from drama_processor.models.config import ProcessingConfig
-        config = ProcessingConfig.from_yaml(config_path)
+        from drama_processor.config import ConfigManager
+        config_manager = ConfigManager(Path(config_path))
+        config = config_manager.load()
         print(f"  ✅ 配置加载成功: {config_path}")
         print(f"     源目录: {config.default_source_dir}")
         return True
     except Exception as e:
+        import traceback
         print(f"  ❌ 错误: {e}")
+        print(f"     详细信息: {traceback.format_exc()}")
         return False
 
 
