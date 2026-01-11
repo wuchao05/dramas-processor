@@ -765,13 +765,18 @@ class VideoEncoder:
         ref_h: int,
         fps: int,
         use_hw: bool,
-        cache_dir: str,
+        cache_dir: Optional[str],
         refresh: bool,
         filter_threads: int,
     ) -> Optional[str]:
         """Get or build normalized tail video with caching."""
         if not tail_src or not os.path.isfile(tail_src):
             return None
+
+        # 如果未指定缓存目录，使用系统临时目录
+        if not cache_dir:
+            import tempfile
+            cache_dir = os.path.join(tempfile.gettempdir(), "drama_processor", "tails_cache")
 
         ensure_dir(cache_dir)
         try:
@@ -1058,7 +1063,7 @@ class VideoEncoder:
         cover_image: Optional[Path],
         temp_root: str,
         keep_temp: bool,
-        tail_cache_dir: str,
+        tail_cache_dir: Optional[str],
         refresh_tail_cache: bool,
         material_idx: int,
         material_total: int,
