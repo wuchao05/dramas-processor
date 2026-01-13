@@ -202,6 +202,7 @@ feishu:
   missing_source_status_value: "无源视频"
   rating_field_name: "评级" # 评级字段名（用于优先级排序）
   priority_rating_value: "红标" # 高优先级评级值（同日期内最优先处理）
+  upload_time_sort_desc: true # 上架时间排序：true=降序(新的优先)，false=升序(早的优先)
   page_size: 200
   token_refresh_interval: 7200000
 
