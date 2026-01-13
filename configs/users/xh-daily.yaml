@@ -2,7 +2,7 @@
 # 只包含用户专属配置，其他字段继承自 default.yaml
 
 # 素材生成设置
-count: 40 # 每部剧生成素材数量
+count: 30 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
 # 目录设置（Windows 格式）
@@ -37,9 +37,9 @@ brand_text_mapping:
       text: "看家本领"
     - range: "24-26"
       text: "奈煊剧场"
-    - range: "27-29"
+    - range: "27-28"
       text: "婉纨好剧"
-    - range: "30-31"
+    - range: "29-30"
       text: "葸辉剧场"
 
   cycle_texts:
