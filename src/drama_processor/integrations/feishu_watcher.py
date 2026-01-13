@@ -282,26 +282,26 @@ class FeishuWatcher:
             date_label = info.get("date") or "未知日期"
             grouped.setdefault(date_label, {})[drama_name] = info
         
-        # 对每个日期组内的剧按上架时间降序排序（上架时间越晚优先级越高）
+        # 对每个日期组内的剧按优先级排序：
+        # 1. 评级为优先级标签（如"红标"）的最优先
+        # 2. 相同评级的剧按上架时间降序排序（上架时间越晚优先级越高）
+        priority_rating = self.base_config.feishu.priority_rating_value if self.base_config.feishu else "红标"
+        
         for date_label in grouped:
-            dramas_with_time = []
-            dramas_without_time = []
+            all_dramas = []
             
             for drama_name, info in grouped[date_label].items():
-                upload_time = info.get("upload_time")
-                if upload_time is not None:
-                    dramas_with_time.append((drama_name, info, upload_time))
-                else:
-                    dramas_without_time.append((drama_name, info))
+                upload_time = info.get("upload_time") or 0  # 没有上架时间的设为0
+                rating = info.get("rating") or ""
+                is_priority = (rating == priority_rating)  # 优先级标签为 True，其他为 False
+                all_dramas.append((drama_name, info, is_priority, upload_time))
             
-            # 按上架时间降序排序（时间戳越大越靠前）
-            dramas_with_time.sort(key=lambda x: x[2], reverse=True)
+            # 排序：先按优先级标签（True在前），再按上架时间降序
+            all_dramas.sort(key=lambda x: (not x[2], -x[3]))
             
-            # 重新构建该日期的字典，有上架时间的在前，没有的在后
+            # 重新构建该日期的字典
             sorted_dict = {}
-            for drama_name, info, _ in dramas_with_time:
-                sorted_dict[drama_name] = info
-            for drama_name, info in dramas_without_time:
+            for drama_name, info, _, _ in all_dramas:
                 sorted_dict[drama_name] = info
             
             grouped[date_label] = sorted_dict

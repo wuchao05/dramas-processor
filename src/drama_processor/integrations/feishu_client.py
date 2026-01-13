@@ -291,7 +291,7 @@ class FeishuClient:
     
     def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> Dict[str, Dict[str, str]]:
         """
-        获取指定状态的剧名和对应的记录信息（包括日期和上架时间）
+        获取指定状态的剧名和对应的记录信息（包括日期、上架时间和评级）
         
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
@@ -303,12 +303,15 @@ class FeishuClient:
                 "record_id": str,
                 "date": str,          # 简化格式，如 "12.30"（用于文件命名）
                 "full_date": str,     # 完整格式，如 "2025-12-30"（用于日期匹配）
-                "upload_time": int
+                "upload_time": int,   # 上架时间戳（毫秒）
+                "rating": str         # 评级，如 "红标"
             }
         """
         try:
+            # 动态获取评级字段名（支持自定义）
+            rating_field = self.config.rating_field_name or "评级"
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
-                                         field_names=["剧名", "日期", "上架时间"])
+                                         field_names=["剧名", "日期", "上架时间", rating_field])
             drama_info = {}
             for record in response.items:
                 if "剧名" in record.fields and record.fields["剧名"]:
@@ -361,11 +364,17 @@ class FeishuClient:
                         except (ValueError, TypeError) as e:
                             logger.warning(f"无法解析剧目 '{drama_name}' 的上架时间 '{upload_time_value}': {e}")
                     
+                    # 获取评级信息（使用配置中的字段名）
+                    rating = None
+                    if rating_field in record.fields and record.fields[rating_field]:
+                        rating = record.fields[rating_field][0].text
+                    
                     drama_info[drama_name] = {
                         "record_id": record.record_id,
                         "date": drama_date or "未知",           # 简化格式，用于文件命名
                         "full_date": full_date,                 # 完整格式，用于日期匹配
-                        "upload_time": upload_time              # None 表示没有上架时间
+                        "upload_time": upload_time,             # None 表示没有上架时间
+                        "rating": rating                        # None 表示没有评级
                     }
             return drama_info
         except Exception as e:

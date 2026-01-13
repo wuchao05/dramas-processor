@@ -72,6 +72,8 @@ feishu:
   processing_status_value: "剪辑中"
   completed_status_value: "待上传"
   missing_source_status_value: "无源视频"
+  rating_field_name: "评级" # 评级字段名（用于优先级排序）
+  priority_rating_value: "红标" # 高优先级评级值（同日期内最优先处理）
   page_size: 200
   token_refresh_interval: 7200000
 
