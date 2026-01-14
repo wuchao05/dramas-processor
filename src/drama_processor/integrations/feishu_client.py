@@ -356,18 +356,25 @@ class FeishuClient:
                     # 获取上架时间信息
                     upload_time = None
                     if "上架时间" in record.fields and record.fields["上架时间"]:
-                        upload_time_value = record.fields["上架时间"][0].text
                         try:
-                            # 上架时间是时间戳（毫秒）格式
-                            if upload_time_value.isdigit():
+                            # 上架时间结构: {"type": 5, "value": [时间戳]}
+                            upload_time_obj = record.fields["上架时间"]
+                            if isinstance(upload_time_obj, dict) and "value" in upload_time_obj:
+                                upload_time_value = upload_time_obj["value"][0]
                                 upload_time = int(upload_time_value)
-                        except (ValueError, TypeError) as e:
-                            logger.warning(f"无法解析剧目 '{drama_name}' 的上架时间 '{upload_time_value}': {e}")
+                        except (ValueError, TypeError, KeyError, IndexError) as e:
+                            logger.warning(f"无法解析剧目 '{drama_name}' 的上架时间: {e}")
                     
                     # 获取评级信息（使用配置中的字段名）
                     rating = None
                     if rating_field in record.fields and record.fields[rating_field]:
-                        rating = record.fields[rating_field][0].text
+                        try:
+                            # 评级结构: {"type": 3, "value": ["红标"]}
+                            rating_obj = record.fields[rating_field]
+                            if isinstance(rating_obj, dict) and "value" in rating_obj:
+                                rating = rating_obj["value"][0]
+                        except (KeyError, IndexError, TypeError) as e:
+                            logger.warning(f"无法解析剧目 '{drama_name}' 的评级: {e}")
                     
                     drama_info[drama_name] = {
                         "record_id": record.record_id,
