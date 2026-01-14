@@ -283,10 +283,16 @@ class FeishuWatcher:
             grouped.setdefault(date_label, {})[drama_name] = info
         
         # 对每个日期组内的剧按优先级排序：
-        # 1. 评级为优先级标签（如"红标"）的最优先
+        # 1. 按评级优先级：红标 > 绿标 > 黄标 > 其他
         # 2. 相同评级的剧按上架时间排序（可配置升序/降序）
-        priority_rating = self.base_config.feishu.priority_rating_value if self.base_config.feishu else "红标"
         sort_desc = self.base_config.feishu.upload_time_sort_desc if self.base_config.feishu else True
+        
+        # 定义评级优先级映射（数值越小优先级越高）
+        rating_priority_map = {
+            "红标": 0,
+            "绿标": 1,
+            "黄标": 2,
+        }
         
         for date_label in grouped:
             all_dramas = []
@@ -294,16 +300,16 @@ class FeishuWatcher:
             for drama_name, info in grouped[date_label].items():
                 upload_time = info.get("upload_time") or 0  # 没有上架时间的设为0
                 rating = info.get("rating") or ""
-                is_priority = (rating == priority_rating)  # 优先级标签为 True，其他为 False
-                all_dramas.append((drama_name, info, is_priority, upload_time))
+                rating_priority = rating_priority_map.get(rating, 999)  # 未定义的评级优先级最低
+                all_dramas.append((drama_name, info, rating_priority, upload_time))
             
-            # 排序：先按优先级标签（True在前），再按上架时间（升序或降序）
+            # 排序：先按评级优先级，再按上架时间（升序或降序）
             if sort_desc:
                 # 降序：时间戳越大越靠前（新的优先）
-                all_dramas.sort(key=lambda x: (not x[2], -x[3]))
+                all_dramas.sort(key=lambda x: (x[2], -x[3]))
             else:
                 # 升序：时间戳越小越靠前（早的优先）
-                all_dramas.sort(key=lambda x: (not x[2], x[3]))
+                all_dramas.sort(key=lambda x: (x[2], x[3]))
             
             # 重新构建该日期的字典
             sorted_dict = {}
