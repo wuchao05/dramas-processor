@@ -56,6 +56,11 @@ feishu:
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   table_id: "tblDOyi2Lzs80sv0"
+  status_field_name: "当前状态"
+  pending_status_value: "待剪辑"
+  processing_status_value: "剪辑中"
+  completed_status_value: "待上传"
+  missing_source_status_value: "无源视频"
 
 # 文案显示配置
 enable_hook_text: false
