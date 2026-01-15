@@ -230,10 +230,7 @@ class FeishuWatcher:
         # 首先清理已完成的任务（这样可以立即发现新的空闲槽位）
         self._cleanup_finished_tasks()
         
-        # 如果还有活跃任务在运行，跳过本次查询，避免在剪辑过程中打印查询日志
-        if self.active_tasks:
-            return True  # 返回 True 表示有活动，避免触发 idle_exit
-        
+        # 查询飞书获取最新待剪辑剧（即使有活跃任务也要查询，以便实时调整优先级）
         try:
             drama_info = self.client.get_pending_dramas_with_dates(status_filter=self.status_filter, include_rating=self.enable_rating_priority)
         except Exception as exc:
@@ -242,11 +239,14 @@ class FeishuWatcher:
             return False
         
         if not drama_info:
-            self._notify("📭 当前没有待剪辑剧目")
+            # 只在没有活跃任务时打印"没有待剪辑剧目"，避免频繁日志
+            if not self.active_tasks:
+                self._notify("📭 当前没有待剪辑剧目")
             return False
         
         grouped = self._group_by_date(drama_info)
-        if grouped:
+        # 只在没有活跃任务时打印分组结果，避免频繁日志
+        if grouped and not self.active_tasks:
             summary = ", ".join(f"{date}:{len(items)}部" for date, items in grouped.items())
             self._notify(f"📚 分组结果：{summary}")
         target_dates = self._select_dates(grouped)
@@ -434,6 +434,8 @@ class FeishuWatcher:
             finally:
                 processed.add(drama_name)
                 cached_info = None
+                # 每处理完一部剧（无论成功或失败），立即触发主循环重新查询飞书
+                self._wake_event.set()
             
             if not processed_ok:
                 self._notify(f"⏭️ '{drama_name}' 本地未找到可处理的目录，跳过并继续下一个剧目/日期")
