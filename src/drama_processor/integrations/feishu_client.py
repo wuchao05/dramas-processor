@@ -289,13 +289,14 @@ class FeishuClient:
             logger.error(f"获取{actual_status}剧名和记录ID失败: {str(e)}")
             raise
     
-    def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> Dict[str, Dict[str, str]]:
+    def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None, include_rating: bool = True) -> Dict[str, Dict[str, str]]:
         """
         获取指定状态的剧名和对应的记录信息（包括日期、上架时间和评级）
         
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
+            include_rating: 是否包含评级字段（默认为True）
         
         Returns:
             剧名到记录信息的映射字典，每个记录包含：
@@ -304,14 +305,21 @@ class FeishuClient:
                 "date": str,          # 简化格式，如 "12.30"（用于文件命名）
                 "full_date": str,     # 完整格式，如 "2025-12-30"（用于日期匹配）
                 "upload_time": int,   # 上架时间戳（毫秒）
-                "rating": str         # 评级，如 "红标"
+                "rating": str         # 评级，如 "红标"（如果 include_rating=True）
             }
         """
         try:
-            # 动态获取评级字段名（支持自定义）
-            rating_field = self.config.rating_field_name or "评级"
+            # 构建查询字段列表
+            field_names = ["剧名", "日期", "上架时间"]
+            
+            # 只有启用评级功能时才查询评级字段
+            rating_field = None
+            if include_rating:
+                rating_field = self.config.rating_field_name or "评级"
+                field_names.append(rating_field)
+            
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
-                                         field_names=["剧名", "日期", "上架时间", rating_field])
+                                         field_names=field_names)
             drama_info = {}
             for record in response.items:
                 if "剧名" in record.fields and record.fields["剧名"]:
@@ -365,9 +373,9 @@ class FeishuClient:
                         except (ValueError, TypeError, KeyError, IndexError) as e:
                             logger.warning(f"无法解析剧目 '{drama_name}' 的上架时间: {e}")
                     
-                    # 获取评级信息（使用配置中的字段名）
+                    # 获取评级信息（仅在 include_rating=True 时）
                     rating = None
-                    if rating_field in record.fields and record.fields[rating_field]:
+                    if include_rating and rating_field and rating_field in record.fields and record.fields[rating_field]:
                         try:
                             # 评级结构: {"type": 3, "value": ["红标"]}
                             rating_obj = record.fields[rating_field]

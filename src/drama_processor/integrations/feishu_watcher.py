@@ -55,6 +55,8 @@ class FeishuWatcher:
         self.executor = ThreadPoolExecutor(max_workers=self.max_dates)
         self._wake_event = Event()
         self.active_tasks: Dict[str, "DateTask"] = {}
+        # 只有 xh-daily 用户才启用评级优先级功能
+        self.enable_rating_priority = (config.active_user == "xh-daily")
     
     def run(self, run_once: bool = False) -> None:
         """Start the watcher."""
@@ -233,7 +235,7 @@ class FeishuWatcher:
             return True  # 返回 True 表示有活动，避免触发 idle_exit
         
         try:
-            drama_info = self.client.get_pending_dramas_with_dates(status_filter=self.status_filter)
+            drama_info = self.client.get_pending_dramas_with_dates(status_filter=self.status_filter, include_rating=self.enable_rating_priority)
         except Exception as exc:
             logger.error(f"拉取飞书记录失败: {exc}")
             self._notify("⚠️ 无法从飞书获取待剪辑剧目，稍后重试")
@@ -283,8 +285,8 @@ class FeishuWatcher:
             grouped.setdefault(date_label, {})[drama_name] = info
         
         # 对每个日期组内的剧按优先级排序：
-        # 1. 按评级优先级：红标 > 绿标 > 黄标 > 其他
-        # 2. 相同评级的剧按上架时间排序（可配置升序/降序）
+        # 1. 如果启用评级优先级（xh-daily用户），按评级优先级：红标 > 绿标 > 黄标 > 其他
+        # 2. 相同评级的剧（或所有剧）按上架时间排序（可配置升序/降序）
         sort_desc = self.base_config.feishu.upload_time_sort_desc if self.base_config.feishu else True
         
         # 定义评级优先级映射（数值越小优先级越高）
@@ -299,8 +301,14 @@ class FeishuWatcher:
             
             for drama_name, info in grouped[date_label].items():
                 upload_time = info.get("upload_time") or 0  # 没有上架时间的设为0
-                rating = info.get("rating") or ""
-                rating_priority = rating_priority_map.get(rating, 999)  # 未定义的评级优先级最低
+                
+                # 只有启用评级优先级时才考虑评级，否则所有剧集评级优先级相同
+                if self.enable_rating_priority:
+                    rating = info.get("rating") or ""
+                    rating_priority = rating_priority_map.get(rating, 999)  # 未定义的评级优先级最低
+                else:
+                    rating_priority = 0  # 所有剧集评级优先级相同
+                
                 all_dramas.append((drama_name, info, rating_priority, upload_time))
             
             # 排序：先按评级优先级，再按上架时间（升序或降序）
@@ -353,7 +361,8 @@ class FeishuWatcher:
         try:
             info = client_obj.get_pending_dramas_with_dates(
                 status_filter=self.status_filter,
-                date_filter=date_filter
+                date_filter=date_filter,
+                include_rating=self.enable_rating_priority
             )
         except Exception as exc:
             logger.error(f"获取日期 {date_label} 的待剪辑剧失败: {exc}")
