@@ -315,7 +315,7 @@ class FeishuClient:
             # 只有启用评级功能时才查询评级字段
             rating_field = None
             if include_rating:
-            rating_field = self.config.rating_field_name or "评级"
+                rating_field = self.config.rating_field_name or "评级"
                 field_names.append(rating_field)
             
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
