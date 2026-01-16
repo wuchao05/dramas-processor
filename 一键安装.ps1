@@ -1,5 +1,11 @@
-# Windows 一键安装脚本
+﻿﻿# Windows 一键安装脚本
 # 使用 winget 自动安装所有依赖
+
+# 设置控制台编码
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+chcp 65001 | Out-Null
+
 
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host "  Drama Processor - 一键安装脚本  " -ForegroundColor Cyan
