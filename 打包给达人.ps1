@@ -2,7 +2,7 @@
 # 用途：将项目打包为可交付给达人的压缩包
 
 param(
-    [string]$Name = "达人",
+    [string]$Name = "",
     [string]$OutputDir = "D:\打包输出"
 )
 
@@ -17,11 +17,36 @@ Write-Host "  短剧剪辑工具 - 达人打包脚本" -ForegroundColor Cyan
 Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host ""
 
+# 检查是否提供了达人名称
+if ([string]::IsNullOrWhiteSpace($Name)) {
+    Write-Host "❌ 请指定达人名称！" -ForegroundColor Red
+    Write-Host ""
+    Write-Host "使用方法：" -ForegroundColor Yellow
+    Write-Host "  .\打包给达人.ps1 -Name xh" -ForegroundColor Cyan
+    Write-Host "  .\打包给达人.ps1 -Name xl" -ForegroundColor Cyan
+    Write-Host "  .\打包给达人.ps1 -Name xx" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "或者使用打包工具：" -ForegroundColor Yellow
+    Write-Host "  .\打包工具.bat" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "可用的达人配置：" -ForegroundColor Yellow
+    Get-ChildItem "configs\users\*.yaml" | ForEach-Object {
+        $configName = $_.BaseName
+        Write-Host "  - $configName" -ForegroundColor Green
+    }
+    exit 1
+}
+
 # 检查配置文件是否存在
 $userConfigFile = "configs\users\${Name}.yaml"
 if (-not (Test-Path $userConfigFile)) {
     Write-Host "❌ 配置文件不存在: $userConfigFile" -ForegroundColor Red
-    Write-Host "请检查 configs/users/ 目录下是否有 ${Name}.yaml 文件" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "可用的达人配置：" -ForegroundColor Yellow
+    Get-ChildItem "configs\users\*.yaml" | ForEach-Object {
+        $configName = $_.BaseName
+        Write-Host "  - $configName" -ForegroundColor Green
+    }
     exit 1
 }
 
