@@ -2,7 +2,7 @@
 # 只包含用户专属配置，其他字段继承自 default.yaml
 
 # 素材生成设置
-count: 35 # 每部剧生成素材数量
+count: 30 # 每部剧生成素材数量
 material_code: "xh" # 素材文件名标识
 
 # 目录设置
@@ -12,41 +12,29 @@ default_source_dir: "D:\\短剧剪辑\\源素材视频" # WSL 路径
 brand_text_mapping:
   mode: "range"
   ranges:
-    - range: "01-06"
+    - range: "01-05"
       text: "斯娜看剧"
-    - range: "07-10"
+    - range: "06-10"
       text: "小红看剧"
     - range: "11-15"
       text: "哈哈看剧"
-    - range: "16-17"
-      text: "萍通剧坊"
-    - range: "18-20"
+    - range: "16-20"
       text: "看家本领"
     - range: "21-23"
       text: "葸辉爆剧"
     - range: "24-25"
       text: "清妍短剧"
-    - range: "26-27"
-      text: "葸辉好剧"
-    - range: "28-29"
-      text: "奈煊剧场"
-    - range: "30-32"
-      text: "婉纨好剧"
-    - range: "33-35"
-      text: "葸辉剧场"
+    - range: "26-30"
+      text: "排桐剧场"
 
   cycle_texts:
     - "斯娜看剧"
     - "小红看剧"
     - "哈哈看剧"
-    - "萍通剧坊"
     - "看家本领"
     - "葸辉爆剧"
     - "清妍短剧"
-    - "葸辉好剧"
-    - "奈煊剧场"
-    - "婉纨好剧"
-    - "葸辉剧场"
+    - "排桐剧场"
   default_text: "热门短剧"
 
 # 飞书功能配置
