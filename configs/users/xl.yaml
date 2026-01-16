@@ -2,7 +2,7 @@
 # 此文件包含用户专属配置，会覆盖 default.yaml 中的对应字段
 
 # 素材生成设置
-count: 10 # 每部剧生成素材数量
+count: 15 # 每部剧生成素材数量
 material_code: "xl" # 素材文件名标识
 
 # 标题颜色 - 蓝青色系
@@ -15,7 +15,7 @@ title_colors:
   - "#00BFFF" # Deep Sky Blue
 
 # 目录设置
-default_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径
+default_source_dir: "D:\\短剧剪辑\\源素材视频" # Windows 路径
 
 # 多素材文案配置
 brand_text_mapping:
@@ -24,10 +24,13 @@ brand_text_mapping:
     - range: "01-05"
       text: "茹悟好剧"
     - range: "06-10"
-      text: "浮生剧场"
+      text: "小来追剧"
+    - range: "11-15"
+      text: "听燕剧场"
   cycle_texts:
     - "茹悟好剧"
-    - "浮生剧场"
+    - "小来追剧"
+    - "听燕剧场"
   default_text: "热门短剧"
 
 # 飞书功能配置（核心字段）
@@ -37,4 +40,3 @@ feishu:
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   table_id: "tblU2gdZSltbN5Bt"
-# 其他飞书配置（webhook、轮询、详细参数等）已在 default.yaml 中设置默认值
