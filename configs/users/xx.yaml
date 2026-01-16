@@ -27,10 +27,7 @@ brand_text_mapping:
     - "葸辉看剧"
   default_text: "热门短剧"
 
-# 飞书功能配置（核心字段）
-enable_feishu_features: true # 飞书功能总开关
+# 飞书功能配置
+enable_feishu_features: true
 feishu:
-  app_id: "cli_a870f7611b7b1013"
-  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
-  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
-  table_id: "tblZ46PiVcROlbnu"
+  table_id: "tblZ46PiVcROlbnu"  # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）

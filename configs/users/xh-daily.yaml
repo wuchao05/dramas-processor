@@ -40,20 +40,8 @@ enable_feishu_features: true
 enable_feishu_notification: false
 
 feishu:
-  app_id: "cli_a870f7611b7b1013"
-  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
-  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
-  table_id: "tblJcLhLpEkmFkga"
-  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
-  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
-  status_field_name: "当前状态"
-  pending_status_value: "待剪辑"
-  processing_status_value: "剪辑中"
-  completed_status_value: "待上传"
-  missing_source_status_value: "无源视频"
-  rating_field_name: "评级" # 评级字段名（用于优先级排序）
-  priority_rating_value: "红标" # 高优先级评级值（同日期内最优先处理）
-  upload_time_sort_desc: false # xh-daily: 上架时间升序，早上架的先处理
+  table_id: "tblJcLhLpEkmFkga"  # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
+  upload_time_sort_desc: false  # xh-daily 特殊配置：上架时间升序（早上架的先处理）
   page_size: 200
   token_refresh_interval: 7200000
 

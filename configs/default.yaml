@@ -154,8 +154,31 @@ enable_feishu_features: false # 默认关闭，由用户配置覆盖
 enable_feishu_notification: false
 feishu_webhook_url: null
 
-# 飞书API配置（由用户配置提供，这里不设置空字段）
-feishu: null
+# 飞书API配置（公共配置，用户只需覆盖 table_id）
+feishu:
+  # 飞书应用凭证（所有用户共用）
+  app_id: "cli_a870f7611b7b1013"
+  app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
+  app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
+  
+  # 多维表格配置（每个达人不同，需在用户配置中覆盖）
+  table_id: null  # 必须在用户配置中指定
+  
+  # 飞书 API 端点
+  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
+  
+  # 字段名称配置（所有用户共用）
+  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
+  status_field_name: "当前状态"
+  pending_status_value: "待剪辑"
+  processing_status_value: "剪辑中"
+  completed_status_value: "待上传"
+  missing_source_status_value: "无源视频"
+  
+  # 评级优先级配置（仅 xh-daily 使用）
+  rating_field_name: "评级"
+  priority_rating_value: "红标"
+  upload_time_sort_desc: true
 
 # 飞书轮询配置
 feishu_watcher:
