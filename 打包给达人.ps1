@@ -138,7 +138,7 @@ echo.
 echo [OK] Starting Feishu watcher...
 echo.
 
-python -m drama_processor feishu watch --config configs\users\${Name}.yaml
+python -m drama_processor --config configs\users\${Name}.yaml feishu watch
 
 echo.
 echo ========================================
