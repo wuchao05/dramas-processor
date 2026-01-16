@@ -1,10 +1,16 @@
-# 短剧剪辑工具 - 达人打包脚本
+﻿# 短剧剪辑工具 - 达人打包脚本
 # 用途：将项目打包为可交付给达人的压缩包
 
 param(
     [string]$Name = "达人",
     [string]$OutputDir = "D:\打包输出"
 )
+
+# 设置控制台编码为 UTF-8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+# 设置 PowerShell 会话编码
+chcp 65001 | Out-Null
 
 Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host "  短剧剪辑工具 - 达人打包脚本" -ForegroundColor Cyan
@@ -124,7 +130,7 @@ $readmeContent | Out-File -FilePath "${packagePath}\README.txt" -Encoding UTF8
 # 创建配置检查清单
 Write-Host "[5/6] 生成配置检查清单..." -ForegroundColor Yellow
 $checklistContent = @"
-短剧剪辑工具 - 配置检查清单
+短剧剪辑工具 - 配置检查清单 (Checklist)
 ═══════════════════════════════════════════════════════════
 
 ✅ 使用前检查
@@ -180,7 +186,7 @@ $checklistContent = @"
 ═══════════════════════════════════════════════════════════
 "@
 
-$checklistContent | Out-File -FilePath "${packagePath}\配置检查清单.txt" -Encoding UTF8
+$checklistContent | Out-File -FilePath "${packagePath}\Checklist.txt" -Encoding UTF8
 
 # 压缩文件
 Write-Host "[6/6] 压缩打包文件..." -ForegroundColor Yellow
