@@ -1,4 +1,4 @@
-﻿﻿# Windows 一键安装脚本
+﻿﻿﻿# Windows 一键安装脚本
 # 使用 winget 自动安装所有依赖
 
 # 设置控制台编码
@@ -11,6 +11,21 @@ Write-Host "======================================" -ForegroundColor Cyan
 Write-Host "  Drama Processor - 一键安装脚本  " -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
+
+# 检查并切换到正确的目录
+$scriptDir = $PSScriptRoot
+if (Test-Path (Join-Path $scriptDir "项目文件\requirements.txt")) {
+    # 如果在打包目录，进入项目文件目录
+    Write-Host "检测到打包目录结构，切换到项目文件目录..." -ForegroundColor Yellow
+    Write-Host ""
+    Set-Location (Join-Path $scriptDir "项目文件")
+} elseif (-not (Test-Path "requirements.txt")) {
+    Write-Host "  ❌ 找不到 requirements.txt 文件" -ForegroundColor Red
+    Write-Host "  请确保在项目根目录运行此脚本" -ForegroundColor Yellow
+    Write-Host "  当前目录: $(Get-Location)" -ForegroundColor Yellow
+    pause
+    exit 1
+}
 
 # 检查 winget
 Write-Host "[0/4] 检查 winget..." -ForegroundColor Yellow
