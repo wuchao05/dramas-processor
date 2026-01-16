@@ -113,47 +113,42 @@ Copy-Item -Path "达人使用说明.txt" -Destination $packagePath -Force
 Write-Host "  ✓ 已复制通用脚本" -ForegroundColor Green
 
 # 创建达人专属的飞书监控启动脚本
-# 注意：bat 文件需要使用 UTF-8 with BOM 编码才能正确显示中文
+# 使用英文避免编码问题
 $feishuBatContent = @"
 @echo off
 chcp 65001 >nul
-title 短剧剪辑工具 - 飞书监控 (${Name})
+title Feishu Watcher - ${Name}
 
 echo ========================================
-echo    短剧剪辑工具 - 飞书监控
-echo    账号: ${Name}
+echo   Drama Processor - Feishu Watcher
+echo   User: ${Name}
 echo ========================================
 echo.
 
 cd /d "%~dp0项目文件"
 if not exist venv\Scripts\activate.bat (
-    echo [X] 未找到虚拟环境！
-    echo 请先运行: 一键安装.ps1
+    echo [ERROR] Virtual environment not found!
+    echo Please run: Install.ps1
     pause
     exit /b 1
 )
 
 call venv\Scripts\activate.bat
-
-echo [OK] 虚拟环境已激活
-echo [OK] 正在启动飞书监控...
 echo.
-echo 提示:
-echo - 按 Ctrl+C 可以安全停止
-echo - 窗口会显示实时处理进度
+echo [OK] Starting Feishu watcher...
 echo.
 
 python -m drama_processor feishu watch --config configs\users\${Name}.yaml
 
 echo.
 echo ========================================
-echo    监控已停止
+echo   Watcher stopped
 echo ========================================
 pause
 "@
 
 $feishuBatPath = Join-Path $packagePath "启动飞书监控.bat"
-# 使用 UTF-8 with BOM 编码（确保中文正确显示）
+# 使用 UTF-8 with BOM 编码
 $utf8BOM = New-Object System.Text.UTF8Encoding $true
 [System.IO.File]::WriteAllText($feishuBatPath, $feishuBatContent, $utf8BOM)
 Write-Host "  ✓ 已创建: 启动飞书监控.bat（配置: ${Name}.yaml）" -ForegroundColor Green
