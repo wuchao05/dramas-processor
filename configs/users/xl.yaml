@@ -15,7 +15,7 @@ title_colors:
   - "#00BFFF" # Deep Sky Blue
 
 # 目录设置
-default_source_dir: "D:\\短剧剪辑\\源素材视频" # Windows 路径
+default_source_dir: "E:\\短剧剪辑\\源素材视频" # Windows 路径
 
 # 多素材文案配置
 brand_text_mapping:
