@@ -17,6 +17,18 @@ Write-Host "  短剧剪辑工具 - 达人打包脚本" -ForegroundColor Cyan
 Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host ""
 
+# 检查配置文件是否存在
+$userConfigFile = "configs\users\${Name}.yaml"
+if (-not (Test-Path $userConfigFile)) {
+    Write-Host "❌ 配置文件不存在: $userConfigFile" -ForegroundColor Red
+    Write-Host "请检查 configs/users/ 目录下是否有 ${Name}.yaml 文件" -ForegroundColor Yellow
+    exit 1
+}
+
+Write-Host "✓ 找到配置文件: ${Name}.yaml" -ForegroundColor Green
+Write-Host "✓ 打包对象: $Name" -ForegroundColor Green
+Write-Host ""
+
 # 设置输出路径
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
 $packageName = "短剧剪辑工具-${Name}-${timestamp}"
@@ -29,39 +41,88 @@ New-Item -ItemType Directory -Path "${packagePath}\项目文件" -Force | Out-Nu
 
 # 复制核心文件
 Write-Host "[2/6] 复制项目核心文件..." -ForegroundColor Yellow
-$filesToCopy = @(
-    "src",
-    "configs", 
-    "assets",
-    "docs",
-    "requirements.txt",
-    "requirements_ai.txt",
-    "pyproject.toml",
-    "README.md"
-)
 
-foreach ($item in $filesToCopy) {
+# 复制基础文件和目录
+$basicItems = @("src", "assets", "docs", "requirements.txt", "requirements_ai.txt", "pyproject.toml", "README.md")
+foreach ($item in $basicItems) {
     if (Test-Path $item) {
         Copy-Item -Path $item -Destination "${packagePath}\项目文件\" -Recurse -Force
         Write-Host "  ✓ 已复制: $item" -ForegroundColor Green
     }
 }
 
-# 复制启动脚本
-Write-Host "[3/6] 复制启动脚本..." -ForegroundColor Yellow
-$scriptsToC = @(
-    "一键安装.ps1",
-    "启动命令行.bat",
-    "启动飞书监控-xh.bat",
-    "达人使用说明.txt"
-)
+# 复制 configs 目录（但只包含该达人的配置）
+Write-Host "  复制配置文件（仅 ${Name}）..." -ForegroundColor Cyan
+New-Item -ItemType Directory -Path "${packagePath}\项目文件\configs" -Force | Out-Null
+New-Item -ItemType Directory -Path "${packagePath}\项目文件\configs\users" -Force | Out-Null
 
-foreach ($script in $scriptsToC) {
-    if (Test-Path $script) {
-        Copy-Item -Path $script -Destination $packagePath -Force
-        Write-Host "  ✓ 已复制: $script" -ForegroundColor Green
-    }
+# 复制默认配置文件
+Copy-Item -Path "configs\default.yaml" -Destination "${packagePath}\项目文件\configs\" -Force
+Copy-Item -Path "configs\windows_default.yaml" -Destination "${packagePath}\项目文件\configs\" -Force
+
+# 只复制该达人的配置文件
+$userConfigFile = "configs\users\${Name}.yaml"
+$userDailyConfigFile = "configs\users\${Name}-daily.yaml"
+
+Copy-Item -Path $userConfigFile -Destination "${packagePath}\项目文件\configs\users\" -Force
+Write-Host "  ✓ 已复制达人配置: ${Name}.yaml" -ForegroundColor Green
+
+if (Test-Path $userDailyConfigFile) {
+    Copy-Item -Path $userDailyConfigFile -Destination "${packagePath}\项目文件\configs\users\" -Force
+    Write-Host "  ✓ 已复制达人配置: ${Name}-daily.yaml" -ForegroundColor Green
 }
+
+# 修改 windows_default.yaml 的 active_user
+$defaultConfigPath = "${packagePath}\项目文件\configs\windows_default.yaml"
+$defaultConfig = Get-Content $defaultConfigPath -Raw -Encoding UTF8
+$defaultConfig = $defaultConfig -replace "active_user:.*", "active_user: ${Name}"
+$defaultConfig | Out-File -FilePath $defaultConfigPath -Encoding UTF8 -NoNewline
+Write-Host "  ✓ 已设置 active_user: ${Name}" -ForegroundColor Green
+
+# 复制和创建启动脚本
+Write-Host "[3/6] 创建启动脚本..." -ForegroundColor Yellow
+
+# 复制通用脚本
+Copy-Item -Path "一键安装.ps1" -Destination $packagePath -Force
+Copy-Item -Path "启动命令行.bat" -Destination $packagePath -Force
+Copy-Item -Path "达人使用说明.txt" -Destination $packagePath -Force
+Write-Host "  ✓ 已复制通用脚本" -ForegroundColor Green
+
+# 创建达人专属的飞书监控启动脚本
+$feishuBatContent = @"
+@echo off
+chcp 65001 >nul
+title 短剧剪辑工具 - 飞书自动监控（${Name}）
+
+echo ========================================
+echo    短剧剪辑工具 - 飞书自动监控
+echo    账号：${Name}
+echo ========================================
+echo.
+
+cd /d %~dp0\项目文件
+call ..\venv\Scripts\activate.bat
+
+echo [√] 虚拟环境已激活
+echo [√] 正在启动飞书监控...
+echo.
+echo 提示：
+echo - 按 Ctrl+C 可以安全停止
+echo - 窗口会显示实时处理进度
+echo.
+
+python -m drama_processor feishu watch --config configs\users\${Name}.yaml
+
+echo.
+echo ========================================
+echo    监控已停止
+echo ========================================
+pause
+"@
+
+$feishuBatPath = Join-Path $packagePath "启动飞书监控.bat"
+$feishuBatContent | Out-File -FilePath $feishuBatPath -Encoding UTF8
+Write-Host "  ✓ 已创建: 启动飞书监控.bat（配置: ${Name}.yaml）" -ForegroundColor Green
 
 # 创建达人专属说明文件
 Write-Host "[4/6] 生成达人专属说明..." -ForegroundColor Yellow
@@ -79,7 +140,7 @@ $readmeContent = @"
   📄 达人使用说明.txt      - 【必读】快速开始指南
   📄 一键安装.ps1          - 首次使用需要运行
   📄 启动命令行.bat        - 打开命令行界面
-  📄 启动飞书监控-xh.bat   - 一键启动飞书自动监控
+  📄 启动飞书监控.bat      - 一键启动飞书自动监控
 
 [项目文件]
   📁 src/                  - 程序源代码
@@ -98,7 +159,7 @@ $readmeContent = @"
    （每部剧一个文件夹，文件夹名即剧名）
 
 3️⃣ 开始使用
-   双击运行"启动飞书监控-xh.bat"即可自动监控和剪辑
+   双击运行"启动飞书监控.bat"即可自动监控和剪辑
 
 📖 详细文档
 ───────────────────────────────────────────────────────────
@@ -117,7 +178,7 @@ $readmeContent = @"
 ───────────────────────────────────────────────────────────
 如有问题，请联系管理员，并提供：
   • 错误信息截图
-  • 使用的配置文件名称（如 xh.yaml）
+  • 使用的配置文件名称（${Name}.yaml）
   • 操作步骤说明
 
 ═══════════════════════════════════════════════════════════
@@ -142,10 +203,10 @@ $checklistContent = @"
 
 ✅ 配置文件检查
 ───────────────────────────────────────────────────────────
-□ 配置文件位置：项目文件\configs\users\xh.yaml
+□ 配置文件位置：项目文件\configs\users\${Name}.yaml
 □ 飞书 API 凭证已配置（app_id, app_secret, app_token, table_id）
 □ 源素材目录路径正确（default_source_dir）
-□ 素材数量设置正确（count: 30）
+□ 素材数量设置正确（count 参数）
 
 ✅ 飞书表格检查（如使用飞书自动化）
 ───────────────────────────────────────────────────────────

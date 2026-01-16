@@ -9,10 +9,18 @@ echo ========================================
 echo.
 
 cd /d %~dp0
+
+REM 检查是否在打包目录（有"项目文件"文件夹）
+if exist "项目文件" (
+    echo [√] 检测到打包目录，进入项目文件目录...
+    cd 项目文件
+)
+
 call venv\Scripts\activate.bat
 
 echo [√] 虚拟环境已激活
 echo [√] 正在启动飞书监控...
+echo [√] 当前目录: %CD%
 echo.
 echo 提示：
 echo - 按 Ctrl+C 可以安全停止
