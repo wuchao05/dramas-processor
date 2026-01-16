@@ -2,8 +2,8 @@
 # 用途：将项目打包为可交付给达人的压缩包
 
 param(
-    [string]$达人名称 = "达人",
-    [string]$输出目录 = "D:\打包输出"
+    [string]$Name = "达人",
+    [string]$OutputDir = "D:\打包输出"
 )
 
 Write-Host "=====================================" -ForegroundColor Cyan
@@ -13,8 +13,8 @@ Write-Host ""
 
 # 设置输出路径
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$packageName = "短剧剪辑工具-${达人名称}-${timestamp}"
-$packagePath = Join-Path $输出目录 $packageName
+$packageName = "短剧剪辑工具-${Name}-${timestamp}"
+$packagePath = Join-Path $OutputDir $packageName
 $zipFile = "${packagePath}.zip"
 
 Write-Host "[1/6] 创建打包目录..." -ForegroundColor Yellow
@@ -65,7 +65,7 @@ $readmeContent = @"
 ═══════════════════════════════════════════════════════════
 
 📦 打包日期：$(Get-Date -Format "yyyy年MM月dd日 HH:mm")
-👤 使用者：${达人名称}
+👤 使用者：${Name}
 
 📁 文件说明
 ───────────────────────────────────────────────────────────
@@ -215,4 +215,4 @@ Write-Host "   4. 指导达人运行'一键安装.ps1'" -ForegroundColor White
 Write-Host ""
 
 # 打开输出目录
-Start-Process explorer.exe -ArgumentList $输出目录
+Start-Process explorer.exe -ArgumentList $OutputDir
