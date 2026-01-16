@@ -340,7 +340,6 @@ class VideoEncoder:
         fps: int,
         fontfile: str,
         drama_name: str,
-        footer_text: str,
         disclaimer_text: str,
         workdir: str,
         fast_mode: bool,
@@ -377,17 +376,14 @@ class VideoEncoder:
         margin = max(12, int(ref_h * 0.037))
 
         title_txt = os.path.join(workdir, "title.txt")
-        bottom_txt = os.path.join(workdir, "bottom.txt")
         disclaimer_txtf = os.path.join(workdir, "disclaimer.txt")
 
         write_text_file(title_txt, f"《{drama_name}》")
-        write_text_file(bottom_txt, footer_text)
         write_text_file(disclaimer_txtf, disclaimer_text)  # 横排文本
 
         title_color = random.choice(self.title_colors)
         fontfile_options = self._get_fontfile_options(fontfile)  # 自动处理 TTC 字体索引
         title_txt_filter = self._filter_path(title_txt)
-        bottom_txt_filter = self._filter_path(bottom_txt)
         disclaimer_txt_filter = self._filter_path(disclaimer_txtf)
 
         # Text overlay filters
@@ -488,7 +484,6 @@ class VideoEncoder:
         fps: int,
         fontfile: str,
         drama_name: str,
-        footer_text: str,
         disclaimer_text: str,
         workdir: str,
         use_hw: bool,

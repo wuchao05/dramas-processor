@@ -41,7 +41,6 @@ logger = logging.getLogger(__name__)
 
 # Text settings
 @click.option("--font-file", type=str, default=None, help="中文字体文件路径")
-@click.option("--footer-text", type=str, default="热门短剧 休闲必看", help="底部居中文案")
 @click.option("--disclaimer-text", type=str, default="剧情纯属虚构 请勿模仿", help="免责声明文字（底部第二行）")
 
 # Tail settings
@@ -98,7 +97,6 @@ def process_command(
     canvas: Optional[str],
     # Text settings
     font_file: Optional[str],
-    footer_text: str,
     disclaimer_text: str,
     # Tail settings
     tail_file: Optional[str],
@@ -240,7 +238,6 @@ def process_command(
         date_str=date if date is not None else base_config.date_str,
         
         # Text overlay settings - use CLI overrides if provided, otherwise use file config
-        footer_text=footer_text if footer_text != "热门短剧 休闲必看" else base_config.footer_text,
         disclaimer_text=disclaimer_text if disclaimer_text != "剧情纯属虚构 请勿模仿" else base_config.disclaimer_text,
         font_file=font_file if font_file is not None else base_config.font_file,
         
@@ -498,7 +495,6 @@ def validate_config(config_file: Path):
 @click.option("--smart-fps", is_flag=True, default=True)
 @click.option("--canvas", type=str, default=None)
 @click.option("--font-file", type=str, default=None)
-@click.option("--footer-text", type=str, default="热门短剧 休闲必看")
 @click.option("--disclaimer-text", type=str, default="剧情纯属虚构 请勿模仿")
 @click.option("--tail-file", type=str, default=None)
 # Cover options removed
@@ -778,7 +774,6 @@ def feishu_list(ctx, status: Optional[str], date: Optional[str]):
 @click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")
 # Text settings
 @click.option("--font-file", type=str, default=None, help="中文字体文件路径")
-@click.option("--footer-text", type=str, default=None, help="底部居中文案（默认使用配置文件）")
 @click.option("--disclaimer-text", type=str, default=None, help="免责声明文字（底部第二行）（默认使用配置文件）")
 # Tail settings
 @click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
@@ -810,7 +805,7 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
     # Video settings
     sw: bool, fps: Optional[int], smart_fps: Optional[bool], canvas: Optional[str],
     # Text settings
-    font_file: Optional[str], footer_text: Optional[str], disclaimer_text: Optional[str],
+    font_file: Optional[str], disclaimer_text: Optional[str],
     # Tail settings
     tail_file: Optional[str],
     # Performance
@@ -957,8 +952,6 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
             config.canvas = canvas
         if font_file is not None:
             config.font_file = font_file
-        if footer_text is not None:
-            config.footer_text = footer_text
         if disclaimer_text is not None:
             config.disclaimer_text = disclaimer_text
         
@@ -1099,7 +1092,6 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
 @click.option("--canvas", type=str, default=None, help="参考画布：'WxH' 或 'first'；默认自动选择最常见分辨率")
 # Text settings
 @click.option("--font-file", type=str, default=None, help="中文字体文件路径")
-@click.option("--footer-text", type=str, default=None, help="底部居中文案（默认使用配置文件）")
 @click.option("--disclaimer-text", type=str, default=None, help="免责声明文字（底部第二行）（默认使用配置文件）")
 # Tail settings
 @click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
@@ -1130,7 +1122,7 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
     # Video settings
     sw: bool, fps: Optional[int], smart_fps: Optional[bool], canvas: Optional[str],
     # Text settings
-    font_file: Optional[str], footer_text: Optional[str], disclaimer_text: Optional[str],
+    font_file: Optional[str], disclaimer_text: Optional[str],
     # Tail settings
     tail_file: Optional[str],
     # Performance
@@ -1320,8 +1312,6 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
             config.canvas = canvas
         if font_file is not None:
             config.font_file = font_file
-        if footer_text is not None:
-            config.footer_text = footer_text
         if disclaimer_text is not None:
             config.disclaimer_text = disclaimer_text
         

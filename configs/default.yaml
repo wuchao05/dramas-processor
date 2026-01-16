@@ -26,7 +26,6 @@ exclude_last_episodes: 8
 title_font_size: 36  # 顶部标题字号
 brand_font_size: 28  # 品牌文字字号（底部第一行）
 disclaimer_font_size: 28  # 免责声明字号（底部第二行）
-footer_text: "剧情纯属虚构 请勿模仿"  # 已废弃，保留用于兼容
 disclaimer_text: "剧情纯属虚构 请勿模仿"  # 免责声明文字（底部第二行）
 enable_brand_text: false  # 启用品牌文字（底部第一行）
 enable_disclaimer_text: false  # 启用免责声明（底部第二行）

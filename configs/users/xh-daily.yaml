@@ -12,9 +12,6 @@ default_source_dir: "D:\\短剧剪辑\\源素材视频"
 # 使用 null 让程序自动检测（会优先 TTF 文件，避免 TTC 兼容性问题）
 font_file: null
 
-# 竖排文字行间距（正值=增大间距，负值=减小间距，0=默认）
-vertical_line_spacing: 0
-
 # 多素材文案配置
 brand_text_mapping:
   mode: "range"
@@ -75,5 +72,5 @@ feishu_watcher:
 
 # 文案显示配置
 enable_hook_text: false
-enable_brand_text: true  # 启用品牌文字（底部第一行）
-enable_disclaimer_text: true  # 启用免责声明（底部第二行）
+enable_brand_text: true # 启用品牌文字（底部第一行）
+enable_disclaimer_text: true # 启用免责声明（底部第二行）

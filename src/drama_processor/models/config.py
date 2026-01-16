@@ -194,7 +194,6 @@ class ProcessingConfig(BaseModel):
     title_font_size: int = Field(default=36, description="Title font size (top)")
     brand_font_size: int = Field(default=28, description="Brand text font size (bottom first line)")
     disclaimer_font_size: int = Field(default=28, description="Disclaimer text font size (bottom second line)")
-    footer_text: str = Field(default="热门短剧 休闲必看", description="Footer text (deprecated, use brand_text)")
     disclaimer_text: str = Field(
         default="剧情纯属虚构 请勿模仿", description="Disclaimer text (bottom second line)"
     )
