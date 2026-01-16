@@ -40,7 +40,7 @@ brand_text_mapping:
 # 飞书功能配置
 enable_feishu_features: true
 feishu:
-  table_id: "tblDOyi2Lzs80sv0"  # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
+  table_id: "tblDOyi2Lzs80sv0" # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
 
 # 文案显示配置
 enable_hook_text: false

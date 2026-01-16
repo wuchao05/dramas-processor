@@ -40,8 +40,8 @@ enable_feishu_features: true
 enable_feishu_notification: false
 
 feishu:
-  table_id: "tblJcLhLpEkmFkga"  # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
-  upload_time_sort_desc: false  # xh-daily 特殊配置：上架时间升序（早上架的先处理）
+  table_id: "tblJcLhLpEkmFkga" # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
+  upload_time_sort_desc: false # xh-daily 特殊配置：上架时间升序（早上架的先处理）
   page_size: 200
   token_refresh_interval: 7200000
 
