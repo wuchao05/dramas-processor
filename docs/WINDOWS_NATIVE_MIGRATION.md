@@ -275,7 +275,7 @@ def _get_windows_machine_guid() -> Optional[str]:
 
 ### 阶段 2：配置文件调整（15分钟）
 
-- [ ] 创建 `configs/windows_default.yaml`
+- [ ] 创建 `configs/default.yaml`
 - [ ] 修改路径为 Windows 格式
 - [ ] 配置 Windows 字体路径
 - [ ] 修改临时目录为 `%TEMP%\drama_processor`
@@ -328,7 +328,7 @@ def _get_windows_machine_guid() -> Optional[str]:
 ## 💻 示例：创建 Windows 配置
 
 ```yaml
-# configs/windows_default.yaml
+# configs/default.yaml
 ---
 # Windows 原生配置文件
 
@@ -415,7 +415,7 @@ try {
 
 # 检查配置
 Write-Host "`n[4/4] 检查配置文件..." -ForegroundColor Yellow
-if (Test-Path "configs\windows_default.yaml") {
+if (Test-Path "configs\default.yaml") {
     Write-Host "  ✅ Windows 配置文件存在" -ForegroundColor Green
 } else {
     Write-Host "  ⚠️  未找到 Windows 配置，使用默认配置" -ForegroundColor Yellow
@@ -443,7 +443,7 @@ drama-processor-windows/
 │   ├── tail.mp4
 │   └── watermark-xiaohong.png
 ├── configs/                 # 配置文件
-│   ├── windows_default.yaml
+│   ├── default.yaml
 │   └── users/
 │       └── example.yaml
 ├── setup.ps1                # 首次设置脚本
@@ -467,8 +467,8 @@ Expand-Archive -Path "drama-processor.zip" -DestinationPath "C:\drama-processor"
 cd C:\drama-processor
 .\setup.ps1
 
-# 4. 配置（编辑 configs\windows_default.yaml）
-notepad configs\windows_default.yaml
+# 4. 配置（编辑 configs\default.yaml）
+notepad configs\default.yaml
 
 # 5. 首次运行测试
 .\drama-processor.exe --version

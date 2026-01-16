@@ -70,7 +70,7 @@
 
 ### 配置文件
 
-- **`configs/windows_default.yaml`** - Windows 默认配置模板
+- **`configs/default.yaml`** - Windows 默认配置模板
 - **`configs/default.yaml`** - 通用配置模板
 
 ---
@@ -204,7 +204,7 @@ dir logs\
 
 ### 配置文件
 - **[默认配置](../../configs/default.yaml)** - 通用默认配置
-- **[Windows 配置](../../configs/windows_default.yaml)** - Windows 专用配置
+- **[Windows 配置](../../configs/default.yaml)** - Windows 专用配置
 - **[Lite 配置](../../configs/lite.yaml)** - 精简版配置
 
 ### 示例和测试

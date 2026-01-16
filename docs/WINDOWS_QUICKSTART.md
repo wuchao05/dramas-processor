@@ -19,7 +19,7 @@ Drama Processor 现已支持 Windows 原生运行，无需 WSL！本指南将帮
 
 ### 2. 配置
 
-编辑 `configs\windows_default.yaml`：
+编辑 `configs\default.yaml`：
 
 ```yaml
 # 修改为你的实际路径
@@ -80,10 +80,10 @@ python scripts\test_windows.py
 
 ```powershell
 # 使用 Windows 专用配置
-drama-processor -c configs\windows_default.yaml --help
+drama-processor -c configs\default.yaml --help
 ```
 
-编辑 `configs\windows_default.yaml`，设置你的源视频目录等参数。
+编辑 `configs\default.yaml`，设置你的源视频目录等参数。
 
 ## 使用方法
 
@@ -94,10 +94,10 @@ drama-processor -c configs\windows_default.yaml --help
 drama-processor --help
 
 # 处理单个剧目
-drama-processor -c configs\windows_default.yaml process E:\短剧库 --count 5
+drama-processor -c configs\default.yaml process E:\短剧库 --count 5
 
 # 使用飞书集成
-drama-processor -c configs\windows_default.yaml feishu run --date 12.25
+drama-processor -c configs\default.yaml feishu run --date 12.25
 ```
 
 ### GUI 图形界面
@@ -117,7 +117,7 @@ dramas_processor/
 │   ├── ffmpeg.exe
 │   └── ffprobe.exe
 ├── configs/                # 配置文件
-│   ├── windows_default.yaml
+│   ├── default.yaml
 │   └── users/
 ├── assets/                 # 资源文件
 │   ├── tail.mp4
@@ -135,7 +135,7 @@ dramas_processor/
 
 ### 关键配置项
 
-在 `configs\windows_default.yaml` 中：
+在 `configs\default.yaml` 中：
 
 ```yaml
 # 源视频目录（修改为你的实际路径）
@@ -162,7 +162,7 @@ video:
 
 ```powershell
 # 复制模板
-copy configs\windows_default.yaml configs\users\my_config.yaml
+copy configs\default.yaml configs\users\my_config.yaml
 
 # 使用自定义配置
 drama-processor -c configs\users\my_config.yaml process E:\短剧库
@@ -296,7 +296,7 @@ drama-processor process E:\短剧库 --full --count 10
 
 ```powershell
 # 开启详细日志
-drama-processor -c configs\windows_default.yaml process E:\短剧库 --verbose
+drama-processor -c configs\default.yaml process E:\短剧库 --verbose
 ```
 
 ### 检查硬件编码器

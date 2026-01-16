@@ -12,7 +12,7 @@ Drama Processor 项目已成功改造为 Windows 原生运行，无需 WSL！
 - 更新 `.gitignore` 排除 exe 文件
 
 ### ✅ 2. 配置文件
-- 创建 `configs/windows_default.yaml` - Windows 专用配置
+- 创建 `configs/default.yaml` - Windows 专用配置
 - 使用 Windows 路径格式（`E:\\路径`）
 - 支持自动检测系统临时目录和字体
 
@@ -74,7 +74,7 @@ bin/
 ├── README.txt                              # FFmpeg 说明
 
 configs/
-└── windows_default.yaml                    # Windows 配置
+└── default.yaml                    # Windows 配置
 
 src/drama_processor/utils/
 └── ffmpeg.py                               # FFmpeg 路径检测
@@ -131,7 +131,7 @@ python scripts/test_windows.py
 
 ```powershell
 # CLI 测试
-drama-processor -c configs\windows_default.yaml --help
+drama-processor -c configs\default.yaml --help
 
 # GUI 测试
 python run_gui.py
@@ -163,8 +163,8 @@ python run_gui.py
 
 - [ ] 下载并放置 FFmpeg 到 bin/
 - [ ] 运行 `python scripts/test_windows.py` 通过所有测试
-- [ ] 修改 `configs/windows_default.yaml` 中的路径
-- [ ] CLI 运行测试：`drama-processor -c configs\windows_default.yaml process`
+- [ ] 修改 `configs/default.yaml` 中的路径
+- [ ] CLI 运行测试：`drama-processor -c configs\default.yaml process`
 - [ ] GUI 运行测试：`python run_gui.py`
 - [ ] 打包测试：`.\packaging\build_windows.ps1`
 - [ ] exe 运行测试

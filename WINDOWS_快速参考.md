@@ -290,7 +290,7 @@ python -m drama_processor --log-level DEBUG process "E:\短剧"
 
 - **完整使用教程**: `docs\WINDOWS_使用教程.md`
 - **命令详细说明**: `COMMANDS_USAGE_GUIDE.md`
-- **配置示例**: `configs\windows_default.yaml`
+- **配置示例**: `configs\default.yaml`
 - **Windows 快速开始**: `docs\WINDOWS_QUICKSTART.md`
 
 ---

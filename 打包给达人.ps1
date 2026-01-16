@@ -58,7 +58,6 @@ New-Item -ItemType Directory -Path "${packagePath}\项目文件\configs\users" -
 
 # 复制默认配置文件
 Copy-Item -Path "configs\default.yaml" -Destination "${packagePath}\项目文件\configs\" -Force
-Copy-Item -Path "configs\windows_default.yaml" -Destination "${packagePath}\项目文件\configs\" -Force
 
 # 只复制该达人的配置文件
 $userConfigFile = "configs\users\${Name}.yaml"
@@ -72,8 +71,8 @@ if (Test-Path $userDailyConfigFile) {
     Write-Host "  ✓ 已复制达人配置: ${Name}-daily.yaml" -ForegroundColor Green
 }
 
-# 修改 windows_default.yaml 的 active_user
-$defaultConfigPath = "${packagePath}\项目文件\configs\windows_default.yaml"
+# 修改 default.yaml 的 active_user
+$defaultConfigPath = "${packagePath}\项目文件\configs\default.yaml"
 $defaultConfig = Get-Content $defaultConfigPath -Raw -Encoding UTF8
 $defaultConfig = $defaultConfig -replace "active_user:.*", "active_user: ${Name}"
 $defaultConfig | Out-File -FilePath $defaultConfigPath -Encoding UTF8 -NoNewline

@@ -63,7 +63,7 @@ pip install -e .
 **Windows**:
 ```powershell
 # 使用 Windows 配置
-drama-processor -c configs\windows_default.yaml process E:\短剧库 --count 3
+drama-processor -c configs\default.yaml process E:\短剧库 --count 3
 
 # 或直接双击 GUI
 python run_gui.py

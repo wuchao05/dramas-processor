@@ -223,11 +223,11 @@ Drama Processor Windows 环境测试
 
 ### 创建配置文件
 
-推荐使用 `configs/windows_default.yaml` 作为模板：
+推荐使用 `configs/default.yaml` 作为模板：
 
 ```powershell
 # 复制默认配置
-copy configs\windows_default.yaml configs\my_config.yaml
+copy configs\default.yaml configs\my_config.yaml
 
 # 使用编辑器打开配置文件
 notepad configs\my_config.yaml
@@ -473,7 +473,7 @@ release_windows_v1.0.0/
 │   ├── tail.mp4               # 片尾视频
 │   └── watermark/             # 水印素材
 ├── configs/                    # 配置文件模板
-│   ├── windows_default.yaml
+│   ├── default.yaml
 │   └── default.yaml
 └── README.md                   # 使用说明
 ```
@@ -659,7 +659,7 @@ Compress-Archive -Path release_windows_v1.0.0 -DestinationPath drama_processor_v
 - **命令详细文档**: `COMMANDS_USAGE_GUIDE.md`
 - **Windows 迁移说明**: `docs/WINDOWS_NATIVE_MIGRATION.md`
 - **Windows 快速开始**: `docs/WINDOWS_QUICKSTART.md`
-- **配置示例**: `configs/windows_default.yaml`
+- **配置示例**: `configs/default.yaml`
 - **测试脚本**: `scripts/test_windows.py`
 
 ---

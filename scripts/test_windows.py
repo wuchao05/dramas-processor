@@ -73,7 +73,7 @@ def test_config():
     print("[4/5] 测试配置加载...")
     try:
         # 尝试加载 Windows 配置
-        config_path = "configs/windows_default.yaml"
+        config_path = "configs/default.yaml"
         if not os.path.exists(config_path):
             config_path = "configs/default.yaml"
         
@@ -148,7 +148,7 @@ def main():
         print("恭喜！环境配置正确，可以开始使用。")
         print("")
         print("下一步:")
-        print("  1. 修改配置文件: configs/windows_default.yaml")
+        print("  1. 修改配置文件: configs/default.yaml")
         print("  2. 运行 GUI: python run_gui.py")
         print("  3. 或使用 CLI: drama-processor --help")
         sys.exit(0)

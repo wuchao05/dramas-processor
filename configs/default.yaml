@@ -1,210 +1,163 @@
 ---
-# Drama Processor Default Configuration
-# 专业短剧视频处理工具的默认配置文件
+# Drama Processor Windows 原生配置文件
+# Windows Native Configuration
 
 # 当前激活的用户配置
-# 可选值: xh, xl, xx
-# 用户专属配置文件位于 configs/users/{active_user}.yaml
-active_user: xh
+active_user: xh-daily
 
 # Basic processing settings
 target_fps: 60
 smart_fps: true
-fast_mode: true # 优化：启用快速模式，减少不必要的滤镜处理
-# Windows/GUI onefile 场景下滤镜线程过高会导致 ffmpeg/x264 内存峰值过大，触发 malloc failed
-# 这里使用更稳妥的默认值（需要性能可在 CLI/用户配置中自行提高）
-filter_threads: 2 # 降低滤镜线程数以减少开销（文字叠加不需要太多线程）
-verbose: false # Show detailed FFmpeg commands and debug information
+fast_mode: true
+filter_threads: 2
+verbose: false
 
 # Duration settings (in seconds)
-min_duration: 480.0 # 8 minutes (--min-sec)
-max_duration: 900.0 # 15 minutes (--max-sec)
+min_duration: 480.0 # 8 minutes
+max_duration: 900.0 # 15 minutes
 
-# Material generation settings (可被用户配置覆盖)
-# count, material_code 已移至用户配置文件
-date_str:
-  null # 日期字符串，用于文件名和目录组织 (--date)
-  # 如果指定(如"9.3")，会在output_dir上一层创建"9.3导出"目录
+# Material generation settings
+date_str: null
 
 # Start point selection settings
-exclude_last_episodes:
-  8 # Exclude the last N episodes when selecting start points
-  # 在选择起始点时排除最后N集，确保有足够的后续内容用于剪辑
-  # 例如：设置为10表示起始点不会选择最后10集
+exclude_last_episodes: 8
 
 # Text overlay settings
 title_font_size: 36
 bottom_font_size: 28
 side_font_size: 28
-# vertical_line_spacing: -5 # 竖排文字行距（像素，可为负数。负值让文字更紧凑）
-footer_text: "剧情纯属虚构 请勿模仿" # (--footer-text) (已废弃，但保留字段)
-side_text: "剧情纯属虚构 请勿模仿" # 右侧文案 (--side-text)
-enable_left_side_text: false # 启用左侧文案滤镜（控制品牌文案brand_text显示）
-enable_right_side_text: false # 启用右侧文案滤镜（控制side_text显示）
-# 侧边文案配置
-side_font_size: 24 # 侧边文案字体大小（默认 28）
-vertical_line_spacing: -10 # 竖排文字行距（负值让文字更紧凑，正值增大间距）
+vertical_line_spacing: -10 # 竖排文字行距（负值让文字更紧凑）
+footer_text: "剧情纯属虚构 请勿模仿"
+side_text: "剧情纯属虚构 请勿模仿"
+enable_left_side_text: false
+enable_right_side_text: false
 
-title_opacity: 0.9 # 标题文案透明度 (0.0-1.0)
-bottom_opacity: 0.85 # 底部文案透明度 (0.0-1.0) (已废弃，但保留字段)
-# 标题颜色（丰富色系，适合短视频展示）
+title_opacity: 0.9
+bottom_opacity: 0.85
+
+# 标题颜色
 title_colors:
-  # 蓝绿色系
-  - "#00CED1" # Dark Turquoise
-  - "#20B2AA" # Light Sea Green
-  - "#48D1CC" # Medium Turquoise
-  - "#40E0D0" # Turquoise
-  - "#5F9EA0" # Cadet Blue
-  - "#00BFFF" # Deep Sky Blue
-  - "#1E90FF" # Dodger Blue
-  - "#4169E1" # Royal Blue
+  - "#00CED1"
+  - "#20B2AA"
+  - "#48D1CC"
+  - "#40E0D0"
+  - "#5F9EA0"
+  - "#00BFFF"
+  - "#1E90FF"
+  - "#4169E1"
+  - "#32CD32"
+  - "#00FA9A"
+  - "#7CFC00"
+  - "#98FB98"
+  - "#3CB371"
+  - "#00FF7F"
+  - "#90EE90"
+  - "#00FF00"
+  - "#FFA500"
+  - "#FFB347"
+  - "#FF8C00"
+  - "#FFD700"
+  - "#FFA07A"
+  - "#FF7F50"
+  - "#FFAE42"
+  - "#FF69B4"
+  - "#FFB6C1"
+  - "#FF1493"
+  - "#FF00FF"
+  - "#DA70D6"
+  - "#EE82EE"
+  - "#BA55D3"
+  - "#9370DB"
+  - "#8A2BE2"
+  - "#9932CC"
+  - "#9400D3"
+  - "#FFFF00"
+  - "#FFE600"
+  - "#FFD580"
+  - "#F0E68C"
+  - "#FF6347"
+  - "#FF4500"
+  - "#DC143C"
+  - "#FF0000"
 
-  # 绿色系
-  - "#32CD32" # Lime Green
-  - "#00FA9A" # Medium Spring Green
-  - "#7CFC00" # Lawn Green
-  - "#98FB98" # Pale Green
-  - "#3CB371" # Medium Sea Green
-  - "#00FF7F" # Spring Green
-  - "#90EE90" # Light Green
-  - "#00FF00" # Lime
-
-  # 橙色/金色系
-  - "#FFA500" # Orange
-  - "#FFB347" # Pastel Orange
-  - "#FF8C00" # Dark Orange
-  - "#FFD700" # Gold
-  - "#FFA07A" # Light Salmon
-  - "#FF7F50" # Coral
-  - "#FFAE42" # Yellow Orange
-
-  # 粉色/品红系
-  - "#FF69B4" # Hot Pink
-  - "#FFB6C1" # Light Pink
-  - "#FF1493" # Deep Pink
-  - "#FF00FF" # Magenta
-  - "#DA70D6" # Orchid
-  - "#EE82EE" # Violet
-
-  # 紫色系
-  - "#BA55D3" # Medium Orchid
-  - "#9370DB" # Medium Purple
-  - "#8A2BE2" # Blue Violet
-  - "#9932CC" # Dark Orchid
-  - "#9400D3" # Dark Violet
-
-  # 黄色系
-  - "#FFFF00" # Yellow
-  - "#FFE600" # Bright Yellow
-  - "#FFD580" # Light Orange
-  - "#F0E68C" # Khaki
-
-  # 红色系
-  - "#FF6347" # Tomato
-  - "#FF4500" # Orange Red
-  - "#DC143C" # Crimson
-  - "#FF0000" # Red
-
-# Hook text settings (opening hook text overlay)
-enable_hook_text: false # 启用开头钩子文案（默认关闭以保证性能，用户配置中可开启）
+# Hook text settings
+enable_hook_text: false
 hook_texts:
   - "完结撒花"
   - "独家首发"
   - "追剧必看"
   - "热播推荐"
   - "火爆全网"
-hook_font_size: 180 # 钩子文案字体大小 (100-140px，可适当加大补偿视觉效果)
-hook_duration: 3.0 # 钩子文案显示时长（秒）
-hook_text_color: "#FFE600" # 钩子文案颜色（亮黄色，字符间自动加空格增大间距）
+hook_font_size: 180
+hook_duration: 3.0
+hook_text_color: "#FFE600"
 
 # Processing behavior
-random_start: true # (--random-start / --no-random-start)
-seed: null # Random seed (--seed)
-use_hardware: true # Use hardware encoding by default (--sw inverts this)
-keep_temp: false # (--keep-temp)
-jobs: 1 # Concurrent jobs per drama (--jobs)
+random_start: true
+seed: null
+use_hardware: true
+keep_temp: false
+jobs: 1
 
 # Canvas/Resolution settings
-canvas: null # Canvas size: 'WxH' or 'first' (--canvas)
-reference_resolution: null # Will be auto-detected
+canvas: null
+reference_resolution: null
 
-# Directory settings (部分已移至用户配置)
-# default_source_dir 已移至用户配置文件
-backup_source_dir: "/mnt/e/短剧剪辑/源素材视频" # WSL 路径：E盘备份源素材视频目录
-temp_dir: "/home/drama_processor" # 临时目录（默认 /tmp 速度快但空间小，建议在用户配置中改为 WSL 原生路径如 /home/drama_temp）
-output_dir:
-  "../导出素材" # 输出目录 (--out-dir)
-  # 如果设置了date_str，实际会使用其上一层的"{date_str}导出"目录
-tail_cache_dir: "/home/tails_cache" # 尾部视频缓存目录（建议在用户配置中改为 WSL 原生路径如 /home/tails_cache）
-tail_file: "assets/tail.mp4" # 默认尾部视频文件
-refresh_tail_cache: false # Force refresh tail cache (--refresh-tail-cache)
+# Directory settings (Windows 路径格式)
+# 修改为你的实际路径
+default_source_dir: "D:\\短剧剪辑\\源素材视频"
+backup_source_dir: "E:\\短剧剪辑\\源素材视频"
+temp_dir: null # 使用系统临时目录
+output_dir: "..\\导出素材"
+tail_cache_dir: null # 自动使用系统临时目录
+tail_file: "assets\\tail.mp4"
+refresh_tail_cache: false
 
-# Font settings
-font_file: "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc" # WSL Linux 字体路径
+# Font settings (Windows 字体，null 则自动检测)
+font_file: null # 自动检测微软雅黑等 Windows 字体
 
 # Watermark settings
-watermark_path: "assets/watermark-xiaohong.png" # 水印图片路径
-enable_watermark: false # 启用水印功能，将logo放置在左上角
-enable_brand_text: true # 启用品牌文字功能，默认文字为"小红看剧"
-brand_text: "热门短剧" # 品牌文字内容（默认文案，向后兼容）
-# brand_text_mapping 已移至用户配置文件
+watermark_path: "assets\\watermark-xiaohong.png"
+enable_watermark: false
+enable_brand_text: true
+brand_text: "热门短剧"
 
 # Selection settings
-include: null # Include specific dramas (--include)
-exclude: null # Exclude specific dramas (--exclude)
-full: false # Process all dramas (--full)
-no_interactive: false # Disable interactive selection (--no-interactive)
-
-# Cover settings - REMOVED
+include: null
+exclude: null
+full: false
+no_interactive: false
 
 # Video encoding settings
 video:
-  hw_codec: "auto" # 自动检测最佳硬件编码器 (WSL推荐)
-  sw_codec: "libx264" # Software video codec
-  bitrate: "6500k" # Video bitrate
-  max_rate: "6500k" # Maximum bitrate
-  buffer_size: "8000k" # Buffer size
-  soft_crf: "24" # Software encoding CRF
-  preset: "veryfast" # Encoding preset
-  profile: "high" # H.264 profile
-  level: "4.2" # Default H.264 level
-  hw_level: "4.2" # Hardware encoding level
-  sw_level: "4.1" # Software encoding level
-  tag: "avc1" # Video tag for hardware encoding
-  pixel_format: "yuv420p" # Pixel format
-  faststart: false # 启用faststart优化（用于网络流式播放，上传抖音等平台不需要，关闭可大幅提升速度）
+  hw_codec: "auto"
+  sw_codec: "libx264"
+  bitrate: "6500k"
+  max_rate: "6500k"
+  buffer_size: "8000k"
+  soft_crf: "24"
+  preset: "veryfast"
+  profile: "high"
+  level: "4.2"
+  hw_level: "4.2"
+  sw_level: "4.1"
+  tag: "avc1"
+  pixel_format: "yuv420p"
+  faststart: false
 
 # Audio encoding settings
 audio:
-  codec: "aac" # Audio codec
-  bitrate: "128k" # Audio bitrate
-  sample_rate: 48000 # Audio sample rate
+  codec: "aac"
+  bitrate: "128k"
+  sample_rate: 48000
 
-# 飞书功能配置（用户可在用户配置中覆盖核心字段）
-enable_feishu_features: false # 全局开关（用户配置覆盖）
-enable_feishu_notification: false # 群通知开关
-feishu_webhook_url: null # 飞书群机器人 webhook 地址
+# 飞书功能配置
+enable_feishu_features: false # 默认关闭，由用户配置覆盖
+enable_feishu_notification: false
+feishu_webhook_url: null
 
-# 飞书API配置（详细配置，用户只需提供核心字段）
-feishu:
-  # 注意：这些字段在 Pydantic 模型里是必填字符串，不能为 null
-  # 用户在 GUI/用户配置中填写后会覆盖这里的空字符串
-  app_id: "" # 用户配置覆盖
-  app_secret: "" # 用户配置覆盖
-  app_token: "" # 用户配置覆盖
-  table_id: "" # 用户配置覆盖
-  base_url: "https://open.feishu.cn/open-apis/bitable/v1"
-  field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
-  status_field_name: "当前状态"
-  pending_status_value: "待剪辑"
-  processing_status_value: "剪辑中"
-  completed_status_value: "待上传"
-  missing_source_status_value: "无源视频"
-  rating_field_name: "评级" # 评级字段名（用于优先级排序）
-  priority_rating_value: "红标" # 高优先级评级值（同日期内最优先处理）
-  upload_time_sort_desc: true # 上架时间排序：true=降序(新的优先)，false=升序(早的优先)
-  page_size: 200
-  token_refresh_interval: 7200000
+# 飞书API配置（由用户配置提供，这里不设置空字段）
+feishu: null
 
 # 飞书轮询配置
 feishu_watcher:
@@ -221,6 +174,6 @@ feishu_watcher:
 
 # 日期去重设置
 date_deduplication:
-  enabled: true # 启用日期去重功能
-  storage_dir: "history/date_dedup" # 存储目录（相对于项目根目录）
-  skip_processed_by_default: false # 默认是否跳过已处理剧集（用户可通过 --skip-processed 覆盖）
+  enabled: true
+  storage_dir: "history/date_dedup"
+  skip_processed_by_default: false
