@@ -1,4 +1,4 @@
-﻿﻿﻿# Windows 一键安装脚本
+﻿﻿# Windows 一键安装脚本
 # 使用 winget 自动安装所有依赖
 
 # 设置控制台编码
@@ -81,15 +81,49 @@ if ($ffmpegInstalled) {
 # 3. 创建虚拟环境
 Write-Host ""
 Write-Host "[3/4] 创建虚拟环境..." -ForegroundColor Yellow
+
+# 检查当前目录
+Write-Host "  当前目录: $(Get-Location)" -ForegroundColor Gray
+
 if (Test-Path "venv\Scripts\activate.ps1") {
     Write-Host "  ✅ 虚拟环境已存在" -ForegroundColor Green
 } else {
     Write-Host "  创建虚拟环境..." -ForegroundColor Cyan
-    python -m venv venv
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host "  ✅ 虚拟环境创建完成" -ForegroundColor Green
-    } else {
+    
+    # 检查 Python 版本和 venv 模块
+    $pythonVersion = & python --version 2>&1
+    Write-Host "  Python 版本: $pythonVersion" -ForegroundColor Gray
+    
+    # 尝试创建虚拟环境并捕获详细错误
+    try {
+        $output = & python -m venv venv 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "  ❌ 虚拟环境创建失败" -ForegroundColor Red
+            Write-Host "  错误信息: $output" -ForegroundColor Red
+            Write-Host ""
+            Write-Host "可能的原因：" -ForegroundColor Yellow
+            Write-Host "  1. Python 未正确安装 venv 模块" -ForegroundColor Yellow
+            Write-Host "  2. 当前目录没有写入权限" -ForegroundColor Yellow
+            Write-Host "  3. 磁盘空间不足" -ForegroundColor Yellow
+            Write-Host ""
+            Write-Host "解决方法：" -ForegroundColor Cyan
+            Write-Host "  1. 尝试重新安装 Python（确保勾选'Add Python to PATH'）" -ForegroundColor Cyan
+            Write-Host "  2. 以管理员身份运行此脚本" -ForegroundColor Cyan
+            Write-Host "  3. 检查是否有足够的磁盘空间" -ForegroundColor Cyan
+            exit 1
+        }
+        
+        # 验证虚拟环境是否创建成功
+        if (Test-Path "venv\Scripts\activate.ps1") {
+            Write-Host "  ✅ 虚拟环境创建完成" -ForegroundColor Green
+        } else {
+            Write-Host "  ❌ 虚拟环境创建失败（文件未生成）" -ForegroundColor Red
+            Write-Host "  请检查是否有杀毒软件阻止" -ForegroundColor Yellow
+            exit 1
+        }
+    } catch {
         Write-Host "  ❌ 虚拟环境创建失败" -ForegroundColor Red
+        Write-Host "  异常信息: $_" -ForegroundColor Red
         exit 1
     }
 }
