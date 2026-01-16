@@ -113,24 +113,32 @@ Copy-Item -Path "达人使用说明.txt" -Destination $packagePath -Force
 Write-Host "  ✓ 已复制通用脚本" -ForegroundColor Green
 
 # 创建达人专属的飞书监控启动脚本
+# 注意：bat 文件需要使用 UTF-8 with BOM 编码才能正确显示中文
 $feishuBatContent = @"
 @echo off
 chcp 65001 >nul
-title 短剧剪辑工具 - 飞书自动监控（${Name}）
+title 短剧剪辑工具 - 飞书监控 (${Name})
 
 echo ========================================
-echo    短剧剪辑工具 - 飞书自动监控
-echo    账号：${Name}
+echo    短剧剪辑工具 - 飞书监控
+echo    账号: ${Name}
 echo ========================================
 echo.
 
-cd /d %~dp0\项目文件
-call ..\venv\Scripts\activate.bat
+cd /d "%~dp0项目文件"
+if not exist venv\Scripts\activate.bat (
+    echo [X] 未找到虚拟环境！
+    echo 请先运行: 一键安装.ps1
+    pause
+    exit /b 1
+)
 
-echo [√] 虚拟环境已激活
-echo [√] 正在启动飞书监控...
+call venv\Scripts\activate.bat
+
+echo [OK] 虚拟环境已激活
+echo [OK] 正在启动飞书监控...
 echo.
-echo 提示：
+echo 提示:
 echo - 按 Ctrl+C 可以安全停止
 echo - 窗口会显示实时处理进度
 echo.
@@ -145,7 +153,9 @@ pause
 "@
 
 $feishuBatPath = Join-Path $packagePath "启动飞书监控.bat"
-$feishuBatContent | Out-File -FilePath $feishuBatPath -Encoding UTF8
+# 使用 UTF-8 with BOM 编码（确保中文正确显示）
+$utf8BOM = New-Object System.Text.UTF8Encoding $true
+[System.IO.File]::WriteAllText($feishuBatPath, $feishuBatContent, $utf8BOM)
 Write-Host "  ✓ 已创建: 启动飞书监控.bat（配置: ${Name}.yaml）" -ForegroundColor Green
 
 # 创建达人专属说明文件
