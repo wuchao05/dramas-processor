@@ -45,9 +45,8 @@ class VideoEncoder:
 
         # Text overlay settings (from config)
         self.title_font_size = config.title_font_size
-        self.bottom_font_size = config.bottom_font_size
-        self.side_font_size = config.side_font_size
-        self.vertical_line_spacing = config.vertical_line_spacing
+        self.brand_font_size = config.brand_font_size
+        self.disclaimer_font_size = config.disclaimer_font_size
         self.title_opacity = config.title_opacity
         self.bottom_opacity = config.bottom_opacity
 
@@ -59,8 +58,8 @@ class VideoEncoder:
         # Brand text settings (from config)
         self.config = config  # Keep reference to config for dynamic text selection
         self.use_brand_text = config.enable_brand_text
-        self.enable_left_side_text = config.enable_left_side_text
-        self.enable_right_side_text = config.enable_right_side_text
+        self.enable_brand_text = config.enable_brand_text
+        self.enable_disclaimer_text = config.enable_disclaimer_text
 
     def _detect_best_hw_codec(self, preferred_codec: str) -> str:
         """Detect the best available hardware codec for the current environment."""
@@ -342,7 +341,7 @@ class VideoEncoder:
         fontfile: str,
         drama_name: str,
         footer_text: str,
-        side_text: str,
+        disclaimer_text: str,
         workdir: str,
         fast_mode: bool,
         material_idx: Optional[int] = None,
@@ -372,26 +371,24 @@ class VideoEncoder:
         base = ",".join(base_filters)
 
         # Text overlay setup
-        title_fs, bottom_fs, side_fs = (
-            self.title_font_size,
-            self.bottom_font_size,
-            self.side_font_size,
-        )
+        title_fs = self.title_font_size
+        brand_fs = self.brand_font_size
+        disclaimer_fs = self.disclaimer_font_size
         margin = max(12, int(ref_h * 0.037))
 
         title_txt = os.path.join(workdir, "title.txt")
         bottom_txt = os.path.join(workdir, "bottom.txt")
-        side_txtf = os.path.join(workdir, "side.txt")
+        disclaimer_txtf = os.path.join(workdir, "disclaimer.txt")
 
         write_text_file(title_txt, f"《{drama_name}》")
         write_text_file(bottom_txt, footer_text)
-        write_text_file(side_txtf, side_text)  # 横排文本（不再竖排）
+        write_text_file(disclaimer_txtf, disclaimer_text)  # 横排文本
 
         title_color = random.choice(self.title_colors)
         fontfile_options = self._get_fontfile_options(fontfile)  # 自动处理 TTC 字体索引
         title_txt_filter = self._filter_path(title_txt)
         bottom_txt_filter = self._filter_path(bottom_txt)
-        side_txt_filter = self._filter_path(side_txtf)
+        disclaimer_txt_filter = self._filter_path(disclaimer_txtf)
 
         # Text overlay filters
         # Title position (top or bottom based on config)
@@ -429,26 +426,25 @@ class VideoEncoder:
             filters.append(dt_hook)
 
         # Bottom text overlays - horizontal layout
-        # Brand text (top line) and side text (bottom line) at bottom of video
+        # Brand text (first line) and disclaimer text (second line) at bottom of video
         bottom_base_y = int(ref_h * 0.88)  # 底部起始位置（距离底部12%）
         
-        # Brand text overlay (bottom area, top line) - horizontal
-        # Controlled by enable_left_side_text
-        if self.use_brand_text and self.config.enable_left_side_text:
+        # Brand text overlay (bottom area, first line) - horizontal
+        if self.use_brand_text and self.config.enable_brand_text:
             # Get brand text for current material
             if material_idx is not None:
                 brand_text = self.config.get_brand_text_for_material(material_idx)
             else:
                 brand_text = self.config.brand_text
 
-            # 横排显示（不再竖排）
+            # 横排显示
             brand_txt = os.path.join(workdir, "brand.txt")
             write_text_file(brand_txt, brand_text)
 
             brand_txt_filter = self._filter_path(brand_txt)
             try:
                 dt_brand = (
-                    f"drawtext={fontfile_options}:textfile='{brand_txt_filter}':fontsize={side_fs}:"
+                    f"drawtext={fontfile_options}:textfile='{brand_txt_filter}':fontsize={brand_fs}:"
                     f"fontcolor=white@0.85:box=0:"
                     f"x=(w-text_w)/2:y={bottom_base_y}"  # 底部第一行，居中
                 )
@@ -456,20 +452,19 @@ class VideoEncoder:
             except Exception:
                 pass  # Silently skip if file not found
 
-        # Side text overlay (bottom area, bottom line) - horizontal
-        # Simplified with textfile for better performance
-        if self.config.enable_right_side_text:
+        # Disclaimer text overlay (bottom area, second line) - horizontal
+        if self.config.enable_disclaimer_text:
             try:
                 # 计算第二行位置（第一行下方，留出间隔）
                 line_spacing = 25  # 两行之间的间隔（像素，可调整）
-                second_line_y = bottom_base_y + side_fs + line_spacing
+                second_line_y = bottom_base_y + brand_fs + line_spacing
                 
-                dt_side = (
-                    f"drawtext={fontfile_options}:textfile='{side_txt_filter}':fontsize={side_fs}:"
+                dt_disclaimer = (
+                    f"drawtext={fontfile_options}:textfile='{disclaimer_txt_filter}':fontsize={disclaimer_fs}:"
                     f"fontcolor=white@0.85:box=0:"
                     f"x=(w-text_w)/2:y={second_line_y}"  # 底部第二行，居中
                 )
-                filters.append(dt_side)
+                filters.append(dt_disclaimer)
             except Exception:
                 pass  # Silently skip if file not found
 
@@ -494,7 +489,7 @@ class VideoEncoder:
         fontfile: str,
         drama_name: str,
         footer_text: str,
-        side_text: str,
+        disclaimer_text: str,
         workdir: str,
         use_hw: bool,
         seg_idx: int,
@@ -1092,7 +1087,7 @@ class VideoEncoder:
         target_fps: int,
         fontfile: str,
         footer_text: str,
-        side_text: str,
+        disclaimer_text: str,
         use_hw: bool,
         tail_video: Optional[Path],
         cover_image: Optional[Path],

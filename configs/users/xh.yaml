@@ -52,5 +52,5 @@ feishu:
 
 # 文案显示配置
 enable_hook_text: false
-enable_left_side_text: true
-enable_right_side_text: true
+enable_brand_text: true  # 启用品牌文字（底部第一行）
+enable_disclaimer_text: true  # 启用免责声明（底部第二行）

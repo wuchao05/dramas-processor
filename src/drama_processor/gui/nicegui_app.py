@@ -179,8 +179,8 @@ class DramaProcessorGUI:
         self.brand_ranges = ""  # 素材范围映射
         
         self.title_font_size = "55"
-        self.side_font_size = "35"
-        self.bottom_font_size = "30"
+        self.brand_font_size = "35"
+        self.disclaimer_font_size = "30"
         
         self.use_hw = True
         self.fast_mode = True
@@ -613,8 +613,8 @@ class DramaProcessorGUI:
                         ui.label('字体大小设置').classes('text-sm font-bold text-gray-500 mt-2')
                         with ui.grid(columns=3).classes('w-full gap-4'):
                             ui.number('标题字号', min=10).props('outlined dense').bind_value(self, 'title_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 55)
-                            ui.number('侧边字号', min=10).props('outlined dense').bind_value(self, 'side_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 35)
-                            ui.number('底部字号', min=10).props('outlined dense').bind_value(self, 'bottom_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 30)
+                            ui.number('品牌字号', min=10).props('outlined dense').bind_value(self, 'brand_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 35)
+                            ui.number('免责字号', min=10).props('outlined dense').bind_value(self, 'disclaimer_font_size', forward=lambda v: str(int(v)), backward=lambda v: int(v) if v else 30)
                         
                         # 品牌文案配置
                         ui.label('品牌文案配置').classes('text-sm font-bold text-gray-500 mt-4')
@@ -994,8 +994,8 @@ class DramaProcessorGUI:
         max_dur = float(self.max_duration) if isinstance(self.max_duration, (int, float)) else _parse_float(str(self.max_duration), "最大时长")
         jobs = int(self.jobs) if isinstance(self.jobs, (int, float)) else _parse_int(str(self.jobs), "并发数")
         title_font_size = int(self.title_font_size) if isinstance(self.title_font_size, (int, float)) else _parse_int(str(self.title_font_size), "标题字号")
-        side_font_size = int(self.side_font_size) if isinstance(self.side_font_size, (int, float)) else _parse_int(str(self.side_font_size), "侧边字号")
-        bottom_font_size = int(self.bottom_font_size) if isinstance(self.bottom_font_size, (int, float)) else _parse_int(str(self.bottom_font_size), "底部字号")
+        brand_font_size = int(self.brand_font_size) if isinstance(self.brand_font_size, (int, float)) else _parse_int(str(self.brand_font_size), "品牌字号")
+        disclaimer_font_size = int(self.disclaimer_font_size) if isinstance(self.disclaimer_font_size, (int, float)) else _parse_int(str(self.disclaimer_font_size), "免责字号")
         
         if count <= 0:
             raise ValueError("素材条数必须大于 0")
@@ -1018,8 +1018,8 @@ class DramaProcessorGUI:
             "enable_feishu_features": self.enable_feishu,
             "enable_feishu_notification": self.enable_feishu,
             "title_font_size": title_font_size,
-            "side_font_size": side_font_size,
-            "bottom_font_size": bottom_font_size,
+            "brand_font_size": brand_font_size,
+            "disclaimer_font_size": disclaimer_font_size,
         }
         
         # 添加素材用户名标识

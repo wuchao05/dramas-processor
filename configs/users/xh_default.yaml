@@ -90,5 +90,5 @@ filter_threads: 2 # 降低滤镜线程数（文字叠加不需要太多线程）
 
 # 关闭非必要滤镜
 enable_hook_text: false # 关闭钩子文案
-enable_left_side_text: false # 关闭左侧品牌文案
-enable_right_side_text: false # 关闭右侧文案
+enable_brand_text: false  # 关闭品牌文字（底部第一行）
+enable_disclaimer_text: false  # 关闭免责声明（底部第二行）

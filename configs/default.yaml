@@ -23,14 +23,13 @@ date_str: null
 exclude_last_episodes: 8
 
 # Text overlay settings
-title_font_size: 36
-bottom_font_size: 28
-side_font_size: 28
-vertical_line_spacing: -10 # 竖排文字行距（负值让文字更紧凑）
-footer_text: "剧情纯属虚构 请勿模仿"
-side_text: "剧情纯属虚构 请勿模仿"
-enable_left_side_text: false
-enable_right_side_text: false
+title_font_size: 36  # 顶部标题字号
+brand_font_size: 28  # 品牌文字字号（底部第一行）
+disclaimer_font_size: 28  # 免责声明字号（底部第二行）
+footer_text: "剧情纯属虚构 请勿模仿"  # 已废弃，保留用于兼容
+disclaimer_text: "剧情纯属虚构 请勿模仿"  # 免责声明文字（底部第二行）
+enable_brand_text: false  # 启用品牌文字（底部第一行）
+enable_disclaimer_text: false  # 启用免责声明（底部第二行）
 
 title_opacity: 0.9
 bottom_opacity: 0.85

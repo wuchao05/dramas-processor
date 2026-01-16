@@ -42,7 +42,7 @@ logger = logging.getLogger(__name__)
 # Text settings
 @click.option("--font-file", type=str, default=None, help="中文字体文件路径")
 @click.option("--footer-text", type=str, default="热门短剧 休闲必看", help="底部居中文案")
-@click.option("--side-text", type=str, default="剧情纯属虚构 请勿模仿", help="右上竖排文案（可横排传入，脚本会自动竖排化）")
+@click.option("--disclaimer-text", type=str, default="剧情纯属虚构 请勿模仿", help="免责声明文字（底部第二行）")
 
 # Tail settings
 @click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
@@ -99,7 +99,7 @@ def process_command(
     # Text settings
     font_file: Optional[str],
     footer_text: str,
-    side_text: str,
+    disclaimer_text: str,
     # Tail settings
     tail_file: Optional[str],
 
@@ -241,7 +241,7 @@ def process_command(
         
         # Text overlay settings - use CLI overrides if provided, otherwise use file config
         footer_text=footer_text if footer_text != "热门短剧 休闲必看" else base_config.footer_text,
-        side_text=side_text if side_text != "剧情纯属虚构 请勿模仿" else base_config.side_text,
+        disclaimer_text=disclaimer_text if disclaimer_text != "剧情纯属虚构 请勿模仿" else base_config.disclaimer_text,
         font_file=font_file if font_file is not None else base_config.font_file,
         
         # Processing settings - use CLI overrides if provided, otherwise use file config
@@ -499,7 +499,7 @@ def validate_config(config_file: Path):
 @click.option("--canvas", type=str, default=None)
 @click.option("--font-file", type=str, default=None)
 @click.option("--footer-text", type=str, default="热门短剧 休闲必看")
-@click.option("--side-text", type=str, default="剧情纯属虚构 请勿模仿")
+@click.option("--disclaimer-text", type=str, default="剧情纯属虚构 请勿模仿")
 @click.option("--tail-file", type=str, default=None)
 # Cover options removed
 @click.option("--include", multiple=True)
@@ -779,7 +779,7 @@ def feishu_list(ctx, status: Optional[str], date: Optional[str]):
 # Text settings
 @click.option("--font-file", type=str, default=None, help="中文字体文件路径")
 @click.option("--footer-text", type=str, default=None, help="底部居中文案（默认使用配置文件）")
-@click.option("--side-text", type=str, default=None, help="右上竖排文案（可横排传入，脚本会自动竖排化）（默认使用配置文件）")
+@click.option("--disclaimer-text", type=str, default=None, help="免责声明文字（底部第二行）（默认使用配置文件）")
 # Tail settings
 @click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
 # Performance settings
@@ -810,7 +810,7 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
     # Video settings
     sw: bool, fps: Optional[int], smart_fps: Optional[bool], canvas: Optional[str],
     # Text settings
-    font_file: Optional[str], footer_text: Optional[str], side_text: Optional[str],
+    font_file: Optional[str], footer_text: Optional[str], disclaimer_text: Optional[str],
     # Tail settings
     tail_file: Optional[str],
     # Performance
@@ -959,8 +959,8 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
             config.font_file = font_file
         if footer_text is not None:
             config.footer_text = footer_text
-        if side_text is not None:
-            config.side_text = side_text
+        if disclaimer_text is not None:
+            config.disclaimer_text = disclaimer_text
         
         # Handle tail file similar to process command
         if tail_file:
@@ -1100,7 +1100,7 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
 # Text settings
 @click.option("--font-file", type=str, default=None, help="中文字体文件路径")
 @click.option("--footer-text", type=str, default=None, help="底部居中文案（默认使用配置文件）")
-@click.option("--side-text", type=str, default=None, help="右上竖排文案（可横排传入，脚本会自动竖排化）（默认使用配置文件）")
+@click.option("--disclaimer-text", type=str, default=None, help="免责声明文字（底部第二行）（默认使用配置文件）")
 # Tail settings
 @click.option("--tail-file", type=str, default=None, help="尾部引导视频路径（默认脚本同级 tail.mp4；不存在则跳过）")
 # Performance settings
@@ -1130,7 +1130,7 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
     # Video settings
     sw: bool, fps: Optional[int], smart_fps: Optional[bool], canvas: Optional[str],
     # Text settings
-    font_file: Optional[str], footer_text: Optional[str], side_text: Optional[str],
+    font_file: Optional[str], footer_text: Optional[str], disclaimer_text: Optional[str],
     # Tail settings
     tail_file: Optional[str],
     # Performance
@@ -1322,8 +1322,8 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
             config.font_file = font_file
         if footer_text is not None:
             config.footer_text = footer_text
-        if side_text is not None:
-            config.side_text = side_text
+        if disclaimer_text is not None:
+            config.disclaimer_text = disclaimer_text
         
         # Handle tail file similar to process command
         if tail_file:

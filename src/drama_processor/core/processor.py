@@ -447,7 +447,7 @@ class DramaProcessor:
             target_fps=target_fps,
             fontfile=fontfile,
             footer_text=self.config.footer_text,
-            side_text=self.config.side_text,
+            disclaimer_text=self.config.disclaimer_text,
             use_hw=self.config.use_hardware,
             tail_video=project.tail_video,
             cover_image=None,
