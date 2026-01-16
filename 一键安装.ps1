@@ -143,91 +143,95 @@ if ($LASTEXITCODE -eq 0) {
     exit 1
 }
 
-# 5. 配置素材目录
+# 5. 读取并创建素材目录
 Write-Host ""
 Write-Host "======================================" -ForegroundColor Cyan
-Write-Host "  📁 配置素材目录" -ForegroundColor Cyan
+Write-Host "  📁 准备素材目录" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
-
-# 获取所有可用磁盘
-$availableDisks = Get-PSDrive -PSProvider FileSystem | Where-Object { $_.Used -ne $null } | Select-Object -ExpandProperty Name
-Write-Host "检测到的磁盘：$($availableDisks -join ', ')" -ForegroundColor Gray
-Write-Host ""
-
-# 询问用户选择磁盘
-Write-Host "请选择存放素材的磁盘（用于存放源素材和输出素材）：" -ForegroundColor Yellow
-$selectedDisk = ""
-while ([string]::IsNullOrWhiteSpace($selectedDisk) -or $selectedDisk -notin $availableDisks) {
-    $selectedDisk = (Read-Host "请输入磁盘盘符（如 D、E、F 等）").ToUpper().Trim()
-    if ($selectedDisk -notin $availableDisks) {
-        Write-Host "  ❌ 无效的磁盘盘符，请重新输入" -ForegroundColor Red
-    }
-}
-
-# 设置路径
-$basePath = "${selectedDisk}:\短剧剪辑"
-$sourcePath = "${basePath}\源素材视频"
-$outputPath = "${basePath}\输出素材"
-
-Write-Host ""
-Write-Host "将使用以下目录：" -ForegroundColor Cyan
-Write-Host "  源素材目录：$sourcePath" -ForegroundColor White
-Write-Host "  输出目录：  $outputPath" -ForegroundColor White
-Write-Host ""
-
-# 创建目录
-Write-Host "创建目录..." -ForegroundColor Cyan
-try {
-    New-Item -ItemType Directory -Path $sourcePath -Force | Out-Null
-    New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
-    Write-Host "  ✅ 目录创建成功" -ForegroundColor Green
-} catch {
-    Write-Host "  ⚠️ 目录创建失败（可能已存在）：$_" -ForegroundColor Yellow
-}
-
-# 更新配置文件中的路径
-Write-Host ""
-Write-Host "更新配置文件..." -ForegroundColor Cyan
 
 # 获取当前激活的用户配置（从 default.yaml 读取）
 $defaultConfigPath = "configs\default.yaml"
 $activeUser = "xh"  # 默认值
 
 if (Test-Path $defaultConfigPath) {
-    $defaultConfigContent = Get-Content $defaultConfigPath -Raw
+    $defaultConfigContent = Get-Content $defaultConfigPath -Raw -Encoding UTF8
     if ($defaultConfigContent -match 'active_user:\s*(\S+)') {
         $activeUser = $matches[1]
-        Write-Host "  检测到激活用户：$activeUser" -ForegroundColor Gray
+        Write-Host "检测到激活用户：$activeUser" -ForegroundColor Gray
     }
 }
 
-# 更新用户配置文件
+# 读取用户配置文件中的路径
 $userConfigPath = "configs\users\${activeUser}.yaml"
+$sourcePath = "D:\短剧剪辑\源素材视频"  # 默认值
+$outputPath = "D:\短剧剪辑\输出素材"    # 默认值
+
 if (Test-Path $userConfigPath) {
     try {
         $configContent = Get-Content $userConfigPath -Raw -Encoding UTF8
         
-        # 转义反斜杠（Windows 路径需要双反斜杠）
-        $sourcePathEscaped = $sourcePath -replace '\\', '\\'
-        $outputPathEscaped = $outputPath -replace '\\', '\\'
-        
-        # 更新 default_source_dir
-        if ($configContent -match 'default_source_dir:') {
-            $configContent = $configContent -replace 'default_source_dir:\s*"[^"]*"', "default_source_dir: `"$sourcePathEscaped`""
-        } else {
-            $configContent += "`ndefault_source_dir: `"$sourcePathEscaped`""
+        # 读取 default_source_dir
+        if ($configContent -match 'default_source_dir:\s*"([^"]*)"') {
+            $configuredPath = $matches[1]
+            # 反转义 Windows 路径（\\ -> \）
+            $sourcePath = $configuredPath -replace '\\\\', '\'
+            
+            # 根据源素材路径推断输出路径
+            if ($sourcePath -match '^([A-Z]:)\\') {
+                $driveLetter = $matches[1]
+                $outputPath = "${driveLetter}\短剧剪辑\输出素材"
+            }
         }
         
-        # 保存更新后的配置
-        $configContent | Out-File -FilePath $userConfigPath -Encoding UTF8 -NoNewline
-        Write-Host "  ✅ 配置文件已更新：$userConfigPath" -ForegroundColor Green
+        Write-Host "从配置文件读取到的路径：" -ForegroundColor Cyan
+        Write-Host "  源素材目录：$sourcePath" -ForegroundColor White
+        Write-Host "  输出目录：  $outputPath" -ForegroundColor White
     } catch {
-        Write-Host "  ⚠️ 配置更新失败：$_" -ForegroundColor Yellow
-        Write-Host "  请手动编辑配置文件：$userConfigPath" -ForegroundColor Yellow
+        Write-Host "  ⚠️ 配置读取失败，使用默认路径" -ForegroundColor Yellow
     }
 } else {
-    Write-Host "  ⚠️ 未找到用户配置文件：$userConfigPath" -ForegroundColor Yellow
+    Write-Host "  ⚠️ 未找到用户配置文件，使用默认路径" -ForegroundColor Yellow
+}
+
+Write-Host ""
+
+# 创建目录
+Write-Host "创建目录..." -ForegroundColor Cyan
+$directoriesCreated = 0
+$directoriesFailed = 0
+
+try {
+    if (-not (Test-Path $sourcePath)) {
+        New-Item -ItemType Directory -Path $sourcePath -Force | Out-Null
+        Write-Host "  ✅ 已创建：$sourcePath" -ForegroundColor Green
+        $directoriesCreated++
+    } else {
+        Write-Host "  ✓ 已存在：$sourcePath" -ForegroundColor Gray
+    }
+} catch {
+    Write-Host "  ❌ 创建失败：$sourcePath" -ForegroundColor Red
+    Write-Host "     错误：$_" -ForegroundColor Red
+    $directoriesFailed++
+}
+
+try {
+    if (-not (Test-Path $outputPath)) {
+        New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
+        Write-Host "  ✅ 已创建：$outputPath" -ForegroundColor Green
+        $directoriesCreated++
+    } else {
+        Write-Host "  ✓ 已存在：$outputPath" -ForegroundColor Gray
+    }
+} catch {
+    Write-Host "  ❌ 创建失败：$outputPath" -ForegroundColor Red
+    Write-Host "     错误：$_" -ForegroundColor Red
+    $directoriesFailed++
+}
+
+if ($directoriesFailed -gt 0) {
+    Write-Host ""
+    Write-Host "  ⚠️ 部分目录创建失败，请手动创建或检查磁盘是否存在" -ForegroundColor Yellow
 }
 
 # 完成
