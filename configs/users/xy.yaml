@@ -11,10 +11,10 @@ brand_text_mapping:
   mode: "range"
   ranges:
     - range: "01-05"
-      text: "小圆短剧"
+      text: "小园短剧"
 
   cycle_texts:
-    - "小圆短剧"
+    - "小园短剧"
   default_text: "热门短剧"
 
 # 飞书功能配置
