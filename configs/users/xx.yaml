@@ -16,7 +16,7 @@ title_colors:
 
 # 目录设置
 default_source_dir: "D:\\短剧剪辑\\源素材视频" # WSL 路径
-storage_type: "ssd"  # D盘为SSD，所有操作都在同一盘（最快）
+storage_type: "ssd" # D盘为SSD，所有操作都在同一盘（最快）
 
 # 多素材文案配置
 brand_text_mapping:
