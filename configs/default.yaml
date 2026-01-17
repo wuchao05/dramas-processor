@@ -107,6 +107,7 @@ default_source_dir: "D:\\短剧剪辑\\源素材视频"
 backup_source_dir: "E:\\短剧剪辑\\源素材视频"
 temp_dir: null # 使用系统临时目录
 output_dir: "D:\\短剧剪辑\\输出素材"  # 使用绝对路径，与源素材在同一盘
+# 注意：如果用户配置中的 default_source_dir 不在 D 盘，必须在用户配置中覆盖 output_dir
 tail_cache_dir: null # 自动使用系统临时目录
 tail_file: "assets\\tail.mp4"
 refresh_tail_cache: false
