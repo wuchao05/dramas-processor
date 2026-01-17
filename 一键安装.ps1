@@ -184,11 +184,20 @@ if (Test-Path $userConfigPath) {
             # 反转义 Windows 路径（\\ -> \）
             $sourcePath = $configuredPath -replace '\\\\', '\'
             
-            # 根据源素材路径推断输出路径
+            # 提取盘符用于推断输出路径
             if ($sourcePath -match '^([A-Z]:)\\') {
                 $driveLetter = $matches[1]
-                $outputPath = "${driveLetter}\短剧剪辑\输出素材"
+                $inferredOutputPath = "${driveLetter}\短剧剪辑\输出素材"
             }
+        }
+        
+        # 读取 output_dir（优先使用配置中的值）
+        if ($configContent -match 'output_dir:\s*"([^"]*)"') {
+            $configuredOutput = $matches[1]
+            $outputPath = $configuredOutput -replace '\\\\', '\'
+        } elseif ($inferredOutputPath) {
+            # 如果配置中没有 output_dir，使用推断的路径
+            $outputPath = $inferredOutputPath
         }
         
         Write-Host "从配置文件读取到的路径：" -ForegroundColor Cyan
