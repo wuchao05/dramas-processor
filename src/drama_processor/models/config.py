@@ -260,14 +260,14 @@ class ProcessingConfig(BaseModel):
         default="/mnt/e/短剧剪辑/源素材视频",
         description="Backup source drama directory",
     )
-    storage_type: Optional[str] = Field(
-        default=None,
-        description="Storage type: 'ssd' or 'hdd'. If set, optimizes temp directories accordingly."
+    temp_dir: Optional[str] = Field(
+        default=None, 
+        description="Temporary directory (None = use system temp for best performance)"
     )
-    temp_dir: Optional[str] = Field(default=None, description="Temporary directory")
     output_dir: str = Field(default="../导出素材", description="Output directory")
     tail_cache_dir: Optional[str] = Field(
-        default=None, description="Tail cache directory"
+        default=None, 
+        description="Tail cache directory (None = use system temp for best performance)"
     )
     tail_file: Optional[str] = Field(
         default="assets/tail.mp4", description="Default tail video file"
@@ -440,54 +440,36 @@ class ProcessingConfig(BaseModel):
         return os.path.dirname(actual_source)
     
     def get_optimized_temp_dir(self) -> Optional[str]:
-        """Get optimized temp directory based on storage type.
+        """Get optimized temp directory for best performance.
+        
+        Strategy: Always use system temp (C:\\ on Windows) unless manually overridden.
+        
+        Why system temp is fastest:
+        1. C:\\ is usually NVMe SSD (3500MB/s vs 550MB/s SATA SSD)
+        2. I/O isolation: Read from data disk, write temp to system disk
+        3. Better system-level cache and optimization
         
         Returns:
-            - If storage_type is 'ssd': Use source dir's disk for temp (all operations on SSD)
-            - If storage_type is 'hdd': Use system temp (leverage system SSD for processing)
             - If temp_dir is explicitly set: Use that (manual override)
-            - Otherwise: Use system default (None)
+            - Otherwise: None (use system default temp for optimal performance)
         """
-        if self.temp_dir is not None:
-            # Explicit configuration takes precedence
-            return self.temp_dir
-        
-        if self.storage_type:
-            storage_type_lower = self.storage_type.lower()
-            if storage_type_lower == "ssd":
-                # Use same disk as source for all operations (fast disk)
-                base_dir = self.get_export_base_dir()
-                return os.path.join(base_dir, "临时文件")
-            elif storage_type_lower == "hdd":
-                # Use system temp (usually on system SSD) for fast processing
-                return None  # None means use system default
-        
-        return None  # Default: use system temp
+        return self.temp_dir  # None = use system temp (fastest)
     
     def get_optimized_tail_cache_dir(self) -> Optional[str]:
-        """Get optimized tail cache directory based on storage type.
+        """Get optimized tail cache directory for best performance.
+        
+        Strategy: Always use system temp (C:\\ on Windows) unless manually overridden.
+        
+        Why system temp is fastest:
+        1. C:\\ is usually NVMe SSD (3500MB/s vs 550MB/s SATA SSD)
+        2. I/O isolation: Read from data disk, write cache to system disk
+        3. Better system-level cache and optimization
         
         Returns:
-            - If storage_type is 'ssd': Use source dir's disk for cache (all operations on SSD)
-            - If storage_type is 'hdd': Use system temp (leverage system SSD for processing)
             - If tail_cache_dir is explicitly set: Use that (manual override)
-            - Otherwise: Use system default (None)
+            - Otherwise: None (use system default temp for optimal performance)
         """
-        if self.tail_cache_dir is not None:
-            # Explicit configuration takes precedence
-            return self.tail_cache_dir
-        
-        if self.storage_type:
-            storage_type_lower = self.storage_type.lower()
-            if storage_type_lower == "ssd":
-                # Use same disk as source for cache (fast disk)
-                base_dir = self.get_export_base_dir()
-                return os.path.join(base_dir, "尾部缓存")
-            elif storage_type_lower == "hdd":
-                # Use system temp (usually on system SSD) for fast processing
-                return None  # None means use system default
-        
-        return None  # Default: use system temp
+        return self.tail_cache_dir  # None = use system temp (fastest)
 
     def get_brand_text_for_material(self, material_idx: int) -> str:
         """Get brand text for specific material index."""

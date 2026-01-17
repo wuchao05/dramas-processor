@@ -17,11 +17,8 @@ title_colors:
 # 目录设置
 default_source_dir: "E:\\短剧剪辑\\源素材视频" # Windows 路径
 output_dir: "E:\\短剧剪辑\\输出素材" # 输出目录
-
-# 存储类型配置（自动性能优化）
-storage_type: "hdd" # 可选: "ssd" 或 "hdd"
-# - ssd: 所有操作都在同一SSD上（最快，适合固态硬盘）
-# - hdd: 临时文件使用系统盘SSD，最终输出到HDD（平衡性能和容量）
+# 临时文件自动使用C盘（性能最优，无需配置）
+# 优势：利用系统SSD加速处理，最终输出到E盘
 
 # 多素材文案配置
 brand_text_mapping:

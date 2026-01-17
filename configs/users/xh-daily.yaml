@@ -7,7 +7,7 @@ material_code: "xh" # 素材文件名标识
 
 # 目录设置（Windows 格式）
 default_source_dir: "D:\\短剧剪辑\\源素材视频"
-storage_type: "ssd" # D盘为SSD，所有操作都在同一盘（最快）
+# 临时文件自动使用C盘（性能最优，无需配置）
 
 # 字体设置（使用 Windows 自带字体）
 # 使用 null 让程序自动检测（会优先 TTF 文件，避免 TTC 兼容性问题）

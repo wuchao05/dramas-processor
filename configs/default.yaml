@@ -102,19 +102,18 @@ canvas: null
 reference_resolution: null
 
 # Directory settings (Windows 路径格式)
-# 修改为你的实际路径
 default_source_dir: "D:\\短剧剪辑\\源素材视频"
 backup_source_dir: "E:\\短剧剪辑\\源素材视频"
 
-# 存储类型（自动性能优化）
-storage_type: null  # 可选: "ssd" 或 "hdd"，由用户配置指定
-# - ssd: 所有临时文件都在源素材同一盘（适合全SSD，最快）
-# - hdd: 临时文件使用系统盘SSD，输出到HDD（混合存储，平衡性能）
-# - null: 使用系统默认临时目录
+# 性能优化策略（自动使用最快配置）
+# ✅ 临时文件自动使用系统盘（C:\，通常是最快的NVMe SSD）
+# ✅ 实现I/O分离：数据盘读写源文件，系统盘处理临时文件
+# ✅ 无需配置，开箱即用
+temp_dir: null # 保持null以使用系统临时目录（最快，推荐）
+tail_cache_dir: null # 保持null以使用系统临时目录（最快，推荐）
 
-temp_dir: null # 临时工作目录（根据 storage_type 自动优化，也可手动指定）
-output_dir: "D:\\短剧剪辑\\输出素材"  # 使用绝对路径，与源素材在同一盘
-# 注意：如果用户配置中的 default_source_dir 不在 D 盘，必须在用户配置中覆盖 output_dir
+output_dir: "D:\\短剧剪辑\\输出素材"  # 输出目录
+# 注意：如果 default_source_dir 不在 D 盘，必须在用户配置中覆盖 output_dir
 tail_cache_dir: null # 自动使用系统临时目录
 tail_file: "assets\\tail.mp4"
 refresh_tail_cache: false
