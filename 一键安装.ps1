@@ -173,6 +173,8 @@ if (Test-Path $defaultConfigPath) {
 $userConfigPath = "configs\users\${activeUser}.yaml"
 $sourcePath = "D:\短剧剪辑\源素材视频"  # 默认值
 $outputPath = "D:\短剧剪辑\输出素材"    # 默认值
+$tempPath = $null                      # 可选
+$tailCachePath = $null                 # 可选
 
 if (Test-Path $userConfigPath) {
     try {
@@ -200,9 +202,27 @@ if (Test-Path $userConfigPath) {
             $outputPath = $inferredOutputPath
         }
         
+        # 读取 temp_dir（可选，用于性能优化）
+        if ($configContent -match 'temp_dir:\s*"([^"]*)"') {
+            $configuredTemp = $matches[1]
+            $tempPath = $configuredTemp -replace '\\\\', '\'
+        }
+        
+        # 读取 tail_cache_dir（可选，用于性能优化）
+        if ($configContent -match 'tail_cache_dir:\s*"([^"]*)"') {
+            $configuredCache = $matches[1]
+            $tailCachePath = $configuredCache -replace '\\\\', '\'
+        }
+        
         Write-Host "从配置文件读取到的路径：" -ForegroundColor Cyan
         Write-Host "  源素材目录：$sourcePath" -ForegroundColor White
         Write-Host "  输出目录：  $outputPath" -ForegroundColor White
+        if ($tempPath) {
+            Write-Host "  临时目录：  $tempPath" -ForegroundColor White
+        }
+        if ($tailCachePath) {
+            Write-Host "  尾部缓存：  $tailCachePath" -ForegroundColor White
+        }
     } catch {
         Write-Host "  ⚠️ 配置读取失败，使用默认路径" -ForegroundColor Yellow
     }
@@ -243,6 +263,40 @@ try {
     Write-Host "  ❌ 创建失败：$outputPath" -ForegroundColor Red
     Write-Host "     错误：$_" -ForegroundColor Red
     $directoriesFailed++
+}
+
+# 创建临时目录（如果配置中指定）
+if ($tempPath) {
+    try {
+        if (-not (Test-Path $tempPath)) {
+            New-Item -ItemType Directory -Path $tempPath -Force | Out-Null
+            Write-Host "  ✅ 已创建：$tempPath" -ForegroundColor Green
+            $directoriesCreated++
+        } else {
+            Write-Host "  ✓ 已存在：$tempPath" -ForegroundColor Gray
+        }
+    } catch {
+        Write-Host "  ❌ 创建失败：$tempPath" -ForegroundColor Red
+        Write-Host "     错误：$_" -ForegroundColor Red
+        $directoriesFailed++
+    }
+}
+
+# 创建尾部缓存目录（如果配置中指定）
+if ($tailCachePath) {
+    try {
+        if (-not (Test-Path $tailCachePath)) {
+            New-Item -ItemType Directory -Path $tailCachePath -Force | Out-Null
+            Write-Host "  ✅ 已创建：$tailCachePath" -ForegroundColor Green
+            $directoriesCreated++
+        } else {
+            Write-Host "  ✓ 已存在：$tailCachePath" -ForegroundColor Gray
+        }
+    } catch {
+        Write-Host "  ❌ 创建失败：$tailCachePath" -ForegroundColor Red
+        Write-Host "     错误：$_" -ForegroundColor Red
+        $directoriesFailed++
+    }
 }
 
 if ($directoriesFailed -gt 0) {
