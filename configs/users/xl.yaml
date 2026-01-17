@@ -15,10 +15,12 @@ title_colors:
   - "#00BFFF" # Deep Sky Blue
 
 # 目录设置
-default_source_dir: "E:\\短剧剪辑\\源素材视频" # Windows 路径
-output_dir: "E:\\短剧剪辑\\输出素材" # 输出目录（必须设置为与源素材同一盘）
-temp_dir: "E:\\短剧剪辑\\临时文件" # 临时工作目录（使用与源素材同一盘，避免跨盘操作）
-tail_cache_dir: "E:\\短剧剪辑\\尾部缓存" # 尾部缓存目录（使用与源素材同一盘）
+default_source_dir: "E:\\短剧剪辑\\源素材视频" # Windows 路径（HDD，存储大文件）
+output_dir: "E:\\短剧剪辑\\输出素材" # 输出目录（HDD，最终存储）
+# 性能优化：临时文件使用系统盘（SSD），利用高速读写
+# 只在最后输出时写入E盘，虽然有一次跨盘操作但总体更快
+# temp_dir: null  # 使用系统临时目录（通常在C盘SSD，速度快）
+# tail_cache_dir: null  # 使用系统临时目录（通常在C盘SSD，速度快）
 
 # 多素材文案配置
 brand_text_mapping:
