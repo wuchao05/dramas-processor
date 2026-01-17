@@ -1,0 +1,28 @@
+# 素材生成设置
+count: 30 # 每部剧生成素材数量
+material_code: "xy" # 素材文件名标识
+
+# 目录设置
+default_source_dir: "D:\\短剧剪辑\\源素材视频" # Windows 路径
+# 临时文件自动使用C盘（性能最优，无需配置）
+
+# 多素材文案配置
+brand_text_mapping:
+  mode: "range"
+  ranges:
+    - range: "01-05"
+      text: "小圆短剧"
+
+  cycle_texts:
+    - "小圆短剧"
+  default_text: "热门短剧"
+
+# 飞书功能配置
+enable_feishu_features: true
+feishu:
+  table_id: "tblNBKL6tAmt7IBO" # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
+
+# 文案显示配置
+enable_hook_text: false
+enable_brand_text: true # 启用品牌文字（底部第一行）
+enable_disclaimer_text: true # 启用免责声明（底部第二行）
