@@ -452,7 +452,7 @@ class DramaProcessor:
             cover_image=None,
             temp_root=temp_root,
             keep_temp=self.config.keep_temp,
-            tail_cache_dir=self.config.tail_cache_dir,
+            tail_cache_dir=self.config.get_optimized_tail_cache_dir(),
             refresh_tail_cache=self.config.refresh_tail_cache,
             material_idx=material_idx,
             material_total=material_total,
@@ -620,8 +620,9 @@ class DramaProcessor:
         
         os.makedirs(actual_exports_root, exist_ok=True)
         
-        # Set up temporary directory
-        temp_root = ensure_temp_root(self.config.temp_dir)
+        # Set up temporary directory (auto-optimize based on storage type)
+        optimized_temp_dir = self.config.get_optimized_temp_dir()
+        temp_root = ensure_temp_root(optimized_temp_dir)
         
         # Discover dramas
         all_drama_dirs = self.scan_and_discover_dramas(root_dir)
