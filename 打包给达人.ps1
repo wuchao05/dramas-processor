@@ -67,8 +67,8 @@ New-Item -ItemType Directory -Path "${packagePath}\项目文件" -Force | Out-Nu
 # 复制核心文件
 Write-Host "[2/6] 复制项目核心文件..." -ForegroundColor Yellow
 
-# 复制基础文件和目录（不包含 docs，达人不需要开发文档）
-$basicItems = @("src", "assets", "requirements.txt", "requirements_ai.txt", "pyproject.toml", "README.md")
+# 复制基础文件和目录（只包含运行必需的文件）
+$basicItems = @("src", "assets", "requirements.txt", "requirements_ai.txt", "pyproject.toml")
 foreach ($item in $basicItems) {
     if (Test-Path $item) {
         Copy-Item -Path $item -Destination "${packagePath}\项目文件\" -Recurse -Force

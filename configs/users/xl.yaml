@@ -27,13 +27,13 @@ brand_text_mapping:
     - range: "01-05"
       text: "茹悟好剧"
     - range: "06-10"
-      text: "小来追剧"
-    - range: "11-15"
       text: "听燕剧场"
+    - range: "11-15"
+      text: "小来追剧"
   cycle_texts:
     - "茹悟好剧"
-    - "小来追剧"
     - "听燕剧场"
+    - "小来追剧"
   default_text: "热门短剧"
 
 # 飞书功能配置
