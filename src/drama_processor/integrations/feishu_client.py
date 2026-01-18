@@ -323,12 +323,15 @@ class FeishuClient:
             douyin_field = getattr(self.config, "douyin_material_field_name", "抖音素材")
             field_names.append(douyin_field)
             
+            logger.info(f"📋 查询飞书字段列表: {', '.join(field_names)}")
+            
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
                                          field_names=field_names)
             drama_info = {}
             for record in response.items:
                 if "剧名" in record.fields and record.fields["剧名"]:
                     drama_name = record.fields["剧名"][0].text
+                    logger.debug(f"记录字段列表: {', '.join(record.fields.keys())}")
                     
                     # 获取日期信息（同时保存完整日期和简化格式）
                     drama_date = None  # 简化格式，用于文件命名
@@ -400,11 +403,15 @@ class FeishuClient:
                                 first_item = douyin_obj[0]
                                 if isinstance(first_item, dict) and "text" in first_item:
                                     douyin_config = first_item["text"]
+                                    logger.info(f"📱 获取到剧目 '{drama_name}' 的抖音素材配置")
                                 elif hasattr(first_item, "text"):
                                     # 可能是对象而不是字典
                                     douyin_config = first_item.text
+                                    logger.info(f"📱 获取到剧目 '{drama_name}' 的抖音素材配置")
                         except (KeyError, IndexError, TypeError, AttributeError) as e:
-                            logger.debug(f"无法解析剧目 '{drama_name}' 的抖音素材配置: {e}")
+                            logger.warning(f"⚠️ 无法解析剧目 '{drama_name}' 的抖音素材配置: {e}")
+                    else:
+                        logger.debug(f"剧目 '{drama_name}' 没有抖音素材配置字段（字段名: {douyin_field}）")
                     
                     drama_info[drama_name] = {
                         "record_id": record.record_id,

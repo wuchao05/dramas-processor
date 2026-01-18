@@ -459,6 +459,7 @@ class FeishuWatcher:
         if "douyin_config" in info and info["douyin_config"]:
             from ..utils.douyin_config_parser import parse_douyin_material_config
             
+            logger.info(f"📱 检测到剧目 '{drama_name}' 有抖音素材配置，开始解析...")
             parsed = parse_douyin_material_config(info["douyin_config"])
             if parsed:
                 logger.info(f"✅ 使用飞书抖音配置：{drama_name}, count={parsed['count']}")
@@ -466,6 +467,8 @@ class FeishuWatcher:
                 config_copy.count = parsed["count"]
             else:
                 logger.warning(f"⚠️ 飞书抖音配置解析失败：{drama_name}，使用项目配置")
+        else:
+            logger.debug(f"剧目 '{drama_name}' 没有抖音素材配置，使用项目配置")
         
         root_path = Path(config_copy.get_actual_source_dir())
         if not root_path.exists():
