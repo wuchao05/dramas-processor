@@ -291,7 +291,7 @@ class FeishuClient:
     
     def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None, include_rating: bool = True) -> Dict[str, Dict[str, str]]:
         """
-        获取指定状态的剧名和对应的记录信息（包括日期、上架时间和评级）
+        获取指定状态的剧名和对应的记录信息（包括日期、上架时间、评级和抖音素材配置）
         
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
@@ -305,7 +305,8 @@ class FeishuClient:
                 "date": str,          # 简化格式，如 "12.30"（用于文件命名）
                 "full_date": str,     # 完整格式，如 "2025-12-30"（用于日期匹配）
                 "upload_time": int,   # 上架时间戳（毫秒）
-                "rating": str         # 评级，如 "红标"（如果 include_rating=True）
+                "rating": str,        # 评级，如 "红标"（如果 include_rating=True）
+                "douyin_config": str  # 抖音素材配置文本
             }
         """
         try:
@@ -317,6 +318,10 @@ class FeishuClient:
             if include_rating:
                 rating_field = self.config.rating_field_name or "评级"
                 field_names.append(rating_field)
+            
+            # 添加抖音素材字段
+            douyin_field = getattr(self.config, "douyin_material_field_name", "抖音素材")
+            field_names.append(douyin_field)
             
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
                                          field_names=field_names)
@@ -384,12 +389,30 @@ class FeishuClient:
                         except (KeyError, IndexError, TypeError) as e:
                             logger.warning(f"无法解析剧目 '{drama_name}' 的评级: {e}")
                     
+                    # 获取抖音素材配置信息
+                    douyin_config = None
+                    if douyin_field in record.fields and record.fields[douyin_field]:
+                        try:
+                            # 抖音素材结构: [{"text": "小红看剧 ...\n...", "type": "text"}]
+                            douyin_obj = record.fields[douyin_field]
+                            if isinstance(douyin_obj, list) and len(douyin_obj) > 0:
+                                # 取第一个元素的text字段
+                                first_item = douyin_obj[0]
+                                if isinstance(first_item, dict) and "text" in first_item:
+                                    douyin_config = first_item["text"]
+                                elif hasattr(first_item, "text"):
+                                    # 可能是对象而不是字典
+                                    douyin_config = first_item.text
+                        except (KeyError, IndexError, TypeError, AttributeError) as e:
+                            logger.debug(f"无法解析剧目 '{drama_name}' 的抖音素材配置: {e}")
+                    
                     drama_info[drama_name] = {
                         "record_id": record.record_id,
                         "date": drama_date or "未知",           # 简化格式，用于文件命名
                         "full_date": full_date,                 # 完整格式，用于日期匹配
                         "upload_time": upload_time,             # None 表示没有上架时间
-                        "rating": rating                        # None 表示没有评级
+                        "rating": rating,                       # None 表示没有评级
+                        "douyin_config": douyin_config          # None 表示没有抖音素材配置
                     }
             return drama_info
         except Exception as e:

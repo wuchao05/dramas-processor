@@ -21,6 +21,7 @@ class FeishuConfig(BaseModel):
     rating_field_name: str = Field(default="评级", description="评级字段名")
     priority_rating_value: str = Field(default="红标", description="高优先级评级值（同日期内最优先处理）")
     upload_time_sort_desc: bool = Field(default=True, description="上架时间排序方向：True=降序(新的优先)，False=升序(早的优先)")
+    douyin_material_field_name: str = Field(default="抖音素材", description="抖音素材配置字段名")
     page_size: int = Field(default=200, description="分页大小")
     token_refresh_interval: int = Field(default=7200000, description="token刷新间隔(毫秒)")
 

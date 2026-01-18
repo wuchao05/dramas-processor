@@ -870,6 +870,15 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
         elif force_reprocess:
             click.echo("🔄 强制重新处理模式已启用，将忽略历史记录")
         
+        # 解析抖音素材配置（如果存在）
+        from ..utils.douyin_config_parser import parse_douyin_material_config
+        for drama_name, info in drama_info.items():
+            if "douyin_config" in info and info["douyin_config"]:
+                parsed = parse_douyin_material_config(info["douyin_config"])
+                if parsed:
+                    info["_parsed_douyin"] = parsed
+                    click.echo(f"✅ 已解析 '{drama_name}' 的抖音配置：count={parsed['count']}")
+        
         dramas = list(drama_info.keys())
         # 从新数据结构中提取记录ID映射（保持向后兼容）
         drama_records = {name: info["record_id"] for name, info in drama_info.items()}
@@ -1027,14 +1036,50 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
         click.echo("🚀 启用快速处理模式...")
         click.echo("  ✅ 传统处理模式：快速生成素材")
         
-        processor = DramaProcessor(config, status_callback=status_update_callback)
+        # 检查是否有剧目包含抖音配置
+        has_douyin_config = any("_parsed_douyin" in info for info in drama_info.values())
         
-        # 构建剧目日期映射用于传递给处理器
-        drama_dates = {name: info["date"] for name, info in drama_info.items()}
-        
-        # 开始处理
-        click.echo(f"\n🎬 开始自动剪辑从飞书获取的剧目...")
-        total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
+        if has_douyin_config:
+            # 有抖音配置，逐个处理剧目以应用独立配置
+            click.echo("  📱 检测到抖音素材配置，将为每部剧应用独立配置")
+            click.echo(f"\n🎬 开始自动剪辑从飞书获取的剧目...")
+            
+            total_done = 0
+            total_planned = 0
+            
+            for drama_name in dramas:
+                info = drama_info[drama_name]
+                config_copy = config.copy(deep=True)
+                config_copy.include = [drama_name]
+                config_copy.full = False
+                
+                # 应用抖音配置（如果有）
+                if "_parsed_douyin" in info:
+                    parsed = info["_parsed_douyin"]
+                    config_copy.brand_text_mapping = parsed["brand_text_mapping"]
+                    config_copy.count = parsed["count"]
+                    click.echo(f"\n  📱 {drama_name} 使用抖音配置：count={parsed['count']}")
+                else:
+                    click.echo(f"\n  {drama_name} 使用项目配置")
+                
+                # 为该剧目创建独立的processor
+                processor = DramaProcessor(config_copy, status_callback=status_update_callback)
+                drama_dates = {drama_name: info["date"]}
+                
+                # 处理该剧目
+                done, planned = processor.process_all_dramas(str(root_dir), drama_dates)
+                total_done += done
+                total_planned += planned
+        else:
+            # 没有抖音配置，使用原有的批量处理逻辑
+            processor = DramaProcessor(config, status_callback=status_update_callback)
+            
+            # 构建剧目日期映射用于传递给处理器
+            drama_dates = {name: info["date"] for name, info in drama_info.items()}
+            
+            # 开始处理
+            click.echo(f"\n🎬 开始自动剪辑从飞书获取的剧目...")
+            total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
         
         # 处理完成后，保存已处理的剧集记录（仅在启用日期去重时）
         if skip_processed and not force_reprocess and drama_info:
@@ -1186,6 +1231,15 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
                 click.echo(f"  - 待处理剧集: {len(drama_info)} 部")
         elif force_reprocess:
             click.echo("🔄 强制重新处理模式已启用，将忽略历史记录")
+        
+        # 解析抖音素材配置（如果存在）
+        from ..utils.douyin_config_parser import parse_douyin_material_config
+        for drama_name, info in drama_info.items():
+            if "douyin_config" in info and info["douyin_config"]:
+                parsed = parse_douyin_material_config(info["douyin_config"])
+                if parsed:
+                    info["_parsed_douyin"] = parsed
+                    click.echo(f"✅ 已解析 '{drama_name}' 的抖音配置：count={parsed['count']}")
         
         dramas = list(drama_info.keys())
         # 从新数据结构中提取记录ID映射（保持向后兼容）
@@ -1387,14 +1441,50 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
         click.echo("🚀 启用快速处理模式...")
         click.echo("  ✅ 传统处理模式：快速生成素材")
         
-        processor = DramaProcessor(config, status_callback=status_update_callback)
+        # 检查是否有剧目包含抖音配置
+        has_douyin_config = any("_parsed_douyin" in drama_info.get(name, {}) for name in selected_dramas)
         
-        # 构建剧目日期映射用于传递给处理器
-        drama_dates = {name: info["date"] for name, info in drama_info.items()}
-        
-        # 开始处理
-        click.echo(f"\n🎬 开始剪辑选择的剧目...")
-        total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
+        if has_douyin_config:
+            # 有抖音配置，逐个处理剧目以应用独立配置
+            click.echo("  📱 检测到抖音素材配置，将为每部剧应用独立配置")
+            click.echo(f"\n🎬 开始剪辑选择的剧目...")
+            
+            total_done = 0
+            total_planned = 0
+            
+            for drama_name in selected_dramas:
+                info = drama_info[drama_name]
+                config_copy = config.copy(deep=True)
+                config_copy.include = [drama_name]
+                config_copy.full = False
+                
+                # 应用抖音配置（如果有）
+                if "_parsed_douyin" in info:
+                    parsed = info["_parsed_douyin"]
+                    config_copy.brand_text_mapping = parsed["brand_text_mapping"]
+                    config_copy.count = parsed["count"]
+                    click.echo(f"\n  📱 {drama_name} 使用抖音配置：count={parsed['count']}")
+                else:
+                    click.echo(f"\n  {drama_name} 使用项目配置")
+                
+                # 为该剧目创建独立的processor
+                processor = DramaProcessor(config_copy, status_callback=status_update_callback)
+                drama_dates = {drama_name: info["date"]}
+                
+                # 处理该剧目
+                done, planned = processor.process_all_dramas(str(root_dir), drama_dates)
+                total_done += done
+                total_planned += planned
+        else:
+            # 没有抖音配置，使用原有的批量处理逻辑
+            processor = DramaProcessor(config, status_callback=status_update_callback)
+            
+            # 构建剧目日期映射用于传递给处理器
+            drama_dates = {name: info["date"] for name, info in drama_info.items()}
+            
+            # 开始处理
+            click.echo(f"\n🎬 开始剪辑选择的剧目...")
+            total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
         
         # 处理完成后，保存已处理的剧集记录（仅在启用日期去重时）
         if skip_processed and not force_reprocess and drama_info:
