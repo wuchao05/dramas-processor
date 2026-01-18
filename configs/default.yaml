@@ -186,6 +186,9 @@ feishu:
   rating_field_name: "评级"
   priority_rating_value: "红标"
   upload_time_sort_desc: true
+  
+  # 抖音素材配置字段名称
+  douyin_material_field_name: "抖音素材"  # 飞书表格中的抖音素材配置字段名
 
 # 飞书轮询配置
 feishu_watcher:
