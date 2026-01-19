@@ -369,14 +369,30 @@ class VideoEncoder:
         full_w = ref_w - 2 * margin
         
         if motion_type == 'top_to_bottom':
-            # 从上到下：X轴固定在随机位置，Y轴从上往下
-            x_pos = rng.randint(margin, ref_w - margin)
+            # 从上到下：X轴固定在左侧或右侧（四个角落），Y轴从上往下
+            # 随机选择左侧或右侧
+            side = rng.choice(['left', 'right'])
+            edge_width = int(ref_w * 0.25)  # 左右两侧各占25%宽度
+            if side == 'left':
+                # 左侧区域（左上或左下）
+                x_pos = rng.randint(margin, margin + edge_width)
+            else:
+                # 右侧区域（右上或右下）
+                x_pos = rng.randint(ref_w - margin - edge_width, ref_w - margin)
             x_expr = str(x_pos)
             y_expr = f'{margin}+mod(t*{speed}, {full_h})'
             
         elif motion_type == 'bottom_to_top':
-            # 从下到上：X轴固定在随机位置，Y轴从下往上
-            x_pos = rng.randint(margin, ref_w - margin)
+            # 从下到上：X轴固定在左侧或右侧（四个角落），Y轴从下往上
+            # 随机选择左侧或右侧
+            side = rng.choice(['left', 'right'])
+            edge_width = int(ref_w * 0.25)  # 左右两侧各占25%宽度
+            if side == 'left':
+                # 左侧区域（左上或左下）
+                x_pos = rng.randint(margin, margin + edge_width)
+            else:
+                # 右侧区域（右上或右下）
+                x_pos = rng.randint(ref_w - margin - edge_width, ref_w - margin)
             x_expr = str(x_pos)
             y_expr = f'{ref_h - margin}-mod(t*{speed}, {full_h})'
             
