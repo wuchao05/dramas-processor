@@ -106,12 +106,9 @@ Write-Host "  ✓ 已设置 active_user: ${Name}" -ForegroundColor Green
 # 复制和创建启动脚本
 Write-Host "[3/6] 创建启动脚本..." -ForegroundColor Yellow
 
-# 复制通用脚本
-Copy-Item -Path "一键安装.ps1" -Destination $packagePath -Force
+# 只复制必要的脚本
 Copy-Item -Path "运行一键安装.bat" -Destination $packagePath -Force
-Copy-Item -Path "启动命令行.bat" -Destination $packagePath -Force
-Copy-Item -Path "达人使用说明.txt" -Destination $packagePath -Force
-Write-Host "  ✓ 已复制通用脚本" -ForegroundColor Green
+Write-Host "  ✓ 已复制运行一键安装.bat" -ForegroundColor Green
 
 # 创建达人专属的飞书监控启动脚本
 # 使用英文避免编码问题
@@ -154,72 +151,12 @@ $utf8BOM = New-Object System.Text.UTF8Encoding $true
 [System.IO.File]::WriteAllText($feishuBatPath, $feishuBatContent, $utf8BOM)
 Write-Host "  ✓ 已创建: 启动飞书监控.bat（配置: ${Name}.yaml）" -ForegroundColor Green
 
-# 创建达人专属说明文件
-Write-Host "[4/6] 生成达人专属说明..." -ForegroundColor Yellow
-$readmeContent = @"
-═══════════════════════════════════════════════════════════
-          🎬 短剧剪辑工具 - 欢迎使用！
-═══════════════════════════════════════════════════════════
+# 跳过其他说明文件
+Write-Host "[4/6] 跳过说明文件生成..." -ForegroundColor Yellow
+Write-Host "  ✓ 仅保留必要文件" -ForegroundColor Green
 
-📦 打包日期：$(Get-Date -Format "yyyy年MM月dd日 HH:mm")
-👤 使用者：${Name}
-
-📁 文件说明
-───────────────────────────────────────────────────────────
-[根目录]
-  📄 达人使用说明.txt      - 【必读】快速开始指南
-  📄 一键安装.ps1          - 首次使用需要运行
-  📄 启动命令行.bat        - 打开命令行界面
-  📄 启动飞书监控.bat      - 一键启动飞书自动监控
-
-[项目文件]
-  📁 src/                  - 程序源代码
-  📁 configs/              - 配置文件
-  📁 assets/               - 资源文件（尾部视频、水印等）
-  📁 docs/                 - 详细文档
-
-🚀 快速开始（3步）
-───────────────────────────────────────────────────────────
-1️⃣ 首次安装
-   右键点击"一键安装.ps1" → 选择"使用 PowerShell 运行"
-   等待安装完成（约5-10分钟）
-
-2️⃣ 准备素材
-   确保源素材放在：D:\短剧剪辑\源素材视频\
-   （每部剧一个文件夹，文件夹名即剧名）
-
-3️⃣ 开始使用
-   双击运行"启动飞书监控.bat"即可自动监控和剪辑
-
-📖 详细文档
-───────────────────────────────────────────────────────────
-• 快速上手：docs/达人快速上手指南.md
-• 完整教程：docs/WINDOWS_使用教程.md
-• 文档导航：docs/WINDOWS_文档导航.md
-
-⚠️ 重要提示
-───────────────────────────────────────────────────────────
-1. 首次使用必须先运行"一键安装.ps1"安装环境
-2. 确保电脑已连接网络（安装时需要下载依赖）
-3. 建议使用 SSD 存储源素材和输出文件
-4. 如遇问题，查看"达人使用说明.txt"中的常见问题
-
-📞 技术支持
-───────────────────────────────────────────────────────────
-如有问题，请联系管理员，并提供：
-  • 错误信息截图
-  • 使用的配置文件名称（${Name}.yaml）
-  • 操作步骤说明
-
-═══════════════════════════════════════════════════════════
-          祝创作愉快！🎬✨
-═══════════════════════════════════════════════════════════
-"@
-
-$readmeContent | Out-File -FilePath "${packagePath}\README.txt" -Encoding UTF8
-
-# 创建配置检查清单
-Write-Host "[5/6] 生成配置检查清单..." -ForegroundColor Yellow
+# [5/6] 步骤已合并
+Write-Host "[5/6] 准备打包..." -ForegroundColor Yellow
 $checklistContent = @"
 短剧剪辑工具 - 配置检查清单 (Checklist)
 ═══════════════════════════════════════════════════════════
@@ -307,8 +244,8 @@ Write-Host ""
 Write-Host "🎯 下一步操作：" -ForegroundColor Cyan
 Write-Host "   1. 将压缩包发送给达人" -ForegroundColor White
 Write-Host "   2. 告知达人解压到任意位置" -ForegroundColor White
-Write-Host "   3. 指导达人查看 README.txt" -ForegroundColor White
-Write-Host "   4. 指导达人运行'一键安装.ps1'" -ForegroundColor White
+Write-Host "   3. 指导达人双击'运行一键安装.bat'安装环境" -ForegroundColor White
+Write-Host "   4. 安装完成后双击'启动飞书监控.bat'开始使用" -ForegroundColor White
 Write-Host ""
 
 # 打开输出目录
