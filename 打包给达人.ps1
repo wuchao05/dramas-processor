@@ -108,6 +108,7 @@ Write-Host "[3/6] 创建启动脚本..." -ForegroundColor Yellow
 
 # 复制通用脚本
 Copy-Item -Path "一键安装.ps1" -Destination $packagePath -Force
+Copy-Item -Path "运行一键安装.bat" -Destination $packagePath -Force
 Copy-Item -Path "启动命令行.bat" -Destination $packagePath -Force
 Copy-Item -Path "达人使用说明.txt" -Destination $packagePath -Force
 Write-Host "  ✓ 已复制通用脚本" -ForegroundColor Green
