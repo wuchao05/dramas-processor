@@ -277,8 +277,6 @@ def process_command(
         bottom_font_size=base_config.bottom_font_size,
         side_font_size=base_config.side_font_size,
         title_colors=base_config.title_colors,
-        watermark_path=base_config.watermark_path,
-        enable_watermark=base_config.enable_watermark,
         enable_brand_text=base_config.enable_brand_text,
         brand_text=base_config.brand_text,
         brand_text_mapping=base_config.brand_text_mapping,

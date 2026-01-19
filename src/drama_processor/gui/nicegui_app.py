@@ -1182,16 +1182,12 @@ class DramaProcessorGUI:
             self._apply_overrides(config, overrides)
 
             # 运行时资源路径修正（解决 onefile exe 下相对路径不可用问题）
-            # - tail_file / watermark_path 等配置通常是相对路径（如 assets/tail.mp4）
+            # - tail_file 等配置通常是相对路径（如 assets/tail.mp4）
             # - PyInstaller onefile 下需要通过 sys._MEIPASS / exe 目录定位
             if config.tail_file and not os.path.isabs(config.tail_file):
                 resolved_tail = resolve_asset_path(config.tail_file)
                 if resolved_tail:
                     config.tail_file = resolved_tail
-            if getattr(config, "watermark_path", None) and not os.path.isabs(config.watermark_path):
-                resolved_wm = resolve_asset_path(config.watermark_path)
-                if resolved_wm:
-                    config.watermark_path = resolved_wm
             
             processing_root, single_drama_name, base_root = self._resolve_processing_root(root_dir)
             

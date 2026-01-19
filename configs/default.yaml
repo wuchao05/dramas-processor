@@ -121,9 +121,7 @@ refresh_tail_cache: false
 # Font settings (Windows 字体，null 则自动检测)
 font_file: null # 自动检测微软雅黑等 Windows 字体
 
-# Watermark settings
-watermark_path: "assets\\watermark-xiaohong.png"
-enable_watermark: false
+# Brand text settings
 enable_brand_text: true
 brand_text: "热门短剧"
 

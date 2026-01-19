@@ -277,13 +277,7 @@ class ProcessingConfig(BaseModel):
     # Font settings
     font_file: Optional[str] = Field(default=None, description="Font file path")
 
-    # Watermark settings
-    watermark_path: Optional[str] = Field(
-        default="assets/watermark-xiaohong.png", description="Watermark image path"
-    )
-    enable_watermark: bool = Field(
-        default=False, description="Enable watermark overlay"
-    )
+    # Brand text settings
     enable_brand_text: bool = Field(
         default=True, description="Enable brand text overlay"
     )

@@ -29,7 +29,6 @@ class VideoEncoder:
     def __init__(
         self,
         config: ProcessingConfig,
-        watermark_path: Optional[str] = None,
         cancel_event: Optional[Event] = None,
     ):
         self.config = config
@@ -51,9 +50,6 @@ class VideoEncoder:
         self.bottom_opacity = config.bottom_opacity
 
         self.title_colors = config.title_colors
-
-        # Watermark settings
-        self.watermark_path = watermark_path
 
         # Brand text settings (from config)
         self.config = config  # Keep reference to config for dynamic text selection
@@ -515,118 +511,46 @@ class VideoEncoder:
             ft: Optional[int] = None,
             threads: Optional[int] = None,
         ):
-            # Check if we should use watermark (only if brand text is disabled and watermark exists)
-            use_watermark = (
-                not self.use_brand_text
-                and self.watermark_path
-                and os.path.exists(self.watermark_path)
-            )
             ft_val = int(ft) if ft is not None else int(filter_threads)
 
-            if use_watermark:
-                # Use filter_complex for watermark + text overlays
-                vf = self.build_overlay_filters(
-                    ref_w,
-                    ref_h,
-                    fps,
-                    fontfile,
-                    drama_name,
-                    disclaimer_text,
-                    workdir,
-                    fast_mode=fast_mode,
-                    material_idx=material_idx,
-                )
-
-                # Calculate watermark size and position
-                watermark_width = int(ref_w * 0.08)  # 8% of video width
-                text_margin = max(
-                    12, int(ref_h * 0.037)
-                )  # Same margin as text overlays
-
-                # Position watermark to match text positioning:
-                # - Left margin same as right text's right margin
-                # - Top margin same as title's top margin
-                watermark_x = text_margin  # Same as right text distance from right edge
-                watermark_y = text_margin + 20  # Same as title distance from top
-
-                # Build filter_complex that combines video processing with watermark overlay
-                filter_complex = (
-                    f"[0:v]{vf}[main];"
-                    f"[1:v]scale={watermark_width}:-1[wm];"
-                    f"[main][wm]overlay={watermark_x}:{watermark_y}:format=auto[out]"
-                )
-
-                cmd = [
-                    "ffmpeg",
-                    "-y",
-                    "-ss",
-                    str(max(0, start_s)),
-                    "-t",
-                    str(dur),
-                    "-i",
-                    src,
-                    "-i",
-                    self.watermark_path,
-                    "-filter_complex",
-                    filter_complex,
-                    "-map",
-                    "[out]",
-                    "-map",
-                    "0:a",
-                    "-analyzeduration",
-                    "20M",
-                    "-probesize",
-                    "20M",
-                    "-sws_flags",
-                    "fast_bilinear",
-                    "-filter_threads",
-                    str(ft_val),
-                    "-filter_complex_threads",
-                    str(ft_val),
-                    "-c:v",
-                    vcodec,
-                    "-profile:v",
-                    self.config.video.profile,
-                ]
-            else:
-                # Use text overlays (including brand text if enabled)
-                vf = self.build_overlay_filters(
-                    ref_w,
-                    ref_h,
-                    fps,
-                    fontfile,
-                    drama_name,
-                    disclaimer_text,
-                    workdir,
-                    fast_mode=fast_mode,
-                    material_idx=material_idx,
-                )
-                cmd = [
-                    "ffmpeg",
-                    "-y",
-                    "-ss",
-                    str(max(0, start_s)),
-                    "-t",
-                    str(dur),
-                    "-i",
-                    src,
-                    "-vf",
-                    vf,
-                    "-analyzeduration",
-                    "20M",
-                    "-probesize",
-                    "20M",
-                    "-sws_flags",
-                    "fast_bilinear",
-                    "-filter_threads",
-                    str(ft_val),
-                    "-filter_complex_threads",
-                    str(ft_val),
-                    "-c:v",
-                    vcodec,
-                    "-profile:v",
-                    self.config.video.profile,
-                ]
+            # Build video filters with text overlays
+            vf = self.build_overlay_filters(
+                ref_w,
+                ref_h,
+                fps,
+                fontfile,
+                drama_name,
+                disclaimer_text,
+                workdir,
+                fast_mode=fast_mode,
+                material_idx=material_idx,
+            )
+            cmd = [
+                "ffmpeg",
+                "-y",
+                "-ss",
+                str(max(0, start_s)),
+                "-t",
+                str(dur),
+                "-i",
+                src,
+                "-vf",
+                vf,
+                "-analyzeduration",
+                "20M",
+                "-probesize",
+                "20M",
+                "-sws_flags",
+                "fast_bilinear",
+                "-filter_threads",
+                str(ft_val),
+                "-filter_complex_threads",
+                str(ft_val),
+                "-c:v",
+                vcodec,
+                "-profile:v",
+                self.config.video.profile,
+            ]
 
             # 限制编码线程数（可显著降低内存峰值；仅在需要时开启）
             if threads is not None:

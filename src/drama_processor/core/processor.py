@@ -60,23 +60,8 @@ class DramaProcessor:
         self.analyzer = VideoAnalyzer()
         self.segment_builder = SegmentBuilder()
         
-        # Prepare watermark path
-        watermark_path = None
-        if config.enable_watermark and config.watermark_path:
-            # Convert relative path to absolute path if needed
-            if not os.path.isabs(config.watermark_path):
-                watermark_path = os.path.join(os.getcwd(), config.watermark_path)
-            else:
-                watermark_path = config.watermark_path
-            
-            # Check if watermark file exists
-            if not os.path.exists(watermark_path):
-                logger.warning(f"水印文件不存在: {watermark_path}, 将禁用水印功能")
-                watermark_path = None
-        
         self.encoder = VideoEncoder(
             config,
-            watermark_path=watermark_path,
             cancel_event=cancel_event,
         )
         self.history_manager = HistoryManager()
