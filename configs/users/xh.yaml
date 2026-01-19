@@ -51,5 +51,5 @@ enable_disclaimer_text: true # 启用免责声明（底部第二行）
 # 动态飘动水印配置（提高去重效果）
 enable_floating_watermark: true  # 启用动态飘动水印
 floating_watermark_font_size: 32  # 水印字号
-floating_watermark_alpha: 0.8  # 透明度
+floating_watermark_alpha: 0.5  # 透明度
 floating_watermark_speed_range: [20, 60]  # 速度范围
