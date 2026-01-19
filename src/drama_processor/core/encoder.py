@@ -356,9 +356,10 @@ class VideoEncoder:
         speed_min, speed_max = self.config.floating_watermark_speed_range
         speed = rng.randint(speed_min, speed_max)
         
-        # 避开顶部标题和底部文案的Y轴范围
-        safe_y_min = int(ref_h * 0.15)  # 顶部15%
-        safe_y_max = int(ref_h * 0.80)  # 底部20%
+        # Y轴飘动范围（几乎全屏，提高去重效果）
+        # 水印是半透明且动态移动的，短暂遮挡不影响观看
+        safe_y_min = int(ref_h * 0.05)  # 顶部5%
+        safe_y_max = int(ref_h * 0.95)  # 底部5%
         safe_y_range = safe_y_max - safe_y_min
         
         if motion_type == 'horizontal':
