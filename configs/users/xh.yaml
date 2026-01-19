@@ -45,5 +45,11 @@ feishu:
 
 # 文案显示配置
 enable_hook_text: false
-enable_brand_text: true # 启用品牌文字（底部第一行）
+enable_brand_text: false # 关闭底部静态品牌文字（使用动态飘动水印）
 enable_disclaimer_text: true # 启用免责声明（底部第二行）
+
+# 动态飘动水印配置（提高去重效果）
+enable_floating_watermark: true  # 启用动态飘动水印
+floating_watermark_font_size: 32  # 水印字号
+floating_watermark_alpha: 0.6  # 透明度
+floating_watermark_speed_range: [80, 150]  # 速度范围

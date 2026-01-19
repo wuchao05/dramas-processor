@@ -329,6 +329,82 @@ class VideoEncoder:
         text_no_spaces = text.replace(" ", "").replace("　", "")  # 移除半角和全角空格
         return "\n".join(list(text_no_spaces))
 
+    def generate_floating_motion_params(self, material_idx: int, ref_w: int, ref_h: int) -> Dict[str, Any]:
+        """为每条素材生成唯一的飘动水印参数
+        
+        Args:
+            material_idx: 素材索引（用作随机种子）
+            ref_w: 视频宽度
+            ref_h: 视频高度
+            
+        Returns:
+            {
+                'motion_type': str,  # 'horizontal', 'vertical', 'diagonal', 'sine_wave'
+                'x_expr': str,       # FFmpeg x position expression
+                'y_expr': str,       # FFmpeg y position expression
+                'speed': int,        # 速度（像素/秒）
+            }
+        """
+        # 使用 material_idx 作为种子，确保每条素材参数一致但不同素材间参数不同
+        rng = random.Random(material_idx)
+        
+        # 随机选择运动类型
+        motion_types = ['horizontal', 'vertical', 'diagonal', 'sine_wave']
+        motion_type = rng.choice(motion_types)
+        
+        # 随机速度
+        speed_min, speed_max = self.config.floating_watermark_speed_range
+        speed = rng.randint(speed_min, speed_max)
+        
+        # 避开顶部标题和底部文案的Y轴范围
+        safe_y_min = int(ref_h * 0.15)  # 顶部15%
+        safe_y_max = int(ref_h * 0.80)  # 底部20%
+        safe_y_range = safe_y_max - safe_y_min
+        
+        if motion_type == 'horizontal':
+            # 横向飘动
+            direction = rng.choice(['left_to_right', 'right_to_left'])
+            if direction == 'left_to_right':
+                x_expr = f'mod(t*{speed}, w+200)-200'  # 从左边界外进入
+            else:
+                x_expr = f'w-mod(t*{speed}, w+200)'    # 从右往左
+            # Y轴固定在安全区域内随机位置
+            y_pos = rng.randint(safe_y_min, safe_y_max)
+            y_expr = str(y_pos)
+            
+        elif motion_type == 'vertical':
+            # 纵向飘动
+            direction = rng.choice(['top_to_bottom', 'bottom_to_top'])
+            if direction == 'top_to_bottom':
+                y_expr = f'mod(t*{speed}, {safe_y_range})+{safe_y_min}'
+            else:
+                y_expr = f'{safe_y_max}-mod(t*{speed}, {safe_y_range})'
+            # X轴固定在中间随机偏移
+            x_offset = rng.randint(-int(ref_w * 0.3), int(ref_w * 0.3))
+            x_expr = f'(w-text_w)/2+{x_offset}'
+            
+        elif motion_type == 'diagonal':
+            # 斜向飘动
+            x_speed = rng.randint(speed_min, speed_max)
+            y_speed = rng.randint(int(speed * 0.5), int(speed * 0.8))
+            x_expr = f'mod(t*{x_speed}, w+200)-200'
+            y_expr = f'{safe_y_min}+mod(t*{y_speed}, {safe_y_range})'
+            
+        elif motion_type == 'sine_wave':
+            # 正弦波浪飘动（横向移动，Y轴正弦变化）
+            x_expr = f'mod(t*{speed}, w+200)-200'
+            amplitude = rng.randint(30, 80)  # 波动幅度
+            frequency = rng.uniform(0.5, 1.5)  # 频率
+            center_y = (safe_y_min + safe_y_max) // 2
+            y_expr = f'{center_y}+{amplitude}*sin(t*{frequency})'
+        
+        return {
+            'motion_type': motion_type,
+            'x_expr': x_expr,
+            'y_expr': y_expr,
+            'speed': speed,
+        }
+
     def build_overlay_filters(
         self,
         ref_w: int,
@@ -421,8 +497,34 @@ class VideoEncoder:
         # Brand text (first line) and disclaimer text (second line) at bottom of video
         bottom_base_y = int(ref_h * 0.88)  # 底部起始位置（距离底部12%）
         
-        # Brand text overlay (bottom area, first line) - horizontal
-        if self.use_brand_text and self.config.enable_brand_text:
+        # Floating watermark (dynamic brand text) or static brand text
+        if self.config.enable_floating_watermark:
+            # 动态飘动水印（替代底部静态品牌文字）
+            if material_idx is not None:
+                brand_text = self.config.get_brand_text_for_material(material_idx)
+            else:
+                brand_text = self.config.brand_text
+            
+            # 生成随机运动参数
+            motion_params = self.generate_floating_motion_params(
+                material_idx or 1, ref_w, ref_h
+            )
+            
+            watermark_fs = self.config.floating_watermark_font_size
+            watermark_alpha = self.config.floating_watermark_alpha
+            
+            # 构建动态水印滤镜（直接使用 text 参数，不用文件）
+            # 转义单引号和特殊字符
+            brand_text_escaped = brand_text.replace("'", "'\\\\\\''")
+            dt_floating = (
+                f"drawtext={fontfile_options}:text='{brand_text_escaped}':fontsize={watermark_fs}:"
+                f"fontcolor=white@{watermark_alpha}:shadowx=2:shadowy=2:"
+                f"x='{motion_params['x_expr']}':y='{motion_params['y_expr']}'"
+            )
+            filters.append(dt_floating)
+            
+        elif self.use_brand_text and self.config.enable_brand_text:
+            # 保留原有的静态品牌文字逻辑（向后兼容）
             # Get brand text for current material
             if material_idx is not None:
                 brand_text = self.config.get_brand_text_for_material(material_idx)

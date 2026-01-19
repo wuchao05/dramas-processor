@@ -289,6 +289,20 @@ class ProcessingConfig(BaseModel):
         default=None, description="Advanced brand text mapping configuration"
     )
 
+    # Floating watermark settings (dynamic brand text watermark)
+    enable_floating_watermark: bool = Field(
+        default=False, description="Enable floating watermark (uses brand text, replaces static brand text)"
+    )
+    floating_watermark_font_size: int = Field(
+        default=32, ge=20, le=60, description="Floating watermark font size"
+    )
+    floating_watermark_alpha: float = Field(
+        default=0.6, ge=0.3, le=1.0, description="Floating watermark opacity (0.3-1.0)"
+    )
+    floating_watermark_speed_range: List[int] = Field(
+        default=[80, 150], description="Speed range in pixels per second [min, max]"
+    )
+
     # Selection settings
     include: Optional[List[str]] = Field(
         default=None, description="Include specific dramas"

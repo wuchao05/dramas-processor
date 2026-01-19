@@ -125,6 +125,12 @@ font_file: null # 自动检测微软雅黑等 Windows 字体
 enable_brand_text: true
 brand_text: "热门短剧"
 
+# Floating watermark settings (dynamic brand text watermark)
+enable_floating_watermark: false  # 开启后替代底部静态品牌文字
+floating_watermark_font_size: 32
+floating_watermark_alpha: 0.6
+floating_watermark_speed_range: [80, 150]  # 速度范围（像素/秒）
+
 # Selection settings
 include: null
 exclude: null
