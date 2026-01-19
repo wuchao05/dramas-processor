@@ -348,81 +348,87 @@ class VideoEncoder:
         # 使用 material_idx 作为种子，确保每条素材参数一致但不同素材间参数不同
         rng = random.Random(material_idx)
         
-        # 随机选择曲线运动类型（所有运动都是曲线轨迹）
-        motion_types = ['sine_wave', 'double_sine', 'parabola', 'spiral']
+        # 6种对角线直线运动方式
+        motion_types = [
+            'top_to_bottom',      # 从上到下
+            'bottom_to_top',      # 从下到上
+            'topleft_to_bottomright',   # 从左上角到右下角
+            'topright_to_bottomleft',   # 从右上角到左下角
+            'bottomleft_to_topright',   # 从左下角到右上角
+            'bottomright_to_topleft',   # 从右下角到左上角
+        ]
         motion_type = rng.choice(motion_types)
         
         # 随机速度
         speed_min, speed_max = self.config.floating_watermark_speed_range
         speed = rng.randint(speed_min, speed_max)
         
-        # Y轴飘动范围（几乎全屏，提高去重效果）
-        # 水印是半透明且动态移动的，短暂遮挡不影响观看
-        safe_y_min = int(ref_h * 0.05)  # 顶部5%
-        safe_y_max = int(ref_h * 0.95)  # 底部5%
-        safe_y_range = safe_y_max - safe_y_min
-        center_y = (safe_y_min + safe_y_max) // 2
-        center_x = ref_w // 2
+        # 全屏飘动范围
+        margin = int(ref_h * 0.05)  # 5%边距
+        full_h = ref_h - 2 * margin
+        full_w = ref_w - 2 * margin
         
-        if motion_type == 'sine_wave':
-            # 正弦波浪飘动（横向移动 + Y轴正弦变化）
-            direction = rng.choice(['left_to_right', 'right_to_left'])
-            if direction == 'left_to_right':
-                x_expr = f'mod(t*{speed}, w+200)-200'
-            else:
-                x_expr = f'w-mod(t*{speed}, w+200)'
+        if motion_type == 'top_to_bottom':
+            # 从上到下：X轴固定在随机位置，Y轴从上往下
+            x_pos = rng.randint(margin, ref_w - margin)
+            x_expr = str(x_pos)
+            y_expr = f'{margin}+mod(t*{speed}, {full_h})'
             
-            amplitude = rng.randint(60, 120)  # 波动幅度
-            frequency = rng.uniform(0.8, 2.0)  # 频率
-            y_offset = rng.randint(-int(safe_y_range * 0.2), int(safe_y_range * 0.2))
-            y_expr = f'{center_y + y_offset}+{amplitude}*sin(t*{frequency})'
+        elif motion_type == 'bottom_to_top':
+            # 从下到上：X轴固定在随机位置，Y轴从下往上
+            x_pos = rng.randint(margin, ref_w - margin)
+            x_expr = str(x_pos)
+            y_expr = f'{ref_h - margin}-mod(t*{speed}, {full_h})'
             
-        elif motion_type == 'double_sine':
-            # 双正弦波飘动（X和Y轴都是正弦变化，形成类似李萨如图形）
-            x_amplitude = rng.randint(int(ref_w * 0.3), int(ref_w * 0.4))
-            y_amplitude = rng.randint(80, 150)
-            x_frequency = rng.uniform(0.6, 1.2)
-            y_frequency = rng.uniform(0.8, 1.8)
-            x_offset = rng.randint(-int(ref_w * 0.1), int(ref_w * 0.1))
-            y_offset = rng.randint(-int(safe_y_range * 0.1), int(safe_y_range * 0.1))
+        elif motion_type == 'topleft_to_bottomright':
+            # 从左上角到右下角：同时移动X和Y
+            # 计算对角线长度
+            diagonal_length = int(math.sqrt(full_w**2 + full_h**2))
+            # X和Y的速度比例
+            x_ratio = full_w / diagonal_length
+            y_ratio = full_h / diagonal_length
             
-            x_expr = f'{center_x + x_offset}+{x_amplitude}*sin(t*{x_frequency})'
-            y_expr = f'{center_y + y_offset}+{y_amplitude}*sin(t*{y_frequency})'
+            x_speed = int(speed * x_ratio)
+            y_speed = int(speed * y_ratio)
             
-        elif motion_type == 'parabola':
-            # 抛物线飘动（横向匀速 + Y轴二次函数变化）
-            direction = rng.choice(['left_to_right', 'right_to_left'])
-            if direction == 'left_to_right':
-                x_base = f'mod(t*{speed}, w+200)-200'
-            else:
-                x_base = f'w-mod(t*{speed}, w+200)'
+            x_expr = f'{margin}+mod(t*{x_speed}, {full_w})'
+            y_expr = f'{margin}+mod(t*{y_speed}, {full_h})'
             
-            # 添加X轴的细微波动
-            x_wave_amp = rng.randint(10, 30)
-            x_wave_freq = rng.uniform(1.0, 2.5)
-            x_expr = f'{x_base}+{x_wave_amp}*sin(t*{x_wave_freq})'
+        elif motion_type == 'topright_to_bottomleft':
+            # 从右上角到左下角
+            diagonal_length = int(math.sqrt(full_w**2 + full_h**2))
+            x_ratio = full_w / diagonal_length
+            y_ratio = full_h / diagonal_length
             
-            # Y轴使用正弦的平方，产生抛物线效果
-            y_amplitude = rng.randint(100, 180)
-            y_frequency = rng.uniform(0.5, 1.2)
-            y_offset = rng.randint(-int(safe_y_range * 0.15), int(safe_y_range * 0.15))
-            # sin^2 产生类似抛物线的曲线
-            y_expr = f'{center_y + y_offset}+{y_amplitude}*pow(sin(t*{y_frequency}), 2)-{y_amplitude//2}'
+            x_speed = int(speed * x_ratio)
+            y_speed = int(speed * y_ratio)
             
-        elif motion_type == 'spiral':
-            # 螺旋飘动（圆周运动 + 半径变化）
-            base_radius = rng.randint(int(min(ref_w, safe_y_range) * 0.25), int(min(ref_w, safe_y_range) * 0.35))
-            radius_variation = rng.randint(30, 60)
-            angular_speed = rng.uniform(0.8, 1.8)
-            radius_freq = rng.uniform(0.3, 0.8)
+            x_expr = f'{ref_w - margin}-mod(t*{x_speed}, {full_w})'
+            y_expr = f'{margin}+mod(t*{y_speed}, {full_h})'
             
-            x_offset = rng.randint(-int(ref_w * 0.1), int(ref_w * 0.1))
-            y_offset = rng.randint(-int(safe_y_range * 0.1), int(safe_y_range * 0.1))
+        elif motion_type == 'bottomleft_to_topright':
+            # 从左下角到右上角
+            diagonal_length = int(math.sqrt(full_w**2 + full_h**2))
+            x_ratio = full_w / diagonal_length
+            y_ratio = full_h / diagonal_length
             
-            # 半径随时间变化
-            radius_expr = f'{base_radius}+{radius_variation}*sin(t*{radius_freq})'
-            x_expr = f'{center_x + x_offset}+({radius_expr})*cos(t*{angular_speed})'
-            y_expr = f'{center_y + y_offset}+({radius_expr})*sin(t*{angular_speed})'
+            x_speed = int(speed * x_ratio)
+            y_speed = int(speed * y_ratio)
+            
+            x_expr = f'{margin}+mod(t*{x_speed}, {full_w})'
+            y_expr = f'{ref_h - margin}-mod(t*{y_speed}, {full_h})'
+            
+        elif motion_type == 'bottomright_to_topleft':
+            # 从右下角到左上角
+            diagonal_length = int(math.sqrt(full_w**2 + full_h**2))
+            x_ratio = full_w / diagonal_length
+            y_ratio = full_h / diagonal_length
+            
+            x_speed = int(speed * x_ratio)
+            y_speed = int(speed * y_ratio)
+            
+            x_expr = f'{ref_w - margin}-mod(t*{x_speed}, {full_w})'
+            y_expr = f'{ref_h - margin}-mod(t*{y_speed}, {full_h})'
         
         return {
             'motion_type': motion_type,
