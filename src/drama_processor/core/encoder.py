@@ -348,8 +348,8 @@ class VideoEncoder:
         # 使用 material_idx 作为种子，确保每条素材参数一致但不同素材间参数不同
         rng = random.Random(material_idx)
         
-        # 随机选择运动类型
-        motion_types = ['horizontal', 'vertical', 'diagonal', 'sine_wave']
+        # 随机选择曲线运动类型（所有运动都是曲线轨迹）
+        motion_types = ['sine_wave', 'double_sine', 'parabola', 'spiral']
         motion_type = rng.choice(motion_types)
         
         # 随机速度
@@ -361,43 +361,68 @@ class VideoEncoder:
         safe_y_min = int(ref_h * 0.05)  # 顶部5%
         safe_y_max = int(ref_h * 0.95)  # 底部5%
         safe_y_range = safe_y_max - safe_y_min
+        center_y = (safe_y_min + safe_y_max) // 2
+        center_x = ref_w // 2
         
-        if motion_type == 'horizontal':
-            # 横向飘动
+        if motion_type == 'sine_wave':
+            # 正弦波浪飘动（横向移动 + Y轴正弦变化）
             direction = rng.choice(['left_to_right', 'right_to_left'])
             if direction == 'left_to_right':
-                x_expr = f'mod(t*{speed}, w+200)-200'  # 从左边界外进入
+                x_expr = f'mod(t*{speed}, w+200)-200'
             else:
-                x_expr = f'w-mod(t*{speed}, w+200)'    # 从右往左
-            # Y轴固定在安全区域内随机位置
-            y_pos = rng.randint(safe_y_min, safe_y_max)
-            y_expr = str(y_pos)
+                x_expr = f'w-mod(t*{speed}, w+200)'
             
-        elif motion_type == 'vertical':
-            # 纵向飘动
-            direction = rng.choice(['top_to_bottom', 'bottom_to_top'])
-            if direction == 'top_to_bottom':
-                y_expr = f'mod(t*{speed}, {safe_y_range})+{safe_y_min}'
+            amplitude = rng.randint(60, 120)  # 波动幅度
+            frequency = rng.uniform(0.8, 2.0)  # 频率
+            y_offset = rng.randint(-int(safe_y_range * 0.2), int(safe_y_range * 0.2))
+            y_expr = f'{center_y + y_offset}+{amplitude}*sin(t*{frequency})'
+            
+        elif motion_type == 'double_sine':
+            # 双正弦波飘动（X和Y轴都是正弦变化，形成类似李萨如图形）
+            x_amplitude = rng.randint(int(ref_w * 0.3), int(ref_w * 0.4))
+            y_amplitude = rng.randint(80, 150)
+            x_frequency = rng.uniform(0.6, 1.2)
+            y_frequency = rng.uniform(0.8, 1.8)
+            x_offset = rng.randint(-int(ref_w * 0.1), int(ref_w * 0.1))
+            y_offset = rng.randint(-int(safe_y_range * 0.1), int(safe_y_range * 0.1))
+            
+            x_expr = f'{center_x + x_offset}+{x_amplitude}*sin(t*{x_frequency})'
+            y_expr = f'{center_y + y_offset}+{y_amplitude}*sin(t*{y_frequency})'
+            
+        elif motion_type == 'parabola':
+            # 抛物线飘动（横向匀速 + Y轴二次函数变化）
+            direction = rng.choice(['left_to_right', 'right_to_left'])
+            if direction == 'left_to_right':
+                x_base = f'mod(t*{speed}, w+200)-200'
             else:
-                y_expr = f'{safe_y_max}-mod(t*{speed}, {safe_y_range})'
-            # X轴固定在中间随机偏移
-            x_offset = rng.randint(-int(ref_w * 0.3), int(ref_w * 0.3))
-            x_expr = f'(w-text_w)/2+{x_offset}'
+                x_base = f'w-mod(t*{speed}, w+200)'
             
-        elif motion_type == 'diagonal':
-            # 斜向飘动
-            x_speed = rng.randint(speed_min, speed_max)
-            y_speed = rng.randint(int(speed * 0.5), int(speed * 0.8))
-            x_expr = f'mod(t*{x_speed}, w+200)-200'
-            y_expr = f'{safe_y_min}+mod(t*{y_speed}, {safe_y_range})'
+            # 添加X轴的细微波动
+            x_wave_amp = rng.randint(10, 30)
+            x_wave_freq = rng.uniform(1.0, 2.5)
+            x_expr = f'{x_base}+{x_wave_amp}*sin(t*{x_wave_freq})'
             
-        elif motion_type == 'sine_wave':
-            # 正弦波浪飘动（横向移动，Y轴正弦变化）
-            x_expr = f'mod(t*{speed}, w+200)-200'
-            amplitude = rng.randint(30, 80)  # 波动幅度
-            frequency = rng.uniform(0.5, 1.5)  # 频率
-            center_y = (safe_y_min + safe_y_max) // 2
-            y_expr = f'{center_y}+{amplitude}*sin(t*{frequency})'
+            # Y轴使用正弦的平方，产生抛物线效果
+            y_amplitude = rng.randint(100, 180)
+            y_frequency = rng.uniform(0.5, 1.2)
+            y_offset = rng.randint(-int(safe_y_range * 0.15), int(safe_y_range * 0.15))
+            # sin^2 产生类似抛物线的曲线
+            y_expr = f'{center_y + y_offset}+{y_amplitude}*pow(sin(t*{y_frequency}), 2)-{y_amplitude//2}'
+            
+        elif motion_type == 'spiral':
+            # 螺旋飘动（圆周运动 + 半径变化）
+            base_radius = rng.randint(int(min(ref_w, safe_y_range) * 0.25), int(min(ref_w, safe_y_range) * 0.35))
+            radius_variation = rng.randint(30, 60)
+            angular_speed = rng.uniform(0.8, 1.8)
+            radius_freq = rng.uniform(0.3, 0.8)
+            
+            x_offset = rng.randint(-int(ref_w * 0.1), int(ref_w * 0.1))
+            y_offset = rng.randint(-int(safe_y_range * 0.1), int(safe_y_range * 0.1))
+            
+            # 半径随时间变化
+            radius_expr = f'{base_radius}+{radius_variation}*sin(t*{radius_freq})'
+            x_expr = f'{center_x + x_offset}+({radius_expr})*cos(t*{angular_speed})'
+            y_expr = f'{center_y + y_offset}+({radius_expr})*sin(t*{angular_speed})'
         
         return {
             'motion_type': motion_type,
