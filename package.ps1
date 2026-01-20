@@ -9,8 +9,10 @@ param(
 # 设置控制台编码为 UTF-8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-# 设置 PowerShell 会话编码
-chcp 65001 | Out-Null
+# 设置 PowerShell 会话编码（仅 Windows）
+if ($IsWindows -or $PSVersionTable.PSVersion.Major -lt 6) {
+    chcp 65001 | Out-Null
+}
 
 Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host "  短剧剪辑工具 - 达人打包脚本" -ForegroundColor Cyan
@@ -195,5 +197,19 @@ Write-Host "   3. 指导达人双击'运行一键安装.bat'安装环境" -Foreg
 Write-Host "   4. 安装完成后双击'启动飞书监控.bat'开始使用" -ForegroundColor White
 Write-Host ""
 
-# 打开输出目录
-Start-Process explorer.exe -ArgumentList $OutputDir
+# 打开输出目录（跨平台）
+try {
+    if ($IsWindows -or $PSVersionTable.PSVersion.Major -lt 6) {
+        # Windows: 使用 explorer
+        Start-Process explorer.exe -ArgumentList $OutputDir
+    } elseif ($IsMacOS) {
+        # macOS: 使用 open
+        & open $OutputDir
+    } elseif ($IsLinux) {
+        # Linux: 使用 xdg-open
+        & xdg-open $OutputDir
+    }
+} catch {
+    # 如果打开失败，只是跳过，不影响打包结果
+    Write-Host "提示：无法自动打开输出目录，请手动查看：$OutputDir" -ForegroundColor Yellow
+}
