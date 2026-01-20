@@ -199,19 +199,32 @@ Write-Host "[4/4] 安装 Python 依赖..." -ForegroundColor Yellow
 Write-Host "  激活虚拟环境..." -ForegroundColor Cyan
 & .\venv\Scripts\Activate.ps1
 
-Write-Host "  安装依赖（可能需要几分钟）..." -ForegroundColor Cyan
-pip install -r requirements.txt --quiet
+Write-Host "  安装依赖（可能需要几分钟，请耐心等待）..." -ForegroundColor Cyan
+Write-Host "  [DEBUG] 开始下载和安装 Python 包..." -ForegroundColor Gray
+Write-Host ""
+
+# 显示进度，移除 --quiet
+pip install -r requirements.txt
+
 if ($LASTEXITCODE -ne 0) {
+    Write-Host ""
     Write-Host "  ❌ 依赖安装失败" -ForegroundColor Red
+    Write-Host "  请检查网络连接或尝试手动安装" -ForegroundColor Yellow
+    pause
     exit 1
 }
 
-Write-Host "  安装本地包..." -ForegroundColor Cyan
-pip install -e . --quiet
+Write-Host ""
+Write-Host "  安装本地包（drama_processor）..." -ForegroundColor Cyan
+pip install -e .
+
 if ($LASTEXITCODE -eq 0) {
+    Write-Host ""
     Write-Host "  ✅ 依赖安装完成" -ForegroundColor Green
 } else {
+    Write-Host ""
     Write-Host "  ❌ 本地包安装失败" -ForegroundColor Red
+    pause
     exit 1
 }
 
