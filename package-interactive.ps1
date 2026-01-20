@@ -1,4 +1,4 @@
-# Drama Processor - Interactive Package Tool
+﻿# Drama Processor - Interactive Package Tool
 # Pure PowerShell interactive menu for packaging
 
 # Set encoding
