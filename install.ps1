@@ -91,40 +91,65 @@ if (Test-Path "venv\Scripts\activate.ps1") {
 } else {
     Write-Host "  创建虚拟环境..." -ForegroundColor Cyan
     
-    # 检查 Python 版本和 venv 模块
-    $pythonVersion = & python --version 2>&1
-    Write-Host "  Python 版本: $pythonVersion" -ForegroundColor Gray
-    
-    # 尝试创建虚拟环境并捕获详细错误
+    # 检查 Python 可执行性
+    Write-Host "  [DEBUG] 测试 Python 命令..." -ForegroundColor Gray
     try {
-        $output = & python -m venv venv 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "  ❌ 虚拟环境创建失败" -ForegroundColor Red
-            Write-Host "  错误信息: $output" -ForegroundColor Red
-            Write-Host ""
-            Write-Host "可能的原因：" -ForegroundColor Yellow
-            Write-Host "  1. Python 未正确安装 venv 模块" -ForegroundColor Yellow
-            Write-Host "  2. 当前目录没有写入权限" -ForegroundColor Yellow
-            Write-Host "  3. 磁盘空间不足" -ForegroundColor Yellow
-            Write-Host ""
-            Write-Host "解决方法：" -ForegroundColor Cyan
-            Write-Host "  1. 尝试重新安装 Python（确保勾选'Add Python to PATH'）" -ForegroundColor Cyan
-            Write-Host "  2. 以管理员身份运行此脚本" -ForegroundColor Cyan
-            Write-Host "  3. 检查是否有足够的磁盘空间" -ForegroundColor Cyan
-            exit 1
-        }
+        $pythonPath = (Get-Command python -ErrorAction Stop).Source
+        Write-Host "  [DEBUG] Python 路径: $pythonPath" -ForegroundColor Gray
         
-        # 验证虚拟环境是否创建成功
-        if (Test-Path "venv\Scripts\activate.ps1") {
-            Write-Host "  ✅ 虚拟环境创建完成" -ForegroundColor Green
-        } else {
-            Write-Host "  ❌ 虚拟环境创建失败（文件未生成）" -ForegroundColor Red
-            Write-Host "  请检查是否有杀毒软件阻止" -ForegroundColor Yellow
-            exit 1
-        }
+        $pythonVersion = python --version 2>&1 | Out-String
+        Write-Host "  [DEBUG] Python 版本: $($pythonVersion.Trim())" -ForegroundColor Gray
     } catch {
-        Write-Host "  ❌ 虚拟环境创建失败" -ForegroundColor Red
-        Write-Host "  异常信息: $_" -ForegroundColor Red
+        Write-Host "  ❌ Python 命令不可用！" -ForegroundColor Red
+        Write-Host "  请确保 Python 已安装并添加到 PATH" -ForegroundColor Yellow
+        pause
+        exit 1
+    }
+    
+    # 检查 venv 模块
+    Write-Host "  [DEBUG] 检查 venv 模块..." -ForegroundColor Gray
+    $venvCheck = python -m venv --help 2>&1 | Out-String
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  ❌ venv 模块不可用！" -ForegroundColor Red
+        Write-Host "  输出: $venvCheck" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "请重新安装 Python，确保包含所有标准库模块" -ForegroundColor Yellow
+        pause
+        exit 1
+    }
+    Write-Host "  [DEBUG] venv 模块可用" -ForegroundColor Gray
+    
+    # 创建虚拟环境
+    Write-Host "  [DEBUG] 正在创建虚拟环境..." -ForegroundColor Gray
+    $venvOutput = python -m venv venv 2>&1 | Out-String
+    $venvExitCode = $LASTEXITCODE
+    
+    Write-Host "  [DEBUG] Exit code: $venvExitCode" -ForegroundColor Gray
+    if ($venvOutput) {
+        Write-Host "  [DEBUG] Output: $venvOutput" -ForegroundColor Gray
+    }
+    
+    # 等待文件系统同步
+    Start-Sleep -Seconds 2
+    
+    # 验证虚拟环境是否创建成功
+    if (Test-Path "venv\Scripts\activate.ps1") {
+        Write-Host "  ✅ 虚拟环境创建完成" -ForegroundColor Green
+    } else {
+        Write-Host "  ❌ 虚拟环境创建失败（文件未生成）" -ForegroundColor Red
+        Write-Host ""
+        Write-Host "可能的原因：" -ForegroundColor Yellow
+        Write-Host "  1. 当前目录没有写入权限" -ForegroundColor Yellow
+        Write-Host "  2. 磁盘空间不足" -ForegroundColor Yellow
+        Write-Host "  3. 杀毒软件阻止文件创建" -ForegroundColor Yellow
+        Write-Host "  4. 路径包含特殊字符或过长" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "解决方法：" -ForegroundColor Cyan
+        Write-Host "  1. 以管理员身份运行此脚本" -ForegroundColor Cyan
+        Write-Host "  2. 将文件夹移动到更短的路径（如 C:\drama-processor）" -ForegroundColor Cyan
+        Write-Host "  3. 暂时禁用杀毒软件" -ForegroundColor Cyan
+        Write-Host "  4. 检查磁盘剩余空间（至少需要 500MB）" -ForegroundColor Cyan
+        pause
         exit 1
     }
 }
