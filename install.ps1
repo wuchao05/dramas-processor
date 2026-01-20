@@ -380,9 +380,10 @@ Write-Host "📚 下一步：" -ForegroundColor Yellow
 Write-Host "  1. 将源素材放到：$sourcePath" -ForegroundColor Cyan
 Write-Host "     （每部剧一个文件夹，文件夹名=剧名）" -ForegroundColor Gray
 Write-Host ""
-Write-Host "  2. 双击运行：启动飞书监控.bat" -ForegroundColor Cyan
+Write-Host "  2. 双击运行：start-feishu-watch.bat" -ForegroundColor Cyan
+Write-Host "     启动飞书监控，自动剪辑飞书表格中的剧集" -ForegroundColor Gray
 Write-Host ""
-Write-Host "  3. 剪辑完成后，素材会输出到：$outputPath" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "💡 查看详细使用说明：达人使用说明.txt" -ForegroundColor Yellow
+Write-Host "  3. 剪辑完成后，素材会按日期存放：" -ForegroundColor Cyan
+Write-Host "     $sourcePath\..\日期导出\YYYY.MM.DD\" -ForegroundColor Gray
+Write-Host "     （例如：2026.01.20\xx-剧名-01.mp4）" -ForegroundColor Gray
 Write-Host ""
