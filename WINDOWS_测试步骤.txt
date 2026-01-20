@@ -9,9 +9,12 @@
 
 2. 运行打包工具
    -------------------------------
-   双击运行：package-tool.bat
+   方式A（CMD）：双击 package-tool.bat
    
-   或者 PowerShell 命令：
+   方式B（PowerShell 推荐）：
+   .\package-interactive.ps1
+   
+   方式C（PowerShell 命令行）：
    .\package.ps1 -Name "lm" -OutputDir "D:\Package-Output"
 
 3. 预期结果
