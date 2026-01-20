@@ -74,7 +74,7 @@ echo.
 echo 正在为 %name% 打包...
 echo.
 
-PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\打包给达人.ps1 -Name '%name%' -OutputDir 'D:\打包输出'}"
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\package.ps1 -Name '%name%' -OutputDir 'D:\打包输出'}"
 
 if %errorlevel% neq 0 (
     echo.

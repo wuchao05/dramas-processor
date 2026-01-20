@@ -9,8 +9,8 @@ echo.
 echo 正在启动安装程序...
 echo.
 
-REM 使用 PowerShell 运行安装脚本（避免 BOM 问题）
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0项目文件\一键安装.ps1'"
+REM 使用 PowerShell 运行安装脚本（在项目文件目录中）
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0项目文件\\install.ps1'"
 
 if errorlevel 1 (
     echo.
