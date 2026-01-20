@@ -185,6 +185,8 @@ feishu:
   processing_status_value: "剪辑中"
   completed_status_value: "待上传"
   missing_source_status_value: "无源视频"
+  failed_status_value: "剪辑失败"
+  remark_field_name: "备注"
   
   # 评级优先级配置（仅 xh-daily 使用）
   rating_field_name: "评级"

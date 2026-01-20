@@ -430,14 +430,16 @@ class FeishuClient:
     def update_record_status(
         self, 
         record_id: str, 
-        status: str = "待上传"
+        status: str = "待上传",
+        remark: str = None
     ) -> bool:
         """
-        更新记录状态
+        更新记录状态（可选更新备注）
         
         Args:
             record_id: 记录ID
             status: 新状态
+            remark: 备注内容（可选）
             
         Returns:
             是否更新成功
@@ -452,14 +454,24 @@ class FeishuClient:
             "Content-Type": "application/json"
         }
         
+        # 构建更新字段
+        fields = {
+            self.config.status_field_name: status
+        }
+        
+        # 如果提供了备注，一并更新
+        if remark is not None:
+            fields[self.config.remark_field_name] = remark
+        
         payload = {
-            "fields": {
-                self.config.status_field_name: status
-            }
+            "fields": fields
         }
         
         try:
-            logger.info(f"正在更新记录 {record_id} 状态为: {status}")
+            if remark:
+                logger.info(f"正在更新记录 {record_id} 状态为: {status}，备注: {remark}")
+            else:
+                logger.info(f"正在更新记录 {record_id} 状态为: {status}")
             response = requests.put(url, json=payload, headers=headers, timeout=30)
             response.raise_for_status()
             

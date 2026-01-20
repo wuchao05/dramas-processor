@@ -18,6 +18,8 @@ class FeishuConfig(BaseModel):
     completed_status_value: str = Field(default="已完成", description="已完成状态值")
     processing_status_value: str = Field(default="剪辑中", description="处理中状态值")
     missing_source_status_value: str = Field(default="无源视频", description="无源素材状态值")
+    failed_status_value: str = Field(default="剪辑失败", description="剪辑失败状态值")
+    remark_field_name: str = Field(default="备注", description="备注字段名")
     rating_field_name: str = Field(default="评级", description="评级字段名")
     priority_rating_value: str = Field(default="红标", description="高优先级评级值（同日期内最优先处理）")
     upload_time_sort_desc: bool = Field(default=True, description="上架时间排序方向：True=降序(新的优先)，False=升序(早的优先)")

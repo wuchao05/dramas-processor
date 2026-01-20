@@ -527,6 +527,8 @@ class FeishuWatcher:
         
         self._notify(f"🎬 开始处理 {date_label} - {drama_name}")
         total_done, total_planned = processor.process_all_dramas(str(root_path), drama_dates)
+        
+        # 情况1：未找到本地剧集目录（total_planned == 0）
         if total_planned == 0:
             self._notify(f"⚠️ 未找到 '{drama_name}' 对应的本地剧集目录，跳过")
             missing_status = None
@@ -541,6 +543,25 @@ class FeishuWatcher:
                     logger.warning(f"⚠️ 更新 '{drama_name}' 缺失状态失败: {exc}")
             self._wake_event.set()
             return False
+        
+        # 情况2：有计划但实际生成为0（源素材不足）
+        if total_done == 0 and total_planned > 0:
+            self._notify(f"⚠️ '{drama_name}' 源素材不足，无法生成任何素材（计划 {total_planned} 条，实际 0 条）")
+            failed_status = None
+            if self.base_config.feishu:
+                failed_status = getattr(self.base_config.feishu, "failed_status_value", None)
+            failed_status = failed_status or "剪辑失败"
+            remark = "请检查源素材目录中是否存在足额的源视频"
+            if record_id:
+                try:
+                    if client.update_record_status(record_id, failed_status, remark=remark):
+                        self._notify(f"📝 已将 '{drama_name}' 状态更新为 '{failed_status}'，备注：{remark}")
+                except Exception as exc:  # pylint: disable=broad-except
+                    logger.warning(f"⚠️ 更新 '{drama_name}' 失败状态失败: {exc}")
+            self._wake_event.set()
+            return False
+        
+        # 情况3：正常完成
         self._notify(f"✅ {drama_name} 完成：{total_done}/{total_planned} 条素材")
         self._wake_event.set()
         return True
