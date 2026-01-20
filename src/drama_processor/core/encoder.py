@@ -376,10 +376,12 @@ class VideoEncoder:
             if side == 'left':
                 # 左侧边缘区域
                 x_pos = rng.randint(margin, margin + edge_width)
+                x_expr = str(x_pos)
             else:
-                # 右侧边缘区域
+                # 右侧边缘区域：确保文字不超出右边界
                 x_pos = rng.randint(ref_w - margin - edge_width, ref_w - margin)
-            x_expr = str(x_pos)
+                # 使用 min() 确保 x + text_w <= w - margin
+                x_expr = f'min({x_pos}, w-text_w-{margin})'
             y_expr = f'{margin}+mod(t*{speed}, {full_h})'
             
         elif motion_type == 'bottom_to_top':
@@ -390,10 +392,12 @@ class VideoEncoder:
             if side == 'left':
                 # 左侧边缘区域
                 x_pos = rng.randint(margin, margin + edge_width)
+                x_expr = str(x_pos)
             else:
-                # 右侧边缘区域
+                # 右侧边缘区域：确保文字不超出右边界
                 x_pos = rng.randint(ref_w - margin - edge_width, ref_w - margin)
-            x_expr = str(x_pos)
+                # 使用 min() 确保 x + text_w <= w - margin
+                x_expr = f'min({x_pos}, w-text_w-{margin})'
             y_expr = f'{ref_h - margin}-mod(t*{speed}, {full_h})'
             
         elif motion_type == 'topleft_to_bottomright':
@@ -407,7 +411,8 @@ class VideoEncoder:
             x_speed = int(speed * x_ratio)
             y_speed = int(speed * y_ratio)
             
-            x_expr = f'{margin}+mod(t*{x_speed}, {full_w})'
+            # 向右移动，确保不超出右边界
+            x_expr = f'min({margin}+mod(t*{x_speed}, {full_w}), w-text_w-{margin})'
             y_expr = f'{margin}+mod(t*{y_speed}, {full_h})'
             
         elif motion_type == 'topright_to_bottomleft':
@@ -419,7 +424,8 @@ class VideoEncoder:
             x_speed = int(speed * x_ratio)
             y_speed = int(speed * y_ratio)
             
-            x_expr = f'{ref_w - margin}-mod(t*{x_speed}, {full_w})'
+            # 从右侧开始，确保不超出右边界
+            x_expr = f'min({ref_w - margin}-mod(t*{x_speed}, {full_w}), w-text_w-{margin})'
             y_expr = f'{margin}+mod(t*{y_speed}, {full_h})'
             
         elif motion_type == 'bottomleft_to_topright':
@@ -431,7 +437,8 @@ class VideoEncoder:
             x_speed = int(speed * x_ratio)
             y_speed = int(speed * y_ratio)
             
-            x_expr = f'{margin}+mod(t*{x_speed}, {full_w})'
+            # 向右移动，确保不超出右边界
+            x_expr = f'min({margin}+mod(t*{x_speed}, {full_w}), w-text_w-{margin})'
             y_expr = f'{ref_h - margin}-mod(t*{y_speed}, {full_h})'
             
         elif motion_type == 'bottomright_to_topleft':
@@ -443,7 +450,8 @@ class VideoEncoder:
             x_speed = int(speed * x_ratio)
             y_speed = int(speed * y_ratio)
             
-            x_expr = f'{ref_w - margin}-mod(t*{x_speed}, {full_w})'
+            # 从右侧开始，确保不超出右边界
+            x_expr = f'min({ref_w - margin}-mod(t*{x_speed}, {full_w}), w-text_w-{margin})'
             y_expr = f'{ref_h - margin}-mod(t*{y_speed}, {full_h})'
         
         return {
