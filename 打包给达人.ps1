@@ -106,9 +106,13 @@ Write-Host "  ✓ 已设置 active_user: ${Name}" -ForegroundColor Green
 # 复制和创建启动脚本
 Write-Host "[3/6] 创建启动脚本..." -ForegroundColor Yellow
 
-# 只复制必要的脚本
+# 复制必要的脚本
 Copy-Item -Path "运行一键安装.bat" -Destination $packagePath -Force
 Write-Host "  ✓ 已复制运行一键安装.bat" -ForegroundColor Green
+
+# 复制一键安装.ps1到项目文件目录（供运行一键安装.bat调用）
+Copy-Item -Path "一键安装.ps1" -Destination "${packagePath}\项目文件\" -Force
+Write-Host "  ✓ 已复制一键安装.ps1到项目文件目录" -ForegroundColor Green
 
 # 创建达人专属的飞书监控启动脚本
 # 使用英文避免编码问题
