@@ -373,23 +373,36 @@ class FeishuClient:
                     upload_time = None
                     if "上架时间" in record.fields and record.fields["上架时间"]:
                         try:
-                            # 上架时间结构: {"type": 5, "value": [时间戳]}
+                            # 上架时间已被转换为 List[FeishuFieldValue]
                             upload_time_obj = record.fields["上架时间"]
-                            if isinstance(upload_time_obj, dict) and "value" in upload_time_obj:
-                                upload_time_value = upload_time_obj["value"][0]
-                                upload_time = int(upload_time_value)
-                        except (ValueError, TypeError, KeyError, IndexError) as e:
+                            if isinstance(upload_time_obj, list) and len(upload_time_obj) > 0:
+                                first_item = upload_time_obj[0]
+                                # 尝试获取 text 字段
+                                time_value = None
+                                if hasattr(first_item, "text"):
+                                    time_value = first_item.text
+                                elif isinstance(first_item, dict) and "text" in first_item:
+                                    time_value = first_item["text"]
+                                
+                                if time_value and time_value.isdigit():
+                                    upload_time = int(time_value)
+                        except (ValueError, TypeError, KeyError, IndexError, AttributeError) as e:
                             logger.warning(f"无法解析剧目 '{drama_name}' 的上架时间: {e}")
                     
                     # 获取评级信息（仅在 include_rating=True 时）
                     rating = None
                     if include_rating and rating_field and rating_field in record.fields and record.fields[rating_field]:
                         try:
-                            # 评级结构: {"type": 3, "value": ["红标"]}
+                            # 评级已被转换为 List[FeishuFieldValue]
                             rating_obj = record.fields[rating_field]
-                            if isinstance(rating_obj, dict) and "value" in rating_obj:
-                                rating = rating_obj["value"][0]
-                        except (KeyError, IndexError, TypeError) as e:
+                            if isinstance(rating_obj, list) and len(rating_obj) > 0:
+                                first_item = rating_obj[0]
+                                # 尝试获取 text 字段
+                                if hasattr(first_item, "text"):
+                                    rating = first_item.text
+                                elif isinstance(first_item, dict) and "text" in first_item:
+                                    rating = first_item["text"]
+                        except (KeyError, IndexError, TypeError, AttributeError) as e:
                             logger.warning(f"无法解析剧目 '{drama_name}' 的评级: {e}")
                     
                     # 获取抖音素材配置信息
