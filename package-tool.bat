@@ -1,35 +1,35 @@
 @echo off
 chcp 65001 >nul
-title 短剧剪辑工具 - 打包工具
+title Drama Processor - Package Tool
 
 echo ========================================
-echo    短剧剪辑工具 - 打包工具
+echo    Drama Processor - Package Tool
 echo ========================================
 echo.
 
 cd /d %~dp0
 
-REM 检查 configs\users 目录是否存在
+REM Check configs\users directory
 if not exist "configs\users\" (
-    echo 错误：找不到 configs\users\ 目录！
+    echo ERROR: configs\users\ directory not found!
     pause
     exit /b 1
 )
 
-echo 正在扫描可用的达人配置...
+echo Scanning available user configs...
 echo.
-echo 请选择打包对象：
+echo Please select package target:
 echo.
 
-REM 动态读取配置文件并生成菜单
+REM Scan YAML files and generate menu
 setlocal enabledelayedexpansion
 set index=0
 set "configs="
 
-REM 遍历 configs\users 目录下的 .yaml 文件（排除 *-daily.yaml）
+REM Loop through configs\users\*.yaml (exclude *-daily.yaml)
 for %%f in (configs\users\*.yaml) do (
     set "filename=%%~nf"
-    REM 排除 -daily 结尾的文件
+    REM Exclude -daily files
     echo !filename! | findstr /C:"-daily" >nul
     if errorlevel 1 (
         set /a index+=1
@@ -44,49 +44,49 @@ for %%f in (configs\users\*.yaml) do (
 )
 
 if %index%==0 (
-    echo 错误：configs\users\ 目录下没有找到任何配置文件！
-    echo 请确保目录下有 .yaml 配置文件（例如 xh.yaml）
+    echo ERROR: No config files found in configs\users\!
+    echo Please ensure .yaml files exist (e.g. xh.yaml)
     pause
     exit /b 1
 )
 
 echo.
-echo [0] 退出
+echo [0] Exit
 echo.
 
-set /p choice=请输入选项 (0-%index%): 
+set /p choice=Enter option (0-%index%): 
 
 if "%choice%"=="0" (
     exit /b 0
 )
 
-REM 验证输入
+REM Validate input
 set "name="
 if %choice% geq 1 if %choice% leq %index% (
     set "name=!config_%choice%!"
 ) else (
-    echo 无效选项！
+    echo Invalid option!
     pause
     exit /b 1
 )
 
 echo.
-echo 正在为 %name% 打包...
+echo Packaging for: %name%
 echo.
 
-PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\package.ps1 -Name '%name%' -OutputDir 'D:\打包输出'}"
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\package.ps1 -Name '%name%' -OutputDir 'D:\Package-Output'}"
 
 if %errorlevel% neq 0 (
     echo.
-    echo 打包失败！请检查错误信息。
+    echo Packaging failed! Please check error messages.
     pause
     exit /b 1
 )
 
 echo.
 echo ========================================
-echo   打包完成！
-echo   配置：%name%
-echo   输出：D:\打包输出
+echo   Package Complete!
+echo   Config: %name%
+echo   Output: D:\Package-Output
 echo ========================================
 pause

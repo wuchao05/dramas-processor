@@ -1,21 +1,21 @@
 @echo off
 chcp 65001 >nul
-title 运行一键安装
+title Drama Processor - Install
 
 echo ========================================
-echo   Drama Processor - 一键安装
+echo   Drama Processor - Installation
 echo ========================================
 echo.
-echo 正在启动安装程序...
+echo Starting installation...
 echo.
 
-REM 使用 PowerShell 运行安装脚本（在项目文件目录中）
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0项目文件\\install.ps1'"
+REM Run PowerShell install script
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0drama-processor\install.ps1'"
 
 if errorlevel 1 (
     echo.
     echo ========================================
-    echo   安装失败
+    echo   Installation Failed
     echo ========================================
     echo.
     pause
@@ -24,6 +24,6 @@ if errorlevel 1 (
 
 echo.
 echo ========================================
-echo   安装完成
+echo   Installation Complete
 echo ========================================
 pause

@@ -64,7 +64,7 @@ $zipFile = "${packagePath}.zip"
 
 Write-Host "[1/6] 创建打包目录..." -ForegroundColor Yellow
 New-Item -ItemType Directory -Path $packagePath -Force | Out-Null
-New-Item -ItemType Directory -Path "${packagePath}\项目文件" -Force | Out-Null
+New-Item -ItemType Directory -Path "${packagePath}\drama-processor" -Force | Out-Null
 
 # 复制核心文件
 Write-Host "[2/6] 复制项目核心文件..." -ForegroundColor Yellow
@@ -73,33 +73,33 @@ Write-Host "[2/6] 复制项目核心文件..." -ForegroundColor Yellow
 $basicItems = @("src", "assets", "requirements.txt", "requirements_ai.txt", "pyproject.toml")
 foreach ($item in $basicItems) {
     if (Test-Path $item) {
-        Copy-Item -Path $item -Destination "${packagePath}\项目文件\" -Recurse -Force
+        Copy-Item -Path $item -Destination "${packagePath}\drama-processor\" -Recurse -Force
         Write-Host "  ✓ 已复制: $item" -ForegroundColor Green
     }
 }
 
 # 复制 configs 目录（但只包含该达人的配置）
 Write-Host "  复制配置文件（仅 ${Name}）..." -ForegroundColor Cyan
-New-Item -ItemType Directory -Path "${packagePath}\项目文件\configs" -Force | Out-Null
-New-Item -ItemType Directory -Path "${packagePath}\项目文件\configs\users" -Force | Out-Null
+New-Item -ItemType Directory -Path "${packagePath}\drama-processor\configs" -Force | Out-Null
+New-Item -ItemType Directory -Path "${packagePath}\drama-processor\configs\users" -Force | Out-Null
 
 # 复制默认配置文件
-Copy-Item -Path "configs\default.yaml" -Destination "${packagePath}\项目文件\configs\" -Force
+Copy-Item -Path "configs\default.yaml" -Destination "${packagePath}\drama-processor\configs\" -Force
 
 # 只复制该达人的配置文件
 $userConfigFile = "configs\users\${Name}.yaml"
 $userDailyConfigFile = "configs\users\${Name}-daily.yaml"
 
-Copy-Item -Path $userConfigFile -Destination "${packagePath}\项目文件\configs\users\" -Force
+Copy-Item -Path $userConfigFile -Destination "${packagePath}\drama-processor\configs\users\" -Force
 Write-Host "  ✓ 已复制达人配置: ${Name}.yaml" -ForegroundColor Green
 
 if (Test-Path $userDailyConfigFile) {
-    Copy-Item -Path $userDailyConfigFile -Destination "${packagePath}\项目文件\configs\users\" -Force
+    Copy-Item -Path $userDailyConfigFile -Destination "${packagePath}\drama-processor\configs\users\" -Force
     Write-Host "  ✓ 已复制达人配置: ${Name}-daily.yaml" -ForegroundColor Green
 }
 
 # 修改 default.yaml 的 active_user
-$defaultConfigPath = "${packagePath}\项目文件\configs\default.yaml"
+$defaultConfigPath = "${packagePath}\drama-processor\configs\default.yaml"
 $defaultConfig = Get-Content $defaultConfigPath -Raw -Encoding UTF8
 $defaultConfig = $defaultConfig -replace "active_user:.*", "active_user: ${Name}"
 $defaultConfig | Out-File -FilePath $defaultConfigPath -Encoding UTF8 -NoNewline
@@ -109,12 +109,12 @@ Write-Host "  ✓ 已设置 active_user: ${Name}" -ForegroundColor Green
 Write-Host "[3/6] 创建启动脚本..." -ForegroundColor Yellow
 
 # 复制必要的脚本
-Copy-Item -Path "运行一键安装.bat" -Destination $packagePath -Force
-Write-Host "  ✓ 已复制运行一键安装.bat" -ForegroundColor Green
+Copy-Item -Path "run-install.bat" -Destination $packagePath -Force
+Write-Host "  ✓ 已复制 run-install.bat" -ForegroundColor Green
 
-# 复制安装脚本到项目文件目录（供运行一键安装.bat调用）
-Copy-Item -Path "install.ps1" -Destination "${packagePath}\项目文件\" -Force
-Write-Host "  ✓ 已复制install.ps1到项目文件目录" -ForegroundColor Green
+# 复制安装脚本到项目目录（供 run-install.bat 调用）
+Copy-Item -Path "install.ps1" -Destination "${packagePath}\drama-processor\" -Force
+Write-Host "  ✓ 已复制 install.ps1 到项目目录" -ForegroundColor Green
 
 # 创建达人专属的飞书监控启动脚本
 # 使用英文避免编码问题
@@ -129,7 +129,7 @@ echo   User: ${Name}
 echo ========================================
 echo.
 
-cd /d "%~dp0项目文件"
+cd /d "%~dp0drama-processor"
 if not exist venv\Scripts\activate.bat (
     echo [ERROR] Virtual environment not found!
     echo Please run: Install.ps1
@@ -151,11 +151,11 @@ echo ========================================
 pause
 "@
 
-$feishuBatPath = Join-Path $packagePath "启动飞书监控.bat"
-# 使用 GBK 编码（Windows 批处理文件标准）
-$gbk = [System.Text.Encoding]::GetEncoding("GBK")
-[System.IO.File]::WriteAllText($feishuBatPath, $feishuBatContent, $gbk)
-Write-Host "  ✓ 已创建: 启动飞书监控.bat（配置: ${Name}.yaml）" -ForegroundColor Green
+$feishuBatPath = Join-Path $packagePath "start-feishu-watch.bat"
+# 英文内容，使用 ASCII 编码（完全兼容）
+$ascii = [System.Text.Encoding]::ASCII
+[System.IO.File]::WriteAllText($feishuBatPath, $feishuBatContent, $ascii)
+Write-Host "  ✓ 已创建: start-feishu-watch.bat (Config: ${Name}.yaml)" -ForegroundColor Green
 
 # 跳过其他说明文件
 Write-Host "[4/6] 跳过说明文件生成..." -ForegroundColor Yellow
@@ -190,11 +190,11 @@ Write-Host "📝 文件大小：" -ForegroundColor Cyan
 $fileSize = (Get-Item $zipFile).Length / 1MB
 Write-Host "   $([math]::Round($fileSize, 2)) MB" -ForegroundColor White
 Write-Host ""
-Write-Host "🎯 下一步操作：" -ForegroundColor Cyan
-Write-Host "   1. 将压缩包发送给达人" -ForegroundColor White
-Write-Host "   2. 告知达人解压到任意位置" -ForegroundColor White
-Write-Host "   3. 指导达人双击'运行一键安装.bat'安装环境" -ForegroundColor White
-Write-Host "   4. 安装完成后双击'启动飞书监控.bat'开始使用" -ForegroundColor White
+Write-Host "🎯 Next Steps:" -ForegroundColor Cyan
+Write-Host "   1. Send the package to user" -ForegroundColor White
+Write-Host "   2. Extract to any location" -ForegroundColor White
+Write-Host "   3. Double-click 'run-install.bat' to install" -ForegroundColor White
+Write-Host "   4. Double-click 'start-feishu-watch.bat' to start" -ForegroundColor White
 Write-Host ""
 
 # 打开输出目录（跨平台）
