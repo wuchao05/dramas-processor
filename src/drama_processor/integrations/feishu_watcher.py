@@ -339,6 +339,19 @@ class FeishuWatcher:
             # 3. 在各自组内按上架时间升序排序（越早上架的越先处理）
             all_dramas.sort(key=lambda x: (x[2], not x[3], x[4]))
             
+            # 调试日志：打印排序后的顺序
+            if all_dramas:
+                logger.info(f"📊 日期 {date_label} 内的剧集排序结果：")
+                for idx, (drama_name, info, rating_priority, is_uploaded_today, upload_time) in enumerate(all_dramas, 1):
+                    upload_date_str = "未知"
+                    if upload_time:
+                        try:
+                            upload_date = datetime.fromtimestamp(upload_time / 1000)
+                            upload_date_str = upload_date.strftime("%m.%d %H:%M")
+                        except Exception:
+                            pass
+                    logger.info(f"  {idx}. {drama_name} - 上架时间: {upload_date_str}, 今天上架: {is_uploaded_today}")
+            
             # 重新构建该日期的字典
             sorted_dict = {}
             for drama_name, info, _, _, _ in all_dramas:
