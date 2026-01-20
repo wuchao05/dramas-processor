@@ -58,7 +58,13 @@ echo.
 REM Read user input (use delayed expansion)
 set /p choice=Enter option (0-!index!): 
 
+REM Debug: Show what was entered
+echo.
+echo [DEBUG] You entered: !choice!
+echo [DEBUG] Total configs: !index!
+
 if "!choice!"=="0" (
+    echo Exiting...
     exit /b 0
 )
 
@@ -66,8 +72,18 @@ REM Validate input (use delayed expansion)
 set "name="
 if !choice! geq 1 if !choice! leq !index! (
     call set "name=%%config_!choice!%%"
+    echo [DEBUG] Selected config: !name!
 ) else (
-    echo Invalid option!
+    echo.
+    echo ERROR: Invalid option! Please enter a number between 0 and !index!
+    pause
+    exit /b 1
+)
+
+REM Check if name was set correctly
+if "!name!"=="" (
+    echo.
+    echo ERROR: Failed to get config name!
     pause
     exit /b 1
 )
