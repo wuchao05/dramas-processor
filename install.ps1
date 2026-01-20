@@ -43,21 +43,60 @@ Write-Host "  ✅ winget 可用" -ForegroundColor Green
 # 1. 安装 Python
 Write-Host ""
 Write-Host "[1/4] 安装 Python..." -ForegroundColor Yellow
-$pythonInstalled = Get-Command python -ErrorAction SilentlyContinue
-if ($pythonInstalled) {
-    $pythonVersion = python --version 2>&1
-    Write-Host "  ✅ Python 已安装: $pythonVersion" -ForegroundColor Green
+
+# 检测 Python 是否可用
+$pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+$needInstall = $false
+
+if ($pythonCmd) {
+    $pythonPath = $pythonCmd.Source
+    Write-Host "  [DEBUG] 检测到 Python: $pythonPath" -ForegroundColor Gray
+    
+    # 检查是否是 Windows Store 占位符
+    if ($pythonPath -like "*WindowsApps*") {
+        Write-Host "  ⚠️  检测到 Windows Store Python 占位符（不完整）" -ForegroundColor Yellow
+        Write-Host "  将安装完整版 Python..." -ForegroundColor Cyan
+        $needInstall = $true
+    } else {
+        # 检查 Python 是否真正可用
+        $pythonVersion = python --version 2>&1 | Out-String
+        if ($pythonVersion -and $pythonVersion.Trim()) {
+            Write-Host "  ✅ Python 已安装: $($pythonVersion.Trim())" -ForegroundColor Green
+        } else {
+            Write-Host "  ⚠️  Python 命令存在但不可用" -ForegroundColor Yellow
+            $needInstall = $true
+        }
+    }
 } else {
-    Write-Host "  正在安装 Python 3.12..." -ForegroundColor Cyan
-    winget install Python.Python.3.12 --accept-source-agreements --accept-package-agreements
+    Write-Host "  未检测到 Python" -ForegroundColor Yellow
+    $needInstall = $true
+}
+
+# 安装 Python
+if ($needInstall) {
+    Write-Host "  正在安装 Python 3.12（完整版）..." -ForegroundColor Cyan
+    Write-Host "  这可能需要几分钟，请耐心等待..." -ForegroundColor Gray
+    
+    winget install Python.Python.3.12 --accept-source-agreements --accept-package-agreements --silent
+    
     if ($LASTEXITCODE -eq 0) {
         Write-Host "  ✅ Python 安装完成" -ForegroundColor Green
-        Write-Host "  ⚠️  请关闭并重新打开 PowerShell 以使用 Python" -ForegroundColor Yellow
-        Write-Host "  然后重新运行此脚本继续安装" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  ⚠️  重要：请按以下步骤操作" -ForegroundColor Yellow
+        Write-Host "  1. 关闭此窗口" -ForegroundColor Cyan
+        Write-Host "  2. 重新双击 run-install.bat" -ForegroundColor Cyan
+        Write-Host "  3. Python 将在新的环境中可用" -ForegroundColor Cyan
+        Write-Host ""
         pause
         exit 0
     } else {
         Write-Host "  ❌ Python 安装失败" -ForegroundColor Red
+        Write-Host ""
+        Write-Host "  请手动安装 Python:" -ForegroundColor Yellow
+        Write-Host "  1. 访问 https://www.python.org/downloads/" -ForegroundColor Cyan
+        Write-Host "  2. 下载 Python 3.12" -ForegroundColor Cyan
+        Write-Host "  3. 安装时勾选 'Add Python to PATH'" -ForegroundColor Cyan
+        pause
         exit 1
     }
 }
