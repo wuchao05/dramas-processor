@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 chcp 65001 >nul
 title Drama Processor - Package Tool
 
@@ -22,9 +23,7 @@ echo Please select package target:
 echo.
 
 REM Scan YAML files and generate menu
-setlocal enabledelayedexpansion
 set index=0
-set "configs="
 
 REM Loop through configs\users\*.yaml (exclude *-daily.yaml)
 for %%f in (configs\users\*.yaml) do (
@@ -35,55 +34,57 @@ for %%f in (configs\users\*.yaml) do (
         set /a index+=1
         echo [!index!] !filename!
         set "config_!index!=!filename!"
-        if defined configs (
-            set "configs=!configs!,!filename!"
-        ) else (
-            set "configs=!filename!"
-        )
     )
-)
-
-REM Check if any configs found (use delayed expansion)
-if !index!==0 (
-    echo ERROR: No config files found in configs\users\!
-    echo Please ensure .yaml files exist (e.g. xh.yaml)
-    pause
-    exit /b 1
 )
 
 echo.
 echo [0] Exit
 echo.
 
-REM Read user input (use delayed expansion)
+REM Check if any configs found
+if !index! EQU 0 (
+    echo ERROR: No config files found in configs\users\!
+    echo Please ensure .yaml files exist (e.g. xh.yaml)
+    pause
+    exit /b 1
+)
+
+REM Read user input
 set /p choice=Enter option (0-!index!): 
 
-REM Debug: Show what was entered
-echo.
-echo [DEBUG] You entered: !choice!
-echo [DEBUG] Total configs: !index!
+REM Check if empty
+if "!choice!"=="" (
+    echo ERROR: No option entered!
+    pause
+    exit /b 1
+)
 
+REM Check for exit
 if "!choice!"=="0" (
     echo Exiting...
     exit /b 0
 )
 
-REM Validate input (use delayed expansion)
-set "name="
-if !choice! geq 1 if !choice! leq !index! (
-    call set "name=%%config_!choice!%%"
-    echo [DEBUG] Selected config: !name!
-) else (
-    echo.
-    echo ERROR: Invalid option! Please enter a number between 0 and !index!
+REM Validate numeric input
+set /a test=!choice! 2>nul
+if !test! LSS 1 (
+    echo ERROR: Invalid option! Please enter a number between 1 and !index!
+    pause
+    exit /b 1
+)
+if !test! GTR !index! (
+    echo ERROR: Invalid option! Please enter a number between 1 and !index!
     pause
     exit /b 1
 )
 
-REM Check if name was set correctly
+REM Get config name
+call set "name=%%config_!choice!%%"
+
+REM Check if name was set
 if "!name!"=="" (
-    echo.
     echo ERROR: Failed to get config name!
+    echo DEBUG: choice=!choice!, index=!index!
     pause
     exit /b 1
 )
@@ -95,9 +96,9 @@ echo.
 REM Call PowerShell packaging script
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\package.ps1 -Name '!name!' -OutputDir 'D:\Package-Output'}"
 
-if %errorlevel% neq 0 (
+if errorlevel 1 (
     echo.
-    echo Packaging failed! Please check error messages.
+    echo ERROR: Packaging failed! Please check error messages above.
     pause
     exit /b 1
 )
