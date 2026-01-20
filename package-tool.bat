@@ -43,7 +43,8 @@ for %%f in (configs\users\*.yaml) do (
     )
 )
 
-if %index%==0 (
+REM Check if any configs found (use delayed expansion)
+if !index!==0 (
     echo ERROR: No config files found in configs\users\!
     echo Please ensure .yaml files exist (e.g. xh.yaml)
     pause
@@ -54,16 +55,17 @@ echo.
 echo [0] Exit
 echo.
 
-set /p choice=Enter option (0-%index%): 
+REM Read user input (use delayed expansion)
+set /p choice=Enter option (0-!index!): 
 
-if "%choice%"=="0" (
+if "!choice!"=="0" (
     exit /b 0
 )
 
-REM Validate input
+REM Validate input (use delayed expansion)
 set "name="
-if %choice% geq 1 if %choice% leq %index% (
-    set "name=!config_%choice%!"
+if !choice! geq 1 if !choice! leq !index! (
+    call set "name=%%config_!choice!%%"
 ) else (
     echo Invalid option!
     pause
@@ -71,10 +73,11 @@ if %choice% geq 1 if %choice% leq %index% (
 )
 
 echo.
-echo Packaging for: %name%
+echo Packaging for: !name!
 echo.
 
-PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\package.ps1 -Name '%name%' -OutputDir 'D:\Package-Output'}"
+REM Call PowerShell packaging script
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\package.ps1 -Name '!name!' -OutputDir 'D:\Package-Output'}"
 
 if %errorlevel% neq 0 (
     echo.
@@ -86,7 +89,7 @@ if %errorlevel% neq 0 (
 echo.
 echo ========================================
 echo   Package Complete!
-echo   Config: %name%
+echo   Config: !name!
 echo   Output: D:\Package-Output
 echo ========================================
 pause
