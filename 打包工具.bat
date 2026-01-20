@@ -1,35 +1,35 @@
 @echo off
 chcp 65001 >nul
-title çŸ­å‰§å‰ªè¾‘å·¥å…· - æ‰“åŒ…å·¥å…·
+title ¶Ì¾ç¼ô¼­¹¤¾ß - ´ò°ü¹¤¾ß
 
 echo ========================================
-echo    çŸ­å‰§å‰ªè¾‘å·¥å…· - æ‰“åŒ…å·¥å…·
+echo    ¶Ì¾ç¼ô¼­¹¤¾ß - ´ò°ü¹¤¾ß
 echo ========================================
 echo.
 
 cd /d %~dp0
 
-REM æ£€æŸ¥ configs\users ç›®å½•æ˜¯å¦å­˜åœ¨
+REM ¼ì²é configs\users Ä¿Â¼ÊÇ·ñ´æÔÚ
 if not exist "configs\users\" (
-    echo é”™è¯¯ï¼šæ‰¾ä¸åˆ° configs\users\ ç›®å½•ï¼
+    echo ´íÎó£ºÕÒ²»µ½ configs\users\ Ä¿Â¼£¡
     pause
     exit /b 1
 )
 
-echo æ­£åœ¨æ‰«æå¯ç”¨çš„è¾¾äººé…ç½®...
+echo ÕıÔÚÉ¨Ãè¿ÉÓÃµÄ´ïÈËÅäÖÃ...
 echo.
-echo è¯·é€‰æ‹©æ‰“åŒ…å¯¹è±¡ï¼š
+echo ÇëÑ¡Ôñ´ò°ü¶ÔÏó£º
 echo.
 
-REM åŠ¨æ€è¯»å–é…ç½®æ–‡ä»¶å¹¶ç”Ÿæˆèœå•
+REM ¶¯Ì¬¶ÁÈ¡ÅäÖÃÎÄ¼ş²¢Éú³É²Ëµ¥
 setlocal enabledelayedexpansion
 set index=0
 set "configs="
 
-REM éå† configs\users ç›®å½•ä¸‹çš„ .yaml æ–‡ä»¶ï¼ˆæ’é™¤ *-daily.yamlï¼‰
+REM ±éÀú configs\users Ä¿Â¼ÏÂµÄ .yaml ÎÄ¼ş£¨ÅÅ³ı *-daily.yaml£©
 for %%f in (configs\users\*.yaml) do (
     set "filename=%%~nf"
-    REM æ’é™¤ -daily ç»“å°¾çš„æ–‡ä»¶
+    REM ÅÅ³ı -daily ½áÎ²µÄÎÄ¼ş
     echo !filename! | findstr /C:"-daily" >nul
     if errorlevel 1 (
         set /a index+=1
@@ -44,49 +44,49 @@ for %%f in (configs\users\*.yaml) do (
 )
 
 if %index%==0 (
-    echo é”™è¯¯ï¼šconfigs\users\ ç›®å½•ä¸‹æ²¡æœ‰æ‰¾åˆ°ä»»ä½•é…ç½®æ–‡ä»¶ï¼
-    echo è¯·ç¡®ä¿ç›®å½•ä¸‹æœ‰ .yaml é…ç½®æ–‡ä»¶ï¼ˆä¾‹å¦‚ xh.yamlï¼‰
+    echo ´íÎó£ºconfigs\users\ Ä¿Â¼ÏÂÃ»ÓĞÕÒµ½ÈÎºÎÅäÖÃÎÄ¼ş£¡
+    echo ÇëÈ·±£Ä¿Â¼ÏÂÓĞ .yaml ÅäÖÃÎÄ¼ş£¨ÀıÈç xh.yaml£©
     pause
     exit /b 1
 )
 
 echo.
-echo [0] é€€å‡º
+echo [0] ÍË³ö
 echo.
 
-set /p choice=è¯·è¾“å…¥é€‰é¡¹ (0-%index%): 
+set /p choice=ÇëÊäÈëÑ¡Ïî (0-%index%): 
 
 if "%choice%"=="0" (
     exit /b 0
 )
 
-REM éªŒè¯è¾“å…¥
+REM ÑéÖ¤ÊäÈë
 set "name="
 if %choice% geq 1 if %choice% leq %index% (
     set "name=!config_%choice%!"
 ) else (
-    echo æ— æ•ˆé€‰é¡¹ï¼
+    echo ÎŞĞ§Ñ¡Ïî£¡
     pause
     exit /b 1
 )
 
 echo.
-echo æ­£åœ¨ä¸º %name% æ‰“åŒ…...
+echo ÕıÔÚÎª %name% ´ò°ü...
 echo.
 
-PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\æ‰“åŒ…ç»™è¾¾äºº.ps1 -Name '%name%' -OutputDir 'D:\æ‰“åŒ…è¾“å‡º'}"
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& {.\´ò°ü¸ø´ïÈË.ps1 -Name '%name%' -OutputDir 'D:\´ò°üÊä³ö'}"
 
 if %errorlevel% neq 0 (
     echo.
-    echo æ‰“åŒ…å¤±è´¥ï¼è¯·æ£€æŸ¥é”™è¯¯ä¿¡æ¯ã€‚
+    echo ´ò°üÊ§°Ü£¡Çë¼ì²é´íÎóĞÅÏ¢¡£
     pause
     exit /b 1
 )
 
 echo.
 echo ========================================
-echo   æ‰“åŒ…å®Œæˆï¼
-echo   é…ç½®ï¼š%name%
-echo   è¾“å‡ºï¼šD:\æ‰“åŒ…è¾“å‡º
+echo   ´ò°üÍê³É£¡
+echo   ÅäÖÃ£º%name%
+echo   Êä³ö£ºD:\´ò°üÊä³ö
 echo ========================================
 pause

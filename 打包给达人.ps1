@@ -1,4 +1,4 @@
-﻿# 短剧剪辑工具 - 达人打包脚本
+# 短剧剪辑工具 - 达人打包脚本
 # 用途：将项目打包为可交付给达人的压缩包
 
 param(
@@ -150,9 +150,9 @@ pause
 "@
 
 $feishuBatPath = Join-Path $packagePath "启动飞书监控.bat"
-# 使用 UTF-8 with BOM 编码
-$utf8BOM = New-Object System.Text.UTF8Encoding $true
-[System.IO.File]::WriteAllText($feishuBatPath, $feishuBatContent, $utf8BOM)
+# 使用 GBK 编码（Windows 批处理文件标准）
+$gbk = [System.Text.Encoding]::GetEncoding("GBK")
+[System.IO.File]::WriteAllText($feishuBatPath, $feishuBatContent, $gbk)
 Write-Host "  ✓ 已创建: 启动飞书监控.bat（配置: ${Name}.yaml）" -ForegroundColor Green
 
 # 跳过其他说明文件
