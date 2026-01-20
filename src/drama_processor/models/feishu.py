@@ -58,9 +58,22 @@ class FeishuSearchResponse(BaseModel):
             fields = {}
             for field_name, field_data in item["fields"].items():
                 if isinstance(field_data, list):
+                    # 列表类型：转换每个元素为 FeishuFieldValue
                     fields[field_name] = [FeishuFieldValue(**value) for value in field_data]
+                elif isinstance(field_data, dict):
+                    # 字典类型（如上架时间）：提取 value 并转换
+                    if "value" in field_data and isinstance(field_data["value"], list):
+                        # 提取 value 数组，转换为 FeishuFieldValue
+                        field_type = field_data.get("type", "text")
+                        fields[field_name] = [
+                            FeishuFieldValue(text=str(v), type=str(field_type))
+                            for v in field_data["value"]
+                        ]
+                    else:
+                        # 其他字典格式，转换为字符串
+                        fields[field_name] = [FeishuFieldValue(text=str(field_data), type="text")]
                 else:
-                    # 处理其他类型的字段值
+                    # 其他类型的字段值，转换为字符串
                     fields[field_name] = [FeishuFieldValue(text=str(field_data), type="text")]
             
             records.append(FeishuRecord(
