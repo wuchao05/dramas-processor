@@ -117,9 +117,28 @@ Copy-Item -Path "install.ps1" -Destination "${packagePath}\drama-processor\" -Fo
 Write-Host "  ✓ 已复制 install.ps1 到项目目录" -ForegroundColor Green
 
 # 创建达人专属的飞书监控启动脚本
-# 使用英文避免编码问题
+# 自动检测并使用最佳终端（Windows Terminal > PowerShell > CMD）
 $feishuBatContent = @"
 @echo off
+REM Try to use Windows Terminal or PowerShell for better Unicode support
+
+REM Check if Windows Terminal is available
+where wt.exe >nul 2>&1
+if %errorlevel% equ 0 (
+    echo Starting in Windows Terminal...
+    wt.exe -w 0 new-tab --title "Feishu Watcher - ${Name}" powershell.exe -NoExit -Command "cd '%~dp0drama-processor'; if (Test-Path 'venv\Scripts\activate.ps1') { .\venv\Scripts\activate.ps1; python -m drama_processor --config configs\default.yaml feishu watch } else { Write-Host '[ERROR] Virtual environment not found! Please run run-install.bat first' -ForegroundColor Red; pause }"
+    exit /b 0
+)
+
+REM Check if PowerShell is available
+where powershell.exe >nul 2>&1
+if %errorlevel% equ 0 (
+    echo Starting in PowerShell...
+    start "Feishu Watcher - ${Name}" powershell.exe -NoExit -Command "cd '%~dp0drama-processor'; if (Test-Path 'venv\Scripts\activate.ps1') { .\venv\Scripts\activate.ps1; Write-Host '========================================' -ForegroundColor Cyan; Write-Host '  Drama Processor - Feishu Watcher' -ForegroundColor Cyan; Write-Host '  User: ${Name}' -ForegroundColor Cyan; Write-Host '========================================' -ForegroundColor Cyan; Write-Host ''; python -m drama_processor --config configs\default.yaml feishu watch } else { Write-Host '[ERROR] Virtual environment not found!' -ForegroundColor Red; Write-Host 'Please run: run-install.bat' -ForegroundColor Yellow; pause }"
+    exit /b 0
+)
+
+REM Fallback to CMD (default)
 chcp 65001 >nul
 title Feishu Watcher - ${Name}
 
@@ -128,11 +147,13 @@ echo   Drama Processor - Feishu Watcher
 echo   User: ${Name}
 echo ========================================
 echo.
+echo Note: Using CMD. For better display, install Windows Terminal.
+echo.
 
 cd /d "%~dp0drama-processor"
 if not exist venv\Scripts\activate.bat (
     echo [ERROR] Virtual environment not found!
-    echo Please run: Install.ps1
+    echo Please run: run-install.bat
     pause
     exit /b 1
 )
