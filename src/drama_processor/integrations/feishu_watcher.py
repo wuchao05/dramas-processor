@@ -146,8 +146,17 @@ class FeishuWatcher:
         except Exception:
             return (2, 9999, date_str)
         delta = (target - today).days
-        group = 0 if delta <= 0 else 1  # 今天或已过期优先，其次未来日期
-        return (group, abs(delta), date_str)
+        # 优先级排序：已过期(delta<0) > 今天(delta=0) > 未来(delta>0)
+        # 在同一组内，按 delta 升序排序（越早的日期越优先）
+        if delta < 0:
+            # 已过期的日期：group=0，按 delta 排序（昨天=-1 优先于 前天=-2）
+            return (0, delta, date_str)
+        elif delta == 0:
+            # 今天：group=1
+            return (1, 0, date_str)
+        else:
+            # 未来的日期：group=2，按 delta 排序（明天=1 优先于 后天=2）
+            return (2, delta, date_str)
     
     def _start_date_task(self, date_label: str, initial_info: Dict[str, Dict[str, str]], priority: tuple) -> None:
         cancel_event = Event()
@@ -286,7 +295,8 @@ class FeishuWatcher:
         
         # 对每个日期组内的剧按优先级排序：
         # 1. 如果启用评级优先级（xh-daily用户），按评级优先级：红标 > 绿标 > 黄标 > 其他
-        # 2. 相同评级的剧（或所有剧）按上架时间排序（可配置升序/降序）
+        # 2. 今天上架的剧优先于非今天上架的剧
+        # 3. 在各自组内按上架时间升序排序（越早上架的越先处理）
         sort_desc = self.base_config.feishu.upload_time_sort_desc if self.base_config.feishu else True
         
         # 定义评级优先级映射（数值越小优先级越高）
@@ -296,11 +306,23 @@ class FeishuWatcher:
             "黄标": 2,
         }
         
+        # 获取今天的日期（用于判断是否今天上架）
+        today = datetime.now().date()
+        
         for date_label in grouped:
             all_dramas = []
             
             for drama_name, info in grouped[date_label].items():
                 upload_time = info.get("upload_time") or 0  # 没有上架时间的设为0
+                
+                # 判断是否今天上架
+                is_uploaded_today = False
+                if upload_time:
+                    try:
+                        upload_date = datetime.fromtimestamp(upload_time / 1000).date()
+                        is_uploaded_today = (upload_date == today)
+                    except Exception:
+                        pass
                 
                 # 只有启用评级优先级时才考虑评级，否则所有剧集评级优先级相同
                 if self.enable_rating_priority:
@@ -309,19 +331,17 @@ class FeishuWatcher:
                 else:
                     rating_priority = 0  # 所有剧集评级优先级相同
                 
-                all_dramas.append((drama_name, info, rating_priority, upload_time))
+                all_dramas.append((drama_name, info, rating_priority, is_uploaded_today, upload_time))
             
-            # 排序：先按评级优先级，再按上架时间（升序或降序）
-            if sort_desc:
-                # 降序：时间戳越大越靠前（新的优先）
-                all_dramas.sort(key=lambda x: (x[2], -x[3]))
-            else:
-                # 升序：时间戳越小越靠前（早的优先）
-                all_dramas.sort(key=lambda x: (x[2], x[3]))
+            # 排序规则：
+            # 1. 先按评级优先级（仅 xh-daily 用户）
+            # 2. 今天上架的优先（is_uploaded_today=True 排前面，使用 not is_uploaded_today 使 True 变 False，越小越靠前）
+            # 3. 在各自组内按上架时间升序排序（越早上架的越先处理）
+            all_dramas.sort(key=lambda x: (x[2], not x[3], x[4]))
             
             # 重新构建该日期的字典
             sorted_dict = {}
-            for drama_name, info, _, _ in all_dramas:
+            for drama_name, info, _, _, _ in all_dramas:
                 sorted_dict[drama_name] = info
             
             grouped[date_label] = sorted_dict
