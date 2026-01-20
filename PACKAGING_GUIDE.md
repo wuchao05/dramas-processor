@@ -4,13 +4,10 @@
 
 ### 方式 1：PowerShell 交互式（推荐）
 ```powershell
-.\package-interactive.ps1
+.\package-tool.ps1
 ```
 
-### 方式 2：CMD 批处理脚本
-双击运行：`package-tool.bat`
-
-### 方式 3：PowerShell 命令行
+### 方式 2：PowerShell 命令行
 ```powershell
 .\package.ps1 -Name "lm" -OutputDir "D:\Package-Output"
 ```
