@@ -1,23 +1,16 @@
 @echo off
-REM Try to use Windows Terminal or PowerShell for better Unicode support
-
-REM Check if Windows Terminal is available
-where wt.exe >nul 2>&1
-if %errorlevel% equ 0 (
-    echo Starting installation in Windows Terminal...
-    wt.exe -w 0 new-tab --title "Drama Processor - Installation" powershell.exe -NoExit -Command "cd '%~dp0drama-processor'; & '%~dp0drama-processor\install.ps1'; if ($LASTEXITCODE -eq 0) { Write-Host ''; Write-Host 'Installation completed! Press any key to close...' -ForegroundColor Green; pause } else { Write-Host ''; Write-Host 'Installation failed! Press any key to close...' -ForegroundColor Red; pause }"
-    exit /b 0
-)
+REM Auto-detect and use PowerShell for better Unicode/emoji support
 
 REM Check if PowerShell is available
 where powershell.exe >nul 2>&1
 if %errorlevel% equ 0 (
     echo Starting installation in PowerShell...
-    start "Drama Processor - Installation" powershell.exe -NoExit -Command "Write-Host '========================================' -ForegroundColor Cyan; Write-Host '  Drama Processor - Installation' -ForegroundColor Cyan; Write-Host '========================================' -ForegroundColor Cyan; Write-Host ''; Write-Host 'Starting installation...' -ForegroundColor Yellow; Write-Host ''; cd '%~dp0drama-processor'; & '%~dp0drama-processor\install.ps1'; if ($LASTEXITCODE -eq 0) { Write-Host ''; Write-Host '========================================' -ForegroundColor Green; Write-Host '  Installation Complete' -ForegroundColor Green; Write-Host '========================================' -ForegroundColor Green; pause } else { Write-Host ''; Write-Host '========================================' -ForegroundColor Red; Write-Host '  Installation Failed' -ForegroundColor Red; Write-Host '========================================' -ForegroundColor Red; pause }"
+    echo.
+    start "Drama Processor - Installation" powershell.exe -NoExit -Command "& {Set-Location '%~dp0drama-processor'; Write-Host '========================================' -ForegroundColor Cyan; Write-Host '  Drama Processor - Installation' -ForegroundColor Cyan; Write-Host '========================================' -ForegroundColor Cyan; Write-Host ''; Write-Host 'Starting installation...' -ForegroundColor Yellow; Write-Host ''; & '.\install.ps1'}"
     exit /b 0
 )
 
-REM Fallback to CMD (default)
+REM Fallback to CMD if PowerShell is not available
 chcp 65001 >nul
 title Drama Processor - Install
 
@@ -27,11 +20,18 @@ echo ========================================
 echo.
 echo Starting installation...
 echo.
-echo Note: Using CMD. For better display, install Windows Terminal.
+echo Note: PowerShell not found. Using CMD (limited Unicode support).
 echo.
 
-REM Run PowerShell install script
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0drama-processor\install.ps1'"
+REM Run PowerShell install script (this should not happen on modern Windows)
+cd /d "%~dp0drama-processor"
+if exist install.ps1 (
+    powershell -NoProfile -ExecutionPolicy Bypass -File ".\install.ps1"
+) else (
+    echo ERROR: install.ps1 not found!
+    pause
+    exit /b 1
+)
 
 if errorlevel 1 (
     echo.
