@@ -308,7 +308,7 @@ class FeishuWatcher:
         self._notify(f"🔍 本次轮询结束，processed_any={processed_any}")
         return processed_any
     
-    def _group_by_date(self, drama_info: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, Dict[str, str]]]:
+    def _group_by_date(self, drama_info: Dict[str, Dict[str, str]], verbose: bool = True) -> Dict[str, Dict[str, Dict[str, str]]]:
         grouped: Dict[str, Dict[str, Dict[str, str]]] = {}
         for drama_name, info in drama_info.items():
             date_label = info.get("date") or "未知日期"
@@ -360,8 +360,8 @@ class FeishuWatcher:
             # 3. 在各自组内按上架时间升序排序（越早上架的越先处理）
             all_dramas.sort(key=lambda x: (x[2], not x[3], x[4]))
             
-            # 调试日志：打印排序后的顺序
-            if all_dramas:
+            # 调试日志：打印排序后的顺序（仅在 verbose=True 时打印）
+            if verbose and all_dramas:
                 logger.info(f"📊 日期 {date_label} 内的剧集排序结果：")
                 for idx, (drama_name, info, rating_priority, is_uploaded_today, upload_time) in enumerate(all_dramas, 1):
                     upload_date_str = "未知"
@@ -447,8 +447,8 @@ class FeishuWatcher:
             else:
                 # 重新查询飞书并排序
                 raw_info = self._fetch_date_tasks(date_label, client)
-                # 对查询结果进行排序（与 _group_by_date 保持一致）
-                grouped = self._group_by_date({name: info for name, info in raw_info.items()})
+                # 对查询结果进行排序（与 _group_by_date 保持一致，但不打印排序日志避免重复）
+                grouped = self._group_by_date({name: info for name, info in raw_info.items()}, verbose=False)
                 current_info = grouped.get(date_label, {})
             
             # 仅保留尚未处理、仍为待剪辑状态的数据
