@@ -236,77 +236,130 @@ class FeishuWatcher:
         while not self._stop and time.time() < end_time:
             time.sleep(1)
     
-    def _poll_once(self) -> bool:
-        """Fetch current pending records and trigger processing."""
-        self._notify(f"🔍 开始轮询，当前活跃任务：{list(self.active_tasks.keys()) if self.active_tasks else '无'}")
-        
-        # 首先清理已完成的任务（这样可以立即发现新的空闲槽位）
-        self._cleanup_finished_tasks()
-        
-        # 查询飞书获取最新待剪辑剧（即使有活跃任务也要查询，以便实时调整优先级）
-        try:
-            drama_info = self.client.get_pending_dramas_with_dates(status_filter=self.status_filter, include_rating=self.enable_rating_priority)
-        except Exception as exc:
-            logger.error(f"拉取飞书记录失败: {exc}")
-            self._notify("⚠️ 无法从飞书获取待剪辑剧目，稍后重试")
-            return False
-        
-        if not drama_info:
-            # 只在没有活跃任务时打印"没有待剪辑剧目"，避免频繁日志
-            if not self.active_tasks:
-                self._notify("📭 当前没有待剪辑剧目")
-            else:
-                self._notify(f"🔍 飞书无待剪辑剧，但还有活跃任务：{list(self.active_tasks.keys())}，继续等待")
-            return False
-        
+    def _get_all_sorted_dramas(self, drama_info: Dict[str, Dict[str, str]]) -> List[tuple]:
+        """将所有待剪辑的剧全局排序，返回 [(drama_name, info, date_label, priority), ...]"""
+        # 按日期分组并排序
         grouped = self._group_by_date(drama_info)
-        # 打印分组结果（始终显示，以便追踪）
-        if grouped:
-            summary = ", ".join(f"{date}:{len(items)}部" for date, items in grouped.items())
-            if not self.active_tasks:
-                self._notify(f"📚 分组结果：{summary}")
-            else:
-                self._notify(f"🔍 分组结果（有活跃任务）：{summary}")
+        if not grouped:
+            return []
         
-        target_dates = self._select_dates(grouped)
-        if not target_dates:
-            self._notify("📭 没有符合过滤条件的日期任务")
-            return False
+        # 过滤日期
+        dates = self._select_dates(grouped)
+        if not dates:
+            return []
         
-        self._notify(f"🔍 目标日期：{target_dates}")
-        
-        processed_any = bool(self.active_tasks)
-        for date_label in target_dates:
-            if self._stop:
-                break
-            if date_label in self.active_tasks:
-                self._notify(f"🔍 日期 {date_label} 任务已在运行中，跳过")
+        # 将所有剧收集到一个列表中，附加日期和优先级信息
+        all_sorted = []
+        for date_label in dates:
+            # 获取该日期的完整日期（用于优先级计算）
+            dramas_in_date = grouped[date_label]
+            if not dramas_in_date:
                 continue
-            initial_info = dict(grouped.get(date_label, {}))
-            # 从该日期组的剧集中获取 full_date（所有剧集的 full_date 应该一致）
-            full_date = None
-            if initial_info:
-                first_drama_info = next(iter(initial_info.values()))
-                full_date = first_drama_info.get("full_date")
-            priority = self._priority_value(date_label, full_date)
-            self._notify(f"🔍 日期 {date_label} 优先级：{priority}")
-            if len(self.active_tasks) < self.max_dates:
-                self._start_date_task(date_label, initial_info, priority)
-                processed_any = True
-            else:
-                worst_date = self._get_lowest_priority_date()
-                worst_priority = self.active_tasks[worst_date].priority if worst_date else None
-                self._notify(f"🔍 已满载，最低优先级：{worst_date}（{worst_priority}），新日期：{date_label}（{priority}）")
-                if worst_date and priority < self.active_tasks[worst_date].priority:
-                    self._notify(f"⏹️ 为优先日期 {date_label}（优先级{priority}），准备停止 {worst_date}（优先级{worst_priority}） 任务")
-                    self._cancel_task(worst_date)
-                    self._start_date_task(date_label, initial_info, priority)
-                    processed_any = True
-                else:
-                    self._notify(f"🔍 日期 {date_label} 优先级不够高，不替换现有任务")
+            
+            first_drama_info = next(iter(dramas_in_date.values()))
+            full_date = first_drama_info.get("full_date")
+            date_priority = self._priority_value(date_label, full_date)
+            
+            # 按顺序遍历该日期内的剧（已经在 _group_by_date 中排好序了）
+            for idx, (drama_name, info) in enumerate(dramas_in_date.items()):
+                # 组合优先级：先按日期优先级，再按日期内顺序
+                combined_priority = (date_priority, idx)
+                all_sorted.append((drama_name, info, date_label, combined_priority))
         
-        self._notify(f"🔍 本次轮询结束，processed_any={processed_any}")
-        return processed_any
+        # 按组合优先级排序
+        all_sorted.sort(key=lambda x: x[3])
+        
+        return all_sorted
+    
+    def _poll_once(self) -> bool:
+        """Fetch current pending records and process them one by one."""
+        self._notify("🔍 开始轮询，查询所有待剪辑的剧")
+        
+        # 记录已处理的剧名
+        processed = set()
+        idle_rounds = 0
+        
+        while not self._stop:
+            # 查询飞书获取最新待剪辑剧
+            try:
+                drama_info = self.client.get_pending_dramas_with_dates(
+                    status_filter=self.status_filter, 
+                    include_rating=self.enable_rating_priority
+                )
+            except Exception as exc:
+                logger.error(f"获取待剪辑剧失败: {exc}")
+                self._notify(f"⚠️ 获取待剪辑剧失败：{exc}")
+                break
+            
+            if not drama_info:
+                self._notify("✅ 当前没有待剪辑的剧")
+                break
+            
+            # 全局排序所有待剪辑的剧
+            all_sorted = self._get_all_sorted_dramas(drama_info)
+            if not all_sorted:
+                self._notify("✅ 没有符合条件的待剪辑剧")
+                break
+            
+            # 第一次查询时，打印排序结果
+            if not processed:
+                self._notify(f"📊 检测到 {len(all_sorted)} 部待剪辑剧，按优先级处理")
+                logger.info("📋 全局优先级排序结果（前10）：")
+                for idx, (drama_name, info, date_label, _) in enumerate(all_sorted[:10], 1):
+                    upload_time = info.get("upload_time") or 0
+                    upload_date_str = "未知"
+                    if upload_time:
+                        try:
+                            upload_date = datetime.fromtimestamp(upload_time / 1000)
+                            upload_date_str = upload_date.strftime("%m.%d %H:%M")
+                        except Exception:
+                            pass
+                    logger.info(f"  {idx}. [{date_label}] {drama_name} - 上架时间: {upload_date_str}")
+            
+            # 过滤掉已处理的剧
+            pending = [d for d in all_sorted if d[0] not in processed]
+            
+            if not pending:
+                idle_rounds += 1
+                if idle_rounds >= self.settle_rounds:
+                    self._notify("✅ 所有待剪辑的剧已处理完成")
+                    break
+                self._notify(f"⏸️ 暂无新剧，等待 {self.settle_seconds} 秒后重试（{idle_rounds}/{self.settle_rounds}）...")
+                self._sleep_with_cancel(self.settle_seconds)
+                continue
+            
+            idle_rounds = 0
+            
+            # 选择优先级最高的剧
+            drama_name, info, date_label, _ = pending[0]
+            
+            self._notify(f"🎯 选择处理：[{date_label}] {drama_name}")
+            
+            # 再次检查该剧是否仍在待剪辑列表中
+            latest_info = self.client.get_pending_dramas_with_dates(
+                status_filter=self.status_filter, 
+                include_rating=self.enable_rating_priority
+            )
+            if drama_name not in latest_info:
+                self._notify(f"⏭️ '{drama_name}' 已不在待剪辑列表，跳过")
+                processed.add(drama_name)
+                continue
+            
+            # 处理这部剧
+            try:
+                cancel_event = Event()  # 创建一个临时的取消事件
+                processed_ok = self._process_single_drama(date_label, drama_name, info, self.client, cancel_event)
+            except Exception as exc:
+                logger.error(f"❌ 剧目 {drama_name} 处理失败: {exc}")
+                self._notify(f"❌ '{drama_name}' 处理失败：{exc}")
+                processed_ok = False
+            finally:
+                processed.add(drama_name)
+            
+            if not processed_ok:
+                self._notify(f"⏭️ '{drama_name}' 处理失败，继续下一部剧")
+        
+        return True
     
     def _group_by_date(self, drama_info: Dict[str, Dict[str, str]], verbose: bool = True) -> Dict[str, Dict[str, Dict[str, str]]]:
         grouped: Dict[str, Dict[str, Dict[str, str]]] = {}
