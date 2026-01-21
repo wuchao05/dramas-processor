@@ -338,7 +338,10 @@ class FeishuWatcher:
             if not pending:
                 idle_rounds += 1
                 if idle_rounds >= self.settle_rounds:
-                    self._notify(f"✅ 所有待剪辑的剧已处理完成（连续{idle_rounds}次查询无新剧）")
+                    if self.settle_rounds == 0:
+                        self._notify("✅ 所有待剪辑的剧已处理完成，进入外层轮询")
+                    else:
+                        self._notify(f"✅ 所有待剪辑的剧已处理完成（连续{idle_rounds}次查询无新剧）")
                     break
                 self._notify(f"⏸️ 暂无新剧，{self.settle_seconds}秒后重新查询（{idle_rounds}/{self.settle_rounds}）...")
                 self._sleep_with_cancel(self.settle_seconds)
