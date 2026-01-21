@@ -149,7 +149,7 @@ class FeishuWatcher:
         # 优先级排序：已过期(delta<0) > 今天(delta=0) > 未来(delta>0)
         # 在同一组内，按 delta 升序排序（越早的日期越优先）
         if delta < 0:
-            # 已过期的日期：group=0，按 delta 排序（昨天=-1 优先于 前天=-2）
+            # 已过期的日期：group=0，按 delta 排序（前天=-2 优先于 昨天=-1，因为 -2 < -1）
             return (0, delta, date_str)
         elif delta == 0:
             # 今天：group=1
@@ -272,8 +272,21 @@ class FeishuWatcher:
         return all_sorted
     
     def _poll_once(self) -> bool:
-        """Fetch current pending records and process them one by one."""
-        self._notify("🔍 开始轮询，查询所有待剪辑的剧")
+        """
+        查询并处理所有待剪辑的剧。
+        
+        工作流程：
+        1. 查询飞书，获取所有待剪辑的剧
+        2. 按日期优先级（越早越优先）+ 日期内上架时间（越早越优先）全局排序
+        3. 选择优先级最高的一部剧处理
+        4. 处理完后，回到步骤1，重新查询和排序
+        5. 如果所有剧都处理完，等待 settle_seconds 后再查一次（防止飞书数据同步延迟）
+        6. 如果连续 settle_rounds 次都没有新剧，退出，依赖外层 run() 的 poll_interval 轮询
+        
+        Returns:
+            bool: 是否处理了至少一部剧
+        """
+        self._notify("🔍 查询飞书，获取所有待剪辑的剧...")
         
         # 记录已处理的剧名
         processed = set()
@@ -292,7 +305,10 @@ class FeishuWatcher:
                 break
             
             if not drama_info:
-                self._notify("✅ 当前没有待剪辑的剧")
+                if not processed:
+                    self._notify("📭 当前没有待剪辑的剧")
+                else:
+                    self._notify("✅ 所有待剪辑的剧已处理完成，暂无新剧")
                 break
             
             # 全局排序所有待剪辑的剧
@@ -322,9 +338,9 @@ class FeishuWatcher:
             if not pending:
                 idle_rounds += 1
                 if idle_rounds >= self.settle_rounds:
-                    self._notify("✅ 所有待剪辑的剧已处理完成")
+                    self._notify(f"✅ 所有待剪辑的剧已处理完成（连续{idle_rounds}次查询无新剧）")
                     break
-                self._notify(f"⏸️ 暂无新剧，等待 {self.settle_seconds} 秒后重试（{idle_rounds}/{self.settle_rounds}）...")
+                self._notify(f"⏸️ 暂无新剧，{self.settle_seconds}秒后重新查询（{idle_rounds}/{self.settle_rounds}）...")
                 self._sleep_with_cancel(self.settle_seconds)
                 continue
             
@@ -335,7 +351,7 @@ class FeishuWatcher:
             
             self._notify(f"🎯 选择处理：[{date_label}] {drama_name}")
             
-            # 再次检查该剧是否仍在待剪辑列表中
+            # 再次检查该剧是否仍在待剪辑列表中（双重确认）
             latest_info = self.client.get_pending_dramas_with_dates(
                 status_filter=self.status_filter, 
                 include_rating=self.enable_rating_priority
@@ -359,7 +375,8 @@ class FeishuWatcher:
             if not processed_ok:
                 self._notify(f"⏭️ '{drama_name}' 处理失败，继续下一部剧")
         
-        return True
+        # 返回是否处理了至少一部剧
+        return len(processed) > 0
     
     def _group_by_date(self, drama_info: Dict[str, Dict[str, str]], verbose: bool = True) -> Dict[str, Dict[str, Dict[str, str]]]:
         grouped: Dict[str, Dict[str, Dict[str, str]]] = {}
