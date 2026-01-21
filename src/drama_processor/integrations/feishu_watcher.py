@@ -193,7 +193,8 @@ class FeishuWatcher:
     def _cleanup_finished_tasks(self) -> None:
         """清理已完成的任务，并在任务完成时立即触发下一次轮询"""
         tasks_cleaned = False
-        logger.debug(f"🔍 检查已完成任务，当前活跃任务数：{len(self.active_tasks)}")
+        if self.active_tasks:
+            logger.info(f"🔍 检查已完成任务，当前活跃任务数：{len(self.active_tasks)}")
         for date_label, task in list(self.active_tasks.items()):
             if task.future.done():
                 try:
@@ -209,8 +210,6 @@ class FeishuWatcher:
         if tasks_cleaned:
             self._notify("🔄 日期任务完成，立即查找其他日期的待剪辑剧...")
             self._wake_event.set()
-        else:
-            logger.debug(f"🔍 无已完成任务需要清理")
     
     def _get_lowest_priority_date(self) -> Optional[str]:
         if not self.active_tasks:
@@ -239,7 +238,7 @@ class FeishuWatcher:
     
     def _poll_once(self) -> bool:
         """Fetch current pending records and trigger processing."""
-        logger.debug(f"🔍 开始一次轮询，当前活跃任务：{list(self.active_tasks.keys())}")
+        self._notify(f"🔍 开始轮询，当前活跃任务：{list(self.active_tasks.keys()) if self.active_tasks else '无'}")
         
         # 首先清理已完成的任务（这样可以立即发现新的空闲槽位）
         self._cleanup_finished_tasks()
@@ -257,30 +256,31 @@ class FeishuWatcher:
             if not self.active_tasks:
                 self._notify("📭 当前没有待剪辑剧目")
             else:
-                logger.debug(f"🔍 飞书无待剪辑剧，但还有活跃任务：{list(self.active_tasks.keys())}")
+                self._notify(f"🔍 飞书无待剪辑剧，但还有活跃任务：{list(self.active_tasks.keys())}，继续等待")
             return False
         
         grouped = self._group_by_date(drama_info)
-        # 只在没有活跃任务时打印分组结果，避免频繁日志
-        if grouped and not self.active_tasks:
+        # 打印分组结果（始终显示，以便追踪）
+        if grouped:
             summary = ", ".join(f"{date}:{len(items)}部" for date, items in grouped.items())
-            self._notify(f"📚 分组结果：{summary}")
-        else:
-            logger.debug(f"🔍 分组结果（有活跃任务）：{', '.join(f'{d}:{len(items)}部' for d, items in grouped.items())}")
+            if not self.active_tasks:
+                self._notify(f"📚 分组结果：{summary}")
+            else:
+                self._notify(f"🔍 分组结果（有活跃任务）：{summary}")
         
         target_dates = self._select_dates(grouped)
         if not target_dates:
             self._notify("📭 没有符合过滤条件的日期任务")
             return False
         
-        logger.debug(f"🔍 目标日期列表：{target_dates}")
+        self._notify(f"🔍 目标日期：{target_dates}")
         
         processed_any = bool(self.active_tasks)
         for date_label in target_dates:
             if self._stop:
                 break
             if date_label in self.active_tasks:
-                logger.debug(f"🔍 日期 {date_label} 任务已在运行中，跳过")
+                self._notify(f"🔍 日期 {date_label} 任务已在运行中，跳过")
                 continue
             initial_info = dict(grouped.get(date_label, {}))
             # 从该日期组的剧集中获取 full_date（所有剧集的 full_date 应该一致）
@@ -289,23 +289,23 @@ class FeishuWatcher:
                 first_drama_info = next(iter(initial_info.values()))
                 full_date = first_drama_info.get("full_date")
             priority = self._priority_value(date_label, full_date)
-            logger.debug(f"🔍 日期 {date_label} 优先级：{priority}")
+            self._notify(f"🔍 日期 {date_label} 优先级：{priority}")
             if len(self.active_tasks) < self.max_dates:
                 self._start_date_task(date_label, initial_info, priority)
                 processed_any = True
             else:
                 worst_date = self._get_lowest_priority_date()
                 worst_priority = self.active_tasks[worst_date].priority if worst_date else None
-                logger.debug(f"🔍 当前最低优先级日期：{worst_date}，优先级：{worst_priority}，新日期：{date_label}，优先级：{priority}")
+                self._notify(f"🔍 已满载，最低优先级：{worst_date}（{worst_priority}），新日期：{date_label}（{priority}）")
                 if worst_date and priority < self.active_tasks[worst_date].priority:
                     self._notify(f"⏹️ 为优先日期 {date_label}（优先级{priority}），准备停止 {worst_date}（优先级{worst_priority}） 任务")
                     self._cancel_task(worst_date)
                     self._start_date_task(date_label, initial_info, priority)
                     processed_any = True
                 else:
-                    logger.debug(f"🔍 日期 {date_label} 优先级不够高，不替换现有任务")
+                    self._notify(f"🔍 日期 {date_label} 优先级不够高，不替换现有任务")
         
-        logger.debug(f"🔍 本次轮询结束，processed_any={processed_any}")
+        self._notify(f"🔍 本次轮询结束，processed_any={processed_any}")
         return processed_any
     
     def _group_by_date(self, drama_info: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, Dict[str, str]]]:
