@@ -445,7 +445,11 @@ class FeishuWatcher:
                 current_info = cached_info
                 cached_info = None
             else:
-                current_info = self._fetch_date_tasks(date_label, client)
+                # 重新查询飞书并排序
+                raw_info = self._fetch_date_tasks(date_label, client)
+                # 对查询结果进行排序（与 _group_by_date 保持一致）
+                grouped = self._group_by_date({name: info for name, info in raw_info.items()})
+                current_info = grouped.get(date_label, {})
             
             # 仅保留尚未处理、仍为待剪辑状态的数据
             pending = {
