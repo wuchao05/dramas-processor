@@ -199,10 +199,10 @@ feishu:
 # 飞书轮询配置
 feishu_watcher:
   enabled: true
-  poll_interval: 15  # 无待剪辑剧时的外层轮询间隔（秒）
+  poll_interval: 1200  # 外层长期轮询间隔：20分钟（秒）
   max_dates_per_cycle: 1
-  settle_seconds: 10  # 处理完一部剧后，如果暂无新剧，等待10秒再查一次（防止飞书数据同步延迟）
-  settle_rounds: 1  # 只尝试1次，确保总轮询间隔约为 settle_seconds + poll_interval ≈ 25秒
+  settle_seconds: 30  # 处理完所有剧后，每30秒查询一次，检查是否有新剧
+  settle_rounds: 20  # 连续尝试20次（共10分钟），如果都没有新剧才退出，等待外层 poll_interval
   idle_exit_minutes: null
   state_dir: "history/feishu_watcher"
   date_whitelist: []
