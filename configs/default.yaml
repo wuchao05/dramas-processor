@@ -201,8 +201,8 @@ feishu_watcher:
   enabled: true
   poll_interval: 1800
   max_dates_per_cycle: 1
-  settle_seconds: 120
-  settle_rounds: 1
+  settle_seconds: 60  # 降低到60秒，加快响应速度
+  settle_rounds: 3  # 增加到3轮，避免因数据同步延迟导致提前结束
   idle_exit_minutes: null
   state_dir: "history/feishu_watcher"
   date_whitelist: []
