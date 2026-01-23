@@ -214,3 +214,6 @@ date_deduplication:
   enabled: true
   storage_dir: "history/date_dedup"
   skip_processed_by_default: false
+
+# 源视频自动清理设置
+auto_delete_source_after_completion: false  # 剪辑完成后自动删除源视频目录（默认关闭）

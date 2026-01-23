@@ -25,6 +25,7 @@ from ..utils.time import human_duration
 from ..utils.cancel import CancelledError, raise_if_cancelled
 from ..utils.history import HistoryManager
 from ..integrations.feishu_notification import create_feishu_notifier, FeishuNotifier
+import shutil
 
 from .analyzer import VideoAnalyzer
 from .segments import SegmentBuilder
@@ -563,6 +564,10 @@ class DramaProcessor:
             f"📦 本剧完成 | {project.name} | 本轮生成 {completed_count}/{total_to_make} 条 | 用时 {human_duration(project_time)}"
         )
         
+        # 自动删除源视频目录（如果配置启用且所有素材都成功生成）
+        if self.config.auto_delete_source_after_completion and completed_count == total_to_make and total_to_make > 0:
+            self._delete_source_directory(project)
+        
         return completed_count, project_time
     
     def process_all_dramas(
@@ -956,3 +961,36 @@ class DramaProcessor:
         logger.info(f"   • 总耗时: {human_duration(total_processing_time)}")
         logger.info(f"   • 导出根目录: {actual_exports_root}")
         logger.info("=" * 80)
+    
+    def _delete_source_directory(self, project: DramaProject) -> None:
+        """
+        删除源视频目录及其所有内容。
+        
+        Args:
+            project: 剧集项目对象
+        """
+        source_dir = project.source_dir
+        drama_name = project.name
+        
+        if not source_dir or not source_dir.exists():
+            logger.warning(f"⚠️ 源目录不存在，跳过删除：{source_dir}")
+            return
+        
+        try:
+            # 统计要删除的文件
+            mp4_files = list(source_dir.glob("*.mp4"))
+            total_files = len(list(source_dir.iterdir()))
+            
+            logger.info(f"🗑️ 开始删除源视频目录：{drama_name}")
+            logger.info(f"   目录路径：{source_dir}")
+            logger.info(f"   包含文件：{total_files} 个（其中 MP4: {len(mp4_files)} 个）")
+            
+            # 删除整个目录
+            shutil.rmtree(source_dir)
+            
+            logger.info(f"✅ 已成功删除源视频目录：{drama_name}")
+            
+        except PermissionError as e:
+            logger.error(f"❌ 删除源目录失败（权限不足）：{drama_name} | {e}")
+        except Exception as e:
+            logger.error(f"❌ 删除源目录失败：{drama_name} | {e}")

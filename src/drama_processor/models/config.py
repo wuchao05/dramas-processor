@@ -319,6 +319,12 @@ class ProcessingConfig(BaseModel):
     enable_deduplication: bool = Field(
         default=False, description="Enable cut point deduplication"
     )
+    
+    # Source cleanup settings
+    auto_delete_source_after_completion: bool = Field(
+        default=False, 
+        description="自动删除已完成剪辑的源视频目录（仅当所有素材都成功生成时）"
+    )
 
     # Cover settings - REMOVED
 
