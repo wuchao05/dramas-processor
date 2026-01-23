@@ -1539,10 +1539,11 @@ def _parse_date_list_option(raw: Optional[str]) -> Optional[List[str]]:
 @click.option("--status", type=str, default=None, help="覆盖默认状态过滤值")
 @click.option("--dates", type=str, default=None, help="仅监听指定日期（逗号分隔，如 9.17,9.18）")
 @click.option("--max-dates", type=int, default=None, help="单次轮询最多自动触发的日期任务数")
+@click.option("--subject", type=str, default=None, help="筛选指定主体的剧集（如 大号）")
 @click.option("--run-once", is_flag=True, help="只执行一次轮询后退出")
 @click.pass_context
 def feishu_watch(ctx, poll_interval: Optional[int], status: Optional[str],
-                 dates: Optional[str], max_dates: Optional[int], run_once: bool):
+                 dates: Optional[str], max_dates: Optional[int], subject: Optional[str], run_once: bool):
     """守护式轮询飞书待剪辑列表，自动按日期启动剪辑任务。"""
     config = ctx.obj.get("config") or ProcessingConfig()
     _ensure_feishu_cli_enabled(config)
@@ -1573,6 +1574,7 @@ def feishu_watch(ctx, poll_interval: Optional[int], status: Optional[str],
         date_whitelist=date_whitelist,
         date_blacklist=watcher_cfg.date_blacklist,
         status_filter=status or watcher_cfg.status_filter,
+        subject_filter=subject,
         idle_exit_minutes=watcher_cfg.idle_exit_minutes,
         state_dir=watcher_cfg.state_dir,
         echo=click.echo

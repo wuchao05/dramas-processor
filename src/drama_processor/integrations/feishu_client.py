@@ -136,6 +136,7 @@ class FeishuClient:
         self, 
         status_filter: Optional[str] = None,
         date_filter: Optional[str] = None,
+        subject_filter: Optional[str] = None,
         field_names: Optional[List[str]] = None,
         page_size: Optional[int] = None,
         sort_field: str = "日期",
@@ -147,6 +148,7 @@ class FeishuClient:
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
+            subject_filter: 主体过滤条件，如 "大号"
             field_names: 需要获取的字段名列表
             page_size: 分页大小
             sort_field: 排序字段
@@ -178,6 +180,14 @@ class FeishuClient:
                 "value": [status_filter]
             }
         ]
+        
+        # 如果有主体过滤条件，添加主体过滤
+        if subject_filter:
+            conditions.append({
+                "field_name": "主体",
+                "operator": "is",
+                "value": [subject_filter]
+            })
         
         # 如果有日期过滤条件，添加日期过滤
         if date_filter:
@@ -219,10 +229,12 @@ class FeishuClient:
         }
         
         try:
+            filter_info = f"状态过滤: {status_filter}"
+            if subject_filter:
+                filter_info += f"，主体过滤: {subject_filter}"
             if date_filter:
-                logger.info(f"正在搜索飞书记录，状态过滤: {status_filter}，日期过滤: {date_filter}")
-            else:
-                logger.info(f"正在搜索飞书记录，状态过滤: {status_filter}")
+                filter_info += f"，日期过滤: {date_filter}"
+            logger.info(f"正在搜索飞书记录，{filter_info}")
             response = requests.post(url, json=payload, headers=headers, timeout=30)
             response.raise_for_status()
             
@@ -246,38 +258,40 @@ class FeishuClient:
         except Exception as e:
             raise FeishuAPIError(f"搜索记录失败: {str(e)}")
     
-    def get_pending_dramas(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> List[str]:
+    def get_pending_dramas(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None, subject_filter: Optional[str] = None) -> List[str]:
         """
         获取指定状态的剧名列表
         
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
+            subject_filter: 主体过滤条件，如 "大号"
         
         Returns:
             剧名列表
         """
         try:
-            response = self.search_records(status_filter=status_filter, date_filter=date_filter)
+            response = self.search_records(status_filter=status_filter, date_filter=date_filter, subject_filter=subject_filter)
             return response.drama_names
         except Exception as e:
             actual_status = status_filter or self.config.pending_status_value
             logger.error(f"获取{actual_status}剧名失败: {str(e)}")
             raise
     
-    def get_pending_dramas_with_records(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None) -> Dict[str, str]:
+    def get_pending_dramas_with_records(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None, subject_filter: Optional[str] = None) -> Dict[str, str]:
         """
         获取指定状态的剧名和对应的记录ID
         
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
+            subject_filter: 主体过滤条件，如 "大号"
         
         Returns:
             剧名到记录ID的映射字典
         """
         try:
-            response = self.search_records(status_filter=status_filter, date_filter=date_filter)
+            response = self.search_records(status_filter=status_filter, date_filter=date_filter, subject_filter=subject_filter)
             drama_records = {}
             for record in response.items:
                 if "剧名" in record.fields and record.fields["剧名"]:
@@ -289,13 +303,14 @@ class FeishuClient:
             logger.error(f"获取{actual_status}剧名和记录ID失败: {str(e)}")
             raise
     
-    def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None, include_rating: bool = True) -> Dict[str, Dict[str, str]]:
+    def get_pending_dramas_with_dates(self, status_filter: Optional[str] = None, date_filter: Optional[str] = None, subject_filter: Optional[str] = None, include_rating: bool = True) -> Dict[str, Dict[str, str]]:
         """
         获取指定状态的剧名和对应的记录信息（包括日期、上架时间、评级和抖音素材配置）
         
         Args:
             status_filter: 状态过滤条件，如果为None则使用配置中的默认值
             date_filter: 日期过滤条件，格式如 "2025-09-05"
+            subject_filter: 主体过滤条件，如 "大号"
             include_rating: 是否包含评级字段（默认为True）
         
         Returns:
@@ -326,7 +341,7 @@ class FeishuClient:
             logger.info(f"📋 查询飞书字段列表: {', '.join(field_names)}")
             
             response = self.search_records(status_filter=status_filter, date_filter=date_filter, 
-                                         field_names=field_names)
+                                         subject_filter=subject_filter, field_names=field_names)
             drama_info = {}
             for record in response.items:
                 if "剧名" in record.fields and record.fields["剧名"]:
@@ -437,7 +452,10 @@ class FeishuClient:
             return drama_info
         except Exception as e:
             actual_status = status_filter or self.config.pending_status_value
-            logger.error(f"获取{actual_status}剧名和日期信息失败: {str(e)}")
+            filter_desc = f"获取{actual_status}剧名和日期信息失败"
+            if subject_filter:
+                filter_desc = f"获取{actual_status}且主体为{subject_filter}的剧名和日期信息失败"
+            logger.error(f"{filter_desc}: {str(e)}")
             raise
     
     def update_record_status(

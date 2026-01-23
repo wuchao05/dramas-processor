@@ -30,6 +30,7 @@ class FeishuWatcher:
         date_whitelist: Optional[List[str]] = None,
         date_blacklist: Optional[List[str]] = None,
         status_filter: Optional[str] = None,
+        subject_filter: Optional[str] = None,
         idle_exit_minutes: Optional[int] = None,
         state_dir: Optional[str] = None,
         echo: Optional[Callable[[str], None]] = None,
@@ -47,6 +48,7 @@ class FeishuWatcher:
         self.date_whitelist = self._normalize_date_list(date_whitelist)
         self.date_blacklist = set(self._normalize_date_list(date_blacklist) or [])
         self.status_filter = status_filter or config.feishu.pending_status_value
+        self.subject_filter = subject_filter
         self.idle_exit_minutes = idle_exit_minutes
         self.state_dir = Path(state_dir or config.feishu_watcher.state_dir or "history/feishu_watcher")
         self.state_dir.mkdir(parents=True, exist_ok=True)
@@ -60,7 +62,10 @@ class FeishuWatcher:
     
     def run(self, run_once: bool = False) -> None:
         """Start the watcher."""
-        self._notify(f"🚀 启动飞书轮询：每 {self.poll_interval}s 轮询一次，状态过滤={self.status_filter}")
+        filter_info = f"状态过滤={self.status_filter}"
+        if self.subject_filter:
+            filter_info += f"，主体过滤={self.subject_filter}"
+        self._notify(f"🚀 启动飞书轮询：每 {self.poll_interval}s 轮询一次，{filter_info}")
         try:
             while not self._stop:
                 processed = self._poll_once()
@@ -297,6 +302,7 @@ class FeishuWatcher:
             try:
                 drama_info = self.client.get_pending_dramas_with_dates(
                     status_filter=self.status_filter, 
+                    subject_filter=self.subject_filter,
                     include_rating=self.enable_rating_priority
                 )
             except Exception as exc:
@@ -356,7 +362,8 @@ class FeishuWatcher:
             
             # 再次检查该剧是否仍在待剪辑列表中（双重确认）
             latest_info = self.client.get_pending_dramas_with_dates(
-                status_filter=self.status_filter, 
+                status_filter=self.status_filter,
+                subject_filter=self.subject_filter,
                 include_rating=self.enable_rating_priority
             )
             if drama_name not in latest_info:
@@ -524,6 +531,7 @@ class FeishuWatcher:
         try:
             info = client_obj.get_pending_dramas_with_dates(
                 status_filter=self.status_filter,
+                subject_filter=self.subject_filter,
                 date_filter=date_filter,
                 include_rating=self.enable_rating_priority
             )

@@ -44,10 +44,10 @@ brand_text_mapping:
 # 飞书功能配置
 enable_feishu_features: true
 feishu:
-  table_id: "tblDOyi2Lzs80sv0" # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
+  table_id: "tblZB1ujNLN7Onpl" # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
 
 # 文案显示配置
-enable_hook_text: true
+enable_hook_text: false
 enable_brand_text: true # 关闭底部静态品牌文字（使用动态飘动水印）
 enable_disclaimer_text: true # 启用免责声明（底部第二行）
 
