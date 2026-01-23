@@ -564,9 +564,14 @@ class DramaProcessor:
             f"📦 本剧完成 | {project.name} | 本轮生成 {completed_count}/{total_to_make} 条 | 用时 {human_duration(project_time)}"
         )
         
-        # 自动删除源视频目录（如果配置启用且所有素材都成功生成）
-        if self.config.auto_delete_source_after_completion and completed_count == total_to_make and total_to_make > 0:
-            self._delete_source_directory(project)
+        # 自动删除源视频目录（如果配置启用且成功率达到95%以上）
+        if self.config.auto_delete_source_after_completion and total_to_make > 0:
+            success_rate = completed_count / total_to_make
+            if success_rate >= 0.95:
+                logger.info(f"📊 素材完成率: {success_rate*100:.1f}% ({completed_count}/{total_to_make}), 满足删除阈值(≥95%)")
+                self._delete_source_directory(project)
+            else:
+                logger.warning(f"⚠️ 素材完成率: {success_rate*100:.1f}% ({completed_count}/{total_to_make}), 低于删除阈值(95%), 保留源视频")
         
         return completed_count, project_time
     
