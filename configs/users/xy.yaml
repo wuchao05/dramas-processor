@@ -2,6 +2,9 @@
 count: 5 # 每部剧生成素材数量
 material_code: "xy" # 素材文件名标识
 
+# 开启色彩扰动，降低素材同质化
+fast_mode: false
+
 # 目录设置
 default_source_dir: "D:\\短剧剪辑\\源素材视频" # Windows 路径
 # 临时文件自动使用C盘（性能最优，无需配置）
