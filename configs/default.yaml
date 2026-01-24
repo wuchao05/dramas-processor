@@ -3,7 +3,7 @@
 # Windows Native Configuration
 
 # 当前激活的用户配置
-active_user: xh
+active_user: xh-daily
 
 # Basic processing settings
 target_fps: 60

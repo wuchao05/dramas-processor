@@ -63,3 +63,6 @@ feishu_watcher:
 enable_hook_text: false
 enable_brand_text: true # 启用品牌文字（底部第一行）
 enable_disclaimer_text: true # 启用免责声明（底部第二行）
+
+# 源视频自动清理设置
+auto_delete_source_after_completion: true # 剪辑完成后自动删除源视频目录

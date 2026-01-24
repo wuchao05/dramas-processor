@@ -10,6 +10,8 @@ fast_mode: false
 
 # 目录设置
 default_source_dir: "D:\\短剧剪辑\\源素材视频" # Windows 路径
+temp_dir: "D:\\短剧剪辑\\临时文件" # 添加这一行，使用D盘临时目录
+tail_cache_dir: "D:\\短剧剪辑\\尾部缓存" # 添加这一行，尾部缓存也放D盘
 # 临时文件自动使用C盘（性能最优，无需配置）
 
 # 多素材文案配置
