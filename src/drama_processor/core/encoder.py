@@ -507,7 +507,9 @@ class VideoEncoder:
         disclaimer_txtf = os.path.join(workdir, "disclaimer.txt")
 
         write_text_file(title_txt, f"《{drama_name}》")
-        write_text_file(disclaimer_txtf, disclaimer_text)  # 横排文本
+        disclaimer_content = disclaimer_text.strip()
+        if disclaimer_content:
+            write_text_file(disclaimer_txtf, disclaimer_content)  # 横排文本
 
         title_color = random.choice(self.title_colors)
         fontfile_options = self._get_fontfile_options(fontfile)  # 自动处理 TTC 字体索引
@@ -554,6 +556,8 @@ class VideoEncoder:
         bottom_base_y = int(ref_h * 0.88)  # 底部起始位置（距离底部12%）
         
         # Floating watermark (dynamic brand text) or static brand text
+        has_static_brand_text = False
+
         if self.config.enable_floating_watermark:
             # 动态飘动水印（替代底部静态品牌文字）
             if material_idx is not None:
@@ -595,24 +599,29 @@ class VideoEncoder:
             try:
                 dt_brand = (
                     f"drawtext={fontfile_options}:textfile='{brand_txt_filter}':fontsize={brand_fs}:"
-                    f"fontcolor=white@0.85:box=0:"
+                    f"fontcolor=white@{self.bottom_opacity}:box=0:"
                     f"x=(w-text_w)/2:y={bottom_base_y}"  # 底部第一行，居中
                 )
                 filters.append(dt_brand)
+                has_static_brand_text = True
             except Exception:
                 pass  # Silently skip if file not found
 
         # Disclaimer text overlay (bottom area, second line) - horizontal
-        if self.config.enable_disclaimer_text:
+        if self.config.enable_disclaimer_text and disclaimer_content:
             try:
-                # 计算第二行位置（第一行下方，留出间隔）
-                line_spacing = 25  # 两行之间的间隔（像素，可调整）
-                second_line_y = bottom_base_y + brand_fs + line_spacing
+                # 只有底部存在静态品牌字时，免责声明才放到第二行
+                line_spacing = max(12, int(ref_h * 0.018))
+                disclaimer_y = bottom_base_y
+                if has_static_brand_text:
+                    disclaimer_y = bottom_base_y + brand_fs + line_spacing
+
+                disclaimer_y = min(disclaimer_y, ref_h - margin - disclaimer_fs)
                 
                 dt_disclaimer = (
                     f"drawtext={fontfile_options}:textfile='{disclaimer_txt_filter}':fontsize={disclaimer_fs}:"
-                    f"fontcolor=white@0.85:box=0:"
-                    f"x=(w-text_w)/2:y={second_line_y}"  # 底部第二行，居中
+                    f"fontcolor=white@{self.bottom_opacity}:box=0:"
+                    f"x=(w-text_w)/2:y={disclaimer_y}"  # 底部文案，居中
                 )
                 filters.append(dt_disclaimer)
             except Exception:

@@ -1,5 +1,6 @@
 """Configuration models."""
 
+import ntpath
 import os
 import re
 from datetime import datetime
@@ -447,11 +448,82 @@ class ProcessingConfig(BaseModel):
             # Return default even if it doesn't exist, let the caller handle the error
             return self.default_source_dir
 
-    def get_export_base_dir(self) -> str:
+    def _select_path_module(self, path_value: str):
+        """根据路径字符串选择合适的路径模块。"""
+        normalized = (path_value or "").strip()
+        if re.match(r"^[A-Za-z]:[\\/]", normalized) or "\\" in normalized:
+            return ntpath
+        return os.path
+
+    def _normalize_dir_path(self, path_value: str) -> str:
+        """规范化目录路径，同时保留根目录语义。"""
+        normalized = (path_value or "").strip()
+        if not normalized:
+            return ""
+
+        if re.fullmatch(r"[A-Za-z]:[\\/]*", normalized):
+            return f"{normalized[0]}:\\"
+
+        if normalized in ("/", "\\"):
+            return normalized
+
+        return normalized.rstrip("\\/")
+
+    def is_absolute_path(self, path_value: str) -> bool:
+        """判断路径是否为绝对路径，兼容 Windows 风格路径。"""
+        normalized = self._normalize_dir_path(path_value)
+        if not normalized:
+            return False
+
+        path_module = self._select_path_module(normalized)
+        return path_module.isabs(normalized)
+
+    def get_export_base_dir(self, source_dir: Optional[str] = None) -> str:
         """Get the base directory for exports based on actual source directory."""
-        actual_source = self.get_actual_source_dir()
-        # Go up one level from the source directory to get the base directory
-        return os.path.dirname(actual_source)
+        actual_source = self._normalize_dir_path(source_dir or self.get_actual_source_dir())
+        if not actual_source:
+            return ""
+
+        path_module = self._select_path_module(actual_source)
+        parent_dir = path_module.dirname(actual_source)
+        if parent_dir in ("", "."):
+            return actual_source
+        return parent_dir
+
+    def resolve_output_dir(
+        self,
+        output_dir: Optional[str] = None,
+        source_dir: Optional[str] = None,
+    ) -> str:
+        """根据源目录解析最终导出目录。"""
+        candidate = self._normalize_dir_path(output_dir or self.output_dir or "")
+        if not candidate:
+            return ""
+
+        actual_source_dir = self._normalize_dir_path(source_dir or self.get_actual_source_dir())
+        export_base = self.get_export_base_dir(actual_source_dir)
+        path_module = self._select_path_module(actual_source_dir or candidate)
+
+        if actual_source_dir:
+            candidate_norm = path_module.normcase(path_module.normpath(candidate))
+            source_norm = path_module.normcase(path_module.normpath(actual_source_dir))
+            if candidate_norm == source_norm:
+                return export_base
+
+        if export_base and not path_module.isabs(candidate):
+            target_name = path_module.basename(candidate) or "导出素材"
+            return path_module.join(export_base, target_name)
+
+        return candidate
+
+    def get_default_export_dir(self, source_dir: Optional[str] = None) -> str:
+        """返回默认导出目录。"""
+        export_base = self.get_export_base_dir(source_dir)
+        if not export_base:
+            return "导出素材"
+
+        path_module = self._select_path_module(export_base)
+        return path_module.join(export_base, "导出素材")
     
     def get_optimized_temp_dir(self) -> Optional[str]:
         """Get optimized temp directory for best performance.

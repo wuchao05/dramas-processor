@@ -599,9 +599,11 @@ class DramaProcessor:
         session = self.history_manager.create_session(self.config, command_line)
         
         # Set up exports directory
-        exports_root = self.config.output_dir
-        if not os.path.isabs(exports_root):
-            exports_root = os.path.join(root_dir, "exports")
+        exports_root = self.config.resolve_output_dir(self.config.output_dir)
+        if not exports_root:
+            exports_root = self.config.get_default_export_dir()
+        elif not self.config.is_absolute_path(exports_root):
+            exports_root = os.path.normpath(os.path.join(root_dir, exports_root))
         
         # Handle date-based directory structure
         # If we have drama_dates mapping, we'll create date-specific directories later

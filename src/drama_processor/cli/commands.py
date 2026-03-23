@@ -202,22 +202,17 @@ def process_command(
         
         exclude_list = deduplicated_list
     
-    # Adjust output directory based on actual source directory if using default out_dir
-    adjusted_out_dir = out_dir
-    if out_dir == "../导出素材" and root_dir:  # Using default out_dir and have resolved source directory
-        # Always adjust export base directory based on actual source directory used
-        config_obj = ctx.obj.get("config") or ProcessingConfig()
-        export_base = config_obj.get_export_base_dir()
-        adjusted_out_dir = os.path.join(export_base, "导出素材")
-        
-        # Export directory adjustment info removed to keep output clean
-    
     # Get base configuration from file (if available)
     base_config = ctx.obj.get("config")
     if base_config is None:
         # Fallback to default config if no file config available
         from ..config import get_default_config
         base_config = get_default_config()
+
+    adjusted_out_dir = base_config.resolve_output_dir(
+        out_dir,
+        source_dir=str(root_dir) if root_dir else None,
+    )
     
     # Create configuration by merging file config with command line overrides
     config = ProcessingConfig(
@@ -922,20 +917,10 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
             
             root_dir = actual_dir
         
-        # Adjust output directory based on actual source directory if using default out_dir
-        adjusted_out_dir = out_dir
-        if out_dir == "../导出素材" and root_dir:  # Using default out_dir and have resolved source directory
-            # Always adjust export base directory based on actual source directory used
-            export_base = config.get_export_base_dir()
-            adjusted_out_dir = os.path.join(export_base, "导出素材")
-        elif out_dir is None:
-            # Use config default if not specified, but adjust for relative paths
-            if config.output_dir and not os.path.isabs(config.output_dir):
-                # If config.output_dir is relative, make it absolute based on actual source directory
-                export_base = config.get_export_base_dir()
-                adjusted_out_dir = os.path.join(export_base, os.path.basename(config.output_dir))
-            else:
-                adjusted_out_dir = config.output_dir
+        adjusted_out_dir = config.resolve_output_dir(
+            out_dir,
+            source_dir=str(root_dir) if root_dir else None,
+        )
         
         # 应用传入的视频处理参数 - 只有在命令行参数不为None时才覆盖配置文件中的值
         if count is not None:
@@ -1327,20 +1312,10 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
             
             root_dir = actual_dir
         
-        # Adjust output directory based on actual source directory if using default out_dir
-        adjusted_out_dir = out_dir
-        if out_dir == "../导出素材" and root_dir:  # Using default out_dir and have resolved source directory
-            # Always adjust export base directory based on actual source directory used
-            export_base = config.get_export_base_dir()
-            adjusted_out_dir = os.path.join(export_base, "导出素材")
-        elif out_dir is None:
-            # Use config default if not specified, but adjust for relative paths
-            if config.output_dir and not os.path.isabs(config.output_dir):
-                # If config.output_dir is relative, make it absolute based on actual source directory
-                export_base = config.get_export_base_dir()
-                adjusted_out_dir = os.path.join(export_base, os.path.basename(config.output_dir))
-            else:
-                adjusted_out_dir = config.output_dir
+        adjusted_out_dir = config.resolve_output_dir(
+            out_dir,
+            source_dir=str(root_dir) if root_dir else None,
+        )
         
         # 应用传入的视频处理参数 - 只有在命令行参数不为None时才覆盖配置文件中的值
         if count is not None:
@@ -1554,15 +1529,8 @@ def feishu_watch(ctx, poll_interval: Optional[int], status: Optional[str],
     if not config.is_feishu_watcher_enabled() and not run_once:
         click.echo("⚠️ 当前配置中未开启 feishu_watcher.enabled，将以临时模式运行")
     
-    # Ensure output directory is absolute and aligned with实际源目录
-    export_base = config.get_export_base_dir()
-    current_out_dir = config.output_dir or "../导出素材"
-    if not os.path.isabs(current_out_dir):
-        # 统一基于导出基目录拼接
-        target_name = os.path.basename(current_out_dir.rstrip("/")) or "导出素材"
-        config.output_dir = os.path.join(export_base, target_name)
-    else:
-        config.output_dir = current_out_dir
+    # 统一由运行时根据源目录推导导出目录
+    config.output_dir = config.resolve_output_dir(config.output_dir) or config.get_default_export_dir()
     os.makedirs(config.output_dir, exist_ok=True)
     
     watcher = FeishuAutoWatcher(
