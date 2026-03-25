@@ -57,8 +57,8 @@ class FeishuWatcher:
         self.executor = ThreadPoolExecutor(max_workers=self.max_dates)
         self._wake_event = Event()
         self.active_tasks: Dict[str, "DateTask"] = {}
-        # 只有 xh-daily 用户才启用评级优先级功能
-        self.enable_rating_priority = (config.active_user == "xh-daily")
+        # 评级优先级改为跟随默认配置能力，而不是达人配置。
+        self.enable_rating_priority = bool(config.feishu.priority_rating_value)
     
     def run(self, run_once: bool = False) -> None:
         """Start the watcher."""
@@ -117,51 +117,80 @@ class FeishuWatcher:
             if item:
                 normalized.append(item)
         return normalized or None
-    
+
+    def _get_priority_rating_value(self) -> str:
+        if not self.base_config.feishu:
+            return "红标"
+        return (self.base_config.feishu.priority_rating_value or "红标").strip()
+
+    @staticmethod
+    def _normalize_rating_value(rating: Optional[str]) -> str:
+        return (rating or "").strip()
+
+    def _get_primary_rating_priority(self, rating: Optional[str]) -> int:
+        if not self.enable_rating_priority:
+            return 0
+        return 0 if self._normalize_rating_value(rating) == self._get_priority_rating_value() else 1
+
+    def _get_secondary_rating_priority(self, rating: Optional[str]) -> int:
+        if not self.enable_rating_priority:
+            return 0
+
+        normalized = self._normalize_rating_value(rating)
+        if normalized == self._get_priority_rating_value():
+            return 0
+        if normalized == "绿标":
+            return 1
+        if normalized == "黄标":
+            return 2
+        return 99
+
+    @staticmethod
+    def _get_upload_time_sort_key(upload_time: Optional[int]) -> tuple:
+        if isinstance(upload_time, int) and upload_time > 0:
+            return (0, upload_time)
+        return (1, 0)
+
     def _priority_value(self, date_str: str, full_date: Optional[str] = None) -> tuple:
-        """Compute priority for given date (lower tuple => higher priority)."""
-        today = datetime.now().date()
+        """将飞书日期转换为从早到晚的排序键。"""
         try:
-            # 优先使用 full_date（完整日期格式），避免年份猜测问题
             if full_date and "-" in full_date:
                 target = datetime.strptime(full_date, "%Y-%m-%d").date()
             elif "-" in date_str:
                 target = datetime.strptime(date_str, "%Y-%m-%d").date()
             elif "." in date_str:
-                # 简化格式，需要猜测年份（仅作为后备方案）
                 month, day = date_str.split(".", 1)
-                month_int = int(month)
-                day_int = int(day)
-                
-                # 跨年判断：先按当前年份解析，如果日期在过去超过180天（约6个月），则认为是明年
-                year = today.year
-                try:
-                    temp_date = datetime(year, month_int, day_int).date()
-                    days_diff = (today - temp_date).days
-                    # 如果日期在过去超过180天，认为是明年的日期
-                    if days_diff > 180:
-                        year = today.year + 1
-                except ValueError:
-                    # 日期无效（如2月30日），保持当前年份
-                    pass
-                
-                target = datetime(year, month_int, day_int).date()
+                target = datetime(datetime.now().year, int(month), int(day)).date()
             else:
                 raise ValueError
         except Exception:
-            return (2, 9999, date_str)
-        delta = (target - today).days
-        # 优先级排序：已过期(delta<0) > 今天(delta=0) > 未来(delta>0)
-        # 在同一组内，按 delta 升序排序（越早的日期越优先）
-        if delta < 0:
-            # 已过期的日期：group=0，按 delta 排序（前天=-2 优先于 昨天=-1，因为 -2 < -1）
-            return (0, delta, date_str)
-        elif delta == 0:
-            # 今天：group=1
-            return (1, 0, date_str)
-        else:
-            # 未来的日期：group=2，按 delta 排序（明天=1 优先于 后天=2）
-            return (2, delta, date_str)
+            return (1, 9999, 12, 31, date_str)
+        return (0, target.year, target.month, target.day, date_str)
+
+    def _build_drama_sort_key(
+        self,
+        drama_name: str,
+        info: Dict[str, str],
+        date_label: Optional[str] = None,
+        include_date: bool = True,
+    ) -> tuple:
+        rating = info.get("rating")
+        sort_key = [self._get_primary_rating_priority(rating)]
+        if include_date:
+            sort_key.append(
+                self._priority_value(
+                    date_label or info.get("date") or "未知日期",
+                    info.get("full_date"),
+                )
+            )
+        sort_key.extend(
+            [
+                self._get_secondary_rating_priority(rating),
+                self._get_upload_time_sort_key(info.get("upload_time")),
+                drama_name,
+            ]
+        )
+        return tuple(sort_key)
     
     def _start_date_task(self, date_label: str, initial_info: Dict[str, Dict[str, str]], priority: tuple) -> None:
         cancel_event = Event()
@@ -243,37 +272,30 @@ class FeishuWatcher:
     
     def _get_all_sorted_dramas(self, drama_info: Dict[str, Dict[str, str]]) -> List[tuple]:
         """将所有待剪辑的剧全局排序，返回 [(drama_name, info, date_label, priority), ...]"""
-        # 按日期分组并排序
         grouped = self._group_by_date(drama_info)
         if not grouped:
             return []
-        
-        # 过滤日期
+
         dates = self._select_dates(grouped)
         if not dates:
             return []
-        
-        # 将所有剧收集到一个列表中，附加日期和优先级信息
+
         all_sorted = []
         for date_label in dates:
-            # 获取该日期的完整日期（用于优先级计算）
             dramas_in_date = grouped[date_label]
             if not dramas_in_date:
                 continue
-            
-            first_drama_info = next(iter(dramas_in_date.values()))
-            full_date = first_drama_info.get("full_date")
-            date_priority = self._priority_value(date_label, full_date)
-            
-            # 按顺序遍历该日期内的剧（已经在 _group_by_date 中排好序了）
-            for idx, (drama_name, info) in enumerate(dramas_in_date.items()):
-                # 组合优先级：先按日期优先级，再按日期内顺序
-                combined_priority = (date_priority, idx)
+
+            for drama_name, info in dramas_in_date.items():
+                combined_priority = self._build_drama_sort_key(
+                    drama_name,
+                    info,
+                    date_label=date_label,
+                    include_date=True,
+                )
                 all_sorted.append((drama_name, info, date_label, combined_priority))
-        
-        # 按组合优先级排序
+
         all_sorted.sort(key=lambda x: x[3])
-        
         return all_sorted
     
     def _poll_once(self) -> bool:
@@ -282,7 +304,7 @@ class FeishuWatcher:
         
         工作流程：
         1. 查询飞书，获取所有待剪辑的剧
-        2. 按日期优先级（越早越优先）+ 日期内上架时间（越早越优先）全局排序
+        2. 先按优先评级挑剧，再按飞书日期从早到晚排序；同日期内继续按评级、上架时间、剧名排序
         3. 选择优先级最高的一部剧处理
         4. 处理完后，回到步骤1，重新查询和排序
         5. 如果所有剧都处理完，等待 settle_seconds 后再查一次（防止飞书数据同步延迟）
@@ -328,6 +350,7 @@ class FeishuWatcher:
                 self._notify(f"📊 检测到 {len(all_sorted)} 部待剪辑剧，按优先级处理")
                 logger.info("📋 全局优先级排序结果（前10）：")
                 for idx, (drama_name, info, date_label, _) in enumerate(all_sorted[:10], 1):
+                    rating = info.get("rating") or "未标记"
                     upload_time = info.get("upload_time") or 0
                     upload_date_str = "未知"
                     if upload_time:
@@ -336,7 +359,9 @@ class FeishuWatcher:
                             upload_date_str = upload_date.strftime("%m.%d %H:%M")
                         except Exception:
                             pass
-                    logger.info(f"  {idx}. [{date_label}] {drama_name} - 上架时间: {upload_date_str}")
+                    logger.info(
+                        f"  {idx}. [{date_label}] {drama_name} - 评级: {rating} - 上架时间: {upload_date_str}"
+                    )
             
             # 过滤掉已处理的剧
             pending = [d for d in all_sorted if d[0] not in processed]
@@ -394,91 +419,31 @@ class FeishuWatcher:
             date_label = info.get("date") or "未知日期"
             grouped.setdefault(date_label, {})[drama_name] = info
         
-        # 对每个日期组内的剧按优先级排序：
-        # 1. 如果启用评级优先级（xh-daily用户），按评级优先级：红标 > 绿标 > 黄标 > 其他
-        # 2. 今天上架的剧优先于非今天上架的剧
-        # 3. 在各自组内按上架时间升序排序（越早上架的越先处理）
-        sort_desc = self.base_config.feishu.upload_time_sort_desc if self.base_config.feishu else True
-        
-        # 定义评级优先级映射（数值越小优先级越高）
-        rating_priority_map = {
-            "红标": 0,
-            "绿标": 1,
-            "黄标": 2,
-        }
-        
-        # 获取今天的日期和当前小时（用于判断排序规则）
-        now = datetime.now()
-        today = now.date()
-        current_hour = now.hour
-        
-        # 根据当前时间决定是新剧优先还是老剧优先
-        # 0-10点：新剧（今天上架）优先
-        # 10点之后：老剧（今天之前上架）优先
-        prefer_new_dramas = current_hour < 10
-        
+        # 日期组内排序：
+        # 1. 优先评级（默认红标）优先
+        # 2. 同日期内再按绿标、黄标、其他评级排序
+        # 3. 同评级时按上架时间升序，再按剧名字典序兜底
         for date_label in grouped:
             all_dramas = []
             
             for drama_name, info in grouped[date_label].items():
-                upload_time = info.get("upload_time") or 0  # 没有上架时间的设为0
-                
-                # 判断是否今天上架
-                is_uploaded_today = False
-                if upload_time:
-                    try:
-                        upload_date = datetime.fromtimestamp(upload_time / 1000).date()
-                        is_uploaded_today = (upload_date == today)
-                    except Exception:
-                        pass
-                
-                # 只有启用评级优先级时才考虑评级，否则所有剧集评级优先级相同
-                if self.enable_rating_priority:
-                    rating = info.get("rating") or ""
-                    rating_priority = rating_priority_map.get(rating, 999)  # 未定义的评级优先级最低
-                else:
-                    rating_priority = 0  # 所有剧集评级优先级相同
-                
-                all_dramas.append((drama_name, info, rating_priority, is_uploaded_today, upload_time))
+                all_dramas.append((drama_name, info))
             
-            # 排序规则：
-            # 1. 先按评级优先级（仅 xh-daily 用户）
-            # 2. 根据当前时间决定新剧/老剧的优先级：
-            #    - 0-10点：新剧（今天上架）优先，老剧（今天之前上架）次之
-            #    - 10点之后：老剧（今天之前上架）优先，新剧（今天上架）次之
-            # 3. 新剧按上架时间升序（越早上架越优先）
-            # 4. 老剧按上架时间降序（越晚上架越优先）
-            def sort_key(x):
-                drama_name, info, rating_priority, is_uploaded_today, upload_time = x
-                
-                # 第1层：评级优先级
-                layer1 = rating_priority
-                
-                # 第2层：根据时间段决定新剧/老剧优先级
-                if prefer_new_dramas:
-                    # 0-10点：新剧优先（is_uploaded_today=True 排前面）
-                    layer2 = 0 if is_uploaded_today else 1
-                else:
-                    # 10点之后：老剧优先（is_uploaded_today=False 排前面）
-                    layer2 = 1 if is_uploaded_today else 0
-                
-                # 第3层：上架时间排序
-                # 新剧：升序（越早越优先，upload_time 越小越优先）
-                # 老剧：降序（越晚越优先，upload_time 越大越优先，用负数实现）
-                if is_uploaded_today:
-                    layer3 = upload_time  # 升序
-                else:
-                    layer3 = -upload_time  # 降序（负数使大值排前面）
-                
-                return (layer1, layer2, layer3)
-            
-            all_dramas.sort(key=sort_key)
+            all_dramas.sort(
+                key=lambda item: self._build_drama_sort_key(
+                    item[0],
+                    item[1],
+                    date_label=date_label,
+                    include_date=False,
+                )
+            )
             
             # 调试日志：打印排序后的顺序（仅在 verbose=True 时打印）
             if verbose and all_dramas:
-                time_mode = "0-10点模式（新剧优先）" if prefer_new_dramas else "10点后模式（老剧优先）"
-                logger.info(f"📊 日期 {date_label} 内的剧集排序结果（{time_mode}）：")
-                for idx, (drama_name, info, rating_priority, is_uploaded_today, upload_time) in enumerate(all_dramas, 1):
+                logger.info(f"📊 日期 {date_label} 内的剧集排序结果：")
+                for idx, (drama_name, info) in enumerate(all_dramas, 1):
+                    rating = info.get("rating") or "未标记"
+                    upload_time = info.get("upload_time") or 0
                     upload_date_str = "未知"
                     if upload_time:
                         try:
@@ -486,12 +451,13 @@ class FeishuWatcher:
                             upload_date_str = upload_date.strftime("%m.%d %H:%M")
                         except Exception:
                             pass
-                    drama_type = "新剧" if is_uploaded_today else "老剧"
-                    logger.info(f"  {idx}. {drama_name} - 上架时间: {upload_date_str}, {drama_type}")
+                    logger.info(
+                        f"  {idx}. {drama_name} - 评级: {rating} - 上架时间: {upload_date_str}"
+                    )
             
             # 重新构建该日期的字典
             sorted_dict = {}
-            for drama_name, info, _, _, _ in all_dramas:
+            for drama_name, info in all_dramas:
                 sorted_dict[drama_name] = info
             
             grouped[date_label] = sorted_dict
