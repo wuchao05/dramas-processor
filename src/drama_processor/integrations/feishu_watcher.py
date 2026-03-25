@@ -146,9 +146,9 @@ class FeishuWatcher:
         return 99
 
     @staticmethod
-    def _get_upload_time_sort_key(upload_time: Optional[int]) -> tuple:
+    def _get_upload_time_sort_key(upload_time: Optional[int], descending: bool = False) -> tuple:
         if isinstance(upload_time, int) and upload_time > 0:
-            return (0, upload_time)
+            return (0, -upload_time if descending else upload_time)
         return (1, 0)
 
     def _priority_value(self, date_str: str, full_date: Optional[str] = None) -> tuple:
@@ -175,18 +175,34 @@ class FeishuWatcher:
         include_date: bool = True,
     ) -> tuple:
         rating = info.get("rating")
-        sort_key = [self._get_primary_rating_priority(rating)]
-        if include_date:
+        is_priority_rating = self._get_primary_rating_priority(rating) == 0
+        sort_key = [0 if is_priority_rating else 1]
+        date_sort_key = self._priority_value(
+            date_label or info.get("date") or "未知日期",
+            info.get("full_date"),
+        )
+
+        if is_priority_rating:
             sort_key.append(
-                self._priority_value(
-                    date_label or info.get("date") or "未知日期",
-                    info.get("full_date"),
+                self._get_upload_time_sort_key(
+                    info.get("upload_time"),
+                    descending=True,
                 )
             )
+            if include_date:
+                sort_key.append(date_sort_key)
+            sort_key.append(drama_name)
+            return tuple(sort_key)
+
+        if include_date:
+            sort_key.append(date_sort_key)
         sort_key.extend(
             [
                 self._get_secondary_rating_priority(rating),
-                self._get_upload_time_sort_key(info.get("upload_time")),
+                self._get_upload_time_sort_key(
+                    info.get("upload_time"),
+                    descending=True,
+                ),
                 drama_name,
             ]
         )
@@ -304,11 +320,12 @@ class FeishuWatcher:
         
         工作流程：
         1. 查询飞书，获取所有待剪辑的剧
-        2. 先按优先评级挑剧，再按飞书日期从早到晚排序；同日期内继续按评级、上架时间、剧名排序
-        3. 选择优先级最高的一部剧处理
-        4. 处理完后，回到步骤1，重新查询和排序
-        5. 如果所有剧都处理完，等待 settle_seconds 后再查一次（防止飞书数据同步延迟）
-        6. 如果连续 settle_rounds 次都没有新剧，退出，依赖外层 run() 的 poll_interval 轮询
+        2. 红标剧优先；多个红标时，先按上架时间从晚到早，再按日期从早到晚
+        3. 红标处理完后，再处理非红标剧；非红标先按日期从早到晚，同日期内按绿标、黄标、上架时间、剧名排序
+        4. 选择优先级最高的一部剧处理
+        5. 处理完后，回到步骤1，重新查询和排序
+        6. 如果所有剧都处理完，等待 settle_seconds 后再查一次（防止飞书数据同步延迟）
+        7. 如果连续 settle_rounds 次都没有新剧，退出，依赖外层 run() 的 poll_interval 轮询
         
         Returns:
             bool: 是否处理了至少一部剧
@@ -420,9 +437,9 @@ class FeishuWatcher:
             grouped.setdefault(date_label, {})[drama_name] = info
         
         # 日期组内排序：
-        # 1. 优先评级（默认红标）优先
-        # 2. 同日期内再按绿标、黄标、其他评级排序
-        # 3. 同评级时按上架时间升序，再按剧名字典序兜底
+        # 1. 红标优先
+        # 2. 非红标内再按绿标、黄标、其他评级排序
+        # 3. 同评级时按上架时间从晚到早，再按剧名字典序兜底
         for date_label in grouped:
             all_dramas = []
             
