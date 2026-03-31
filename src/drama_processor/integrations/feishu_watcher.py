@@ -52,6 +52,7 @@ class FeishuWatcher:
         self.idle_exit_minutes = idle_exit_minutes
         self.state_dir = Path(state_dir or config.feishu_watcher.state_dir or "history/feishu_watcher")
         self.state_dir.mkdir(parents=True, exist_ok=True)
+        self.wake_signal_path = self.state_dir / "wake-now.signal"
         self._stop = False
         self.last_activity = time.time()
         self.executor = ThreadPoolExecutor(max_workers=self.max_dates)
@@ -80,9 +81,8 @@ class FeishuWatcher:
                         self._notify("⏹️ 长时间未检测到待剪辑剧目，自动停止轮询")
                         break
                 
-                # 等待下一次轮询，如期间有剧目完成会立即唤醒
-                if self._wake_event.wait(timeout=self.poll_interval):
-                    self._wake_event.clear()
+                # 等待下一次轮询，如期间有剧目完成或外部触发会立即唤醒
+                self._wait_for_next_poll()
         finally:
             if run_once:
                 self._wait_for_tasks()
@@ -94,6 +94,35 @@ class FeishuWatcher:
         """Request watcher stop."""
         self._stop = True
         self._cancel_all_tasks()
+
+    def _consume_external_wake_signal(self) -> bool:
+        if not self.wake_signal_path.exists():
+            return False
+
+        try:
+            self.wake_signal_path.unlink()
+        except FileNotFoundError:
+            return False
+
+        self._notify("⚡ 收到立即查询指令，马上开始下一轮飞书查询")
+        return True
+
+    def _wait_for_next_poll(self) -> None:
+        if self._consume_external_wake_signal():
+            return
+
+        deadline = time.time() + self.poll_interval
+        while not self._stop:
+            if self._wake_event.wait(timeout=1):
+                self._wake_event.clear()
+                return
+
+            if self._consume_external_wake_signal():
+                self._wake_event.clear()
+                return
+
+            if time.time() >= deadline:
+                return
     
     # Internal helpers -----------------------------------------------------
     
