@@ -64,13 +64,27 @@ class VideoEncoder:
         ref_h: int,
     ) -> int:
         """Scale text size from the 1080x1920 baseline to the target canvas."""
+        scale_ratio = self._get_reference_scale_ratio(ref_w, ref_h)
+        return max(1, int(round(base_font_size * scale_ratio)))
+
+    def _scale_motion_speed_for_reference(
+        self,
+        base_speed: int,
+        ref_w: int,
+        ref_h: int,
+    ) -> int:
+        """Scale watermark speed from the 1080x1920 baseline to the target canvas."""
+        scale_ratio = self._get_reference_scale_ratio(ref_w, ref_h)
+        return max(1, int(round(base_speed * scale_ratio)))
+
+    def _get_reference_scale_ratio(self, ref_w: int, ref_h: int) -> float:
+        """Get scale ratio relative to the 1080x1920 baseline."""
         if ref_w <= 0 or ref_h <= 0:
-            return base_font_size
+            return 1.0
 
         baseline_w = 1080
         baseline_h = 1920
-        scale_ratio = min(ref_w / baseline_w, ref_h / baseline_h)
-        return max(1, int(round(base_font_size * scale_ratio)))
+        return min(ref_w / baseline_w, ref_h / baseline_h)
 
     def _detect_best_hw_codec(self, preferred_codec: str) -> str:
         """Detect the best available hardware codec for the current environment."""
@@ -376,7 +390,11 @@ class VideoEncoder:
         
         # 随机速度
         speed_min, speed_max = self.config.floating_watermark_speed_range
-        speed = rng.randint(speed_min, speed_max)
+        speed = self._scale_motion_speed_for_reference(
+            rng.randint(speed_min, speed_max),
+            ref_w,
+            ref_h,
+        )
         
         # 全屏飘动范围
         margin = int(ref_h * 0.05)  # 5%边距
@@ -589,7 +607,11 @@ class VideoEncoder:
                 material_idx or 1, ref_w, ref_h
             )
             
-            watermark_fs = self.config.floating_watermark_font_size
+            watermark_fs = self._scale_font_size_for_reference(
+                self.config.floating_watermark_font_size,
+                ref_w,
+                ref_h,
+            )
             watermark_alpha = self.config.floating_watermark_alpha
             
             # 构建动态水印滤镜（直接使用 text 参数，不用文件）
