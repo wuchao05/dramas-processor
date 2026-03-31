@@ -179,7 +179,7 @@ class ProcessingConfig(BaseModel):
     # Material generation settings
     count: int = Field(default=1, description="Number of materials per drama")
     material_code: str = Field(
-        default="xl", description="Identifier used in exported filenames"
+        default="xh", description="Identifier used in exported filenames"
     )
     date_str: Optional[str] = Field(
         default=None, description="Date string for filenames"
@@ -392,9 +392,9 @@ class ProcessingConfig(BaseModel):
 
     def get_material_code(self) -> str:
         """Get sanitized material code for filenames."""
-        code = (self.material_code or "xl").strip()
+        code = (self.material_code or "xh").strip()
         if not code:
-            return "xl"
+            return "xh"
         return code
 
     def get_default_font(self) -> str:
