@@ -57,6 +57,21 @@ class VideoEncoder:
         self.enable_brand_text = config.enable_brand_text
         self.enable_disclaimer_text = config.enable_disclaimer_text
 
+    def _scale_font_size_for_reference(
+        self,
+        base_font_size: int,
+        ref_w: int,
+        ref_h: int,
+    ) -> int:
+        """Scale text size from the 1080x1920 baseline to the target canvas."""
+        if ref_w <= 0 or ref_h <= 0:
+            return base_font_size
+
+        baseline_w = 1080
+        baseline_h = 1920
+        scale_ratio = min(ref_w / baseline_w, ref_h / baseline_h)
+        return max(1, int(round(base_font_size * scale_ratio)))
+
     def _detect_best_hw_codec(self, preferred_codec: str) -> str:
         """Detect the best available hardware codec for the current environment."""
         import platform
@@ -538,7 +553,11 @@ class VideoEncoder:
             hook_text_raw = random.choice(self.config.hook_texts)
             # 在字符间插入空格实现字符间距效果（兼容所有 FFmpeg 版本）
             hook_text = " ".join(list(hook_text_raw))
-            hook_fs = self.config.hook_font_size
+            hook_fs = self._scale_font_size_for_reference(
+                self.config.hook_font_size,
+                ref_w,
+                ref_h,
+            )
             hook_color = self.config.hook_text_color
             hook_duration = self.config.hook_duration
 
