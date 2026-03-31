@@ -28,6 +28,104 @@ if (-not (Test-Path "requirements.txt")) {
 Write-Host "工作目录: $scriptDir" -ForegroundColor Green
 Write-Host ""
 
+function Sync-ProcessPath {
+    $pathEntries = New-Object "System.Collections.Generic.List[string]"
+
+    foreach ($source in @(
+        [Environment]::GetEnvironmentVariable("Path", "Machine"),
+        [Environment]::GetEnvironmentVariable("Path", "User"),
+        $env:Path
+    )) {
+        if (-not $source) {
+            continue
+        }
+
+        foreach ($entry in ($source -split ";")) {
+            $trimmed = $entry.Trim()
+            if ($trimmed -and -not $pathEntries.Contains($trimmed)) {
+                $pathEntries.Add($trimmed)
+            }
+        }
+    }
+
+    if ($pathEntries.Count -gt 0) {
+        $env:Path = $pathEntries -join ";"
+    }
+}
+
+function Get-UsablePythonInfo {
+    $result = [PSCustomObject]@{
+        DetectedPath        = $null
+        PlaceholderDetected = $false
+        Path                = $null
+        Version             = $null
+        Source              = $null
+    }
+
+    $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+    if ($pythonCmd) {
+        $result.DetectedPath = $pythonCmd.Source
+
+        if ($pythonCmd.Source -notlike "*WindowsApps*") {
+            try {
+                $pythonVersion = (& $pythonCmd.Source --version 2>&1 | Out-String).Trim()
+                if ($LASTEXITCODE -eq 0 -and $pythonVersion) {
+                    $result.Path = $pythonCmd.Source
+                    $result.Version = $pythonVersion
+                    $result.Source = "PATH"
+                    return $result
+                }
+            } catch {
+            }
+        } else {
+            $result.PlaceholderDetected = $true
+        }
+    }
+
+    $pyLauncher = Get-Command py -ErrorAction SilentlyContinue
+    if ($pyLauncher) {
+        try {
+            $pythonExe = (& py -3 -c "import sys; print(sys.executable)" 2>&1 | Out-String).Trim()
+            $pythonVersion = (& py -3 --version 2>&1 | Out-String).Trim()
+            if ($LASTEXITCODE -eq 0 -and $pythonExe -and (Test-Path $pythonExe) -and $pythonVersion) {
+                $result.Path = $pythonExe
+                $result.Version = $pythonVersion
+                $result.Source = "py launcher"
+                return $result
+            }
+        } catch {
+        }
+    }
+
+    $candidatePaths = @(
+        "$env:LocalAppData\Programs\Python\Python312\python.exe",
+        "$env:LocalAppData\Programs\Python\Python311\python.exe",
+        "$env:ProgramFiles\Python312\python.exe",
+        "$env:ProgramFiles\Python311\python.exe",
+        "${env:ProgramFiles(x86)}\Python312\python.exe",
+        "${env:ProgramFiles(x86)}\Python311\python.exe"
+    ) | Where-Object { $_ }
+
+    foreach ($candidate in $candidatePaths) {
+        if (-not (Test-Path $candidate)) {
+            continue
+        }
+
+        try {
+            $pythonVersion = (& $candidate --version 2>&1 | Out-String).Trim()
+            if ($LASTEXITCODE -eq 0 -and $pythonVersion) {
+                $result.Path = $candidate
+                $result.Version = $pythonVersion
+                $result.Source = "install dir"
+                return $result
+            }
+        } catch {
+        }
+    }
+
+    return $result
+}
+
 # 检查 winget
 Write-Host "[0/4] 检查 winget..." -ForegroundColor Yellow
 $winget = Get-Command winget -ErrorAction SilentlyContinue
@@ -45,30 +143,29 @@ Write-Host ""
 Write-Host "[1/4] 安装 Python..." -ForegroundColor Yellow
 
 # 检测 Python 是否可用
-$pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+Sync-ProcessPath
+$pythonInfo = Get-UsablePythonInfo
+$pythonExe = $null
 $needInstall = $false
 
-if ($pythonCmd) {
-    $pythonPath = $pythonCmd.Source
-    Write-Host "  [DEBUG] 检测到 Python: $pythonPath" -ForegroundColor Gray
-    
-    # 检查是否是 Windows Store 占位符
-    if ($pythonPath -like "*WindowsApps*") {
+if ($pythonInfo.DetectedPath) {
+    Write-Host "  [DEBUG] 检测到 Python: $($pythonInfo.DetectedPath)" -ForegroundColor Gray
+}
+
+if ($pythonInfo.Path) {
+    $pythonExe = $pythonInfo.Path
+    if ($pythonInfo.Source -ne "PATH") {
+        Write-Host "  [DEBUG] 改用可用 Python: $pythonExe ($($pythonInfo.Source))" -ForegroundColor Gray
+    }
+    Write-Host "  ✅ Python 已安装: $($pythonInfo.Version)" -ForegroundColor Green
+} else {
+    if ($pythonInfo.PlaceholderDetected) {
         Write-Host "  ⚠️  检测到 Windows Store Python 占位符（不完整）" -ForegroundColor Yellow
         Write-Host "  将安装完整版 Python..." -ForegroundColor Cyan
-        $needInstall = $true
     } else {
-        # 检查 Python 是否真正可用
-        $pythonVersion = python --version 2>&1 | Out-String
-        if ($pythonVersion -and $pythonVersion.Trim()) {
-            Write-Host "  ✅ Python 已安装: $($pythonVersion.Trim())" -ForegroundColor Green
-        } else {
-            Write-Host "  ⚠️  Python 命令存在但不可用" -ForegroundColor Yellow
-            $needInstall = $true
-        }
+        Write-Host "  未检测到可用的 Python" -ForegroundColor Yellow
     }
-} else {
-    Write-Host "  未检测到 Python" -ForegroundColor Yellow
+
     $needInstall = $true
 }
 
@@ -78,24 +175,30 @@ if ($needInstall) {
     Write-Host "  这可能需要几分钟，请耐心等待..." -ForegroundColor Gray
     
     winget install Python.Python.3.12 --accept-source-agreements --accept-package-agreements --silent
-    
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host "  ✅ Python 安装完成" -ForegroundColor Green
-        Write-Host ""
-        Write-Host "  ⚠️  重要：请按以下步骤操作" -ForegroundColor Yellow
-        Write-Host "  1. 关闭此窗口" -ForegroundColor Cyan
-        Write-Host "  2. 重新双击 run-install.bat" -ForegroundColor Cyan
-        Write-Host "  3. Python 将在新的环境中可用" -ForegroundColor Cyan
-        Write-Host ""
-        pause
-        exit 0
-    } else {
+    $wingetExitCode = $LASTEXITCODE
+
+    Sync-ProcessPath
+    $pythonInfo = Get-UsablePythonInfo
+
+    if ($pythonInfo.Path) {
+        $pythonExe = $pythonInfo.Path
+        Write-Host "  ✅ Python 已就绪: $($pythonInfo.Version)" -ForegroundColor Green
+        if ($pythonInfo.Source -ne "PATH") {
+            Write-Host "  [DEBUG] 当前会话改用: $pythonExe ($($pythonInfo.Source))" -ForegroundColor Gray
+        }
+    } elseif ($wingetExitCode -ne 0) {
         Write-Host "  ❌ Python 安装失败" -ForegroundColor Red
         Write-Host ""
         Write-Host "  请手动安装 Python:" -ForegroundColor Yellow
         Write-Host "  1. 访问 https://www.python.org/downloads/" -ForegroundColor Cyan
         Write-Host "  2. 下载 Python 3.12" -ForegroundColor Cyan
         Write-Host "  3. 安装时勾选 'Add Python to PATH'" -ForegroundColor Cyan
+        pause
+        exit 1
+    } else {
+        Write-Host "  ❌ Python 安装后仍未找到可执行文件" -ForegroundColor Red
+        Write-Host ""
+        Write-Host "  请先关闭客户端后重新打开，再重试自动安装。" -ForegroundColor Yellow
         pause
         exit 1
     }
@@ -133,11 +236,19 @@ if (Test-Path "venv\Scripts\activate.ps1") {
     # 检查 Python 可执行性
     Write-Host "  [DEBUG] 测试 Python 命令..." -ForegroundColor Gray
     try {
-        $pythonPath = (Get-Command python -ErrorAction Stop).Source
-        Write-Host "  [DEBUG] Python 路径: $pythonPath" -ForegroundColor Gray
-        
-        $pythonVersion = python --version 2>&1 | Out-String
-        Write-Host "  [DEBUG] Python 版本: $($pythonVersion.Trim())" -ForegroundColor Gray
+        if (-not $pythonExe) {
+            Sync-ProcessPath
+            $pythonInfo = Get-UsablePythonInfo
+            $pythonExe = $pythonInfo.Path
+        }
+        if (-not $pythonExe) {
+            throw "未找到可用的 Python 可执行文件"
+        }
+
+        Write-Host "  [DEBUG] Python 路径: $pythonExe" -ForegroundColor Gray
+
+        $pythonVersion = (& $pythonExe --version 2>&1 | Out-String).Trim()
+        Write-Host "  [DEBUG] Python 版本: $pythonVersion" -ForegroundColor Gray
     } catch {
         Write-Host "  ❌ Python 命令不可用！" -ForegroundColor Red
         Write-Host "  请确保 Python 已安装并添加到 PATH" -ForegroundColor Yellow
@@ -147,7 +258,7 @@ if (Test-Path "venv\Scripts\activate.ps1") {
     
     # 检查 venv 模块
     Write-Host "  [DEBUG] 检查 venv 模块..." -ForegroundColor Gray
-    $venvCheck = python -m venv --help 2>&1 | Out-String
+    $venvCheck = (& $pythonExe -m venv --help 2>&1 | Out-String)
     if ($LASTEXITCODE -ne 0) {
         Write-Host "  ❌ venv 模块不可用！" -ForegroundColor Red
         Write-Host "  输出: $venvCheck" -ForegroundColor Yellow
@@ -160,7 +271,7 @@ if (Test-Path "venv\Scripts\activate.ps1") {
     
     # 创建虚拟环境
     Write-Host "  [DEBUG] 正在创建虚拟环境..." -ForegroundColor Gray
-    $venvOutput = python -m venv venv 2>&1 | Out-String
+    $venvOutput = (& $pythonExe -m venv venv 2>&1 | Out-String)
     $venvExitCode = $LASTEXITCODE
     
     Write-Host "  [DEBUG] Exit code: $venvExitCode" -ForegroundColor Gray
