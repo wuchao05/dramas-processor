@@ -4,7 +4,7 @@ import ntpath
 import os
 import re
 from datetime import datetime
-from typing import List, Optional, Union, Tuple
+from typing import Dict, List, Optional, Union, Tuple
 from pydantic import BaseModel, Field, validator
 from .feishu import FeishuConfig
 
@@ -84,6 +84,29 @@ class BrandTextMapping(BaseModel):
         return self.default_text
 
 
+class DisplayTextOverride(BaseModel):
+    """Override text configuration for brand/douyin display position."""
+
+    text: Optional[str] = Field(
+        default=None,
+        description="Override text content; when set, replaces default brand/douyin text",
+    )
+    font_size: Optional[int] = Field(
+        default=None,
+        ge=1,
+        description="Override text font size; falls back to brand settings when empty",
+    )
+    color: Optional[str] = Field(
+        default=None,
+        description="Override text color; falls back to default color when empty",
+    )
+    start_minute: float = Field(
+        default=0.0,
+        ge=0.0,
+        description="Start showing from the Nth minute of the material; 0 means always show",
+    )
+
+
 class VideoConfig(BaseModel):
     """Video encoding configuration."""
 
@@ -91,15 +114,15 @@ class VideoConfig(BaseModel):
         default="auto", description="Hardware video codec (auto-detect if 'auto')"
     )
     sw_codec: str = Field(default="libx264", description="Software video codec")
-    bitrate: str = Field(default="9000k", description="Video bitrate")
-    max_rate: str = Field(default="9000k", description="Maximum bitrate")
-    buffer_size: str = Field(default="14000k", description="Buffer size")
-    soft_crf: str = Field(default="22", description="Software encoding CRF")
+    bitrate: str = Field(default="1104k", description="Video bitrate")
+    max_rate: str = Field(default="1104k", description="Maximum bitrate")
+    buffer_size: str = Field(default="2208k", description="Buffer size")
+    soft_crf: str = Field(default="24", description="Software encoding CRF")
     preset: str = Field(default="veryfast", description="Encoding preset")
     profile: str = Field(default="high", description="H.264 profile")
-    level: str = Field(default="4.2", description="H.264 level")
-    hw_level: str = Field(default="4.2", description="Hardware encoding level")
-    sw_level: str = Field(default="4.1", description="Software encoding level")
+    level: str = Field(default="3.1", description="H.264 level")
+    hw_level: str = Field(default="3.1", description="Hardware encoding level")
+    sw_level: str = Field(default="3.1", description="Software encoding level")
     tag: str = Field(default="avc1", description="Video tag")
     pixel_format: str = Field(default="yuv420p", description="Pixel format")
     faststart: bool = Field(
@@ -149,11 +172,6 @@ class FeishuWatcherConfig(BaseModel):
 
 class ProcessingConfig(BaseModel):
     """Main processing configuration."""
-
-    # 当前激活的用户配置
-    active_user: Optional[str] = Field(
-        default=None, description="当前激活的用户配置名称（如 xh, xl, xx）"
-    )
 
     # Basic settings
     target_fps: int = Field(default=60, description="Target FPS")
@@ -218,7 +236,7 @@ class ProcessingConfig(BaseModel):
         description="Title color options",
     )
 
-    # Hook text settings (opening text that appears for first 3 seconds)
+    # Hook text settings (opening text that appears for first 2 seconds)
     enable_hook_text: bool = Field(
         default=False, description="Enable hook text overlay at the beginning"
     )
@@ -230,7 +248,7 @@ class ProcessingConfig(BaseModel):
         default=110, description="Hook text font size (100-140px recommended)"
     )
     hook_duration: float = Field(
-        default=3.0, description="Hook text display duration in seconds"
+        default=2.0, description="Hook text display duration in seconds"
     )
     hook_text_color: str = Field(
         default="#FFE600",
@@ -288,6 +306,10 @@ class ProcessingConfig(BaseModel):
     )
     brand_text_mapping: Optional["BrandTextMapping"] = Field(
         default=None, description="Advanced brand text mapping configuration"
+    )
+    display_text_override: Optional["DisplayTextOverride"] = Field(
+        default=None,
+        description="Override text for the brand/douyin display position",
     )
 
     # Floating watermark settings (dynamic brand text watermark)
@@ -350,6 +372,9 @@ class ProcessingConfig(BaseModel):
         description="飞书群通知webhook地址",
     )
     enable_feishu_notification: bool = Field(default=True, description="启用飞书群通知")
+    highlight_start_points_by_drama: Optional[Dict[str, str]] = Field(
+        default=None, description="剧名到高光起始点文本的映射"
+    )
 
     def is_feishu_features_enabled(self) -> bool:
         """Check if Feishu features are enabled."""

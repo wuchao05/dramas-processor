@@ -678,9 +678,18 @@ class FeishuWatcher:
         
         processor = DramaProcessor(config_copy, status_callback=status_update_callback)
         drama_dates = {drama_name: info.get("date", date_label)}
+        drama_highlight_texts = (
+            {drama_name: info["highlight_start_points"]}
+            if info.get("highlight_start_points")
+            else None
+        )
         
         self._notify(f"🎬 开始处理 {date_label} - {drama_name}")
-        total_done, total_planned = processor.process_all_dramas(str(root_path), drama_dates)
+        total_done, total_planned = processor.process_all_dramas(
+            str(root_path),
+            drama_dates,
+            drama_highlight_texts,
+        )
         
         # 情况1：未找到本地剧集目录（total_planned == 0）
         if total_planned == 0:

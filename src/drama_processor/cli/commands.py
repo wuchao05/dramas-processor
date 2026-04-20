@@ -1048,9 +1048,18 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
                 # 为该剧目创建独立的processor
                 processor = DramaProcessor(config_copy, status_callback=status_update_callback)
                 drama_dates = {drama_name: info["date"]}
+                drama_highlight_texts = (
+                    {drama_name: info["highlight_start_points"]}
+                    if info.get("highlight_start_points")
+                    else None
+                )
                 
                 # 处理该剧目
-                done, planned = processor.process_all_dramas(str(root_dir), drama_dates)
+                done, planned = processor.process_all_dramas(
+                    str(root_dir),
+                    drama_dates,
+                    drama_highlight_texts,
+                )
                 total_done += done
                 total_planned += planned
         else:
@@ -1059,10 +1068,19 @@ def feishu_run(ctx, status: Optional[str], root_dir: Optional[Path],
             
             # 构建剧目日期映射用于传递给处理器
             drama_dates = {name: info["date"] for name, info in drama_info.items()}
+            drama_highlight_texts = {
+                name: info["highlight_start_points"]
+                for name, info in drama_info.items()
+                if info.get("highlight_start_points")
+            }
             
             # 开始处理
             click.echo(f"\n🎬 开始自动剪辑从飞书获取的剧目...")
-            total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
+            total_done, total_planned = processor.process_all_dramas(
+                str(root_dir),
+                drama_dates,
+                drama_highlight_texts,
+            )
         
         # 处理完成后，保存已处理的剧集记录（仅在启用日期去重时）
         if skip_processed and not force_reprocess and drama_info:
@@ -1443,9 +1461,18 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
                 # 为该剧目创建独立的processor
                 processor = DramaProcessor(config_copy, status_callback=status_update_callback)
                 drama_dates = {drama_name: info["date"]}
+                drama_highlight_texts = (
+                    {drama_name: info["highlight_start_points"]}
+                    if info.get("highlight_start_points")
+                    else None
+                )
                 
                 # 处理该剧目
-                done, planned = processor.process_all_dramas(str(root_dir), drama_dates)
+                done, planned = processor.process_all_dramas(
+                    str(root_dir),
+                    drama_dates,
+                    drama_highlight_texts,
+                )
                 total_done += done
                 total_planned += planned
         else:
@@ -1454,10 +1481,19 @@ def feishu_select(ctx, status: Optional[str], root_dir: Optional[Path],
             
             # 构建剧目日期映射用于传递给处理器
             drama_dates = {name: info["date"] for name, info in drama_info.items()}
+            drama_highlight_texts = {
+                name: info["highlight_start_points"]
+                for name, info in drama_info.items()
+                if info.get("highlight_start_points")
+            }
             
             # 开始处理
             click.echo(f"\n🎬 开始剪辑选择的剧目...")
-            total_done, total_planned = processor.process_all_dramas(str(root_dir), drama_dates)
+            total_done, total_planned = processor.process_all_dramas(
+                str(root_dir),
+                drama_dates,
+                drama_highlight_texts,
+            )
         
         # 处理完成后，保存已处理的剧集记录（仅在启用日期去重时）
         if skip_processed and not force_reprocess and drama_info:

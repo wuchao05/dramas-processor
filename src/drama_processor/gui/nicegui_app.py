@@ -1177,38 +1177,19 @@ class DramaProcessorGUI:
         original_stderr = sys.stderr
         
         try:
-            # 加载配置
-            config = self._load_config(config_path)
-            self._apply_overrides(config, overrides)
-
-            # 运行时资源路径修正（解决 onefile exe 下相对路径不可用问题）
-            # - tail_file 等配置通常是相对路径（如 assets/tail.mp4）
-            # - PyInstaller onefile 下需要通过 sys._MEIPASS / exe 目录定位
-            if config.tail_file and not os.path.isabs(config.tail_file):
-                resolved_tail = resolve_asset_path(config.tail_file)
-                if resolved_tail:
-                    config.tail_file = resolved_tail
-            
             processing_root, single_drama_name, base_root = self._resolve_processing_root(root_dir)
-            
-            # 设置导出路径并通知UI
-            exports_root = config.output_dir if os.path.isabs(config.output_dir) else os.path.join(root_dir, "exports")
-            if config.date_str:
-                exports_root = os.path.join(exports_root, f"{config.date_str}导出")
-            self.export_path_display = exports_root
-            self.log_queue.put(("export_path", exports_root))
-            
-            # 不在这里固化 include（否则处理中追加的剧目无法被纳入）
-            # include 将在下面“按队列逐个处理”时动态设置
-            self._adjust_config_for_gui(config, base_root, [])
-            
-            # 配置日志
+
+            # 启动时先按当前设置初始化日志，后续每部剧开始前会再次刷新配置
+            config = self._build_runtime_processing_config(
+                root_dir,
+                base_root,
+                config_path,
+                overrides,
+            )
+            active_overrides = overrides
             self._configure_logging(config.verbose)
             sys.stdout = StreamRedirector(self.log_queue, "stdout")
             sys.stderr = StreamRedirector(self.log_queue, "stderr")
-            
-            # 创建带回调的 Processor
-            processor = DramaProcessor(config, cancel_event=self.cancel_event)
             
             # 注册状态回调
             def on_drama_start(drama_name: str):
@@ -1247,12 +1228,35 @@ class DramaProcessorGUI:
                     )
                     continue
 
-                # 每次只处理一个剧目，确保处理中追加能在下一轮被纳入
-                config.include = [next_name]
-                config.exclude = None
-                config.no_interactive = True
-                config.full = True
+                try:
+                    latest_overrides = self._collect_overrides()
+                    config = self._build_runtime_processing_config(
+                        root_dir,
+                        base_root,
+                        config_path,
+                        latest_overrides,
+                        drama_name=next_name,
+                    )
+                    active_overrides = latest_overrides
+                    refresh_message = f"🔄 已刷新配置，将最新设置应用到《{next_name}》"
+                except Exception as refresh_exc:
+                    self.log_queue.put(
+                        ("log", f"⚠️ 最新配置读取失败，继续沿用上一份有效配置：{refresh_exc}")
+                    )
+                    config = config.copy(deep=True)
+                    self._adjust_config_for_gui(config, base_root, [])
+                    config.include = [next_name]
+                    config.exclude = None
+                    config.no_interactive = True
+                    config.full = True
+                    exports_root = self._resolve_exports_root_for_display(root_dir, config)
+                    self.export_path_display = exports_root
+                    self.log_queue.put(("export_path", exports_root))
+                    refresh_message = f"♻️ 《{next_name}》继续沿用上一份有效配置"
+                self._configure_logging(config.verbose)
+                self.log_queue.put(("log", refresh_message))
 
+                processor = DramaProcessor(config, cancel_event=self.cancel_event)
                 made, _ = processor.process_all_dramas(
                     processing_root,
                     on_drama_start=on_drama_start,
@@ -1313,6 +1317,48 @@ class DramaProcessorGUI:
                 else:
                     value = FeishuConfig(**value)
             setattr(config, key, value)
+
+    def _resolve_exports_root_for_display(self, root_dir: str, config: ProcessingConfig) -> str:
+        """计算当前配置对应的导出目录展示路径。"""
+        exports_root = (
+            config.output_dir
+            if os.path.isabs(config.output_dir)
+            else os.path.join(root_dir, "exports")
+        )
+        if config.date_str:
+            exports_root = os.path.join(exports_root, f"{config.date_str}导出")
+        return exports_root
+
+    def _build_runtime_processing_config(
+        self,
+        root_dir: str,
+        base_root: str,
+        config_path: Optional[str],
+        overrides: Dict,
+        drama_name: Optional[str] = None,
+    ) -> ProcessingConfig:
+        """构建当前时刻最新的处理配置快照。"""
+        config = self._load_config(config_path)
+        self._apply_overrides(config, overrides)
+
+        if config.tail_file and not os.path.isabs(config.tail_file):
+            resolved_tail = resolve_asset_path(config.tail_file)
+            if resolved_tail:
+                config.tail_file = resolved_tail
+
+        self._adjust_config_for_gui(config, base_root, [])
+
+        if drama_name:
+            config.include = [drama_name]
+            config.exclude = None
+            config.no_interactive = True
+            config.full = True
+
+        exports_root = self._resolve_exports_root_for_display(root_dir, config)
+        self.export_path_display = exports_root
+        self.log_queue.put(("export_path", exports_root))
+
+        return config
     
     def _resolve_processing_root(self, root_dir: str) -> Tuple[str, Optional[str], str]:
         """解析处理根目录"""
@@ -1767,4 +1813,3 @@ def run_gui(native: Optional[bool] = None):
 
 if __name__ in {"__main__", "__mp_main__"}:
     run_gui()
-

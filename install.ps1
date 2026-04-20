@@ -346,28 +346,16 @@ Write-Host "  📁 准备素材目录" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
 
-# 获取当前激活的用户配置（从 default.yaml 读取）
+# 从默认配置读取素材目录
 $defaultConfigPath = "configs\default.yaml"
-$activeUser = "xh"  # 默认值
-
-if (Test-Path $defaultConfigPath) {
-    $defaultConfigContent = Get-Content $defaultConfigPath -Raw -Encoding UTF8
-    if ($defaultConfigContent -match 'active_user:\s*(\S+)') {
-        $activeUser = $matches[1]
-        Write-Host "检测到激活用户：$activeUser" -ForegroundColor Gray
-    }
-}
-
-# 读取用户配置文件中的路径
-$userConfigPath = "configs\users\${activeUser}.yaml"
 $sourcePath = "D:\短剧剪辑\源素材视频"  # 默认值
 $outputPath = "D:\短剧剪辑\输出素材"    # 默认值
 $tempPath = $null                      # 可选
 $tailCachePath = $null                 # 可选
 
-if (Test-Path $userConfigPath) {
+if (Test-Path $defaultConfigPath) {
     try {
-        $configContent = Get-Content $userConfigPath -Raw -Encoding UTF8
+        $configContent = Get-Content $defaultConfigPath -Raw -Encoding UTF8
         
         # 读取 default_source_dir
         if ($configContent -match 'default_source_dir:\s*"([^"]*)"') {
@@ -416,7 +404,7 @@ if (Test-Path $userConfigPath) {
         Write-Host "  ⚠️ 配置读取失败，使用默认路径" -ForegroundColor Yellow
     }
 } else {
-    Write-Host "  ⚠️ 未找到用户配置文件，使用默认路径" -ForegroundColor Yellow
+    Write-Host "  ⚠️ 未找到 default.yaml，使用默认路径" -ForegroundColor Yellow
 }
 
 Write-Host ""
@@ -504,11 +492,11 @@ Write-Host "📚 下一步：" -ForegroundColor Yellow
 Write-Host "  1. 将源素材放到：$sourcePath" -ForegroundColor Cyan
 Write-Host "     （每部剧一个文件夹，文件夹名=剧名）" -ForegroundColor Gray
 Write-Host ""
-Write-Host "  2. 双击运行：start-feishu-watch.bat" -ForegroundColor Cyan
-Write-Host "     启动飞书监控，自动剪辑飞书表格中的剧集" -ForegroundColor Gray
+Write-Host "  2. 回到 Electron 客户端的“素材剪辑”页面" -ForegroundColor Cyan
+Write-Host "     在客户端内继续配置并执行自动剪辑或手动剪辑" -ForegroundColor Gray
 Write-Host ""
 Write-Host "  3. 剪辑完成后，素材会按日期存放：" -ForegroundColor Cyan
 Write-Host "     $sourcePath\MM-DD\剧名\" -ForegroundColor White
-Write-Host "     文件名格式：月-日-剧名-${activeUser}-集数.mp4" -ForegroundColor Gray
-Write-Host "     （例如：$sourcePath\01-20\霸总的隐婚娇妻\1-20-霸总的隐婚娇妻-${activeUser}-01.mp4）" -ForegroundColor Gray
+Write-Host "     文件名格式：月-日-剧名-素材标识-集数.mp4" -ForegroundColor Gray
+Write-Host "     （例如：$sourcePath\01-20\霸总的隐婚娇妻\1-20-霸总的隐婚娇妻-xl-01.mp4）" -ForegroundColor Gray
 Write-Host ""

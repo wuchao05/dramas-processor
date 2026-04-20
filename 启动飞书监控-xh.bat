@@ -4,7 +4,7 @@ title 短剧剪辑工具 - 飞书自动监控（XH账号）
 
 echo ========================================
 echo    短剧剪辑工具 - 飞书自动监控
-echo    账号：XH（小红）
+echo    使用默认配置
 echo ========================================
 echo.
 
@@ -27,7 +27,7 @@ echo - 按 Ctrl+C 可以安全停止
 echo - 窗口会显示实时处理进度
 echo.
 
-python -m drama_processor feishu watch --config configs/users/xh-daily.yaml
+python -m drama_processor feishu watch --config configs/default.yaml
 
 echo.
 echo ========================================
