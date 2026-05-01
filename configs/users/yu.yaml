@@ -1,12 +1,13 @@
 # 素材生成设置
 count: 5 # 每部剧生成素材数量
-material_code: 'xy' # 素材文件名标识
+material_code: 'yu' # 素材文件名标识
 
 # 开启色彩扰动，降低素材同质化
 fast_mode: false
 
 # 目录设置
-default_source_dir: "D:\\短剧剪辑\\源素材视频" # Windows 路径
+default_source_dir: "E:\\短剧剪辑\\源素材视频" # Windows 路径
+output_dir: "E:\\短剧剪辑\\输出素材" # 输出目录
 # 临时文件自动使用C盘（性能最优，无需配置）
 
 # 多素材文案配置
@@ -23,12 +24,13 @@ brand_text_mapping:
 # 飞书功能配置
 enable_feishu_features: true
 feishu:
-  table_id: 'tblNBKL6tAmt7IBO' # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
+  table_id: 'tblg78rCpr7h3IRD' # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
 
 # 文案显示配置
 enable_hook_text: false
 enable_brand_text: true # 启用品牌文字（底部第一行）
 enable_disclaimer_text: true # 启用免责声明（底部第二行）
+
 # 源视频自动清理设置
 auto_delete_source_after_completion: true # 剪辑完成后自动删除源视频目录（默认关闭）
 

@@ -111,11 +111,20 @@ def cli(
     if config is None:
         default_config_paths = [
             Path("configs/lite.yaml"),
+            Path("configs/pro.yaml"),
             Path("configs/default.yaml"),
+            Path("config/lite.yaml"),
+            Path("config/pro.yaml"),
             Path("config/default.yaml"),
+            Path("lite.yaml"),
+            Path("pro.yaml"),
             Path("default.yaml"),
             Path.cwd() / "configs" / "lite.yaml",
+            Path.cwd() / "configs" / "pro.yaml",
             Path.cwd() / "configs" / "default.yaml",
+            Path.cwd() / "config" / "lite.yaml",
+            Path.cwd() / "config" / "pro.yaml",
+            Path.cwd() / "config" / "default.yaml",
         ]
         for config_path in default_config_paths:
             if config_path.exists():

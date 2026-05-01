@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# 在 WSL/Linux 下自动构建 Pro 发布包（全功能，Feishu 需 license 解锁）
+# 在 WSL/Linux 下自动构建 Pro 发布包（本地剪辑版，默认不启用 Feishu/license）
 #
 # 发布包包含：
 # - dist/drama-processor 生成的二进制
 # - assets/ 资源目录（不做裁剪）
-# - configs/pro.yaml（默认不包含 configs/users，避免泄露飞书密钥）
+# - configs/pro.yaml（默认不包含 configs/users，避免泄露敏感配置）
 #
 # 用法：
 #   bash scripts/make_pro_release_wsl.sh
@@ -35,9 +35,8 @@ usage() {
        pip install -r requirements.txt
        pip install -e .
        pip install pyinstaller
-  3. Pro 版本如需使用 Feishu，请先用 scripts/license_tool.py 生成密钥并签发 license.json，
-     再把公钥写入 DEFAULT_PUBLIC_KEY_PEM 后重新打包。
-  4. 默认不拷贝 configs/users 目录（里面可能有飞书密钥），如需带入请手动复制。
+  3. 当前 Pro 包按本地剪辑版发布：不需要 license，也不读取机器指纹。
+  4. 默认不拷贝 configs/users 目录（里面可能有敏感配置），如需带入请手动复制。
 EOF
 }
 
@@ -123,7 +122,7 @@ fi
 
 if [[ "${SKIP_BUILD}" -eq 0 ]]; then
   echo "[INFO] 开始构建 Pro 二进制..."
-  (cd "${REPO_ROOT}" && "${PYTHON}" -m PyInstaller -F -n "${NAME}" "scripts/cli_entry.py" --paths "${REPO_ROOT}/src")
+  (cd "${REPO_ROOT}" && "${PYTHON}" -m PyInstaller -F -n "${NAME}" "src/drama_processor/cli/lite_main.py" --paths "${REPO_ROOT}/src")
 else
   echo "[INFO] 跳过构建，直接打包..."
 fi
@@ -168,5 +167,5 @@ fi
 
 echo ""
 echo "下一步："
-echo "1. 本地运行：./${NAME} process 或 ./${NAME} --license license.json feishu list"
-echo "2. 如需发给别人，请确认 configs/pro.yaml 不含 secrets，再手动补充 license.json"
+echo "1. 本地运行：./${NAME} process /path/to/dramas"
+echo "2. 如需发给别人，请确认 configs/pro.yaml 中的默认目录、水印和输出路径符合预期"

@@ -1,0 +1,134 @@
+---
+# Drama Processor Pro 发布配置
+# 目标：正式本地剪辑包，不启用飞书、不要求 license 或机器指纹。
+
+active_user: null
+
+# Basic processing settings
+target_fps: 60
+smart_fps: true
+fast_mode: true
+filter_threads: 2
+verbose: false
+
+# Material generation settings
+count: 10
+material_code: "pro"
+date_str: null
+min_duration: 480.0
+max_duration: 900.0
+exclude_last_episodes: 8
+
+# Text overlay settings
+title_font_size: 36
+brand_font_size: 28
+disclaimer_font_size: 28
+disclaimer_text: "剧情纯属虚构 请勿模仿"
+enable_brand_text: true
+enable_disclaimer_text: false
+brand_text: "热门短剧"
+title_opacity: 0.9
+bottom_opacity: 0.85
+
+title_colors:
+  - "#00CED1"
+  - "#20B2AA"
+  - "#48D1CC"
+  - "#40E0D0"
+  - "#00BFFF"
+  - "#1E90FF"
+  - "#32CD32"
+  - "#FFA500"
+  - "#FFD700"
+  - "#FF69B4"
+  - "#FF1493"
+  - "#FFFF00"
+  - "#FF6347"
+  - "#FF0000"
+
+# Hook text settings
+enable_hook_text: false
+hook_texts:
+  - "完结撒花"
+  - "独家首发"
+  - "追剧必看"
+  - "热播推荐"
+  - "火爆全网"
+hook_font_size: 180
+hook_duration: 3.0
+hook_text_color: "#FFE600"
+
+# Processing behavior
+random_start: true
+seed: null
+use_hardware: true
+keep_temp: false
+jobs: 1
+
+# Canvas/Resolution settings
+canvas: null
+reference_resolution: null
+
+# Directory settings
+default_source_dir: "D:\\短剧剪辑\\源素材视频"
+backup_source_dir: "E:\\短剧剪辑\\源素材视频"
+temp_dir: null
+output_dir: "D:\\短剧剪辑\\输出素材"
+tail_cache_dir: null
+tail_file: "assets\\tail.mp4"
+refresh_tail_cache: false
+font_file: null
+
+# Floating watermark settings
+enable_floating_watermark: false
+floating_watermark_font_size: 32
+floating_watermark_alpha: 0.6
+floating_watermark_speed_range: [80, 150]
+
+# Selection settings
+include: null
+exclude: null
+full: false
+no_interactive: false
+
+# Video encoding settings
+video:
+  hw_codec: "auto"
+  sw_codec: "libx264"
+  bitrate: "6500k"
+  max_rate: "6500k"
+  buffer_size: "8000k"
+  soft_crf: "24"
+  preset: "veryfast"
+  profile: "high"
+  level: "4.2"
+  hw_level: "4.2"
+  sw_level: "4.1"
+  tag: "avc1"
+  pixel_format: "yuv420p"
+  faststart: false
+
+audio:
+  codec: "aac"
+  bitrate: "128k"
+  sample_rate: 48000
+
+# Feishu disabled for this formal Pro package.
+enable_feishu_features: false
+enable_feishu_notification: false
+feishu_webhook_url: null
+feishu: null
+feishu_watcher:
+  enabled: false
+  poll_interval: 1200
+  max_dates_per_cycle: 1
+  settle_seconds: 0
+  settle_rounds: 0
+  idle_exit_minutes: null
+  state_dir: "history/feishu_watcher"
+  date_whitelist: []
+  date_blacklist: []
+  status_filter: null
+
+# Source cleanup settings
+auto_delete_source_after_completion: false

@@ -3,7 +3,7 @@
 
 # 素材生成设置
 count: 30 # 每部剧生成素材数量
-material_code: "xh" # 素材文件名标识
+material_code: 'xh' # 素材文件名标识
 
 # 开启色彩扰动，降低素材同质化
 fast_mode: false
@@ -14,41 +14,41 @@ default_source_dir: "D:\\短剧剪辑\\源素材视频" # Windows 路径
 
 # 多素材文案配置
 brand_text_mapping:
-  mode: "range"
+  mode: 'range'
   ranges:
-    - range: "01-05"
-      text: "斯娜看剧"
-    - range: "06-10"
-      text: "小红看剧"
-    - range: "11-15"
-      text: "哈哈看剧"
-    - range: "16-20"
-      text: "看家本领"
-    - range: "21-23"
-      text: "葸辉爆剧"
-    - range: "24-25"
-      text: "清妍短剧"
-    - range: "26-30"
-      text: "排桐剧场"
+    - range: '01-05'
+      text: '斯娜看剧'
+    - range: '06-10'
+      text: '小红看剧'
+    - range: '11-15'
+      text: '哈哈看剧'
+    - range: '16-20'
+      text: '看家本领'
+    - range: '21-23'
+      text: '葸辉爆剧'
+    - range: '24-25'
+      text: '清妍短剧'
+    - range: '26-30'
+      text: '排桐剧场'
 
   cycle_texts:
-    - "斯娜看剧"
-    - "小红看剧"
-    - "哈哈看剧"
-    - "看家本领"
-    - "葸辉爆剧"
-    - "清妍短剧"
-    - "排桐剧场"
-  default_text: "热门短剧"
+    - '斯娜看剧'
+    - '小红看剧'
+    - '哈哈看剧'
+    - '看家本领'
+    - '葸辉爆剧'
+    - '清妍短剧'
+    - '排桐剧场'
+  default_text: '热门短剧'
 
 # 飞书功能配置
 enable_feishu_features: true
 feishu:
-  table_id: "tblDOyi2Lzs80sv0" # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
+  table_id: 'tblDOyi2Lzs80sv0' # 该达人的飞书多维表格 ID（其他配置继承自 default.yaml）
 
 # 文案显示配置
-enable_hook_text: true
-enable_brand_text: true # 关闭底部静态品牌文字（使用动态飘动水印）
+enable_hook_text: false
+enable_brand_text: true # 启用品牌文字（底部第一行）
 enable_disclaimer_text: true # 启用免责声明（底部第二行）
 
 # 动态飘动水印配置（提高去重效果）
@@ -56,3 +56,6 @@ enable_floating_watermark: false # 启用动态飘动水印
 floating_watermark_font_size: 32 # 水印字号
 floating_watermark_alpha: 0.5 # 透明度
 floating_watermark_speed_range: [20, 60] # 速度范围
+# 源视频自动清理设置
+auto_delete_source_after_completion: true # 剪辑完成后自动删除源视频目录（默认关闭）
+

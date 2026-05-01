@@ -96,10 +96,15 @@ def cli(
     if config is None:
         # Try to find default config file in common locations
         default_config_paths = [
+            Path("configs/pro.yaml"),
             Path("configs/default.yaml"),
+            Path("config/pro.yaml"),
             Path("config/default.yaml"),
+            Path("pro.yaml"),
             Path("default.yaml"),
+            Path.cwd() / "configs" / "pro.yaml",
             Path.cwd() / "configs" / "default.yaml",
+            Path.cwd() / "config" / "pro.yaml",
             Path.cwd() / "config" / "default.yaml",
         ]
         
