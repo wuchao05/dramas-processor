@@ -79,6 +79,10 @@ class DramaProject(BaseModel):
         description="Reference resolution (width, height)"
     )
     target_fps: Optional[int] = Field(default=None, description="Target FPS")
+    preferred_start_points: List[Tuple[int, float]] = Field(
+        default_factory=list,
+        description="Preferred start points parsed from highlight text",
+    )
     created_at: datetime = Field(default_factory=datetime.now, description="Creation timestamp")
     updated_at: datetime = Field(default_factory=datetime.now, description="Last update timestamp")
     
@@ -159,4 +163,3 @@ class DramaProject(BaseModel):
     def get_unsafe_episodes(self) -> List[Episode]:
         """Get list of unsafe episodes."""
         return [ep for ep in self.episodes if ep.is_safe is True]
-

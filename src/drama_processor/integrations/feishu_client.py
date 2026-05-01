@@ -337,6 +337,8 @@ class FeishuClient:
             # 添加抖音素材字段
             douyin_field = getattr(self.config, "douyin_material_field_name", "抖音素材")
             field_names.append(douyin_field)
+            highlight_field = getattr(self.config, "highlight_start_field_name", "高光起始点")
+            field_names.append(highlight_field)
             
             logger.info(f"📋 查询飞书字段列表: {', '.join(field_names)}")
             
@@ -440,6 +442,27 @@ class FeishuClient:
                             logger.warning(f"⚠️ 无法解析剧目 '{drama_name}' 的抖音素材配置: {e}")
                     else:
                         logger.debug(f"剧目 '{drama_name}' 没有抖音素材配置字段（字段名: {douyin_field}）")
+
+                    # 获取高光起始点字段
+                    highlight_start_points = None
+                    if highlight_field in record.fields and record.fields[highlight_field]:
+                        try:
+                            highlight_obj = record.fields[highlight_field]
+                            if isinstance(highlight_obj, list) and len(highlight_obj) > 0:
+                                lines = []
+                                for field_item in highlight_obj:
+                                    if isinstance(field_item, dict) and "text" in field_item:
+                                        text = str(field_item["text"]).strip()
+                                    elif hasattr(field_item, "text"):
+                                        text = str(field_item.text).strip()
+                                    else:
+                                        text = str(field_item).strip()
+                                    if text:
+                                        lines.append(text)
+                                if lines:
+                                    highlight_start_points = "\n".join(lines)
+                        except (KeyError, IndexError, TypeError, AttributeError) as e:
+                            logger.warning(f"⚠️ 无法解析剧目 '{drama_name}' 的高光起始点: {e}")
                     
                     drama_info[drama_name] = {
                         "record_id": record.record_id,
@@ -447,7 +470,8 @@ class FeishuClient:
                         "full_date": full_date,                 # 完整格式，用于日期匹配
                         "upload_time": upload_time,             # None 表示没有上架时间
                         "rating": rating,                       # None 表示没有评级
-                        "douyin_config": douyin_config          # None 表示没有抖音素材配置
+                        "douyin_config": douyin_config,         # None 表示没有抖音素材配置
+                        "highlight_start_points": highlight_start_points
                     }
             return drama_info
         except Exception as e:

@@ -3,6 +3,7 @@
 import logging
 import os
 import random
+import re
 import sys
 import time
 from threading import Event
@@ -254,6 +255,51 @@ class DramaProcessor:
                 total_to_make = self.config.count
         
         return out_dir, run_suffix, start_index, total_to_make
+
+    def _parse_time_to_seconds(self, time_text: str) -> Optional[float]:
+        """Parse MM:SS or HH:MM:SS text into seconds."""
+        if not isinstance(time_text, str):
+            return None
+
+        parts = [part.strip() for part in time_text.split(":")]
+        if len(parts) not in {2, 3} or not all(part.isdigit() for part in parts):
+            return None
+
+        numbers = [int(part) for part in parts]
+        if len(numbers) == 2:
+            minutes, seconds = numbers
+            return float(minutes * 60 + seconds)
+
+        hours, minutes, seconds = numbers
+        return float(hours * 3600 + minutes * 60 + seconds)
+
+    def _parse_highlight_start_points(
+        self,
+        highlight_text: Optional[str],
+    ) -> List[Tuple[int, float]]:
+        """Parse Feishu highlight start point text like '2 03:22'."""
+        if not highlight_text:
+            return []
+
+        parsed_points: List[Tuple[int, float]] = []
+        lines = [line.strip() for line in str(highlight_text).splitlines() if line.strip()]
+        pattern = re.compile(r"(?:第\s*)?(\d+)(?:\s*集)?[\s:：,，-]+(\d{1,2}:\d{2}(?::\d{2})?)")
+
+        for line in lines:
+            matched = pattern.search(line)
+            if not matched:
+                logger.warning(f"⚠️ 无法解析高光起始点，已跳过：{line}")
+                continue
+
+            episode_number = int(matched.group(1))
+            offset_seconds = self._parse_time_to_seconds(matched.group(2))
+            if episode_number <= 0 or offset_seconds is None:
+                logger.warning(f"⚠️ 高光起始点格式无效，已跳过：{line}")
+                continue
+
+            parsed_points.append((episode_number - 1, offset_seconds))
+
+        return parsed_points
     
     def generate_start_points(self, project: DramaProject, count: int) -> List[Tuple[int, float]]:
         """Generate start points for material generation."""
@@ -279,12 +325,43 @@ class DramaProcessor:
         mode = "随机" if self.config.random_start else "均匀分布"
         logger.info(f"🎲 生成起始点: {mode}模式 | 需要{count}个 | 总剧集{num_episodes}集 | 总时长{total_duration:.1f}s")
         logger.info(f"📊 起始范围限制: 前{max_start_episode}集 (排除最后{exclude_count}集)")
+
+        preferred_start_points = list(project.preferred_start_points or [])
+        if preferred_start_points:
+            logger.info(f"✨ 检测到《{project.name}》配置了 {len(preferred_start_points)} 个高光起始点，优先使用")
+            for ep_idx, offset in preferred_start_points:
+                if len(starts) >= count:
+                    break
+                if ep_idx < 0 or ep_idx >= num_episodes:
+                    logger.warning(f"⚠️ 高光起始点集数超出范围，已跳过：第{ep_idx + 1}集 {offset:.1f}s")
+                    continue
+
+                point_key = (ep_idx, round(offset, 3))
+                if point_key in used_points:
+                    continue
+
+                if self._verify_start_point_duration(project, episode_paths, ep_idx, offset, min_duration):
+                    episode_name = project.episodes[ep_idx].file_path.name
+                    available_duration = self._calculate_total_duration_from_episode(project, episode_paths, ep_idx, offset)
+                    logger.info(
+                        f"⭐ 使用高光起始点 {len(starts)+1}: 第{ep_idx+1}集 {episode_name} | 偏移{offset:.1f}s | 可用时长{available_duration:.1f}s"
+                    )
+                    starts.append((ep_idx, offset))
+                    used_points.add(point_key)
+                else:
+                    logger.warning(
+                        f"⚠️ 高光起始点时长不足，回退默认逻辑：第{ep_idx + 1}集 {offset:.1f}s"
+                    )
+
+        remaining_count = max(0, count - len(starts))
+        if remaining_count <= 0:
+            return starts[:count]
         
         if self.config.random_start:
             # Random start points with duration validation and light deduplication
             attempts = 0
-            max_attempts = count * 5  # Moderate attempts, allow some duplicates
-            duplicate_threshold = max(2, count // 3)  # Allow up to 1/3 duplicates
+            max_attempts = max(1, remaining_count) * 5  # Moderate attempts, allow some duplicates
+            duplicate_threshold = max(2, max(1, remaining_count) // 3)  # Allow up to 1/3 duplicates
             
             while len(starts) < count and attempts < max_attempts:
                 attempts += 1
@@ -579,6 +656,7 @@ class DramaProcessor:
         self, 
         root_dir: str, 
         drama_dates: Optional[Dict[str, str]] = None,
+        drama_highlight_texts: Optional[Dict[str, str]] = None,
         on_drama_start: Optional[Callable[[str], None]] = None,
         on_drama_complete: Optional[Callable[[str], None]] = None,
         should_process_drama: Optional[Callable[[str], bool]] = None,
@@ -589,6 +667,7 @@ class DramaProcessor:
         Args:
             root_dir: 根目录路径
             drama_dates: 可选的剧目日期映射，格式为 {剧名: 日期字符串}
+            drama_highlight_texts: 可选的剧目高光起始点映射，格式为 {剧名: 多行起始点文本}
             on_drama_start: 剧目开始处理时的回调函数
             on_drama_complete: 剧目完成处理时的回调函数
         """
@@ -599,9 +678,11 @@ class DramaProcessor:
         session = self.history_manager.create_session(self.config, command_line)
         
         # Set up exports directory
-        exports_root = self.config.output_dir
-        if not os.path.isabs(exports_root):
-            exports_root = os.path.join(root_dir, "exports")
+        exports_root = self.config.resolve_output_dir(self.config.output_dir)
+        if not exports_root:
+            exports_root = self.config.get_default_export_dir()
+        elif not self.config.is_absolute_path(exports_root):
+            exports_root = os.path.normpath(os.path.join(root_dir, exports_root))
         
         # Handle date-based directory structure
         # If we have drama_dates mapping, we'll create date-specific directories later
@@ -697,6 +778,12 @@ class DramaProcessor:
                 try:
                     # Create project
                     project = self.create_drama_project(drama_dir)
+                    highlight_text = None
+                    if drama_highlight_texts and project.name in drama_highlight_texts:
+                        highlight_text = drama_highlight_texts.get(project.name)
+                    elif self.config.highlight_start_points_by_drama:
+                        highlight_text = self.config.highlight_start_points_by_drama.get(project.name)
+                    project.preferred_start_points = self._parse_highlight_start_points(highlight_text)
                 
                     if not project.episodes:
                         logger.warning(f"Skipping {project.name}: no episodes found")

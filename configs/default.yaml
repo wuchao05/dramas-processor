@@ -2,11 +2,8 @@
 # Drama Processor Windows 原生配置文件
 # Windows Native Configuration
 
-# 当前激活的用户配置
-active_user: xh-daily
-
 # Basic processing settings
-target_fps: 60
+target_fps: 30
 smart_fps: true
 fast_mode: true
 filter_threads: 2
@@ -23,9 +20,9 @@ date_str: null
 exclude_last_episodes: 8
 
 # Text overlay settings
-title_font_size: 36  # 顶部标题字号
-brand_font_size: 28  # 品牌文字字号（底部第一行）
-disclaimer_font_size: 28  # 免责声明字号（底部第二行）
+title_font_size: 24  # 顶部标题字号
+brand_font_size: 16  # 品牌文字字号（底部第一行）
+disclaimer_font_size: 16  # 免责声明字号（底部第二行）
 disclaimer_text: "剧情纯属虚构 请勿模仿"  # 免责声明文字（底部第二行）
 enable_brand_text: false  # 启用品牌文字（底部第一行）
 enable_disclaimer_text: false  # 启用免责声明（底部第二行）
@@ -113,7 +110,6 @@ temp_dir: null # 保持null以使用系统临时目录（最快，推荐）
 tail_cache_dir: null # 保持null以使用系统临时目录（最快，推荐）
 
 output_dir: "D:\\短剧剪辑\\输出素材"  # 输出目录
-# 注意：如果 default_source_dir 不在 D 盘，必须在用户配置中覆盖 output_dir
 tail_cache_dir: null # 自动使用系统临时目录
 tail_file: "assets\\tail.mp4"
 refresh_tail_cache: false
@@ -124,6 +120,11 @@ font_file: null # 自动检测微软雅黑等 Windows 字体
 # Brand text settings
 enable_brand_text: true
 brand_text: "热门短剧"
+display_text_override:
+  text: null  # 配了后替代抖音号/品牌字；为空时继续展示默认抖音号
+  font_size: null  # 为空时静态文案沿用 brand_font_size，飘动水印沿用 floating_watermark_font_size
+  color: null  # 为空时沿用默认白色
+  start_minute: 0  # 从素材第几分钟开始展示，0 表示从开头展示到结束
 
 # Floating watermark settings (dynamic brand text watermark)
 enable_floating_watermark: false  # 开启后替代底部静态品牌文字
@@ -141,15 +142,15 @@ no_interactive: false
 video:
   hw_codec: "auto"
   sw_codec: "libx264"
-  bitrate: "6500k"
-  max_rate: "6500k"
-  buffer_size: "8000k"
+  bitrate: "1104k"
+  max_rate: "1104k"
+  buffer_size: "2208k"
   soft_crf: "24"
   preset: "veryfast"
   profile: "high"
-  level: "4.2"
-  hw_level: "4.2"
-  sw_level: "4.1"
+  level: "3.1"
+  hw_level: "3.1"
+  sw_level: "3.1"
   tag: "avc1"
   pixel_format: "yuv420p"
   faststart: false
@@ -161,24 +162,20 @@ audio:
   sample_rate: 48000
 
 # 飞书功能配置
-enable_feishu_features: false # 默认关闭，由用户配置覆盖
+enable_feishu_features: true
 enable_feishu_notification: false
 feishu_webhook_url: null
 
-# 飞书API配置（公共配置，用户只需覆盖 table_id）
+# 飞书 API 配置
 feishu:
-  # 飞书应用凭证（所有用户共用）
   app_id: "cli_a870f7611b7b1013"
   app_secret: "NTwHbZG8rpOQyMEnXGPV6cNQ84KEqE8z"
   app_token: "WdWvbGUXXaokk8sAS94c00IZnsf"
   
-  # 多维表格配置（每个达人不同，需在用户配置中覆盖）
-  table_id: null  # 必须在用户配置中指定
+  table_id: null
   
-  # 飞书 API 端点
   base_url: "https://open.feishu.cn/open-apis/bitable/v1"
   
-  # 字段名称配置（所有用户共用）
   field_names: ["剧名", "账户", "日期", "搭建时间", "主体"]
   status_field_name: "当前状态"
   pending_status_value: "待剪辑"
@@ -188,7 +185,7 @@ feishu:
   failed_status_value: "剪辑失败"
   remark_field_name: "备注"
   
-  # 评级优先级配置（仅 xh-daily 使用）
+  # 评级优先级配置
   rating_field_name: "评级"
   priority_rating_value: "红标"
   upload_time_sort_desc: true
@@ -216,4 +213,4 @@ date_deduplication:
   skip_processed_by_default: false
 
 # 源视频自动清理设置
-auto_delete_source_after_completion: false  # 剪辑完成后自动删除源视频目录（默认关闭）
+auto_delete_source_after_completion: true  # 剪辑完成后自动删除源视频目录（默认关闭）

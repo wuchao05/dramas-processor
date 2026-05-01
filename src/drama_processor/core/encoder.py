@@ -57,6 +57,81 @@ class VideoEncoder:
         self.enable_brand_text = config.enable_brand_text
         self.enable_disclaimer_text = config.enable_disclaimer_text
 
+    def _scale_font_size_for_reference(
+        self,
+        base_font_size: int,
+        ref_w: int,
+        ref_h: int,
+    ) -> int:
+        """Scale text size from the 1080x1920 baseline to the target canvas."""
+        scale_ratio = self._get_reference_scale_ratio(ref_w, ref_h)
+        return max(1, int(round(base_font_size * scale_ratio)))
+
+    def _scale_motion_speed_for_reference(
+        self,
+        base_speed: int,
+        ref_w: int,
+        ref_h: int,
+    ) -> int:
+        """Scale watermark speed from the 1080x1920 baseline to the target canvas."""
+        scale_ratio = self._get_reference_scale_ratio(ref_w, ref_h)
+        return max(1, int(round(base_speed * scale_ratio)))
+
+    def _build_enable_clause(
+        self,
+        start_seconds: float,
+        material_start_offset: float,
+    ) -> str:
+        """Build FFmpeg enable clause based on material timeline."""
+        remaining_seconds = round(max(0.0, start_seconds - material_start_offset), 3)
+        if remaining_seconds <= 0:
+            return ""
+        return f":enable='gte(t,{remaining_seconds})'"
+
+    def _get_bottom_display_settings(
+        self,
+        material_idx: Optional[int],
+    ) -> Dict[str, Any]:
+        """Resolve text/settings for the brand/douyin display position."""
+        if material_idx is not None:
+            default_text = self.config.get_brand_text_for_material(material_idx)
+        else:
+            default_text = self.config.brand_text
+
+        override = self.config.display_text_override
+        override_text = ""
+        if override and override.text:
+            override_text = override.text.strip()
+
+        if override_text:
+            return {
+                "text": override_text,
+                "static_font_size": override.font_size or self.brand_font_size,
+                "floating_font_size": override.font_size
+                or self.config.floating_watermark_font_size,
+                "color": override.color or "white",
+                "start_seconds": override.start_minute * 60.0,
+                "is_override": True,
+            }
+
+        return {
+            "text": default_text.strip() if isinstance(default_text, str) else "",
+            "static_font_size": self.brand_font_size,
+            "floating_font_size": self.config.floating_watermark_font_size,
+            "color": "white",
+            "start_seconds": 0.0,
+            "is_override": False,
+        }
+
+    def _get_reference_scale_ratio(self, ref_w: int, ref_h: int) -> float:
+        """Get scale ratio relative to the 1080x1920 baseline."""
+        if ref_w <= 0 or ref_h <= 0:
+            return 1.0
+
+        baseline_w = 1080
+        baseline_h = 1920
+        return min(ref_w / baseline_w, ref_h / baseline_h)
+
     def _detect_best_hw_codec(self, preferred_codec: str) -> str:
         """Detect the best available hardware codec for the current environment."""
         import platform
@@ -361,7 +436,11 @@ class VideoEncoder:
         
         # 随机速度
         speed_min, speed_max = self.config.floating_watermark_speed_range
-        speed = rng.randint(speed_min, speed_max)
+        speed = self._scale_motion_speed_for_reference(
+            rng.randint(speed_min, speed_max),
+            ref_w,
+            ref_h,
+        )
         
         # 全屏飘动范围
         margin = int(ref_h * 0.05)  # 5%边距
@@ -472,6 +551,7 @@ class VideoEncoder:
         workdir: str,
         fast_mode: bool,
         material_idx: Optional[int] = None,
+        material_start_offset: float = 0.0,
     ) -> str:
         """Build video filter string with text overlays."""
         # Base video processing filters
@@ -499,7 +579,6 @@ class VideoEncoder:
 
         # Text overlay setup
         title_fs = self.title_font_size
-        brand_fs = self.brand_font_size
         disclaimer_fs = self.disclaimer_font_size
         margin = max(12, int(ref_h * 0.037))
 
@@ -507,7 +586,9 @@ class VideoEncoder:
         disclaimer_txtf = os.path.join(workdir, "disclaimer.txt")
 
         write_text_file(title_txt, f"《{drama_name}》")
-        write_text_file(disclaimer_txtf, disclaimer_text)  # 横排文本
+        disclaimer_content = disclaimer_text.strip()
+        if disclaimer_content:
+            write_text_file(disclaimer_txtf, disclaimer_content)  # 横排文本
 
         title_color = random.choice(self.title_colors)
         fontfile_options = self._get_fontfile_options(fontfile)  # 自动处理 TTC 字体索引
@@ -531,88 +612,107 @@ class VideoEncoder:
         # Base filters with title only (no bottom text)
         filters = [base, dt_top]
 
-        # Hook text overlay (appears only in first 3 seconds)
+        # Hook text overlay (appears only in first 2 seconds)
         if self.config.enable_hook_text and self.config.hook_texts:
-            hook_text_raw = random.choice(self.config.hook_texts)
-            # 在字符间插入空格实现字符间距效果（兼容所有 FFmpeg 版本）
-            hook_text = " ".join(list(hook_text_raw))
-            hook_fs = self.config.hook_font_size
-            hook_color = self.config.hook_text_color
-            hook_duration = self.config.hook_duration
+            hook_duration = max(0.0, self.config.hook_duration - material_start_offset)
+            if hook_duration > 0:
+                hook_text_raw = random.choice(self.config.hook_texts)
+                # 在字符间插入空格实现字符间距效果（兼容所有 FFmpeg 版本）
+                hook_text = " ".join(list(hook_text_raw))
+                hook_fs = self._scale_font_size_for_reference(
+                    self.config.hook_font_size,
+                    ref_w,
+                    ref_h,
+                )
+                hook_color = self.config.hook_text_color
 
-            # Center position (no border/bold for better performance and compatibility)
-            dt_hook = (
-                f"drawtext={fontfile_options}:text='{hook_text}':"
-                f"fontsize={hook_fs}:fontcolor={hook_color}:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2:"
-                f"enable='lt(t,{hook_duration})'"  # Only show for first N seconds
-            )
-            filters.append(dt_hook)
+                # Center position (no border/bold for better performance and compatibility)
+                dt_hook = (
+                    f"drawtext={fontfile_options}:text='{hook_text}':"
+                    f"fontsize={hook_fs}:fontcolor={hook_color}:"
+                    f"x=(w-text_w)/2:y=(h-text_h)/2:"
+                    f"enable='lt(t,{hook_duration})'"
+                )
+                filters.append(dt_hook)
 
         # Bottom text overlays - horizontal layout
         # Brand text (first line) and disclaimer text (second line) at bottom of video
         bottom_base_y = int(ref_h * 0.88)  # 底部起始位置（距离底部12%）
-        
+
         # Floating watermark (dynamic brand text) or static brand text
-        if self.config.enable_floating_watermark:
+        has_static_brand_text = False
+        bottom_display = self._get_bottom_display_settings(material_idx)
+        bottom_text = bottom_display["text"]
+        bottom_static_font_size = int(bottom_display["static_font_size"])
+        bottom_floating_font_size = int(bottom_display["floating_font_size"])
+        bottom_color = str(bottom_display["color"])
+        bottom_enable_clause = self._build_enable_clause(
+            float(bottom_display["start_seconds"]),
+            material_start_offset,
+        )
+
+        if self.config.enable_floating_watermark and bottom_text:
             # 动态飘动水印（替代底部静态品牌文字）
-            if material_idx is not None:
-                brand_text = self.config.get_brand_text_for_material(material_idx)
-            else:
-                brand_text = self.config.brand_text
-            
             # 生成随机运动参数
             motion_params = self.generate_floating_motion_params(
                 material_idx or 1, ref_w, ref_h
             )
-            
-            watermark_fs = self.config.floating_watermark_font_size
+
+            watermark_fs = self._scale_font_size_for_reference(
+                bottom_floating_font_size,
+                ref_w,
+                ref_h,
+            )
             watermark_alpha = self.config.floating_watermark_alpha
-            
+
             # 构建动态水印滤镜（直接使用 text 参数，不用文件）
             # 转义单引号和特殊字符
-            brand_text_escaped = brand_text.replace("'", "'\\\\\\''")
+            brand_text_escaped = bottom_text.replace("'", "'\\\\\\''")
             dt_floating = (
                 f"drawtext={fontfile_options}:text='{brand_text_escaped}':fontsize={watermark_fs}:"
-                f"fontcolor=white@{watermark_alpha}:shadowx=2:shadowy=2:"
+                f"fontcolor={bottom_color}@{watermark_alpha}:shadowx=2:shadowy=2:"
                 f"x='{motion_params['x_expr']}':y='{motion_params['y_expr']}'"
+                f"{bottom_enable_clause}"
             )
             filters.append(dt_floating)
-            
-        elif self.use_brand_text and self.config.enable_brand_text:
-            # 保留原有的静态品牌文字逻辑（向后兼容）
-            # Get brand text for current material
-            if material_idx is not None:
-                brand_text = self.config.get_brand_text_for_material(material_idx)
-            else:
-                brand_text = self.config.brand_text
 
+        elif bottom_text and (
+            bottom_display["is_override"]
+            or (self.use_brand_text and self.config.enable_brand_text)
+        ):
+            # 保留原有的静态品牌文字逻辑（向后兼容）
             # 横排显示
             brand_txt = os.path.join(workdir, "brand.txt")
-            write_text_file(brand_txt, brand_text)
+            write_text_file(brand_txt, bottom_text)
 
             brand_txt_filter = self._filter_path(brand_txt)
             try:
                 dt_brand = (
-                    f"drawtext={fontfile_options}:textfile='{brand_txt_filter}':fontsize={brand_fs}:"
-                    f"fontcolor=white@0.85:box=0:"
+                    f"drawtext={fontfile_options}:textfile='{brand_txt_filter}':fontsize={bottom_static_font_size}:"
+                    f"fontcolor={bottom_color}@{self.bottom_opacity}:box=0:"
                     f"x=(w-text_w)/2:y={bottom_base_y}"  # 底部第一行，居中
+                    f"{bottom_enable_clause}"
                 )
                 filters.append(dt_brand)
+                has_static_brand_text = True
             except Exception:
                 pass  # Silently skip if file not found
 
         # Disclaimer text overlay (bottom area, second line) - horizontal
-        if self.config.enable_disclaimer_text:
+        if self.config.enable_disclaimer_text and disclaimer_content:
             try:
-                # 计算第二行位置（第一行下方，留出间隔）
-                line_spacing = 25  # 两行之间的间隔（像素，可调整）
-                second_line_y = bottom_base_y + brand_fs + line_spacing
+                # 只有底部存在静态品牌字时，免责声明才放到第二行
+                line_spacing = max(12, int(ref_h * 0.018))
+                disclaimer_y = bottom_base_y
+                if has_static_brand_text:
+                    disclaimer_y = bottom_base_y + bottom_static_font_size + line_spacing
+
+                disclaimer_y = min(disclaimer_y, ref_h - margin - disclaimer_fs)
                 
                 dt_disclaimer = (
                     f"drawtext={fontfile_options}:textfile='{disclaimer_txt_filter}':fontsize={disclaimer_fs}:"
-                    f"fontcolor=white@0.85:box=0:"
-                    f"x=(w-text_w)/2:y={second_line_y}"  # 底部第二行，居中
+                    f"fontcolor=white@{self.bottom_opacity}:box=0:"
+                    f"x=(w-text_w)/2:y={disclaimer_y}"  # 底部文案，居中
                 )
                 filters.append(dt_disclaimer)
             except Exception:
@@ -646,6 +746,7 @@ class VideoEncoder:
         fast_mode: bool,
         filter_threads: int,
         material_idx: Optional[int] = None,
+        material_start_offset: float = 0.0,
     ):
         """Normalize and trim video segment with text overlay."""
         dur = max(0.01, end_s - start_s)
@@ -682,6 +783,7 @@ class VideoEncoder:
                 workdir,
                 fast_mode=fast_mode,
                 material_idx=material_idx,
+                material_start_offset=material_start_offset,
             )
             cmd = [
                 "ffmpeg",
@@ -1236,6 +1338,7 @@ class VideoEncoder:
             else:
                 print(f"📝 处理 {seg_total} 个片段...")
 
+            material_elapsed = 0.0
             for idx, (ep_path, s, e) in enumerate(segs, start=1):
                 tmp_out = os.path.join(workdir, f"norm_{idx:03d}.mp4")
                 if seg_total > 1:
@@ -1260,8 +1363,10 @@ class VideoEncoder:
                     fast_mode=fast_mode,
                     filter_threads=filter_threads,
                     material_idx=material_idx,
+                    material_start_offset=material_elapsed,
                 )
                 tmp_parts.append(tmp_out)
+                material_elapsed += e - s
 
             # Concatenate main segments
             list_path = os.path.join(workdir, "list_main.txt")

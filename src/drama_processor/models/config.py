@@ -1,9 +1,10 @@
 """Configuration models."""
 
+import ntpath
 import os
 import re
 from datetime import datetime
-from typing import List, Optional, Union, Tuple
+from typing import Dict, List, Optional, Union, Tuple
 from pydantic import BaseModel, Field, validator
 from .feishu import FeishuConfig
 
@@ -83,6 +84,29 @@ class BrandTextMapping(BaseModel):
         return self.default_text
 
 
+class DisplayTextOverride(BaseModel):
+    """Override text configuration for brand/douyin display position."""
+
+    text: Optional[str] = Field(
+        default=None,
+        description="Override text content; when set, replaces default brand/douyin text",
+    )
+    font_size: Optional[int] = Field(
+        default=None,
+        ge=1,
+        description="Override text font size; falls back to brand settings when empty",
+    )
+    color: Optional[str] = Field(
+        default=None,
+        description="Override text color; falls back to default color when empty",
+    )
+    start_minute: float = Field(
+        default=0.0,
+        ge=0.0,
+        description="Start showing from the Nth minute of the material; 0 means always show",
+    )
+
+
 class VideoConfig(BaseModel):
     """Video encoding configuration."""
 
@@ -90,15 +114,15 @@ class VideoConfig(BaseModel):
         default="auto", description="Hardware video codec (auto-detect if 'auto')"
     )
     sw_codec: str = Field(default="libx264", description="Software video codec")
-    bitrate: str = Field(default="9000k", description="Video bitrate")
-    max_rate: str = Field(default="9000k", description="Maximum bitrate")
-    buffer_size: str = Field(default="14000k", description="Buffer size")
-    soft_crf: str = Field(default="22", description="Software encoding CRF")
+    bitrate: str = Field(default="1104k", description="Video bitrate")
+    max_rate: str = Field(default="1104k", description="Maximum bitrate")
+    buffer_size: str = Field(default="2208k", description="Buffer size")
+    soft_crf: str = Field(default="24", description="Software encoding CRF")
     preset: str = Field(default="veryfast", description="Encoding preset")
     profile: str = Field(default="high", description="H.264 profile")
-    level: str = Field(default="4.2", description="H.264 level")
-    hw_level: str = Field(default="4.2", description="Hardware encoding level")
-    sw_level: str = Field(default="4.1", description="Software encoding level")
+    level: str = Field(default="3.1", description="H.264 level")
+    hw_level: str = Field(default="3.1", description="Hardware encoding level")
+    sw_level: str = Field(default="3.1", description="Software encoding level")
     tag: str = Field(default="avc1", description="Video tag")
     pixel_format: str = Field(default="yuv420p", description="Pixel format")
     faststart: bool = Field(
@@ -149,11 +173,6 @@ class FeishuWatcherConfig(BaseModel):
 class ProcessingConfig(BaseModel):
     """Main processing configuration."""
 
-    # 当前激活的用户配置
-    active_user: Optional[str] = Field(
-        default=None, description="当前激活的用户配置名称（如 xh, xl, xx）"
-    )
-
     # Basic settings
     target_fps: int = Field(default=60, description="Target FPS")
     smart_fps: bool = Field(default=True, description="Enable smart FPS adaptation")
@@ -178,7 +197,7 @@ class ProcessingConfig(BaseModel):
     # Material generation settings
     count: int = Field(default=1, description="Number of materials per drama")
     material_code: str = Field(
-        default="xl", description="Identifier used in exported filenames"
+        default="xh", description="Identifier used in exported filenames"
     )
     date_str: Optional[str] = Field(
         default=None, description="Date string for filenames"
@@ -217,7 +236,7 @@ class ProcessingConfig(BaseModel):
         description="Title color options",
     )
 
-    # Hook text settings (opening text that appears for first 3 seconds)
+    # Hook text settings (opening text that appears for first 2 seconds)
     enable_hook_text: bool = Field(
         default=False, description="Enable hook text overlay at the beginning"
     )
@@ -229,7 +248,7 @@ class ProcessingConfig(BaseModel):
         default=110, description="Hook text font size (100-140px recommended)"
     )
     hook_duration: float = Field(
-        default=3.0, description="Hook text display duration in seconds"
+        default=2.0, description="Hook text display duration in seconds"
     )
     hook_text_color: str = Field(
         default="#FFE600",
@@ -287,6 +306,10 @@ class ProcessingConfig(BaseModel):
     )
     brand_text_mapping: Optional["BrandTextMapping"] = Field(
         default=None, description="Advanced brand text mapping configuration"
+    )
+    display_text_override: Optional["DisplayTextOverride"] = Field(
+        default=None,
+        description="Override text for the brand/douyin display position",
     )
 
     # Floating watermark settings (dynamic brand text watermark)
@@ -349,6 +372,9 @@ class ProcessingConfig(BaseModel):
         description="飞书群通知webhook地址",
     )
     enable_feishu_notification: bool = Field(default=True, description="启用飞书群通知")
+    highlight_start_points_by_drama: Optional[Dict[str, str]] = Field(
+        default=None, description="剧名到高光起始点文本的映射"
+    )
 
     def is_feishu_features_enabled(self) -> bool:
         """Check if Feishu features are enabled."""
@@ -391,9 +417,9 @@ class ProcessingConfig(BaseModel):
 
     def get_material_code(self) -> str:
         """Get sanitized material code for filenames."""
-        code = (self.material_code or "xl").strip()
+        code = (self.material_code or "xh").strip()
         if not code:
-            return "xl"
+            return "xh"
         return code
 
     def get_default_font(self) -> str:
@@ -447,11 +473,82 @@ class ProcessingConfig(BaseModel):
             # Return default even if it doesn't exist, let the caller handle the error
             return self.default_source_dir
 
-    def get_export_base_dir(self) -> str:
+    def _select_path_module(self, path_value: str):
+        """根据路径字符串选择合适的路径模块。"""
+        normalized = (path_value or "").strip()
+        if re.match(r"^[A-Za-z]:[\\/]", normalized) or "\\" in normalized:
+            return ntpath
+        return os.path
+
+    def _normalize_dir_path(self, path_value: str) -> str:
+        """规范化目录路径，同时保留根目录语义。"""
+        normalized = (path_value or "").strip()
+        if not normalized:
+            return ""
+
+        if re.fullmatch(r"[A-Za-z]:[\\/]*", normalized):
+            return f"{normalized[0]}:\\"
+
+        if normalized in ("/", "\\"):
+            return normalized
+
+        return normalized.rstrip("\\/")
+
+    def is_absolute_path(self, path_value: str) -> bool:
+        """判断路径是否为绝对路径，兼容 Windows 风格路径。"""
+        normalized = self._normalize_dir_path(path_value)
+        if not normalized:
+            return False
+
+        path_module = self._select_path_module(normalized)
+        return path_module.isabs(normalized)
+
+    def get_export_base_dir(self, source_dir: Optional[str] = None) -> str:
         """Get the base directory for exports based on actual source directory."""
-        actual_source = self.get_actual_source_dir()
-        # Go up one level from the source directory to get the base directory
-        return os.path.dirname(actual_source)
+        actual_source = self._normalize_dir_path(source_dir or self.get_actual_source_dir())
+        if not actual_source:
+            return ""
+
+        path_module = self._select_path_module(actual_source)
+        parent_dir = path_module.dirname(actual_source)
+        if parent_dir in ("", "."):
+            return actual_source
+        return parent_dir
+
+    def resolve_output_dir(
+        self,
+        output_dir: Optional[str] = None,
+        source_dir: Optional[str] = None,
+    ) -> str:
+        """根据源目录解析最终导出目录。"""
+        candidate = self._normalize_dir_path(output_dir or self.output_dir or "")
+        if not candidate:
+            return ""
+
+        actual_source_dir = self._normalize_dir_path(source_dir or self.get_actual_source_dir())
+        export_base = self.get_export_base_dir(actual_source_dir)
+        path_module = self._select_path_module(actual_source_dir or candidate)
+
+        if actual_source_dir:
+            candidate_norm = path_module.normcase(path_module.normpath(candidate))
+            source_norm = path_module.normcase(path_module.normpath(actual_source_dir))
+            if candidate_norm == source_norm:
+                return export_base
+
+        if export_base and not path_module.isabs(candidate):
+            target_name = path_module.basename(candidate) or "导出素材"
+            return path_module.join(export_base, target_name)
+
+        return candidate
+
+    def get_default_export_dir(self, source_dir: Optional[str] = None) -> str:
+        """返回默认导出目录。"""
+        export_base = self.get_export_base_dir(source_dir)
+        if not export_base:
+            return "导出素材"
+
+        path_module = self._select_path_module(export_base)
+        return path_module.join(export_base, "导出素材")
     
     def get_optimized_temp_dir(self) -> Optional[str]:
         """Get optimized temp directory for best performance.
