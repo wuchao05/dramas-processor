@@ -147,7 +147,7 @@ cp -f "${PRO_CONFIG}" "${OUT_DIR}/configs/pro.yaml"
 echo "[OK] 发布目录已准备完成。"
 
 if [[ "${NO_ARCHIVE}" -eq 0 ]]; then
-  VERSION="$(grep -E '^version = ' "${REPO_ROOT}/pyproject.toml" | head -1 | sed -E 's/version = \"([^\"]+)\"/\\1/')"
+  VERSION="$(grep -E '^version = ' "${REPO_ROOT}/pyproject.toml" | head -1 | sed -E 's/version = \"([^\"]+)\"/\1/')"
   VERSION="${VERSION:-unknown}"
   DATE_STR="$(date +%Y%m%d)"
   ARCHIVE_BASE="${NAME}-pro-${VERSION}-${DATE_STR}-wsl"

@@ -269,8 +269,8 @@ def process_command(
         
         # Copy all other settings from base config
         title_font_size=base_config.title_font_size,
-        bottom_font_size=base_config.bottom_font_size,
-        side_font_size=base_config.side_font_size,
+        brand_font_size=base_config.brand_font_size,
+        disclaimer_font_size=base_config.disclaimer_font_size,
         title_colors=base_config.title_colors,
         enable_brand_text=base_config.enable_brand_text,
         brand_text=base_config.brand_text,
