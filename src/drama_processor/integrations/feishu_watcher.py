@@ -204,34 +204,20 @@ class FeishuWatcher:
         include_date: bool = True,
     ) -> tuple:
         rating = info.get("rating")
-        is_priority_rating = self._get_primary_rating_priority(rating) == 0
-        sort_key = [0 if is_priority_rating else 1]
+        sort_key = [self._get_primary_rating_priority(rating)]
         date_sort_key = self._priority_value(
             date_label or info.get("date") or "未知日期",
             info.get("full_date"),
         )
 
-        if is_priority_rating:
-            sort_key.append(
-                self._get_upload_time_sort_key(
-                    info.get("upload_time"),
-                    descending=True,
-                )
-            )
-            if include_date:
-                sort_key.append(date_sort_key)
-            sort_key.append(drama_name)
-            return tuple(sort_key)
-
         if include_date:
             sort_key.append(date_sort_key)
         sort_key.extend(
             [
-                self._get_secondary_rating_priority(rating),
                 self._get_upload_time_sort_key(
                     info.get("upload_time"),
-                    descending=True,
                 ),
+                self._get_secondary_rating_priority(rating),
                 drama_name,
             ]
         )
@@ -349,8 +335,8 @@ class FeishuWatcher:
         
         工作流程：
         1. 查询飞书，获取所有待剪辑的剧
-        2. 红标剧优先；多个红标时，先按上架时间从晚到早，再按日期从早到晚
-        3. 红标处理完后，再处理非红标剧；非红标先按日期从早到晚，同日期内按绿标、黄标、上架时间、剧名排序
+        2. 红标剧优先；红标和非红标各自先按日期从早到晚排序
+        3. 同日期内按上架时间从早到晚，再按绿标、黄标、剧名兜底排序
         4. 选择优先级最高的一部剧处理
         5. 处理完后，回到步骤1，重新查询和排序
         6. 如果所有剧都处理完，等待 settle_seconds 后再查一次（防止飞书数据同步延迟）
@@ -467,8 +453,8 @@ class FeishuWatcher:
         
         # 日期组内排序：
         # 1. 红标优先
-        # 2. 非红标内再按绿标、黄标、其他评级排序
-        # 3. 同评级时按上架时间从晚到早，再按剧名字典序兜底
+        # 2. 同日期内按上架时间从早到晚排序
+        # 3. 上架时间相同时再按绿标、黄标、其他评级和剧名字典序兜底
         for date_label in grouped:
             all_dramas = []
             
